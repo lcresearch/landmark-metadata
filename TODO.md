@@ -6,6 +6,10 @@ source-only repository policy.
 
 ## Completed
 
+- [x] Close the PR #1 claim-reader completeness gap in a new maintained source
+  area; require exact Hand/Task/Android identities, preserve exported audit
+  provenance, and pass all 29 repository regression tests.
+
 - [x] Repair PR #1 evidence completeness/identity checks and reconstruction I/O;
   add eleven synthetic regressions. Full fixture reruns still require excluded
   assets and a separately frozen 65-artifact digest manifest.
@@ -24,6 +28,14 @@ source-only repository policy.
   disclose limited E5 parsing, audit scope and cross-platform E3 limitations.
 - [x] Prepare source-only repository: code, manuscript source, protocols and
   concise project notes; remove stale HTML TODO and PDF text-extract entry points.
+- [x] Follow up on repository review: add historical README availability notes
+  and an English audit summary; preserve imported snapshots byte-for-byte.
+- [x] Extend the source check to current Markdown and historical source READMEs,
+  cross-check the MEMORY/import/source digest and add nine regression tests.
+- [x] Create a separate editorial manuscript working copy: consistent E5 name,
+  explicit E4 component flow, label-payload restoration boundaries and disclosed
+  abstract-only background citations, applied to the completed P2/P3 manuscript.
+  Preserve all 17 bibliography entries and the qualified reference findings.
 
 ## Completed follow-up: P2 — same-Android consumer comparison
 
@@ -61,6 +73,9 @@ source-only repository policy.
   Distinguish author checking from independent reproduction.
 - [ ] Finish bounded technical positioning; four-paper review is not exhaustive
   novelty verification. Do not promise method novelty from renaming the checks.
+- [ ] Explain the practical research consequence beyond a known constraint
+  appearing at different API stages. Consistent claims and same-Android results
+  alone do not establish a strong publication contribution.
 - [ ] Choose venue, apply its template, review disclosure and page budget;
   the current generic reading draft does not establish venue fit.
 - [ ] Plan an independently usable evidence/reproduction deposit separately.

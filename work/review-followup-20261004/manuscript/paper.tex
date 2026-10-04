@@ -1,0 +1,305 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage[margin=0.72in,columnsep=0.25in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,booktabs,array,tabularx}
+\usepackage[hyphens]{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\setlength{\parskip}{2pt}
+\setlength{\parindent}{1em}
+\raggedbottom
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\pass}{\textsc{pass}}
+\newcommand{\fail}{\textsc{fail}}
+\hypersetup{pdftitle={From Model Metadata to Executable Interfaces: A Controlled Study of Tensor Binding and Decoder Contracts}}
+\title{From Model Metadata to Executable Interfaces:\\A Controlled Study of Tensor Binding and Decoder Contracts}
+\author{Author information to be supplied}
+\date{Working research draft --- October 4, 2026\\\small Audit-informed revision; independent human audit and venue formatting pending}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Model metadata and associated resources participate in executable interfaces through generated bindings and runtime decoding. We study their effects while holding model computation fixed. In an EfficientNet classifier, deleting one associated label preserves the graph, weights, embedded metadata, generated Java, compiled code, and tested numerical outputs, but changes an actual generated Android getter from success to an exception after inference. Restoring the label payload recovers success without restoring the publisher's original ZIP container bytes. A predetermined, count-preserving label permutation instead completes every tested stage while changing 999 of 1,000 exposed label strings; scores and output positions remain unchanged. A fresh build and new Android virtual device reproduce both outcomes. An external publisher reference, linked through identical graph/weights, establishes that the permutation disagrees with the prescribed display-label order at 999 positions; stable class-ID provenance remains unresolved. On the same Android virtual device, an official Task classifier rejects the identical deletion artifact during public construction, while the generated interface rejects it at output access after inference. Native integrations remain different. A secondary Hand case supplies a source-backed output-role mismatch, yet its metadata exchange leaves the tested official Task result unchanged. We separate structural acceptance, reference-backed association agreement, and selected-decoder compatibility, with intervention preservation checked separately. A five-condition comparison finds no additional rejection by our supporting E5 diagnostic over an implementation-matched simple baseline or Task initialization. External static checks document abstentions and unsupported paths. The study establishes controlled interface consequences and their consumer boundaries in the tested configurations.
+\end{abstract}
+
+\section{Introduction}
+A model file can produce the same numerical tensor and still expose a different result to application code. Its generated interface may read an associated label file at runtime, attach those labels to output positions, and return categories to the caller. A resource change can therefore alter the public result even when neither the model computation nor the generated program changes. Establishing that consequence requires executing the interface, rather than inspecting metadata or reproducing a decoder expression in isolation.
+
+The TensorFlow Lite Support schema associates output metadata with \code{SubGraph.outputs} in order and documents code-generation uses for names and associated files~\cite{schema}. Official interface-generation documentation presents generated wrappers as a way to replace direct buffer manipulation~\cite{codegen-doc}. These mechanisms create two distinct dependencies. Embedded output metadata can change a generated getter's binding; associated resources can change the behavior of an unchanged getter that loads them. Both must be distinguished from the numerical computation represented by the model graph.
+
+Three questions organize the study. \textbf{RQ1:} When computation is held fixed, how can model-package associations change a public interface's behavior? E1/E2 answer through an executed failure, a successful association change, and reversals; a subsequent publisher-reference comparison establishes disagreement with the prescribed display-label order. \textbf{RQ2:} At which stage do configured consumers enforce the relevant condition? E3/P2 compare two official paths, including on the same Android device, while Hand bounds the reach of an output-role witness through a task-specific consumer. \textbf{RQ3:} Which conditions can be checked before execution, and which judgments require additional evidence? The official-tool comparison, external scope checks, and E5 limits answer this question. EfficientNet is primary because its generated Java compiles without repair.
+
+The principal contribution is a controlled execution study with description controls, preserving interventions, reversals, and stage-specific observations. A second contribution is a comparison of enforcement boundaries in explicitly identified consumer configurations. The supporting E5 diagnostic separates structural facts, supplied-reference agreement, and selected-decoder preconditions for recognized generator templates. Official libraries already enforce the observed label-count condition, and our core baseline comparison establishes no additional rejected artifact. The contribution is the executed characterization of the associations and boundaries, supported by a scoped diagnostic tool.
+
+\section{Contracts and Preservation}
+\label{sec:contracts}
+Let a model artifact comprise graph $G$, weights $W$, ordered outputs $O=(t_0,\ldots,t_{n-1})$, embedded metadata $M$, and associated files $F$. Generation produces interface code $H$. A consumer executes the graph and interprets its outputs using $H$ and resources from the artifact. In particular, unchanged $H$ may load changed $F$ during model construction and use it at output access. Equality of computation and code does not by itself establish equality of exposed results.
+
+We distinguish three contract judgments, S, I, and D. They are separate dimensions, not a sequence of certification levels. Missing evidence for I does not prevent a justified D judgment. P is a separate check of the experimental intervention, not a fourth notion of model correctness.
+
+\paragraph{S: structural acceptance.}
+Our baseline is \code{MetadataPopulator} in Support 0.4.4: construct from model bytes, load the embedded metadata buffer, and call \code{populate} on a disposable copy. Its checks include metadata/subgraph structure and input/output tensor-metadata cardinality. S records acceptance by this particular path. It does not establish output meaning, validate every associated-file property, or represent all official validators.
+
+\paragraph{I: reference-backed association agreement.}
+An independently sourced contract supplies expected output roles $R=(r_0,\ldots,r_{n-1})$. A disclosed mapping $\phi$ relates metadata names to these roles, permitting the comparison
+\begin{equation}
+\phi(m_i.\mathrm{name})=r_i.
+\end{equation}
+The reference must be tied to the tested artifact or to a documented graph-equivalence bridge. Unknown mappings and absent references yield abstention. The reference's granularity is part of the judgment: $I_{\mathrm{display}}$ compares positions within a classification output tensor with prescribed display strings, whereas stable class identifiers require their own provenance. The original artifact's label list alone supplies neither reference. Section~\ref{sec:p3} establishes a publisher display-order reference; the complete stable-ID chain remains unresolved. Our Hand role mapping is extracted from official integration source with knowledge of the case. Both reference interpretations remain subject to human audit; I does not evaluate prediction correctness.
+
+\paragraph{D: compatibility with the selected decoder.}
+For recognized Support 0.4.4 generator templates, the checker joins category-getter patterns with tensor and associated-file declarations and a matching default-postprocessor body. The exercised list-based \code{TensorLabel} path~\cite{tensorlabel} has the following conditions. Let the static positive output shape be $d=(d_0,\ldots,d_{r-1})$ and the loaded label list be $L$. The selected axis is
+\begin{equation}
+a=\min\{j:d_j>1\}.
+\end{equation}
+This path requires $a$ to exist, $d_a=|L|$, and $a=r-1$ for category-list conversion. Label counting follows the library's treatment of blank lines. Disassembly of the Support API jar used by the Android build confirms the strict final-axis guard. These are conditions of this overload and consumer path; determining which path is selected is a separate analysis obligation. The template matcher's coverage and abstention limits are reported in Section~\ref{sec:scope}.
+
+\paragraph{P: intervention preservation.}
+For each controlled intervention, we compare all non-metadata buffers and a canonical serialization with the \code{TFLITE\_METADATA} entry and its buffer removed. For associated-file interventions, we additionally require unchanged embedded metadata bytes and the complete model prefix preceding the associated ZIP archive. Generated source, compiled code, and corresponding runtime outputs are measured separately. Thus P supports graph/weight preservation; it does not substitute for execution evidence or imply semantic equivalence of the public interface.
+
+\section{E1: Executed Getter Failure}
+\label{sec:e1}
+\subsection{Artifact, controls, and execution}
+The primary artifact is the official version-1 float32 EfficientNet Lite0 classifier~\cite{efficientnet}, SHA-256 prefix \code{6c7ab0a6e5dc}. Its float32 input is \code{[1,224,224,3]}, its output is \code{[1,1000]}, and its associated label file contains 1,000 labels. Embedded image normalization specifies mean 127 and standard deviation 128. Full artifact digests and exact paths are recorded in the accompanying claim-to-evidence map.
+
+E1 comprises four variants: the original; a one-character, same-length description control; deletion of the final label from \code{labels\_without\_background.txt}; and restoration of the original label payload using the same deterministic archive writer. The deletion exactly reproduces the previously preserved mutant. It changes the associated resource, not the embedded metadata table. The description control does change embedded metadata. The observed restoration restores the label payload, preserved graph/metadata, and public behavior, but not the publisher's original ZIP container bytes.
+
+We generate with official Support 0.4.4 and compile the byte-unmodified Java using Temurin OpenJDK 17.0.12+7, targeting Java 8. A pinned minimal APK uses TFLite Java/native 2.13.0 and Support 0.4.4 on an Android API-30 x86\_64 software emulator, CPU and one interpreter thread. The build uses javac, D8, aapt2, zipalign, and apksigner. It does not use the generator's historical experimental/nightly Gradle configuration. No generated-source repair is applied to EfficientNet.
+
+An Android instrumentation consumer calls the actual public API:
+\begin{quote}\small\ttfamily\raggedright
+ContractModel.newInstance(...)\\
+\quad\(\rightarrow\)\ process(TensorImage)\\
+\quad\(\rightarrow\)\ Outputs.\\
+\hspace*{1.4em}getProbabilityAsCategoryList()
+\end{quote}
+Before calling the getter, the harness observes a duplicate of the generated output buffer without modifying it. It neither substitutes a handwritten decoder nor treats compilation as execution. It records structural acceptance, generation, compilation/package construction, loading, input preparation, inference, and output access, including the earliest failure and its stack trace.
+
+Two 224-by-224 RGB inputs are fixed before inspecting execution results: constant RGB 127 and the row-major byte stream $(37i+17)\bmod256$. Both use the generated default preprocessing. They test the interface mechanism and preservation, not recognition accuracy. The experimental unit is a component, variant, and consumer/toolchain configuration; inputs are repeated observations. A separately recorded replay reuses the same environment and APKs.
+
+\subsection{Observed failure and reversal}
+All four variants pass S, generation, unmodified source compilation, packaging, loading, input preparation, and inference. The original, description control, and restoration each return 1,000 categories for both inputs. Only deletion fails, at the generated getter (Table~\ref{tab:e1}). The recorded exception is \code{IllegalArgumentException}: ``Label number 999 mismatch the shape on axis 1.'' Its stack includes the generated \code{ContractModel\$Outputs} getter. The harness catches and records it; this is not an observed uncaught application crash.
+
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}lrlllll@{}}
+\toprule
+Condition & Labels & Graph/weights & Generated code & Raw output & Getter & Exposed labels\\
+\midrule
+Original & 1,000 & baseline & baseline & baseline & success & baseline\\
+Description control & 1,000 & same & same & same & success & same\\
+Label deletion & 999 & same & same & same & exception & not returned\\
+Label permutation & 1,000 & same & same & same & success & 999 changed\\
+Payload restoration / inverse & 1,000 & same & same & same & success & restored\\
+\bottomrule
+\end{tabular}
+\caption{Combined E1/E2 generated-wrapper evidence relative to the original. Every condition passes structural population, generation, compilation, packaging, loading, and inference. Code equality concerns generated Java and classes; raw equality concerns both prescribed inputs. The description edit changes embedded metadata but preserves the displayed properties. Restoration recovers label payloads and observed behavior, not the publisher's original ZIP container bytes. Shared phase conditions are not independent models. The permutation is detailed in Section~\ref{sec:e2}.}
+\label{tab:e1}
+\end{table*}
+
+All variants preserve canonical graph and non-metadata buffers. Deletion and restoration also preserve the embedded metadata and pre-ZIP model prefix. Generated Java, generated class files, and DEX are byte-identical across the four builds. For each input, every variant produces the same raw output bytes. Original, description, and restoration also return equal decoded lists whose score bits match the raw tensor positions. Whole APK bytes are not compared as a code-preservation criterion because their model assets differ.
+
+Replay reproduces the stage outcomes, exceptions, raw outputs, and successful decoded results. The intervention and reversal therefore establish that changing the associated labels can change output access through this unchanged generated interface while computation remains fixed. The missing-label condition is injected; it is not a natural defect discovered in the original EfficientNet artifact.
+
+\section{E2: Successful Decoding With Changed Association}
+\label{sec:e2}
+E2 tests a complementary intervention that preserves the selected decoder's label-count precondition. Before inspecting E1 Android predictions, we fix the cyclic transformation
+\begin{equation}
+[L_0,L_1,\ldots,L_{C-1}]\mapsto[L_1,\ldots,L_{C-1},L_0].
+\end{equation}
+It preserves the filename, label count, and multiset of strings. The four conditions are original, the same description control, the cyclic permutation, and its inverse restoration. They use the E1 consumer and inputs. Original/description conditions and restored artifact bytes overlap across E1/E2; they are not additional independent models.
+
+Every E2 condition passes structural population, generation, compilation, packaging, loading, inference, and the actual getter. The permutation preserves the graph, weights, embedded metadata, generated source/classes/DEX, and raw output bytes. Argmax, top-five indices, and every returned score bit remain unchanged. Nevertheless, 999 of the 1,000 returned label strings differ from the original for each input. One position retains its string because adjacent original entries 638 and 639 both contain ``maillot''; the prescribed permutation still applies to the complete list. The inverse restores the original decoded lists.
+
+For the RGB-pattern input, raw output position 904 retains score \code{0.23542051017284393}, while its exposed label changes from ``window screen'' to ``window shade.'' For the constant input, position 649 retains score \code{0.001122338930144906}, while ``megalith'' changes to ``microphone.'' The Java category index field is unset by this overload; these comparisons use returned-list positions, checked against all raw score bits, not that unset field.
+
+These executions establish a successful change in exposed association relative to the original artifact. A subsequent reference comparison (Section~\ref{sec:p3}) establishes disagreement with publisher-prescribed display-label order. Passing the permutation under D remains an intended boundary of a count/shape precondition; neither result evaluates prediction accuracy.
+
+Same-environment replay agrees. Its controller lost transport after three completed variants; the last variant had no complete recovered result. That incomplete attempt is preserved and is not classified as consumer success or failure. Restoration was then run separately with the same APK and parameters, yielding the same result. No completed observation was overwritten or replaced.
+
+\subsection{A publisher display-order reference (P3)}
+\label{sec:p3}
+P3 separately retrieves a reference outside the mutated model package. The versioned TFHub Lite0 fp32/2 artifact has a different whole-file hash from the focal EfficientNet model, but all 165 non-metadata buffers, computational fields, tensor descriptors, and ordered outputs agree. Both contain 166 buffers; only metadata buffer 165 differs, and no graph tensor references it. The shared output is tensor 163 with shape \code{[1,1000]}. This independently recomputed graph/weight bridge supports transferring an output-order specification without asserting byte-identical packages or reconstructing the export history.
+
+The exact Lite card, pinned at catalog commit \code{81fdea8ffa53}, identifies \code{lite0/classification/1} as its parent~\cite{tfhub-lite-card}. That parent explicitly prescribes the external \code{ImageNetLabels.txt} file and instructs readers to omit its first background line, making output index 0 ``tench''~\cite{tfhub-parent-card,imagenet-display}. The offset follows the publisher's instruction rather than an alignment fitted to the focal labels. The saved reference has 1,001 lines and SHA-256 prefix \code{536feacc519d}; it is a separately retrieved object, not the focal labels relabeled as ground truth.
+
+All 1,000 original and restored display associations agree with that reference. The predetermined cyclic permutation disagrees at 999 positions, including position 904: prescribed ``window screen'' becomes ``window shade'' despite successful E2 decoding and unchanged score bits. The complete position-wise comparison is preserved. Duplicate strings ``crane'' at 134/517 and ``maillot'' at 638/639 demonstrate why display strings are not stable class IDs; the adjacent maillot pair accounts for the sole unchanged permuted string. Thus $I_{\mathrm{display}}$ reports agreement, disagreement, and restored agreement, respectively.
+
+The full output-index-to-stable-synset-ID provenance chain remains \textsc{abstain}. Ancillary generic ImageNet/checkpoint lists agree in their names but do not establish the missing exact-artifact training lineage. The catalog commit preserves documentation retrieved for this study, not a verified release-time snapshot; the external label URL is unversioned and its retained bytes/hash define the reference used here. P3 performs no inference. It establishes a violation of the documented display-order specification, not an incorrect prediction on an image, accuracy loss, or a natural EfficientNet defect. Earlier E5 reports were produced without this reference and remain unchanged.
+
+\subsection{Fresh construction audit of E1/E2}
+\label{sec:rebuild}
+An additional agent-run construction check regenerated Java and rebuilt APKs in new output directories, with a new signing key and AVD, while reusing the installed SDK/JDK/Python toolchain. Eight phase/run/variant records covered five byte-distinct artifact--consumer configurations, one computational graph, and 16 input observations. All generated sources and generated model classes matched the earlier artifacts; full DEX equality was checked only across fresh variants because the harness gained an asset-hashing step. Immediately before newInstance, that step hashed the AssetManager resource using the same Context and asset name. These hashes matched the working models and APK assets. This checks resource identity before loading, not the native interpreter buffer; the unchanged generated loader and inspected library load path remain part of the evidence chain. The getter failure, changed label associations, reversals, and all raw output bytes matched the earlier observations. This fresh construction used the same toolchain and prescribed inputs; it is neither an independent human reproduction nor a fresh installation of the archived toolchains. Human audit remains pending.
+
+\section{E3/P2: Consumer Enforcement Boundaries}
+\label{sec:e3}
+P2 tests whether the earlier cross-platform stage contrast persists on the same Android device. The unmodified generated wrapper and official Task Vision/Base 0.4.4 execute as separate APK configurations on one fresh API-30 default x86\_64 AVD. The wrapper retains TFLite Java/native 2.13.0; Task uses its published native library. Both request CPU execution and one thread. Task calls \code{createFromFileAndOptions} with a 1,000-result limit and then \code{classify(TensorImage)}. The five exact original, description, deletion, permutation, and restored artifacts and the two E1/E2 RGB inputs are unchanged. Ten variant--consumer units cover one computational graph and 18 actual input observations; Task deletion fails before its two planned inputs are reached.
+
+All ten configurations compile, package, and install. Generated Java is byte-identical across the five variants; compiled classes and DEX are equal within each consumer. Source-model, copied-model, APK-asset, and pre-construction AssetManager hashes agree. This checks the supplied resource before public creation, not an intercepted native interpreter buffer. Both harnesses create the same UINT8 TensorImage from identical ARGB8888 bitmap inputs. Separate APKs preserve the published native integrations rather than forcing Task onto the wrapper's interpreter.
+
+The wrapper loads and completes \code{process} for every variant, then only deletion fails in its actual generated getter with the E1 label-cardinality exception. Task creates and classifies the other four variants, returning 1,000 categories for each input, but rejects deletion during its public creation call (Table~\ref{tab:stages}). The recorded public exception is \code{IllegalStateException}: ``Error getting native address of native library: task\_vision\_jni.'' Its preserved cause is \code{IllegalArgumentException}: ``Error occurred when initializing ImageClassifier: Got 1000 class(es) for output index 0, expected 999 according to the label map.'' The outer message wraps this cardinality rejection; it is not evidence of a missing native library. All exceptions are caught by instrumentation.
+
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+ & \multicolumn{3}{c}{Generated wrapper / Android} & \multicolumn{2}{c}{Official Task / same Android AVD}\\
+\cmidrule(lr){2-4}\cmidrule(l){5-6}
+Artifact & Create & Process & Getter & Create & Classify\\
+\midrule
+Original & pass & pass & pass & pass & pass\\
+Description control & pass & pass & pass & pass & pass\\
+Label deletion & pass & pass & fail & fail & not reached\\
+Label permutation & pass & pass & pass & pass & pass\\
+Restoration & pass & pass & pass & pass & pass\\
+\bottomrule
+\end{tabular}
+\caption{Fresh P2 executions on the same API/ABI/AVD. Each successful creation reaches both prescribed inputs. Task creation combines loading and initialization; its classify call combines preprocessing, inference, and result decoding. No separate Task internal inference or decoder stage is observed. Wrapper process and getter are distinct public calls.}
+\label{tab:stages}
+\end{table*}
+
+The mechanism review connects the Android JNI path to \code{vision::ImageClassifier::CreateFromOptions}, then \code{Init} and \code{CheckAndSetOutputs}~\cite{task-classifier}. That function builds the output label map and compares its length with the class dimension during initialization. The actual Java \code{TaskJniUtils} bytecode explains the outer exception and retained cause. The generated path instead constructs \code{TensorLabel} during getter access. For these single-resource artifacts, Task's first \code{TENSOR\_AXIS\_LABELS} selection and the generated metadata/file-index selection resolve to the same resource. These observations do not establish equivalent behavior for arbitrary multiple-resource or locale configurations.
+
+Within each consumer, permutation preserves all returned score bits by output/class index while changing 999 labels; restoration recovers the original decoded result. Wrapper raw outputs agree across all five variants. In the eight successful paired condition/input comparisons, all 1,000 returned score bit patterns and labels also agree between consumers after matching Task class indices to wrapper output positions. Task ranked-list position is not used as an output index. These are returned-value comparisons: the Task API exposes no separately captured raw tensors, and \code{classify} remains an atomic public call for this study.
+
+The same Android device removes the earlier OS/API/ABI difference, but consumer APIs and native integrations remain different. The routes share ecosystem components, including an identical Support API jar; they are not established as independent implementations. Exact Maven/native hashes and the source mechanism are preserved, without claiming a reproducible native source build or inferring Task's embedded interpreter version from the wrapper's 2.13.0 dependency. The result is a contrast between these configured consumers, not isolated interpreter-version causality.
+
+\paragraph{Earlier Linux comparison (E3).}
+The preserved Task Library 0.4.4 Python/C++ runs on Linux also rejected the same deletion during initialization with a \code{ValueError}, while original, description, and permutation initialized and classified successfully. Those earlier Android comparison rows reused E1/E2 execution. E3 therefore varied both consumer and platform; P2 adds the same-Android comparison rather than relabeling or duplicating those historical observations.
+
+\section{Hand: Reference Agreement and Consumer Reach}
+\label{sec:hand}
+The secondary Hand case supplies a different reference-backed association: graph-specific output roles, paired with a task-specific consumer boundary. The focal \code{hand\_landmarks\_detector.tflite}, SHA-256 prefix \code{6acda74af3fb}, names output 0 \code{handedness} with shape \code{[1,63]} and output 2 \code{landmarks} with shape \code{[1,1]}. Official Hand integration source routes these positions to landmarks and handedness, respectively~\cite{hand-graph}. Shape alone is not the reference.
+
+The source-to-artifact relationship requires an explicit bridge. MediaPipe v0.10.14 resolves to commit \code{4cf89a70942c}; its external-file declarations pin a test bundle by digest and storage generation~\cite{hand-assets}. That bundle's landmark component, prefix \code{11c272b891e1}, is not byte-identical to the focal component. Both contain 173 buffers; only metadata buffer 172 differs. All 172 non-metadata buffers, canonical graph, and output order agree. This checked graph/weight equivalence connects the official role reference to the focal computation; it is not a claim that the source directly pins the focal file hash.
+
+Exchanging metadata entries 0 and 2 changes four bytes and preserves the graph/weights. The supplied role reference disagrees with the original and agrees after exchange. Generic binding evidence remains separately qualified: both original and exchanged Java historically fail raw compilation; the same four separator-only rewrite rules change the same two lines, after which both compile. Fresh disassembly of those preserved, repaired classes confirms handedness-to-0 and landmarks-to-2 in the original, with the associations reversed after exchange. This audit adds no fresh Hand compilation or execution of a repaired Android wrapper.
+
+We also execute the actual official MediaPipe 0.10.14 CPU HandLandmarker Task in IMAGE mode, with one requested hand and detection, presence, and tracking thresholds of 0.5. The four bundle conditions are original, a container-only rewrite, the metadata exchange, and restoration. All other component payloads are unchanged. One \code{thumb\_up.jpg} input is fixed before execution; its bytes match the image pinned by the same source revision. Each condition returns one hand, 21 landmarks, and 21 world landmarks, with identical decoded handedness and coordinate bits. Same-environment replay agrees. These are decoded Task outputs, not internal raw model tensors or an accuracy benchmark.
+
+The unchanged Task result is consistent with its fixed index routing and explicit scalar binary-handedness conversion using hardcoded Right/Left labels. It does not imply that all metadata is ignored: input preprocessing still obtains model/image specifications. Nor is the metadata exchange a complete repair of the generic interface. Its category path changes from a 63-value tensor with two labels to \code{[1,1]}, which has no nonunit axis; D remains incompatible. Coordinate normalization is a further postprocessing concern. Reference-backed index agreement, scalar representation, decoder suitability, and coordinate units therefore remain distinct.
+
+\section{Supporting Scope Checks and E5 Limits}
+\label{sec:scope}
+\subsection{Development evidence and frozen external application}
+The primary execution study builds on an earlier, preserved exploration of 11 metadata-bearing components representing 10 canonical graph groups. Its 46 original/control/mutant variants include 11 output-metadata count reductions, all rejected by S; eight index exchanges and five label deletions are accepted. All 35 accepted variants retain corresponding numerical outputs in the recorded 105 CPU calls on three synthetic inputs. The 23 host-JVM probes isolate the selected decoder expression and do not instantiate Android interfaces. These records were freshly hash/array audited, not rerun or pooled with the new Android results. They informed rule development and the choice of a classifier whose raw wrapper and original decoder succeed.
+
+To examine scope beyond those inspected artifacts, we freeze the existing checker, mutation rules, inclusion/exclusion criteria, semantic-reference requirements, and 20 candidate URLs in a local commit before inspecting new candidate metadata. Four addresses return HTTP 404 and are retained without replacement. Sixteen downloads yield 18 component occurrences; excluding one previously studied component and two prior-graph occurrences leaves 15 new canonical graph groups. This is a purposive, same-session freeze, not third-party preregistration or representative sampling.
+
+All 15 pass S; I abstains for all because no qualifying artifact-tied reference is supplied. Eight generated wrappers compile unchanged and seven fail. D reports four compatible category paths, nine incompatible paths, and two inapplicable cases (Table~\ref{tab:external}). Five of the nine incompatible paths already fail javac; the other four carry explicit warnings that their non-RGB output is unsupported and falls back to a numeric tensor. No runtime execution is performed on these external originals. This phase establishes neither a new supported end-to-end natural failure nor a prevalence estimate. The abstentions describe the collected evidence, not a proof that semantic validation is impossible.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Frozen external outcome & Count\\
+\midrule
+Predeclared candidate URLs & 20\\
+Downloaded / unavailable & 16 / 4\\
+Extracted component occurrences & 18\\
+Excluded prior component & 1\\
+Excluded prior-graph occurrences & 2\\
+Included new canonical graph groups & 15\\
+S accepted / I abstained & 15 / 15\\
+Raw Java compiled / failed & 8 / 7\\
+D compatible / incompatible / inapplicable & 4 / 9 / 2\\
+External runtime executions & 0\\
+\bottomrule
+\end{tabular}
+\caption{E4 scope evidence. Sixteen downloads yield 18 component occurrences; one previously studied component and two prior-graph occurrences are excluded, leaving 15 new canonical graph groups. Counts use the labeled denominators. The nine static D incompatibilities are not nine established natural model defects.}
+\label{tab:external}
+\end{table}
+
+\subsection{E5: A supporting diagnostic}
+E5 uses regular expressions to extract selected getter, tensor, and associated-file declarations from official generated templates and inspect a matching default postprocessor. For the E1 mutant, it identifies \code{getProbabilityAsCategoryList}, output 0, axis 1 of size 1,000, and 999 loaded labels. This gives a path-specific diagnostic before compilation, loading, or inference. E5 reports S, supplied-reference I, selected-path D, and P separately; it does not execute the wrapper.
+
+Evaluation covers 65 byte-distinct fixtures with provenance aliases retained: the earlier controls/mutations and no-metadata originals, distinct E1/E2 additions, and the external originals. They are not 65 independent models. S accepts 52, rejects the 11 count controls, and abstains for two artifacts without metadata. D reports 27 incompatible, eight compatible, and 14 inapplicable fixtures; it abstains on three dynamic-signature Gesture fixtures and the two without metadata. Eleven structurally rejected fixtures do not reach D. All 65 semantic judgments abstain because no independently supplied artifact-tied reference is provided in this evaluation. The later Hand supplied-reference checks and P3 display-order comparison are separate; neither retroactively changes these frozen outcomes.
+
+E5 flags the actual EfficientNet getter failure and does not reject the four distinct artifact conditions whose Android getters succeed. It accepts the count-preserving permutation under D with semantic abstention. Its dynamic-signature policy also abstains on the seven-label Gesture mutant whose earlier concrete-shape isolated probe failed; thus it does not detect every previously observed failure. Outcomes on the 15 external graphs agree with the frozen rule application, which is an implementation-consistency check, not an accuracy estimate.
+
+The implementation abstains on dynamic signatures and processing forms it explicitly recognizes as unsupported. It is not a general Java data-flow analysis: full buffer and processor assignments are not traced, and an unmatched getter pattern can be reported as inapplicable rather than unknown. Factory or otherwise unrecognized processor syntax can evade the operation matcher. Such syntax is outside the demonstrated analysis scope; there is no guarantee that every unknown form is correctly reported as abstention. The audit found this limitation in the extraction code, without overturning a recorded fixture outcome.
+
+\subsection{Official checks and a simple baseline}
+A subsequent comparison uses the five byte-distinct E1/E2 artifacts in Table~\ref{tab:baseline}. The simple static baseline assumes one graph output, a unique \code{TENSOR\_AXIS\_LABELS} resource, a positive static shape/signature, and the default shape-preserving TensorLabel category path. It applies the library's axis and cardinality conditions without inferring arbitrary getter bindings. Its selected output and resource agree with the actual core bindings inspected in the audit. The unchanged E5 rules are rerun with logging redirected to a new evidence directory.
+
+All five files are readable and accepted by metadata population. The simple baseline, E5 (D), and official Linux Task initialization each reject only the 999-label deletion. Thus, the E5 command adds zero rejected conditions over either comparator in this set. Its role here is early diagnosis tied to a generated path, not a demonstrated increase in defect-detection capability. The count-preserving permutation passes, with I abstaining in these runs because no reference was supplied. These baseline runs stop at Task initialization and add no Task classification or Android execution.
+
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{7pt}
+\begin{tabular}{@{}lrlllll@{}}
+\toprule
+Condition & Labels & Display & Population & Simple baseline & E5 (D) & Task init.\\
+\midrule
+Original & 1,000 & readable & accepted & compatible & compatible & pass\\
+Description control & 1,000 & readable & accepted & compatible & compatible & pass\\
+Label deletion & 999 & readable & accepted & incompatible & incompatible & fail\\
+Label permutation & 1,000 & readable & accepted & compatible & compatible & pass\\
+Label restoration & 1,000 & readable & accepted & compatible & compatible & pass\\
+\bottomrule
+\end{tabular}
+\caption{Fresh checks of five exact files, with E1/E2 aliases deduplicated. Each has one graph output and one output-metadata entry. Compatible means only the selected static decoder preconditions; Task results concern initialization only. No class-order reference was supplied to these runs; the later P3 comparison is separate. The structural negative control is described in the text.}
+\label{tab:baseline}
+\end{table*}
+
+A separate preserved structural control has one graph output, zero output-metadata entries, and the unchanged 1,000-label archive. \code{MetadataDisplayer} reads it, but \code{MetadataPopulator} rejects it in \code{load\_metadata\_buffer} validation before \code{populate} is reached. Metadata-entry cardinality and associated-label cardinality are different conditions, and readability is not population acceptance. This control is reported separately from the five core conditions.
+
+\section{Relationship to Existing Work}
+Executable preconditions are established design-by-contract practice~\cite{meyer}, and official tooling documents metadata-driven interface generation~\cite{codegen-doc}. MLGuard proposes developer-specified ML contracts, probabilistic validation models, and generated wrappers that check conditions and respond to violations~\cite{mlguard}. Its reviewed paper presents a vision and future implementation/evaluation plan. These ideas precede our study; our contribution concerns observed behavior of existing generated interfaces under controlled artifact interventions.
+
+DocTer learns rules from annotated API documentation to extract parameter constraints and generate conforming and violating test inputs~\cite{docter}. ACETest instead analyzes operator validation code, propagates user-controllable properties, and solves extracted constraints to generate tests~\cite{acetest}. Its implementation combines LLVM/SVF analysis with library-specific handling and Z3. Thus, extracting shape constraints, consulting actual implementation, and using constraints for testing are established techniques. Our supporting checker does not establish a new general constraint-extraction algorithm.
+
+DARA compares model-derived architecture features with supplied naming and architectural metadata~\cite{dara}; it is not limited to documentation inspection. The abstract of Stalnaker et al. describes model/dataset documentation and supply-chain challenges~\cite{stalnaker}, while the AIBOM preprint abstract describes documentation completeness~\cite{aibom}. These works motivate consistency checking without equating structural completeness, independently supported association, and consumer compatibility.
+
+Our empirical distinction is the preserved connection between a concrete model package, its selected associated resource, an actual generated getter, and observed behavior under a pinned consumer configuration. E1/E2 hold graph computation and generated code fixed while testing failure, changed association, and reversal; E3/P2 record enforcement stages in two consumer configurations, including a same-Android comparison. The four method papers examined in full do not demonstrate this particular complete connection, but that bounded comparison does not establish an exhaustive novelty claim. The E5 procedure supports the evidence and diagnosis; the comparison in Section~\ref{sec:scope} found no additional rejected core condition over the simple baseline or Task initialization.
+
+\section{Validity, Reproduction, and Remaining Work}
+\paragraph{Causal and construct scope.}
+E1/E2 include a working original, a description control, a resource intervention, and a reversal. P, code equality, identical prescribed inputs, and raw-output comparisons separate the label-resource effect from changed graph computation in the tested configuration. Numerical equality on two inputs is not a task-accuracy result or a claim about every execution environment. E2 establishes changed association, and P3 establishes its disagreement with a publisher display-order specification through a checked graph/weight bridge. Stable class-ID provenance and prediction correctness remain unestablished; documentary source interpretation still requires human review. The description control supports only the tested edit and measured outcomes.
+
+\paragraph{Consumer and sampling scope.}
+The primary evidence concerns one unmodified generated classifier interface and pinned versions. The historical E3 comparison changes both consumer and platform/toolchain. P2 fixes the Android device, API and ABI while native integrations and public interfaces still differ; it does not isolate a single implementation variable. The Hand Task result concerns one source-pinned image and selected metadata fields. Its source interpretation and graph-equivalence bridge remain subject to independent human review. External sampling is small, purposive, and drawn from the same publisher ecosystem; static incompatibilities, seeded failures, and natural semantic findings must not be pooled. No precision/recall, production failure, latency, security/privacy effect, or user impact is estimated.
+
+\paragraph{Toolchain and replay.}
+The generated historical Gradle project is not built unchanged, and no Android Studio result is claimed. Additional declared APK dependencies were recovered and all initial APKs rebuilt before any Android execution; both build records are preserved. The later construction audit uses new outputs and a new AVD with the same installed toolchain (Section~\ref{sec:rebuild}). P2 likewise retains both successful pre-execution build attempts; its final rebuild separates API-return status from observation serialization without changing generated Java, artifacts, or the frozen consumer/input choices. The emulator is version 37.2.12 (build 16428233); its API-30 image archive is labeled revision 11 while internal properties report revision 10. Archive digest and runtime fingerprint identify the image. Task wheel/native hashes are archived, but their separate embedded interpreter versions and source-build equivalence are not established. Same-toolchain reconstruction and replay remain distinct from independent researcher reproduction.
+
+\paragraph{Artifacts and evidence status.}
+The local package preserves models, associated payloads, source references, controls, generated Java, classes/DEX, APKs, input/output bytes, exceptions, commands, dependency archives, and SHA-256 manifests. The companion claim map distinguishes historical executions, checks of their retained bytes, the subsequent construction/baseline runs, and P2 same-Android execution. The P3 reference inquiry adds retrieval and offline comparison of independently supplied documentation/resources; it adds no inference. The raw-array audit uses a separate checking implementation; it does not supply an independent observer of the earlier executions. Historical logcat dumps are cumulative, so exception attribution uses per-run device records and execution windows. The package still depends on existing workspace roots; a standalone public deposit, independent human audit, and venue-specific formatting remain open. The source-only GitHub repository excludes raw runtime evidence, models, dependency archives, generated outputs, and rendered papers. Its import indexes verify preserved source bytes, not the excluded execution observations.
+
+\paragraph{Literature scope.}
+The bounded audit inspected MLGuard, DocTer, and ACETest full texts at arXiv versions 2309.01379v1, 2109.01002v4, and 2305.17914v2, respectively, and DARA's preserved journal version. Publication identities were checked separately; the DocTer revision postdates its 2022 publication. Their tools were not rerun. Stalnaker and AIBOM positioning remains abstract-based; neither is among the four full-text method comparisons. The Stalnaker journal identity and AIBOM arXiv version were checked separately against publication records. This comparison is not a systematic search of all relevant contract or deployment work.
+
+\paragraph{AI assistance and responsibility.}
+AI assistance was used for coding, experiment execution, source inspection, analysis, and this rewrite. Additional agent checks of the manuscript are not independent human validation. No human audit is marked complete. Human authors must verify claims, references, artifacts, and interpretations, accept responsibility, and prepare the venue-required disclosure. No AI system is proposed as an author.
+
+\section{Conclusion}
+With graph computation and generated code held fixed, an associated-label intervention causes an actual generated Android getter to fail after inference; a count-preserving permutation instead succeeds while disagreeing with an independently supplied publisher display-order specification at 999 positions. Restoring the label payload recovers execution success and reference agreement without restoring the publisher's original ZIP container bytes, and fresh same-toolchain construction reproduces the runtime outcomes. Stable class-ID provenance and image prediction correctness remain outside these conclusions. The Task configuration rejects the cardinality mismatch earlier on the same Android device; native integrations still differ. The secondary Hand Task preserves its result on the prescribed input. These observations separate structural acceptance, reference-backed association agreement, and selected-consumer compatibility, with P checking intervention preservation. The simple-baseline comparison places E5 as a supporting diagnostic tool. The principal result is the controlled execution evidence connecting model-package associations to public-interface behavior and configured enforcement boundaries.
+
+\begin{thebibliography}{17}\small\raggedright
+\bibitem{schema} TensorFlow Lite Support. \emph{Metadata schema}, v0.4.4. \url{https://github.com/tensorflow/tflite-support/blob/v0.4.4/tensorflow_lite_support/metadata/metadata_schema.fbs}.
+\bibitem{codegen-doc} Google AI Edge. \emph{Generate model interfaces with metadata}. Retrieved October 2026; snapshot preserved. \url{https://developers.google.com/edge/litert/android/metadata/codegen}.
+\bibitem{tensorlabel} TensorFlow Lite Support. \emph{TensorLabel.java}, v0.4.4. Source and binary preserved in the evidence package.
+\bibitem{efficientnet} MediaPipe Models. \emph{EfficientNet Lite0, float32, version 1}. \url{https://storage.googleapis.com/mediapipe-models/image_classifier/efficientnet_lite0/float32/1/efficientnet_lite0.tflite}.
+\bibitem{tfhub-lite-card} TensorFlow Hub. \emph{EfficientNet Lite0 fp32/2 model card}. Catalog commit \code{81fdea8ffa53b5acbd66a012d17fb8f9602c714b}. \url{https://github.com/tensorflow/tfhub.dev/blob/81fdea8ffa53b5acbd66a012d17fb8f9602c714b/assets/docs/tensorflow/models/efficientnet/lite0/fp32/lite/2.md}.
+\bibitem{tfhub-parent-card} TensorFlow Hub. \emph{EfficientNet Lite0 classification/1 model card}. Same catalog commit; explicit output-index mapping and background rule. \url{https://github.com/tensorflow/tfhub.dev/blob/81fdea8ffa53b5acbd66a012d17fb8f9602c714b/assets/docs/tensorflow/models/efficientnet/lite0/classification/1.md}.
+\bibitem{imagenet-display} TensorFlow. \emph{ImageNetLabels.txt}. Retrieved reference snapshot, SHA-256 prefix \code{536feacc519d}; full bytes, digest, and storage generation preserved. \url{https://storage.googleapis.com/download.tensorflow.org/data/ImageNetLabels.txt}.
+\bibitem{task-classifier} TensorFlow Lite Support. \emph{ImageClassifier Java/JNI/C++ implementation}, v0.4.4, commit \code{133228616ca14e1b64c03f6a0ea8610f41a60783}. Source, bindings, and selected binaries preserved. \url{https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/vision/image_classifier.cc}.
+\bibitem{hand-graph} MediaPipe. \emph{Hand landmarks detector graph}, v0.10.14, resolved commit \code{4cf89a70942c}. Immutable-commit source preserved. \url{https://github.com/google-ai-edge/mediapipe/blob/4cf89a70942ca3252e46ace7e4552f53be9bef2e/mediapipe/tasks/cc/vision/hand_landmarker/hand_landmarks_detector_graph.cc}.
+\bibitem{hand-assets} MediaPipe. \emph{External file declarations}, commit \code{4cf89a70942ca3252e46ace7e4552f53be9bef2e}. Source-pinned model and image bytes preserved. \url{https://github.com/google-ai-edge/mediapipe/blob/4cf89a70942ca3252e46ace7e4552f53be9bef2e/third_party/external_files.bzl}.
+\bibitem{mlguard} Sheng Wong et al. MLGuard: Defend Your Machine Learning Model! In \emph{Proceedings of the 1st International Workshop on Dependability and Trustworthiness of Safety-Critical Systems with Machine Learned Components (SE4SafeML)}, 2023. \href{https://doi.org/10.1145/3617574.3617859}{doi:10.1145/3617574.3617859}.
+
+\bibitem{docter} Danning Xie et al. DocTer: Documentation-Guided Fuzzing for Testing Deep Learning API Functions. In \emph{Proceedings of the 31st ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)}, 2022. \href{https://doi.org/10.1145/3533767.3534220}{doi:10.1145/3533767.3534220}.
+
+\bibitem{acetest} Jingyi Shi et al. ACETest: Automated Constraint Extraction for Testing Deep Learning Operators. In \emph{Proceedings of the 32nd ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)}, 2023. \href{https://doi.org/10.1145/3597926.3598088}{doi:10.1145/3597926.3598088}.
+
+\bibitem{meyer} B. Meyer. Applying ``design by contract.'' \emph{Computer}, 25(10):40--51, 1992. \href{https://doi.org/10.1109/2.161279}{doi:10.1109/2.161279}.
+\bibitem{stalnaker} T. Stalnaker et al. An empirical analysis of machine learning model and dataset documentation, supply chain, and licensing challenges on Hugging Face. \emph{ACM Transactions on Software Engineering and Methodology}, 35(8), 2026. \href{https://doi.org/10.1145/3776739}{doi:10.1145/3776739}.
+\bibitem{dara} W. Jiang et al. ``I see models being a whole other thing'': an empirical study of pre-trained model naming conventions and a tool for enhancing naming consistency. \emph{Empirical Software Engineering}, 30:155, 2025. \href{https://doi.org/10.1007/s10664-025-10711-4}{doi:10.1007/s10664-025-10711-4}.
+\bibitem{aibom} M. Erfan, A. Ryan, and M. R. Rahman. A large-scale measurement of AI Bill of Materials completeness in Hugging Face models. \href{https://arxiv.org/abs/2607.17242v1}{arXiv:2607.17242v1}, 2026. Preprint.
+\end{thebibliography}
+\end{document}

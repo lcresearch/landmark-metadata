@@ -28,6 +28,29 @@ raw files, binary identities or chronology.
 - **Remaining boundaries:** Historical Linux E3 is retained as context; P2 strengthens the stage comparison on Android but does not isolate all library/runtime effects. E4 is bounded external static examination, not a prevalence or natural runtime-defect study. Hand is a reference-backed binding witness plus unchanged Task output on one fixed image, not a second established end-to-end failure. E5 uses limited regex/template association and cannot guarantee correct abstention for every unknown getter or processor syntax.
 - The manuscript was revised after the audit. Four specified full-text related-work comparisons were completed; this is not an exhaustive novelty proof. Independent human verification remains pending.
 
+## Repository review follow-up
+
+The [current editorial source](work/review-followup-20261004/manuscript/paper.tex)
+is a new working copy; imported snapshots remain unchanged. Its
+[source/parent digest index](docs/CURRENT_MANUSCRIPT.json) distinguishes it from
+the preserved P2/P3 revision identified below. The follow-up clarifies E5 naming,
+the E4 denominator flow, payload/behavior restoration and abstract-only
+background citations. It changes no experimental outcome. The
+[review disposition](docs/REVIEW_FOLLOWUP.md) and
+[English audit summary](docs/AUDIT_SUMMARY_EN.md) distinguish repository checks
+from the excluded runtime evidence and pending human review.
+
+The original source check passed. The extended check covers current document
+navigation, warning-only historical README locators, imported bytes/sizes,
+the historical manuscript hash in this note and both indexed manuscript sources.
+Nine regression tests cover navigation, imported bytes and manuscript provenance,
+including protocol-relative external links and the P2/P3 parent import.
+This does not verify external `SHA256SUMS` bytes or recover the evidence archive.
+This editorial follow-up performs no new model execution. P2 and the bounded P3
+reference inquiry are already complete on main; their results are retained in
+the current working manuscript. Human audit and contribution/novelty assessment
+remain open.
+
 ## Analysis and next action
 
 ### Fresh cloud reconstruction, 2026-10-04
@@ -83,13 +106,13 @@ current locations or portable downloads:
 | `/workspace/metadata-contract-p2p3-20261004T073824Z/P3` | Reference inquiry `SHA256SUMS` SHA-256: `77345fcadf085095d23722ac7a16ef7c4d5d34c202e4f32b7046750cad919de3` |
 | `/workspace/metadata-contract-p2p3-20261004T073824Z` | Final 1,159-entry `SHA256SUMS` SHA-256: `aed26d18de158a3eebf5dcd7a3996356da99419779b689addd1f083a6a0cec27`; excludes P2 SDK/AVD operational state |
 
-The current revised manuscript and P2/P3 first-party code/documents are indexed
+The preserved P2/P3 manuscript and first-party code/documents are indexed
 under [the latest follow-up](research/20261004-p2-p3/README.md). The full local
 round preserves both successful build attempts and the reference audit's first
 failed Git-tree-header assumption, resolved by reconstructing all committed tree
 objects. These are not hidden or relabeled runtime failures. All 3,207 entries in
 the three protected old manifests were independently rechecked unchanged.
-The current manuscript source SHA-256 is
+The preserved P2/P3 parent manuscript source SHA-256 is
 `118ccc9820454f8ac1d3b0416ba456401e5ef3f9e9d0199ba1c59991103ec5a9`.
 Its generic reading PDF rendered to nine pages and all pages were agent-inspected;
 PDF/build products remain local and no venue-length compliance is claimed.
@@ -105,3 +128,11 @@ Eleven synthetic regressions pass; this is a verifier repair, not a new model ru
 The complete external fixture identity list and raw assets remain unavailable
 in this source-only checkout. P2/P3 completion and current research priorities
 above are unchanged.
+
+The final PR #1 review also found that the exported claim reader accepted empty
+Hand manifests and incomplete Task/Android identity sets. The maintained reader
+in `work/observation-review-20261004/` requires exact identities and writes to a
+new output directory; the original reader and all five claim-export hashes stay
+unchanged. Nine new regressions bring the repository total to 29 passing tests.
+The historical 677-check result predates this repair; excluded model evidence
+was not rerun. Use the maintained entry point linked from the root README.
