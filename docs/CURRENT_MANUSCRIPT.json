@@ -1,0 +1,8 @@
+{
+  "repository_path": "work/review-followup-20261004/manuscript/paper.tex",
+  "sha256": "17b08d4dcf40820245464c838ee3a4a816b7fb768f22a3b537eb965ae8006f90",
+  "derived_from_repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/manuscript/paper.tex",
+  "derived_from_sha256": "390445a494c24cf9e9069ca3d5ab62e4d0174587f631856b764846d54908782d",
+  "base_commit": "a341d8bb558f618b44d43c1c0d99a488465d2e15",
+  "scope": "Editorial follow-up only; no new model execution or human audit."
+}

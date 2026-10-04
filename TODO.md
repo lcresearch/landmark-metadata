@@ -20,9 +20,19 @@ source-only repository policy.
   disclose limited E5 parsing, audit scope and cross-platform E3 limitations.
 - [x] Prepare source-only repository: code, manuscript source, protocols and
   concise project notes; remove stale HTML TODO and PDF text-extract entry points.
+- [x] Follow up on repository review: add historical README availability notes
+  and an English audit summary; preserve imported snapshots byte-for-byte.
+- [x] Extend the source check to current Markdown and historical source READMEs,
+  cross-check the MEMORY/import/source digest and add seven regression tests.
+- [x] Create a separate editorial manuscript working copy: consistent E5 name,
+  explicit E4 component flow, label-payload restoration boundaries and disclosed
+  abstract-only background citations. Verify all 14 bibliography keys are cited.
 
 ## Next: P2 — same-Android consumer comparison
 
+- [ ] Recover the exact historical model conditions, prescribed RGB inputs and
+  pinned Android dependencies/tools. These were absent from the repository-review
+  environment; source checks and manuscript compilation do not complete P2.
 - [ ] Declare the comparison plan and dependency versions before execution.
 - [ ] Run generated wrapper and Android Task ImageClassifier on the same
   emulator/API/ABI with identical model bytes and inputs. Reuse original,
@@ -31,6 +41,8 @@ source-only repository policy.
   output/decoding stages, exact diagnostics and stages not reached.
 - [ ] Explain checks using the actual implementations; retain remaining runtime
   and integration differences. Do not change versions to obtain an expected result.
+- [ ] Use Kotlin for new harness orchestration while calling the byte-preserved
+  generated Java directly. A graphical UI is not required for this stage comparison.
 - [ ] Update manuscript claims according to the observed result, including if
   the previously observed difference disappears.
 
@@ -51,6 +63,9 @@ source-only repository policy.
   Distinguish author checking from independent reproduction.
 - [ ] Finish bounded technical positioning; four-paper review is not exhaustive
   novelty verification. Do not promise method novelty from renaming the checks.
+- [ ] Explain the practical research consequence beyond a known constraint
+  appearing at different API stages. Consistent claims and same-Android results
+  alone do not establish a strong publication contribution.
 - [ ] Choose venue, apply its template, review disclosure and page budget;
   current eight-page generic layout does not establish venue fit.
 - [ ] Plan an independently usable evidence/reproduction deposit separately.

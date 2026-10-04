@@ -9,12 +9,16 @@ source and continuation documents, **not the complete evidence archive**.
 
 ## Start here
 
-- [Current manuscript source](sources/metadata-contract-paper-revision-20261004T065132Z/manuscript/paper.tex)
+- [Current manuscript source](work/review-followup-20261004/manuscript/paper.tex)
+- [Current manuscript and preserved-parent digests](docs/CURRENT_MANUSCRIPT.json)
 - [Project memory and current evidence boundaries](MEMORY.md)
 - [Current TODO](TODO.md)
 - [Decisions and scope](docs/DECISIONS.md)
 - [Future agent instructions](AGENTS.md)
 - [Exact source import paths and SHA-256 hashes](docs/SOURCE_IMPORT.json)
+- [Repository review disposition](docs/REVIEW_FOLLOWUP.md)
+- [Historical README availability notes](docs/HISTORICAL_README_NOTES.md)
+- [English summary of the historical audit](docs/AUDIT_SUMMARY_EN.md)
 
 ## Code map
 
@@ -25,7 +29,8 @@ source and continuation documents, **not the complete evidence archive**.
 | [E1–E7 scripts](sources/metadata-contract-e2e-20261004T030536Z/scripts) | Actual Android harness, classifier interventions, Task comparison, frozen external checks and Hand boundary experiment |
 | [Frozen E4 protocol](sources/metadata-contract-e2e-20261004T030536Z/E4/protocol) | Predeclared candidates, scope, mutation rules and source snapshots |
 | [Agent audit](sources/metadata-contract-audit-20261004T062010Z) | Preservation checks, fresh build scripts, baseline comparison and claim/literature audit scripts |
-| [Current manuscript revision](sources/metadata-contract-paper-revision-20261004T065132Z) | LaTeX, editorial scripts and revision notes |
+| [Preserved audit-informed revision](sources/metadata-contract-paper-revision-20261004T065132Z) | Historical LaTeX, editorial scripts and revision notes |
+| [Current editorial follow-up](work/review-followup-20261004) | Current LaTeX; no new model execution or human audit |
 
 `sources/` retains original timestamped names and source bytes. Per-experiment
 implementation snapshots are intentional historical versions, not extra models.
@@ -49,6 +54,11 @@ venue-specific formatting remain pending.
 
 Run `python scripts/check_source_tree.py` for source integrity, syntax and
 source-only scope checks. No model experiment is executed by that command.
+Current Markdown file targets, imported source digests/sizes, the import-backed
+`MEMORY.md` source hash and both manuscript digests are checked. Historical
+README evidence locators produce warnings; excluded evidence hashes are reported
+as unchecked. Run `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v`
+for checker regression tests without creating caches in the source tree.
 `scripts/import_workspace_sources.py` records how this source snapshot was
 selected; it requires the original local workspace and refuses to overwrite
 changed imported files.
