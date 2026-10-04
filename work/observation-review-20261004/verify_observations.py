@@ -6,11 +6,18 @@ import json
 from collections import Counter
 from pathlib import Path
 import struct
+import sys
+
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] /
+                       'sources/repro-audit-20261004/maintained'))
+from evidence_validation import required_fixture_digests, require_exact_identities
 
 HAND_VARIANTS = ('original', 'container_control', 'metadata_exchange', 'restoration')
 CORE_VARIANTS = ('original', 'description_control', 'label_deletion',
                  'label_permutation', 'label_restoration')
 BASELINE_MODES = ('displayer', 'populator', 'simple_baseline', 'task_init')
+E5_MANIFEST_SHA256 = 'bf49a475696eec4b38fb17587f6541a8393da14297e5dca1d433a051ba166e79'
 ANDROID_VARIANTS = {
     'E1': ('original', 'description_control', 'label_deletion', 'label_restoration'),
     'E2': ('original', 'description_control', 'label_permutation', 'permutation_restoration'),
@@ -64,10 +71,42 @@ def task():
                       result['exception_message'] == 'Got 1000 class(es) for output index 0, expected 999 according to the label map.' and
                       len(result['observations']) == 0)
                 continue
-            check(f'{phase}/{variant}/completed',
-                  all(result[k] == 'PASS' for k in
-                      ('initialization_status', 'classify_status', 'inference_status', 'decoder_status')))
+            valid_inputs = exact_records(f'{phase}/{variant}/exact_two_inputs',
+                                         result.get('observations'), ('input',),
+                                         [('gray127',), ('rgb_pattern',)])
+            completed = all(result.get(k) == 'PASS' for k in
+                            ('initialization_status', 'classify_status',
+                             'inference_status', 'decoder_status'))
+            check(f'{phase}/{variant}/completed', completed)
+            if not valid_inputs or not completed:
+                continue
+            input_records = {item['input']: item for item in result['observations']}
             for input_name in ('gray127', 'rgb_pattern'):
+                first_check = len(checks)
+                prefix = f'{phase}/{variant}/{input_name}'
+                item = input_records[input_name]
+                # Task classify combines inference and decoding; the worker records
+                # only input preparation, classify status and the returned count here.
+                input_completed = (item.get('input_preparation_status') == 'PASS' and
+                                   item.get('classify_status') == 'PASS' and
+                                   item.get('returned_categories') == 1000)
+                check(prefix+'/input_completed', input_completed)
+                if not input_completed:
+                    continue
+                input_path = Path('/workspace/repro-task/inputs') / f'{input_name}-input.rgb'
+                try:
+                    input_bytes = input_path.read_bytes()
+                except OSError as exc:
+                    check(prefix+'/prescribed_input', False, {'error': str(exc)})
+                    continue
+                files[str(input_path)] = hashlib.sha256(input_bytes).hexdigest()
+                expected_input = (bytes([127]) * (224*224*3) if input_name == 'gray127'
+                                  else bytes((37*i+17) % 256 for i in range(224*224*3)))
+                valid_input = (input_bytes == expected_input and
+                               files[str(input_path)] == item.get('input_sha256'))
+                check(prefix+'/prescribed_input', valid_input)
+                if not valid_input:
+                    continue
                 path = folder / f'{input_name}-decoded.json'
                 heads = read(path)
                 categories = heads[0]['categories']
@@ -79,6 +118,9 @@ def task():
                           for x in categories))
                 if variant == 'original':
                     original[input_name] = by_index
+                if input_name not in original:
+                    check(prefix+'/validated_original_available', False)
+                    continue
                 reference = original[input_name]
                 changed = sum(x['label'] != reference[i]['label'] for i, x in by_index.items())
                 check(f'{phase}/{variant}/{input_name}/score_preservation',
@@ -91,8 +133,9 @@ def task():
                 if phase == 'replay':
                     primary = read(Path('/workspace/repro-task/primary') / variant / path.name)
                     check(f'{phase}/{variant}/{input_name}/equal_primary', heads == primary)
-                observations.append({'phase': phase, 'variant': variant, 'input': input_name,
-                                     'changed_labels': changed})
+                if all(row['passed'] for row in checks[first_check:]):
+                    observations.append({'phase': phase, 'variant': variant, 'input': input_name,
+                                         'changed_labels': changed})
     task_baseline()
     return {'execution_records': 10, 'successful_decoded_observations': len(observations),
             'categories_read': len(observations) * 1000, 'observations': observations}
@@ -291,10 +334,25 @@ def android_code():
             'scope': 'Direct fresh on-disk file hashing; no comparison with missing historical binaries.'}
 
 
-def preflight():
+def preflight(required_manifest=None, required_manifest_sha256=E5_MANIFEST_SHA256):
     root = Path('/workspace/repro-external/E5')
+    manifest = Path(required_manifest) if required_manifest is not None else root / 'results.json'
+    try:
+        required = required_fixture_digests(manifest, required_manifest_sha256)
+    except (OSError, ValueError, TypeError, KeyError) as exc:
+        check('E5/frozen_required_manifest', False, {'error': str(exc)})
+        return {'expected_fixtures': 65, 'complete': False}
+    files[str(manifest)] = required_manifest_sha256
+    check('E5/frozen_required_manifest', True,
+          {'path': str(manifest), 'sha256': required_manifest_sha256})
     fixtures = read(root / 'results.json')['fixtures']
-    check('E5/nonempty_unique_65', len(fixtures) == 65 and len({x['model_sha256'] for x in fixtures}) == 65)
+    try:
+        require_exact_identities((x['model_sha256'] for x in fixtures), required,
+                                 'Original E5 fixtures')
+    except (TypeError, KeyError, ValueError) as exc:
+        check('E5/exact_required_65', False, {'error': str(exc)})
+        return {'expected_fixtures': 65, 'complete': False}
+    check('E5/exact_required_65', True)
     counts = {}
     for dimension, expected in {
         'STRUCTURAL': {'ACCEPTED_BY_METADATA_POPULATOR_0_4_4': 52, 'REJECTED_BY_METADATA_POPULATOR_0_4_4': 11, 'ABSTAIN_NO_METADATA': 2},
@@ -325,16 +383,18 @@ def preflight():
         digest = hashlib.sha256(model.read_bytes()).hexdigest()
         check('E5/exact_Android_artifact/'+variant, digest in by_hash and
               (by_hash[digest]['DECODER_COMPATIBILITY']['status'] == 'INCOMPATIBLE') == (variant == 'label_deletion'))
-    return {'fixtures': len(fixtures), 'counts': counts,
+    return {'fixtures': len(fixtures), 'complete': True, 'counts': counts,
             'core_extra_rejections_over_simple_and_Task_init': 0,
             'scope': 'Static on actual recovered files; no Android success/failure is inferred.'}
 
 
-def main(output_dir):
+def main(output_dir, required_manifest=None, required_manifest_sha256=E5_MANIFEST_SHA256):
     files.clear()
     checks.clear()
     result = {'scope': 'Independent readback of new records; no historical raw-byte comparison or new model execution.',
-              'task': task(), 'hand': hand(), 'external': external(), 'android': android(), 'android_code': android_code(), 'preflight': preflight()}
+              'task': task(), 'hand': hand(), 'external': external(), 'android': android(),
+              'android_code': android_code(),
+              'preflight': preflight(required_manifest, required_manifest_sha256)}
     result['checks'] = checks
     result['passed'] = sum(x['passed'] for x in checks)
     result['failed'] = sum(not x['passed'] for x in checks)
@@ -355,4 +415,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output-dir', type=Path, required=True,
                         help='New report directory outside sealed evidence; existing reports are never overwritten')
-    raise SystemExit(main(parser.parse_args().output_dir))
+    parser.add_argument('--required-manifest', type=Path,
+                        help='Frozen original E5 catalog or manifest of 65 artifact_sha256s; defaults to the original E5 catalog path')
+    parser.add_argument('--required-manifest-sha256', default=E5_MANIFEST_SHA256,
+                        help='Previously recorded manifest digest; default pins claim C32, never derive from the run being checked')
+    args = parser.parse_args()
+    raise SystemExit(main(args.output_dir, args.required_manifest, args.required_manifest_sha256))

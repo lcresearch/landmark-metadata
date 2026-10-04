@@ -6,6 +6,10 @@ source-only repository policy.
 
 ## Completed
 
+- [x] Close the remaining maintained readback gaps: require the separately
+  pinned E5 fixture set and validate exact Task input records, bytes/hashes,
+  statuses and category counts before counting success; add negative and
+  reordered-positive regressions without modifying historical evidence.
 - [x] Close the PR #1 claim-reader completeness gap in a new maintained source
   area; require exact Hand/Task/Android identities, preserve exported audit
   provenance, and pass all 29 repository regression tests.
@@ -126,9 +130,10 @@ source-only repository policy.
 
 ## Corrections from the fresh audit
 
-- [ ] Revise the manuscript's library-equivalent label-count wording (line 58),
+- [x] Revise the manuscript's library-equivalent label-count wording,
   disclose VT/U+2028 counterexamples and distinguish the corrected checker from
-  the historical 65-fixture evaluation. Preserve that original draft.
+  the historical 65-fixture evaluation. Preserve the original draft and update
+  the current source digest index.
 - [ ] Replace remaining historical report templates if they are promoted to
   reusable tools: required evidence must gate prose, status and exit code;
   empty evidence and companion failures must fail explicitly.

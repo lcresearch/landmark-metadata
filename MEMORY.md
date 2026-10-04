@@ -71,8 +71,9 @@ The old E5 and simple baseline both use Python `splitlines()`, which differs fro
 the actual Java FileUtil reader. New label-only fixtures demonstrate both false
 compatibility (VT) and false incompatibility (U+2028). The new maintained copies
 use Java-compatible valid-UTF-8 parsing and abstain on malformed UTF-8; real Java
-differential tests and all original 65-fixture decisions pass. Manuscript line
-58 needs correction beyond the existing regex limitation. Other confirmed
+differential tests and all original 65-fixture decisions pass in that recorded
+reconstruction. The current manuscript now discloses the parser counterexamples
+and corrected implementation separately from the historical evaluation. Other confirmed
 historical script defects include success prose on missing/empty evidence,
 inconsistent aggregate exit codes, and optimization-sensitive assertions. New
 strict readers verify actual files and complete denominators; these findings do
@@ -136,3 +137,22 @@ new output directory; the original reader and all five claim-export hashes stay
 unchanged. Nine new regressions bring the repository total to 29 passing tests.
 The historical 677-check result predates this repair; excluded model evidence
 was not rerun. Use the maintained entry point linked from the root README.
+
+## Remaining observation-reader gaps repaired
+
+A subsequent review demonstrated two additional synthetic false-pass cases:
+a substituted non-core E5 fixture could pass count/self-consistency checks, and
+Task results with absent or contradictory per-input observations could be counted
+as successful when decoded files remained. The maintained reader now gates E5
+on a separately digest-pinned 65-artifact manifest and requires exact Task input
+identities, recorded preparation/classify success, category counts, and input
+bytes/hashes. Eleven new regressions cover failures and valid reordered evidence;
+all 40 repository tests and the source checks pass. All 354 imported files and
+five historical claim-export hashes remain unchanged.
+
+The current paper now distinguishes the historical parser from the maintained
+valid-UTF-8 fix and describes the VT/U+2028 cases as isolated decoder probes.
+The historical 65-fixture and 677-check records, exported sources, and P2/P3
+results remain unchanged. This repair adds no model inference or human review;
+the fresh reconstruction's excluded raw evidence was not available for another
+complete readback. See [repair scope](docs/OBSERVATION_REPAIR.md).

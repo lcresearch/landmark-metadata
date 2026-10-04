@@ -1,8 +1,8 @@
 {
   "repository_path": "work/review-followup-20261004/manuscript/paper.tex",
-  "sha256": "72cf76b9d540d4b5b537e6e6d1443584741708a24c17e611b41f5c2456c29346",
+  "sha256": "6e77175d25ff0834978463bdb2359ab82e6cf62bc8e2d611960c23dcf8b48537",
   "derived_from_repository_path": "research/20261004-p2-p3/manuscript/paper.tex",
   "derived_from_sha256": "118ccc9820454f8ac1d3b0416ba456401e5ef3f9e9d0199ba1c59991103ec5a9",
   "base_commit": "da974504f932aac70049e737d59cb67a8715fbca",
-  "scope": "Editorial follow-up on the completed P2/P3 manuscript; no new model execution or human audit."
+  "scope": "Editorial follow-up on the completed P2/P3 manuscript, including the audited label-parser correction and its bounded counterexamples; no new model execution or human audit by this manuscript update."
 }

@@ -62,9 +62,12 @@ venue-specific formatting remain pending.
 
 The fresh audit reproduced the main controlled results and found a label-reader
 mismatch in the evaluated checker plus weaknesses in historical report scripts.
-The maintained checker corrects the parser; the historical paper still requires
-the corresponding limitation/correction. Read the new report before relying on
-old summary prose or interpreting a zero exit code as verified evidence.
+The maintained checker corrects the parser; the current manuscript distinguishes
+that correction and its isolated counterexamples from the historical 65-fixture
+evaluation. The maintained observation reader also requires the frozen E5
+artifact set and validates Task inputs before counting successful observations.
+Read the [repair scope](docs/OBSERVATION_REPAIR.md) and fresh audit before relying
+on historical summary prose or interpreting a zero exit code as verified evidence.
 
 Run `python scripts/check_source_tree.py` for source integrity, syntax and
 source-only scope checks. No model experiment is executed by that command.
