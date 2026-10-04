@@ -58,5 +58,7 @@ changed imported files. `scripts/import_p2p3_sources.py` separately records the
 new follow-up selection; both source manifests are checked without running models.
 
 Future work should save source, TODO updates, concise decisions and continuation
-notes here under the same source-only rule. Large evidence and build outputs
+notes here under the same source-only rule, using a feature branch and pull
+request for user review. Do not push directly to the default branch or merge
+without an explicit user instruction. Large evidence and build outputs
 remain excluded unless the user explicitly changes that scope.

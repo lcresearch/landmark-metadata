@@ -4,6 +4,7 @@ These are concise working decisions and their reasons. They are not raw reasonin
 
 | Decision | Reason and operational consequence |
 |---|---|
+| Use pull requests for every future repository change. | The user's latest instruction replaces direct pushes with feature-branch commits and a PR for review. Never update the default branch directly through Git or API, and do not merge or enable auto-merge without explicit user instruction. This includes documentation and memory updates. |
 | Keep this repository source-only. | The user's latest scope excludes SDKs, emulators, and build products. Preserve code, necessary source documentation, TODO, and concise handoff notes; keep full binary evidence elsewhere. Do not describe this repository as the complete evidence archive or a self-contained offline reproduction package. |
 | Lead with controlled executable evidence. | E1 reaches the actual generated getter after successful inference; E2 returns successfully with changed label association. Together they establish observable interface changes under the tested computation-preserving interventions. |
 | Keep S/I/D distinct; place P in experimental validity. | Structural acceptance, supplied-reference agreement, and decoder compatibility answer different questions. Preservation supports causal attribution and is not general model correctness. |
