@@ -1,0 +1,1407 @@
+{
+  "scope": "Bounded public-report search, not model execution, prevalence estimation or independently reproduced natural defects.",
+  "protocol_path": "research/20261004-significance-review/PROTOCOL.md",
+  "protocol_sha256": "f4276729916194d5de3490588240d0b8cfcdf541e82f4b5782074f8019b1d041",
+  "retrieved_date_utc": "2026-10-04",
+  "tool_version": "gh version 2.46.0 (2025-01-13 Debian 2.46.0-3)",
+  "external_root": "/workspace/significance-review-20261004/public-reports",
+  "query_cutoff": "created:<=2026-10-04",
+  "comment_cutoff_note": "Issue creation dates bounded; comments are their current retrieved state, not a historical snapshot. All retrieved selected comments predate the cutoff.",
+  "counts": {
+    "queries": 8,
+    "query_failures": 0,
+    "sum_of_query_total_counts_nonunique": 415,
+    "returned_occurrences": 31,
+    "unique_issues_title_body_triaged": 30,
+    "duplicate_occurrences": 1,
+    "eligible": 7,
+    "excluded_at_title_body": 23,
+    "selected_for_issue_comments": 7,
+    "eligible_not_inspected_under_budget": 0,
+    "selected_issue_fetch_failures": 0,
+    "comments_returned_and_inspected": 69,
+    "comments_omitted": 0,
+    "linked_implementation_pages_inspected": 0,
+    "models_downloaded": 0,
+    "models_executed": 0,
+    "artifact_reproduced_natural_cases": 0
+  },
+  "searches": [
+    {
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "search/issues",
+        "-f",
+        "q=repo:tensorflow/tflite-support is:issue \"Label number\" created:<=2026-10-04",
+        "-f",
+        "sort=created",
+        "-f",
+        "order=asc",
+        "-f",
+        "per_page=5",
+        "-f",
+        "page=1"
+      ],
+      "retrieved_utc": "2026-10-04T19:43:36.839332+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/query-01.json",
+      "response_sha256": "16e49ae0a614a0384432cac8f3aee92ba36e5d90e3905503281f05bc717c10c5",
+      "response_bytes": 6605,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/query-01.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "query_id": 1,
+      "query": "repo:tensorflow/tflite-support is:issue \"Label number\" created:<=2026-10-04",
+      "total_count": 1,
+      "incomplete_results": false,
+      "returned_count": 1,
+      "returned_urls": [
+        "https://github.com/tensorflow/tflite-support/issues/770"
+      ],
+      "returned_ids": [
+        1183109707
+      ]
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "search/issues",
+        "-f",
+        "q=repo:tensorflow/tensorflow is:issue \"Label number\" created:<=2026-10-04",
+        "-f",
+        "sort=created",
+        "-f",
+        "order=asc",
+        "-f",
+        "per_page=5",
+        "-f",
+        "page=1"
+      ],
+      "retrieved_utc": "2026-10-04T19:43:37.433335+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/query-02.json",
+      "response_sha256": "cdcdfb68538ac73e8b5befc4ce78b235e97eeda0b07cc987d7e09676be73003f",
+      "response_bytes": 22128,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/query-02.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "query_id": 2,
+      "query": "repo:tensorflow/tensorflow is:issue \"Label number\" created:<=2026-10-04",
+      "total_count": 153,
+      "incomplete_results": false,
+      "returned_count": 5,
+      "returned_urls": [
+        "https://github.com/tensorflow/tensorflow/issues/97",
+        "https://github.com/tensorflow/tensorflow/issues/504",
+        "https://github.com/tensorflow/tensorflow/issues/1269",
+        "https://github.com/tensorflow/tensorflow/issues/2072",
+        "https://github.com/tensorflow/tensorflow/issues/2084"
+      ],
+      "returned_ids": [
+        116139917,
+        121957609,
+        135957980,
+        150552083,
+        150723059
+      ]
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "search/issues",
+        "-f",
+        "q=repo:google-ai-edge/mediapipe is:issue \"label map\" created:<=2026-10-04",
+        "-f",
+        "sort=created",
+        "-f",
+        "order=asc",
+        "-f",
+        "per_page=5",
+        "-f",
+        "page=1"
+      ],
+      "retrieved_utc": "2026-10-04T19:43:38.125250+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/query-03.json",
+      "response_sha256": "e6725eae9ee906461dbc5786438e6242cc1306d0565ed6acd45919df536b1c8d",
+      "response_bytes": 35734,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/query-03.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "query_id": 3,
+      "query": "repo:google-ai-edge/mediapipe is:issue \"label map\" created:<=2026-10-04",
+      "total_count": 25,
+      "incomplete_results": false,
+      "returned_count": 5,
+      "returned_urls": [
+        "https://github.com/google-ai-edge/mediapipe/issues/9",
+        "https://github.com/google-ai-edge/mediapipe/issues/22",
+        "https://github.com/google-ai-edge/mediapipe/issues/195",
+        "https://github.com/google-ai-edge/mediapipe/issues/199",
+        "https://github.com/google-ai-edge/mediapipe/issues/204"
+      ],
+      "returned_ids": [
+        468462965,
+        480125646,
+        511650008,
+        512281074,
+        513913519
+      ]
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "search/issues",
+        "-f",
+        "q=repo:tensorflow/tflite-support is:issue \"label map\" created:<=2026-10-04",
+        "-f",
+        "sort=created",
+        "-f",
+        "order=asc",
+        "-f",
+        "per_page=5",
+        "-f",
+        "page=1"
+      ],
+      "retrieved_utc": "2026-10-04T19:43:38.894969+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/query-04.json",
+      "response_sha256": "f8bddd657100dc85211c225a4cca866b5a6ce3bb4ef1a1607511a6a3d8c21eaf",
+      "response_bytes": 11285,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/query-04.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "query_id": 4,
+      "query": "repo:tensorflow/tflite-support is:issue \"label map\" created:<=2026-10-04",
+      "total_count": 2,
+      "incomplete_results": false,
+      "returned_count": 2,
+      "returned_urls": [
+        "https://github.com/tensorflow/tflite-support/issues/624",
+        "https://github.com/tensorflow/tflite-support/issues/870"
+      ],
+      "returned_ids": [
+        953352336,
+        1331826639
+      ]
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "search/issues",
+        "-f",
+        "q=repo:tensorflow/tensorflow is:issue metadata label order created:<=2026-10-04",
+        "-f",
+        "sort=created",
+        "-f",
+        "order=asc",
+        "-f",
+        "per_page=5",
+        "-f",
+        "page=1"
+      ],
+      "retrieved_utc": "2026-10-04T19:43:39.528667+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/query-05.json",
+      "response_sha256": "6498f2b49f9e2ed8be7bf98ddbab3a898918a0dcb1e7d18bcbca90f0503ede20",
+      "response_bytes": 33107,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/query-05.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "query_id": 5,
+      "query": "repo:tensorflow/tensorflow is:issue metadata label order created:<=2026-10-04",
+      "total_count": 115,
+      "incomplete_results": false,
+      "returned_count": 5,
+      "returned_urls": [
+        "https://github.com/tensorflow/tensorflow/issues/492",
+        "https://github.com/tensorflow/tensorflow/issues/1045",
+        "https://github.com/tensorflow/tensorflow/issues/1824",
+        "https://github.com/tensorflow/tensorflow/issues/1990",
+        "https://github.com/tensorflow/tensorflow/issues/2386"
+      ],
+      "returned_ids": [
+        121881405,
+        132828533,
+        146958443,
+        148902982,
+        155022605
+      ]
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "search/issues",
+        "-f",
+        "q=repo:tensorflow/tflite-support is:issue label order created:<=2026-10-04",
+        "-f",
+        "sort=created",
+        "-f",
+        "order=asc",
+        "-f",
+        "per_page=5",
+        "-f",
+        "page=1"
+      ],
+      "retrieved_utc": "2026-10-04T19:43:39.986860+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/query-06.json",
+      "response_sha256": "700bd2c1116a786f1169a09998535695712540f8d07ea653f6a71aa888b227fb",
+      "response_bytes": 31425,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/query-06.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "query_id": 6,
+      "query": "repo:tensorflow/tflite-support is:issue label order created:<=2026-10-04",
+      "total_count": 3,
+      "incomplete_results": false,
+      "returned_count": 3,
+      "returned_urls": [
+        "https://github.com/tensorflow/tflite-support/issues/269",
+        "https://github.com/tensorflow/tflite-support/issues/703",
+        "https://github.com/tensorflow/tflite-support/issues/870"
+      ],
+      "returned_ids": [
+        779598573,
+        1011167067,
+        1331826639
+      ]
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "search/issues",
+        "-f",
+        "q=repo:google-ai-edge/mediapipe is:issue metadata output created:<=2026-10-04",
+        "-f",
+        "sort=created",
+        "-f",
+        "order=asc",
+        "-f",
+        "per_page=5",
+        "-f",
+        "page=1"
+      ],
+      "retrieved_utc": "2026-10-04T19:43:40.646340+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/query-07.json",
+      "response_sha256": "c65429de555729908ef5008d670aa4d6526ae50afe0a62f3f116c7b9799b37f1",
+      "response_bytes": 43124,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/query-07.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "query_id": 7,
+      "query": "repo:google-ai-edge/mediapipe is:issue metadata output created:<=2026-10-04",
+      "total_count": 101,
+      "incomplete_results": false,
+      "returned_count": 5,
+      "returned_urls": [
+        "https://github.com/google-ai-edge/mediapipe/issues/194",
+        "https://github.com/google-ai-edge/mediapipe/issues/197",
+        "https://github.com/google-ai-edge/mediapipe/issues/266",
+        "https://github.com/google-ai-edge/mediapipe/issues/289",
+        "https://github.com/google-ai-edge/mediapipe/issues/362"
+      ],
+      "returned_ids": [
+        511397619,
+        511741151,
+        526864922,
+        532257474,
+        544186716
+      ]
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "search/issues",
+        "-f",
+        "q=repo:tensorflow/tflite-support is:issue metadata output created:<=2026-10-04",
+        "-f",
+        "sort=created",
+        "-f",
+        "order=asc",
+        "-f",
+        "per_page=5",
+        "-f",
+        "page=1"
+      ],
+      "retrieved_utc": "2026-10-04T19:43:41.307575+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/query-08.json",
+      "response_sha256": "0f155cf166dec8543d6d66bf1d771580fe162692442e8efd4f1f96ddee22ff31",
+      "response_bytes": 27049,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/query-08.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "query_id": 8,
+      "query": "repo:tensorflow/tflite-support is:issue metadata output created:<=2026-10-04",
+      "total_count": 15,
+      "incomplete_results": false,
+      "returned_count": 5,
+      "returned_urls": [
+        "https://github.com/tensorflow/tflite-support/issues/181",
+        "https://github.com/tensorflow/tflite-support/issues/278",
+        "https://github.com/tensorflow/tflite-support/issues/319",
+        "https://github.com/tensorflow/tflite-support/issues/395",
+        "https://github.com/tensorflow/tflite-support/issues/450"
+      ],
+      "returned_ids": [
+        711293848,
+        786601936,
+        800379122,
+        837422955,
+        855915926
+      ]
+    }
+  ],
+  "triage": [
+    {
+      "url": "https://github.com/tensorflow/tflite-support/issues/770",
+      "id": 1183109707,
+      "number": 770,
+      "title": "Semantic Segementation Example \"Label number 21 mismatch\" exception",
+      "created_at": "2022-03-28T08:55:09Z",
+      "first_query": 1,
+      "first_rank": 1,
+      "occurrences": [
+        {
+          "query": 1,
+          "rank": 1
+        }
+      ],
+      "triage_order": 1,
+      "eligible": true,
+      "triage_reason": "Generated segmentation getter stack trace and label-axis mismatch; directly relevant.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tensorflow/issues/97",
+      "id": 116139917,
+      "number": 97,
+      "title": "How to extract predictions",
+      "created_at": "2015-11-10T16:14:04Z",
+      "first_query": 2,
+      "first_rank": 1,
+      "occurrences": [
+        {
+          "query": 2,
+          "rank": 1
+        }
+      ],
+      "triage_order": 2,
+      "eligible": false,
+      "triage_reason": "General request for extracting trained-model predictions; no association/resource contract mechanism in title/body.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tensorflow/issues/504",
+      "id": 121957609,
+      "number": 504,
+      "title": "Transfer learning tutorial",
+      "created_at": "2015-12-14T01:12:32Z",
+      "first_query": 2,
+      "first_rank": 2,
+      "occurrences": [
+        {
+          "query": 2,
+          "rank": 2
+        }
+      ],
+      "triage_order": 3,
+      "eligible": false,
+      "triage_reason": "Transfer-learning tutorial request; no deployment association mechanism in title/body.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tensorflow/issues/1269",
+      "id": 135957980,
+      "number": 1269,
+      "title": "Loading the newer inception model in Android demo example and No OpKernel was registered to support Op error",
+      "created_at": "2016-02-24T05:14:49Z",
+      "first_query": 2,
+      "first_rank": 3,
+      "occurrences": [
+        {
+          "query": 2,
+          "rank": 3
+        }
+      ],
+      "triage_order": 4,
+      "eligible": true,
+      "triage_reason": "Manual Android output-name binding changes from output:0 to softmax:0, followed by unsupported operation; adjacent binding report, uncertain metadata relevance.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tensorflow/issues/2072",
+      "id": 150552083,
+      "number": 2072,
+      "title": "run image_retraining always get  ‘integer division or modulo by zero’",
+      "created_at": "2016-04-23T12:44:21Z",
+      "first_query": 2,
+      "first_rank": 4,
+      "occurrences": [
+        {
+          "query": 2,
+          "rank": 4
+        }
+      ],
+      "triage_order": 5,
+      "eligible": false,
+      "triage_reason": "Training category-list division by zero; no deployed output/metadata contract.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tensorflow/issues/2084",
+      "id": 150723059,
+      "number": 2084,
+      "title": " Check failed: message->ParseFromZeroCopyStream(&adaptor) ",
+      "created_at": "2016-04-25T01:32:34Z",
+      "first_query": 2,
+      "first_rank": 5,
+      "occurrences": [
+        {
+          "query": 2,
+          "rank": 5
+        }
+      ],
+      "triage_order": 6,
+      "eligible": false,
+      "triage_reason": "GraphDef parse failure after replacing Android assets; no explicit label/resource/binding mismatch mechanism.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/google-ai-edge/mediapipe/issues/9",
+      "id": 468462965,
+      "number": 9,
+      "title": "Strange result for face detection gpu demo",
+      "created_at": "2019-07-16T06:00:54Z",
+      "first_query": 3,
+      "first_rank": 1,
+      "occurrences": [
+        {
+          "query": 3,
+          "rank": 1
+        }
+      ],
+      "triage_order": 7,
+      "eligible": false,
+      "triage_reason": "Face-detection quality/screenshot report; no contract mechanism described.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/google-ai-edge/mediapipe/issues/22",
+      "id": 480125646,
+      "number": 22,
+      "title": "Could not use custom model in object detection",
+      "created_at": "2019-08-13T12:20:35Z",
+      "first_query": 3,
+      "first_rank": 2,
+      "occurrences": [
+        {
+          "query": 3,
+          "rank": 2
+        }
+      ],
+      "triage_order": 8,
+      "eligible": true,
+      "triage_reason": "Model replacement explicitly adjusts label map, num class and num boxes, then no detections; uncertain downstream compatibility mechanism.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/google-ai-edge/mediapipe/issues/195",
+      "id": 511650008,
+      "number": 195,
+      "title": "the options of TfliteTensorsToClassificationCalculator miss a field 'num_classes'",
+      "created_at": "2019-10-24T01:20:30Z",
+      "first_query": 3,
+      "first_rank": 3,
+      "occurrences": [
+        {
+          "query": 3,
+          "rank": 3
+        }
+      ],
+      "triage_order": 9,
+      "eligible": true,
+      "triage_reason": "Classification calculator example specifies num_classes absent from options schema; adjacent documented cardinality/configuration discrepancy.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/google-ai-edge/mediapipe/issues/199",
+      "id": 512281074,
+      "number": 199,
+      "title": "It doesn't work after changing .tflite model",
+      "created_at": "2019-10-25T03:21:04Z",
+      "first_query": 3,
+      "first_rank": 4,
+      "occurrences": [
+        {
+          "query": 3,
+          "rank": 4
+        }
+      ],
+      "triage_order": 10,
+      "eligible": false,
+      "triage_reason": "Generic model replacement stops preview while outputs are explicitly ignored; no label/output-metadata mechanism in title/body.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/google-ai-edge/mediapipe/issues/204",
+      "id": 513913519,
+      "number": 204,
+      "title": "Running Youtube8m model_inference with local videos takes long time to render the video with labels and my computer CRASH",
+      "created_at": "2019-10-29T13:22:55Z",
+      "first_query": 3,
+      "first_rank": 5,
+      "occurrences": [
+        {
+          "query": 3,
+          "rank": 5
+        }
+      ],
+      "triage_order": 11,
+      "eligible": false,
+      "triage_reason": "Queue/deadlock and memory/rendering complaint; label map appears in pasted graph but no label-contract mechanism is alleged.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tflite-support/issues/624",
+      "id": 953352336,
+      "number": 624,
+      "title": "Question on what number does tflite model maker dataloader resize images to ",
+      "created_at": "2021-07-26T23:01:08Z",
+      "first_query": 4,
+      "first_rank": 1,
+      "occurrences": [
+        {
+          "query": 4,
+          "rank": 1
+        }
+      ],
+      "triage_order": 12,
+      "eligible": false,
+      "triage_reason": "Training data-loader image resize question, not label-map association or output contract.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tflite-support/issues/870",
+      "id": 1331826639,
+      "number": 870,
+      "title": "Unknown image file format. One of JPEG, PNG, GIF, BMP required.",
+      "created_at": "2022-08-08T12:50:43Z",
+      "first_query": 4,
+      "first_rank": 2,
+      "occurrences": [
+        {
+          "query": 4,
+          "rank": 2
+        },
+        {
+          "query": 6,
+          "rank": 3
+        }
+      ],
+      "triage_order": 13,
+      "eligible": true,
+      "triage_reason": "Reports inability to import model in Android ML folder then image-byte decoding failure; retained as uncertain generated-binding compatibility, though primary symptom is input-side.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tensorflow/issues/492",
+      "id": 121881405,
+      "number": 492,
+      "title": "memory issues",
+      "created_at": "2015-12-12T21:17:38Z",
+      "first_query": 5,
+      "first_rank": 1,
+      "occurrences": [
+        {
+          "query": 5,
+          "rank": 1
+        }
+      ],
+      "triage_order": 14,
+      "eligible": false,
+      "triage_reason": "GPU memory allocator issue during RNN training.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tensorflow/issues/1045",
+      "id": 132828533,
+      "number": 1045,
+      "title": "tf.train.string_input_producer breaks when num_epochs is set",
+      "created_at": "2016-02-10T21:57:22Z",
+      "first_query": 5,
+      "first_rank": 2,
+      "occurrences": [
+        {
+          "query": 5,
+          "rank": 2
+        }
+      ],
+      "triage_order": 15,
+      "eligible": false,
+      "triage_reason": "Training input queue epochs variable initialization failure.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tensorflow/issues/1824",
+      "id": 146958443,
+      "number": 1824,
+      "title": "Profiling tools for open source TensorFlow ",
+      "created_at": "2016-04-08T15:22:13Z",
+      "first_query": 5,
+      "first_rank": 3,
+      "occurrences": [
+        {
+          "query": 5,
+          "rank": 3
+        }
+      ],
+      "triage_order": 16,
+      "eligible": false,
+      "triage_reason": "Generic computational-graph profiling feature request.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tensorflow/issues/1990",
+      "id": 148902982,
+      "number": 1990,
+      "title": "Installation of Tensorflow 0.8 in an Anaconda Python 3.5 Environment Failed",
+      "created_at": "2016-04-16T23:46:30Z",
+      "first_query": 5,
+      "first_rank": 4,
+      "occurrences": [
+        {
+          "query": 5,
+          "rank": 4
+        }
+      ],
+      "triage_order": 17,
+      "eligible": false,
+      "triage_reason": "Python wheel/platform installation mismatch.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tensorflow/issues/2386",
+      "id": 155022605,
+      "number": 2386,
+      "title": "Distributed tensorflow hang when turning from Async to Sync",
+      "created_at": "2016-05-16T12:48:13Z",
+      "first_query": 5,
+      "first_rank": 5,
+      "occurrences": [
+        {
+          "query": 5,
+          "rank": 5
+        }
+      ],
+      "triage_order": 18,
+      "eligible": false,
+      "triage_reason": "Distributed training synchronization hang.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tflite-support/issues/269",
+      "id": 779598573,
+      "number": 269,
+      "title": "Out of Memory using tflite on Android",
+      "created_at": "2021-01-05T21:26:37Z",
+      "first_query": 6,
+      "first_rank": 1,
+      "occurrences": [
+        {
+          "query": 6,
+          "rank": 1
+        }
+      ],
+      "triage_order": 19,
+      "eligible": false,
+      "triage_reason": "Repeated inference memory/thread exhaustion; labels are read but no label-contract failure alleged.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tflite-support/issues/703",
+      "id": 1011167067,
+      "number": 703,
+      "title": "Add Metadata doesn't work with YoloV5 model",
+      "created_at": "2021-09-29T16:22:56Z",
+      "first_query": 6,
+      "first_rank": 2,
+      "occurrences": [
+        {
+          "query": 6,
+          "rank": 2
+        }
+      ],
+      "triage_order": 20,
+      "eligible": true,
+      "triage_reason": "Object-detector writer produces four output metadata entries for one-output YOLOv5; explicit cardinality rejection while preparing Android import.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/google-ai-edge/mediapipe/issues/194",
+      "id": 511397619,
+      "number": 194,
+      "title": "MediaPipe feature extractor outputs a corrupted tfrecord ",
+      "created_at": "2019-10-23T15:18:26Z",
+      "first_query": 7,
+      "first_rank": 1,
+      "occurrences": [
+        {
+          "query": 7,
+          "rank": 1
+        }
+      ],
+      "triage_order": 21,
+      "eligible": false,
+      "triage_reason": "Serialized media SequenceExample/TFRecord format complaint, not model-associated resource parsing.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/google-ai-edge/mediapipe/issues/197",
+      "id": 511741151,
+      "number": 197,
+      "title": "YouTube-8M feature extraction graph extract the features Error",
+      "created_at": "2019-10-24T06:45:44Z",
+      "first_query": 7,
+      "first_rank": 2,
+      "occurrences": [
+        {
+          "query": 7,
+          "rank": 2
+        }
+      ],
+      "triage_order": 22,
+      "eligible": false,
+      "triage_reason": "Video input file cannot be opened; unrelated media-path error.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/google-ai-edge/mediapipe/issues/266",
+      "id": 526864922,
+      "number": 266,
+      "title": "Get hand_tracking_cpu source code to extract detected hand metadata",
+      "created_at": "2019-11-21T21:58:52Z",
+      "first_query": 7,
+      "first_rank": 3,
+      "occurrences": [
+        {
+          "query": 7,
+          "rank": 3
+        }
+      ],
+      "triage_order": 23,
+      "eligible": false,
+      "triage_reason": "Request for source to export detected hand coordinates; metadata means runtime result, not embedded model metadata.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/google-ai-edge/mediapipe/issues/289",
+      "id": 532257474,
+      "number": 289,
+      "title": "error when runing the YouTube-8M feature extraction graph",
+      "created_at": "2019-12-03T20:50:40Z",
+      "first_query": 7,
+      "first_rank": 4,
+      "occurrences": [
+        {
+          "query": 7,
+          "rank": 4
+        }
+      ],
+      "triage_order": 24,
+      "eligible": false,
+      "triage_reason": "Feature extraction ends at error writing an output file; no output-metadata contract diagnostic.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/google-ai-edge/mediapipe/issues/362",
+      "id": 544186716,
+      "number": 362,
+      "title": "Too much pain for using the MediaPipe feature extractor ",
+      "created_at": "2019-12-31T13:14:38Z",
+      "first_query": 7,
+      "first_rank": 5,
+      "occurrences": [
+        {
+          "query": 7,
+          "rank": 5
+        }
+      ],
+      "triage_order": 25,
+      "eligible": false,
+      "triage_reason": "Missing FFmpeg header during build; unrelated dependency error.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tflite-support/issues/181",
+      "id": 711293848,
+      "number": 181,
+      "title": "Which header files to include to run BERT qa task?",
+      "created_at": "2020-09-29T16:57:12Z",
+      "first_query": 8,
+      "first_rank": 1,
+      "occurrences": [
+        {
+          "query": 8,
+          "rank": 1
+        }
+      ],
+      "triage_order": 26,
+      "eligible": false,
+      "triage_reason": "C++ header/unique_ptr API usage question, unrelated binding generator or model output association.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tflite-support/issues/278",
+      "id": 786601936,
+      "number": 278,
+      "title": "NameError: name 'ImageClassifierWriter' is not defined",
+      "created_at": "2021-01-15T06:30:03Z",
+      "first_query": 8,
+      "first_rank": 2,
+      "occurrences": [
+        {
+          "query": 8,
+          "rank": 2
+        }
+      ],
+      "triage_order": 27,
+      "eligible": false,
+      "triage_reason": "Undefined Python writer variable NameError; no model/resource validation reached.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tflite-support/issues/319",
+      "id": 800379122,
+      "number": 319,
+      "title": "Error running Bert Question Answerer",
+      "created_at": "2021-02-03T14:25:05Z",
+      "first_query": 8,
+      "first_rank": 3,
+      "occurrences": [
+        {
+          "query": 8,
+          "rank": 3
+        }
+      ],
+      "triage_order": 28,
+      "eligible": true,
+      "triage_reason": "Task BERT API reports missing metadata process unit; retained as adjacent resource/precondition compatibility, input-side rather than focal output association.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tflite-support/issues/395",
+      "id": 837422955,
+      "number": 395,
+      "title": "Bazel run failed on nl_classifier_demo",
+      "created_at": "2021-03-22T07:40:47Z",
+      "first_query": 8,
+      "first_rank": 4,
+      "occurrences": [
+        {
+          "query": 8,
+          "rank": 4
+        }
+      ],
+      "triage_order": 29,
+      "eligible": false,
+      "triage_reason": "C++ unique_ptr/StatusOr compilation error; unrelated metadata compatibility.",
+      "triage_basis": "search title/body only"
+    },
+    {
+      "url": "https://github.com/tensorflow/tflite-support/issues/450",
+      "id": 855915926,
+      "number": 450,
+      "title": "What is the meaning of score (e.g. 8.109188)?",
+      "created_at": "2021-04-12T12:18:41Z",
+      "first_query": 8,
+      "first_rank": 5,
+      "occurrences": [
+        {
+          "query": 8,
+          "rank": 5
+        }
+      ],
+      "triage_order": 30,
+      "eligible": false,
+      "triage_reason": "Question about interpreting non-probability score; no association/order/resource or generated-binding failure specified.",
+      "triage_basis": "search title/body only"
+    }
+  ],
+  "selected_reports": [
+    {
+      "id": "R1",
+      "mechanism": "Generated segmentation Category getter selects the first non-unit axis, reported 257, against 21 labels.",
+      "classification": "DIRECT_RELATED_REPORT_SUPPORTED_PATH_LIMIT",
+      "observation": "Reporter supplies actual generated getter stack trace, shape [1,257,257,21], and label count 21. Repository member says this segmentation model is unsupported by drag-and-drop generation and recommends Task ImageSegmenter.",
+      "authority": "GitHub author_association MEMBER for lu-wang-g; confirmation is the support boundary, not an independently reproduced trace.",
+      "references": [
+        "https://github.com/tensorflow/tflite-support/issues/770#issuecomment-1108777779"
+      ],
+      "artifact_provenance": "LiteModelDeeplabv31Metadata2 and official example guide named; no component digest, full generated source, APK, or exact Android Studio/Support version. Model bytes not retrieved.",
+      "versions": "Report created 2022-03-28; library and generator versions unspecified.",
+      "significance": "A public developer report closely resembles the actual-getter compatibility mechanism. It also narrows the claim: the organization member describes that consumer/model combination as unsupported.",
+      "not_established": "A supported official-path natural defect; artifact-level reproduction; current-version persistence; affected-user frequency.",
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "repos/tensorflow/tflite-support/issues/770"
+      ],
+      "retrieved_utc": "2026-10-04T19:45:21.569265+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/issue-01.json",
+      "response_sha256": "13c6b2fa40d607d5ac818df1910efac95f5da7168f8f10e20b06bae0c1f16d26",
+      "response_bytes": 6531,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/issue-01.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "url": "https://github.com/tensorflow/tflite-support/issues/770",
+      "comments_request": {
+        "command": [
+          "gh",
+          "api",
+          "--method",
+          "GET",
+          "repos/tensorflow/tflite-support/issues/770/comments",
+          "-f",
+          "per_page=100",
+          "-f",
+          "page=1"
+        ],
+        "retrieved_utc": "2026-10-04T19:45:22.080363+00:00",
+        "exit_code": 0,
+        "response_path": "/workspace/significance-review-20261004/public-reports/issue-01-comments.json",
+        "response_sha256": "a14fe9ceece4520dd97a622869f75ed6eb69d425ebc952f82c85d03f80b8c076",
+        "response_bytes": 5377,
+        "stderr_path": "/workspace/significance-review-20261004/public-reports/issue-01-comments.stderr",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "FETCHED"
+      },
+      "reported_comment_count": 3,
+      "returned_comments": 3,
+      "omitted_comments": 0,
+      "title": "Semantic Segementation Example \"Label number 21 mismatch\" exception",
+      "created_at": "2022-03-28T08:55:09Z",
+      "updated_at": "2022-04-25T16:17:20Z",
+      "state": "open",
+      "state_reason": null,
+      "evidence_level": "PUBLIC_REPORT_ONLY",
+      "artifact_reproduced": false,
+      "linked_implementation_pages_inspected": 0
+    },
+    {
+      "id": "R2",
+      "mechanism": "Manual Android GraphDef output names, label files and compiled operator availability differ between model versions.",
+      "classification": "ADJACENT_MANUAL_INTEGRATION_MIXED_CAUSES",
+      "observation": "Body reports output:0 not found, then unsupported BatchNorm operator. Contributor comments explain operator inclusion; a later user reports placeholder labels caused by the wrong label filename.",
+      "authority": "Relevant implementation advice has CONTRIBUTOR association; the label-filename diagnosis is a user report (NONE). Do not promote these badges to verified maintainer identity.",
+      "references": [
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-190964869",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-199274236",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-240426133"
+      ],
+      "artifact_provenance": "Dated public Inception archive locators and custom model references; no digest-bound full reproduction bundle. No model downloaded.",
+      "versions": "2016-2017 discussion, mostly latest/source builds rather than fixed commits; one later reporter states SDK 24.0.1 and NDK r12b.",
+      "significance": "Supports the existence of resource/name integration troubleshooting outside this study; manually coded TensorFlow GraphDef consumer is adjacent, not generated TFLite metadata.",
+      "not_established": "Same cause across comments; metadata-only failure; controlled preservation; correctness of labels; a new natural case reproduced here.",
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "repos/tensorflow/tensorflow/issues/1269"
+      ],
+      "retrieved_utc": "2026-10-04T19:45:22.627149+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/issue-02.json",
+      "response_sha256": "6f84d799f323bda41a3ed59f67ba21eaed791cb79d986530379cec2584d6b824",
+      "response_bytes": 7621,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/issue-02.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "url": "https://github.com/tensorflow/tensorflow/issues/1269",
+      "comments_request": {
+        "command": [
+          "gh",
+          "api",
+          "--method",
+          "GET",
+          "repos/tensorflow/tensorflow/issues/1269/comments",
+          "-f",
+          "per_page=100",
+          "-f",
+          "page=1"
+        ],
+        "retrieved_utc": "2026-10-04T19:45:23.175582+00:00",
+        "exit_code": 0,
+        "response_path": "/workspace/significance-review-20261004/public-reports/issue-02-comments.json",
+        "response_sha256": "ac18e6665bd888ad2e02af9a0dc436952e724b732b7981a3d144f2c6563c3fa5",
+        "response_bytes": 103608,
+        "stderr_path": "/workspace/significance-review-20261004/public-reports/issue-02-comments.stderr",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "FETCHED"
+      },
+      "reported_comment_count": 45,
+      "returned_comments": 45,
+      "omitted_comments": 0,
+      "title": "Loading the newer inception model in Android demo example and No OpKernel was registered to support Op error",
+      "created_at": "2016-02-24T05:14:49Z",
+      "updated_at": "2017-02-04T06:00:03Z",
+      "state": "closed",
+      "state_reason": "completed",
+      "evidence_level": "PUBLIC_REPORT_ONLY",
+      "artifact_reproduced": false,
+      "linked_implementation_pages_inspected": 0
+    },
+    {
+      "id": "R3",
+      "mechanism": "Custom SSD replacement changes label map, number of classes and boxes, but selected quantized consumer configuration may be incompatible.",
+      "classification": "ALTERNATIVE_EXPLANATION_NO_LABEL_FAILURE_ESTABLISHED",
+      "observation": "Reporter sees no detections. Replies suggest use_quantized_tensors:true and newer quantized-model support; no reporter confirmation follows.",
+      "authority": "Reply author fanzhanggoogle has NONE association in retrieved API; no verified maintainer identity claimed.",
+      "references": [
+        "https://github.com/google-ai-edge/mediapipe/issues/22#issuecomment-523149861",
+        "https://github.com/google-ai-edge/mediapipe/issues/22#issuecomment-523150159"
+      ],
+      "artifact_provenance": "Custom SSD model recipe and configuration, no exact published component bytes/hash.",
+      "versions": "2019-08 report; no pinned MediaPipe/TFLite release.",
+      "significance": "Counterweight: a superficially relevant replacement/label-map issue can have an input quantization/support explanation.",
+      "not_established": "Label association error; output decoder defect; confirmed fix or successful reproduction.",
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "repos/google-ai-edge/mediapipe/issues/22"
+      ],
+      "retrieved_utc": "2026-10-04T19:45:23.807289+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/issue-03.json",
+      "response_sha256": "b8e1e4603a5e9a110056b53133daa13ddc82fb247252498f4574dcad3b742b95",
+      "response_bytes": 6519,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/issue-03.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "url": "https://github.com/google-ai-edge/mediapipe/issues/22",
+      "comments_request": {
+        "command": [
+          "gh",
+          "api",
+          "--method",
+          "GET",
+          "repos/google-ai-edge/mediapipe/issues/22/comments",
+          "-f",
+          "per_page=100",
+          "-f",
+          "page=1"
+        ],
+        "retrieved_utc": "2026-10-04T19:45:24.385528+00:00",
+        "exit_code": 0,
+        "response_path": "/workspace/significance-review-20261004/public-reports/issue-03-comments.json",
+        "response_sha256": "2bb7d3a47755131c92bf0ff1516c39c00a42bef9d04df99ed6e59f6c68ea23ad",
+        "response_bytes": 7176,
+        "stderr_path": "/workspace/significance-review-20261004/public-reports/issue-03-comments.stderr",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "FETCHED"
+      },
+      "reported_comment_count": 4,
+      "returned_comments": 4,
+      "omitted_comments": 0,
+      "title": "Could not use custom model in object detection",
+      "created_at": "2019-08-13T12:20:35Z",
+      "updated_at": "2019-08-28T00:26:01Z",
+      "state": "closed",
+      "state_reason": "completed",
+      "evidence_level": "PUBLIC_REPORT_ONLY",
+      "artifact_reproduced": false,
+      "linked_implementation_pages_inspected": 0
+    },
+    {
+      "id": "R4",
+      "mechanism": "Classification example lists num_classes that the shown options schema lacks.",
+      "classification": "ADJACENT_DOCUMENTATION_CONFIGURATION_UNRESOLVED",
+      "observation": "Body compares example and protobuf fields; sole reply says See #172. The linked page was not followed.",
+      "authority": "Sole reply has NONE association; no authoritative mechanism or fix verification.",
+      "references": [
+        "https://github.com/google-ai-edge/mediapipe/issues/195#issuecomment-545977684"
+      ],
+      "artifact_provenance": "Source paths and snippets, no commit-pinned source or model artifact.",
+      "versions": "2019-10 report; no exact revision.",
+      "significance": "Documents configuration/description confusion, not a demonstrated generated getter/runtime failure.",
+      "not_established": "Whether code, example or usage is wrong in the exact version; merged fix; deployed impact.",
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "repos/google-ai-edge/mediapipe/issues/195"
+      ],
+      "retrieved_utc": "2026-10-04T19:45:24.936821+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/issue-04.json",
+      "response_sha256": "6755bdae83999fe94b67e966507b86e896c459bc4993232d4e650eca0fcbe059",
+      "response_bytes": 4905,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/issue-04.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "url": "https://github.com/google-ai-edge/mediapipe/issues/195",
+      "comments_request": {
+        "command": [
+          "gh",
+          "api",
+          "--method",
+          "GET",
+          "repos/google-ai-edge/mediapipe/issues/195/comments",
+          "-f",
+          "per_page=100",
+          "-f",
+          "page=1"
+        ],
+        "retrieved_utc": "2026-10-04T19:45:25.501558+00:00",
+        "exit_code": 0,
+        "response_path": "/workspace/significance-review-20261004/public-reports/issue-04-comments.json",
+        "response_sha256": "9d8f12e2c9e72124af46f5bcb4053a730656bddb704bd85c1e7fdbc9e84d9a89",
+        "response_bytes": 1634,
+        "stderr_path": "/workspace/significance-review-20261004/public-reports/issue-04-comments.stderr",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "FETCHED"
+      },
+      "reported_comment_count": 1,
+      "returned_comments": 1,
+      "omitted_comments": 0,
+      "title": "the options of TfliteTensorsToClassificationCalculator miss a field 'num_classes'",
+      "created_at": "2019-10-24T01:20:30Z",
+      "updated_at": "2019-11-04T23:34:20Z",
+      "state": "closed",
+      "state_reason": "completed",
+      "evidence_level": "PUBLIC_REPORT_ONLY",
+      "artifact_reproduced": false,
+      "linked_implementation_pages_inspected": 0
+    },
+    {
+      "id": "R5",
+      "mechanism": "Encoded image string versus already decoded RGB input, after unsuccessful model binding import.",
+      "classification": "ALTERNATIVE_INPUT_CONTRACT_EXPLANATION",
+      "observation": "Repository member identifies image decoding already embedded in the graph and recommends removing it. Later reporter changes the graph and reports accuracy problems without fully understanding the removed block.",
+      "authority": "Input-decoding explanation by lu-wang-g has MEMBER association; later accuracy claim remains unverified reporter statement.",
+      "references": [
+        "https://github.com/tensorflow/tflite-support/issues/870#issuecomment-1208629590",
+        "https://github.com/tensorflow/tflite-support/issues/870#issuecomment-1226933824",
+        "https://github.com/tensorflow/tflite-support/issues/870#issuecomment-1229379105"
+      ],
+      "artifact_provenance": "A Google Drive model locator is present in a comment, but was not requested, downloaded, hashed or tested; availability/identity unverified.",
+      "versions": "Reporter states TensorFlow 1.x training and Android Studio 7.2.1; no exact Support/runtime version.",
+      "significance": "Retained uncertain binding candidate resolves toward input preprocessing mismatch, not evidence for output-label drift.",
+      "not_established": "Cause of ML-folder import rejection; output-metadata defect; accuracy effect; graph-preserving change.",
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "repos/tensorflow/tflite-support/issues/870"
+      ],
+      "retrieved_utc": "2026-10-04T19:45:26.049812+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/issue-05.json",
+      "response_sha256": "b127a9a00151f1b3a4d8956a72ebb94619090004f38e8c3238704824b25fc931",
+      "response_bytes": 6061,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/issue-05.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "url": "https://github.com/tensorflow/tflite-support/issues/870",
+      "comments_request": {
+        "command": [
+          "gh",
+          "api",
+          "--method",
+          "GET",
+          "repos/tensorflow/tflite-support/issues/870/comments",
+          "-f",
+          "per_page=100",
+          "-f",
+          "page=1"
+        ],
+        "retrieved_utc": "2026-10-04T19:45:26.560947+00:00",
+        "exit_code": 0,
+        "response_path": "/workspace/significance-review-20261004/public-reports/issue-05-comments.json",
+        "response_sha256": "2bd0e9da80a8244a250e04f04d841bef9e9360ff1142a4e372a6cf434e52d50c",
+        "response_bytes": 22099,
+        "stderr_path": "/workspace/significance-review-20261004/public-reports/issue-05-comments.stderr",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "FETCHED"
+      },
+      "reported_comment_count": 11,
+      "returned_comments": 11,
+      "omitted_comments": 0,
+      "title": "Unknown image file format. One of JPEG, PNG, GIF, BMP required.",
+      "created_at": "2022-08-08T12:50:43Z",
+      "updated_at": "2022-08-29T09:10:44Z",
+      "state": "open",
+      "state_reason": null,
+      "evidence_level": "PUBLIC_REPORT_ONLY",
+      "artifact_reproduced": false,
+      "linked_implementation_pages_inspected": 0
+    },
+    {
+      "id": "R6",
+      "mechanism": "One-output YOLOv5 artifact supplied to four-output object-detector metadata writer.",
+      "classification": "EXISTING_STRUCTURAL_REJECTION_CONFIRMED_SUPPORT_BOUNDARY",
+      "observation": "Reporter supplies writer code, four-entry metadata and ValueError: output tensors (1) should match output metadata (4). Repository member states this one-output YOLO path is unsupported.",
+      "authority": "lu-wang-g comment has MEMBER association; separate export explanation by glenn-jocher has NONE association and is not independently authenticated here.",
+      "references": [
+        "https://github.com/tensorflow/tflite-support/issues/703#issuecomment-930339523",
+        "https://github.com/tensorflow/tflite-support/issues/703#issuecomment-930431072"
+      ],
+      "artifact_provenance": "Only local model/label filenames and conversion description; exact model and dependency pins absent.",
+      "versions": "Report created 2021-09-29; unspecified Support and YOLO conversion versions.",
+      "significance": "Positive evidence that existing metadata population catches a real reported cardinality incompatibility before Android import. Contradicts a blanket official-checks-miss-everything story.",
+      "not_established": "Universal YOLO invalidity; schema prohibition of all one-output models; a supported-path defect; independent reproduction.",
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "repos/tensorflow/tflite-support/issues/703"
+      ],
+      "retrieved_utc": "2026-10-04T19:45:27.131583+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/issue-06.json",
+      "response_sha256": "a39be6aa538bc53a4a03ab0316eb281d705d7df52cd9497e6434c04ff4019def",
+      "response_bytes": 10466,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/issue-06.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "url": "https://github.com/tensorflow/tflite-support/issues/703",
+      "comments_request": {
+        "command": [
+          "gh",
+          "api",
+          "--method",
+          "GET",
+          "repos/tensorflow/tflite-support/issues/703/comments",
+          "-f",
+          "per_page=100",
+          "-f",
+          "page=1"
+        ],
+        "retrieved_utc": "2026-10-04T19:45:27.677243+00:00",
+        "exit_code": 0,
+        "response_path": "/workspace/significance-review-20261004/public-reports/issue-06-comments.json",
+        "response_sha256": "c6e15f2f443d74ef4bd610219221489f5763d7b3b1c1b3a6386b8215c4c5abf7",
+        "response_bytes": 7305,
+        "stderr_path": "/workspace/significance-review-20261004/public-reports/issue-06-comments.stderr",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "FETCHED"
+      },
+      "reported_comment_count": 4,
+      "returned_comments": 4,
+      "omitted_comments": 0,
+      "title": "Add Metadata doesn't work with YoloV5 model",
+      "created_at": "2021-09-29T16:22:56Z",
+      "updated_at": "2023-11-07T12:43:00Z",
+      "state": "closed",
+      "state_reason": "completed",
+      "evidence_level": "PUBLIC_REPORT_ONLY",
+      "artifact_reproduced": false,
+      "linked_implementation_pages_inspected": 0
+    },
+    {
+      "id": "R7",
+      "mechanism": "Task BERT consumer selected default model instead of metadata-bearing model.",
+      "classification": "REPORTER_RESOLVED_ARTIFACT_SELECTION_INPUT_SIDE",
+      "observation": "Task demo reports No input process unit found from metadata; reporter says selecting the versioned metadata/1 model instead of default/1 fixed it.",
+      "authority": "Resolution is by the issue author (NONE), not a maintainer or independent reproduction.",
+      "references": [
+        "https://github.com/tensorflow/tflite-support/issues/319#issuecomment-772558484"
+      ],
+      "artifact_provenance": "Exact TFHub default/1 and metadata/1 locators given, but model bytes, availability and digests not checked.",
+      "versions": "Bazel 3.7.2, WSL2; no exact Support revision.",
+      "significance": "Shows a reported resource/consumer prerequisite and available correct artifact selection; input tokenizer metadata is adjacent to the paper output focus.",
+      "not_established": "Natural defect in the correctly supported artifact; output association error; replicated fix.",
+      "command": [
+        "gh",
+        "api",
+        "--method",
+        "GET",
+        "repos/tensorflow/tflite-support/issues/319"
+      ],
+      "retrieved_utc": "2026-10-04T19:45:28.228903+00:00",
+      "exit_code": 0,
+      "response_path": "/workspace/significance-review-20261004/public-reports/issue-07.json",
+      "response_sha256": "1407f9278a587a332ddeced85d415dbd539d69c6806403b767afc1e804c415c3",
+      "response_bytes": 7582,
+      "stderr_path": "/workspace/significance-review-20261004/public-reports/issue-07.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "FETCHED",
+      "url": "https://github.com/tensorflow/tflite-support/issues/319",
+      "comments_request": {
+        "command": [
+          "gh",
+          "api",
+          "--method",
+          "GET",
+          "repos/tensorflow/tflite-support/issues/319/comments",
+          "-f",
+          "per_page=100",
+          "-f",
+          "page=1"
+        ],
+        "retrieved_utc": "2026-10-04T19:45:28.780440+00:00",
+        "exit_code": 0,
+        "response_path": "/workspace/significance-review-20261004/public-reports/issue-07-comments.json",
+        "response_sha256": "3bda6adf17bf872ae320b06df1ead12152811bd720fadee35afaf97ea02602d2",
+        "response_bytes": 2046,
+        "stderr_path": "/workspace/significance-review-20261004/public-reports/issue-07-comments.stderr",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "FETCHED"
+      },
+      "reported_comment_count": 1,
+      "returned_comments": 1,
+      "omitted_comments": 0,
+      "title": "Error running Bert Question Answerer",
+      "created_at": "2021-02-03T14:25:05Z",
+      "updated_at": "2021-02-03T14:39:42Z",
+      "state": "closed",
+      "state_reason": "completed",
+      "evidence_level": "PUBLIC_REPORT_ONLY",
+      "artifact_reproduced": false,
+      "linked_implementation_pages_inspected": 0
+    }
+  ],
+  "limits": [
+    "Fixed first-five ascending creation order deliberately favors older reports; GitHub search can match comments while triage is title/body based.",
+    "Query totals overlap and contain irrelevant hits; neither 415 nor 30 is a model/defect/user denominator.",
+    "Public report comments and search results may change; saved API byte hashes identify this retrieval only.",
+    "MEMBER/CONTRIBUTOR/NONE are GitHub API associations, not independently authenticated job roles.",
+    "No exact model availability checked and no external issue code executed.",
+    "Closed/completed GitHub state is not interpreted as verified fix."
+  ]
+}

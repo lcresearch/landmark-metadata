@@ -13,8 +13,8 @@ follow-up names. The same-Android P2 comparison and bounded P3 reference inquiry
 remain complete. Stronger execution evidence does not by itself establish novelty
 or practical significance.
 
-Complete the two P0 assessments before choosing the contribution and doing the
-full manuscript rewrite. Reproduction handoff and human-audit preparation can
+Both bounded P0 assessments are complete; use their conclusions to choose the
+contribution and do the full manuscript rewrite. Reproduction handoff and human-audit preparation can
 proceed in parallel. Record whether the evidence supports a bounded empirical
 study, a method contribution, or a shorter case/experience report; do not assume
 the strongest framing in advance.
@@ -28,15 +28,17 @@ the strongest framing in advance.
   table records source scope, inaccessible material, existing constraints and
   unresolved overlap. This closes the agreed bounded comparison, not an exhaustive
   novelty search. An E5 method claim still requires capability beyond strong baselines.
-- [ ] **P0 — Research significance assessment (agent).** Identify the concrete
-  usage scenarios, limitations of existing checks, and engineering consequences
-  relevant to the observed mechanism. Produce an evidence table separating
-  measured outcomes, reproducible public cases, issue reports, and hypotheses.
-  Evaluate the Java/Python parsing counterexamples as defects in the studied
-  checks, without presenting them as natural defects in official deployment
-  tools. Completion means an explicit account of what practical relevance is
-  supported and what remains unknown. Any natural-case search must follow the
-  bounded optional protocol below; zero findings is acceptable.
+- [x] **P0 — Research significance assessment (agent).** Completed the
+  [bounded assessment](research/20261004-significance-review/SIGNIFICANCE_ASSESSMENT.md):
+  selected old E1/E2/P2/P3 records read back, six official workflow documents,
+  and eight fixed public-report queries (30 unique issues triaged, seven inspected
+  with comments). Supports concrete integration-test and diagnostic relevance;
+  no measured prevalence, operational benefit or new natural-case reproduction.
+  Support #770 is both a practical antecedent and a limit on first-discovery claims.
+  Ordinary full-package hashes, Task initialization, actual getter tests and
+  reference-map comparisons remain strong defenses. Parser counterexamples concern
+  our historical checker/baseline. This closes the assessment, not an importance
+  or publication-readiness certification; no new model experiment or human audit.
 - [ ] **P1 — Determine the framing and rewrite the main argument (agent;
   depends on P0).** Organize the current working manuscript as: contract
   definitions → E1 actual getter failure → E2 successful but changed association
@@ -47,6 +49,8 @@ the strongest framing in advance.
   with claims traceable to evidence and the P0 positioning decision. Compress
   internal research history and Hand provenance into supporting material while
   retaining the one-image boundary. Preserve historical manuscript snapshots.
+  Cite Support #770 as both motivation and prior engineering evidence; explain
+  test-property coverage without implying that existing protections are absent.
 - [ ] **P1 — Reproduction handoff (agent; can run in parallel).** Document the
   required inputs, exact dependencies, acquisition locations, hashes, commands,
   expected outcomes and missing materials in a usable entry point. Distinguish
@@ -139,11 +143,15 @@ that can change the core claim or contribution decision.
 
 ## Optional, bounded follow-up — not required to finish this draft
 
-- [ ] Natural cases only if the significance assessment or selected venue makes
-  them necessary: predefine mechanisms, sources and stopping conditions before
-  looking. Count recovered and verified
-  artifacts separately from issue reports; injected failures are never natural
-  defects. Zero findings is acceptable. This round did not search for natural cases.
+- [x] Complete the [bounded public-report inquiry](research/20261004-significance-review/PUBLIC_REPORTS.md)
+  under its declared query and inspection budget. Seven reports inspected,
+  including negative/configuration explanations; zero artifact-reproduced natural
+  cases. This is contextual evidence, not a natural-defect corpus.
+- [ ] Natural-artifact reproduction only if a specific unresolved question or
+  selected venue warrants it. Declare exact candidates, inputs and stopping
+  conditions before acquisition/execution; keep it separate from the completed
+  report review. Count recovered and verified artifacts separately from reports;
+  injected failures are never natural defects. Zero findings is acceptable.
 
 ## Conditional method work — not the current default
 
