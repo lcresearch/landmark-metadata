@@ -1,0 +1,89 @@
+{
+  "scope": "Source provenance only; no model experiment or prior-tool execution.",
+  "external_root": "/workspace/contribution-review-20261004/background",
+  "sources": [
+    {
+      "id": "aibom.pdf",
+      "source": "/workspace/metadata-contract-paper/sources/aibom-paper.pdf",
+      "sha256": "674ee9127a82f3b5541f1685defbc216f0b38e727e550d226edb2c8432c55035",
+      "bytes": 1436647,
+      "status": "RECOVERED",
+      "path": "/workspace/contribution-review-20261004/background/aibom.pdf",
+      "expected_sha256": "674ee9127a82f3b5541f1685defbc216f0b38e727e550d226edb2c8432c55035",
+      "text_command": [
+        "pdftotext",
+        "-layout",
+        "/workspace/contribution-review-20261004/background/aibom.pdf",
+        "/workspace/contribution-review-20261004/background/aibom.txt"
+      ],
+      "text_exit": 0,
+      "text_stderr": ""
+    },
+    {
+      "id": "historical-literature-downloads.json",
+      "source": "/workspace/metadata-contract-paper/results/literature-downloads.json",
+      "sha256": "9f18d95b9439e7240c1709bcec007739fd89fa25fc02a720e36c0363b25a6768",
+      "bytes": 588,
+      "status": "RECOVERED",
+      "path": "/workspace/contribution-review-20261004/background/historical-literature-downloads.json",
+      "expected_sha256": null
+    },
+    {
+      "id": "stalnaker-historical-crossref.json",
+      "source": "/workspace/metadata-contract-paper/hand-evidence/sources/stalnaker-reference.txt",
+      "sha256": "3d5631e75402573eee2bcc33010d13d71feca92bf0853abded4d701b2e9c45e3",
+      "bytes": 31965,
+      "status": "RECOVERED",
+      "path": "/workspace/contribution-review-20261004/background/stalnaker-historical-crossref.json",
+      "expected_sha256": null
+    },
+    {
+      "id": "aibom-historical-atom.xml",
+      "source": "/workspace/metadata-contract-paper/hand-evidence/sources/aibom-reference.txt",
+      "sha256": "987c99057c2449ed84694f9d01c70a3d85efdd3c70c8b8fc83c426cc2a361f66",
+      "bytes": 3450,
+      "status": "RECOVERED",
+      "path": "/workspace/contribution-review-20261004/background/aibom-historical-atom.xml",
+      "expected_sha256": null
+    },
+    {
+      "id": "stalnaker-crossref.json",
+      "url": "https://api.crossref.org/works/10.1145/3776739",
+      "retrieved_utc": "2026-10-04T19:31:15.745485+00:00",
+      "http_status": 200,
+      "final_url": "https://api.crossref.org/works/10.1145/3776739",
+      "status": "DOWNLOADED",
+      "path": "/workspace/contribution-review-20261004/background/stalnaker-crossref.json",
+      "sha256": "3d5631e75402573eee2bcc33010d13d71feca92bf0853abded4d701b2e9c45e3",
+      "bytes": 31965
+    },
+    {
+      "id": "stalnaker.pdf",
+      "url": "https://dl.acm.org/doi/pdf/10.1145/3776739",
+      "retrieved_utc": "2026-10-04T19:31:15.746338+00:00",
+      "status": "UNAVAILABLE",
+      "error": "HTTP Error 403: Forbidden",
+      "error_type": "HTTPError",
+      "http_status": 403
+    }
+  ],
+  "inspection": [
+    {
+      "id": "aibom.pdf",
+      "source_url": "https://arxiv.org/pdf/2607.17242v1",
+      "level": "RECOVERED_PINNED_FULL_TEXT_FRESHLY_READ",
+      "passages": [
+        "III.A-B, PDF p.4",
+        "III.C-E, PDF p.5",
+        "VI-VII, PDF p.10"
+      ],
+      "publication_status": "preprint"
+    },
+    {
+      "id": "stalnaker-crossref.json",
+      "level": "FRESH_PUBLICATION_RECORD_AND_ABSTRACT",
+      "doi": "10.1145/3776739",
+      "full_text_status": "publisher request HTTP 403; detailed overlap unresolved"
+    }
+  ]
+}

@@ -17,6 +17,7 @@ source and continuation documents, **not the complete evidence archive**.
 - [Maintained observation reader and completeness fixes](work/observation-review-20261004/README.md)
 - [Project memory and current evidence boundaries](MEMORY.md)
 - [Current TODO](TODO.md)
+- [Contribution and related-work comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md)
 - [Decisions and scope](docs/DECISIONS.md)
 - [Future agent instructions](AGENTS.md)
 - [Exact source import paths and SHA-256 hashes](docs/SOURCE_IMPORT.json)
