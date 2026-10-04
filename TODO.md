@@ -84,8 +84,10 @@ source-only repository policy.
 
 - Save project source changes, necessary manuscript/protocol documents, TODO
   updates and concise decision/handoff notes here after meaningful work.
-- Commit, push and verify the remote when access is available; explicitly report
-  synchronization failures. Do not promise background synchronization.
+- Commit on a feature branch, push that branch and open a PR for user review.
+  Verify the remote branch and PR. Never update `main`/the default branch directly
+  or merge/enable auto-merge without an explicit user instruction. Report access
+  blockers; do not promise background synchronization.
 - Keep SDKs, emulators, dependencies, models, generated wrapper outputs, raw
   results, logs, rendered documents, archives and compiled products outside Git.
 - Preserve sealed evidence and historical source snapshots. Do not rerun P0/P1

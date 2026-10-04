@@ -4,6 +4,12 @@ This repository is the source-code handoff for **From Model Metadata to Executab
 
 ## Repository preference
 
+All future changes use **feature branch → pull request → user review**. Push
+only the feature branch; never update `main`/the default branch directly, whether
+through Git or an API. Do not merge or enable auto-merge without an explicit user
+instruction. This applies to source, manuscript, TODO, memory and policy edits,
+and supersedes the earlier direct-push synchronization preference.
+
 The user requested that future project work be kept in this GitHub repository, then narrowed the upload to code. Keep project source code, necessary manuscript/source documentation, TODO updates, and concise decisions/continuation notes here. Exclude SDKs, emulators/AVDs, installed environments, dependency binaries, model binaries, APKs, classes/DEX, rendered PDFs, logs, and other build/runtime products. Keep new research evidence outside this source-only repository unless the user later changes that scope. Update these notes when findings or next steps change; do not promise unattended background synchronization.
 
 ## Verified state
