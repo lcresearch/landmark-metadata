@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "repository_base_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d",
+  "checked_date_utc": "2026-10-04",
+  "scope": "Source handoff checks, source-copy smoke checks, and bounded readback of old observations. No installation, build, generator, emulator, model inference or full archive authentication.",
+  "host_python_for_these_checks": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "not_experiment_python": true,
+  "commands": [
+    {
+      "name": "maintained-primary-readback",
+      "command": [
+        "python",
+        "research/20261004-significance-review/scripts/read_existing_outcomes.py",
+        "--output-dir",
+        "/workspace/landmark-handoff-audit-20261004/readback"
+      ],
+      "cwd": "/workspace/landmark-reproduction-handoff",
+      "started_utc": "2026-10-04T20:07:43.730144+00:00",
+      "exit_code": 0,
+      "logs": {
+        ".stdout": {
+          "path": "/workspace/landmark-handoff-audit-20261004/maintained-primary-readback.stdout",
+          "sha256": "b4abd8db19b0045f19f92d98b74d652bc1339a2914984efacd86f57d972ae176",
+          "bytes": 7488
+        },
+        ".stderr": {
+          "path": "/workspace/landmark-handoff-audit-20261004/maintained-primary-readback.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "script": {
+        "path": "/workspace/landmark-reproduction-handoff/research/20261004-significance-review/scripts/read_existing_outcomes.py",
+        "bytes": 5388,
+        "sha256": "6b71c3924c5ac0e9a688b1c83a1d17014fcc19dc4a267e16d39c60974d9e687e"
+      }
+    },
+    {
+      "name": "full-reader-cli",
+      "command": [
+        "python",
+        "work/observation-review-20261004/verify_observations.py",
+        "--help"
+      ],
+      "cwd": "/workspace/landmark-reproduction-handoff",
+      "started_utc": "2026-10-04T20:07:43.789304+00:00",
+      "exit_code": 0,
+      "logs": {
+        ".stdout": {
+          "path": "/workspace/landmark-handoff-audit-20261004/full-reader-cli.stdout",
+          "sha256": "1a6f2e6a6632ab154caf84252de929aee679e08d8e92143c734ff77d658b00c2",
+          "bytes": 941
+        },
+        ".stderr": {
+          "path": "/workspace/landmark-handoff-audit-20261004/full-reader-cli.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "script": {
+        "path": "/workspace/landmark-reproduction-handoff/work/observation-review-20261004/verify_observations.py",
+        "bytes": 26457,
+        "sha256": "e265c5830e4b37fd8a05d826e075c354ca3551ca750e842b94fa3a03c0dcbe6c"
+      }
+    },
+    {
+      "name": "source-copy-only",
+      "command": [
+        "python",
+        "sources/repro-audit-20261004/base/prepare_base.py",
+        "--repo-root",
+        "/workspace/landmark-reproduction-handoff",
+        "--hand-root",
+        "/workspace/landmark-handoff-audit-20261004/source-copy-hand",
+        "--corpus-root",
+        "/workspace/landmark-handoff-audit-20261004/source-copy-corpus",
+        "--copy-only"
+      ],
+      "cwd": "/workspace/landmark-reproduction-handoff",
+      "started_utc": "2026-10-04T20:10:37.988459+00:00",
+      "exit_code": 0,
+      "logs": {
+        ".stdout": {
+          "path": "/workspace/landmark-handoff-audit-20261004/source-copy-only.stdout",
+          "sha256": "cd9609f76f992164572cc7aab65aa439e238308ceb3357450a2cc6c90b515030",
+          "bytes": 169
+        },
+        ".stderr": {
+          "path": "/workspace/landmark-handoff-audit-20261004/source-copy-only.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "script": {
+        "path": "/workspace/landmark-reproduction-handoff/sources/repro-audit-20261004/base/prepare_base.py",
+        "bytes": 13202,
+        "sha256": "c9a8c9ea78c6c74bdc41016cdb7626b80e9ab172c2e3cb26c2ae4455b9d53eef"
+      }
+    },
+    {
+      "name": "android-source-initialize",
+      "command": [
+        "python",
+        "sources/repro-audit-20261004/android/initialize_run.py",
+        "--repo",
+        "/workspace/landmark-reproduction-handoff",
+        "--root",
+        "/workspace/landmark-handoff-audit-20261004/android-source-copy"
+      ],
+      "cwd": "/workspace/landmark-reproduction-handoff",
+      "started_utc": "2026-10-04T20:10:38.030043+00:00",
+      "exit_code": 0,
+      "logs": {
+        ".stdout": {
+          "path": "/workspace/landmark-handoff-audit-20261004/android-source-initialize.stdout",
+          "sha256": "21231aa8aa4af0655418f7ad682ea1da09c4012d9e895bc5dd683e8ab4e36b9c",
+          "bytes": 95
+        },
+        ".stderr": {
+          "path": "/workspace/landmark-handoff-audit-20261004/android-source-initialize.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "script": {
+        "path": "/workspace/landmark-reproduction-handoff/sources/repro-audit-20261004/android/initialize_run.py",
+        "bytes": 3769,
+        "sha256": "ddfd5c5a0426155682b7fa0f90c35ecf04512395b6b027217976202582e56f3b"
+      }
+    },
+    {
+      "name": "source-check",
+      "command": [
+        "python",
+        "scripts/check_source_tree.py"
+      ],
+      "cwd": "/workspace/landmark-reproduction-handoff",
+      "environment_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-04T20:14:16.667214+00:00",
+      "exit_code": 0,
+      "logs": {
+        ".stdout": {
+          "path": "/workspace/landmark-handoff-audit-20261004/source-check.stdout",
+          "sha256": "54afa39cc4554e643338e24279be41b2b068f48e1e88601bbef7fea102bb7133",
+          "bytes": 2473
+        },
+        ".stderr": {
+          "path": "/workspace/landmark-handoff-audit-20261004/source-check.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "name": "regression-tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/workspace/landmark-reproduction-handoff",
+      "environment_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-04T20:14:17.042140+00:00",
+      "exit_code": 0,
+      "logs": {
+        ".stdout": {
+          "path": "/workspace/landmark-handoff-audit-20261004/regression-tests.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        ".stderr": {
+          "path": "/workspace/landmark-handoff-audit-20261004/regression-tests.stderr",
+          "sha256": "f377676f6b62ea7969630eb8c6e103cf633a8797bd6fdb0f59044008679d3c92",
+          "bytes": 6766
+        }
+      }
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/workspace/landmark-reproduction-handoff",
+      "environment_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-04T20:14:19.630730+00:00",
+      "exit_code": 0,
+      "logs": {
+        ".stdout": {
+          "path": "/workspace/landmark-handoff-audit-20261004/diff-check.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        ".stderr": {
+          "path": "/workspace/landmark-handoff-audit-20261004/diff-check.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      }
+    }
+  ],
+  "readback_output": {
+    "path": "/workspace/landmark-handoff-audit-20261004/readback/readback.json",
+    "bytes": 37580,
+    "sha256": "8b555a55d059eb4c6055ed1ad890a517b866513dcbcdaa00be4838158b5fbff7"
+  },
+  "readback_interpretation": "Selected emitted comparison booleans inspected; no false comparison observed. Reading old primary E1/E2 and P2 deletion records and recounting stored P3 rows does not re-execute models or recompute preservation/reference authority. Zero reader exit alone is not verification.",
+  "copy_only_report": {
+    "path": "/workspace/landmark-handoff-audit-20261004/source-copy-hand/setup-base/setup.json",
+    "bytes": 12570,
+    "sha256": "25b3659d8c9ea2d1430b3c9481d2c134526d84edee8330b450c28d524df35df1"
+  },
+  "android_source_provenance": {
+    "path": "/workspace/landmark-handoff-audit-20261004/android-source-copy/SOURCE_PROVENANCE.json",
+    "bytes": 4216,
+    "sha256": "a5eaf2d8c9bc47cc0ac428f41e7457db9569dd8d7d835bc53f6e8788e51e4424"
+  },
+  "full_reconstruction_reader": "CLI --help only; required /workspace/repro-* evidence absent.",
+  "current_source_validation": "PASSED",
+  "external_raw_root": "/workspace/landmark-handoff-audit-20261004",
+  "evidence_indexes": [
+    "inputs.json",
+    "toolchain.json"
+  ],
+  "human_verification": "PENDING",
+  "source_check_summary": {
+    "status": "PASS",
+    "checks": {
+      "files": 465,
+      "python_syntax": 232,
+      "shell_syntax": 14,
+      "json_parse": 37,
+      "navigation_targets": 192,
+      "memory_import_hashes": 1,
+      "manuscript_hashes": 2
+    },
+    "imported_files_verified": 354,
+    "failures": [],
+    "warnings": [
+      {
+        "path": "sources/metadata-contract-audit-20261004T062010Z/README.md",
+        "issue": "unavailable historical locator",
+        "target": "/workspace/metadata-contract-next/TODO.md"
+      },
+      {
+        "path": "sources/metadata-contract-audit-20261004T062010Z/README.md",
+        "issue": "unavailable historical locator",
+        "target": "rebuild/sdk/"
+      },
+      {
+        "path": "sources/metadata-contract-audit-20261004T062010Z/README.md",
+        "issue": "unavailable historical locator",
+        "target": "results.json"
+      },
+      {
+        "path": "sources/metadata-contract-audit-20261004T062010Z/README.md",
+        "issue": "unavailable historical locator",
+        "target": "verification/"
+      },
+      {
+        "path": "sources/metadata-contract-paper-revision-20261004T065132Z/README.md",
+        "issue": "unavailable historical locator",
+        "target": "CLAIM_EVIDENCE.json"
+      },
+      {
+        "path": "sources/metadata-contract-paper-revision-20261004T065132Z/README.md",
+        "issue": "unavailable historical locator",
+        "target": "SOURCE_PROVENANCE.json"
+      },
+      {
+        "path": "sources/metadata-contract-paper-revision-20261004T065132Z/README.md",
+        "issue": "unavailable historical locator",
+        "target": "manuscript/paper.pdf"
+      },
+      {
+        "path": "MEMORY.md",
+        "issue": "external evidence digest not checked",
+        "target": "/workspace/metadata-contract-e2e-20261004T030536Z/SHA256SUMS"
+      },
+      {
+        "path": "MEMORY.md",
+        "issue": "external evidence digest not checked",
+        "target": "/workspace/metadata-contract-audit-20261004T062010Z/SHA256SUMS"
+      },
+      {
+        "path": "MEMORY.md",
+        "issue": "external evidence digest not checked",
+        "target": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/SHA256SUMS"
+      },
+      {
+        "path": "MEMORY.md",
+        "issue": "external evidence digest not checked",
+        "target": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/SHA256SUMS"
+      },
+      {
+        "path": "MEMORY.md",
+        "issue": "external evidence digest not checked",
+        "target": "/workspace/metadata-contract-p2p3-20261004T073824Z/SHA256SUMS"
+      }
+    ],
+    "model_experiments_run": false
+  }
+}

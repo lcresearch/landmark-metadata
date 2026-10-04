@@ -1,0 +1,1161 @@
+{
+  "schema_version": 1,
+  "scope": "Toolchain/acquisition provenance only; no new download, install, build, emulator, inference or original archive authentication. File hashes below were recomputed locally; versions are read from named historical records or source locks.",
+  "checked_utc": "2026-10-04T20:09:19.556012+00:00",
+  "sources": {
+    "reconstruction_lock": {
+      "path": "/workspace/landmark-reproduction-handoff/sources/repro-audit-20261004/android/android-prerequisites.lock.json",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "56567cb56ea416356a4ffea5531912f97334aacb1dfbc1b9fe2f2e488cbfc9f1",
+      "bytes": 9340
+    },
+    "p2_resolved_lock": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/resolved-lock.json",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "5009e249796aab433f6393182faa726ca3a93c540749529867d3f6f81e48fcad",
+      "bytes": 4717
+    },
+    "p2_downloads": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/downloads.json",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "f21bf764675b245a51fc8edb409c39d2764a78ce36d906a191f8ca011581253d",
+      "bytes": 2884
+    },
+    "original_downloads": {
+      "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/downloads.json",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "428dd19ac9120ac7e3adb7c8276a03e42c18d5d9d7106ae1cc705078c4733af3",
+      "bytes": 5854
+    },
+    "original_wheels": {
+      "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/python-wheels.json",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "b70cbe240c82eafe4aa16e6e3087dc998c00e1eb77a474bf997cb54f36810bab",
+      "bytes": 9716
+    },
+    "p2_version_log": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/versions/versions.json",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "2e4d273d36d00c5e6247faa3905277dc318d156f5b784deb26338470132ccb36",
+      "bytes": 2722
+    },
+    "p3_result_version_fields": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/results.json",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "da54d486f461450d89bf77a777108f8e88b31bc6fcbf9b08fcd042cc8db88f17",
+      "bytes": 11743
+    },
+    "original_tool_versions": {
+      "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/toolchain-versions.json",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "d4bce8df5b72feb6b0f9afe8f7feb6318c5228c844e392369f9c8f20e94fc211",
+      "bytes": 2526
+    },
+    "audit_python_freeze_command": {
+      "path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/versions/python-freeze.command.json",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "f58a2d5a2952e9ca60add3a5c363f9f0d54fa845c43bd378af03e1f5be29444c",
+      "bytes": 254
+    },
+    "audit_native_and_java": {
+      "path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/versions/native-and-java-dependencies.json",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "bb800755884ddec801cb0a1475b2eb60d100348171a905cdc6ec84e7b0b8f408",
+      "bytes": 2304
+    },
+    "original_python_lock": {
+      "path": "/workspace/landmark-reproduction-handoff/sources/hand-contract-repro/requirements.lock",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "f68fd4a56930ebe66cb592751cf88e13bd5cbf1278c8ffd358b66caa7685355b",
+      "bytes": 190
+    },
+    "cloud_reconstruction_report": {
+      "path": "/workspace/landmark-reproduction-handoff/sources/repro-audit-20261004/REPORT.md",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "73053e922438b150434592e112400c9ebdb6099b93486ffe9d3d43042abfe841",
+      "bytes": 11126
+    },
+    "cloud_android_instructions": {
+      "path": "/workspace/landmark-reproduction-handoff/sources/repro-audit-20261004/android/REPRODUCE.md",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "a95dcd59cab5fb16bf0fd1be10fd573d10aff0d3797095922ab8ef1584b36ebf",
+      "bytes": 8107
+    },
+    "base_setup": {
+      "path": "/workspace/landmark-reproduction-handoff/sources/repro-audit-20261004/base/prepare_base.py",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "c9a8c9ea78c6c74bdc41016cdb7626b80e9ab172c2e3cb26c2ae4455b9d53eef",
+      "bytes": 13202
+    },
+    "fresh_initializer": {
+      "path": "/workspace/landmark-reproduction-handoff/sources/repro-audit-20261004/android/initialize_run.py",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "ddfd5c5a0426155682b7fa0f90c35ecf04512395b6b027217976202582e56f3b",
+      "bytes": 3769
+    },
+    "e1_build_source": {
+      "path": "/workspace/landmark-reproduction-handoff/sources/metadata-contract-e2e-20261004T030536Z/scripts/build_android.py",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "3f86680cdb9cfbc3a42268ef02a49ad3901edb9c464ccd7bad727b4a8155c4ac",
+      "bytes": 5432
+    },
+    "p2_build_source": {
+      "path": "/workspace/landmark-reproduction-handoff/research/20261004-p2-p3/P2/scripts/build.py",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "67bff1c63a9725a7c2ad36e38d61c88c85d96af57cf8e1a54084c7d0f93c9723",
+      "bytes": 5705
+    },
+    "p2_fetch_source": {
+      "path": "/workspace/landmark-reproduction-handoff/research/20261004-p2-p3/P2/scripts/fetch_dependencies.py",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "a96b35c4893280b77e4dee5e12bbe5cec84f030b4a2900de612aed415e4d6c41",
+      "bytes": 1127
+    },
+    "p3_analysis_source": {
+      "path": "/workspace/landmark-reproduction-handoff/research/20261004-p2-p3/P3/scripts/analyze_reference.py",
+      "exists_now": true,
+      "verification": "LOCAL_HASH_RECORDED_NO_PRIOR_DIGEST",
+      "expected_sha256": null,
+      "observed_sha256": "0d2de19c8079066a1396e768e4fdf3105d483df1ad28655f79f9f6fb6a0e4659",
+      "bytes": 12505
+    }
+  },
+  "versions": {
+    "status": "RECORDED_FROM_LOGS_NOT_REEXECUTED",
+    "historical_python": "3.11.16 (main, Sep 24 2026, 17:56:40) [Clang 22.1.3 ]",
+    "historical_host": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "recorded_p2_packages": {
+      "tflite-support": "0.4.4",
+      "numpy": "1.26.4",
+      "flatbuffers": "25.12.19"
+    },
+    "python_lock_pins": {
+      "absl-py": "2.5.0",
+      "cffi": "2.1.1",
+      "flatbuffers": "25.12.19",
+      "numpy": "1.26.4",
+      "pillow": "12.3.0",
+      "protobuf": "3.20.3",
+      "pybind11": "3.1.0",
+      "pycparser": "3.0",
+      "sounddevice": "0.5.6",
+      "tflite-runtime": "2.14.0",
+      "tflite-support": "0.4.4"
+    },
+    "python_lock_pins_status": "EXACT_SOURCE_LOCK; all installed versions were not re-probed this turn",
+    "wrapper_java_support": "0.4.4",
+    "wrapper_native_tflite": "2.13.0",
+    "host_cpu_tflite_runtime": "2.14.0",
+    "task_library": "0.4.4",
+    "task_embedded_interpreter": {
+      "value": null,
+      "status": "UNKNOWN",
+      "reason": "UNKNOWN; official Task0.4.4 .so pinned, no assertion of equality to standalone TFLite2.13.0"
+    },
+    "jdk": "Temurin 17.0.12+7",
+    "javac_release_target": "8",
+    "android_platform": "API 30 / platform r3",
+    "build_tools": "35.0.0",
+    "aapt2": "2.19-11948202",
+    "d8": "8.6.2-dev (abaab469b5ebd4dd2bb91ba0ed6f45277faae4ca)",
+    "adb": "1.0.41 / platform-tools 37.0.1-15733141",
+    "emulator": "37.2.12.0 / build 16428233",
+    "system_image_archive": "x86_64-30_r11.zip",
+    "system_image_internal_revision": "10",
+    "abi": "x86_64",
+    "android_min_sdk": 23,
+    "android_target_sdk": 30,
+    "p3_analysis": {
+      "python": "3.11.16 (main, Sep 24 2026, 17:56:40) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+      "tflite_support": "0.4.4",
+      "flatbuffers": "25.12.19",
+      "numpy": "1.26.4",
+      "tensorflow_tpu_head_observed": "7dc921f846c9e4071f3884b768a7ddf521272a49",
+      "tensorflow_models_pinned_synset_revision": "930a6f98f7debcc32ca7afbca4a176dbf9211e03",
+      "tensorflow_tfhub_card_revision": "81fdea8ffa53b5acbd66a012d17fb8f9602c714b"
+    },
+    "audit_pip_freeze": {
+      "exit_code": 1,
+      "diagnostic": "No module named pip",
+      "source": "audit_python_freeze_command"
+    }
+  },
+  "acquisition_lock": {
+    "source": "reconstruction_lock",
+    "sdk": [
+      {
+        "id": "platforms;android-30",
+        "url": "https://dl.google.com/android/repository/platform-30_r03.zip",
+        "sha1": "e7c6280901dcfa511af098d67dd88c4dfcbc6ea2",
+        "sha256": "f3f5b75744dbf6ee6ed3e8174a71e513bfee502d0bc3463ea97e517bff68d84e",
+        "expected_bytes": 52328361,
+        "target": "platforms/android-30"
+      },
+      {
+        "id": "build-tools;35.0.0",
+        "url": "https://dl.google.com/android/repository/build-tools_r35_linux.zip",
+        "sha1": "2cfaa0bbb2336e9ec18ed3ecea84fa2e2af607bc",
+        "sha256": "bd3a4966912eb8b30ed0d00b0cda6b6543b949d5ffe00bea54c04c81e1561d88",
+        "expected_bytes": 61958799,
+        "target": "build-tools/35.0.0"
+      },
+      {
+        "id": "platform-tools",
+        "url": "https://dl.google.com/android/repository/platform-tools_r37.0.1-linux.zip",
+        "sha1": "477254aa5f903c15cf51001717bdf347fb6b53e0",
+        "sha256": "d230f13842f60f782a8645f9c813f8f845bf36089ea7289f28c48f17979313f1",
+        "expected_bytes": 9054187,
+        "target": "platform-tools"
+      },
+      {
+        "id": "emulator",
+        "url": "https://dl.google.com/android/repository/emulator-linux_x64-16428233.zip",
+        "sha1": "cd7362ea55dfb86a418958138dc396e74165dd01",
+        "sha256": "b08fc43d8608d2955f607f1b287beb525041e730086bdca3af152accac3af9c1",
+        "expected_bytes": 349654171,
+        "target": "emulator"
+      },
+      {
+        "id": "system-images;android-30;default;x86_64",
+        "url": "https://dl.google.com/android/repository/sys-img/android/x86_64-30_r11.zip",
+        "sha1": "5e4de3946d46f88856c35efcc4d797b381456347",
+        "sha256": "8d591034a4244a920d7a3ec274bb1734dd6474a3d8c11d0fce902010db3a13aa",
+        "expected_bytes": 676379777,
+        "target": "system-images/android-30/default/x86_64"
+      }
+    ],
+    "jdk": {
+      "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.12%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.12_7.tar.gz",
+      "checksum_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.12%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.12_7.tar.gz.sha256.txt",
+      "sha256": "9d4dd339bf7e6a9dcba8347661603b74c61ab2a5083ae67bf76da6285da8a778",
+      "directory": "jdk-17.0.12+7"
+    },
+    "java_dependencies": [
+      {
+        "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite/2.13.0/tensorflow-lite-2.13.0.aar",
+        "checksum_url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite/2.13.0/tensorflow-lite-2.13.0.aar.sha1",
+        "sha1": "b8f5489ee7b8ac0e88994f5aa097d9e823a070cd",
+        "sha256": "acd4a2f6dc67624600430347f1cfd970b1180c25788c628aa31f61d653c3d38f",
+        "jar_sha256": "1dd7e612b8e4a0bc91db0534e070253d4a99a4598a102c0b18196786a679c328",
+        "destination": "hand-deps",
+        "jar_filename": "tensorflow-lite-2.13.0.jar"
+      },
+      {
+        "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-api/2.13.0/tensorflow-lite-api-2.13.0.aar",
+        "checksum_url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-api/2.13.0/tensorflow-lite-api-2.13.0.aar.sha1",
+        "sha1": "6d0222f4e46c8b4760b531f9b8f559f9f7d3d540",
+        "sha256": "161c34e1c18866b18ca337dfe92356c4570ecd155e5a0a0142247c9d5617a382",
+        "jar_sha256": "2609bfc6adcb0551866411dabde4b47cd767e72cbd391654b717826aadcf5783",
+        "destination": "hand-deps",
+        "jar_filename": "tensorflow-lite-api-2.13.0.jar"
+      },
+      {
+        "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-support/0.4.4/tensorflow-lite-support-0.4.4.aar",
+        "checksum_url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-support/0.4.4/tensorflow-lite-support-0.4.4.aar.sha1",
+        "sha1": "db19d9dabe7ad60aeff56b4870bde8c5d55e88f5",
+        "sha256": "1c1d10b8cec85efbe8024e755641cb044f1f10e204db773f868c327d398fc5fa",
+        "jar_sha256": "5e15853661523fdbc0701486b0e1e6ff52ecefd76275c585de721e917a43a61f",
+        "destination": "hand-deps",
+        "jar_filename": "tensorflow-lite-support-0.4.4.jar"
+      },
+      {
+        "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-support-api/0.4.4/tensorflow-lite-support-api-0.4.4.aar",
+        "checksum_url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-support-api/0.4.4/tensorflow-lite-support-api-0.4.4.aar.sha1",
+        "sha1": "136db9594d4ae528bced44d6ccf225df82bd397f",
+        "sha256": "072481f7f3822074996a06afb1d784efd8287319b38e3e48572bb299079298e4",
+        "jar_sha256": "15d59ab34528d75908306432715e522a278f781ba6f4802d6b41917a5838a59d",
+        "destination": "hand-deps",
+        "jar_filename": "tensorflow-lite-support-api-0.4.4.jar"
+      },
+      {
+        "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-metadata/0.4.4/tensorflow-lite-metadata-0.4.4.jar",
+        "checksum_url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-metadata/0.4.4/tensorflow-lite-metadata-0.4.4.jar.sha1",
+        "sha1": "5c48399819c77d0e9984c96b773fdf0062e0af7c",
+        "sha256": "8c4b6baee166517bcf46228f4410640ff6ccfd8001b40647038c9a903cf15e7d",
+        "jar_sha256": "8c4b6baee166517bcf46228f4410640ff6ccfd8001b40647038c9a903cf15e7d",
+        "destination": "hand-deps",
+        "jar_filename": "tensorflow-lite-metadata-0.4.4.jar"
+      },
+      {
+        "url": "https://repo.maven.apache.org/maven2/com/google/flatbuffers/flatbuffers-java/2.0.0/flatbuffers-java-2.0.0.jar",
+        "checksum_url": "https://repo.maven.apache.org/maven2/com/google/flatbuffers/flatbuffers-java/2.0.0/flatbuffers-java-2.0.0.jar.sha1",
+        "sha1": "19da0c1d9f585d2c402057f993f8dea2ff382837",
+        "sha256": "89f94a63d5619d0915dcb8bf2b5ff17606038c685f635c3d062157b082b641ca",
+        "jar_sha256": "89f94a63d5619d0915dcb8bf2b5ff17606038c685f635c3d062157b082b641ca",
+        "destination": "hand-deps",
+        "jar_filename": "flatbuffers-java-2.0.0.jar"
+      },
+      {
+        "url": "https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.3.0/annotation-1.3.0.jar",
+        "checksum_url": "https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.3.0/annotation-1.3.0.jar.sha1",
+        "sha1": "021f49f5f9b85fc49de712539f79123119740595",
+        "sha256": "97dc45afefe3a1e421da42b8b6e9f90491477c45fc6178203e3a5e8a05ee8553",
+        "jar_sha256": "97dc45afefe3a1e421da42b8b6e9f90491477c45fc6178203e3a5e8a05ee8553",
+        "destination": "hand-deps",
+        "jar_filename": "annotation-1.3.0.jar"
+      },
+      {
+        "url": "https://repo.maven.apache.org/maven2/com/google/android/android/4.1.1.4/android-4.1.1.4.jar",
+        "checksum_url": "https://repo.maven.apache.org/maven2/com/google/android/android/4.1.1.4/android-4.1.1.4.jar.sha1",
+        "sha1": "3fb039385e71e9aa2ba547ea9ea8caa34a4ffac7",
+        "sha256": "84072541cbb711eff89f7277100ff854929a446dba7ceb1b195c340e0b4fd3cb",
+        "jar_sha256": "84072541cbb711eff89f7277100ff854929a446dba7ceb1b195c340e0b4fd3cb",
+        "destination": "hand-deps",
+        "jar_filename": "android-4.1.1.4.jar"
+      },
+      {
+        "url": "https://dl.google.com/dl/android/maven2/com/google/android/odml/image/1.0.0-beta1/image-1.0.0-beta1.aar",
+        "checksum_url": "https://dl.google.com/dl/android/maven2/com/google/android/odml/image/1.0.0-beta1/image-1.0.0-beta1.aar.sha1",
+        "sha1": "a508729dbdb2a0d27728b0ef42223bba53013d1c",
+        "sha256": "2e71aa31f83a9415277f119de67195726f07d1760e9542c111778c320e3aa1f2",
+        "jar_sha256": "10997b105eb5a8522c3bf19854e634e9df56464e820509d15eb3ca07f78cd76a",
+        "destination": "extra-jars",
+        "jar_filename": "image-1.0.0-beta1.jar"
+      },
+      {
+        "url": "https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/2.5.8/checker-qual-2.5.8.jar",
+        "checksum_url": "https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/2.5.8/checker-qual-2.5.8.jar.sha1",
+        "sha1": "41c6fa63cba0fea55ebd3581d42b3d2c5cca98b2",
+        "sha256": "bd655da535df1eeb96fc8874d05d0f7029209de95096e4f84bd07c66688a210d",
+        "jar_sha256": "bd655da535df1eeb96fc8874d05d0f7029209de95096e4f84bd07c66688a210d",
+        "destination": "extra-jars",
+        "jar_filename": "checker-qual-2.5.8.jar"
+      },
+      {
+        "url": "https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/1.6/auto-value-annotations-1.6.jar",
+        "checksum_url": "https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/1.6/auto-value-annotations-1.6.jar.sha1",
+        "sha1": "da725083ee79fdcd86d9f3d8a76e38174a01892a",
+        "sha256": "d095936c432f2afc671beaab67433e7cef50bba4a861b77b9c46561b801fae69",
+        "jar_sha256": "d095936c432f2afc671beaab67433e7cef50bba4a861b77b9c46561b801fae69",
+        "destination": "extra-jars",
+        "jar_filename": "auto-value-annotations-1.6.jar"
+      }
+    ],
+    "status": "RECORDED_ACQUISITION_IDENTITIES; restoration not performed this turn; public URLs not freshly tested"
+  },
+  "archive_objects": [
+    {
+      "id": "platforms;android-30",
+      "url": "https://dl.google.com/android/repository/platform-30_r03.zip",
+      "source": "original_downloads",
+      "scope": "original E1/E2 SDK/AAR/POM download",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/downloads/platform-30_r03.zip",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "f3f5b75744dbf6ee6ed3e8174a71e513bfee502d0bc3463ea97e517bff68d84e",
+        "observed_sha256": "f3f5b75744dbf6ee6ed3e8174a71e513bfee502d0bc3463ea97e517bff68d84e",
+        "bytes": 52328361
+      }
+    },
+    {
+      "id": "build-tools;35.0.0",
+      "url": "https://dl.google.com/android/repository/build-tools_r35_linux.zip",
+      "source": "original_downloads",
+      "scope": "original E1/E2 SDK/AAR/POM download",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/downloads/build-tools_r35_linux.zip",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "bd3a4966912eb8b30ed0d00b0cda6b6543b949d5ffe00bea54c04c81e1561d88",
+        "observed_sha256": "bd3a4966912eb8b30ed0d00b0cda6b6543b949d5ffe00bea54c04c81e1561d88",
+        "bytes": 61958799
+      }
+    },
+    {
+      "id": "platform-tools",
+      "url": "https://dl.google.com/android/repository/platform-tools_r37.0.1-linux.zip",
+      "source": "original_downloads",
+      "scope": "original E1/E2 SDK/AAR/POM download",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/downloads/platform-tools_r37.0.1-linux.zip",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "d230f13842f60f782a8645f9c813f8f845bf36089ea7289f28c48f17979313f1",
+        "observed_sha256": "d230f13842f60f782a8645f9c813f8f845bf36089ea7289f28c48f17979313f1",
+        "bytes": 9054187
+      }
+    },
+    {
+      "id": "emulator",
+      "url": "https://dl.google.com/android/repository/emulator-linux_x64-16428233.zip",
+      "source": "original_downloads",
+      "scope": "original E1/E2 SDK/AAR/POM download",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/downloads/emulator-linux_x64-16428233.zip",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "b08fc43d8608d2955f607f1b287beb525041e730086bdca3af152accac3af9c1",
+        "observed_sha256": "b08fc43d8608d2955f607f1b287beb525041e730086bdca3af152accac3af9c1",
+        "bytes": 349654171
+      }
+    },
+    {
+      "id": "system-images;android-30;default;x86_64",
+      "url": "https://dl.google.com/android/repository/sys-img/android/x86_64-30_r11.zip",
+      "source": "original_downloads",
+      "scope": "original E1/E2 SDK/AAR/POM download",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/downloads/x86_64-30_r11.zip",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "8d591034a4244a920d7a3ec274bb1734dd6474a3d8c11d0fce902010db3a13aa",
+        "observed_sha256": "8d591034a4244a920d7a3ec274bb1734dd6474a3d8c11d0fce902010db3a13aa",
+        "bytes": 676379777
+      }
+    },
+    {
+      "id": "tensorflow-lite:2.13.0",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite/2.13.0/tensorflow-lite-2.13.0.aar",
+      "source": "original_downloads",
+      "scope": "original E1/E2 SDK/AAR/POM download",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/downloads/tensorflow-lite-2.13.0.aar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "acd4a2f6dc67624600430347f1cfd970b1180c25788c628aa31f61d653c3d38f",
+        "observed_sha256": "acd4a2f6dc67624600430347f1cfd970b1180c25788c628aa31f61d653c3d38f",
+        "bytes": 6623648
+      }
+    },
+    {
+      "id": "tensorflow-lite:2.13.0:pom",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite/2.13.0/tensorflow-lite-2.13.0.pom",
+      "source": "original_downloads",
+      "scope": "original E1/E2 SDK/AAR/POM download",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/downloads/tensorflow-lite-2.13.0.pom",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "c4773600d6d5e551001a6f2d7abf0fabdcadd6927bb6b979abd13ea8ecc2ad5d",
+        "observed_sha256": "c4773600d6d5e551001a6f2d7abf0fabdcadd6927bb6b979abd13ea8ecc2ad5d",
+        "bytes": 1816
+      }
+    },
+    {
+      "id": "tensorflow-lite-api:2.13.0",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-api/2.13.0/tensorflow-lite-api-2.13.0.aar",
+      "source": "original_downloads",
+      "scope": "original E1/E2 SDK/AAR/POM download",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/downloads/tensorflow-lite-api-2.13.0.aar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "161c34e1c18866b18ca337dfe92356c4570ecd155e5a0a0142247c9d5617a382",
+        "observed_sha256": "161c34e1c18866b18ca337dfe92356c4570ecd155e5a0a0142247c9d5617a382",
+        "bytes": 23868
+      }
+    },
+    {
+      "id": "tensorflow-lite-api:2.13.0:pom",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-api/2.13.0/tensorflow-lite-api-2.13.0.pom",
+      "source": "original_downloads",
+      "scope": "original E1/E2 SDK/AAR/POM download",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/downloads/tensorflow-lite-api-2.13.0.pom",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "4844145fd6b7ea6e893e29099384788f9beafe4e76e4ff2cc3f8fb7fa487ffac",
+        "observed_sha256": "4844145fd6b7ea6e893e29099384788f9beafe4e76e4ff2cc3f8fb7fa487ffac",
+        "bytes": 1661
+      }
+    },
+    {
+      "id": "tensorflow-lite-support:0.4.4",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-support/0.4.4/tensorflow-lite-support-0.4.4.aar",
+      "source": "original_downloads",
+      "scope": "original E1/E2 SDK/AAR/POM download",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/downloads/tensorflow-lite-support-0.4.4.aar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "1c1d10b8cec85efbe8024e755641cb044f1f10e204db773f868c327d398fc5fa",
+        "observed_sha256": "1c1d10b8cec85efbe8024e755641cb044f1f10e204db773f868c327d398fc5fa",
+        "bytes": 825
+      }
+    },
+    {
+      "id": "tensorflow-lite-support:0.4.4:pom",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-support/0.4.4/tensorflow-lite-support-0.4.4.pom",
+      "source": "original_downloads",
+      "scope": "original E1/E2 SDK/AAR/POM download",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/downloads/tensorflow-lite-support-0.4.4.pom",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "862731439460a3fb180287c44a6579ffd39e9dcbcd743285bcb6851f5e96df98",
+        "observed_sha256": "862731439460a3fb180287c44a6579ffd39e9dcbcd743285bcb6851f5e96df98",
+        "bytes": 2008
+      }
+    },
+    {
+      "id": "tensorflow-lite-support-api:0.4.4",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-support-api/0.4.4/tensorflow-lite-support-api-0.4.4.aar",
+      "source": "original_downloads",
+      "scope": "original E1/E2 SDK/AAR/POM download",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/downloads/tensorflow-lite-support-api-0.4.4.aar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "072481f7f3822074996a06afb1d784efd8287319b38e3e48572bb299079298e4",
+        "observed_sha256": "072481f7f3822074996a06afb1d784efd8287319b38e3e48572bb299079298e4",
+        "bytes": 85482
+      }
+    },
+    {
+      "id": "tensorflow-lite-support-api:0.4.4:pom",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-support-api/0.4.4/tensorflow-lite-support-api-0.4.4.pom",
+      "source": "original_downloads",
+      "scope": "original E1/E2 SDK/AAR/POM download",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/downloads/tensorflow-lite-support-api-0.4.4.pom",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "a073760a45565b18f70444b603ef1e9480ce3aaf3c2aeec73e4e9a7394d8fd86",
+        "observed_sha256": "a073760a45565b18f70444b603ef1e9480ce3aaf3c2aeec73e4e9a7394d8fd86",
+        "bytes": 2648
+      }
+    },
+    {
+      "id": "temurin17.0.12+7",
+      "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.12%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.12_7.tar.gz",
+      "source": "reconstruction_lock",
+      "scope": "shared JDK archive identity",
+      "local": {
+        "path": "/workspace/hand-contract-repro/downloads/jdk17.tar.gz",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "9d4dd339bf7e6a9dcba8347661603b74c61ab2a5083ae67bf76da6285da8a778",
+        "observed_sha256": "9d4dd339bf7e6a9dcba8347661603b74c61ab2a5083ae67bf76da6285da8a778",
+        "bytes": 192452655
+      }
+    },
+    {
+      "id": "org.tensorflow:tensorflow-lite-task-vision:0.4.4:pom",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-task-vision/0.4.4/tensorflow-lite-task-vision-0.4.4.pom",
+      "source": "p2_downloads",
+      "scope": "P2 Task dependencies",
+      "local": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/tensorflow-lite-task-vision-0.4.4.pom",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "c479dc6239635c57674f9dc4135b10a6114730a537ac85ca439123cbbfff571f",
+        "observed_sha256": "c479dc6239635c57674f9dc4135b10a6114730a537ac85ca439123cbbfff571f",
+        "bytes": 2429
+      }
+    },
+    {
+      "id": "org.tensorflow:tensorflow-lite-task-vision:0.4.4:aar",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-task-vision/0.4.4/tensorflow-lite-task-vision-0.4.4.aar",
+      "source": "p2_downloads",
+      "scope": "P2 Task dependencies",
+      "local": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/tensorflow-lite-task-vision-0.4.4.aar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "5b7a55269d0a21febab9aa5f41746269d938ff91924173330460c2d251d5b9ce",
+        "observed_sha256": "5b7a55269d0a21febab9aa5f41746269d938ff91924173330460c2d251d5b9ce",
+        "bytes": 11909985
+      }
+    },
+    {
+      "id": "org.tensorflow:tensorflow-lite-task-base:0.4.4:pom",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-task-base/0.4.4/tensorflow-lite-task-base-0.4.4.pom",
+      "source": "p2_downloads",
+      "scope": "P2 Task dependencies",
+      "local": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/tensorflow-lite-task-base-0.4.4.pom",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "8c09de341974f9136885fb12f95373804dd6c3d12d788b95865997f033783872",
+        "observed_sha256": "8c09de341974f9136885fb12f95373804dd6c3d12d788b95865997f033783872",
+        "bytes": 2032
+      }
+    },
+    {
+      "id": "org.tensorflow:tensorflow-lite-task-base:0.4.4:aar",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-task-base/0.4.4/tensorflow-lite-task-base-0.4.4.aar",
+      "source": "p2_downloads",
+      "scope": "P2 Task dependencies",
+      "local": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/tensorflow-lite-task-base-0.4.4.aar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "8b1599db15d3fa7a58f687cee38600f8cce175b86896dcbc0042d31eeb145e5f",
+        "observed_sha256": "8b1599db15d3fa7a58f687cee38600f8cce175b86896dcbc0042d31eeb145e5f",
+        "bytes": 25549
+      }
+    },
+    {
+      "id": "org.tensorflow:tensorflow-lite-support-api:0.4.4:pom",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-support-api/0.4.4/tensorflow-lite-support-api-0.4.4.pom",
+      "source": "p2_downloads",
+      "scope": "P2 Task dependencies",
+      "local": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/tensorflow-lite-support-api-0.4.4.pom",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "a073760a45565b18f70444b603ef1e9480ce3aaf3c2aeec73e4e9a7394d8fd86",
+        "observed_sha256": "a073760a45565b18f70444b603ef1e9480ce3aaf3c2aeec73e4e9a7394d8fd86",
+        "bytes": 2648
+      }
+    },
+    {
+      "id": "org.tensorflow:tensorflow-lite-support-api:0.4.4:aar",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-support-api/0.4.4/tensorflow-lite-support-api-0.4.4.aar",
+      "source": "p2_downloads",
+      "scope": "P2 Task dependencies",
+      "local": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/tensorflow-lite-support-api-0.4.4.aar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "072481f7f3822074996a06afb1d784efd8287319b38e3e48572bb299079298e4",
+        "observed_sha256": "072481f7f3822074996a06afb1d784efd8287319b38e3e48572bb299079298e4",
+        "bytes": 85482
+      }
+    },
+    {
+      "id": "com.google.auto.value:auto-value-annotations:1.6:pom",
+      "url": "https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/1.6/auto-value-annotations-1.6.pom",
+      "source": "p2_downloads",
+      "scope": "P2 Task dependencies",
+      "local": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/auto-value-annotations-1.6.pom",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "9362bc4840875c35c3e19dcaeba63da97b95e33ec6bcae8ac9313a248900ca97",
+        "observed_sha256": "9362bc4840875c35c3e19dcaeba63da97b95e33ec6bcae8ac9313a248900ca97",
+        "bytes": 2501
+      }
+    },
+    {
+      "id": "com.google.auto.value:auto-value-annotations:1.6:jar",
+      "url": "https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/1.6/auto-value-annotations-1.6.jar",
+      "source": "p2_downloads",
+      "scope": "P2 Task dependencies",
+      "local": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/auto-value-annotations-1.6.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "d095936c432f2afc671beaab67433e7cef50bba4a861b77b9c46561b801fae69",
+        "observed_sha256": "d095936c432f2afc671beaab67433e7cef50bba4a861b77b9c46561b801fae69",
+        "bytes": 5888
+      }
+    }
+  ],
+  "selected_java_native_objects": [
+    {
+      "consumer": "wrapper",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/hand-contract-repro/deps/annotation-1.3.0.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "97dc45afefe3a1e421da42b8b6e9f90491477c45fc6178203e3a5e8a05ee8553",
+        "observed_sha256": "97dc45afefe3a1e421da42b8b6e9f90491477c45fc6178203e3a5e8a05ee8553",
+        "bytes": 31705
+      }
+    },
+    {
+      "consumer": "wrapper",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/hand-contract-repro/deps/flatbuffers-java-2.0.0.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "89f94a63d5619d0915dcb8bf2b5ff17606038c685f635c3d062157b082b641ca",
+        "observed_sha256": "89f94a63d5619d0915dcb8bf2b5ff17606038c685f635c3d062157b082b641ca",
+        "bytes": 67067
+      }
+    },
+    {
+      "consumer": "wrapper",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/hand-contract-repro/deps/tensorflow-lite-2.13.0.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "1dd7e612b8e4a0bc91db0534e070253d4a99a4598a102c0b18196786a679c328",
+        "observed_sha256": "1dd7e612b8e4a0bc91db0534e070253d4a99a4598a102c0b18196786a679c328",
+        "bytes": 27946
+      }
+    },
+    {
+      "consumer": "wrapper",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/hand-contract-repro/deps/tensorflow-lite-api-2.13.0.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "2609bfc6adcb0551866411dabde4b47cd767e72cbd391654b717826aadcf5783",
+        "observed_sha256": "2609bfc6adcb0551866411dabde4b47cd767e72cbd391654b717826aadcf5783",
+        "bytes": 21805
+      }
+    },
+    {
+      "consumer": "wrapper",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/hand-contract-repro/deps/tensorflow-lite-metadata-0.4.4.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "8c4b6baee166517bcf46228f4410640ff6ccfd8001b40647038c9a903cf15e7d",
+        "observed_sha256": "8c4b6baee166517bcf46228f4410640ff6ccfd8001b40647038c9a903cf15e7d",
+        "bytes": 596689
+      }
+    },
+    {
+      "consumer": "wrapper",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/hand-contract-repro/deps/tensorflow-lite-support-0.4.4.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "5e15853661523fdbc0701486b0e1e6ff52ecefd76275c585de721e917a43a61f",
+        "observed_sha256": "5e15853661523fdbc0701486b0e1e6ff52ecefd76275c585de721e917a43a61f",
+        "bytes": 353
+      }
+    },
+    {
+      "consumer": "wrapper",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/hand-contract-repro/deps/tensorflow-lite-support-api-0.4.4.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "15d59ab34528d75908306432715e522a278f781ba6f4802d6b41917a5838a59d",
+        "observed_sha256": "15d59ab34528d75908306432715e522a278f781ba6f4802d6b41917a5838a59d",
+        "bytes": 98825
+      }
+    },
+    {
+      "consumer": "wrapper",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/extra-jars/auto-value-annotations-1.6.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "d095936c432f2afc671beaab67433e7cef50bba4a861b77b9c46561b801fae69",
+        "observed_sha256": "d095936c432f2afc671beaab67433e7cef50bba4a861b77b9c46561b801fae69",
+        "bytes": 5888
+      }
+    },
+    {
+      "consumer": "wrapper",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/extra-jars/checker-qual-2.5.8.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "bd655da535df1eeb96fc8874d05d0f7029209de95096e4f84bd07c66688a210d",
+        "observed_sha256": "bd655da535df1eeb96fc8874d05d0f7029209de95096e4f84bd07c66688a210d",
+        "bytes": 193906
+      }
+    },
+    {
+      "consumer": "wrapper",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/extra-jars/image-1.0.0-beta1.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "10997b105eb5a8522c3bf19854e634e9df56464e820509d15eb3ca07f78cd76a",
+        "observed_sha256": "10997b105eb5a8522c3bf19854e634e9df56464e820509d15eb3ca07f78cd76a",
+        "bytes": 15611
+      }
+    },
+    {
+      "consumer": "wrapper",
+      "role": "natives",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/aar/tensorflow-lite/jni/x86_64/libtensorflowlite_jni.so",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "f7b9e8c6b278c28bd8dc1dee25fe0a06e6de4e71b7521a5c866212ded5ac0314",
+        "observed_sha256": "f7b9e8c6b278c28bd8dc1dee25fe0a06e6de4e71b7521a5c866212ded5ac0314",
+        "bytes": 4897736
+      }
+    },
+    {
+      "consumer": "task",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/tensorflow-lite-task-vision/classes.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "922e51623a3e5a4e5f21e372d44de392d5c82d9dd8a8ea195d9f7d348ac005de",
+        "observed_sha256": "922e51623a3e5a4e5f21e372d44de392d5c82d9dd8a8ea195d9f7d348ac005de",
+        "bytes": 66173
+      }
+    },
+    {
+      "consumer": "task",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/tensorflow-lite-task-base/classes.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "bfd29de8d3e85c87e7b15287eeca42103f1a940680e3a8d4716221228952acf8",
+        "observed_sha256": "bfd29de8d3e85c87e7b15287eeca42103f1a940680e3a8d4716221228952acf8",
+        "bytes": 31204
+      }
+    },
+    {
+      "consumer": "task",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/tensorflow-lite-support-api/classes.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "15d59ab34528d75908306432715e522a278f781ba6f4802d6b41917a5838a59d",
+        "observed_sha256": "15d59ab34528d75908306432715e522a278f781ba6f4802d6b41917a5838a59d",
+        "bytes": 98825
+      }
+    },
+    {
+      "consumer": "task",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/hand-contract-repro/deps/tensorflow-lite-api-2.13.0.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "2609bfc6adcb0551866411dabde4b47cd767e72cbd391654b717826aadcf5783",
+        "observed_sha256": "2609bfc6adcb0551866411dabde4b47cd767e72cbd391654b717826aadcf5783",
+        "bytes": 21805
+      }
+    },
+    {
+      "consumer": "task",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/hand-contract-repro/deps/annotation-1.3.0.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "97dc45afefe3a1e421da42b8b6e9f90491477c45fc6178203e3a5e8a05ee8553",
+        "observed_sha256": "97dc45afefe3a1e421da42b8b6e9f90491477c45fc6178203e3a5e8a05ee8553",
+        "bytes": 31705
+      }
+    },
+    {
+      "consumer": "task",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/extra-jars/checker-qual-2.5.8.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "bd655da535df1eeb96fc8874d05d0f7029209de95096e4f84bd07c66688a210d",
+        "observed_sha256": "bd655da535df1eeb96fc8874d05d0f7029209de95096e4f84bd07c66688a210d",
+        "bytes": 193906
+      }
+    },
+    {
+      "consumer": "task",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/extra-jars/image-1.0.0-beta1.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "10997b105eb5a8522c3bf19854e634e9df56464e820509d15eb3ca07f78cd76a",
+        "observed_sha256": "10997b105eb5a8522c3bf19854e634e9df56464e820509d15eb3ca07f78cd76a",
+        "bytes": 15611
+      }
+    },
+    {
+      "consumer": "task",
+      "role": "classpaths",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/auto-value-annotations-1.6.jar",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "d095936c432f2afc671beaab67433e7cef50bba4a861b77b9c46561b801fae69",
+        "observed_sha256": "d095936c432f2afc671beaab67433e7cef50bba4a861b77b9c46561b801fae69",
+        "bytes": 5888
+      }
+    },
+    {
+      "consumer": "task",
+      "role": "natives",
+      "source": "p2_resolved_lock",
+      "local": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/tensorflow-lite-task-vision/jni/x86_64/libtask_vision_jni.so",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "3d30020f2352e0144c5fb87c2740dcab95548d81786b3c8d8db9435ed7347fe3",
+        "observed_sha256": "3d30020f2352e0144c5fb87c2740dcab95548d81786b3c8d8db9435ed7347fe3",
+        "bytes": 8320416
+      }
+    }
+  ],
+  "python_wheels": [
+    {
+      "filename": "absl_py-2.5.0-py3-none-any.whl",
+      "source": "original_wheels",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/python-wheels/absl_py-2.5.0-py3-none-any.whl",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "0f17b89f2a4eaaedc4f28c622998aa690564b3012a396a4ffad0821007fe03ba",
+        "observed_sha256": "0f17b89f2a4eaaedc4f28c622998aa690564b3012a396a4ffad0821007fe03ba",
+        "bytes": 137410
+      },
+      "acquisition": "Resolve the exact requirement using the configured package index, then require this wheel filename/hash; exact historical download URL is not recorded in this index. No package download was attempted this turn.",
+      "installed_binary_comparison": "Historical comparison reported; not rerun this turn."
+    },
+    {
+      "filename": "cffi-2.1.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "source": "original_wheels",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/python-wheels/cffi-2.1.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "34e261f78cb6ceaaa36f42f2613f4380d94d9c759a9c73c769ee6e0247364632",
+        "observed_sha256": "34e261f78cb6ceaaa36f42f2613f4380d94d9c759a9c73c769ee6e0247364632",
+        "bytes": 217807
+      },
+      "acquisition": "Resolve the exact requirement using the configured package index, then require this wheel filename/hash; exact historical download URL is not recorded in this index. No package download was attempted this turn.",
+      "installed_binary_comparison": "Historical comparison reported; not rerun this turn."
+    },
+    {
+      "filename": "flatbuffers-25.12.19-py2.py3-none-any.whl",
+      "source": "original_wheels",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/python-wheels/flatbuffers-25.12.19-py2.py3-none-any.whl",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4",
+        "observed_sha256": "7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4",
+        "bytes": 26661
+      },
+      "acquisition": "Resolve the exact requirement using the configured package index, then require this wheel filename/hash; exact historical download URL is not recorded in this index. No package download was attempted this turn.",
+      "installed_binary_comparison": "Historical comparison reported; not rerun this turn."
+    },
+    {
+      "filename": "numpy-1.26.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "source": "original_wheels",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/python-wheels/numpy-1.26.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "666dbfb6ec68962c033a450943ded891bed2d54e6755e35e5835d63f4f6931d5",
+        "observed_sha256": "666dbfb6ec68962c033a450943ded891bed2d54e6755e35e5835d63f4f6931d5",
+        "bytes": 18252005
+      },
+      "acquisition": "Resolve the exact requirement using the configured package index, then require this wheel filename/hash; exact historical download URL is not recorded in this index. No package download was attempted this turn.",
+      "installed_binary_comparison": "Historical comparison reported; not rerun this turn."
+    },
+    {
+      "filename": "pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "source": "original_wheels",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/python-wheels/pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "23d27a3e0307ec2244cc51e7287b919aa68d097504ebe19df4e76a98a3eea5bd",
+        "observed_sha256": "23d27a3e0307ec2244cc51e7287b919aa68d097504ebe19df4e76a98a3eea5bd",
+        "bytes": 6934408
+      },
+      "acquisition": "Resolve the exact requirement using the configured package index, then require this wheel filename/hash; exact historical download URL is not recorded in this index. No package download was attempted this turn.",
+      "installed_binary_comparison": "Historical comparison reported; not rerun this turn."
+    },
+    {
+      "filename": "protobuf-3.20.3-py2.py3-none-any.whl",
+      "source": "original_wheels",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/python-wheels/protobuf-3.20.3-py2.py3-none-any.whl",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "a7ca6d488aa8ff7f329d4c545b2dbad8ac31464f1d8b1c87ad1346717731e4db",
+        "observed_sha256": "a7ca6d488aa8ff7f329d4c545b2dbad8ac31464f1d8b1c87ad1346717731e4db",
+        "bytes": 162128
+      },
+      "acquisition": "Resolve the exact requirement using the configured package index, then require this wheel filename/hash; exact historical download URL is not recorded in this index. No package download was attempted this turn.",
+      "installed_binary_comparison": "Historical comparison reported; not rerun this turn."
+    },
+    {
+      "filename": "pybind11-3.1.0-py3-none-any.whl",
+      "source": "original_wheels",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/python-wheels/pybind11-3.1.0-py3-none-any.whl",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "b8488090f8acffbcb6b5d6a85571a6827a0a2981ffb75e5a0b27b87c4a6b7dd0",
+        "observed_sha256": "b8488090f8acffbcb6b5d6a85571a6827a0a2981ffb75e5a0b27b87c4a6b7dd0",
+        "bytes": 319402
+      },
+      "acquisition": "Resolve the exact requirement using the configured package index, then require this wheel filename/hash; exact historical download URL is not recorded in this index. No package download was attempted this turn.",
+      "installed_binary_comparison": "Historical comparison reported; not rerun this turn."
+    },
+    {
+      "filename": "pycparser-3.0-py3-none-any.whl",
+      "source": "original_wheels",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/python-wheels/pycparser-3.0-py3-none-any.whl",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992",
+        "observed_sha256": "b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992",
+        "bytes": 48172
+      },
+      "acquisition": "Resolve the exact requirement using the configured package index, then require this wheel filename/hash; exact historical download URL is not recorded in this index. No package download was attempted this turn.",
+      "installed_binary_comparison": "Historical comparison reported; not rerun this turn."
+    },
+    {
+      "filename": "sounddevice-0.5.6-py3-none-any.whl",
+      "source": "original_wheels",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/python-wheels/sounddevice-0.5.6-py3-none-any.whl",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "de099612311ad81e55d31ccbd83f43ea6bf4d87b48f9b6ea55a1fbcde0eee4e0",
+        "observed_sha256": "de099612311ad81e55d31ccbd83f43ea6bf4d87b48f9b6ea55a1fbcde0eee4e0",
+        "bytes": 32793
+      },
+      "acquisition": "Resolve the exact requirement using the configured package index, then require this wheel filename/hash; exact historical download URL is not recorded in this index. No package download was attempted this turn.",
+      "installed_binary_comparison": "Historical comparison reported; not rerun this turn."
+    },
+    {
+      "filename": "tflite_runtime-2.14.0-cp311-cp311-manylinux2014_x86_64.whl",
+      "source": "original_wheels",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/python-wheels/tflite_runtime-2.14.0-cp311-cp311-manylinux2014_x86_64.whl",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "195ab752e7e57329a68e54dd3dd5439fad888b9bff1be0f0dc042a3237a90e4d",
+        "observed_sha256": "195ab752e7e57329a68e54dd3dd5439fad888b9bff1be0f0dc042a3237a90e4d",
+        "bytes": 2414486
+      },
+      "acquisition": "Resolve the exact requirement using the configured package index, then require this wheel filename/hash; exact historical download URL is not recorded in this index. No package download was attempted this turn.",
+      "installed_binary_comparison": "Historical comparison reported; not rerun this turn."
+    },
+    {
+      "filename": "tflite_support-0.4.4-cp311-cp311-manylinux2014_x86_64.whl",
+      "source": "original_wheels",
+      "local": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/prerequisites/python-wheels/tflite_support-0.4.4-cp311-cp311-manylinux2014_x86_64.whl",
+        "exists_now": true,
+        "verification": "LOCAL_HASH_MATCH",
+        "expected_sha256": "eb6bffda7532bd0e0c95c69a4a3f1276e0434891b8139c21b71db40c713ccc98",
+        "observed_sha256": "eb6bffda7532bd0e0c95c69a4a3f1276e0434891b8139c21b71db40c713ccc98",
+        "bytes": 60810390
+      },
+      "acquisition": "Resolve the exact requirement using the configured package index, then require this wheel filename/hash; exact historical download URL is not recorded in this index. No package download was attempted this turn.",
+      "installed_binary_comparison": "Historical comparison reported; not rerun this turn."
+    }
+  ],
+  "current_locator_checks": [
+    {
+      "path": "/workspace/hand-contract-repro/.venv/bin/python",
+      "exists_now": true,
+      "is_symlink": true,
+      "resolved_path": "/workspace/hand-contract-repro/toolchains/python/cpython-3.11.16-linux-x86_64-gnu/bin/python3.11",
+      "verification": "EXISTENCE_ONLY_NOT_EXECUTED"
+    },
+    {
+      "path": "/workspace/hand-contract-repro/toolchains/jdk-17.0.12+7/bin/java",
+      "exists_now": true,
+      "is_symlink": false,
+      "resolved_path": "/workspace/hand-contract-repro/toolchains/jdk-17.0.12+7/bin/java",
+      "verification": "EXISTENCE_ONLY_NOT_EXECUTED"
+    },
+    {
+      "path": "/workspace/metadata-contract-e2e-20261004T030536Z/sdk/emulator/emulator",
+      "exists_now": true,
+      "is_symlink": false,
+      "resolved_path": "/workspace/metadata-contract-e2e-20261004T030536Z/sdk/emulator/emulator",
+      "verification": "EXISTENCE_ONLY_NOT_EXECUTED"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/sdk",
+      "exists_now": true,
+      "is_symlink": false,
+      "resolved_path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/sdk",
+      "verification": "EXISTENCE_ONLY_NOT_EXECUTED"
+    },
+    {
+      "path": "/workspace/repro-android",
+      "exists_now": false,
+      "is_symlink": false,
+      "resolved_path": "/workspace/repro-android",
+      "verification": "EXISTENCE_ONLY_NOT_EXECUTED"
+    },
+    {
+      "path": "/workspace/repro-control",
+      "exists_now": false,
+      "is_symlink": false,
+      "resolved_path": "/workspace/repro-control",
+      "verification": "EXISTENCE_ONLY_NOT_EXECUTED"
+    },
+    {
+      "path": "/workspace/repro-hand",
+      "exists_now": false,
+      "is_symlink": false,
+      "resolved_path": "/workspace/repro-hand",
+      "verification": "EXISTENCE_ONLY_NOT_EXECUTED"
+    }
+  ],
+  "limits": [
+    "P2 dependency selection is explicit javac/D8 classpath composition, not a Gradle-resolved transitive dependency graph.",
+    "Task embedded interpreter remains unknown; shared Java API version is not native interpreter equality.",
+    "Python lock pins alone do not specify interpreter archive identity or package-index source. Existing wheel identities are listed separately.",
+    "Codegen/source and tested API paths are EfficientNet unmodified generated wrapper; Hand syntax repair is not part of E1/E2/P2.",
+    "The r11 system-image archive internally declares r10. Original archive record and reconstruction lock agree on SHA256; revision strings alone are not an evidence conflict.",
+    "Current /workspace/repro-* roots are absent; historical reconstruction report claims are not freshly revalidated.",
+    "Archive and selected dependency hashes do not certify every installed SDK file or that tools run on this host."
+  ]
+}

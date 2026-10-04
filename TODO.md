@@ -14,7 +14,8 @@ remain complete. Stronger execution evidence does not by itself establish novelt
 or practical significance.
 
 Both bounded P0 assessments are complete; use their conclusions to choose the
-contribution and do the full manuscript rewrite. Reproduction handoff and human-audit preparation can
+contribution and do the full manuscript rewrite. The documented reproduction
+handoff is complete; external evidence delivery and human-audit preparation can
 proceed in parallel. Record whether the evidence supports a bounded empirical
 study, a method contribution, or a shorter case/experience report; do not assume
 the strongest framing in advance.
@@ -51,13 +52,21 @@ the strongest framing in advance.
   retaining the one-image boundary. Preserve historical manuscript snapshots.
   Cite Support #770 as both motivation and prior engineering evidence; explain
   test-property coverage without implying that existing protections are absent.
-- [ ] **P1 — Reproduction handoff (agent; can run in parallel).** Document the
-  required inputs, exact dependencies, acquisition locations, hashes, commands,
-  expected outcomes and missing materials in a usable entry point. Distinguish
-  documented commands from commands freshly verified against available inputs.
-  Completion means an explicit prerequisite and availability inventory, with a
-  separate plan for an independently usable evidence deposit. The repository
-  remains source-only; an inventory is not a complete archived reproduction.
+- [x] **P1 — Reproduction handoff (agent).** Added the
+  [reproduction entry](docs/reproduction/README.md), input/toolchain inventories,
+  exact source and historical execution commands, expected outcomes and missing
+  material. Rehashed selected currently available original inputs/dependencies;
+  exercised source-copy helpers and the finite old-record reader in new external
+  directories. Full reconstructed-record readback remains blocked by absent
+  `/workspace/repro-*` inputs. No installation, build, emulator or inference was
+  rerun. This completes the documented handoff and separate deposit plan, not a
+  portable archived or fresh-machine reproduction.
+- [ ] **P1 — Deliver and validate an external evidence package.** Follow the
+  [deposit plan](docs/reproduction/DEPOSIT_PLAN.md): choose destination/access,
+  recover missing inputs and configuration, preserve independently pinned
+  manifests, and verify the selected build/run in a fresh workspace. Keep binary
+  evidence outside Git. Current local availability and source-copy smoke checks
+  do not complete this item.
 - [ ] **P1 — Actual human audit (agent preparation; human verification).**
   Prepare a checklist and evidence index for the generated getter call, packaged
   model identity, preservation comparisons, exact exceptions and P3 reference
