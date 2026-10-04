@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Research Paper TODO — Metadata Contract Study</title>
+<style>
+  :root{
+    --bg:#0b1020;
+    --panel:#121a2e;
+    --panel2:#18233d;
+    --text:#eef3ff;
+    --muted:#9eabc4;
+    --line:#2a3857;
+    --danger:#ff7a7a;
+    --warn:#ffd36b;
+    --ok:#72d6a7;
+    --accent:#8eb7ff;
+    --shadow: 0 10px 30px rgba(0,0,0,.25);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:linear-gradient(180deg,#0a0f1d 0%,#0d1428 100%);
+    color:var(--text);
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 18px 60px}
+  header{
+    display:flex;gap:18px;align-items:flex-start;justify-content:space-between;
+    margin-bottom:18px;
+  }
+  h1{font-size:clamp(26px,4vw,44px);line-height:1.05;margin:0}
+  .subtitle{color:var(--muted);margin-top:10px;max-width:760px}
+  .badge{
+    display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:999px;
+    border:1px solid var(--line);background:#10182b;color:var(--muted);font-size:13px
+  }
+  .stats{
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:20px 0
+  }
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:var(--shadow)}
+  .stat .n{font-size:28px;font-weight:800}
+  .stat .l{color:var(--muted);font-size:13px;margin-top:4px}
+  .toolbar{
+    display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px
+  }
+  button,.toggle{
+    border:1px solid var(--line);background:var(--panel);color:var(--text);
+    padding:9px 12px;border-radius:10px;cursor:pointer;font-weight:650
+  }
+  button:hover,.toggle:hover{background:var(--panel2)}
+  button.active{outline:2px solid var(--accent);border-color:transparent}
+  .section{margin-top:24px}
+  .section-title{
+    display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:10px
+  }
+  .section-title h2{margin:0;font-size:22px}
+  .section-note{color:var(--muted);font-size:13px}
+  .callout{
+    border:1px solid rgba(255,122,122,.45);
+    background:linear-gradient(180deg,rgba(255,122,122,.10),rgba(255,122,122,.05));
+    padding:15px 16px;border-radius:14px;margin:14px 0 4px
+  }
+  .callout strong{color:#ffd7d7}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .card{
+    background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;
+    box-shadow:var(--shadow);position:relative
+  }
+  .card.manual{border-left:5px solid var(--danger)}
+  .card.review{border-left:5px solid var(--warn)}
+  .card.agent{border-left:5px solid var(--ok)}
+  .row{display:flex;align-items:flex-start;gap:11px}
+  input[type=checkbox]{width:20px;height:20px;margin-top:2px;accent-color:#7fa8ff;cursor:pointer}
+  .task-title{font-weight:800;font-size:16px}
+  .task-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+  .pill{font-size:11px;border-radius:999px;padding:4px 7px;border:1px solid var(--line);color:var(--muted)}
+  .pill.manual{color:#ffc8c8;border-color:rgba(255,122,122,.5)}
+  .pill.review{color:#ffe6a8;border-color:rgba(255,211,107,.45)}
+  .pill.agent{color:#bff4d8;border-color:rgba(114,214,167,.45)}
+  .desc{color:#c8d2e7;margin:9px 0 0 31px;line-height:1.5;font-size:14px}
+  .done .task-title,.done .desc{text-decoration:line-through;opacity:.55}
+  .hidden{display:none !important}
+  .mini-list{margin:8px 0 0 48px;padding:0;color:#c8d2e7}
+  .mini-list li{margin:5px 0}
+  .footer-note{
+    margin-top:28px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px
+  }
+  .progressbar{height:10px;background:#0d1528;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-top:10px}
+  .progressbar > div{height:100%;background:linear-gradient(90deg,#7fa8ff,#72d6a7);width:0%}
+  @media (max-width:780px){
+    .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid{grid-template-columns:1fr}
+    header{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Research Paper TODO</h1>
+      <div class="subtitle">
+        Metadata → Generated Interface → Consumer Enforcement 研究收敛清单。
+        重点：把“必须人工判断”的任务置顶，自动化工作放在后面。
+      </div>
+    </div>
+    <div class="badge">状态建议：GO-PAPER-DRAFT / bounded study</div>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><div class="n" id="allCount">0</div><div class="l">全部任务</div></div>
+    <div class="stat"><div class="n" id="manualCount">0</div><div class="l">人工优先</div></div>
+    <div class="stat"><div class="n" id="doneCount">0</div><div class="l">已完成</div></div>
+    <div class="stat"><div class="n" id="pct">0%</div><div class="l">总体进度</div><div class="progressbar"><div id="bar"></div></div></div>
+  </div>
+
+  <div class="toolbar">
+    <button class="active" data-filter="all">全部</button>
+    <button data-filter="manual">只看人工</button>
+    <button data-filter="review">只看人工复核</button>
+    <button data-filter="agent">只看可交给 Agent</button>
+    <button id="reset">清空勾选</button>
+  </div>
+
+  <section class="section">
+    <div class="section-title">
+      <h2>🔥 人工最优先</h2>
+      <div class="section-note">这些不应完全交给 research agent 自己批准。</div>
+    </div>
+
+    <div class="callout">
+      <strong>人工最小审计目标：</strong>
+      亲自确认 E1 deletion、E2 permutation、restoration/inverse 三个 witness，
+      然后把主要精力放在 claim/evidence/novelty，而不是重复 build。
+    </div>
+
+    <div class="grid">
+
+      <article class="card manual task" data-kind="manual" data-id="m1">
+        <div class="row">
+          <input type="checkbox">
+          <div>
+            <div class="task-title">人工检查 E1 的真实调用链</div>
+            <div class="task-meta">
+              <span class="pill manual">必须人工</span><span class="pill">P0</span><span class="pill">E1</span>
+            </div>
+          </div>
+        </div>
+        <div class="desc">
+          亲自打开 generated getter、harness 和异常栈，确认：
+          model load 成功 → inference 完成 → 调用实际 <code>getProbabilityAsCategoryList()</code> → getter 内抛异常。
+        </div>
+      </article>
+
+      <article class="card manual task" data-kind="manual" data-id="m2">
+        <div class="row">
+          <input type="checkbox">
+          <div>
+            <div class="task-title">人工检查 E2 的“数值不变 / 标签变”证据</div>
+            <div class="task-meta">
+              <span class="pill manual">必须人工</span><span class="pill">P0</span><span class="pill">E2</span>
+            </div>
+          </div>
+        </div>
+        <div class="desc">
+          抽查 raw score bit 对齐、returned-list position、top-k index、label permutation 和 inverse restoration。
+          特别确认 position 904 的证据链没有依赖重新实现 decoder。
+        </div>
+      </article>
+
+      <article class="card manual task" data-kind="manual" data-id="m3">
+        <div class="row">
+          <input type="checkbox">
+          <div>
+            <div class="task-title">人工确认 intervention 只改变声称的内容</div>
+            <div class="task-meta">
+              <span class="pill manual">必须人工</span><span class="pill">P0</span>
+            </div>
+          </div>
+        </div>
+        <div class="desc">
+          查看 deletion/permutation/restoration 的 diff、关联 label 文件和模型包内容。
+          不只看工作目录中的 SHA-256，也检查 APK 最终实际打包/加载的模型。
+        </div>
+      </article>
+
+      <article class="card manual task" data-kind="manual" data-id="m4">
+        <div class="row">
+          <input type="checkbox">
+          <div>
+            <div class="task-title">人工完成最终 Claim → Evidence 审核</div>
+            <div class="task-meta">
+              <span class="pill manual">必须人工</span><span class="pill">Submission Gate</span>
+            </div>
+          </div>
+        </div>
+        <div class="desc">
+          对每个强 claim 问“哪个 artifact 直接支持这句话？”。
+          重点人工审查：semantic、defect、incorrect、validation、consumer-dependent、general、official、end-to-end、runtime。
+        </div>
+      </article>
+
+      <article class="card manual task" data-kind="manual" data-id="m5">
+        <div class="row">
+          <input type="checkbox">
+          <div>
+            <div class="task-title">人工决定 novelty story</div>
+            <div class="task-meta">
+              <span class="pill manual">必须人工</span><span class="pill">P1/P4</span>
+            </div>
+          </div>
+        </div>
+        <div class="desc">
+          判断真正的新贡献是：受控 executable-contract case、consumer-dependent enforcement、
+          还是 evidence-bounded preflight。不要把官方已有的 label-count 检查重新包装成新算法。
+        </div>
+      </article>
+
+      <article class="card manual task" data-kind="manual" data-id="m6">
+        <div class="row">
+          <input type="checkbox">
+          <div>
+            <div class="task-title">人工判断独立 label-order reference 是否真正适用</div>
+            <div class="task-meta">
+              <span class="pill manual">必须人工最终判断</span><span class="pill">P3</span><span class="pill">E2</span>
+            </div>
+          </div>
+        </div>
+        <div class="desc">
+          Agent 可以搜来源，但最终要人工确认该 class order 与这个精确模型/转换链对应，
+          并检查 0/1-based、1000/1001 类、重复显示名等问题。
+        </div>
+      </article>
+
+      <article class="card manual task" data-kind="manual" data-id="m7">
+        <div class="row">
+          <input type="checkbox">
+          <div>
+            <div class="task-title">人工确认 limitation 没有被写弱</div>
+            <div class="task-meta">
+              <span class="pill manual">必须人工</span><span class="pill">P4</span>
+            </div>
+          </div>
+        </div>
+        <div class="desc">
+          保留：E1 是 injected failure；E2 当前主要是 association change；
+          E3 有 consumer/platform confound；E4 不是 prevalence study；E7 是单图 decoded-output 边界案例。
+        </div>
+      </article>
+
+      <article class="card manual task" data-kind="manual" data-id="m8">
+        <div class="row">
+          <input type="checkbox">
+          <div>
+            <div class="task-title">人工做最终 GO-PAPER / Venue 决定</div>
+            <div class="task-meta">
+              <span class="pill manual">必须人工</span><span class="pill">Final</span>
+            </div>
+          </div>
+        </div>
+        <div class="desc">
+          Agent 可以评估 venue、页数和 prior work，但最终是否投稿、投哪里、贡献是否足够，
+          应由作者做决定，不由 research agent 自己批准。
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <h2>👀 建议人工复核一次</h2>
+      <div class="section-note">可以自动化，但核心证据最好亲眼抽查。</div>
+    </div>
+    <div class="grid">
+
+      <article class="card review task" data-kind="review" data-id="r1">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">检查 generated Java 未被悄悄修改</div>
+          <div class="task-meta"><span class="pill review">人工复核</span><span class="pill">E1/E2</span></div>
+        </div></div>
+        <div class="desc">确认 getter 与生成器版本对应，harness 只观测并调用 getter，没有复制/替换 decoder expression。</div>
+      </article>
+
+      <article class="card review task" data-kind="review" data-id="r2">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">抽查最终 APK / DEX / class 与保存源码的一致性</div>
+          <div class="task-meta"><span class="pill review">人工复核</span><span class="pill">P0</span></div>
+        </div></div>
+        <div class="desc">不需要每个文件都手工检查，抽查 primary witness 的 source → class/DEX → runtime 路径即可。</div>
+      </article>
+
+      <article class="card review task" data-kind="review" data-id="r3">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">抽查 closest-work 引用是否真的支持正文措辞</div>
+          <div class="task-meta"><span class="pill review">人工复核</span><span class="pill">Novelty</span></div>
+        </div></div>
+        <div class="desc">重点是官方检查能力、DARA、documentation inconsistency、metadata/codegen 行为，不要只核对“论文存在”。</div>
+      </article>
+
+      <article class="card review task" data-kind="review" data-id="r4">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">检查论文图表是否准确区分模型数 / fixture 数 / execution 数</div>
+          <div class="task-meta"><span class="pill review">人工复核</span><span class="pill">Reporting</span></div>
+        </div></div>
+        <div class="desc">尤其不要把 65 byte-distinct fixtures 写成 65 independent models，也不要把 replay 重复计数。</div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <h2>🤖 可以交给 Agent / 自动化</h2>
+      <div class="section-note">这些适合脚本化和重复执行。</div>
+    </div>
+    <div class="grid">
+
+      <article class="card agent task" data-kind="agent" data-id="a1">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">从保存输入重新 build E1/E2</div>
+          <div class="task-meta"><span class="pill agent">Agent</span><span class="pill">P0</span></div>
+        </div></div>
+        <div class="desc">重新 generate → javac/Gradle → package → install → run；保存命令、环境和新哈希。</div>
+      </article>
+
+      <article class="card agent task" data-kind="agent" data-id="a2">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">自动计算 artifact diff / SHA256 / preservation</div>
+          <div class="task-meta"><span class="pill agent">Agent</span><span class="pill">P0</span></div>
+        </div></div>
+        <div class="desc">比较 graph/weights、metadata、关联文件、generated source/classes/DEX 和 runtime artifact。</div>
+      </article>
+
+      <article class="card agent task" data-kind="agent" data-id="a3">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">官方工具 + 简单 baseline + E5 对照</div>
+          <div class="task-meta"><span class="pill agent">Agent</span><span class="pill">P1</span></div>
+        </div></div>
+        <div class="desc">比较 structural parsing、label-count baseline、Task initialization、E5，并逐项记录检查范围与 failure stage。</div>
+      </article>
+
+      <article class="card agent task" data-kind="agent" data-id="a4">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">同一 Android 环境做 consumer 对照</div>
+          <div class="task-meta"><span class="pill agent">Agent</span><span class="pill">P2</span></div>
+        </div></div>
+        <div class="desc">Generated wrapper vs Android Task ImageClassifier；测试 original / deletion / restoration / permutation。</div>
+      </article>
+
+      <article class="card agent task" data-kind="agent" data-id="a5">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">搜索独立 class-order reference</div>
+          <div class="task-meta"><span class="pill agent">Agent</span><span class="pill">P3</span></div>
+        </div></div>
+        <div class="desc">优先 publisher model docs、转换代码、训练映射；输出完整 provenance，不自行宣布 ground truth 成立。</div>
+      </article>
+
+      <article class="card agent task" data-kind="agent" data-id="a6">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">自动生成 Claim → Artifact 矩阵草案</div>
+          <div class="task-meta"><span class="pill agent">Agent</span><span class="pill">P4</span></div>
+        </div></div>
+        <div class="desc">每个 claim 标出支持 artifact、允许推断、禁止推断和已知限制，最后由人工签核。</div>
+      </article>
+
+      <article class="card agent task" data-kind="agent" data-id="a7">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">按新叙事重写论文</div>
+          <div class="task-meta"><span class="pill agent">Agent</span><span class="pill">P4</span></div>
+        </div></div>
+        <div class="desc">主线：E1/E2 executable consequence → E3 consumer enforcement → E4/E5 scope & abstention → E7 boundary case。</div>
+      </article>
+
+      <article class="card agent task" data-kind="agent" data-id="a8">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">清理内部研究叙事</div>
+          <div class="task-meta"><span class="pill agent">Agent</span><span class="pill">P4</span></div>
+        </div></div>
+        <div class="desc">将 R15/R16/R17、agent disagreement、adjudication 历史移到 appendix/provenance，正文只保留与科学结论直接相关的信息。</div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <h2>🛑 停止条件</h2>
+      <div class="section-note">防止无限扩实验。</div>
+    </div>
+    <div class="grid">
+      <article class="card task" data-kind="agent" data-id="s1">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">核心证据可从保存输入重新构建</div>
+          <div class="task-meta"><span class="pill">Stop Gate 1</span></div>
+        </div></div>
+        <div class="desc">E1/E2 新 build 复现，没有未解释差异。</div>
+      </article>
+      <article class="card task" data-kind="agent" data-id="s2">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">官方基线与 E5 的贡献边界已明确</div>
+          <div class="task-meta"><span class="pill">Stop Gate 2</span></div>
+        </div></div>
+        <div class="desc">知道哪些是已有检查、哪些是提前执行、哪些确实是额外能力；允许 E5 降级为工具。</div>
+      </article>
+      <article class="card task" data-kind="agent" data-id="s3">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">主要混杂已处理或明确保留</div>
+          <div class="task-meta"><span class="pill">Stop Gate 3</span></div>
+        </div></div>
+        <div class="desc">完成同平台 consumer 对照，或者明确缩小 E3 主张；label-order 查证按预定范围结束。</div>
+      </article>
+      <article class="card manual task" data-kind="manual" data-id="s4">
+        <div class="row"><input type="checkbox"><div>
+          <div class="task-title">人工批准进入 submission draft</div>
+          <div class="task-meta"><span class="pill manual">必须人工</span><span class="pill">Final Gate</span></div>
+        </div></div>
+        <div class="desc">停止继续加随机模型/输入，把时间转到论文质量、图表、相关工作和 venue fit。</div>
+      </article>
+    </div>
+  </section>
+
+  <div class="footer-note">
+    勾选状态会保存在当前浏览器的 localStorage 中。页面不上传数据，也不依赖外部库。
+  </div>
+</div>
+
+<script>
+(function(){
+  const key = "metadata-contract-study-todo-v1";
+  const tasks = [...document.querySelectorAll(".task")];
+  let state = {};
+  try { state = JSON.parse(localStorage.getItem(key) || "{}"); } catch(e){ state = {}; }
+
+  function update(){
+    let done = 0, manual = 0;
+    for(const t of tasks){
+      const id = t.dataset.id;
+      const cb = t.querySelector('input[type="checkbox"]');
+      cb.checked = !!state[id];
+      t.classList.toggle("done", cb.checked);
+      if(cb.checked) done++;
+      if(t.dataset.kind === "manual") manual++;
+    }
+    document.getElementById("allCount").textContent = tasks.length;
+    document.getElementById("manualCount").textContent = manual;
+    document.getElementById("doneCount").textContent = done;
+    const pct = tasks.length ? Math.round(done/tasks.length*100) : 0;
+    document.getElementById("pct").textContent = pct + "%";
+    document.getElementById("bar").style.width = pct + "%";
+  }
+
+  for(const t of tasks){
+    const cb = t.querySelector('input[type="checkbox"]');
+    cb.addEventListener("change", ()=>{
+      state[t.dataset.id] = cb.checked;
+      localStorage.setItem(key, JSON.stringify(state));
+      update();
+    });
+  }
+
+  document.querySelectorAll("[data-filter]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      document.querySelectorAll("[data-filter]").forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      const f = btn.dataset.filter;
+      for(const t of tasks){
+        let show = f === "all" || t.dataset.kind === f;
+        t.classList.toggle("hidden", !show);
+      }
+    });
+  });
+
+  document.getElementById("reset").addEventListener("click", ()=>{
+    state = {};
+    localStorage.setItem(key, "{}");
+    update();
+  });
+
+  update();
+})();
+</script>
+</body>
+</html>
