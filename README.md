@@ -17,6 +17,7 @@ source and continuation documents, **not the complete evidence archive**.
 - [Maintained observation reader and completeness fixes](work/observation-review-20261004/README.md)
 - [Project memory and current evidence boundaries](MEMORY.md)
 - [Current TODO](TODO.md)
+- [Reproduction entry: inputs, versions, commands and missing material](docs/reproduction/README.md)
 - [Contribution and related-work comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md)
 - [Research significance assessment and public antecedents](research/20261004-significance-review/README.md)
 - [Decisions and scope](docs/DECISIONS.md)

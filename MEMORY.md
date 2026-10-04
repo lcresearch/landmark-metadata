@@ -101,9 +101,11 @@ is also complete within its declared scope. It supports integration-test coverag
 and consumer-specific diagnosis, not prevalence, demonstrated operational benefit
 or a superior method. Use both assessments to finalize the framing; no method
 novelty or venue readiness is presumed.
-Reproduction handoff and human-audit preparation can proceed in parallel. Actual
-human verification remains pending; venue selection and formatting follow the
-contribution decision. The contribution comparison does not complete those tasks.
+The [documented reproduction handoff](docs/reproduction/README.md) is now complete
+as an inventory and command guide; delivery of a portable external package and
+fresh-machine validation remain open. Actual human verification remains pending;
+venue selection and formatting follow the contribution decision. The P0
+comparisons do not complete those tasks.
 
 This contribution-review task freshly inspected seven full texts: five recovered
 PDFs with historical matching hashes (MLGuard, DocTer, ACETest, DARA, AIBOM), plus
@@ -147,6 +149,33 @@ repeat completed core audits and baseline comparisons without a new change or
 unresolved contradiction. An E5 method expansion is conditional on demonstrated
 value beyond a strong baseline. Priority labels in the active TODO are distinct
 from the completed experiment/follow-up names.
+
+## Reproduction handoff, 2026-10-04
+
+The [entry point](docs/reproduction/README.md) separates source checks, finite
+readback of original E1/E2/P2/P3 records, the later reconstructed corpus reader,
+and future build/run steps. It indexes exact inputs and dependency identities,
+recorded acquisition routes, current local observations and unresolved delivery
+gaps. Public URLs were not fetched again. Selected original model, input,
+reference and dependency files were rehashed; hashing a manifest file alone does
+not authenticate all of its entries.
+
+The maintained finite reader was actually exercised on 59 old files in this
+handoff, with comparison booleans inspected. The later `/workspace/repro-*`
+results remain absent at their checked locators and were not replaced with older
+records. Source-only base copying and Android source initialization succeeded in
+new external directories; neither installed a toolchain or ran inference.
+The handoff host's Python 3.12.14 is distinct from the recorded experiment Python
+3.11.16. Task's embedded interpreter remains unknown. The system-image archive
+named r11 internally reports revision 10; this documented packaging discrepancy
+is not evidence of a changed image. Exact archive identity is recorded separately.
+
+Raw handoff logs stay outside Git in `/workspace/landmark-handoff-audit-20261004/`.
+No model build, Android execution or full preservation/reference-chain rerun was
+performed. Several historical scripts write at import time or depend on omitted
+configuration and absolute paths; follow the gated command guide, not a blind
+replay of `commands.sh`. The separate external-deposit plan remains to be executed;
+source-only documentation is not a portable evidence archive or human audit.
 
 ## Evidence availability
 

@@ -1,0 +1,716 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-04T20:09:25.061862+00:00",
+  "scope": "Finite read-only input/provenance inventory. No downloads, generation, compilation, Android execution or inference. No aggregate PASS or complete-evidence certification.",
+  "status_definitions": {
+    "MISSING_AT_CHECKED_PATH": "Checked exact local path, absent; not a global filesystem search.",
+    "PRESENT_NOT_REHASHED": "Existence/size checked; bytes were not authenticated.",
+    "PRESENT_REHASHED_MATCH": "Read actual bytes this turn and compared with a separately recorded expected digest.",
+    "PRESENT_REHASHED_NO_EXPECTED_DIGEST": "Actual digest recorded without a prior digest comparison.",
+    "DIRECTORY_PRESENT_CONTENTS_NOT_INVENTORIED": "Directory exists; contents were not exhaustively checked."
+  },
+  "model_conditions": [
+    {
+      "id": "original",
+      "mutation": "Publisher version-1 model; direct .tflite, not a bundle member.",
+      "primary_model": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/variants/original/model.tflite",
+        "expected_sha256": "6c7ab0a6e5dcbf38a8c33b960996a55a3b4300b36a018c4545801de3a3c8bde0",
+        "bytes": 18582189,
+        "observed_sha256": "6c7ab0a6e5dcbf38a8c33b960996a55a3b4300b36a018c4545801de3a3c8bde0",
+        "availability": "PRESENT_REHASHED_MATCH"
+      },
+      "record_source": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/results.json",
+      "canonical_graph_sha256_recorded": "73e57df01115600419abb72de4b2c3257200e12eb205d335bcbfc203a589bee8",
+      "canonical_check_this_turn": "NOT_RECOMPUTED",
+      "embedded_metadata_sha256_recorded": "8608ff0e1650d5d7d2d841fb722e91b503730cde0fd7bfa1c2c67acaaa594ecb",
+      "embedded_metadata_check_this_turn": "NOT_RECOMPUTED",
+      "associated_file": {
+        "member": "labels_without_background.txt",
+        "expected_sha256": "e697a491aa735cc6c2aaf982f8e86e8fc7b0a1ea7750a2cc6a2bdfc1e109012f",
+        "observed_sha256": "e697a491aa735cc6c2aaf982f8e86e8fc7b0a1ea7750a2cc6a2bdfc1e109012f",
+        "bytes": 10473,
+        "availability": "PRESENT_MEMBER_REHASHED_MATCH",
+        "recorded_nonempty_label_count": 1000
+      },
+      "p2_copy": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/variants/original/model.tflite",
+        "expected_sha256": "6c7ab0a6e5dcbf38a8c33b960996a55a3b4300b36a018c4545801de3a3c8bde0",
+        "bytes": 18582189,
+        "availability": "PRESENT_NOT_REHASHED"
+      },
+      "acquisition_url": "https://storage.googleapis.com/mediapipe-models/image_classifier/efficientnet_lite0/float32/1/efficientnet_lite0.tflite"
+    },
+    {
+      "id": "description_control",
+      "mutation": "One-character same-length case edit in description: first byte of Probabilities of the 1000 labels respectively. XOR 32.",
+      "primary_model": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/variants/description_control/model.tflite",
+        "expected_sha256": "ed16d9573d8fe3e489c27637036a4e5c8476d15f013b7116f89864d55432f51d",
+        "bytes": 18582189,
+        "observed_sha256": "ed16d9573d8fe3e489c27637036a4e5c8476d15f013b7116f89864d55432f51d",
+        "availability": "PRESENT_REHASHED_MATCH"
+      },
+      "record_source": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/results.json",
+      "canonical_graph_sha256_recorded": "73e57df01115600419abb72de4b2c3257200e12eb205d335bcbfc203a589bee8",
+      "canonical_check_this_turn": "NOT_RECOMPUTED",
+      "embedded_metadata_sha256_recorded": "46fa7ffc810a4b7780ad695c60493fac3fc0a0e2f30ab9ce0769ef2bdf26b288",
+      "embedded_metadata_check_this_turn": "NOT_RECOMPUTED",
+      "associated_file": {
+        "member": "labels_without_background.txt",
+        "expected_sha256": "e697a491aa735cc6c2aaf982f8e86e8fc7b0a1ea7750a2cc6a2bdfc1e109012f",
+        "observed_sha256": "e697a491aa735cc6c2aaf982f8e86e8fc7b0a1ea7750a2cc6a2bdfc1e109012f",
+        "bytes": 10473,
+        "availability": "PRESENT_MEMBER_REHASHED_MATCH",
+        "recorded_nonempty_label_count": 1000
+      },
+      "p2_copy": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/variants/description_control/model.tflite",
+        "expected_sha256": "ed16d9573d8fe3e489c27637036a4e5c8476d15f013b7116f89864d55432f51d",
+        "bytes": 18582189,
+        "availability": "PRESENT_NOT_REHASHED"
+      }
+    },
+    {
+      "id": "label_deletion",
+      "mutation": "Remove final line of labels_without_background.txt; rebuild appended ZIP deterministically; graph/weights unchanged is a recorded preservation claim.",
+      "primary_model": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/variants/label_deletion/model.tflite",
+        "expected_sha256": "739f08462e831806db6a9bce7ed5b70a037fce593003028e5d6911dbd284fd83",
+        "bytes": 18582175,
+        "observed_sha256": "739f08462e831806db6a9bce7ed5b70a037fce593003028e5d6911dbd284fd83",
+        "availability": "PRESENT_REHASHED_MATCH"
+      },
+      "record_source": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/results.json",
+      "canonical_graph_sha256_recorded": "73e57df01115600419abb72de4b2c3257200e12eb205d335bcbfc203a589bee8",
+      "canonical_check_this_turn": "NOT_RECOMPUTED",
+      "embedded_metadata_sha256_recorded": "8608ff0e1650d5d7d2d841fb722e91b503730cde0fd7bfa1c2c67acaaa594ecb",
+      "embedded_metadata_check_this_turn": "NOT_RECOMPUTED",
+      "associated_file": {
+        "member": "labels_without_background.txt",
+        "expected_sha256": "7da978074d861c47f650a000db04db008aaecafcc1ae3e58eb71718e36c5ff4a",
+        "observed_sha256": "7da978074d861c47f650a000db04db008aaecafcc1ae3e58eb71718e36c5ff4a",
+        "bytes": 10459,
+        "availability": "PRESENT_MEMBER_REHASHED_MATCH",
+        "recorded_nonempty_label_count": 999
+      },
+      "p2_copy": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/variants/label_deletion/model.tflite",
+        "expected_sha256": "739f08462e831806db6a9bce7ed5b70a037fce593003028e5d6911dbd284fd83",
+        "bytes": 18582175,
+        "availability": "PRESENT_NOT_REHASHED"
+      }
+    },
+    {
+      "id": "label_permutation",
+      "mutation": "Predeclared one-position cyclic left shift of all 1000 label strings; preserve multiset, filename and final newline.",
+      "primary_model": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/variants/label_permutation/model.tflite",
+        "expected_sha256": "455a04a2c6193ea81bef8fbc47e193aee0449b8cebdc9cc487c7e9e85fe42da7",
+        "bytes": 18582189,
+        "observed_sha256": "455a04a2c6193ea81bef8fbc47e193aee0449b8cebdc9cc487c7e9e85fe42da7",
+        "availability": "PRESENT_REHASHED_MATCH"
+      },
+      "record_source": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/results.json",
+      "canonical_graph_sha256_recorded": "73e57df01115600419abb72de4b2c3257200e12eb205d335bcbfc203a589bee8",
+      "canonical_check_this_turn": "NOT_RECOMPUTED",
+      "embedded_metadata_sha256_recorded": "8608ff0e1650d5d7d2d841fb722e91b503730cde0fd7bfa1c2c67acaaa594ecb",
+      "embedded_metadata_check_this_turn": "NOT_RECOMPUTED",
+      "associated_file": {
+        "member": "labels_without_background.txt",
+        "expected_sha256": "334152d1cce3445fc73c27c32001b5a6e8b7e548a37cc0e050ea363ebde18d3a",
+        "observed_sha256": "334152d1cce3445fc73c27c32001b5a6e8b7e548a37cc0e050ea363ebde18d3a",
+        "bytes": 10473,
+        "availability": "PRESENT_MEMBER_REHASHED_MATCH",
+        "recorded_nonempty_label_count": 1000
+      },
+      "p2_copy": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/variants/label_permutation/model.tflite",
+        "expected_sha256": "455a04a2c6193ea81bef8fbc47e193aee0449b8cebdc9cc487c7e9e85fe42da7",
+        "bytes": 18582189,
+        "availability": "PRESENT_NOT_REHASHED"
+      }
+    },
+    {
+      "id": "restoration",
+      "mutation": "Restore original label payload after deletion; inverse cyclic shift restoration is an alias with same recorded package hash. ZIP container differs from publisher original.",
+      "primary_model": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/variants/label_restoration/model.tflite",
+        "expected_sha256": "0a605ed10a38fc6f92fc4e266f5560756d2809e2669c45aa3b5a631cd88cea72",
+        "bytes": 18582189,
+        "observed_sha256": "0a605ed10a38fc6f92fc4e266f5560756d2809e2669c45aa3b5a631cd88cea72",
+        "availability": "PRESENT_REHASHED_MATCH"
+      },
+      "record_source": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/results.json",
+      "canonical_graph_sha256_recorded": "73e57df01115600419abb72de4b2c3257200e12eb205d335bcbfc203a589bee8",
+      "canonical_check_this_turn": "NOT_RECOMPUTED",
+      "embedded_metadata_sha256_recorded": "8608ff0e1650d5d7d2d841fb722e91b503730cde0fd7bfa1c2c67acaaa594ecb",
+      "embedded_metadata_check_this_turn": "NOT_RECOMPUTED",
+      "associated_file": {
+        "member": "labels_without_background.txt",
+        "expected_sha256": "e697a491aa735cc6c2aaf982f8e86e8fc7b0a1ea7750a2cc6a2bdfc1e109012f",
+        "observed_sha256": "e697a491aa735cc6c2aaf982f8e86e8fc7b0a1ea7750a2cc6a2bdfc1e109012f",
+        "bytes": 10473,
+        "availability": "PRESENT_MEMBER_REHASHED_MATCH",
+        "recorded_nonempty_label_count": 1000
+      },
+      "p2_copy": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/variants/restoration/model.tflite",
+        "expected_sha256": "0a605ed10a38fc6f92fc4e266f5560756d2809e2669c45aa3b5a631cd88cea72",
+        "bytes": 18582189,
+        "availability": "PRESENT_NOT_REHASHED"
+      },
+      "e2_alias": {
+        "path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/variants/permutation_restoration/model.tflite",
+        "expected_sha256": "0a605ed10a38fc6f92fc4e266f5560756d2809e2669c45aa3b5a631cd88cea72",
+        "bytes": 18582189,
+        "availability": "PRESENT_NOT_REHASHED"
+      }
+    }
+  ],
+  "rgb_inputs": [
+    {
+      "id": "gray127",
+      "width": 224,
+      "height": 224,
+      "channels": "RGB",
+      "dtype_before_wrapper_preprocessing": "UINT8",
+      "bytes": 150528,
+      "definition": "every RGB channel = 127",
+      "construction": "ARGB_8888 Bitmap alpha=255 -> TensorImage(UINT8); generated preprocessing remains part of consumer",
+      "expected_sha256": "0748107f4221d0bb4ed8bada6a865b9348fb3b2a4c83b46f8e5eee704078b0ca",
+      "definition_bytes_sha256_recomputed": "0748107f4221d0bb4ed8bada6a865b9348fb3b2a4c83b46f8e5eee704078b0ca",
+      "definition_matches_recorded_digest": true,
+      "record_source": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/executions/primary/original/device/result.json",
+      "locations": [
+        {
+          "path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/executions/primary/original/device/gray127-input.rgb",
+          "expected_sha256": "0748107f4221d0bb4ed8bada6a865b9348fb3b2a4c83b46f8e5eee704078b0ca",
+          "bytes": 150528,
+          "observed_sha256": "0748107f4221d0bb4ed8bada6a865b9348fb3b2a4c83b46f8e5eee704078b0ca",
+          "availability": "PRESENT_REHASHED_MATCH"
+        },
+        {
+          "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/executions/primary/wrapper/original/device/gray127-input.rgb",
+          "expected_sha256": "0748107f4221d0bb4ed8bada6a865b9348fb3b2a4c83b46f8e5eee704078b0ca",
+          "bytes": 150528,
+          "observed_sha256": "0748107f4221d0bb4ed8bada6a865b9348fb3b2a4c83b46f8e5eee704078b0ca",
+          "availability": "PRESENT_REHASHED_MATCH"
+        },
+        {
+          "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/executions/primary/task/original/device/gray127-input.rgb",
+          "expected_sha256": "0748107f4221d0bb4ed8bada6a865b9348fb3b2a4c83b46f8e5eee704078b0ca",
+          "bytes": 150528,
+          "observed_sha256": "0748107f4221d0bb4ed8bada6a865b9348fb3b2a4c83b46f8e5eee704078b0ca",
+          "availability": "PRESENT_REHASHED_MATCH"
+        }
+      ]
+    },
+    {
+      "id": "rgb_pattern",
+      "width": 224,
+      "height": 224,
+      "channels": "RGB",
+      "dtype_before_wrapper_preprocessing": "UINT8",
+      "bytes": 150528,
+      "definition": "byte j = (37*j+17) & 255; row-major RGB, j=0..150527",
+      "construction": "ARGB_8888 Bitmap alpha=255 -> TensorImage(UINT8); generated preprocessing remains part of consumer",
+      "expected_sha256": "fb23d2aecf5083dd57637ecebd7e80993a33af2561208c4cdd732cfe9249052f",
+      "definition_bytes_sha256_recomputed": "fb23d2aecf5083dd57637ecebd7e80993a33af2561208c4cdd732cfe9249052f",
+      "definition_matches_recorded_digest": true,
+      "record_source": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/executions/primary/original/device/result.json",
+      "locations": [
+        {
+          "path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/executions/primary/original/device/rgb_pattern-input.rgb",
+          "expected_sha256": "fb23d2aecf5083dd57637ecebd7e80993a33af2561208c4cdd732cfe9249052f",
+          "bytes": 150528,
+          "observed_sha256": "fb23d2aecf5083dd57637ecebd7e80993a33af2561208c4cdd732cfe9249052f",
+          "availability": "PRESENT_REHASHED_MATCH"
+        },
+        {
+          "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/executions/primary/wrapper/original/device/rgb_pattern-input.rgb",
+          "expected_sha256": "fb23d2aecf5083dd57637ecebd7e80993a33af2561208c4cdd732cfe9249052f",
+          "bytes": 150528,
+          "observed_sha256": "fb23d2aecf5083dd57637ecebd7e80993a33af2561208c4cdd732cfe9249052f",
+          "availability": "PRESENT_REHASHED_MATCH"
+        },
+        {
+          "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/executions/primary/task/original/device/rgb_pattern-input.rgb",
+          "expected_sha256": "fb23d2aecf5083dd57637ecebd7e80993a33af2561208c4cdd732cfe9249052f",
+          "bytes": 150528,
+          "observed_sha256": "fb23d2aecf5083dd57637ecebd7e80993a33af2561208c4cdd732cfe9249052f",
+          "availability": "PRESENT_REHASHED_MATCH"
+        }
+      ]
+    }
+  ],
+  "p3_reference_prerequisites": [
+    {
+      "id": "I01-publisher-model",
+      "acquisition_url": "https://storage.googleapis.com/mediapipe-models/image_classifier/efficientnet_lite0/float32/1/efficientnet_lite0.tflite",
+      "recorded_retrieval_utc": "2026-10-04T07:42:28.847443+00:00",
+      "recorded_http_status": 200,
+      "current_network_retrieval": "NOT_ATTEMPTED",
+      "body": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/I01-publisher-model/body",
+        "expected_sha256": "6c7ab0a6e5dcbf38a8c33b960996a55a3b4300b36a018c4545801de3a3c8bde0",
+        "bytes": 18582189,
+        "observed_sha256": "6c7ab0a6e5dcbf38a8c33b960996a55a3b4300b36a018c4545801de3a3c8bde0",
+        "availability": "PRESENT_REHASHED_MATCH"
+      },
+      "record_source": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/I01-publisher-model/retrieval.json",
+      "portable_caveat": "Digest is required even for a versioned/pinned locator."
+    },
+    {
+      "id": "I06-tfhub-lite-model",
+      "acquisition_url": "https://tfhub.dev/tensorflow/lite-model/efficientnet/lite0/fp32/2?lite-format=tflite",
+      "recorded_retrieval_utc": "2026-10-04T07:42:30.616846+00:00",
+      "recorded_http_status": 200,
+      "current_network_retrieval": "NOT_ATTEMPTED",
+      "body": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/I06-tfhub-lite-model/body",
+        "expected_sha256": "7276a936443685daae8612fc3cb9370247cb1f4966286cd95e02c44e1183f0dd",
+        "bytes": 18582169,
+        "observed_sha256": "7276a936443685daae8612fc3cb9370247cb1f4966286cd95e02c44e1183f0dd",
+        "availability": "PRESENT_REHASHED_MATCH"
+      },
+      "record_source": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/I06-tfhub-lite-model/retrieval.json",
+      "portable_caveat": "Logical version URL redirects; signed final download URL is temporary and is not copied here."
+    },
+    {
+      "id": "F07-pinned-lite-card",
+      "acquisition_url": "https://raw.githubusercontent.com/tensorflow/tfhub.dev/81fdea8ffa53b5acbd66a012d17fb8f9602c714b/assets/docs/tensorflow/models/efficientnet/lite0/fp32/lite/2.md",
+      "recorded_retrieval_utc": "2026-10-04T07:44:08.068790+00:00",
+      "recorded_http_status": 200,
+      "current_network_retrieval": "NOT_ATTEMPTED",
+      "body": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/F07-pinned-lite-card/body",
+        "expected_sha256": "77300c8c37140316900b5712ad4c73f9dd2e87d0701c5804cdccf185b2b8bfae",
+        "bytes": 794,
+        "observed_sha256": "77300c8c37140316900b5712ad4c73f9dd2e87d0701c5804cdccf185b2b8bfae",
+        "availability": "PRESENT_REHASHED_MATCH"
+      },
+      "record_source": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/F07-pinned-lite-card/retrieval.json",
+      "portable_caveat": "Digest is required even for a versioned/pinned locator."
+    },
+    {
+      "id": "F10-pinned-parent-card",
+      "acquisition_url": "https://raw.githubusercontent.com/tensorflow/tfhub.dev/81fdea8ffa53b5acbd66a012d17fb8f9602c714b/assets/docs/tensorflow/models/efficientnet/lite0/classification/1.md",
+      "recorded_retrieval_utc": "2026-10-04T07:44:34.208364+00:00",
+      "recorded_http_status": 200,
+      "current_network_retrieval": "NOT_ATTEMPTED",
+      "body": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/F10-pinned-parent-card/body",
+        "expected_sha256": "2b94894d016a0b9a6edcb09d19d3e4b9a3d22ab5393c1af85c70d34a75511f58",
+        "bytes": 4151,
+        "observed_sha256": "2b94894d016a0b9a6edcb09d19d3e4b9a3d22ab5393c1af85c70d34a75511f58",
+        "availability": "PRESENT_REHASHED_MATCH"
+      },
+      "record_source": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/F10-pinned-parent-card/retrieval.json",
+      "portable_caveat": "Digest is required even for a versioned/pinned locator."
+    },
+    {
+      "id": "F11-explicit-class-order",
+      "acquisition_url": "https://storage.googleapis.com/download.tensorflow.org/data/ImageNetLabels.txt",
+      "recorded_retrieval_utc": "2026-10-04T07:44:34.097260+00:00",
+      "recorded_http_status": 200,
+      "current_network_retrieval": "NOT_ATTEMPTED",
+      "body": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/F11-explicit-class-order/body",
+        "expected_sha256": "536feacc519de3d418de26b2effb4d75694a8c4c0063e36499a46fa8061e2da9",
+        "bytes": 10484,
+        "observed_sha256": "536feacc519de3d418de26b2effb4d75694a8c4c0063e36499a46fa8061e2da9",
+        "availability": "PRESENT_REHASHED_MATCH"
+      },
+      "record_source": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/F11-explicit-class-order/retrieval.json",
+      "portable_caveat": "Unversioned object URL: require the listed digest, do not accept replacement bytes silently."
+    },
+    {
+      "id": "F01-publisher-labels",
+      "acquisition_url": "https://storage.googleapis.com/mediapipe-tasks/image_classifier/labels.txt",
+      "recorded_retrieval_utc": "2026-10-04T07:43:03.137949+00:00",
+      "recorded_http_status": 200,
+      "current_network_retrieval": "NOT_ATTEMPTED",
+      "body": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/F01-publisher-labels/body",
+        "expected_sha256": "536feacc519de3d418de26b2effb4d75694a8c4c0063e36499a46fa8061e2da9",
+        "bytes": 10484,
+        "observed_sha256": "536feacc519de3d418de26b2effb4d75694a8c4c0063e36499a46fa8061e2da9",
+        "availability": "PRESENT_REHASHED_MATCH"
+      },
+      "record_source": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/F01-publisher-labels/retrieval.json",
+      "portable_caveat": "Unversioned object URL: require the listed digest, do not accept replacement bytes silently."
+    }
+  ],
+  "historical_manifest_files": [
+    {
+      "path": "/workspace/metadata-contract-e2e-20261004T030536Z/SHA256SUMS",
+      "expected_sha256": "aba0739ac893ee69795556d43384029d20cc096a584156d0f0c37638fdc8751d",
+      "bytes": 295977,
+      "observed_sha256": "aba0739ac893ee69795556d43384029d20cc096a584156d0f0c37638fdc8751d",
+      "availability": "PRESENT_REHASHED_MATCH",
+      "entry_verification_this_turn": "NOT_PERFORMED",
+      "portable_archive_url": null,
+      "record_sources": [
+        "/workspace/metadata-contract-p2p3-20261004T073824Z/INPUTS.json",
+        "MEMORY.md"
+      ]
+    },
+    {
+      "path": "/workspace/metadata-contract-audit-20261004T062010Z/SHA256SUMS",
+      "expected_sha256": "b73388bf6ce263d9fff7659a90166d80ae56544d540a12620768a1bc8a8af89d",
+      "bytes": 119867,
+      "observed_sha256": "b73388bf6ce263d9fff7659a90166d80ae56544d540a12620768a1bc8a8af89d",
+      "availability": "PRESENT_REHASHED_MATCH",
+      "entry_verification_this_turn": "NOT_PERFORMED",
+      "portable_archive_url": null,
+      "record_sources": [
+        "/workspace/metadata-contract-p2p3-20261004T073824Z/INPUTS.json",
+        "MEMORY.md"
+      ]
+    },
+    {
+      "path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/SHA256SUMS",
+      "expected_sha256": "daa981d200c058a8a958ee20c8fdfd1dee0b0bfa560f543d14540e73cd23c13a",
+      "bytes": 4264,
+      "observed_sha256": "daa981d200c058a8a958ee20c8fdfd1dee0b0bfa560f543d14540e73cd23c13a",
+      "availability": "PRESENT_REHASHED_MATCH",
+      "entry_verification_this_turn": "NOT_PERFORMED",
+      "portable_archive_url": null,
+      "record_sources": [
+        "/workspace/metadata-contract-p2p3-20261004T073824Z/INPUTS.json",
+        "MEMORY.md"
+      ]
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/SHA256SUMS",
+      "expected_sha256": "d903826e8d6f666921ba9e6e9247fe541cb3b7c6b8170113c4b5c572f82f58d5",
+      "bytes": 117756,
+      "observed_sha256": "d903826e8d6f666921ba9e6e9247fe541cb3b7c6b8170113c4b5c572f82f58d5",
+      "availability": "PRESENT_REHASHED_MATCH",
+      "entry_verification_this_turn": "NOT_PERFORMED",
+      "portable_archive_url": null,
+      "record_sources": [
+        "/workspace/metadata-contract-p2p3-20261004T073824Z/INPUTS.json",
+        "MEMORY.md"
+      ]
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/SHA256SUMS",
+      "expected_sha256": "77345fcadf085095d23722ac7a16ef7c4d5d34c202e4f32b7046750cad919de3",
+      "bytes": 9925,
+      "observed_sha256": "77345fcadf085095d23722ac7a16ef7c4d5d34c202e4f32b7046750cad919de3",
+      "availability": "PRESENT_REHASHED_MATCH",
+      "entry_verification_this_turn": "NOT_PERFORMED",
+      "portable_archive_url": null,
+      "record_sources": [
+        "/workspace/metadata-contract-p2p3-20261004T073824Z/INPUTS.json",
+        "MEMORY.md"
+      ]
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/SHA256SUMS",
+      "expected_sha256": "aed26d18de158a3eebf5dcd7a3996356da99419779b689addd1f083a6a0cec27",
+      "bytes": 141363,
+      "observed_sha256": "aed26d18de158a3eebf5dcd7a3996356da99419779b689addd1f083a6a0cec27",
+      "availability": "PRESENT_REHASHED_MATCH",
+      "entry_verification_this_turn": "NOT_PERFORMED",
+      "portable_archive_url": null,
+      "record_sources": [
+        "/workspace/metadata-contract-p2p3-20261004T073824Z/INPUTS.json",
+        "MEMORY.md"
+      ]
+    }
+  ],
+  "historical_archive_locators": [
+    {
+      "path": "/workspace/hand-contract-evidence.zip",
+      "expected_sha256": "0ddb27f56496dbdc6ed0bb6d6922717ef26bfeb35ce537b0c3014e42c8f8afa1",
+      "bytes": 31121733,
+      "availability": "PRESENT_NOT_REHASHED",
+      "record_source": "sources/metadata-contract-e2e-20261004T030536Z/CURRENT_STATE.md",
+      "portable_archive_url": null,
+      "scope": "Existence/size only; do not authenticate these archive bytes or their entries from this inventory."
+    },
+    {
+      "path": "/workspace/metadata-contract-paper-sources.zip",
+      "expected_sha256": "776c3c800f0ec1feae7b41049f11f416e0e99dcea482cbfc998af1b34589fd31",
+      "bytes": 2515979,
+      "availability": "PRESENT_NOT_REHASHED",
+      "record_source": "sources/metadata-contract-e2e-20261004T030536Z/CURRENT_STATE.md",
+      "portable_archive_url": null,
+      "scope": "Existence/size only; do not authenticate these archive bytes or their entries from this inventory."
+    }
+  ],
+  "reconstruction_evidence_locations": [
+    {
+      "path": "/workspace/repro-android",
+      "expected_sha256": null,
+      "availability": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/repro-task",
+      "expected_sha256": null,
+      "availability": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/repro-hand",
+      "expected_sha256": null,
+      "availability": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/repro-external",
+      "expected_sha256": null,
+      "availability": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/repro-claims",
+      "expected_sha256": null,
+      "availability": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/repro-audit",
+      "expected_sha256": null,
+      "availability": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/repro-control",
+      "expected_sha256": null,
+      "availability": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/reproduction-evidence-index-20261004.json",
+      "expected_sha256": null,
+      "availability": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/repro-external/E5/results.json",
+      "expected_sha256": "bf49a475696eec4b38fb17587f6541a8393da14297e5dca1d433a051ba166e79",
+      "availability": "MISSING_AT_CHECKED_PATH",
+      "record_source": "work/observation-review-20261004/README.md"
+    }
+  ],
+  "generated_source_example": {
+    "path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/variants/original/generated/src/main/java/org/example/contract/ContractModel.java",
+    "expected_sha256": "60c1fb6022891cc2bd41b5bacdd2194361eb0ca40e37da2eddf6cba963279670",
+    "bytes": 9161,
+    "observed_sha256": "60c1fb6022891cc2bd41b5bacdd2194361eb0ca40e37da2eddf6cba963279670",
+    "availability": "PRESENT_REHASHED_MATCH"
+  },
+  "missing_portability": [
+    "No portable download/deposit locator is recorded for full original E1/E2/audit/P2/P3 raw evidence or manifests. Local availability is machine-specific.",
+    "The separately reported reconstruction /workspace/repro-* evidence and its 65-fixture frozen catalog are absent at the checked paths. Original E1/E2 records are not substitutes.",
+    "No complete artifact-specific stable class-ID lineage is established by P3; only publisher display order is supported.",
+    "Existing scripts retain absolute workspace and sibling-file dependencies; a clean portable end-to-end rerun is not performed by this handoff."
+  ],
+  "provenance_sources": [
+    {
+      "path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/results.json",
+      "sha256": "a66a397ecad5d038a5ae1000b083623de93c4ed5c2e7af016377cb8213a3a4ae",
+      "bytes": 100173,
+      "scope": "provenance file rehashed; statements are not thereby re-executed"
+    },
+    {
+      "path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/results.json",
+      "sha256": "f8a7a6524f12209c409a682968a4e5abda04344e6ed5ea9a24896f828cdcaa8a",
+      "bytes": 171719,
+      "scope": "provenance file rehashed; statements are not thereby re-executed"
+    },
+    {
+      "path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/executions/primary/original/device/result.json",
+      "sha256": "52bf637dac5a661ee4d311ec3ceccda36ae3acb7be8af5ce4a7199d56a6eac46",
+      "bytes": 2630,
+      "scope": "provenance file rehashed; statements are not thereby re-executed"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/I01-publisher-model/retrieval.json",
+      "sha256": "0003519127ac6ba2016cdb28bb674157bcd72242bcf4b83dff266ca0472a6471",
+      "bytes": 1692,
+      "scope": "provenance file rehashed; statements are not thereby re-executed"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/I06-tfhub-lite-model/retrieval.json",
+      "sha256": "1dfdecfc99c9de37821365043eea1e8e56e36eff6582cbdc416dd85f16ba0f22",
+      "bytes": 3912,
+      "scope": "provenance file rehashed; statements are not thereby re-executed"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/F07-pinned-lite-card/retrieval.json",
+      "sha256": "bef8c251e9580bbf009f088cec6429cefcdbc2094db327d76c8ee0b2579c5fff",
+      "bytes": 1999,
+      "scope": "provenance file rehashed; statements are not thereby re-executed"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/F10-pinned-parent-card/retrieval.json",
+      "sha256": "3ff49913f4a3c31012ec0e8f0cc530accc3d9aea581b9119f652e3a4fa910153",
+      "bytes": 2057,
+      "scope": "provenance file rehashed; statements are not thereby re-executed"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/F11-explicit-class-order/retrieval.json",
+      "sha256": "07b8704aded4a6f4938bbaab9c4a4b44ffeed06e15d2109536461bf089812302",
+      "bytes": 1698,
+      "scope": "provenance file rehashed; statements are not thereby re-executed"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/retrieved/F01-publisher-labels/retrieval.json",
+      "sha256": "4a16f3b2b050b8442f28dd0355ca1fb6ca57ff1bb46f2e32f005ece353a3f439",
+      "bytes": 1640,
+      "scope": "provenance file rehashed; statements are not thereby re-executed"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/INPUTS.json",
+      "sha256": "61b1fa22db4562586d6294bd6919bf6d4591efab03dde20745ea5212da4a6ce7",
+      "bytes": 2050,
+      "scope": "provenance file rehashed; statements are not thereby re-executed"
+    },
+    {
+      "path": "MEMORY.md",
+      "sha256": "6f850150d84ff6a1824392b5c34b5b2813c271cd428bb2cee9257f15232f230e",
+      "bytes": 19014,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "work/observation-review-20261004/README.md",
+      "sha256": "f15d33c06463fae024cb65e555b766d339dff78a834786202b3601d1d33aaca3",
+      "bytes": 4205,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/CURRENT_STATE.md",
+      "sha256": "2ffd4db70f76fbba207cf542667b0da016cb44d78f7b50a3f6a518b541682da0",
+      "bytes": 5670,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/prepare_e1.py",
+      "sha256": "6a7f7eb6a9cb15ae61609f59c1a4c8fce5a09d1b155311ab7ab46c9b47ffb44d",
+      "bytes": 5722,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/prepare_e2.py",
+      "sha256": "01a5b1d08d80f324896ae10aa526b69c111787f81a2f7b24ab889ff61c38bb73",
+      "bytes": 1598,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "sources/metadata-contract-paper/scripts/suite_static.py",
+      "sha256": "e0e3e023bdf01e1294626c85f61ae2ed340be67421670118b5bccb46d2648970",
+      "bytes": 9762,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/ContractInstrumentation.java",
+      "sha256": "83391d8446e7a3efedecf460e4379239c4ce3297ba96c47e8d5e78d6b47ed0eb",
+      "bytes": 6020,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "research/20261004-p2-p3/P2/scripts/ContractInstrumentation.java",
+      "sha256": "6a7aaddfb8009f12d3df1df658f24dbbdc7a132573f4cd24a0a6ba7991f2d346",
+      "bytes": 6723,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "research/20261004-p2-p3/P2/scripts/TaskInstrumentation.java",
+      "sha256": "f955fe6e43f004420b90ab80f69ac12ed622aaadd9864c841ee1dbb972b1527e",
+      "bytes": 5298,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "research/20261004-p2-p3/P2/scripts/prepare.py",
+      "sha256": "d2eca47eb48dda537069f6e506bee0f0b039b0f4ac2f10c0e8b0e83f74cae23d",
+      "bytes": 2728,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "research/20261004-p2-p3/P3/EXPERIMENT_P3_RESULTS.md",
+      "sha256": "7ed76750dac1799736e240bef438e3b327a6524d07bc5bbc1e753b108504f034",
+      "bytes": 8849,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "sources/repro-audit-20261004/REPORT.md",
+      "sha256": "73053e922438b150434592e112400c9ebdb6099b93486ffe9d3d43042abfe841",
+      "bytes": 11126,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "sources/repro-audit-20261004/claims/claim-map.json",
+      "sha256": "21bdf8af6f28ac9d6e10f2d909c20acb8314d3a20d35f19113a49c051f66c123",
+      "bytes": 44386,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "sources/repro-audit-20261004/base/REPRODUCE.md",
+      "sha256": "9e02ca25173436ccc56381bff0d2c9b27e9c5de81b2663929563780f6b6b0b1c",
+      "bytes": 7823,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "sources/repro-audit-20261004/android/REPRODUCE.md",
+      "sha256": "a95dcd59cab5fb16bf0fd1be10fd573d10aff0d3797095922ab8ef1584b36ebf",
+      "bytes": 8107,
+      "scope": "provenance file rehashed; statements are not thereby re-executed",
+      "repository_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/results.json",
+      "sha256": "da54d486f461450d89bf77a777108f8e88b31bc6fcbf9b08fcd042cc8db88f17",
+      "bytes": 11743,
+      "scope": "provenance file rehashed; statements are not thereby re-executed"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/analysis/artifact-bridge.json",
+      "sha256": "9d139f881f9c599a5fe840983de9b0f5b5a14ef48c14b54153df3fda01570686",
+      "bytes": 55421,
+      "scope": "provenance file rehashed; statements are not thereby re-executed"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/analysis/reference-chain.json",
+      "sha256": "572c527fba92701e3fda12ea932de38fbec02ddc37b9ca8c3e012faeda2694ef",
+      "bytes": 6897,
+      "scope": "provenance file rehashed; statements are not thereby re-executed"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/analysis/full-display-order-comparison.json",
+      "sha256": "9332c238916cb35aaca8f3c2897ec00de4a9acc09de853bfa26ab8f60604059e",
+      "bytes": 378680,
+      "scope": "provenance file rehashed; statements are not thereby re-executed"
+    }
+  ],
+  "repository_base_revision": "052a839cdc64ec43ce362dde0cd3e410926e107d",
+  "p2_configuration": {
+    "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/INPUTS.json",
+    "availability": "PRESENT_REHASHED_NO_EXPECTED_DIGEST",
+    "observed_sha256": "61b1fa22db4562586d6294bd6919bf6d4591efab03dde20745ea5212da4a6ce7",
+    "bytes": 2050,
+    "schema_used_by_prepare": "top-level input_models array; exactly the five variants; each object has variant (string), path (absolute model path), sha256 (expected model digest)",
+    "recorded_variants": [
+      "original",
+      "description_control",
+      "label_deletion",
+      "label_permutation",
+      "restoration"
+    ],
+    "consumer_source": "research/20261004-p2-p3/P2/scripts/prepare.py",
+    "path_relationship": "prepare.py reads ROOT.parent/INPUTS.json; ROOT is the new P2 run root. Original config remains sealed; reconstruct a separately reviewed first-party config at the new parent path.",
+    "new_configuration_rule": "Map original, description_control, label_deletion, label_permutation and restoration to preserved or freshly generated digest-matching models. P2 restoration points to E1 label_restoration; do not select a file from its name alone.",
+    "repo_availability": "EXCLUDED_FROM_GIT; source-level schema documented here, not a missing current local file"
+  }
+}
