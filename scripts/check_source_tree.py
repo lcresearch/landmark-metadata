@@ -25,7 +25,10 @@ SECRET_PATTERNS = [
 ]
 
 def main():
-    rows = json.loads((ROOT/'docs/SOURCE_IMPORT.json').read_text())['files']
+    manifests = [ROOT/'docs/SOURCE_IMPORT.json', ROOT/'docs/SOURCE_P2P3.json']
+    rows = []
+    for manifest in manifests:
+        rows.extend(json.loads(manifest.read_text())['files'])
     failures = []
     for row in rows:
         p = ROOT/row['repository_path']

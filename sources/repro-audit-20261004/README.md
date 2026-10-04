@@ -58,6 +58,18 @@ abstentions). The second requires the external fresh E5 fixture catalog and
 counterexample models; it checks all 65 retained fixture outcomes plus the
 baseline and checker decisions on the original and both label counterexamples.
 Missing prerequisites fail instead of being reported as skipped successes.
+The default required manifest is the original external E5 catalog, pinned to
+SHA-256 `bf49a475696eec4b38fb17587f6541a8393da14297e5dca1d433a051ba166e79`
+recorded in claim C32 of `claims/claim-map.json` (commit `3809a71`). Its 65
+identities are read only after this fixed digest is verified. `--catalog` may
+point at a later run, while `--required-manifest` locates the preserved original
+catalog. An explicitly reviewed alternative manifest may instead contain an
+`artifact_sha256s` array of 65 full digests and requires its previously recorded
+`--required-manifest-sha256`; never derive this trust anchor from the run being
+tested. The external catalog and models are absent from this source-only
+checkout, so this repair does not claim a fresh 65-fixture run. Missing,
+duplicate or substituted identities fail before checker execution; model bytes,
+catalog and prior/current report digests must agree.
 
 ## Reproduction source
 
@@ -91,3 +103,13 @@ it does not claim another Android-wrapper execution.
 No independent human review or comparison against unavailable historical raw
 archives is claimed. The source-only repository remains distinct from a public
 reproduction/evidence deposit.
+
+## Review repair validation
+
+Eleven synthetic regression tests cover missing/replaced fixtures, digest
+mismatches, repeated output positions and decoder identities, absent generated
+sources, clean-directory downloads, and PDF conversion timeouts. Run
+`PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v` from the
+repository root. They do not execute models or revalidate excluded raw evidence.
+The branch also integrates main's completed P2/P3 work without changing its
+imported source bytes or research conclusions.

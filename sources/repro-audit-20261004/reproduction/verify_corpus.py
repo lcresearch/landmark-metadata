@@ -1,6 +1,8 @@
 """Independently require complete fresh arrays and verify their recorded digests."""
 from pathlib import Path
-import hashlib, json
+import hashlib, json, sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'maintained'))
+from evidence_validation import complete_output_positions, require_decoder_records
 import numpy as np
 from tensorflow_lite_support.metadata import schema_py_generated as schema
 
@@ -38,11 +40,19 @@ for component in static:
             check(name+'/complete_case_records',{c['input'] for c in observed_cases}=={'zeros','half','random'} and len(observed_cases)==3)
             for case in observed_cases:
                 observations+=1
-                check(name+'/'+case['input']+'/complete_output_records',len(case['outputs'])==m.Subgraphs(0).OutputsLength())
+                complete=complete_output_positions(case['outputs'],m.Subgraphs(0).OutputsLength())
+                check(name+'/'+case['input']+'/complete_output_records',complete)
+                if not complete:
+                    continue
                 for output in case['outputs']:
                     key=f"{case['input']}_output_{output['position']}"; a=actual[key];b=baseline[key];arrays+=1
                     check(name+'/'+key,np.isfinite(a).all() and a.shape==b.shape and a.dtype==b.dtype and a.tobytes()==b.tobytes() and sha(a.tobytes())==output['sha256'])
 decoder=json.loads((ROOT/'results/decoder-suite.json').read_text())
+try:
+    require_decoder_records(static,decoder)
+    check('decoder_required_identities_and_predictions',True)
+except (KeyError, TypeError, ValueError) as exc:
+    check('decoder_required_identities_and_predictions',False,diagnostic=str(exc))
 check('decoder_expected_fixture_count',len(decoder)==23)
 for i,r in enumerate(decoder):
     check('decoder/'+str(i),r.get('exit_code')==0 and 'skipped' not in r and 'probe_error' not in r and r.get('observed',{}).get('status')==r['prediction']['status'] and r['observed']['labels']==r['prediction']['label_count'])

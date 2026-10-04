@@ -14,11 +14,16 @@ At the start of project work, read `MEMORY.md`, `TODO.md`, and
 - Manuscript source, source configuration, dependency lock text, and protocols.
 - TODO updates and concise user-facing notes about findings, decisions, their
   rationale, evidence locations, limitations, and next steps.
-- After meaningful authorized project work, commit and push these source/doc
-  changes to this repository, verify the remote commit, and report any blocker.
-  The user has authorized this ongoing project synchronization. Do not promise
-  unattended background synchronization or cross-session recall without reading
-  the repository. Do not overwrite unrelated remote changes or force-push.
+- After meaningful authorized project work, commit these source/doc changes on
+  a feature branch, push that branch, and open a pull request. Verify the remote
+  branch and PR, then provide the PR link for the user's review.
+- Never push directly to `main` or the default branch, including through GitHub
+  API ref updates. Do not merge or enable auto-merge without an explicit user
+  instruction. This PR-only rule supersedes the earlier direct-sync workflow
+  and applies to code, manuscript, TODO, memory and policy changes alike.
+- Do not promise unattended background synchronization or cross-session recall
+  without reading the repository. Do not overwrite unrelated remote changes or
+  force-push.
 
 ## What stays outside Git
 

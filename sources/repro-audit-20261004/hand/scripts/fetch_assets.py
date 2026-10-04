@@ -25,6 +25,8 @@ def pinned_asset(name):
 
 
 def main():
+    (ROOT / 'assets').mkdir(parents=True, exist_ok=True)
+    (ROOT / 'results').mkdir(parents=True, exist_ok=True)
     entries = [
         ('official-v1.task', 'https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task', None),
         ('source-pinned.task', *pinned_asset('com_google_mediapipe_hand_landmarker_task')),

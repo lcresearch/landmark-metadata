@@ -18,6 +18,8 @@ import sys
 import zipfile
 
 REPO = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'maintained'))
+from evidence_validation import generated_sources_identical
 BASE = Path('/workspace/repro-audit/independent-audit')
 ROOT = BASE / 'label-parser'
 HAND = Path('/workspace/hand-contract-repro')
@@ -124,7 +126,7 @@ def main():
               'java_probe_source': str(java), 'java_probe_sha256': digest(java.read_bytes()),
               'pinned_library_hashes': {p.name: digest(p.read_bytes()) for p in sorted((HAND / 'deps').glob('*.jar'))},
               'copied_historical_source_hashes': {str(p): digest(p.read_bytes()) for p in sorted(scripts.glob('*.py'))},
-              'all_generated_source_hashes_identical': len({r['generated_source_sha256'] for r in records}) == 1,
+              'all_generated_source_hashes_identical': generated_sources_identical(records, variants),
               'records': records}
     (ROOT / 'results.json').write_text(json.dumps(result, indent=2))
     print(json.dumps(result, indent=2))

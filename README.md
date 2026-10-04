@@ -9,26 +9,29 @@ source and continuation documents, **not the complete evidence archive**.
 
 ## Start here
 
+- [Current manuscript source](research/20261004-p2-p3/manuscript/paper.tex)
+- [Completed same-Android comparison and display-reference findings](research/20261004-p2-p3/RESULTS_OVERVIEW.md)
 - [Fresh reproduction and repository audit (2026-10-04)](sources/repro-audit-20261004/REPORT.md)
 - [Maintained checker fix and reproduction entry points](sources/repro-audit-20261004/README.md)
-- [Current manuscript source](sources/metadata-contract-paper-revision-20261004T065132Z/manuscript/paper.tex)
 - [Project memory and current evidence boundaries](MEMORY.md)
 - [Current TODO](TODO.md)
 - [Decisions and scope](docs/DECISIONS.md)
 - [Future agent instructions](AGENTS.md)
 - [Exact source import paths and SHA-256 hashes](docs/SOURCE_IMPORT.json)
+- [P2/P3 source import and local evidence identity](docs/SOURCE_P2P3.json)
 
 ## Code map
 
 | Source area | Purpose |
 |---|---|
+| [Fresh reconstruction and corrections](sources/repro-audit-20261004) | Official prerequisite restoration, experiment replay, strict evidence checks, Java label-parser fix and new audit findings |
 | [Initial Hand scripts](sources/hand-contract-repro/scripts) | Graph-preserving mutations, static binding, isolated decoder and replay work |
 | [Earlier corpus/checker scripts](sources/metadata-contract-paper/scripts) | Metadata inspection, mutation, generation, CPU and decoder experiments |
 | [E1–E7 scripts](sources/metadata-contract-e2e-20261004T030536Z/scripts) | Actual Android harness, classifier interventions, Task comparison, frozen external checks and Hand boundary experiment |
 | [Frozen E4 protocol](sources/metadata-contract-e2e-20261004T030536Z/E4/protocol) | Predeclared candidates, scope, mutation rules and source snapshots |
 | [Agent audit](sources/metadata-contract-audit-20261004T062010Z) | Preservation checks, fresh build scripts, baseline comparison and claim/literature audit scripts |
-| [Current manuscript revision](sources/metadata-contract-paper-revision-20261004T065132Z) | LaTeX, editorial scripts and revision notes |
-| [Fresh reconstruction and corrections](sources/repro-audit-20261004) | Official prerequisite restoration, experiment replay, strict evidence checks, Java label-parser fix and new audit findings |
+| [Previous audited manuscript revision](sources/metadata-contract-paper-revision-20261004T065132Z) | Preserved prior LaTeX, editorial scripts and revision notes |
+| [Current P2/P3 follow-up](research/20261004-p2-p3) | Same-Android harnesses, reference inquiry, separate audits, current LaTeX and claim updates |
 
 `sources/` retains original timestamped names and source bytes. Per-experiment
 implementation snapshots are intentional historical versions, not extra models.
@@ -60,8 +63,11 @@ Run `python scripts/check_source_tree.py` for source integrity, syntax and
 source-only scope checks. No model experiment is executed by that command.
 `scripts/import_workspace_sources.py` records how this source snapshot was
 selected; it requires the original local workspace and refuses to overwrite
-changed imported files.
+changed imported files. `scripts/import_p2p3_sources.py` separately records the
+new follow-up selection; both source manifests are checked without running models.
 
 Future work should save source, TODO updates, concise decisions and continuation
-notes here under the same source-only rule. Large evidence and build outputs
+notes here under the same source-only rule, using a feature branch and pull
+request for user review. Do not push directly to the default branch or merge
+without an explicit user instruction. Large evidence and build outputs
 remain excluded unless the user explicitly changes that scope.

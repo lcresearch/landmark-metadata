@@ -41,8 +41,15 @@ def fetch(job, root):
                 row["status"] = "NOT_A_PDF"
             else:
                 command = ["pdftotext", "-layout", str(path), str(path.with_suffix(".txt"))]
-                process = subprocess.run(command, capture_output=True, text=True, timeout=45)
-                row.update(text_command=command, text_exit=process.returncode, text_error=process.stderr)
+                row['text_command'] = command
+                try:
+                    process = subprocess.run(command, capture_output=True, text=True, timeout=45)
+                    row.update(text_status='PASS' if process.returncode == 0 else 'FAIL',
+                               text_exit=process.returncode, text_error=process.stderr)
+                except subprocess.TimeoutExpired:
+                    row.update(text_status='TIMEOUT', text_timeout_seconds=45)
+                except OSError as error:
+                    row.update(text_status='UNAVAILABLE', text_error=str(error))
     except (urllib.error.URLError, TimeoutError, OSError) as error:
         row.update(status="UNAVAILABLE", error_type=type(error).__name__, error=str(error))
         if isinstance(error, urllib.error.HTTPError):

@@ -7,11 +7,20 @@ import sys
 sys.dont_write_bytecode = True
 
 from preflight import check
+from evidence_validation import (required_fixture_digests, require_exact_identities,
+                                 require_fixture_digest)
 
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--catalog',type=Path,default=Path('/workspace/repro-external/E5/results.json'))
 parser.add_argument('--counterexamples',type=Path,default=Path('/workspace/repro-audit/independent-audit/label-parser'))
 parser.add_argument('--output-dir',required=True,type=Path)
+# Frozen catalog digest recorded by claims/claim-map.json, claim C32, in 3809a71.
+parser.add_argument('--required-manifest',type=Path,
+                    default=Path('/workspace/repro-external/E5/results.json'),
+                    help='Frozen original catalog, or JSON with the 65 original artifact_sha256s')
+parser.add_argument('--required-manifest-sha256',
+                    default='bf49a475696eec4b38fb17587f6541a8393da14297e5dca1d433a051ba166e79',
+                    help='Previously recorded digest; default pins claim C32 original E5 catalog')
 args=parser.parse_args()
 out=args.output_dir.resolve()
 repo=Path(__file__).resolve().parents[3]
@@ -19,10 +28,14 @@ if out.is_relative_to(repo):raise ValueError('Evidence must stay outside the rep
 out.mkdir(parents=True,exist_ok=False)
 rows=[]
 fixtures=json.loads(args.catalog.read_text())['fixtures']
-if not fixtures:raise ValueError('No fresh fixtures available')
+required=required_fixture_digests(args.required_manifest,args.required_manifest_sha256)
+require_exact_identities((f['model_sha256'] for f in fixtures),required,'Original fixtures')
+for fixture in fixtures:
+    require_fixture_digest(fixture)
 for fixture in fixtures:
     path=Path(fixture['path']);baseline=Path(fixture['baseline']) if fixture.get('baseline') else None
     current=check(path,out/'fixtures'/fixture['model_sha256'],baseline=baseline)
+    require_fixture_digest(fixture,current)
     previous=fixture['report']
     same=all(current[key]['status']==previous[key]['status'] for key in ['STRUCTURAL','REFERENCE_BACKED_SEMANTIC','DECODER_COMPATIBILITY','PRESERVATION'])
     same=same and current['DECODER_COMPATIBILITY']['findings']==previous['DECODER_COMPATIBILITY']['findings']
