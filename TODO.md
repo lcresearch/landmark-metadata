@@ -4,6 +4,71 @@ This is the single active checklist. Timestamped TODOs under `sources/` describe
 earlier states. Read `MEMORY.md` for evidence boundaries and `AGENTS.md` for the
 source-only repository policy.
 
+## Active priorities: assess the contribution before the full rewrite
+
+The priorities below describe planned work, not completed audits or new results.
+P0/P1/P2 here are priority levels, separate from the historical experiment and
+follow-up names. The same-Android P2 comparison and bounded P3 reference inquiry
+remain complete. Stronger execution evidence does not by itself establish novelty
+or practical significance.
+
+Complete the two P0 assessments before choosing the contribution and doing the
+full manuscript rewrite. Reproduction handoff and human-audit preparation can
+proceed in parallel. Record whether the evidence supports a bounded empirical
+study, a method contribution, or a shorter case/experience report; do not assume
+the strongest framing in advance.
+
+- [ ] **P0 — Contribution and closest-work comparison (agent).** Produce a
+  claim–evidence–prior-work–remaining-difference table covering the closest
+  research and version-specific official implementations. Define the source
+  scope, verify technical comparisons, and record inaccessible sources and
+  unresolved overlap. Identify which constraints are already implemented and
+  what the controlled execution evidence adds. Completion means a supported
+  contribution boundary, including claims to narrow or drop; it is not an
+  exhaustive novelty proof. E5 remains a supporting tool unless a capability
+  beyond strong baselines is demonstrated.
+- [ ] **P0 — Research significance assessment (agent).** Identify the concrete
+  usage scenarios, limitations of existing checks, and engineering consequences
+  relevant to the observed mechanism. Produce an evidence table separating
+  measured outcomes, reproducible public cases, issue reports, and hypotheses.
+  Evaluate the Java/Python parsing counterexamples as defects in the studied
+  checks, without presenting them as natural defects in official deployment
+  tools. Completion means an explicit account of what practical relevance is
+  supported and what remains unknown. Any natural-case search must follow the
+  bounded optional protocol below; zero findings is acceptable.
+- [ ] **P1 — Determine the framing and rewrite the main argument (agent;
+  depends on P0).** Organize the current working manuscript as: contract
+  definitions → E1 actual getter failure → E2 successful but changed association
+  → same-Android enforcement-stage comparison → Hand reference semantics and
+  consumer boundary → external checks and preflight limits. Include the parser
+  counterexamples at their demonstrated scope; keep S/I/D separate and P as
+  intervention-preservation evidence. Completion means a coherent revised draft
+  with claims traceable to evidence and the P0 positioning decision. Compress
+  internal research history and Hand provenance into supporting material while
+  retaining the one-image boundary. Preserve historical manuscript snapshots.
+- [ ] **P1 — Reproduction handoff (agent; can run in parallel).** Document the
+  required inputs, exact dependencies, acquisition locations, hashes, commands,
+  expected outcomes and missing materials in a usable entry point. Distinguish
+  documented commands from commands freshly verified against available inputs.
+  Completion means an explicit prerequisite and availability inventory, with a
+  separate plan for an independently usable evidence deposit. The repository
+  remains source-only; an inventory is not a complete archived reproduction.
+- [ ] **P1 — Actual human audit (agent preparation; human verification).**
+  Prepare a checklist and evidence index for the generated getter call, packaged
+  model identity, preservation comparisons, exact exceptions and P3 reference
+  chain. Completion requires an actual human's reviewer identity, date, scope,
+  method and conclusions; checklist preparation or an agent rerun does not close
+  this item. Distinguish author verification from independent reproduction.
+- [ ] **P2 — Venue selection and formatting (author decision; agent support).**
+  Choose a venue and paper category consistent with the P0 assessment and revised
+  contribution. Completion means the selected template has been rendered and
+  checked for length, anonymization, AI-assistance disclosure and reproduction
+  requirements. The existing generic reading draft does not establish venue fit.
+
+Do not expand the model collection, add similar mutants or build a general
+checker by default. Additional experiments need a specific unresolved question
+that can change the core claim or contribution decision.
+
 ## Completed
 
 - [x] Close the remaining maintained readback gaps: require the separately
@@ -71,26 +136,11 @@ source-only repository policy.
 - [x] Preserve historical E5 abstentions and complete separate automated
   reference-chain and raw-runtime-record audits. Human audit remains pending.
 
-## Next: human audit and paper convergence
-
-- [ ] Complete actual human audit with reviewer, date, method and conclusions.
-  Distinguish author checking from independent reproduction.
-- [ ] Finish bounded technical positioning; four-paper review is not exhaustive
-  novelty verification. Do not promise method novelty from renaming the checks.
-- [ ] Explain the practical research consequence beyond a known constraint
-  appearing at different API stages. Consistent claims and same-Android results
-  alone do not establish a strong publication contribution.
-- [ ] Choose venue, apply its template, review disclosure and page budget;
-  the current generic reading draft does not establish venue fit.
-- [ ] Plan an independently usable evidence/reproduction deposit separately.
-  This code-only repository does not contain the raw evidence or build artifacts.
-- [ ] Shorten Hand provenance in the main text if needed, retaining detailed
-  provenance in supporting documentation and the one-image result boundary.
-
 ## Optional, bounded follow-up — not required to finish this draft
 
-- [ ] Natural cases only if needed for the selected venue: predefine mechanisms,
-  sources and stopping conditions before looking. Count recovered and verified
+- [ ] Natural cases only if the significance assessment or selected venue makes
+  them necessary: predefine mechanisms, sources and stopping conditions before
+  looking. Count recovered and verified
   artifacts separately from issue reports; injected failures are never natural
   defects. Zero findings is acceptable. This round did not search for natural cases.
 
@@ -113,8 +163,9 @@ source-only repository policy.
   blockers; do not promise background synchronization.
 - Keep SDKs, emulators, dependencies, models, generated wrapper outputs, raw
   results, logs, rendered documents, archives and compiled products outside Git.
-- Preserve sealed evidence and historical source snapshots. Do not rerun P0/P1
-  without a new change or unresolved contradiction, and do not expand random
+- Preserve sealed evidence and historical source snapshots. Do not repeat the
+  completed core audits and baseline comparisons without a new change or
+  unresolved contradiction, and do not expand random
   model collections merely to increase counts.
 
 ## Fresh reproduction audit

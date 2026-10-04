@@ -89,7 +89,22 @@ display-order reference; those results and their limits are retained above. A cl
 
 Keep **S** (structural acceptance), **I** (reference-backed association agreement), and **D** (compatibility with the actual decoder path) distinct. **P** is intervention-preservation evidence, not a fourth correctness category. Never count mutated fixtures or repeated inputs as independent models.
 
-P2 and the bounded P3 reference inquiry are complete. Next prioritize actual human audit, final technical positioning, venue selection/formatting and an independently usable evidence-deposit plan. No natural-case search was conducted this round; any such search is optional and needs predefined scope/stopping conditions. Do not broaden model collection or repeat P0/P1 without a new change or unresolved contradiction. An E5 method expansion is conditional on demonstrated value beyond a strong baseline.
+P2 and the bounded P3 reference inquiry are complete. The active priorities in
+`TODO.md` now put novelty and research significance assessment before the full
+rewrite. Produce a claim–evidence–prior-work–remaining-difference table and a
+separate practical-significance evidence table, distinguishing measured outcomes,
+public cases and hypotheses. Use those assessments to choose a bounded empirical,
+method, or shorter case/experience framing; no method novelty is presumed.
+Reproduction handoff and human-audit preparation can proceed in parallel. Actual
+human verification remains pending; venue selection and formatting follow the
+contribution decision. These are planned tasks, not newly completed research.
+
+No natural-case search was conducted this round; any such search is optional and
+needs predefined scope/stopping conditions. Do not broaden model collection or
+repeat completed core audits and baseline comparisons without a new change or
+unresolved contradiction. An E5 method expansion is conditional on demonstrated
+value beyond a strong baseline. Priority labels in the active TODO are distinct
+from the completed experiment/follow-up names.
 
 ## Evidence availability
 
