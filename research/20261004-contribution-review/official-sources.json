@@ -1,0 +1,532 @@
+{
+  "schema_version": 1,
+  "scope": "Fresh source retrieval and selected function inspection only; no model or consumer execution and no fresh binary-source equivalence claim.",
+  "repository": "https://github.com/tensorflow/tflite-support",
+  "tag": "v0.4.4",
+  "resolved_commit": "133228616ca14e1b64c03f6a0ea8610f41a60783",
+  "retrieval_log_external": "/workspace/contribution-review-20261004/official/retrieval.json",
+  "sources": [
+    {
+      "repository_path": "tag.json",
+      "url": "https://api.github.com/repos/tensorflow/tflite-support/commits/v0.4.4",
+      "retrieved_utc": "2026-10-04T19:29:58.302715+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tag.json",
+      "sha256": "70f2eaf95751bd4d5744b88673d9777d62a46744f3645d6c01f8fe2391579c8e",
+      "bytes": 4623,
+      "status": "retrieved",
+      "source_id": "OFF01",
+      "inspection": "commit_tag_resolution"
+    },
+    {
+      "repository_path": "tree.json",
+      "url": "https://api.github.com/repos/tensorflow/tflite-support/git/trees/133228616ca14e1b64c03f6a0ea8610f41a60783?recursive=1",
+      "retrieved_utc": "2026-10-04T19:29:58.303179+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tree.json",
+      "sha256": "335edc643fc3f6d52710ccd2072f444af53764858b6e8218f12f97d3fa0d89cb",
+      "bytes": 441044,
+      "status": "retrieved",
+      "source_id": "OFF02",
+      "inspection": "pinned_tree_and_source_blob_identity"
+    },
+    {
+      "repository_path": "tensorflow_lite_support/metadata/metadata_schema.fbs",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/metadata_schema.fbs",
+      "retrieved_utc": "2026-10-04T19:29:58.303581+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/metadata/metadata_schema.fbs",
+      "sha256": "2d3386ba124690ba1195bfc1d51ac814843bd675a7c845afab7c001c7891449e",
+      "bytes": 28931,
+      "status": "retrieved",
+      "source_id": "OFF03",
+      "git_blob_sha1": "75e00dfcaa9615ebebe9888fe889802b619d21ce",
+      "matches_pinned_tree": true,
+      "inspection": "selected_functions",
+      "locators": [
+        {
+          "function_or_section": "AssociatedFileType.TENSOR_AXIS_LABELS",
+          "start_line": 87,
+          "end_line": 103,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/metadata_schema.fbs#L87-L103"
+        },
+        {
+          "function_or_section": "SubGraphMetadata output positions/cardinality",
+          "start_line": 632,
+          "end_line": 649,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/metadata_schema.fbs#L632-L649"
+        }
+      ],
+      "historical_source_comparison": {
+        "path": "/workspace/hand-contract-repro/sources/metadata_schema.fbs",
+        "sha256": "2d3386ba124690ba1195bfc1d51ac814843bd675a7c845afab7c001c7891449e",
+        "same_bytes": true
+      }
+    },
+    {
+      "repository_path": "tensorflow_lite_support/metadata/python/metadata.py",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/python/metadata.py",
+      "retrieved_utc": "2026-10-04T19:29:58.304009+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/metadata/python/metadata.py",
+      "sha256": "3d3f151330bb23af8abf6ca366a2008606da94dfc9b66edb67ed4952cd25e067",
+      "bytes": 31285,
+      "status": "retrieved",
+      "source_id": "OFF04",
+      "git_blob_sha1": "689ddb3a0c95845efc1840a271dcff53e7f49172",
+      "matches_pinned_tree": true,
+      "inspection": "selected_functions",
+      "locators": [
+        {
+          "function_or_section": "MetadataPopulator class purpose",
+          "start_line": 99,
+          "end_line": 109,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/python/metadata.py#L99-L109"
+        },
+        {
+          "function_or_section": "load_metadata_buffer",
+          "start_line": 285,
+          "end_line": 321,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/python/metadata.py#L285-L321"
+        },
+        {
+          "function_or_section": "_assert_validate",
+          "start_line": 361,
+          "end_line": 397,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/python/metadata.py#L361-L397"
+        },
+        {
+          "function_or_section": "_validate_metadata",
+          "start_line": 610,
+          "end_line": 642,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/python/metadata.py#L610-L642"
+        },
+        {
+          "function_or_section": "_MetadataPopulatorWithBuffer ZIP rationale",
+          "start_line": 645,
+          "end_line": 652,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/python/metadata.py#L645-L652"
+        },
+        {
+          "function_or_section": "MetadataDisplayer",
+          "start_line": 686,
+          "end_line": 756,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/python/metadata.py#L686-L756"
+        },
+        {
+          "function_or_section": "_assert_*_buffer_identifier",
+          "start_line": 830,
+          "end_line": 843,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/python/metadata.py#L830-L843"
+        }
+      ],
+      "historical_source_comparison": {
+        "path": "/workspace/metadata-contract-audit-20261004T062010Z/baseline/sources/installed-metadata.py",
+        "sha256": "3d3f151330bb23af8abf6ca366a2008606da94dfc9b66edb67ed4952cd25e067",
+        "same_bytes": true
+      }
+    },
+    {
+      "repository_path": "tensorflow_lite_support/codegen/android_java_generator.cc",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/android_java_generator.cc",
+      "retrieved_utc": "2026-10-04T19:29:58.304297+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/codegen/android_java_generator.cc",
+      "sha256": "47799bc1264d0884c8f9209fdb7e9ad18d1d59d9af01f5669753096b1f36d788",
+      "bytes": 38909,
+      "status": "retrieved",
+      "source_id": "OFF05",
+      "git_blob_sha1": "eb94cb70204752e8afa3916f3863412edef22e0c",
+      "matches_pinned_tree": true,
+      "inspection": "selected_functions",
+      "locators": [
+        {
+          "function_or_section": "CreateTensorInfo",
+          "start_line": 107,
+          "end_line": 162,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/android_java_generator.cc#L107-L162"
+        },
+        {
+          "function_or_section": "CreateModelInfo",
+          "start_line": 164,
+          "end_line": 214,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/android_java_generator.cc#L164-L214"
+        },
+        {
+          "function_or_section": "GenerateWrapperOutputs",
+          "start_line": 376,
+          "end_line": 459,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/android_java_generator.cc#L376-L459"
+        },
+        {
+          "function_or_section": "GenerateWrapperMetadata",
+          "start_line": 462,
+          "end_line": 547,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/android_java_generator.cc#L462-L547"
+        },
+        {
+          "function_or_section": "GenerateWrapperAPI newInstance",
+          "start_line": 614,
+          "end_line": 650,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/android_java_generator.cc#L614-L650"
+        },
+        {
+          "function_or_section": "GenerateWrapperAPI process",
+          "start_line": 682,
+          "end_line": 690,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/android_java_generator.cc#L682-L690"
+        },
+        {
+          "function_or_section": "AndroidJavaGenerator::Generate",
+          "start_line": 982,
+          "end_line": 1004,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/android_java_generator.cc#L982-L1004"
+        }
+      ],
+      "historical_source_comparison": {
+        "path": "/workspace/metadata-contract-paper/sources/android_java_generator.cc",
+        "sha256": "47799bc1264d0884c8f9209fdb7e9ad18d1d59d9af01f5669753096b1f36d788",
+        "same_bytes": true
+      }
+    },
+    {
+      "repository_path": "tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/common/FileUtil.java",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/common/FileUtil.java",
+      "retrieved_utc": "2026-10-04T19:29:58.304797+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/common/FileUtil.java",
+      "sha256": "5d63beb2bda7ca2bd734256ceb0d3215117b6a89f7b809c4361a5c417c82533b",
+      "bytes": 7468,
+      "status": "retrieved",
+      "source_id": "OFF06",
+      "git_blob_sha1": "776391b526b479fa17d0d34ab2269f913b0ac532",
+      "matches_pinned_tree": true,
+      "inspection": "selected_functions",
+      "locators": [
+        {
+          "function_or_section": "FileUtil.loadLabels InputStream overloads",
+          "start_line": 78,
+          "end_line": 113,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/common/FileUtil.java#L78-L113"
+        }
+      ],
+      "historical_source_comparison": {
+        "path": "/workspace/metadata-contract-paper/sources/FileUtil.java",
+        "sha256": "5d63beb2bda7ca2bd734256ceb0d3215117b6a89f7b809c4361a5c417c82533b",
+        "same_bytes": true
+      }
+    },
+    {
+      "repository_path": "tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/label/TensorLabel.java",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/label/TensorLabel.java",
+      "retrieved_utc": "2026-10-04T19:29:58.613886+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/label/TensorLabel.java",
+      "sha256": "88c825bd6cc7e5173e7af7bc59032e4c7afbe4a8f94369ca15d65d0c62b7d0a7",
+      "bytes": 10233,
+      "status": "retrieved",
+      "source_id": "OFF07",
+      "git_blob_sha1": "33e7affa09cdd41142682be4cc0647c5fea62e4f",
+      "matches_pinned_tree": true,
+      "inspection": "selected_functions",
+      "locators": [
+        {
+          "function_or_section": "TensorLabel map and list constructors",
+          "start_line": 74,
+          "end_line": 105,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/label/TensorLabel.java#L74-L105"
+        },
+        {
+          "function_or_section": "getCategoryList and getFirstAxisWithSizeGreaterThanOne",
+          "start_line": 175,
+          "end_line": 215,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/label/TensorLabel.java#L175-L215"
+        }
+      ],
+      "historical_source_comparison": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/mechanism/sources/tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/label/TensorLabel.java",
+        "sha256": "88c825bd6cc7e5173e7af7bc59032e4c7afbe4a8f94369ca15d65d0c62b7d0a7",
+        "same_bytes": true
+      }
+    },
+    {
+      "repository_path": "tensorflow_lite_support/cc/task/processor/classification_postprocessor.cc",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/processor/classification_postprocessor.cc",
+      "retrieved_utc": "2026-10-04T19:29:58.627349+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/cc/task/processor/classification_postprocessor.cc",
+      "sha256": "adb16224c30b10d6fe6f9df70d3c7a58dce5dc6fca1691d1b9a40f978f5a1b91",
+      "bytes": 9035,
+      "status": "retrieved",
+      "source_id": "OFF08",
+      "git_blob_sha1": "9c11083c4f83902537fe4c5e9333c61aa225b5b3",
+      "matches_pinned_tree": true,
+      "inspection": "selected_functions",
+      "locators": [
+        {
+          "function_or_section": "Create and Init including shape and label check",
+          "start_line": 43,
+          "end_line": 137,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/processor/classification_postprocessor.cc#L43-L137"
+        }
+      ],
+      "historical_source_comparison": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/mechanism/sources/tensorflow_lite_support/cc/task/processor/classification_postprocessor.cc",
+        "sha256": "adb16224c30b10d6fe6f9df70d3c7a58dce5dc6fca1691d1b9a40f978f5a1b91",
+        "same_bytes": true
+      }
+    },
+    {
+      "repository_path": "tensorflow_lite_support/cc/task/vision/image_classifier.cc",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/vision/image_classifier.cc",
+      "retrieved_utc": "2026-10-04T19:29:58.641068+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/cc/task/vision/image_classifier.cc",
+      "sha256": "dd449cb9e181298c9b67d87e7ddcbda3fd3bff630659114033cf523f2aae59f5",
+      "bytes": 22326,
+      "status": "retrieved",
+      "source_id": "OFF09",
+      "git_blob_sha1": "aa1e7707dd99badbfd11a151b6d446dfd409e13c",
+      "matches_pinned_tree": true,
+      "inspection": "selected_functions",
+      "locators": [
+        {
+          "function_or_section": "CreateFromOptions initializes",
+          "start_line": 52,
+          "end_line": 83,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/vision/image_classifier.cc#L52-L83"
+        },
+        {
+          "function_or_section": "Init calls CheckAndSetOutputs",
+          "start_line": 121,
+          "end_line": 141,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/vision/image_classifier.cc#L121-L141"
+        },
+        {
+          "function_or_section": "CheckAndSetOutputs metadata and dimensions",
+          "start_line": 151,
+          "end_line": 261,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/vision/image_classifier.cc#L151-L261"
+        }
+      ],
+      "historical_source_comparison": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/mechanism/sources/tensorflow_lite_support/cc/task/vision/image_classifier.cc",
+        "sha256": "dd449cb9e181298c9b67d87e7ddcbda3fd3bff630659114033cf523f2aae59f5",
+        "same_bytes": true
+      }
+    },
+    {
+      "repository_path": "tensorflow_lite_support/cc/task/core/classification_head.cc",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/core/classification_head.cc",
+      "retrieved_utc": "2026-10-04T19:29:58.655079+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/cc/task/core/classification_head.cc",
+      "sha256": "2ff94f1dc183131efee60a1b0a0353e0fe70668c5f6f7d2e3e669d28bc376b29",
+      "bytes": 4951,
+      "status": "retrieved",
+      "source_id": "OFF10",
+      "git_blob_sha1": "fe2217620be1a4790cbb2a85d2f4db4e2b9186ca",
+      "matches_pinned_tree": true,
+      "inspection": "selected_functions",
+      "locators": [
+        {
+          "function_or_section": "BuildClassificationHead label resources",
+          "start_line": 32,
+          "end_line": 61,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/core/classification_head.cc#L32-L61"
+        }
+      ]
+    },
+    {
+      "repository_path": "tensorflow_lite_support/cc/task/core/label_map_item.cc",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/core/label_map_item.cc",
+      "retrieved_utc": "2026-10-04T19:29:58.888517+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/cc/task/core/label_map_item.cc",
+      "sha256": "afd3a952c55f2babf5ec4b03654c8b49f94830e51d33bc03807d8d7574cdf901",
+      "bytes": 4838,
+      "status": "retrieved",
+      "source_id": "OFF11",
+      "git_blob_sha1": "694c55ab34e78130d38ab64f5bd480762d3e58b6",
+      "matches_pinned_tree": true,
+      "inspection": "selected_functions",
+      "locators": [
+        {
+          "function_or_section": "BuildLabelMapFromFiles",
+          "start_line": 30,
+          "end_line": 74,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/core/label_map_item.cc#L30-L74"
+        }
+      ]
+    },
+    {
+      "repository_path": "tensorflow_lite_support/cc/task/vision/core/classification_head.cc",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/vision/core/classification_head.cc",
+      "retrieved_utc": "2026-10-04T19:31:01.915980+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/cc/task/vision/core/classification_head.cc",
+      "sha256": "bdbc62b8009eb0feb83c4ae2cd321e31d64fbec533532e8a98f4e1b155258777",
+      "bytes": 4962,
+      "status": "retrieved",
+      "source_id": "OFF12",
+      "git_blob_sha1": "b5b57f21e939fcd4f7993157d7d146a9f020213c",
+      "matches_pinned_tree": true,
+      "inspection": "selected_functions",
+      "locators": [
+        {
+          "function_or_section": "BuildClassificationHead label resources",
+          "start_line": 32,
+          "end_line": 61,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/vision/core/classification_head.cc#L32-L61"
+        }
+      ],
+      "historical_source_comparison": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/mechanism/sources/tensorflow_lite_support/cc/task/vision/core/classification_head.cc",
+        "sha256": "bdbc62b8009eb0feb83c4ae2cd321e31d64fbec533532e8a98f4e1b155258777",
+        "same_bytes": true
+      }
+    },
+    {
+      "repository_path": "tensorflow_lite_support/cc/task/vision/core/label_map_item.cc",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/vision/core/label_map_item.cc",
+      "retrieved_utc": "2026-10-04T19:31:01.916546+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/cc/task/vision/core/label_map_item.cc",
+      "sha256": "f274349218e3e62c04ee602a9ecdcfa3e5b9a09c1d44778e69ea16766065f5f0",
+      "bytes": 4850,
+      "status": "retrieved",
+      "source_id": "OFF13",
+      "git_blob_sha1": "9c82b63a10359fb78ff05ff9bd2421032308a054",
+      "matches_pinned_tree": true,
+      "inspection": "selected_functions",
+      "locators": [
+        {
+          "function_or_section": "BuildLabelMapFromFiles",
+          "start_line": 31,
+          "end_line": 75,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/vision/core/label_map_item.cc#L31-L75"
+        }
+      ],
+      "historical_source_comparison": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/mechanism/sources/tensorflow_lite_support/cc/task/vision/core/label_map_item.cc",
+        "sha256": "f274349218e3e62c04ee602a9ecdcfa3e5b9a09c1d44778e69ea16766065f5f0",
+        "same_bytes": true
+      }
+    },
+    {
+      "repository_path": "tensorflow_lite_support/codegen/code_generator.cc",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/code_generator.cc",
+      "retrieved_utc": "2026-10-04T19:31:01.916975+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/codegen/code_generator.cc",
+      "sha256": "81125d926330d62ef5b57e96d5be00cc8083f7ec046893237dad312b76059792",
+      "bytes": 5597,
+      "status": "retrieved",
+      "source_id": "OFF14",
+      "git_blob_sha1": "1337708d4ac66802b17949fd39c617ffb595527b",
+      "matches_pinned_tree": true,
+      "inspection": "selected_functions",
+      "locators": [
+        {
+          "function_or_section": "CodeGenerator::VerifyMetadata",
+          "start_line": 58,
+          "end_line": 69,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/code_generator.cc#L58-L69"
+        },
+        {
+          "function_or_section": "NameInputsAndOutputs",
+          "start_line": 71,
+          "end_line": 91,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/code_generator.cc#L71-L91"
+        },
+        {
+          "function_or_section": "NameTensor",
+          "start_line": 125,
+          "end_line": 151,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/code_generator.cc#L125-L151"
+        }
+      ]
+    },
+    {
+      "repository_path": "tensorflow_lite_support/codegen/utils.cc",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/utils.cc",
+      "retrieved_utc": "2026-10-04T19:31:01.917315+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/codegen/utils.cc",
+      "sha256": "46a338477a29abbf05a76be689877de56d1a6bed867330b9b15f8aed34168a22",
+      "bytes": 5667,
+      "status": "retrieved",
+      "source_id": "OFF15",
+      "git_blob_sha1": "c75fc5fae631d66cf6a0d17126f6e1d0a6ad8e93",
+      "matches_pinned_tree": true,
+      "inspection": "downloaded_hash_verified_only",
+      "locators": []
+    },
+    {
+      "repository_path": "tensorflow_lite_support/metadata/cc/metadata_extractor.cc",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/cc/metadata_extractor.cc",
+      "retrieved_utc": "2026-10-04T19:31:01.917712+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/metadata/cc/metadata_extractor.cc",
+      "sha256": "0bd08faa05b4b7094f97070afa6895d6a620cc88279544e1d77f55f310ad5665",
+      "bytes": 15156,
+      "status": "retrieved",
+      "source_id": "OFF16",
+      "git_blob_sha1": "bdc0050ba189adc6d375411c68bf499f6db0aaef",
+      "matches_pinned_tree": true,
+      "inspection": "selected_functions",
+      "locators": [
+        {
+          "function_or_section": "FindFirstAssociatedFileName",
+          "start_line": 161,
+          "end_line": 178,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/cc/metadata_extractor.cc#L161-L178"
+        },
+        {
+          "function_or_section": "InitFromModelBuffer structural verifier",
+          "start_line": 180,
+          "end_line": 193,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/cc/metadata_extractor.cc#L180-L193"
+        }
+      ],
+      "historical_source_comparison": {
+        "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/mechanism/sources/tensorflow_lite_support/metadata/cc/metadata_extractor.cc",
+        "sha256": "0bd08faa05b4b7094f97070afa6895d6a620cc88279544e1d77f55f310ad5665",
+        "same_bytes": true
+      }
+    },
+    {
+      "repository_path": "tensorflow_lite_support/codegen/metadata_helper.cc",
+      "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/metadata_helper.cc",
+      "retrieved_utc": "2026-10-04T19:31:38.933857+00:00",
+      "http_status": 200,
+      "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/codegen/metadata_helper.cc",
+      "sha256": "fc222fa97f9e41e5e65627dc45c82c055dfab09ecc32e7e7e035e9325fa78c93",
+      "bytes": 3435,
+      "status": "retrieved",
+      "source_id": "OFF17",
+      "git_blob_sha1": "00c97236b23ad3ae65c26fbc49997b53c8762e1f",
+      "matches_pinned_tree": true,
+      "inspection": "selected_functions",
+      "locators": [
+        {
+          "function_or_section": "GetMetadataFromModel",
+          "start_line": 26,
+          "end_line": 46,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/metadata_helper.cc#L26-L46"
+        },
+        {
+          "function_or_section": "FindAssociatedFile",
+          "start_line": 48,
+          "end_line": 71,
+          "url": "https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/metadata_helper.cc#L48-L71"
+        }
+      ],
+      "historical_source_comparison": {
+        "path": "/workspace/metadata-contract-paper/sources/metadata_helper.cc",
+        "sha256": "fc222fa97f9e41e5e65627dc45c82c055dfab09ecc32e7e7e035e9325fa78c93",
+        "same_bytes": true
+      }
+    }
+  ]
+}

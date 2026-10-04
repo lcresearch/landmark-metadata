@@ -1,0 +1,170 @@
+{
+  "scope": "DeepMutation and NNSmith technical-positioning comparison, plus minimal Meyer background retrieval",
+  "protocol": "research/20261004-contribution-review/PROTOCOL.md",
+  "starting_commit": "81af34b10f8093e646179e51e658d597e6acc84b",
+  "evidence_storage": "Third-party bytes, text and retrieval logs are outside Git; local paths are locators, not durable public deposits.",
+  "retrieval_script": "research/20261004-contribution-review/scripts/retrieve_mutation_sources.py",
+  "retrieval_request_total": 3,
+  "model_or_tool_executions": 0,
+  "sources": [
+    {
+      "id": "deepmutation",
+      "title": "DeepMutation: Mutation Testing of Deep Learning Systems",
+      "authors": [
+        "Lei Ma",
+        "Fuyuan Zhang",
+        "Jiyuan Sun",
+        "Minhui Xue",
+        "Bo Li",
+        "Felix Juefei-Xu",
+        "Chao Xie",
+        "Li Li",
+        "Yang Liu",
+        "Jianjun Zhao",
+        "Yadong Wang"
+      ],
+      "version": "arXiv:1805.05206v2 (2018-08-14)",
+      "version_locator": "https://arxiv.org/pdf/1805.05206v2",
+      "source_level": "primary_full_text",
+      "publication_identity_status": "arXiv identity confirmed from PDF; publisher version and DOI not newly verified",
+      "sections_inspected": [
+        "III-A–C and Table I",
+        "IV-A–B and Table II",
+        "V-A–C and V-E"
+      ],
+      "passages": [
+        {
+          "locator": "III-B.1; PDF p. 4, Label Error (LE)",
+          "observation": "Changes label l of training example (d,l); workflow trains the mutated data/program to produce a model."
+        },
+        {
+          "locator": "Table II and IV-A–B; PDF pp. 5–6",
+          "observation": "Model-level operators mutate weights, neurons, activations and layers, not a graph/weights-preserving associated-file-only intervention."
+        },
+        {
+          "locator": "V; PDF pp. 6–9",
+          "observation": "Keras 2.1.3 / TensorFlow 1.5.0 evaluation of three DNNs on MNIST and CIFAR-10 assesses test-set mutation score and average error rate."
+        }
+      ],
+      "scope_limit": "No statement about all mutation literature or later tool releases; no tool execution.",
+      "request_count": 1,
+      "retrievals": [
+        {
+          "url": "https://arxiv.org/pdf/1805.05206",
+          "retrieved_at_utc": "2026-10-04T19:30:37.116882+00:00",
+          "status": 200,
+          "final_url": "https://arxiv.org/pdf/1805.05206",
+          "size_bytes": 558816,
+          "sha256": "82f71dc2ab01df7e84d279a98d2ad74b9f8ea5fc12c912bed03310b54bb3ed43",
+          "error": null,
+          "body_path": "/workspace/contribution-review-20261004/mutation/deepmutation-1.body",
+          "log_path": "/workspace/contribution-review-20261004/mutation/deepmutation-1.json",
+          "log_sha256": "9fef5c8e8d5c1aad652bbebb09a9fceb8104e7213ba96f5dbb2383afcc5f60b9",
+          "outcome": "full_text_retrieved"
+        }
+      ],
+      "derived_text": {
+        "path": "/workspace/contribution-review-20261004/mutation/deepmutation.txt",
+        "sha256": "dd60d5d19a4e9b29c8fe27dd5fcdabc998406881b15cae186655a8c7edc37f4a",
+        "command": "pdftotext -layout /workspace/contribution-review-20261004/mutation/deepmutation-1.body /workspace/contribution-review-20261004/mutation/deepmutation.txt"
+      }
+    },
+    {
+      "id": "nnsmith",
+      "title": "NNSmith: Generating Diverse and Valid Test Cases for Deep Learning Compilers",
+      "authors": [
+        "Jiawei Liu",
+        "Jinkun Lin",
+        "Fabian Ruffy",
+        "Cheng Tan",
+        "Jinyang Li",
+        "Aurojit Panda",
+        "Lingming Zhang"
+      ],
+      "version": "arXiv:2207.13066v2 (2022-12-30)",
+      "version_locator": "https://arxiv.org/pdf/2207.13066v2",
+      "source_level": "primary_full_text",
+      "publication_identity_status": "Retrieved PDF first page states ASPLOS 2023 Volume 2, DOI 10.1145/3575693.3575707; publisher PDF not separately retrieved",
+      "sections_inspected": [
+        "2 Background",
+        "3 Design (operator specifications, graph generation and input search)",
+        "4 Implementation",
+        "5 Evaluation (setup, coverage, ablations and bugs)"
+      ],
+      "passages": [
+        {
+          "locator": "3.1–3.2; PDF pp. 4–6",
+          "observation": "Operator requirements and output guarantees/type transfer compose as constraints to generate valid graphs with an SMT solver."
+        },
+        {
+          "locator": "4; PDF pp. 7–8",
+          "observation": "PyTorch outputs supply a numerical reference; ONNX export and compiled target execution are compared, with O0 comparison for localization."
+        },
+        {
+          "locator": "5.1 and Table 3 / bug descriptions; PDF pp. 8, 10–11",
+          "observation": "Evaluation covers compiler/converter crashes and numerical inconsistencies; types of conversion/transformation bugs are distinguished."
+        },
+        {
+          "locator": "False alarms; PDF p. 11",
+          "observation": "Numerical equivalence uses tolerance and accounts for floating-point optimization differences."
+        }
+      ],
+      "scope_limit": "No statement about all differential-testing work or later tool releases; no tool execution.",
+      "request_count": 1,
+      "retrievals": [
+        {
+          "url": "https://arxiv.org/pdf/2207.13066",
+          "retrieved_at_utc": "2026-10-04T19:30:37.131051+00:00",
+          "status": 200,
+          "final_url": "https://arxiv.org/pdf/2207.13066",
+          "size_bytes": 1922054,
+          "sha256": "0e297c1b5859fcd7b90b8cb2f741ed3a89b90f2aac81c64c3eeff0ea50082f41",
+          "error": null,
+          "body_path": "/workspace/contribution-review-20261004/mutation/nnsmith-1.body",
+          "log_path": "/workspace/contribution-review-20261004/mutation/nnsmith-1.json",
+          "log_sha256": "7e0aefb54ddb3aa6e6d3ea171c9e2a936c952fa1e2098d049126be3711c013da",
+          "outcome": "full_text_retrieved"
+        }
+      ],
+      "derived_text": {
+        "path": "/workspace/contribution-review-20261004/mutation/nnsmith.txt",
+        "sha256": "070fb93216e3d347f9585866820be05b0300e5b55c1086d8339c6fb61d2062f9",
+        "command": "pdftotext -layout /workspace/contribution-review-20261004/mutation/nnsmith-1.body /workspace/contribution-review-20261004/mutation/nnsmith.txt"
+      }
+    },
+    {
+      "id": "meyer",
+      "title": "Applying design by contract",
+      "authors": [
+        "Bertrand Meyer"
+      ],
+      "version": "Inherited manuscript citation: Computer 25(10), 40–51 (1992), DOI 10.1109/2.161279",
+      "version_locator": "https://doi.org/10.1109/2.161279",
+      "source_level": "unresolved_primary_retrieval",
+      "publication_identity_status": "Inherited citation only; DOI resolution reached IEEE, but empty challenge response did not authenticate title, author or publication tuple",
+      "sections_inspected": [],
+      "passages": [],
+      "scope_limit": "Background only; no claim of a fresh abstract or full-text reading.",
+      "request_count": 1,
+      "retrievals": [
+        {
+          "url": "https://doi.org/10.1109/2.161279",
+          "retrieved_at_utc": "2026-10-04T19:30:37.120305+00:00",
+          "status": 202,
+          "final_url": "https://ieeexplore.ieee.org/document/161279/",
+          "size_bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "error": null,
+          "body_path": "/workspace/contribution-review-20261004/mutation/meyer-1.body",
+          "log_path": "/workspace/contribution-review-20261004/mutation/meyer-1.json",
+          "log_sha256": "c7616a762f72963bed0b4deaebbfa5c873a33251a860de5a2cd185de82571865",
+          "outcome": "HTTP_202_empty_WAF_challenge_no_content",
+          "diagnostic_header": {
+            "x-amzn-waf-action": "challenge"
+          },
+          "followup": "No alternate retrieval or bypass attempted."
+        }
+      ]
+    }
+  ]
+}

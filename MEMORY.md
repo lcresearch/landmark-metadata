@@ -90,14 +90,28 @@ display-order reference; those results and their limits are retained above. A cl
 Keep **S** (structural acceptance), **I** (reference-backed association agreement), and **D** (compatibility with the actual decoder path) distinct. **P** is intervention-preservation evidence, not a fourth correctness category. Never count mutated fixtures or repeated inputs as independent models.
 
 P2 and the bounded P3 reference inquiry are complete. The active priorities in
-`TODO.md` now put novelty and research significance assessment before the full
-rewrite. Produce a claim–evidence–prior-work–remaining-difference table and a
-separate practical-significance evidence table, distinguishing measured outcomes,
-public cases and hypotheses. Use those assessments to choose a bounded empirical,
-method, or shorter case/experience framing; no method novelty is presumed.
+`TODO.md` put novelty and research significance assessment before the full
+rewrite. The [bounded contribution comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md)
+is now complete: official checks already enforce the focal predicates; prior
+methods cover contracts, constraint extraction, mutation and differential testing.
+The supported current framing is controlled empirical characterization, with E5
+as a supporting diagnostic. This does not certify field-wide novelty or venue fit.
+The separate practical-significance evidence table remains to be produced,
+distinguishing measured outcomes, public cases and hypotheses. Use both
+assessments to finalize the framing; no method novelty is presumed.
 Reproduction handoff and human-audit preparation can proceed in parallel. Actual
 human verification remains pending; venue selection and formatting follow the
-contribution decision. These are planned tasks, not newly completed research.
+contribution decision. The contribution comparison does not complete those tasks.
+
+This contribution-review task freshly inspected seven full texts: five recovered
+PDFs with historical matching hashes (MLGuard, DocTer, ACETest, DARA, AIBOM), plus
+new DeepMutation and NNSmith downloads. Stalnaker remains abstract-only after
+HTTP 403; Meyer full-text access was unresolved. Fixed Support 0.4.4 source was
+also inspected. The current manuscript and experiment records were not changed
+or rerun. Some historical E1/P2/P3 raw paths are visible on this host, correcting
+any assumption that all old bytes remain absent; this was an existence check,
+not archive authentication. The `/workspace/repro-*` records identified in the
+previous reconstruction remain unavailable at the checked locations.
 
 No natural-case search was conducted this round; any such search is optional and
 needs predefined scope/stopping conditions. Do not broaden model collection or

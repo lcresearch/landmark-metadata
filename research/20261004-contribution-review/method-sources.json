@@ -1,0 +1,409 @@
+{
+  "schema_version": 1,
+  "task": "Bounded four-method contribution comparison",
+  "review_type": "automated_research_agent_reading_not_human_verification",
+  "fresh_reading_utc": "2026-10-04T19:29:49.550112+00:00",
+  "source_acquisition_this_task": "Recovered pinned local PDFs; all original audit digests verified; no network retrieval",
+  "tool": "pdftotext version 25.03.0\nCopyright 2005-2025 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC",
+  "extraction_log_path": "/workspace/contribution-review-20261004/methods/extraction.json",
+  "extraction_log_sha256": "f64db95221794883b12af3f857c2860f17451c54befaca324d05e363fc2cac26",
+  "historical_audit_path": "sources/metadata-contract-audit-20261004T062010Z/literature/AUDIT_REPORT.md",
+  "historical_audit_sha256": "be6dccc418a955d30274bee10ca1d4eb0c911fcc1cd671174ee95585c3e4aedc",
+  "records": [
+    {
+      "id": "mlguard",
+      "title": "MLGuard: Defend Your Machine Learning Model!",
+      "doi": "10.1145/3617574.3617859",
+      "publication": "SE4SafeML 2023",
+      "reviewed_version": "arXiv 2309.01379v1",
+      "primary_url": "https://arxiv.org/pdf/2309.01379v1",
+      "access_status": "RECOVERED_FULL_TEXT_FRESHLY_READ",
+      "fresh_network_requests": 0,
+      "source_level": "full_text",
+      "publication_identity_check": "historical_crossref_response_recovered_not_refetched",
+      "original_retrieval_log": "/workspace/metadata-contract-audit-20261004T062010Z/literature/retrieval-results.json",
+      "version_pinning_log": "/workspace/metadata-contract-audit-20261004T062010Z/literature/version-pinning.json",
+      "local_pdf": "/workspace/metadata-contract-audit-20261004T062010Z/literature/sources/mlguard.pdf",
+      "pdf_sha256": "82cac1ea02229afd329f73a3c672d84af4ac08bcea68c996628c2a37983d12be",
+      "pdf_bytes": 488787,
+      "matched_prior_audit_digest": true,
+      "pdf_pages": 4,
+      "historical_crossref_path": "/workspace/metadata-contract-audit-20261004T062010Z/literature/sources/mlguard-crossref.json",
+      "historical_crossref_sha256": "a83596e61a043e05eb19d0b52d8e66b179db8c288c867330f753712fa65ad899",
+      "fresh_text_path": "/workspace/contribution-review-20261004/methods/mlguard-fresh-reading.txt",
+      "fresh_text_sha256": "af6bd4338e29a36b2b5f3163b4e6934f5e785040b6300d582f7e5c45354bf3d0",
+      "extraction_command": [
+        "pdftotext",
+        "-layout",
+        "/workspace/metadata-contract-audit-20261004T062010Z/literature/sources/mlguard.pdf",
+        "/workspace/contribution-review-20261004/methods/mlguard-fresh-reading.txt"
+      ],
+      "extraction_exit_code": 0,
+      "extraction_stderr_path": "/workspace/contribution-review-20261004/methods/mlguard-extract.stderr",
+      "extraction_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "extraction_warnings": [],
+      "pages_inspected_for_comparison": [
+        3,
+        4
+      ],
+      "claim_locators": [
+        {
+          "pages": [
+            3
+          ],
+          "sections": [
+            "3.1",
+            "3.2"
+          ],
+          "claim": "Developer supplied contracts and planned probabilistic validation models."
+        },
+        {
+          "pages": [
+            3,
+            4
+          ],
+          "sections": [
+            "3.3"
+          ],
+          "claim": "Proposed code-template instantiation produces wrappers containing checks and violation handlers."
+        },
+        {
+          "pages": [
+            4
+          ],
+          "sections": [
+            "4",
+            "5"
+          ],
+          "claim": "Research questions and future plans; prototype and industry evaluation are proposed, not reported completed."
+        }
+      ],
+      "tool_rerun": false,
+      "later_versions_or_repository_inspected": false,
+      "comparison_limit": "Reported methods and evaluations of this version only; no field-wide absence, firstness, or comparative tool-detection result inferred."
+    },
+    {
+      "id": "docter",
+      "title": "DocTer: Documentation-Guided Fuzzing for Testing Deep Learning API Functions",
+      "doi": "10.1145/3533767.3534220",
+      "publication": "ISSTA 2022",
+      "reviewed_version": "arXiv 2109.01002v4",
+      "primary_url": "https://arxiv.org/pdf/2109.01002v4",
+      "access_status": "RECOVERED_FULL_TEXT_FRESHLY_READ",
+      "fresh_network_requests": 0,
+      "source_level": "full_text",
+      "publication_identity_check": "historical_crossref_response_recovered_not_refetched",
+      "original_retrieval_log": "/workspace/metadata-contract-audit-20261004T062010Z/literature/retrieval-results.json",
+      "version_pinning_log": "/workspace/metadata-contract-audit-20261004T062010Z/literature/version-pinning.json",
+      "local_pdf": "/workspace/metadata-contract-audit-20261004T062010Z/literature/sources/docter.pdf",
+      "pdf_sha256": "3510daa4fab4f0fef0d4c4014ca7abdf69c43cdf973bfeb3039a1798598d0ee8",
+      "pdf_bytes": 1254593,
+      "matched_prior_audit_digest": true,
+      "pdf_pages": 13,
+      "historical_crossref_path": "/workspace/metadata-contract-audit-20261004T062010Z/literature/sources/docter-crossref.json",
+      "historical_crossref_sha256": "61b38461e3e8ffa6bc07305956501935237661caa439cfcbbdaeabb4f9678e71",
+      "fresh_text_path": "/workspace/contribution-review-20261004/methods/docter-fresh-reading.txt",
+      "fresh_text_sha256": "63bb0f427e5cd1815665c46ade8027879493e2446e6e73aa85ac5475d2a61dd2",
+      "extraction_command": [
+        "pdftotext",
+        "-layout",
+        "/workspace/metadata-contract-audit-20261004T062010Z/literature/sources/docter.pdf",
+        "/workspace/contribution-review-20261004/methods/docter-fresh-reading.txt"
+      ],
+      "extraction_exit_code": 0,
+      "extraction_stderr_path": "/workspace/contribution-review-20261004/methods/docter-extract.stderr",
+      "extraction_stderr_sha256": "9b0992fc8d7ca352e5300e79fad3b8d8bbe2947105385af1b932515087e008b2",
+      "extraction_warnings": [
+        "Syntax Warning (14236): Badly formatted number",
+        "Syntax Warning (14259): Badly formatted number",
+        "Syntax Warning (14279): Badly formatted number"
+      ],
+      "pages_inspected_for_comparison": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12
+      ],
+      "claim_locators": [
+        {
+          "pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "sections": [
+            "2.1",
+            "2.2",
+            "2.3"
+          ],
+          "claim": "Manual abstract-constraint annotations support learned dependency-tree mappings."
+        },
+        {
+          "pages": [
+            6,
+            7
+          ],
+          "sections": [
+            "2.4"
+          ],
+          "claim": "Cross-parameter constraints and a dependency graph determine input generation order."
+        },
+        {
+          "pages": [
+            7,
+            8
+          ],
+          "sections": [
+            "2.5"
+          ],
+          "claim": "Conforming and violating concrete inputs are executed; serious crashes are the testing oracle."
+        },
+        {
+          "pages": [
+            8,
+            10
+          ],
+          "sections": [
+            "3",
+            "4.1",
+            "4.3"
+          ],
+          "claim": "Versioned library setup, held-out annotation sample, and unguided-generation comparison."
+        },
+        {
+          "pages": [
+            11,
+            12
+          ],
+          "sections": [
+            "4.4",
+            "5"
+          ],
+          "claim": "Document completeness, complex constraints, and manual annotation are explicit limitations."
+        }
+      ],
+      "tool_rerun": false,
+      "later_versions_or_repository_inspected": false,
+      "comparison_limit": "Reported methods and evaluations of this version only; no field-wide absence, firstness, or comparative tool-detection result inferred."
+    },
+    {
+      "id": "acetest",
+      "title": "ACETest: Automated Constraint Extraction for Testing Deep Learning Operators",
+      "doi": "10.1145/3597926.3598088",
+      "publication": "ISSTA 2023",
+      "reviewed_version": "arXiv 2305.17914v2",
+      "primary_url": "https://arxiv.org/pdf/2305.17914v2",
+      "access_status": "RECOVERED_FULL_TEXT_FRESHLY_READ",
+      "fresh_network_requests": 0,
+      "source_level": "full_text",
+      "publication_identity_check": "historical_crossref_response_recovered_not_refetched",
+      "original_retrieval_log": "/workspace/metadata-contract-audit-20261004T062010Z/literature/retrieval-results.json",
+      "version_pinning_log": "/workspace/metadata-contract-audit-20261004T062010Z/literature/version-pinning.json",
+      "local_pdf": "/workspace/metadata-contract-audit-20261004T062010Z/literature/sources/acetest.pdf",
+      "pdf_sha256": "932ce82dd736591649abd9139b9f8e7bf3564460f46d852591bbe75aa502bcec",
+      "pdf_bytes": 1272455,
+      "matched_prior_audit_digest": true,
+      "pdf_pages": 13,
+      "historical_crossref_path": "/workspace/metadata-contract-audit-20261004T062010Z/literature/sources/acetest-crossref.json",
+      "historical_crossref_sha256": "03d5d38ab4f49ae03ce3185f81dc1aac19e7799ef78a3a43df1cf5f751fed4b1",
+      "fresh_text_path": "/workspace/contribution-review-20261004/methods/acetest-fresh-reading.txt",
+      "fresh_text_sha256": "f4a0453cb4ef1fcd5872692216d656847778675a484c8362db4dc5688b901852",
+      "extraction_command": [
+        "pdftotext",
+        "-layout",
+        "/workspace/metadata-contract-audit-20261004T062010Z/literature/sources/acetest.pdf",
+        "/workspace/contribution-review-20261004/methods/acetest-fresh-reading.txt"
+      ],
+      "extraction_exit_code": 0,
+      "extraction_stderr_path": "/workspace/contribution-review-20261004/methods/acetest-extract.stderr",
+      "extraction_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "extraction_warnings": [],
+      "pages_inspected_for_comparison": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "claim_locators": [
+        {
+          "pages": [
+            3,
+            4,
+            5
+          ],
+          "sections": [
+            "3.1",
+            "3.2"
+          ],
+          "claim": "Source-level validation path extraction uses error handling and paths toward core functionality."
+        },
+        {
+          "pages": [
+            5,
+            6,
+            7
+          ],
+          "sections": [
+            "3.3"
+          ],
+          "claim": "Controllability propagation, a constraint model, and manually supplied library-specific handling support extraction."
+        },
+        {
+          "pages": [
+            7
+          ],
+          "sections": [
+            "3.4",
+            "4"
+          ],
+          "claim": "LLVM/SVF and Z3; generated scripts execute operators; loops unrolled once; adaptation needed for new libraries."
+        },
+        {
+          "pages": [
+            8,
+            9
+          ],
+          "sections": [
+            "5.1",
+            "5.2.2"
+          ],
+          "claim": "Versioned operator selection and sampled manual constraint validation."
+        },
+        {
+          "pages": [
+            9,
+            10,
+            11
+          ],
+          "sections": [
+            "5.2.2",
+            "5.4.3",
+            "6"
+          ],
+          "claim": "Missing constraints, test-target limitations, crashes-only oracle, randomness and analysis dependence."
+        }
+      ],
+      "tool_rerun": false,
+      "later_versions_or_repository_inspected": false,
+      "comparison_limit": "Reported methods and evaluations of this version only; no field-wide absence, firstness, or comparative tool-detection result inferred."
+    },
+    {
+      "id": "dara",
+      "title": "“I see models being a whole other thing”: an empirical study of pre-trained model naming conventions and a tool for enhancing naming consistency",
+      "doi": "10.1007/s10664-025-10711-4",
+      "publication": "Empirical Software Engineering 2025, 30:155",
+      "reviewed_version": "Preserved Springer version of record",
+      "primary_url": "https://link.springer.com/content/pdf/10.1007/s10664-025-10711-4.pdf",
+      "access_status": "RECOVERED_FULL_TEXT_FRESHLY_READ",
+      "fresh_network_requests": 0,
+      "source_level": "full_text",
+      "publication_identity_check": "historical_crossref_response_recovered_not_refetched",
+      "original_retrieval_log": "/workspace/metadata-contract-audit-20261004T062010Z/literature/retrieval-results.json",
+      "version_pinning_log": null,
+      "local_pdf": "/workspace/metadata-contract-audit-20261004T062010Z/literature/sources/dara.pdf",
+      "pdf_sha256": "67c547af18d1083ff15971e144d9f30554d6825fd47eab91b707555af83ab6f4",
+      "pdf_bytes": 4888540,
+      "matched_prior_audit_digest": true,
+      "pdf_pages": 62,
+      "historical_crossref_path": "/workspace/metadata-contract-audit-20261004T062010Z/literature/sources/dara-crossref.json",
+      "historical_crossref_sha256": "6217e320604a1f308735cb80cbb168a5cf8642067b97b72d3f8d62d7808115ed",
+      "fresh_text_path": "/workspace/contribution-review-20261004/methods/dara-fresh-reading.txt",
+      "fresh_text_sha256": "f141326648e1e354e1c6114784cf6b3f4b9a2733dbf8d9960a022344fa92c7d2",
+      "extraction_command": [
+        "pdftotext",
+        "-layout",
+        "/workspace/metadata-contract-audit-20261004T062010Z/literature/sources/dara.pdf",
+        "/workspace/contribution-review-20261004/methods/dara-fresh-reading.txt"
+      ],
+      "extraction_exit_code": 0,
+      "extraction_stderr_path": "/workspace/contribution-review-20261004/methods/dara-extract.stderr",
+      "extraction_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "extraction_warnings": [],
+      "pages_inspected_for_comparison": [
+        31,
+        32,
+        33,
+        39,
+        40,
+        41,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "claim_locators": [
+        {
+          "pages": [
+            31,
+            32,
+            33
+          ],
+          "sections": [
+            "7.2.1",
+            "7.2.2",
+            "7.2.3"
+          ],
+          "claim": "Computational graph tracing/parsing and abstract architecture feature extraction."
+        },
+        {
+          "pages": [
+            39,
+            40
+          ],
+          "sections": [
+            "7.3.1",
+            "7.3.3"
+          ],
+          "claim": "Metadata-derived evaluation labels and learned-prediction comparison; loading/tag exclusions."
+        },
+        {
+          "pages": [
+            41,
+            46,
+            47,
+            48,
+            49
+          ],
+          "sections": [
+            "7.4",
+            "8"
+          ],
+          "claim": "Architecture/task classification results, information-loss and dataset/ecosystem limitations."
+        },
+        {
+          "pages": [
+            50,
+            51
+          ],
+          "sections": [
+            "9.2"
+          ],
+          "claim": "Assessment and proposed workflow warnings, not demonstrated generated-getter enforcement."
+        }
+      ],
+      "tool_rerun": false,
+      "later_versions_or_repository_inspected": false,
+      "comparison_limit": "Reported methods and evaluations of this version only; no field-wide absence, firstness, or comparative tool-detection result inferred."
+    }
+  ],
+  "limitations": [
+    "No paper tools or model experiments rerun.",
+    "No exhaustive or systematic novelty search.",
+    "No later versions or paper repositories inspected.",
+    "No independent human verification.",
+    "External raw papers/text/logs remain outside this source-only repository."
+  ]
+}

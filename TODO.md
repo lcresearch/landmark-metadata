@@ -6,7 +6,8 @@ source-only repository policy.
 
 ## Active priorities: assess the contribution before the full rewrite
 
-The priorities below describe planned work, not completed audits or new results.
+The checkboxes below distinguish completed deliverables from planned work.
+Completion of a bounded comparison does not certify novelty or publication readiness.
 P0/P1/P2 here are priority levels, separate from the historical experiment and
 follow-up names. The same-Android P2 comparison and bounded P3 reference inquiry
 remain complete. Stronger execution evidence does not by itself establish novelty
@@ -18,15 +19,15 @@ proceed in parallel. Record whether the evidence supports a bounded empirical
 study, a method contribution, or a shorter case/experience report; do not assume
 the strongest framing in advance.
 
-- [ ] **P0 — Contribution and closest-work comparison (agent).** Produce a
-  claim–evidence–prior-work–remaining-difference table covering the closest
-  research and version-specific official implementations. Define the source
-  scope, verify technical comparisons, and record inaccessible sources and
-  unresolved overlap. Identify which constraints are already implemented and
-  what the controlled execution evidence adds. Completion means a supported
-  contribution boundary, including claims to narrow or drop; it is not an
-  exhaustive novelty proof. E5 remains a supporting tool unless a capability
-  beyond strong baselines is demonstrated.
+- [x] **P0 — Contribution and closest-work comparison (agent).** Completed the
+  [bounded comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md):
+  seven full-text comparisons, two explicit source-access limits, fixed official
+  implementation paths, and keep/narrow/drop recommendations. The result supports
+  bounded empirical framing, with E5 as a supporting diagnostic; it does not
+  certify novelty or significance. The claim–evidence–prior-work–remaining-difference
+  table records source scope, inaccessible material, existing constraints and
+  unresolved overlap. This closes the agreed bounded comparison, not an exhaustive
+  novelty search. An E5 method claim still requires capability beyond strong baselines.
 - [ ] **P0 — Research significance assessment (agent).** Identify the concrete
   usage scenarios, limitations of existing checks, and engineering consequences
   relevant to the observed mechanism. Produce an evidence table separating
@@ -188,8 +189,11 @@ that can change the core claim or contribution decision.
 - [ ] Replace remaining historical report templates if they are promoted to
   reusable tools: required evidence must gate prose, status and exit code;
   empty evidence and companion failures must fail explicitly.
-- [ ] Repeat bounded literature full-text checks once the required endpoints
-  are available; the fresh attempts received proxy CONNECT 403.
+- [x] Repeat the bounded literature checks using recovered, digest-verified
+  full texts where available, and extend the declared comparison to mutation
+  and differential testing. The [new source indexes](research/20261004-contribution-review/README.md)
+  distinguish five recovered PDFs, two new PDFs, and unresolved Stalnaker/Meyer
+  full-text access. The earlier blocked retrieval attempts remain historical.
 - [ ] Review/save the cloud configuration draft and publish the retained
   environment; independently test restoration in a future fresh task before
   calling it verified snapshot restoration.
