@@ -1,0 +1,16 @@
+[
+  {
+    "id": "F05-source-tree",
+    "url": "https://api.github.com/repos/tensorflow/tfhub.dev/git/trees/81fdea8ffa53b5acbd66a012d17fb8f9602c714b?recursive=1",
+    "family": "tensorflow/tfhub.dev",
+    "parent": "F03-tfhub-repo-head",
+    "reason": "Resolve exact paths of official cards/export/mapping files from pinned source tree"
+  },
+  {
+    "id": "F06-source-tree",
+    "url": "https://api.github.com/repos/google/automl/git/trees/6a54c8741e7c3265d4547c4f35f47a0391122dc5?recursive=1",
+    "family": "google/automl",
+    "parent": "F04-automl-repo-head",
+    "reason": "Resolve exact paths of official cards/export/mapping files from pinned source tree"
+  }
+]

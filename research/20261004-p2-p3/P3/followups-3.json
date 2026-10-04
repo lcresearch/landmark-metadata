@@ -1,0 +1,5 @@
+[
+ {"id":"F07-pinned-lite-card","url":"https://raw.githubusercontent.com/tensorflow/tfhub.dev/81fdea8ffa53b5acbd66a012d17fb8f9602c714b/assets/docs/tensorflow/models/efficientnet/lite0/fp32/lite/2.md","family":"TensorFlow Hub","parent":"F05-source-tree","reason":"Exact catalog path resolved from archived source tree"},
+ {"id":"F08-pinned-training-card","url":"https://raw.githubusercontent.com/tensorflow/tfhub.dev/81fdea8ffa53b5acbd66a012d17fb8f9602c714b/assets/docs/tensorflow/models/efficientnet/lite0/classification/2.md","family":"TensorFlow Hub","parent":"F05-source-tree","reason":"Exact classification source card path resolved from pinned tree"},
+ {"id":"F09-automl-lite-history","url":"https://api.github.com/repos/google/automl/commits?path=efficientnet/lite/README.md&per_page=1","family":"Google AutoML source","parent":"F06-source-tree","reason":"Expected official EfficientNet-Lite path missing at current revision; resolve last documented source revision"}
+]

@@ -1,0 +1,5 @@
+[
+ {"id":"F10-pinned-parent-card","url":"https://raw.githubusercontent.com/tensorflow/tfhub.dev/81fdea8ffa53b5acbd66a012d17fb8f9602c714b/assets/docs/tensorflow/models/efficientnet/lite0/classification/1.md","family":"TensorFlow Hub","parent":"F07-pinned-lite-card","reason":"Exact parent-model declaration links lite fp32/2 to classification/1, not classification/2"},
+ {"id":"F11-explicit-class-order","url":"https://storage.googleapis.com/download.tensorflow.org/data/ImageNetLabels.txt","family":"TensorFlow Hub","parent":"F08-pinned-training-card","reason":"Official training card explicitly supplies index-to-label mapping and instructs ignore first background class"},
+ {"id":"F12-training-tutorial","url":"https://cloud.google.com/tpu/docs/tutorials/efficientnet","family":"Google AutoML source","parent":"F08-pinned-training-card","reason":"Direct official training tutorial link to actual EfficientNet-Lite export/training implementation"}
+]

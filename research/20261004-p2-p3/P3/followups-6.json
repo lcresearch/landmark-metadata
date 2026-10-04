@@ -1,0 +1,16 @@
+[
+  {
+    "id": "F17-synset-order",
+    "url": "https://raw.githubusercontent.com/tensorflow/models/930a6f98f7debcc32ca7afbca4a176dbf9211e03/research/slim/datasets/imagenet_lsvrc_2015_synsets.txt",
+    "family": "Google AutoML / TensorFlow official model source",
+    "parent": "I12-tensorflow-imagenet-mapping-source",
+    "reason": "Direct resource named in official mapping implementation; pin to resolved F14 revision. Candidate stable IDs only unless artifact-order lineage independently established."
+  },
+  {
+    "id": "F18-synset-names",
+    "url": "https://raw.githubusercontent.com/tensorflow/models/930a6f98f7debcc32ca7afbca4a176dbf9211e03/research/slim/datasets/imagenet_metadata.txt",
+    "family": "Google AutoML / TensorFlow official model source",
+    "parent": "I12-tensorflow-imagenet-mapping-source",
+    "reason": "Direct resource named in official mapping implementation; pin to resolved F14 revision. Candidate stable IDs only unless artifact-order lineage independently established."
+  }
+]

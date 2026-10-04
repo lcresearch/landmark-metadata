@@ -1,0 +1,6 @@
+[
+ {"id":"F13-tpu-head","url":"https://api.github.com/repos/tensorflow/tpu/commits?per_page=1","family":"Google AutoML / TensorFlow official model source","parent":"I10-tpu-lite-source","reason":"Resolve source revision at retrieval for official TensorFlow TPU source"},
+ {"id":"F14-tensorflow-models-head","url":"https://api.github.com/repos/tensorflow/models/commits?per_page=1","family":"Google AutoML / TensorFlow official model source","parent":"I12-tensorflow-imagenet-mapping-source","reason":"Pin directly referenced dataset synset resources"},
+ {"id":"F15-tpu-labelmap","url":"https://storage.googleapis.com/cloud-tpu-checkpoints/efficientnet/eval_data/labels_map.txt","family":"Google AutoML / TensorFlow official model source","parent":"I10-tpu-lite-source","reason":"Official EfficientNet-Lite README links standalone checkpoint evaluation label map"},
+ {"id":"F16-export-source","url":"https://raw.githubusercontent.com/tensorflow/tpu/master/models/official/efficientnet/export_model.py","family":"Google AutoML / TensorFlow official model source","parent":"I10-tpu-lite-source","reason":"Inspect export script explicitly invoked by official Lite documentation"}
+]

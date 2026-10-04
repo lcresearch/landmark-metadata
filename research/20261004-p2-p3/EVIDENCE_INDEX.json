@@ -1,0 +1,64 @@
+{
+  "local_root": "/workspace/metadata-contract-p2p3-20261004T073824Z",
+  "evidence": {
+    "P2/SHA256SUMS": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/SHA256SUMS",
+      "sha256": "d903826e8d6f666921ba9e6e9247fe541cb3b7c6b8170113c4b5c572f82f58d5"
+    },
+    "P2/results.json": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/results.json",
+      "sha256": "8828d53f32d0eb6a8a5276092e5f2834f548389d780fde1d3726cde0b263d45d"
+    },
+    "P2/versions/versions.json": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/versions/versions.json",
+      "sha256": "2e4d273d36d00c5e6247faa3905277dc318d156f5b784deb26338470132ccb36"
+    },
+    "P2/dependencies/resolved-lock.json": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/dependencies/resolved-lock.json",
+      "sha256": "5009e249796aab433f6393182faa726ca3a93c540749529867d3f6f81e48fcad"
+    },
+    "P3/SHA256SUMS": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/SHA256SUMS",
+      "sha256": "77345fcadf085095d23722ac7a16ef7c4d5d34c202e4f32b7046750cad919de3"
+    },
+    "P3/results.json": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/results.json",
+      "sha256": "da54d486f461450d89bf77a777108f8e88b31bc6fcbf9b08fcd042cc8db88f17"
+    },
+    "review/mechanism/SHA256SUMS": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/mechanism/SHA256SUMS",
+      "sha256": "6c841bdc38f0a959d5ce8579143d8da8f1e036dfdd795ff23ca2fb9b8b32c545"
+    },
+    "review/reference-audit/audit-output-manifest.json": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/reference-audit/audit-output-manifest.json",
+      "sha256": "b0cbee89c97bf2e23e574b5a7b49e76e04d066ba32f4af4b0308f93089a3e334"
+    },
+    "verification/runtime-record-review.json": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/verification/runtime-record-review.json",
+      "sha256": "5d307a205ce17df113e235a6a8650f39d7c68d80721c91f7bde5bc65c9d8bfd6"
+    },
+    "verification/protected-evidence-review.json": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/verification/protected-evidence-review.json",
+      "sha256": "92ecf5e7be8b2a263956272ff0ebc3656765bcaff9812ca4cbe60de50ef38400"
+    },
+    "review/manuscript-p2-review.md": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/manuscript-p2-review.md",
+      "sha256": "d64f221b3c78345af863f3fbe981346c6212945b33543bbfd65ee9800390ff6f"
+    },
+    "review/manuscript-reference-review.md": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/manuscript-reference-review.md",
+      "sha256": "46caa92c45f8cc16ec7c94ded33b780d5f6b881aa89df64e1864573159281e7f"
+    },
+    "manuscript/paper.tex": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/manuscript/paper.tex",
+      "sha256": "118ccc9820454f8ac1d3b0416ba456401e5ef3f9e9d0199ba1c59991103ec5a9"
+    },
+    "manuscript/paper.pdf": {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/manuscript/paper.pdf",
+      "sha256": "ffda958dd5497cfa9c4fa68798f5b3857a93a46c90efdfd5cd0a8e87d0db70f4"
+    }
+  },
+  "source_only_repository": "https://github.com/lcresearch/landmark-metadata",
+  "repository_contains_full_evidence": false,
+  "human_audit": "PENDING"
+}
