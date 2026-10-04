@@ -96,9 +96,11 @@ is now complete: official checks already enforce the focal predicates; prior
 methods cover contracts, constraint extraction, mutation and differential testing.
 The supported current framing is controlled empirical characterization, with E5
 as a supporting diagnostic. This does not certify field-wide novelty or venue fit.
-The separate practical-significance evidence table remains to be produced,
-distinguishing measured outcomes, public cases and hypotheses. Use both
-assessments to finalize the framing; no method novelty is presumed.
+The separate [practical-significance assessment](research/20261004-significance-review/SIGNIFICANCE_ASSESSMENT.md)
+is also complete within its declared scope. It supports integration-test coverage
+and consumer-specific diagnosis, not prevalence, demonstrated operational benefit
+or a superior method. Use both assessments to finalize the framing; no method
+novelty or venue readiness is presumed.
 Reproduction handoff and human-audit preparation can proceed in parallel. Actual
 human verification remains pending; venue selection and formatting follow the
 contribution decision. The contribution comparison does not complete those tasks.
@@ -113,8 +115,34 @@ any assumption that all old bytes remain absent; this was an existence check,
 not archive authentication. The `/workspace/repro-*` records identified in the
 previous reconstruction remain unavailable at the checked locations.
 
-No natural-case search was conducted this round; any such search is optional and
-needs predefined scope/stopping conditions. Do not broaden model collection or
+The subsequent significance review followed a same-session protocol: six official
+workflow pages and eight fixed GitHub queries. It triaged 30 unique issues and
+inspected all seven eligible reports plus 69 comments. Support #770 documents a
+2022 generated segmentation getter/TensorLabel failure; a repository-member reply
+says that model's Android Studio generation path is unsupported and recommends
+Task Library. It supports engineering relevance AND constrains first-discovery
+claims. It is not our reproduction of a supported natural defect. Other selected
+reports retain existing-check, asset-selection and input-configuration explanations.
+No issue model was downloaded or executed; zero natural artifacts were reproduced.
+
+That task also read back a fixed selection of 59 old E1/E2/P2/P3 records/payloads:
+14 successful lists retain score bits, two caught getter failures remain recorded,
+and permutation changes 999 labels per input. This is old-record inspection, not a
+new build/run or authentication of the entire sealed evidence/reference chain.
+Independent agent review found no blocking inconsistency; it is not human review.
+Raw retrieval/readback evidence stays outside Git under
+`/workspace/significance-review-20261004/`; committed source indexes record hashes.
+
+Full-package hash pinning would detect both associated-resource interventions;
+Task initialization and exact-path simple checks already reject deletion. Getter
+tests and qualified reference-map comparisons address the demonstrated remaining
+properties. Do not claim these ordinary protections are absent, or that earlier
+rejection saved time, energy or incidents. The manuscript is unchanged by these
+two P0 assessments; incorporate their conclusions in the next working revision.
+
+Any new natural-artifact reproduction needs a separately declared scope and
+stopping condition; the completed public-report review is not such a reproduction.
+Do not broaden model collection or
 repeat completed core audits and baseline comparisons without a new change or
 unresolved contradiction. An E5 method expansion is conditional on demonstrated
 value beyond a strong baseline. Priority labels in the active TODO are distinct

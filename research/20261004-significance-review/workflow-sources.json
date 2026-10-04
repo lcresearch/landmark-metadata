@@ -1,0 +1,508 @@
+{
+  "schema_version": 1,
+  "scope": "Six declared official workflow guides, current HTTP retrieval plus prior commit-pinned implementation; no model or consumer execution, adoption estimate, or measured developer benefit. Zero new first-party clarification links followed.",
+  "retrieval_date_utc": "2026-10-04",
+  "extraction": {
+    "python_version": "3.12.14",
+    "lxml_version": [
+      6,
+      1,
+      1,
+      0
+    ],
+    "algorithm": "lxml HTML devsite-article-body text_content, retain nonempty lines after right stripping; fall back to main",
+    "index_external": "/workspace/significance-review-20261004/workflows/extraction-index.json",
+    "index_sha256": "982e2c3e60b08cb94ba29e36b68c870e01f7a8204ee7b538341587e11de19e46"
+  },
+  "documents": [
+    {
+      "source_id": "WF01",
+      "title": "Generate model interfaces using metadata \u00a0|\u00a0 Google AI Edge \u00a0|\u00a0 Google for Developers",
+      "requested_url": "https://www.tensorflow.org/lite/inference_with_metadata/codegen",
+      "effective_url": "https://developers.google.com/edge/litert/android/metadata/codegen",
+      "retrieved_at_utc": "2026-10-04T19:43:52.204720+00:00",
+      "http_status": 200,
+      "curl_exit_code": 0,
+      "redirect_locations": [
+        "https://ai.google.dev/edge/litert/inference_with_metadata/codegen",
+        "https://developers.google.com/edge/litert/inference_with_metadata/codegen",
+        "/edge/litert/android/metadata/codegen"
+      ],
+      "displayed_last_updated_dates": [
+        "2026-05-28"
+      ],
+      "version_scope": "Current page: Android Studio >=4.1; pip install tflite-support is unpinned; GPU example 1.4.1; CLI sample uses older createInputs/run/getProbability API, not the focal 0.4.4 process/getProbabilityAsCategoryList API.",
+      "inspection": "targeted workflow and validation/test instructions; no model execution",
+      "sections": [
+        {
+          "heading": "Use Android Studio ML Model Binding",
+          "text_start_line": 1,
+          "text_end_line": 28
+        },
+        {
+          "heading": "Generate model interfaces with LiteRT code generator",
+          "text_start_line": 75,
+          "text_end_line": 94
+        },
+        {
+          "heading": "Using the generated code",
+          "text_start_line": 104,
+          "text_end_line": 140
+        }
+      ],
+      "external_files": {
+        ".html": {
+          "path": "/workspace/significance-review-20261004/workflows/WF01.html",
+          "bytes": 146966,
+          "sha256": "e8c23a98a921a1973704f934c4dd6b8dfb30f2c67821b2cc18530b719f53eca5"
+        },
+        ".headers": {
+          "path": "/workspace/significance-review-20261004/workflows/WF01.headers",
+          "bytes": 3694,
+          "sha256": "c8def1b0fa12387bf2880d6c305469b05d026d192b18ab13ef1d117e2c1cf00a"
+        },
+        ".curl.json": {
+          "path": "/workspace/significance-review-20261004/workflows/WF01.curl.json",
+          "bytes": 7914,
+          "sha256": "f1ba761fbe1115b84fa3f8c471da17df00832f2590d18295d36f0fb63bae57d1"
+        },
+        ".stderr": {
+          "path": "/workspace/significance-review-20261004/workflows/WF01.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "extracted_text": {
+        "path": "/workspace/significance-review-20261004/workflows/WF01.txt",
+        "bytes": 7865,
+        "sha256": "57fed2b007f69dafe4955c4d1c5a968c584082cda124c7fdae9fa14e3fa2710f"
+      },
+      "followed_new_clarification_links": []
+    },
+    {
+      "source_id": "WF02",
+      "title": "Android Studio \u00a0|\u00a0 Android Developers",
+      "requested_url": "https://developer.android.com/studio/releases/past-releases/as-4-1-0-release-notes#tensorflow-lite-models",
+      "effective_url": "https://developer.android.com/studio/releases/past-releases/as-4-1-0-release-notes#tensorflow-lite-models",
+      "retrieved_at_utc": "2026-10-04T19:43:52.205869+00:00",
+      "http_status": 200,
+      "curl_exit_code": 0,
+      "redirect_locations": [],
+      "displayed_last_updated_dates": [
+        "2026-10-01"
+      ],
+      "version_scope": "Historical Android Studio 4.1 release notes (heading August 2020), currently served page; stated supported-model limitations belong to that release, not all current Android Studio versions.",
+      "inspection": "targeted workflow and validation/test instructions; no model execution",
+      "sections": [
+        {
+          "heading": "Use TensorFlow Lite models",
+          "text_start_line": 36,
+          "text_end_line": 76
+        }
+      ],
+      "external_files": {
+        ".html": {
+          "path": "/workspace/significance-review-20261004/workflows/WF02.html",
+          "bytes": 301193,
+          "sha256": "b7396086408d5670715fd93b5f77b353e3d817939fa87638cc59fc1126732036"
+        },
+        ".headers": {
+          "path": "/workspace/significance-review-20261004/workflows/WF02.headers",
+          "bytes": 911,
+          "sha256": "bd420c72cca9a2378535e3e3544cd2b260527e8ae2db8963c645e031e9b3da6a"
+        },
+        ".curl.json": {
+          "path": "/workspace/significance-review-20261004/workflows/WF02.curl.json",
+          "bytes": 8070,
+          "sha256": "3ae6d8bda5e53019638217d3526cd4c26714b8849b90c8b42800437c3a6d889e"
+        },
+        ".stderr": {
+          "path": "/workspace/significance-review-20261004/workflows/WF02.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "extracted_text": {
+        "path": "/workspace/significance-review-20261004/workflows/WF02.txt",
+        "bytes": 12264,
+        "sha256": "619f05b745a792f6074e8779acd840cc2e8ddb3021421b9a91b93543fbb02066"
+      },
+      "followed_new_clarification_links": []
+    },
+    {
+      "source_id": "WF03",
+      "title": "Process input and output data with the LiteRT Support Library \u00a0|\u00a0 Google AI Edge \u00a0|\u00a0 Google for Developers",
+      "requested_url": "https://www.tensorflow.org/lite/inference_with_metadata/lite_support",
+      "effective_url": "https://developers.google.com/edge/litert/android/metadata/lite_support",
+      "retrieved_at_utc": "2026-10-04T19:43:52.206057+00:00",
+      "http_status": 200,
+      "curl_exit_code": 0,
+      "redirect_locations": [
+        "https://ai.google.dev/edge/litert/inference_with_metadata/lite_support",
+        "https://developers.google.com/edge/litert/inference_with_metadata/lite_support",
+        "/edge/litert/android/metadata/lite_support"
+      ],
+      "displayed_last_updated_dates": [
+        "2026-05-28"
+      ],
+      "version_scope": "Current page uses nightly dependency examples and TensorLabel.getMapWithFloatValue, not the focal generated getCategoryList path.",
+      "inspection": "targeted workflow and validation/test instructions; no model execution",
+      "sections": [
+        {
+          "heading": "Getting Started",
+          "text_start_line": 1,
+          "text_end_line": 35
+        },
+        {
+          "heading": "Optional: Mapping results to labels",
+          "text_start_line": 110,
+          "text_end_line": 137
+        },
+        {
+          "heading": "Custom preprocessing alignment",
+          "text_start_line": 177,
+          "text_end_line": 180
+        }
+      ],
+      "external_files": {
+        ".html": {
+          "path": "/workspace/significance-review-20261004/workflows/WF03.html",
+          "bytes": 161121,
+          "sha256": "0d354a36068018c4d67269e30b9bae4df2d049d565be5565618fd46e2c1ec4ee"
+        },
+        ".headers": {
+          "path": "/workspace/significance-review-20261004/workflows/WF03.headers",
+          "bytes": 3705,
+          "sha256": "660231e817899bd48be160de50ee16cd2979f76962b5adf1739a5aa1f33c1c8a"
+        },
+        ".curl.json": {
+          "path": "/workspace/significance-review-20261004/workflows/WF03.curl.json",
+          "bytes": 7934,
+          "sha256": "0a1401ddefc249a29f3ff20133b762264526182ead638fb137ce7359785aa33a"
+        },
+        ".stderr": {
+          "path": "/workspace/significance-review-20261004/workflows/WF03.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "extracted_text": {
+        "path": "/workspace/significance-review-20261004/workflows/WF03.txt",
+        "bytes": 9474,
+        "sha256": "466528691c43110d905462c3056cbba1c9f2d498c790f68aba8b7e124950fa15"
+      },
+      "followed_new_clarification_links": []
+    },
+    {
+      "source_id": "WF04",
+      "title": "Integrate image classifiers \u00a0|\u00a0 Google AI Edge \u00a0|\u00a0 Google for Developers",
+      "requested_url": "https://www.tensorflow.org/lite/inference_with_metadata/task_library/image_classifier",
+      "effective_url": "https://developers.google.com/edge/litert/libraries/task_library/image_classifier",
+      "retrieved_at_utc": "2026-10-04T19:43:52.205924+00:00",
+      "http_status": 200,
+      "curl_exit_code": 0,
+      "redirect_locations": [
+        "https://ai.google.dev/edge/litert/inference_with_metadata/task_library/image_classifier",
+        "https://developers.google.com/edge/litert/inference_with_metadata/task_library/image_classifier",
+        "/edge/litert/libraries/task_library/image_classifier"
+      ],
+      "displayed_last_updated_dates": [
+        "2026-05-28"
+      ],
+      "version_scope": "Current guide does not pin Java/Python Task library version. Exact 0.4.4 behavior is established separately by pinned source and prior experiment records.",
+      "inspection": "targeted workflow and validation/test instructions; no model execution",
+      "sections": [
+        {
+          "heading": "Run inference in Java",
+          "text_start_line": 31,
+          "text_end_line": 67
+        },
+        {
+          "heading": "Example results and own model/test-data CLI",
+          "text_start_line": 158,
+          "text_end_line": 179
+        },
+        {
+          "heading": "Model compatibility requirements",
+          "text_start_line": 180,
+          "text_end_line": 204
+        }
+      ],
+      "external_files": {
+        ".html": {
+          "path": "/workspace/significance-review-20261004/workflows/WF04.html",
+          "bytes": 152867,
+          "sha256": "d46599a8bacfdb5d390f71d8afda14c78ceb6e321b1d3d0bedd085a0ceb496c0"
+        },
+        ".headers": {
+          "path": "/workspace/significance-review-20261004/workflows/WF04.headers",
+          "bytes": 3749,
+          "sha256": "442a1c3fd588675c1d87202e671554ab764d6202760563497a4a80217d19457f"
+        },
+        ".curl.json": {
+          "path": "/workspace/significance-review-20261004/workflows/WF04.curl.json",
+          "bytes": 7988,
+          "sha256": "9d610b82b681e2c1d1607ef01e5c87180a1f4646d94fadbce28d69af4728e5df"
+        },
+        ".stderr": {
+          "path": "/workspace/significance-review-20261004/workflows/WF04.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "extracted_text": {
+        "path": "/workspace/significance-review-20261004/workflows/WF04.txt",
+        "bytes": 8580,
+        "sha256": "4de106a932f189184ff198565709e64cf539d061844c19510c9429a696345890"
+      },
+      "followed_new_clarification_links": []
+    },
+    {
+      "source_id": "WF05",
+      "title": "Adding metadata to LiteRT models \u00a0|\u00a0 Google AI Edge \u00a0|\u00a0 Google for Developers",
+      "requested_url": "https://www.tensorflow.org/lite/models/convert/metadata",
+      "effective_url": "https://developers.google.com/edge/litert/conversion/tensorflow/metadata",
+      "retrieved_at_utc": "2026-10-04T19:43:52.205365+00:00",
+      "http_status": 200,
+      "curl_exit_code": 0,
+      "redirect_locations": [
+        "https://ai.google.dev/edge/litert/models/convert/metadata",
+        "https://developers.google.com/edge/litert/models/convert/metadata",
+        "/edge/litert/conversion/tensorflow/metadata"
+      ],
+      "displayed_last_updated_dates": [
+        "2026-05-28"
+      ],
+      "version_scope": "Current metadata guide; Python installation unpinned, Java metadata AAR example 0.1.0, mixed commit-pinned/master links. No uniform 0.4.4 version is claimed.",
+      "inspection": "targeted workflow and validation/test instructions; no model execution",
+      "sections": [
+        {
+          "heading": "Model with metadata format",
+          "text_start_line": 13,
+          "text_end_line": 30
+        },
+        {
+          "heading": "Pack the associated files",
+          "text_start_line": 71,
+          "text_end_line": 90
+        },
+        {
+          "heading": "Image classification metadata example",
+          "text_start_line": 201,
+          "text_end_line": 219
+        },
+        {
+          "heading": "Label output and ordered tensor metadata",
+          "text_start_line": 275,
+          "text_end_line": 302
+        },
+        {
+          "heading": "Pack and visualize metadata",
+          "text_start_line": 308,
+          "text_end_line": 332
+        },
+        {
+          "heading": "Read associated files",
+          "text_start_line": 429,
+          "text_end_line": 445
+        }
+      ],
+      "external_files": {
+        ".html": {
+          "path": "/workspace/significance-review-20261004/workflows/WF05.html",
+          "bytes": 174343,
+          "sha256": "b58afcfd0e46d5c8930af6664b16e8facc9dcd1e35c80870671b5fa5a6ad5ce2"
+        },
+        ".headers": {
+          "path": "/workspace/significance-review-20261004/workflows/WF05.headers",
+          "bytes": 3680,
+          "sha256": "d3277b7a650deb9e556c6ecb8aec0039aa892fe81e8710d57f44955364478cf2"
+        },
+        ".curl.json": {
+          "path": "/workspace/significance-review-20261004/workflows/WF05.curl.json",
+          "bytes": 7910,
+          "sha256": "d98be469ce4611eb203c4d0acf689bdbc02acfa9749a59fa9b6340ba04de3eab"
+        },
+        ".stderr": {
+          "path": "/workspace/significance-review-20261004/workflows/WF05.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "extracted_text": {
+        "path": "/workspace/significance-review-20261004/workflows/WF05.txt",
+        "bytes": 18270,
+        "sha256": "1b5fadaec29fd3b8f376cae4c16ecd52ed45f982d8f6ecd12030a86615f570cf"
+      },
+      "followed_new_clarification_links": []
+    },
+    {
+      "source_id": "WF06",
+      "title": "LiteRT Metadata Writer API \u00a0|\u00a0 Google AI Edge \u00a0|\u00a0 Google for Developers",
+      "requested_url": "https://www.tensorflow.org/lite/models/convert/metadata_writer_tutorial",
+      "effective_url": "https://developers.google.com/edge/litert/conversion/tensorflow/metadata_writer_tutorial",
+      "retrieved_at_utc": "2026-10-04T19:43:52.206173+00:00",
+      "http_status": 200,
+      "curl_exit_code": 0,
+      "redirect_locations": [
+        "https://ai.google.dev/edge/litert/models/convert/metadata_writer_tutorial",
+        "https://developers.google.com/edge/litert/models/convert/metadata_writer_tutorial",
+        "/edge/litert/conversion/tensorflow/metadata_writer_tutorial"
+      ],
+      "displayed_last_updated_dates": [
+        "2026-05-28"
+      ],
+      "version_scope": "Current page explicitly installs tflite-support-nightly and downloads example assets from master; no guide-version equivalence to 0.4.4 is claimed.",
+      "inspection": "targeted workflow and validation/test instructions; no model execution",
+      "sections": [
+        {
+          "heading": "Metadata use cases",
+          "text_start_line": 17,
+          "text_end_line": 28
+        },
+        {
+          "heading": "Create Model Metadata for Codegen: image classifiers",
+          "text_start_line": 30,
+          "text_end_line": 60
+        },
+        {
+          "heading": "Descriptive model/tensor metadata",
+          "text_start_line": 173,
+          "text_end_line": 220
+        }
+      ],
+      "external_files": {
+        ".html": {
+          "path": "/workspace/significance-review-20261004/workflows/WF06.html",
+          "bytes": 180954,
+          "sha256": "1593c2571833ff8e24225dd1d7608286f2c601d5218f289f69166e52b81d03a2"
+        },
+        ".headers": {
+          "path": "/workspace/significance-review-20261004/workflows/WF06.headers",
+          "bytes": 3728,
+          "sha256": "826c36e0b3e55dd3d5cac1985ce8a27a47621c9d8624f22a2877f011d7abd257"
+        },
+        ".curl.json": {
+          "path": "/workspace/significance-review-20261004/workflows/WF06.curl.json",
+          "bytes": 7974,
+          "sha256": "df8f110fa33cc1dc9fbeb700d74b34c2d14fcff5d5387ab39c8fae1a295fda55"
+        },
+        ".stderr": {
+          "path": "/workspace/significance-review-20261004/workflows/WF06.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "extracted_text": {
+        "path": "/workspace/significance-review-20261004/workflows/WF06.txt",
+        "bytes": 14667,
+        "sha256": "89d6e4c30f56b534c330220d4c31df216433194de36bb8c5444717f9f1b133bb"
+      },
+      "followed_new_clarification_links": []
+    }
+  ],
+  "reused_fixed_version_source": {
+    "tag": "v0.4.4",
+    "commit": "133228616ca14e1b64c03f6a0ea8610f41a60783",
+    "source_index": "../20261004-contribution-review/official-sources.json",
+    "source_index_sha256": "86cab5e285cf944bfd19c6cc7250d6c36913db26b8bd87b51854089a93d60511",
+    "sources": [
+      {
+        "source_id": "OFF03",
+        "repository_path": "tensorflow_lite_support/metadata/metadata_schema.fbs",
+        "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/metadata_schema.fbs",
+        "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/metadata/metadata_schema.fbs",
+        "sha256": "2d3386ba124690ba1195bfc1d51ac814843bd675a7c845afab7c001c7891449e",
+        "fresh_local_digest_check": "PASS",
+        "freshly_redownloaded_this_assessment": false
+      },
+      {
+        "source_id": "OFF04",
+        "repository_path": "tensorflow_lite_support/metadata/python/metadata.py",
+        "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/python/metadata.py",
+        "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/metadata/python/metadata.py",
+        "sha256": "3d3f151330bb23af8abf6ca366a2008606da94dfc9b66edb67ed4952cd25e067",
+        "fresh_local_digest_check": "PASS",
+        "freshly_redownloaded_this_assessment": false
+      },
+      {
+        "source_id": "OFF05",
+        "repository_path": "tensorflow_lite_support/codegen/android_java_generator.cc",
+        "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/android_java_generator.cc",
+        "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/codegen/android_java_generator.cc",
+        "sha256": "47799bc1264d0884c8f9209fdb7e9ad18d1d59d9af01f5669753096b1f36d788",
+        "fresh_local_digest_check": "PASS",
+        "freshly_redownloaded_this_assessment": false
+      },
+      {
+        "source_id": "OFF06",
+        "repository_path": "tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/common/FileUtil.java",
+        "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/common/FileUtil.java",
+        "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/common/FileUtil.java",
+        "sha256": "5d63beb2bda7ca2bd734256ceb0d3215117b6a89f7b809c4361a5c417c82533b",
+        "fresh_local_digest_check": "PASS",
+        "freshly_redownloaded_this_assessment": false
+      },
+      {
+        "source_id": "OFF07",
+        "repository_path": "tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/label/TensorLabel.java",
+        "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/label/TensorLabel.java",
+        "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/label/TensorLabel.java",
+        "sha256": "88c825bd6cc7e5173e7af7bc59032e4c7afbe4a8f94369ca15d65d0c62b7d0a7",
+        "fresh_local_digest_check": "PASS",
+        "freshly_redownloaded_this_assessment": false
+      },
+      {
+        "source_id": "OFF09",
+        "repository_path": "tensorflow_lite_support/cc/task/vision/image_classifier.cc",
+        "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/vision/image_classifier.cc",
+        "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/cc/task/vision/image_classifier.cc",
+        "sha256": "dd449cb9e181298c9b67d87e7ddcbda3fd3bff630659114033cf523f2aae59f5",
+        "fresh_local_digest_check": "PASS",
+        "freshly_redownloaded_this_assessment": false
+      },
+      {
+        "source_id": "OFF12",
+        "repository_path": "tensorflow_lite_support/cc/task/vision/core/classification_head.cc",
+        "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/vision/core/classification_head.cc",
+        "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/cc/task/vision/core/classification_head.cc",
+        "sha256": "bdbc62b8009eb0feb83c4ae2cd321e31d64fbec533532e8a98f4e1b155258777",
+        "fresh_local_digest_check": "PASS",
+        "freshly_redownloaded_this_assessment": false
+      },
+      {
+        "source_id": "OFF13",
+        "repository_path": "tensorflow_lite_support/cc/task/vision/core/label_map_item.cc",
+        "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/vision/core/label_map_item.cc",
+        "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/cc/task/vision/core/label_map_item.cc",
+        "sha256": "f274349218e3e62c04ee602a9ecdcfa3e5b9a09c1d44778e69ea16766065f5f0",
+        "fresh_local_digest_check": "PASS",
+        "freshly_redownloaded_this_assessment": false
+      },
+      {
+        "source_id": "OFF16",
+        "repository_path": "tensorflow_lite_support/metadata/cc/metadata_extractor.cc",
+        "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/metadata/cc/metadata_extractor.cc",
+        "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/metadata/cc/metadata_extractor.cc",
+        "sha256": "0bd08faa05b4b7094f97070afa6895d6a620cc88279544e1d77f55f310ad5665",
+        "fresh_local_digest_check": "PASS",
+        "freshly_redownloaded_this_assessment": false
+      },
+      {
+        "source_id": "OFF17",
+        "repository_path": "tensorflow_lite_support/codegen/metadata_helper.cc",
+        "url": "https://raw.githubusercontent.com/tensorflow/tflite-support/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/codegen/metadata_helper.cc",
+        "local_path": "/workspace/contribution-review-20261004/official/tensorflow_lite_support/codegen/metadata_helper.cc",
+        "sha256": "fc222fa97f9e41e5e65627dc45c82c055dfab09ecc32e7e7e035e9325fa78c93",
+        "fresh_local_digest_check": "PASS",
+        "freshly_redownloaded_this_assessment": false
+      }
+    ]
+  },
+  "unsupported_inferences": [
+    "Documentation does not establish adoption/prevalence.",
+    "Guide snippets are not proof of exact behavior of pinned experiment versions.",
+    "No conversion-induced loss, deployment incident, time saving, task accuracy effect, or user harm was measured here.",
+    "A guide not prescribing a test does not establish that developers omit it."
+  ]
+}
