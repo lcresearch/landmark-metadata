@@ -1,0 +1,754 @@
+{
+  "schema_version": 1,
+  "scope": "Provenance for the editorial claim ledger; existing reports/sources only. No raw execution data.",
+  "local_base_revision": "87290c2f7571d1fdf5cc2e56286a0ecff5b984ac",
+  "repository_paths_relative_to": "repository root",
+  "manuscript": "work/paper-rewrite-20261004/manuscript/paper.tex",
+  "ledger": "work/paper-rewrite-20261004/CLAIM_EVIDENCE.md",
+  "experiments_run_for_ledger": false,
+  "human_verification": "PENDING",
+  "source_records": [
+    {
+      "id": "S01",
+      "path": "research/20261004-contribution-review/CLAIM_INVENTORY.md",
+      "sha256": "eea0d4e3c814f75d34667de769dc7ab4b939b46abc1791d77295b5317eb98cd8",
+      "bytes": 14681,
+      "locator": "Claim inventory; What E5 actually analyzes",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S02",
+      "path": "research/20261004-contribution-review/OFFICIAL_BASELINES.md",
+      "sha256": "007290951049b95d6e27058e9d981923c009fc00a953fa67c8cc873b4cfadb98",
+      "bytes": 12236,
+      "locator": "What each official entry point already does; Exact Java decoder condition; Task initialization requires separate attribution",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S03",
+      "path": "work/review-followup-20261004/manuscript/paper.tex",
+      "sha256": "6e77175d25ff0834978463bdb2359ab82e6cf62bc8e2d611960c23dcf8b48537",
+      "bytes": 53807,
+      "locator": "Parent editorial manuscript; contract definitions and validity boundaries",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S04",
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/E1/EXPERIMENT_E1_RESULTS.md",
+      "sha256": "3e0a585c6d9d3f72662fa39dd38e0609e8a35cd894c9f7266ea09aeeebd81ccb",
+      "bytes": 4013,
+      "locator": "Stage table; Preservation and actual observations; deviations",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S05",
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/E2/EXPERIMENT_E2_RESULTS.md",
+      "sha256": "255d6b4e47beef65db021bc5d8281db95be5b7dc9acfff1832d73b9b97ab6c07",
+      "bytes": 4240,
+      "locator": "Stage table; 999 changed strings; replay transport deviation",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S06",
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/ContractInstrumentation.java",
+      "sha256": "83391d8446e7a3efedecf460e4379239c4ce3297ba96c47e8d5e78d6b47ed0eb",
+      "bytes": 6020,
+      "locator": "Actual newInstance/process/getProbabilityAsCategoryList calls and duplicate raw-buffer observation",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S07",
+      "path": "sources/metadata-contract-audit-20261004T062010Z/preservation/AUDIT_REPORT.md",
+      "sha256": "8e968893b84f2a7bf2b0d7af2ecc73d42e881ef73600245e3d83d660926ed170",
+      "bytes": 10282,
+      "locator": "Recomputed results; Independent source and APK-bytecode checks; restoration and replay hazards",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S08",
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/prepare_e2.py",
+      "sha256": "01a5b1d08d80f324896ae10aa526b69c111787f81a2f7b24ab889ff61c38bb73",
+      "bytes": 1598,
+      "locator": "main: left cyclic shift, multiset check and inverse",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S09",
+      "path": "research/20261004-p2-p3/P2/EXPERIMENT_P2_RESULTS.md",
+      "sha256": "38dbe80a4b9e106376f57c1f3f89b0afa8e2ad586db9f09900952a42819667f9",
+      "bytes": 6749,
+      "locator": "Denominator; stage table; Exact failures; Preservation, identity and returned values",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S10",
+      "path": "research/20261004-p2-p3/review/mechanism/MECHANISM_REVIEW.md",
+      "sha256": "3955bc3bb1a32c8b582e468d8361819de4f75e35bf3221a10aff55594a6601e8",
+      "bytes": 9867,
+      "locator": "Generated wrapper path; Android Task creation; pinned binary/source scope",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S11",
+      "path": "research/20261004-p2-p3/P3/EXPERIMENT_P3_RESULTS.md",
+      "sha256": "7ed76750dac1799736e240bef438e3b327a6524d07bc5bbc1e753b108504f034",
+      "bytes": 8849,
+      "locator": "Evidence chain; exact publisher statements; full display comparison and stable-ID limit",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S12",
+      "path": "research/20261004-p2-p3/P3/scripts/analyze_reference.py",
+      "sha256": "0d2de19c8079066a1396e768e4fdf3105d483df1ad28655f79f9f6fb6a0e4659",
+      "bytes": 12505,
+      "locator": "graph; graph/nonmetadata comparison; prescribed background removal; display and candidate synset comparisons",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S13",
+      "path": "research/20261004-p2-p3/CLAIM_EVIDENCE_FOLLOWUP.json",
+      "sha256": "a98805f16c26951c99fb8331131181a927d228b9ceadf31de0132846de8db7fe",
+      "bytes": 3662,
+      "locator": "claims[P2-stage,P2-preservation,P3-display]; recorded external paths and hashes",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S14",
+      "path": "research/20261004-p2-p3/P2/scripts/TaskInstrumentation.java",
+      "sha256": "f955fe6e43f004420b90ab80f69ac12ed622aaadd9864c841ee1dbb972b1527e",
+      "bytes": 5298,
+      "locator": "Actual createFromFileAndOptions/classify calls; caught cause chain",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S15",
+      "path": "research/20261004-significance-review/MEASURED_OUTCOMES.md",
+      "sha256": "90ca1483c48eb7236fd6e89ff6221fdd5752af78452d54b2ec2f0d881cb3aa11",
+      "bytes": 15064,
+      "locator": "Bounded readback; scenario matrix; primary denominator; position 904 witness",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S16",
+      "path": "research/20261004-significance-review/outcome-sources.json",
+      "sha256": "207840dc7e16f2e942e322d8515dc971b0c95042192fb2d072f00f40b3bec92e",
+      "bytes": 19138,
+      "locator": "external_files_read; 59-file inspection selection and raw bytes digests",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S17",
+      "path": "docs/reproduction/validation.json",
+      "sha256": "0a94da3624ba31b00ab99258d4b7bf6c0d0c69e5e554e60867ea32b1b8865a5d",
+      "bytes": 11709,
+      "locator": "maintained-primary-readback command; readback_output and readback_interpretation",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S18",
+      "path": "research/20261004-p2-p3/review/reference-audit/AUDIT_REPORT.md",
+      "sha256": "6442b929488f7934dc6cca2d7afa280666c7719023da0887c69ecaca400520b5",
+      "bytes": 9605,
+      "locator": "Reference authority/graph bridge audit; full stable-ID uncertainty",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S19",
+      "path": "sources/repro-audit-20261004/maintained/preflight.py",
+      "sha256": "0e8791987ac1733a8187041b57f3136ca2d83689989f1681b4598e746e5f6612",
+      "bytes": 11951,
+      "locator": "reference_check and check: encoded predicates; regex/naming joins; dynamic abstention; unmatched-getter status",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S20",
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/E7/EXPERIMENT_HAND_RESULTS.md",
+      "sha256": "3802f4afd1a04780d0fda9c5d93ef1aecfb9ffbeea7360e27a2a6aea3be37674",
+      "bytes": 4137,
+      "locator": "Task table; Exact reference bridge; Four distinct concerns; Generic binding and Task boundaries",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S21",
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/E7/REFERENCE_CHAIN.md",
+      "sha256": "bd9c2a024b9267d9ed974773c533c30bf89dcecb4d779b6e6a6bb43a33f4e4a2",
+      "bytes": 1878,
+      "locator": "Pinned source/bundle and component graph bridge; human interpretation pending",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S22",
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/E7/hand_task_one.py",
+      "sha256": "7150d490cf7e0ee73233bf83fed5bbfac551146e743b62184a69aa7b3c80631a",
+      "bytes": 2541,
+      "locator": "Actual Hand Task detection and serialization of decoded values/float bits",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S23",
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/E4/EXPERIMENT_E4_RESULTS.md",
+      "sha256": "c485fc8864d539ea1b03a7243c8b45b23c1506fcf1b5781173f65c0a62f919be",
+      "bytes": 3914,
+      "locator": "20 URL denominator; 15 group counts; Negative and scoped outcomes; no runtime",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S24",
+      "path": "sources/metadata-contract-audit-20261004T062010Z/baseline/RESULTS.md",
+      "sha256": "f2f44048d1c1082ced617141faf62d17bf0601044b36e71c441fdeabe916922d",
+      "bytes": 11277,
+      "locator": "Five-condition table; separate structural negative control; zero additional E5 rejections; source/binary audit",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S25",
+      "path": "sources/metadata-contract-audit-20261004T062010Z/baseline/audit_one.py",
+      "sha256": "02dd110bebb55fe646b0a206e0ec9b488508c6f7ca740f5a5571cfd0907bf021",
+      "bytes": 7915,
+      "locator": "Selected exact-path simple decoder assumptions and historical splitlines parsing",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S26",
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/E5/preflight.py",
+      "sha256": "8a149290196809e7cc0ed2ac642e212223f71ca4d46fb15dbd1976ce5c976166",
+      "bytes": 11659,
+      "locator": "Historical encoded decoder checks and template joins; retained unchanged",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S27",
+      "path": "sources/repro-audit-20261004/reports/CHECKER_AUDIT.md",
+      "sha256": "95232eb0a499a35fb8a6a2291615eeccbc72c3abfbd7cb57954a8316c4d604d3",
+      "bytes": 9995,
+      "locator": "Finding 1: VT/U+2028 actual Java decoder probes; no model inference; unavailable raw locators",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S28",
+      "path": "sources/repro-audit-20261004/probes/probe_label_parser.py",
+      "sha256": "78be35f2d7afc3551b5fa8d3e6ab844cc7ef0cdf61cafd9c8275fdd00d008a71",
+      "bytes": 6949,
+      "locator": "Injected resource fixtures; actual pinned Java probe and Task-init comparison with fixed scores",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S29",
+      "path": "sources/repro-audit-20261004/maintained/java_labels.py",
+      "sha256": "1f6fb25e5992c63708a514d8658ee0be982bee9e428e6a5db12f47e9a6e7e771",
+      "bytes": 1496,
+      "locator": "Java-compatible valid-UTF-8 line splitting and filtering; malformed-UTF-8 limit",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S30",
+      "path": "research/20261004-significance-review/PUBLIC_REPORTS.md",
+      "sha256": "ff853f5d48753b277eeb760a3223761120a9c15f83bd5425358f9b4e9c053a71",
+      "bytes": 17161,
+      "locator": "Selected report R1; scope/denominator; permissible paper use",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S31",
+      "path": "research/20261004-significance-review/public-report-sources.json",
+      "sha256": "94a1194c8b20208b7ec951fc153214ea435dd337b06740f878f757ccbb3bb2c4",
+      "bytes": 55538,
+      "locator": "selected_reports[id=R1], response and comment digests; complete counts and triage",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S32",
+      "path": "research/20261004-significance-review/PROTOCOL.md",
+      "sha256": "f4276729916194d5de3490588240d0b8cfcdf541e82f4b5782074f8019b1d041",
+      "bytes": 6189,
+      "locator": "Fixed eight queries and maximum-eight eligible-report budget; no artifact reproduction",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S33",
+      "path": "research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md",
+      "sha256": "7924ad5008bc5fffcabade3ff22a7c8a04f0fec78d4330c4fd06f23f77f61e32",
+      "bytes": 14320,
+      "locator": "Claim-evidence-prior-work-remaining-difference matrix; two bounded empirical contributions",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S34",
+      "path": "research/20261004-contribution-review/METHOD_COMPARISON.md",
+      "sha256": "f625dba6d368eb14b0bf0154f6906521b5d4bf3c6495e92df57da5f76cd4a43b",
+      "bytes": 15429,
+      "locator": "MLGuard, DocTer, ACETest and DARA: exact versions and passage-level observations",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S35",
+      "path": "research/20261004-contribution-review/MUTATION_COMPARISON.md",
+      "sha256": "dc9b17026c77cebfea75dd6ef8d79517c5afd22076ffd19bb84f501e4b253b15",
+      "bytes": 11804,
+      "locator": "DeepMutation/NNSmith intervention and oracle comparison",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S36",
+      "path": "research/20261004-contribution-review/BACKGROUND_COMPARISON.md",
+      "sha256": "049f88b89b361cce8ef8b4db49b84f7523f4bea554fe1064e4ea37c8417d717b",
+      "bytes": 4200,
+      "locator": "AIBOM completeness scope; Stalnaker abstract-only and Meyer unresolved full text",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S37",
+      "path": "research/20261004-contribution-review/README.md",
+      "sha256": "3c10013e0baa21f4fa6952f30da87becc3d3528ab376ae864310297bb53bb6d9",
+      "bytes": 2927,
+      "locator": "Bounded review index and all official/method/mutation/background provenance indexes",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S38",
+      "path": "research/20261004-significance-review/SIGNIFICANCE_ASSESSMENT.md",
+      "sha256": "e06bc8282bcdb4fbb569a94dcfc7d445c8075e8c54660dffa19978c441e58191",
+      "bytes": 13799,
+      "locator": "Ordinary strong baselines; supported/narrowed/unsupported importance statements",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S39",
+      "path": "research/20261004-significance-review/WORKFLOW_EVIDENCE.md",
+      "sha256": "235c3b1681818d56eb863ed449b7dfacfab24d600d7b65f24acdd9313fa0e2c5",
+      "bytes": 11737,
+      "locator": "Six official guides; documented workflows versus adoption/benefits",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S40",
+      "path": "docs/reproduction/README.md",
+      "sha256": "6dad92c4633b56a1438f08a120065c0ef9d91a200083a2777e46da9d58088eac",
+      "bytes": 5683,
+      "locator": "Source-only scope; route status; missing external deposit and human verification",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S41",
+      "path": "docs/reproduction/inputs.json",
+      "sha256": "b297d7b0756a8f10f8488f2b2bbe8b15a51239e9de354983ca17d264127069cf",
+      "bytes": 37756,
+      "locator": "Exact focal model, resources/input/reference identities and checked availability",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S42",
+      "path": "docs/reproduction/toolchain.json",
+      "sha256": "cdc31330a5368dd9520076af3f8c8cd6e0dfb8f2e95287627a530b37b861da02",
+      "bytes": 57652,
+      "locator": "Recorded versions and dependency identities; Task embedded runtime uncertainty",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S43",
+      "path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/AUDIT_REPORT.md",
+      "sha256": "4504639ff2c16fa3d66e0e888f92c7b87ebf32bd061f020b82235df4f2ab29bd",
+      "bytes": 17747,
+      "locator": "Opening construction scope; Audit checks denominator; Interpretation and remaining boundaries: reused tools/new AVD, source/classes historical equality, full DEX only within fresh variants",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S44",
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/E5/EXPERIMENT_E5_RESULTS.md",
+      "sha256": "945e9509017ebee02aa8c8571efcb18df32bd6fab4662604abdbca9aafbca50e",
+      "bytes": 4664,
+      "locator": "65-byte-fixture table; Detection and abstention; four known-successful conditions; Gesture dynamic-signature limitation",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S45",
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/CURRENT_STATE.md",
+      "sha256": "2ffd4db70f76fbba207cf542667b0da016cb44d78f7b50a3f6a518b541682da0",
+      "bytes": 5670,
+      "locator": "Recovered evidence freshly checked bytes: 11 metadata components,10graphs,46variants,35accepted,105CPUinvocations,23isolatedprobes; source summary hash",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S46",
+      "path": "sources/metadata-contract-paper/\u7814\u7a76\u8bf4\u660e.txt",
+      "sha256": "bd762a9fa81a59d9fc5be8f956acf512321045a1a79092b775514613baf92e86",
+      "bytes": 4111,
+      "locator": "Original development study report: \u672c\u6b21\u65b0\u589e\u5de5\u4f5c entries 1-6; JVM/CPU and scope distinction",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S47",
+      "path": "sources/metadata-contract-paper/REPRODUCE.txt",
+      "sha256": "8cee7eddbefbf8c5ac4150a948b205e4e6dcdd4f68e5c7b5b5af3cbb42d40e0a",
+      "bytes": 4508,
+      "locator": "Design and status distinctions: corpus counts and repeated observations; synthetic CPU/isolated JVM distinct from Android; archive limitations",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    },
+    {
+      "id": "S48",
+      "path": "sources/metadata-contract-paper/manuscript/paper.tex",
+      "sha256": "16385b61700ff2b89a9f1dfe40bd6a44b19e8b30db48b777f6c361d787b6b06c",
+      "bytes": 25132,
+      "locator": "Original development report: corpus/mutations; CPU runtime; 23 isolated probes,4success19exceptions,three deletion originals already incompatible",
+      "status": "REPOSITORY_BYTES_HASHED_FOR_EDITORIAL_LEDGER",
+      "result_scope": "Existing source/report/provenance; not a fresh model experiment."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "section_labels": [
+        "sec:contracts"
+      ],
+      "source_ids": [
+        "S01",
+        "S02",
+        "S03",
+        "S19"
+      ]
+    },
+    {
+      "id": "C2",
+      "section_labels": [
+        "sec:e1",
+        "sec:e2"
+      ],
+      "source_ids": [
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S10",
+        "S15",
+        "S16",
+        "S17"
+      ]
+    },
+    {
+      "id": "C2R",
+      "section_labels": [
+        "sec:e2"
+      ],
+      "source_ids": [
+        "S43"
+      ]
+    },
+    {
+      "id": "C3",
+      "section_labels": [
+        "sec:e1"
+      ],
+      "source_ids": [
+        "S04",
+        "S06",
+        "S07",
+        "S15",
+        "S16",
+        "S17"
+      ]
+    },
+    {
+      "id": "C4",
+      "section_labels": [
+        "sec:e2"
+      ],
+      "source_ids": [
+        "S05",
+        "S06",
+        "S08",
+        "S15",
+        "S16",
+        "S17"
+      ]
+    },
+    {
+      "id": "C5",
+      "section_labels": [
+        "sec:e2"
+      ],
+      "source_ids": [
+        "S11",
+        "S12",
+        "S13",
+        "S15",
+        "S16",
+        "S17",
+        "S18"
+      ]
+    },
+    {
+      "id": "C6",
+      "section_labels": [
+        "sec:consumers"
+      ],
+      "source_ids": [
+        "S02",
+        "S09",
+        "S10",
+        "S13",
+        "S14",
+        "S15",
+        "S16",
+        "S17"
+      ]
+    },
+    {
+      "id": "C7",
+      "section_labels": [
+        "sec:hand"
+      ],
+      "source_ids": [
+        "S20",
+        "S21",
+        "S22"
+      ]
+    },
+    {
+      "id": "C8",
+      "section_labels": [
+        "sec:preflight"
+      ],
+      "source_ids": [
+        "S23"
+      ]
+    },
+    {
+      "id": "C8D",
+      "section_labels": [
+        "sec:preflight"
+      ],
+      "source_ids": [
+        "S45",
+        "S46",
+        "S47",
+        "S48"
+      ]
+    },
+    {
+      "id": "C9",
+      "section_labels": [
+        "sec:preflight"
+      ],
+      "source_ids": [
+        "S02",
+        "S19",
+        "S24",
+        "S25",
+        "S26"
+      ]
+    },
+    {
+      "id": "C9E",
+      "section_labels": [
+        "sec:preflight"
+      ],
+      "source_ids": [
+        "S44",
+        "S26"
+      ]
+    },
+    {
+      "id": "C10",
+      "section_labels": [
+        "sec:preflight"
+      ],
+      "source_ids": [
+        "S02",
+        "S27",
+        "S28",
+        "S29"
+      ]
+    },
+    {
+      "id": "C11",
+      "section_labels": [
+        "sec:related",
+        "sec:discussion"
+      ],
+      "source_ids": [
+        "S30",
+        "S31",
+        "S32"
+      ]
+    },
+    {
+      "id": "C12",
+      "section_labels": [
+        "sec:related"
+      ],
+      "source_ids": [
+        "S01",
+        "S02",
+        "S33",
+        "S34",
+        "S35",
+        "S36",
+        "S37"
+      ]
+    },
+    {
+      "id": "C13",
+      "section_labels": [
+        "sec:discussion",
+        "sec:validity"
+      ],
+      "source_ids": [
+        "S15",
+        "S30",
+        "S38",
+        "S39",
+        "S40"
+      ]
+    }
+  ],
+  "external_evidence_locators": [
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/results.json",
+      "sha256": "8828d53f32d0eb6a8a5276092e5f2834f548389d780fde1d3726cde0b263d45d",
+      "provenance_index": "research/20261004-p2-p3/CLAIM_EVIDENCE_FOLLOWUP.json",
+      "provenance_locator": "claims[id=P2-stage].sources",
+      "verification_this_editorial_task": "COPIED_RECORDED_DIGEST_NOT_REHASHED"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/p2-final-review.md",
+      "sha256": "627f4c32898b1063bd85fd4bc463c9875fe24a77675e19357bb068effb5d5ce8",
+      "provenance_index": "research/20261004-p2-p3/CLAIM_EVIDENCE_FOLLOWUP.json",
+      "provenance_locator": "claims[id=P2-stage].sources",
+      "verification_this_editorial_task": "COPIED_RECORDED_DIGEST_NOT_REHASHED"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/mechanism/MECHANISM_REVIEW.md",
+      "sha256": "3955bc3bb1a32c8b582e468d8361819de4f75e35bf3221a10aff55594a6601e8",
+      "provenance_index": "research/20261004-p2-p3/CLAIM_EVIDENCE_FOLLOWUP.json",
+      "provenance_locator": "claims[id=P2-stage].sources",
+      "verification_this_editorial_task": "COPIED_RECORDED_DIGEST_NOT_REHASHED"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/static-results.json",
+      "sha256": "25d01e90deb77ea8412e3e6c28963ca51c1f52f959aa26d81cfbc0978f0ba546",
+      "provenance_index": "research/20261004-p2-p3/CLAIM_EVIDENCE_FOLLOWUP.json",
+      "provenance_locator": "claims[id=P2-preservation].sources",
+      "verification_this_editorial_task": "COPIED_RECORDED_DIGEST_NOT_REHASHED"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/build-results.json",
+      "sha256": "568f59347e8d356571940e096bbecb755f8224d74013e7c596211200358dc59e",
+      "provenance_index": "research/20261004-p2-p3/CLAIM_EVIDENCE_FOLLOWUP.json",
+      "provenance_locator": "claims[id=P2-preservation].sources",
+      "verification_this_editorial_task": "COPIED_RECORDED_DIGEST_NOT_REHASHED"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/verification/runtime-record-review.json",
+      "sha256": "5d307a205ce17df113e235a6a8650f39d7c68d80721c91f7bde5bc65c9d8bfd6",
+      "provenance_index": "research/20261004-p2-p3/CLAIM_EVIDENCE_FOLLOWUP.json",
+      "provenance_locator": "claims[id=P2-preservation].sources",
+      "verification_this_editorial_task": "COPIED_RECORDED_DIGEST_NOT_REHASHED"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/results.json",
+      "sha256": "da54d486f461450d89bf77a777108f8e88b31bc6fcbf9b08fcd042cc8db88f17",
+      "provenance_index": "research/20261004-p2-p3/CLAIM_EVIDENCE_FOLLOWUP.json",
+      "provenance_locator": "claims[id=P3-display].sources",
+      "verification_this_editorial_task": "COPIED_RECORDED_DIGEST_NOT_REHASHED"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/analysis/reference-chain.json",
+      "sha256": "572c527fba92701e3fda12ea932de38fbec02ddc37b9ca8c3e012faeda2694ef",
+      "provenance_index": "research/20261004-p2-p3/CLAIM_EVIDENCE_FOLLOWUP.json",
+      "provenance_locator": "claims[id=P3-display].sources",
+      "verification_this_editorial_task": "COPIED_RECORDED_DIGEST_NOT_REHASHED"
+    },
+    {
+      "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/reference-audit/AUDIT_REPORT.md",
+      "sha256": "6442b929488f7934dc6cca2d7afa280666c7719023da0887c69ecaca400520b5",
+      "provenance_index": "research/20261004-p2-p3/CLAIM_EVIDENCE_FOLLOWUP.json",
+      "provenance_locator": "claims[id=P3-display].sources",
+      "verification_this_editorial_task": "COPIED_RECORDED_DIGEST_NOT_REHASHED"
+    },
+    {
+      "path": "/workspace/landmark-handoff-audit-20261004/readback/readback.json",
+      "bytes": 37580,
+      "sha256": "8b555a55d059eb4c6055ed1ad890a517b866513dcbcdaa00be4838158b5fbff7",
+      "provenance_index": "docs/reproduction/validation.json",
+      "provenance_locator": "readback_output",
+      "verification_this_editorial_task": "COPIED_RECORDED_DIGEST_NOT_REHASHED"
+    },
+    {
+      "path": "/workspace/significance-review-20261004/public-reports/issue-01.json",
+      "sha256": "13c6b2fa40d607d5ac818df1910efac95f5da7168f8f10e20b06bae0c1f16d26",
+      "bytes": 6531,
+      "provenance_index": "research/20261004-significance-review/public-report-sources.json",
+      "provenance_locator": "selected_reports[id=R1]",
+      "verification_this_editorial_task": "COPIED_RECORDED_DIGEST_NOT_REHASHED"
+    },
+    {
+      "path": "/workspace/significance-review-20261004/public-reports/issue-01-comments.json",
+      "sha256": "a14fe9ceece4520dd97a622869f75ed6eb69d425ebc952f82c85d03f80b8c076",
+      "bytes": 5377,
+      "provenance_index": "research/20261004-significance-review/public-report-sources.json",
+      "provenance_locator": "selected_reports[id=R1].comments_request",
+      "verification_this_editorial_task": "COPIED_RECORDED_DIGEST_NOT_REHASHED"
+    },
+    {
+      "path": "/workspace/metadata-contract-paper/results/summary.json",
+      "sha256": "df0e94b36061b38dca078e54ed53abf82fb0d867a87c6a023340f6fb35bcfa8c",
+      "provenance_index": "sources/metadata-contract-e2e-20261004T030536Z/CURRENT_STATE.md",
+      "provenance_locator": "Starting files and exact hashes",
+      "verification_this_editorial_task": "COPIED_RECORDED_DIGEST_NOT_REHASHED"
+    }
+  ],
+  "limits": [
+    "Repository digests identify copied source/report bytes, not their experimental truth.",
+    "External result digests are inherited provenance and were not recomputed for this ledger.",
+    "Previously read-back 59 files are a finite old-record subset, not full APK/code/preservation/reference revalidation.",
+    "Source-only repository is not a complete portable evidence deposit."
+  ]
+}
