@@ -5,6 +5,7 @@ import hashlib
 import json
 import re
 import subprocess
+from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 FORBIDDEN_SUFFIXES = {
@@ -24,19 +25,121 @@ SECRET_PATTERNS = [
     re.compile(rb'\bAKIA[A-Z0-9]{16}\b'),
 ]
 
-def main():
-    manifests = [ROOT/'docs/SOURCE_IMPORT.json', ROOT/'docs/SOURCE_P2P3.json']
+def local_targets(source):
+    """Read ordinary inline Markdown links, ignoring fenced examples."""
+    source = re.sub(r'^```.*?^```[^\n]*$', '', source, flags=re.M | re.S)
+    pattern = r'\]\((?:<([^>]+)>|([^\s)]+))(?:\s+["\'][^\n]*?["\'])?\)'
+    for match in re.finditer(pattern, source):
+        target = match[1] or match[2]
+        parsed = urlsplit(target)
+        if not parsed.scheme and not parsed.netloc and not target.startswith('#'):
+            yield unquote(parsed.path)
+
+
+def check_navigation(root, counts, failures, warnings):
+    """Current documentation fails on missing targets; imports warn only."""
+    for p in sorted(root.rglob('*')):
+        rel = p.relative_to(root)
+        if '.git' in rel.parts or not p.is_file() or p.is_symlink():
+            continue
+        historical = rel.parts[0] == 'sources'
+        if historical:
+            if not p.name.startswith('README') or p.suffix not in {'.md', '.txt'}:
+                continue
+        elif p.suffix != '.md':
+            continue
+        try:
+            source = p.read_text(encoding='utf-8')
+        except UnicodeError:
+            continue  # The content/syntax check already reports this.
+        targets = set(local_targets(source))
+        if historical:
+            # Historical READMEs also use backticks for excluded evidence files.
+            # Inspect file-like locators, not commands or prose in code spans.
+            for target in re.findall(r'`([^`\n]+)`', source):
+                if (not re.search(r'\s', target) and not urlsplit(target).scheme
+                        and ('/' in target or '.' in Path(target).name
+                             or target == 'SHA256SUMS')):
+                    targets.add(target)
+        for target in sorted(targets):
+            counts['navigation_targets'] += 1
+            resolved = (p.parent / target).resolve()
+            portable = resolved.is_relative_to(root.resolve())
+            if not portable or not resolved.exists():
+                item = {'path':str(rel), 'issue':'unavailable historical locator'
+                        if historical else 'broken documentation navigation',
+                        'target':target}
+                (warnings if historical else failures).append(item)
+
+
+def check_memory_hashes(root, rows, counts, failures, warnings):
+    """Cross-check import-backed MEMORY digests without trusting external paths."""
+    original_rows = {row.get('original_path', row.get('source_path')):row for row in rows}
+    source = (root/'MEMORY.md').read_text(encoding='utf-8')
+    pattern = r'^\| `([^`]+)` \| [^\n]*?`([^`]+)` SHA-256: `([0-9a-f]{64})`'
+    for package, name, expected in re.findall(pattern, source, flags=re.M):
+        original = str(Path(package) / name)
+        row = original_rows.get(original)
+        if row is None:
+            item = {'path':'MEMORY.md', 'issue':'external evidence digest not checked',
+                    'target':original}
+            if name == 'SHA256SUMS':
+                warnings.append(item)
+            else:
+                item['issue'] = 'MEMORY source locator absent from import index'
+                failures.append(item)
+            continue
+        counts['memory_import_hashes'] += 1
+        imported = root/row['repository_path']
+        if (row['sha256'] != expected or not imported.is_file()
+                or hashlib.sha256(imported.read_bytes()).hexdigest() != expected):
+            failures.append({'path':'MEMORY.md', 'issue':'MEMORY/import/source hash mismatch',
+                             'target':row['repository_path']})
+
+
+def check_current_manuscript(root, rows, counts, failures):
+    index = root/'docs/CURRENT_MANUSCRIPT.json'
+    if not index.is_file():
+        return
+    try:
+        current = json.loads(index.read_text())
+        entry = re.search(r'\[Current manuscript source\]\(([^)]+)\)',
+                          (root/'README.md').read_text())
+        if entry is None or entry[1] != current['repository_path']:
+            failures.append({'path':'README.md', 'issue':'current manuscript navigation/index mismatch'})
+        by_path = {row['repository_path']:row for row in rows}
+        parent = current['derived_from_repository_path']
+        if (parent not in by_path
+                or current['derived_from_sha256'] != by_path[parent]['sha256']):
+            failures.append({'path':str(index.relative_to(root)),
+                             'issue':'current manuscript/import parent mismatch'})
+        for path_key, hash_key in [('repository_path', 'sha256'),
+                                  ('derived_from_repository_path', 'derived_from_sha256')]:
+            p = root/current[path_key]
+            if (not p.resolve().is_relative_to(root.resolve()) or not p.is_file()
+                    or hashlib.sha256(p.read_bytes()).hexdigest() != current[hash_key]):
+                failures.append({'path':current[path_key], 'issue':'manuscript digest mismatch'})
+        counts['manuscript_hashes'] = 2
+    except (KeyError, ValueError, OSError) as exc:
+        failures.append({'path':str(index.relative_to(root)), 'issue':type(exc).__name__})
+
+
+def check_tree(root):
     rows = []
-    for manifest in manifests:
-        rows.extend(json.loads(manifest.read_text())['files'])
+    for name in ['SOURCE_IMPORT.json', 'SOURCE_P2P3.json']:
+        rows.extend(json.loads((root/'docs'/name).read_text())['files'])
     failures = []
+    warnings = []
     for row in rows:
-        p = ROOT/row['repository_path']
-        if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest()!=row['sha256']:
+        p = root/row['repository_path']
+        if (not p.resolve().is_relative_to(root.resolve()) or not p.is_file()
+                or p.is_symlink() or hashlib.sha256(p.read_bytes()).hexdigest()!=row['sha256']
+                or p.stat().st_size != row['bytes']):
             failures.append({'path':row['repository_path'],'issue':'imported bytes differ'})
-    counts = {'files':0,'python_syntax':0,'shell_syntax':0,'json_parse':0}
-    for p in sorted(ROOT.rglob('*')):
-        rel=p.relative_to(ROOT)
+    counts = {'files':0,'python_syntax':0,'shell_syntax':0,'json_parse':0,
+              'navigation_targets':0, 'memory_import_hashes':0, 'manuscript_hashes':0}
+    for p in sorted(root.rglob('*')):
+        rel=p.relative_to(root)
         if '.git' in rel.parts or not p.is_file():
             continue
         counts['files']+=1
@@ -62,16 +165,19 @@ def main():
                 json.loads(source);counts['json_parse']+=1
         except (UnicodeError,SyntaxError,ValueError) as exc:
             failures.append({'path':str(rel),'issue':type(exc).__name__})
-    # Root navigation must point to actual files/directories. Historical imported
-    # reports intentionally retain external paths and are not made portable here.
-    for name in ['README.md','MEMORY.md','TODO.md']:
-        for target in re.findall(r'\]\(([^)]+)\)', (ROOT/name).read_text()):
-            if '://' not in target and not target.startswith('#') and not (ROOT/target.split('#')[0]).exists():
-                failures.append({'path':name,'issue':'broken root navigation','target':target})
-    print(json.dumps({'status':'FAIL' if failures else 'PASS','checks':counts,
-                      'imported_files_verified':len(rows),'failures':failures,
-                      'model_experiments_run':False},indent=2))
-    raise SystemExit(bool(failures))
+    check_navigation(root, counts, failures, warnings)
+    check_memory_hashes(root, rows, counts, failures, warnings)
+    check_current_manuscript(root, rows, counts, failures)
+    return {'status':'FAIL' if failures else 'PASS', 'checks':counts,
+            'imported_files_verified':len(rows) if not any(
+                f['issue']=='imported bytes differ' for f in failures) else 0,
+            'failures':failures, 'warnings':warnings, 'model_experiments_run':False}
+
+
+def main():
+    report = check_tree(ROOT)
+    print(json.dumps(report, indent=2))
+    raise SystemExit(bool(report['failures']))
 
 if __name__=='__main__':
     main()
