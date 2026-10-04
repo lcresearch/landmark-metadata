@@ -1,0 +1,1045 @@
+{
+  "manuscript": "/workspace/landmark-metadata/sources/metadata-contract-paper-revision-20261004T065132Z/manuscript/paper.tex",
+  "manuscript_sha256": "390445a494c24cf9e9069ca3d5ab62e4d0174587f631856b764846d54908782d",
+  "fresh_Android_readback_complete": true,
+  "status_definitions": {
+    "matched": "The bounded factual result is supported by new observations or fresh artifacts, not necessarily historical raw-byte identity.",
+    "deviation": "A fresh counterexample contradicts the stated general claim.",
+    "not_testable": "Historical event, missing raw evidence or full-text material was not recoverable/reviewed here.",
+    "source_supported": "Supported by inspected code or scope records, not certified by a new end-to-end execution.",
+    "pending": "Required new run or final comparison remains in progress."
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "manuscript_lines": [
+        43,
+        44
+      ],
+      "claim": "S is specifically the Support 0.4.4 MetadataPopulator path, distinct from metadata readability.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-task/baseline-results.json",
+          "exists": true,
+          "sha256": "3a2893053c9cc8e79fd2dfe19303a3b79964c490f65df7be78b51591d585c3e7"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "All five core files are readable and accepted by population.",
+      "limitation": "A particular validator acceptance is not general artifact validity."
+    },
+    {
+      "id": "C02",
+      "manuscript_lines": [
+        46,
+        51,
+        120
+      ],
+      "claim": "I requires an artifact-tied external role/class-order reference; EfficientNet semantic abstention.",
+      "status": "source_supported",
+      "evidence": [
+        {
+          "path": "/workspace/landmark-metadata/sources/metadata-contract-e2e-20261004T030536Z/scripts/preflight.py",
+          "exists": true,
+          "sha256": "8a149290196809e7cc0ed2ac642e212223f71ca4d46fb15dbd1976ce5c976166"
+        },
+        {
+          "path": "/workspace/repro-hand/results/source-component-equivalence.json",
+          "exists": true,
+          "sha256": "8a4afc52e5759cc335f6648c50c923932248b99827288db0e8d31863db51a25d"
+        }
+      ],
+      "observation": "Hand receives a source-to-graph bridge; no independently sourced EfficientNet class-order oracle was supplied.",
+      "limitation": "Absence from this investigation does not prove no reference exists; no accuracy judgment."
+    },
+    {
+      "id": "C03",
+      "manuscript_lines": [
+        53,
+        58
+      ],
+      "claim": "Selected list-based TensorLabel decoder uses first nonunit axis, label cardinality and final-axis requirement.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/hand-contract-repro/results/decoder-results.json",
+          "exists": true,
+          "sha256": "cb93b26b3adca344d88d6114a5821ba67c4b221d71517a295ed878f5f54790c4"
+        },
+        {
+          "path": "/workspace/landmark-metadata/sources/metadata-contract-e2e-20261004T030536Z/scripts/preflight.py",
+          "exists": true,
+          "sha256": "8a149290196809e7cc0ed2ac642e212223f71ca4d46fb15dbd1976ce5c976166"
+        }
+      ],
+      "observation": "Fresh official-library probes reproduce category outcomes; recognized-path shape conditions remain bounded.",
+      "limitation": "Does not verify arbitrary generated processors or every decoder."
+    },
+    {
+      "id": "C04",
+      "manuscript_lines": [
+        58
+      ],
+      "claim": "Checker label counting follows the actual library's line-reading treatment.",
+      "status": "deviation",
+      "evidence": [
+        {
+          "path": "/workspace/repro-audit/independent-audit/label-parser/results.json",
+          "exists": true,
+          "sha256": "2f7d60437194e901add848e09a89b3c3483d48957167bbef47329e0a943b9475"
+        },
+        {
+          "path": "/workspace/repro-audit/independent-audit/probe_label_parser.py",
+          "exists": true,
+          "sha256": "95aa231e48d083eb86b77c1928259ec01bee46796395d3e5e64bba35b127cfbf"
+        }
+      ],
+      "observation": "Python splitlines recognizes vertical-tab and Unicode U+2028; Java BufferedReader.readLine does not. New label-only counterexamples cause both directions of disagreement with actual FileUtil/TensorLabel.",
+      "limitation": "Synthetic fresh probe, not a natural defect; does not change observed outcomes of ordinary historical fixtures."
+    },
+    {
+      "id": "C05",
+      "manuscript_lines": [
+        60,
+        61,
+        104,
+        116
+      ],
+      "claim": "Interventions preserve computation; associated-resource interventions also preserve metadata/prefix.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-android/E1/static-results.json",
+          "exists": true,
+          "sha256": "3fb2b631d92278f8178f0e605838ca0b3ed07b6b3589f425d078a315cab6cc1e"
+        },
+        {
+          "path": "/workspace/repro-android/model-preservation-audit.json",
+          "exists": true,
+          "sha256": "4d54513592f0ef26e6c495f1058106d54e61a6b37cfdc7ac24fb4a91337f1ac0"
+        },
+        {
+          "path": "/workspace/repro-hand/results/variants.json",
+          "exists": true,
+          "sha256": "fe9c154e710936764680ad2b184bc242339f78e24b84bc81020fc79ec18e84c5"
+        }
+      ],
+      "observation": "Fresh model construction records P checks; source/index and label interventions retain distinct preservation requirements.",
+      "limitation": "Runtime equality and source/class equality must be verified separately; no native-buffer interception."
+    },
+    {
+      "id": "C06",
+      "manuscript_lines": [
+        66
+      ],
+      "claim": "EfficientNet digest, [1,224,224,3] input, [1,1000] output, 1000 labels and normalization 127/128.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-android/E1/static-results.json",
+          "exists": true,
+          "sha256": "3fb2b631d92278f8178f0e605838ca0b3ed07b6b3589f425d078a315cab6cc1e"
+        },
+        {
+          "path": "/workspace/repro-task/baseline/original/displayer/metadata.json",
+          "exists": true,
+          "sha256": "3f780d63af454074cfa56e7dde3ad1a481cd2c6901576ed1f96af2941ac60643"
+        }
+      ],
+      "observation": "Publisher model was recovered with exact full digest 6c7ab0a6e5dcbf38a8c33b960996a55a3b4300b36a018c4545801de3a3c8bde0; tensor/label/normalization facts agree.",
+      "limitation": ""
+    },
+    {
+      "id": "C07",
+      "manuscript_lines": [
+        68
+      ],
+      "claim": "Four E1 variants and deterministic payload restoration; deletion exactly matched an older retained mutant.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-android/E1/static-results.json",
+          "exists": true,
+          "sha256": "3fb2b631d92278f8178f0e605838ca0b3ed07b6b3589f425d078a315cab6cc1e"
+        }
+      ],
+      "observation": "Fresh original, description, label deletion and payload restoration were constructed with the historical source.",
+      "limitation": "Historical mutant byte identity cannot be established from narrative alone if the old complete artifact/digest record is unavailable; fresh data are new evidence."
+    },
+    {
+      "id": "C08",
+      "manuscript_lines": [
+        70,
+        250
+      ],
+      "claim": "Pinned JDK 17.0.12+7, Java8, TFLite 2.13.0, Support 0.4.4, API30 x86_64 and no EfficientNet source repair.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-android/E1/build-results.json",
+          "exists": true,
+          "sha256": "33325e61b910fd490df9442472d95a6233eda89fecd6a995d656ab8d0e9e6e20"
+        },
+        {
+          "path": "/workspace/repro-android/E1/static-results.json",
+          "exists": true,
+          "sha256": "3fb2b631d92278f8178f0e605838ca0b3ed07b6b3589f425d078a315cab6cc1e"
+        }
+      ],
+      "observation": "Fresh APK build records and source flags agree; official dependency checks were recorded by Android reconstruction.",
+      "limitation": "Historical generated Gradle project is not built unchanged."
+    },
+    {
+      "id": "C09",
+      "manuscript_lines": [
+        79,
+        81
+      ],
+      "claim": "Actual getter, raw-buffer observation, two specified 224x224 RGB inputs and default preprocessing.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/landmark-metadata/sources/metadata-contract-e2e-20261004T030536Z/scripts/ContractInstrumentation.java",
+          "exists": true,
+          "sha256": "83391d8446e7a3efedecf460e4379239c4ce3297ba96c47e8d5e78d6b47ed0eb"
+        },
+        {
+          "path": "/workspace/repro-android/E1/executions/primary/original/device/result.json",
+          "exists": true,
+          "sha256": "c5cf124783bceb6a1c527fc580ed2bbb2bed88a14e526f687510bbf7be65ec1a"
+        },
+        {
+          "path": "/workspace/repro-control/android-task-input-comparison.json",
+          "exists": true,
+          "sha256": "52060806afa7ee5175d1c5fee6a62746ee0967d5c7731c96d25f2ee76d56168e"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "The complete fresh Android original ran both inputs through the actual getter; raw values and all2000decoded scores were independently reread.",
+      "limitation": "Compilation alone does not establish public-API reachability."
+    },
+    {
+      "id": "C10",
+      "manuscript_lines": [
+        25,
+        84,
+        93,
+        94,
+        95,
+        97,
+        100,
+        262
+      ],
+      "claim": "E1 original/control/restoration each return 1000 categories; deletion fails at generated getter after inference.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-android/E1/executions/primary/results.json",
+          "exists": true,
+          "sha256": "5abd4b96fe9b9a291755b148ff235cfc0249f88832eba8dfe07586b4c1dbcbee"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "Both primary and replay completed all four E1 conditions: originals/description/restoration each return1000categories for both inputs; deletion reaches the generated getter after successful inference and throws the exact recorded IllegalArgumentException.",
+      "limitation": "Caught getter exception is not an uncaught application crash."
+    },
+    {
+      "id": "C11",
+      "manuscript_lines": [
+        104
+      ],
+      "claim": "E1 generated Java/classes/DEX and tested raw bytes equal across all four variants.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-android/E1/static-results.json",
+          "exists": true,
+          "sha256": "3fb2b631d92278f8178f0e605838ca0b3ed07b6b3589f425d078a315cab6cc1e"
+        },
+        {
+          "path": "/workspace/repro-android/E1/build-results.json",
+          "exists": true,
+          "sha256": "33325e61b910fd490df9442472d95a6233eda89fecd6a995d656ab8d0e9e6e20"
+        },
+        {
+          "path": "/workspace/repro-android/audit-results.json",
+          "exists": true,
+          "sha256": "3079ab6f22f045c8c18008f178a53519290f18222224c33bb48310924767db1a"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "Independent direct hashing confirms all eight E1/E2 generated Java files, corresponding three-class sets and DEX sets are identical within the fresh run. Every input output array is4000bytes and equals its fresh original across all variants/phases.",
+      "limitation": "Fresh within-run code equality does not establish identity with missing historical classes/DEX."
+    },
+    {
+      "id": "C12",
+      "manuscript_lines": [
+        106
+      ],
+      "claim": "E1 replay repeats outcomes and outputs.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-android/E1/executions/replay/results.json",
+          "exists": true,
+          "sha256": "8048d12e71e6e47d266b3ff24b6025a558d76436599a36ceac2963eeebb180d6"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "All eight E1 primary/replay records were read; all16input observations preserve prescribed input bytes and raw outputs;12category lists succeed and4getter observations fail as expected.",
+      "limitation": "Historical replay facts cannot be recovered from a new replay."
+    },
+    {
+      "id": "C13",
+      "manuscript_lines": [
+        110,
+        112,
+        114,
+        116
+      ],
+      "claim": "E2 cyclic shift, complete multiset preservation, 999 changed positions due to adjacent maillot duplicates at 638/639.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-android/E2/static-results.json",
+          "exists": true,
+          "sha256": "227519b6aa4599ebd33d4090ff6c062d83a8a4f416d979ce20cc2567feaa6309"
+        },
+        {
+          "path": "/workspace/repro-task/primary/label_permutation/gray127-decoded.json",
+          "exists": true,
+          "sha256": "e2315f8c30fd8f4c62d0a8a8c538a9ae9bf673534077baf379f88a7efae82493"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "All eight E2 primary/replay records complete. The full cyclic mapping changes exactly999labels per input with score preservation; inverse restores original associations. Task and Android use exact matching model artifacts.",
+      "limitation": "A known historical protocol is repeated, not newly blind preregistration."
+    },
+    {
+      "id": "C14",
+      "manuscript_lines": [
+        116
+      ],
+      "claim": "E2 all stages and getter pass; raw bytes, scores, argmax/top5 and code unchanged; inverse restores lists.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-android/E2/executions/primary/results.json",
+          "exists": true,
+          "sha256": "dae1703e846561f11abe05408e915700a57e5e236ca971bc248da557efa5e7a2"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "Independent readback of all16E2input observations confirms raw bytes,1000scorebits, complete cyclic label mapping and restoration. Code equality was separately checked on actual source/classes/DEX files.",
+      "limitation": "Linux decoded-score agreement is not a substitute for Android raw tensors."
+    },
+    {
+      "id": "C15",
+      "manuscript_lines": [
+        118
+      ],
+      "claim": "E2 exact score 0.23542051017284393 at904 and 0.001122338930144906 at649, with named label changes.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-android/E1/executions/primary/original/device/result.json",
+          "exists": true,
+          "sha256": "c5cf124783bceb6a1c527fc580ed2bbb2bed88a14e526f687510bbf7be65ec1a"
+        },
+        {
+          "path": "/workspace/repro-android/E2/executions/primary/results.json",
+          "exists": true,
+          "sha256": "dae1703e846561f11abe05408e915700a57e5e236ca971bc248da557efa5e7a2"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "The fresh Android records exactly reproduce0.23542051017284393at904(window screen to window shade) and0.001122338930144906at649(megalith to microphone) in the permutation and replay. Score fields agree with serialized rawfloat32bits.",
+      "limitation": "Even if these values match, missing full historical output arrays remain unavailable."
+    },
+    {
+      "id": "C16",
+      "manuscript_lines": [
+        122
+      ],
+      "claim": "Historical E2 replay transport interruption, missing fourth record, then separate restoration run.",
+      "status": "not_testable",
+      "evidence": [
+        {
+          "path": "/workspace/landmark-metadata/sources/metadata-contract-paper-revision-20261004T065132Z/manuscript/paper.tex",
+          "exists": true,
+          "sha256": "390445a494c24cf9e9069ca3d5ab62e4d0174587f631856b764846d54908782d"
+        }
+      ],
+      "observation": "Only the historical manuscript/source reports remain; the old transport logs and device records are not in the source-only checkout.",
+      "limitation": "Do not recreate or infer this chronology from new complete runs."
+    },
+    {
+      "id": "C17",
+      "manuscript_lines": [
+        126
+      ],
+      "claim": "Historical construction audit had eight records/five configurations/16 observations, new key/AVD and pre-load hashes.",
+      "status": "not_testable",
+      "evidence": [
+        {
+          "path": "/workspace/landmark-metadata/sources/metadata-contract-audit-20261004T062010Z/rebuild/scripts/audit_results.py",
+          "exists": true,
+          "sha256": "a842681704ebb0f6ef93132fdc090ad7c564fc3593d5a66c2cc386b82e20f16f"
+        }
+      ],
+      "observation": "The audit procedure is present but the historical raw records/APKs are not; new runs can reproduce the mechanism and their own denominators only.",
+      "limitation": "Missing historical output identity is not a failed replication of the underlying behavior."
+    },
+    {
+      "id": "C18",
+      "manuscript_lines": [
+        130,
+        132,
+        142,
+        143,
+        144,
+        145
+      ],
+      "claim": "Linux Task 0.4.4 original/control/permutation initialize/classify; deletion raises exact cardinality ValueError at init.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-task/task-results.json",
+          "exists": true,
+          "sha256": "d3937f7b8b2d932f58a7eccdfbc005ee44aba44aa40773e25af34127cd3b9666"
+        },
+        {
+          "path": "/workspace/repro-task/primary/label_deletion/result.json",
+          "exists": true,
+          "sha256": "a648233c67cd867cdcbbe6396588740d76810c7d9d17814469522acefff352e1"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "Independent readback covers primary/replay for five variants including restoration: ten Task instances, 16 successful input observations and two init rejections.",
+      "limitation": "The paper used four Task variants; restoration is an explicitly additional fresh control, not historical evidence."
+    },
+    {
+      "id": "C19",
+      "manuscript_lines": [
+        130,
+        153
+      ],
+      "claim": "Task uses same model bytes and saved inputs; permutation preserves 1000 per-index score bits and changes999 labels; replay equal.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-task/task-results.json",
+          "exists": true,
+          "sha256": "d3937f7b8b2d932f58a7eccdfbc005ee44aba44aa40773e25af34127cd3b9666"
+        },
+        {
+          "path": "/workspace/repro-task/inputs/manifest.json",
+          "exists": true,
+          "sha256": "6982cc18149809556fe2e18d4151eda96d1afdd34b8375d15cf2606e5a36c4ba"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "16,000 decoded categories were independently read; indices exactly0..999, float32 bit fields reserialized, all cyclic mappings and replays checked.",
+      "limitation": "Task public categories are not internal raw tensors; no Android/Linux raw equivalence claim."
+    },
+    {
+      "id": "C20",
+      "manuscript_lines": [
+        151
+      ],
+      "claim": "Task C++ checks output label cardinality during creation; generated Java checks at TensorLabel getter.",
+      "status": "source_supported",
+      "evidence": [
+        {
+          "path": "/workspace/landmark-metadata/sources/metadata-contract-e2e-20261004T030536Z/scripts/task_one.py",
+          "exists": true,
+          "sha256": "994549a126035a937d41cd1cce8cbf195396540ced06807992c68bf279b6d97d"
+        },
+        {
+          "path": "/workspace/repro-android/E1/variants/original/generated/src/main/java/org/example/contract/ContractModel.java",
+          "exists": true,
+          "sha256": "60c1fb6022891cc2bd41b5bacdd2194361eb0ca40e37da2eddf6cba963279670"
+        }
+      ],
+      "observation": "Observed Task diagnostics and generated expression identify the two configured stages.",
+      "limitation": "Source-to-wheel reproducible build is not established; consumer/platform/runtime still confounded."
+    },
+    {
+      "id": "C21",
+      "manuscript_lines": [
+        25,
+        155,
+        247
+      ],
+      "claim": "E3 only establishes configuration-specific enforcement stages, with platform/runtime differences retained.",
+      "status": "source_supported",
+      "evidence": [
+        {
+          "path": "/workspace/landmark-metadata/sources/metadata-contract-paper-revision-20261004T065132Z/manuscript/paper.tex",
+          "exists": true,
+          "sha256": "390445a494c24cf9e9069ca3d5ab62e4d0174587f631856b764846d54908782d"
+        },
+        {
+          "path": "/workspace/repro-task/primary/label_deletion/result.json",
+          "exists": true,
+          "sha256": "a648233c67cd867cdcbbe6396588740d76810c7d9d17814469522acefff352e1"
+        }
+      ],
+      "observation": "The manuscript already states this boundary; current work does not isolate a consumer-only treatment.",
+      "limitation": "Same-Android Task-vs-wrapper P2 remains separate planned work."
+    },
+    {
+      "id": "C22",
+      "manuscript_lines": [
+        159,
+        161
+      ],
+      "claim": "Hand output-role witness exact6acda, source commit4cf89, pin11c272 with 173buffers and only172 differing.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-hand/results/source-component-equivalence.json",
+          "exists": true,
+          "sha256": "8a4afc52e5759cc335f6648c50c923932248b99827288db0e8d31863db51a25d"
+        },
+        {
+          "path": "/workspace/repro-hand/results/assets.json",
+          "exists": true,
+          "sha256": "55594991fcd260114ef91be5a6c911ab8514b670777731cca54b3bad41f3d3a6"
+        },
+        {
+          "path": "/workspace/repro-hand/sources/hand_landmarks_detector_graph.cc",
+          "exists": true,
+          "sha256": "c45468703d8eced769663added90c3a8855368919c53f77d57e5398b9431ac00"
+        },
+        {
+          "path": "/workspace/repro-hand/sources/external_files.bzl",
+          "exists": true,
+          "sha256": "606cd78946c1162869286daabc7f58fe855dca2ce099baff74be778a6904e359"
+        }
+      ],
+      "observation": "New source/artifact recovery and byte comparisons reproduce the exact nonmetadata and canonical bridge.",
+      "limitation": "Graph-equivalence bridge is not direct source pinning of the focal complete file; human source interpretation remains pending."
+    },
+    {
+      "id": "C23",
+      "manuscript_lines": [
+        163
+      ],
+      "claim": "Hand metadata exchange changes four bytes, swaps role agreement; raw Java fails and four separator edits on two lines compile.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/hand-contract-repro/results/static-results.json",
+          "exists": true,
+          "sha256": "78d630cd7dd4ff0fe1abfeba37cac8912f90256673261053ea2b68d97f8a41eb"
+        },
+        {
+          "path": "/workspace/hand-contract-repro/results/compile-results.json",
+          "exists": true,
+          "sha256": "75196c65b6b3f0fd6da85b220ab5800b10ed7455ceb1948c62583df59f4df523"
+        }
+      ],
+      "observation": "Fresh original/swapped code generation, javac failure, disclosed repair success and javap bindings agree.",
+      "limitation": "The paper describes historical compilation/fresh old audit disassembly; this turn adds new compilation, not retrieval of the old classes."
+    },
+    {
+      "id": "C24",
+      "manuscript_lines": [
+        165,
+        167
+      ],
+      "claim": "Hand Task0.10.14 IMAGE, one requested hand, thresholds0.5; four bundles, one source-pinned image return1hand21+21 unchanged/replay equal.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-hand/scripts/hand_task_one.py",
+          "exists": true,
+          "sha256": "7150d490cf7e0ee73233bf83fed5bbfac551146e743b62184a69aa7b3c80631a"
+        },
+        {
+          "path": "/workspace/repro-hand/results/assets.json",
+          "exists": true,
+          "sha256": "55594991fcd260114ef91be5a6c911ab8514b670777731cca54b3bad41f3d3a6"
+        },
+        {
+          "path": "/workspace/repro-hand/results/variants.json",
+          "exists": true,
+          "sha256": "fe9c154e710936764680ad2b184bc242339f78e24b84bc81020fc79ec18e84c5"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "Eight new Task executions and actual decoded JSON independently read; one hand with21+21 coordinates and identical decoded values in every record.",
+      "limitation": "One image; decoded Task outputs, no internal raw tensor/accuracy evidence or old-to-new bit identity."
+    },
+    {
+      "id": "C25",
+      "manuscript_lines": [
+        169
+      ],
+      "claim": "Hand fixed-index/hardcoded Right/Left Task routing; exchange does not repair generic TensorLabel scalar path.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-hand/sources/hand_landmarks_detector_graph.cc",
+          "exists": true,
+          "sha256": "c45468703d8eced769663added90c3a8855368919c53f77d57e5398b9431ac00"
+        },
+        {
+          "path": "/workspace/hand-contract-repro/results/decoder-results.json",
+          "exists": true,
+          "sha256": "cb93b26b3adca344d88d6114a5821ba67c4b221d71517a295ed878f5f54790c4"
+        }
+      ],
+      "observation": "Official integration source and new official-library decoder failures support distinct association and decoder conditions.",
+      "limitation": "No general metadata-insensitivity or repaired Hand Android wrapper execution claim."
+    },
+    {
+      "id": "C26",
+      "manuscript_lines": [
+        174
+      ],
+      "claim": "Earlier corpus11metadata/10graphs/46variants;11counts rejected;8swaps+5label deletions accepted;35variants/105CPU equal;23JVM.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/metadata-contract-paper/results/summary.json",
+          "exists": true,
+          "sha256": "df0e94b36061b38dca078e54ed53abf82fb0d867a87c6a023340f6fb35bcfa8c"
+        },
+        {
+          "path": "/workspace/repro-control/corpus-verification.json",
+          "exists": true,
+          "sha256": "73eddc1ffd1c8948afd6a27b5582c1a04d0625e051f4d5136551827b23968b47"
+        }
+      ],
+      "observation": "Fresh corpus rerun and independent594-check readback verify35accepted,11rejected,105CPU observations,243 output arrays,23decoder probes.",
+      "limitation": "This turn reruns, while the manuscript historical revision only audited prior records; new results do not establish bit identity with missing old arrays."
+    },
+    {
+      "id": "C27",
+      "manuscript_lines": [
+        176
+      ],
+      "claim": "Historical freeze preceded external metadata inspection.",
+      "status": "not_testable",
+      "evidence": [
+        {
+          "path": "/workspace/repro-external/E4/prevalidation-freeze.json",
+          "exists": true,
+          "sha256": "bbd9eff210b106e102798ed16bebba5e503cb4788dbc50d82034e61809864cb8"
+        },
+        {
+          "path": "/workspace/repro-external/E4/protocol/REPLAY_CONTEXT.json",
+          "exists": true,
+          "sha256": "3c486a283ef08e888c1f9984e969a1c036e1c3a1f88bf0ec111a8b257b5432f3"
+        }
+      ],
+      "observation": "Fresh repeat freeze exists but historical results were already known. It cannot recreate the historical information state.",
+      "limitation": "Do not call the repeat blind validation or third-party preregistration."
+    },
+    {
+      "id": "C28",
+      "manuscript_lines": [
+        176,
+        186,
+        187,
+        188
+      ],
+      "claim": "20externalURLs;16downloads/4HTTP404;18occurrences;exclude1priorcomponent+2priorgraphs;15newgraphs.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-external/E4/results.json",
+          "exists": true,
+          "sha256": "d2d4625a3869d44d455c978f752abb2dae5acd46acd607aeeab8b97a6777b3a3"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "All exact counts independently recomputed from candidate/component records and15model digests read back.",
+      "limitation": ""
+    },
+    {
+      "id": "C29",
+      "manuscript_lines": [
+        178,
+        189,
+        190,
+        191,
+        192
+      ],
+      "claim": "E4 S15/Iabstain15; javac8/7;D4compatible9incompatible2inapplicable;zero runtime.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-external/E4/results.json",
+          "exists": true,
+          "sha256": "d2d4625a3869d44d455c978f752abb2dae5acd46acd607aeeab8b97a6777b3a3"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "Counts independently recomputed from individual records; E4 is static-only.",
+      "limitation": ""
+    },
+    {
+      "id": "C30",
+      "manuscript_lines": [
+        178
+      ],
+      "claim": "Nine E4 incompatibilities split into five existing javac failures and four warned unsupported non-RGB fallbacks.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-external/E4/results.json",
+          "exists": true,
+          "sha256": "d2d4625a3869d44d455c978f752abb2dae5acd46acd607aeeab8b97a6777b3a3"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "All nine paths inspected; five raw javac failures and four exact unsupported-output warnings reproduced.",
+      "limitation": "Neither nine natural model defects nor any new supported end-to-end natural failure."
+    },
+    {
+      "id": "C31",
+      "manuscript_lines": [
+        199,
+        200
+      ],
+      "claim": "Preflight identifies EfficientNet getter/output0/axis1/1000vs999 without model inference.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-external/E5/cli-probe-results.json",
+          "exists": true,
+          "sha256": "e40beb9da5586017b4e84080d1685bc390f71c201f06b4f42b7e9f3803d15032"
+        },
+        {
+          "path": "/workspace/repro-external/E5/results.json",
+          "exists": true,
+          "sha256": "bf49a475696eec4b38fb17587f6541a8393da14297e5dca1d433a051ba166e79"
+        }
+      ],
+      "observation": "Real recovered deletion fixture and direct CLI probes expose the expected incompatible D record.",
+      "limitation": "CLI exit0 is not an all-dimensions success contract; consume structured statuses."
+    },
+    {
+      "id": "C32",
+      "manuscript_lines": [
+        202
+      ],
+      "claim": "65distinctfixtures;S52/11/2;D27incompatible8compatible14inapplicable3dynamic2nometa11notreached;I65abstain.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-external/E5/results.json",
+          "exists": true,
+          "sha256": "bf49a475696eec4b38fb17587f6541a8393da14297e5dca1d433a051ba166e79"
+        },
+        {
+          "path": "/workspace/repro-external/E5/replay-summary.json",
+          "exists": true,
+          "sha256": "fa0ee04820283d11ec003599e32db03a581c1b61f7aad6d542f0c93bdc464298"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "All65actual model hashes, individual check result files and grouped statuses independently reread; exact counts reproduced. Core additions use already-executed Task model files.",
+      "limitation": "65fixtures are not65independent models; generated hardcoded narrative is not supporting raw evidence."
+    },
+    {
+      "id": "C33",
+      "manuscript_lines": [
+        204
+      ],
+      "claim": "E5 flags actual Android failure, accepts four successful core byte-distinct conditions; dynamicGesture deletion abstains.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-external/E5/results.json",
+          "exists": true,
+          "sha256": "bf49a475696eec4b38fb17587f6541a8393da14297e5dca1d433a051ba166e79"
+        },
+        {
+          "path": "/workspace/repro-external/E5/replay-summary.json",
+          "exists": true,
+          "sha256": "fa0ee04820283d11ec003599e32db03a581c1b61f7aad6d542f0c93bdc464298"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "Exact model digest join connects65E5staticfixtures to the five fresh Android artifact conditions. Only deletion has actual getter failure and E5 INCOMPATIBLE; four other artifact conditions execute successfully. Dynamic Gesture abstention remains unchanged.",
+      "limitation": "Three dynamic abstentions include a concrete-shape isolated failure; no universal failure-detection guarantee."
+    },
+    {
+      "id": "C34",
+      "manuscript_lines": [
+        206
+      ],
+      "claim": "Limited regex/template matching can miss unknown getter/processor forms; no sound automatic abstention guarantee.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/landmark-metadata/sources/metadata-contract-e2e-20261004T030536Z/scripts/preflight.py",
+          "exists": true,
+          "sha256": "8a149290196809e7cc0ed2ac642e212223f71ca4d46fb15dbd1976ce5c976166"
+        },
+        {
+          "path": "/workspace/repro-audit/independent-audit/probe-results.json",
+          "exists": true,
+          "sha256": "343ddffeb51c3f64dc5fceb062804e7c36cd1afa7885aa07ce8560f9b226d147"
+        }
+      ],
+      "observation": "Source review and fresh parser probes support the already-disclosed limitation.",
+      "limitation": "New label-line-reading mismatch C04 is an additional limitation beyond this wording."
+    },
+    {
+      "id": "C35",
+      "manuscript_lines": [
+        209,
+        211,
+        220,
+        221,
+        222,
+        223,
+        224
+      ],
+      "claim": "Five core files readable/populationaccepted;simplebaseline/E5/Taskinit reject deletion only;zero extra E5rejects.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-task/baseline-results.json",
+          "exists": true,
+          "sha256": "3a2893053c9cc8e79fd2dfe19303a3b79964c490f65df7be78b51591d585c3e7"
+        },
+        {
+          "path": "/workspace/repro-external/E5/results.json",
+          "exists": true,
+          "sha256": "bf49a475696eec4b38fb17587f6541a8393da14297e5dca1d433a051ba166e79"
+        },
+        {
+          "path": "/workspace/repro-external/E5/core-baseline-comparison.json",
+          "exists": true,
+          "sha256": "2ad401fa26131098fb801754e82e92ad9fe34757f4b048f0c1aabdbe6ad7a87c"
+        },
+        {
+          "path": "/workspace/repro-claims/observation-readback.json",
+          "exists": true,
+          "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+        }
+      ],
+      "observation": "All20official/simple/Task baseline outcomes independently read and joined by actual model digest to E5, matching fourpasses/onefailure for decoder-related checks.",
+      "limitation": "Static and Linux Task initialization result; no future Android result is inferred and no broad algorithm novelty established."
+    },
+    {
+      "id": "C36",
+      "manuscript_lines": [
+        231
+      ],
+      "claim": "Separate zero-output-metadata control is readable but rejects at load_metadata_buffer before populate.",
+      "status": "source_supported",
+      "evidence": [
+        {
+          "path": "/workspace/metadata-contract-paper/results/summary.json",
+          "exists": true,
+          "sha256": "df0e94b36061b38dca078e54ed53abf82fb0d867a87c6a023340f6fb35bcfa8c"
+        },
+        {
+          "path": "/workspace/landmark-metadata/sources/metadata-contract-audit-20261004T062010Z/baseline/audit_one.py",
+          "exists": true,
+          "sha256": "02dd110bebb55fe646b0a206e0ec9b488508c6f7ca740f5a5571cfd0907bf021"
+        }
+      ],
+      "observation": "New corpus confirms count control rejected; exact displayer/load-vs-populate stage requires a dedicated current record.",
+      "limitation": "Historical precise stage report alone is not new raw evidence."
+    },
+    {
+      "id": "C37",
+      "manuscript_lines": [
+        234,
+        236,
+        238,
+        240,
+        256
+      ],
+      "claim": "Bounded literature methods/positioning: MLGuard vision; DocTer docs constraints; ACETest LLVM/SVF/Z3; DARA architecture metadata.",
+      "status": "not_testable",
+      "evidence": [
+        {
+          "path": "/workspace/landmark-metadata/sources/metadata-contract-audit-20261004T062010Z/literature/AUDIT_REPORT.md",
+          "exists": true,
+          "sha256": "be6dccc418a955d30274bee10ca1d4eb0c911fcc1cd671174ee95585c3e4aedc"
+        },
+        {
+          "path": "/workspace/landmark-metadata/sources/metadata-contract-paper-revision-20261004T065132Z/manuscript/paper.tex",
+          "exists": true,
+          "sha256": "390445a494c24cf9e9069ca3d5ab62e4d0174587f631856b764846d54908782d"
+        }
+      ],
+      "observation": "Current manuscript references and preserved detailed literature audit were read. They are internally consistent and explicitly bounded.",
+      "limitation": "This turn did not recover/reread all four complete PDFs, verify bibliographic endpoints or rerun prior tools. The old report is secondary evidence, not a fresh full-text/novelty audit."
+    },
+    {
+      "id": "C38",
+      "manuscript_lines": [
+        240,
+        255,
+        256
+      ],
+      "claim": "Four-paper comparison establishes neither exhaustive novelty nor systematic search; Stalnaker abstract-only.",
+      "status": "source_supported",
+      "evidence": [
+        {
+          "path": "/workspace/landmark-metadata/sources/metadata-contract-paper-revision-20261004T065132Z/manuscript/paper.tex",
+          "exists": true,
+          "sha256": "390445a494c24cf9e9069ca3d5ab62e4d0174587f631856b764846d54908782d"
+        },
+        {
+          "path": "/workspace/landmark-metadata/sources/metadata-contract-audit-20261004T062010Z/literature/AUDIT_REPORT.md",
+          "exists": true,
+          "sha256": "be6dccc418a955d30274bee10ca1d4eb0c911fcc1cd671174ee95585c3e4aedc"
+        }
+      ],
+      "observation": "The manuscript accurately states its claimed literature scope; no new exhaustive novelty check was attempted.",
+      "limitation": ""
+    },
+    {
+      "id": "C39",
+      "manuscript_lines": [
+        250
+      ],
+      "claim": "Historical emulator37.2.12build16428233 and API30image archive revision11/internalrevision10.",
+      "status": "matched",
+      "evidence": [
+        {
+          "path": "/workspace/repro-android/prerequisites/downloads.json",
+          "exists": true,
+          "sha256": "245e2833296ba3947d115a216a554849a5c0e124fc7823a2b9e996979c1de1a1"
+        },
+        {
+          "path": "/workspace/repro-android/prerequisites/android-getprop.command.json",
+          "exists": true,
+          "sha256": "e9526433fb59601766e96d1e6d7d0132addff057221dab52c74e8dd151c87a06"
+        },
+        {
+          "path": "/workspace/repro-android/versions/emulator.command.json",
+          "exists": true,
+          "sha256": "1ef0739e83abbdd1098e8d4b8cc5ea7a620290d4c7e574be59abac5ea674b189"
+        }
+      ],
+      "observation": "Android agent recovered exact version artifacts with official checksums; current emulator version and runtime properties are preserved.",
+      "limitation": "New toolchain recovery does not prove old unretained machine state."
+    },
+    {
+      "id": "C40",
+      "manuscript_lines": [
+        250,
+        253
+      ],
+      "claim": "Historical initial rebuild chronology; cumulative logcat attribution; complete sealed local evidence package and companion claim map.",
+      "status": "not_testable",
+      "evidence": [
+        {
+          "path": "/workspace/landmark-metadata/sources/metadata-contract-paper-revision-20261004T065132Z/manuscript/paper.tex",
+          "exists": true,
+          "sha256": "390445a494c24cf9e9069ca3d5ab62e4d0174587f631856b764846d54908782d"
+        }
+      ],
+      "observation": "Old raw evidence package was not included in the source-only checkout. Newly generated raw evidence is kept under distinct repro paths.",
+      "limitation": "Paths and hashes printed in text do not replace unavailable raw files or authenticate every historical execution."
+    },
+    {
+      "id": "C41",
+      "manuscript_lines": [
+        247,
+        253,
+        259
+      ],
+      "claim": "No independent human verification, no public standalone evidence deposit; AI-assisted scope.",
+      "status": "source_supported",
+      "evidence": [
+        {
+          "path": "/workspace/landmark-metadata/MEMORY.md",
+          "exists": true,
+          "sha256": "34fa3497d63846bd5f6088a25e31a1b691d0cd0f955483dce4f88377d9089b2f"
+        },
+        {
+          "path": "/workspace/landmark-metadata/TODO.md",
+          "exists": true,
+          "sha256": "5b8da69765a2e2a0966cf6b326d6cd50e5601fb13d173ea1a6dbac47a13834bb"
+        }
+      ],
+      "observation": "No human audit evidence or portable raw-artifact deposit was supplied or created in this delegated audit.",
+      "limitation": "Fresh agent verification must not be relabeled independent human reproduction."
+    }
+  ],
+  "status_counts": {
+    "matched": 29,
+    "source_supported": 6,
+    "deviation": 1,
+    "not_testable": 5
+  },
+  "global_boundary": "Never use new raw outputs or repository prose as proof of missing historical output identity. Repeated source/artifact hashes are distinguished from regenerated classes and runtime results."
+}

@@ -6,6 +6,14 @@ source-only repository policy.
 
 ## Completed
 
+- [x] Close the PR #1 claim-reader completeness gap in a new maintained source
+  area; require exact Hand/Task/Android identities, preserve exported audit
+  provenance, and pass all 29 repository regression tests.
+
+- [x] Repair PR #1 evidence completeness/identity checks and reconstruction I/O;
+  add eleven synthetic regressions. Full fixture reruns still require excluded
+  assets and a separately frozen 65-artifact digest manifest.
+
 - [x] E1: execute the actual generated EfficientNet Android getter; reach the
   label-deletion exception after successful loading and inference.
 - [x] E2: predeclare label permutation; verify tested raw/score equality, changed
@@ -104,3 +112,28 @@ source-only repository policy.
 - Preserve sealed evidence and historical source snapshots. Do not rerun P0/P1
   without a new change or unresolved contradiction, and do not expand random
   model collections merely to increase counts.
+
+## Fresh reproduction audit
+
+- [x] Reconstruct official inputs and pinned prerequisites in the new cloud
+  machine; rerun base corpus, E1/E2 primary/replay, Linux Task, Hand and E4/E5.
+  Independently check complete raw records, artifact hashes and preservation.
+- [x] Demonstrate Java/Python label-reader disagreement with real decoder-library
+  counterexamples; add maintained parser/checker/baseline corrections and verify
+  all 65 original fixture decisions remain unchanged.
+- [x] Exercise missing-evidence and misleading-report branches separately;
+  preserve negative results and add strict checks for fresh reconstruction.
+
+## Corrections from the fresh audit
+
+- [ ] Revise the manuscript's library-equivalent label-count wording (line 58),
+  disclose VT/U+2028 counterexamples and distinguish the corrected checker from
+  the historical 65-fixture evaluation. Preserve that original draft.
+- [ ] Replace remaining historical report templates if they are promoted to
+  reusable tools: required evidence must gate prose, status and exit code;
+  empty evidence and companion failures must fail explicitly.
+- [ ] Repeat bounded literature full-text checks once the required endpoints
+  are available; the fresh attempts received proxy CONNECT 403.
+- [ ] Review/save the cloud configuration draft and publish the retained
+  environment; independently test restoration in a future fresh task before
+  calling it verified snapshot restoration.

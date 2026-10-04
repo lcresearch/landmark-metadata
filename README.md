@@ -12,6 +12,9 @@ source and continuation documents, **not the complete evidence archive**.
 - [Current manuscript source](work/review-followup-20261004/manuscript/paper.tex)
 - [Current manuscript and preserved-parent digests](docs/CURRENT_MANUSCRIPT.json)
 - [Completed same-Android comparison and display-reference findings](research/20261004-p2-p3/RESULTS_OVERVIEW.md)
+- [Fresh reproduction and repository audit (2026-10-04)](sources/repro-audit-20261004/REPORT.md)
+- [Maintained checker fix and reproduction entry points](sources/repro-audit-20261004/README.md)
+- [Maintained observation reader and completeness fixes](work/observation-review-20261004/README.md)
 - [Project memory and current evidence boundaries](MEMORY.md)
 - [Current TODO](TODO.md)
 - [Decisions and scope](docs/DECISIONS.md)
@@ -26,6 +29,7 @@ source and continuation documents, **not the complete evidence archive**.
 
 | Source area | Purpose |
 |---|---|
+| [Fresh reconstruction and corrections](sources/repro-audit-20261004) | Official prerequisite restoration, experiment replay, strict evidence checks, Java label-parser fix and new audit findings |
 | [Initial Hand scripts](sources/hand-contract-repro/scripts) | Graph-preserving mutations, static binding, isolated decoder and replay work |
 | [Earlier corpus/checker scripts](sources/metadata-contract-paper/scripts) | Metadata inspection, mutation, generation, CPU and decoder experiments |
 | [E1–E7 scripts](sources/metadata-contract-e2e-20261004T030536Z/scripts) | Actual Android harness, classifier interventions, Task comparison, frozen external checks and Hand boundary experiment |
@@ -34,6 +38,7 @@ source and continuation documents, **not the complete evidence archive**.
 | [Preserved audit-informed revision](sources/metadata-contract-paper-revision-20261004T065132Z) | Historical LaTeX, editorial scripts and revision notes |
 | [Preserved P2/P3 follow-up](research/20261004-p2-p3) | Same-Android harnesses, reference inquiry, separate audits and manuscript parent |
 | [Current editorial follow-up](work/review-followup-20261004) | Current LaTeX; no new model execution or human audit |
+| [Maintained observation reader](work/observation-review-20261004) | Exact Hand, Task and Android evidence identities; preserves the exported audit snapshot |
 
 `sources/` retains original timestamped names and source bytes. Per-experiment
 implementation snapshots are intentional historical versions, not extra models.
@@ -54,6 +59,12 @@ scripts against immutable evidence.
 The current paper source can be compiled in a **separate work directory** with
 a suitable TeX installation. It is a generic reading draft; human review and
 venue-specific formatting remain pending.
+
+The fresh audit reproduced the main controlled results and found a label-reader
+mismatch in the evaluated checker plus weaknesses in historical report scripts.
+The maintained checker corrects the parser; the historical paper still requires
+the corresponding limitation/correction. Read the new report before relying on
+old summary prose or interpreting a zero exit code as verified evidence.
 
 Run `python scripts/check_source_tree.py` for source integrity, syntax and
 source-only scope checks. No model experiment is executed by that command.

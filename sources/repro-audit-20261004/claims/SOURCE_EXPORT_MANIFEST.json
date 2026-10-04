@@ -1,0 +1,11 @@
+{
+  "files": {
+    "claim-map.json": "21bdf8af6f28ac9d6e10f2d909c20acb8314d3a20d35f19113a49c051f66c123",
+    "OBSERVATION_SUMMARY.json": "98f9aabea34e89722980d0f79e424b88abcf33fcfbc10b05bbd911e7a60b9284",
+    "build_claim_map.py": "20b5d4988948371617d2d67e39c0c07a507d1bfe3e143d0771e3b7d8b3c08014",
+    "REPORT.md": "41b8b9eed57310b5bcb00bd8962603f7841f976ef4947ea07ed705b6904e55c1",
+    "verify_observations.py": "21fe5355b655c8bd41c5721f07699c92cda5b9b3133522409df559b257602cd2"
+  },
+  "source_only": true,
+  "excluded": "model assets, arrays, generated code, build products, logs, dependency binaries and literature PDFs"
+}

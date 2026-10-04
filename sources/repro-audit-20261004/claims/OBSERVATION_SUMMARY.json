@@ -1,0 +1,94 @@
+{
+  "scope": "Independent readback of new records; no historical raw-byte comparison or new model execution.",
+  "passed_checks": 677,
+  "failed_checks": 0,
+  "failures": [],
+  "task": {
+    "execution_records": 10,
+    "successful_decoded_observations": 16,
+    "categories_read": 16000
+  },
+  "hand": {
+    "execution_records_read": 8
+  },
+  "external": {
+    "candidates": 20,
+    "HTTP": {
+      "200": 16,
+      "404": 4
+    },
+    "occurrences": {
+      "CHECKED": 15,
+      "EXCLUDED_PRIOR_COMPONENT": 1,
+      "EXCLUDED_PRIOR_GRAPH": 2
+    },
+    "S": {
+      "PASS": 15
+    },
+    "javac": {
+      "PASS": 8,
+      "FAIL": 7
+    },
+    "I": {
+      "ABSTAIN_NO_SEMANTIC_REFERENCE": 15
+    },
+    "D": {
+      "compatible": 4,
+      "incompatible": 9,
+      "inapplicable": 2
+    }
+  },
+  "preflight": {
+    "fixtures": 65,
+    "counts": {
+      "STRUCTURAL": {
+        "ACCEPTED_BY_METADATA_POPULATOR_0_4_4": 52,
+        "REJECTED_BY_METADATA_POPULATOR_0_4_4": 11,
+        "ABSTAIN_NO_METADATA": 2
+      },
+      "DECODER_COMPATIBILITY": {
+        "INCOMPATIBLE": 27,
+        "NOT_REACHED": 11,
+        "INAPPLICABLE_NO_SELECTED_GETTER": 14,
+        "ABSTAIN_NO_METADATA": 2,
+        "ABSTAIN": 3,
+        "COMPATIBLE_PRECONDITIONS": 8
+      },
+      "REFERENCE_BACKED_SEMANTIC": {
+        "ABSTAIN": 65
+      }
+    },
+    "core_extra_rejections_over_simple_and_Task_init": 0,
+    "scope": "Static on actual recovered files; no Android success/failure is inferred."
+  },
+  "android": {
+    "expected_execution_records": 16,
+    "completed_execution_records": 16,
+    "complete": true,
+    "missing": [],
+    "historical_raw_comparison": "Not available; equal_new_original checks only freshly generated arrays."
+  },
+  "android_code": {
+    "generated_sources": 8,
+    "distinct_source_hashes": [
+      "60c1fb6022891cc2bd41b5bacdd2194361eb0ca40e37da2eddf6cba963279670"
+    ],
+    "scope": "Direct fresh on-disk file hashing; no comparison with missing historical binaries."
+  },
+  "full_readback": {
+    "path": "/workspace/repro-claims/observation-readback.json",
+    "sha256": "77b9e0547f3721a3695524b0d72ede68678036e06799f9df5caf4e4773ad0b22"
+  },
+  "claim_map_status_counts": {
+    "matched": 29,
+    "source_supported": 6,
+    "deviation": 1,
+    "not_testable": 5
+  },
+  "limitations": [
+    "No old raw-byte comparison when historical arrays/binaries are unavailable.",
+    "Second AVD installation failures excluded from model execution count.",
+    "No independent human audit or fresh full-text literature review.",
+    "Source-only export; raw evidence and dependencies remain external."
+  ]
+}
