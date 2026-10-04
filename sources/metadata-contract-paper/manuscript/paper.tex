@@ -1,0 +1,150 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage[margin=0.72in,columnsep=0.25in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage[hyphens]{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{balance}
+\setlist{nosep,leftmargin=*}
+\setlength{\parskip}{2pt}
+\setlength{\parindent}{1em}
+\newcommand{\code}[1]{\texttt{#1}}
+\hypersetup{pdftitle={From Model Metadata to Executable Interfaces: A Controlled Study of Tensor Binding and Decoder Contracts}}
+\title{From Model Metadata to Executable Interfaces:\\A Controlled Study of Tensor Binding and Decoder Contracts}
+\author{Author information to be supplied}
+\date{Working research draft --- October 4, 2026\\\small Not submitted; human verification and venue formatting pending}
+\begin{document}
+\maketitle
+\begin{abstract}
+Embedded model metadata can determine generated interface names, output bindings, and decoder selection. We examine the gap between structural acceptance and compatibility with a particular metadata-consuming interface. Starting from an exactly identified Hand Landmarker component whose metadata exchanges landmark and handedness roles, we construct a controlled extension with 11 metadata-bearing components representing 10 metadata-stripped graph groups. The tested official structural validation path rejects all 11 output-metadata count reductions, but accepts eight index exchanges and five associated-label deletions. Across 105 CPU interpreter invocations on synthetic inputs, every accepted intervention preserves the corresponding original numerical outputs. Nevertheless, deleting one label from either of two otherwise compatible classifiers preserves generated Java and compiled class bytes while changing an isolated category-decoder call from success to exception. Reference-backed index checks and consumer-specific decoder preconditions explain different failure mechanisms. The contribution is a reproducible bounded study and explicit separation of these contracts, not a prevalence estimate or a general semantic detector. Android applications and real-image task accuracy are not evaluated.
+\end{abstract}
+
+\section{Introduction}
+Metadata is often treated as documentation surrounding a model. At a code-generation boundary, however, selected fields also configure executable interfaces: a tensor name becomes a getter, an associated label file selects a category decoder, and an output-metadata position determines which numerical tensor the getter receives. A model can therefore retain exactly the same computation while its generated interface exposes a different meaning or invokes an incompatible decoder.
+
+The TensorFlow Lite Support metadata schema explicitly associates output metadata with \code{SubGraph.outputs} in order, and describes code-generation uses for tensor names and associated files~\cite{schema}. Official LiteRT documentation presents wrapper generation as a means to replace raw byte-buffer interaction with typed interfaces~\cite{codegen-doc}. These mechanisms motivate a specific question: \emph{which facts must agree when embedded metadata becomes a generated tensor interface?}
+
+We study three contracts: structural correspondence between graph tensors and metadata entries; semantic correspondence to an explicitly supplied output-index reference; and compatibility with the preconditions of the generated decoder. They require different evidence. Parsing cannot identify an incorrect semantic role, while a tensor's shape alone cannot determine its meaning. A decoder's shape and label-count requirements can, in contrast, be checked without inferring a model's task.
+
+Our investigation begins with a Hand Landmarker component for which official integration source supplies an output-role reference. We reproduce its metadata-sensitive generated binding, then extend the investigation to a fixed purposive list of official download targets. Controlled mutations and preserving controls separate numerical model behavior from consumer-interface behavior. Our contributions are (1) a precise, source-backed witness of an index-role mismatch; (2) a small implementation of explicit index and decoder-contract checks with abstention outside their scope; and (3) preserved experiments showing which properties survive metadata and label interventions. We do not claim that metadata consistency, design by contract, or model-derived metadata checking is a new general principle.
+
+\section{Contracts and Check Scope}
+Let $G$ be a model graph, $O=(t_0,\ldots,t_{n-1})$ its ordered output tensors, $M=(m_0,\ldots,m_{k-1})$ its output-metadata entries, and $F$ its associated files. A generator consumes $(G,M,F)$ and produces getters and decoder calls. We distinguish the following checks.
+
+\paragraph{S: structural acceptance.}
+The baseline is the public \code{MetadataPopulator} path in \code{tflite-support==0.4.4}: construct from model bytes, load the embedded metadata buffer, and call \code{populate}. Its implementation checks, among other conditions, the metadata identifier, subgraph count, and matching input/output tensor-metadata counts. We exercise this path on disposable copies; merely producing metadata JSON is not counted as acceptance. S is an observed tool outcome, not a claim to cover every official validator.
+
+\paragraph{I: reference-backed index meaning.}
+A component-specific reference provides expected roles $R=(r_0,\ldots,r_{n-1})$. A manually supplied mapping $\phi$ associates metadata names with those roles. For positions with known mappings, I checks
+\begin{equation}
+\phi(m_i.\mathrm{name})=r_i.
+\end{equation}
+The reference is keyed to the exact original component digest; controlled variants inherit it only after P verifies graph preservation. Unknown roles or absent references cause abstention. We instantiate I for Hand and Pose landmark components using their official execution graphs~\cite{hand-graph,pose-graph}. The mappings were authored after source and metadata inspection; they are not independently blinded annotations. For example, Hand's misspelled \code{presense score} is mapped to presence, so a spelling difference is not treated as a semantic defect. This check validates supplied associations; it does not discover output semantics from shape or prose.
+
+\paragraph{D: selected decoder compatibility.}
+We inspect actual generated source for the expression \code{new TensorLabel(labels, tensor).getCategoryList()}. In the tested support-library implementation~\cite{tensorlabel}, the list-based constructor selects the first tensor axis whose size is greater than one. For a static positive shape $d=(d_0,\ldots,d_{r-1})$, define
+\begin{equation}
+a=\min\{j:d_j>1\}.
+\end{equation}
+The selected path requires $a$ to exist, $d_a=|L|$ for the loaded label list $L$, and $a=r-1$ for \code{getCategoryList}. D reports the corresponding failed precondition, or success for these preconditions. Labels are counted using the library's rule that ignores blank lines. The scope is this exact overload and generated category path. No category getter means the check is inapplicable; it does not establish that another decoder is correct. Dynamic shapes, arbitrary custom processors, label meaning, and coordinate units require additional evidence.
+
+\paragraph{P: intervention preservation.}
+For each intervention we compare every non-metadata buffer and a canonical model serialization with the \code{TFLITE\_METADATA} entry and buffer removed. Embedded metadata edits preserve all bytes outside that buffer. Label-file interventions instead preserve graph and metadata tables while rebuilding the associated ZIP content. The two intervention classes are recorded separately. Equal canonical hashes support computational-graph and weight preservation; runtime equality remains a separately measured result.
+
+\section{Study Design}
+\subsection{Corpus and inclusion}
+The extension protocol fixed eight candidate version-1 URLs on the official MediaPipe model-storage host before inspecting component metadata: Hand Landmarker, Pose Landmarker Lite, Face Landmarker, Gesture Recognizer, EfficientNet Lite0 classification, MobileNet V2 classification, EfficientDet Lite0 detection, and DeepLab V3 segmentation. Seven downloads succeeded. The unverified MobileNet candidate URL returned HTTP 404; this is an unavailable candidate address, not evidence of a missing release in the publisher's catalog. It was retained and not replaced opportunistically.
+
+Recursive task extraction yielded 14 component occurrences and 13 distinct component SHA-256 hashes. The Hand landmark component occurs in both Hand and Gesture bundles and is counted once. Two palm-detector binaries have different file hashes but the same canonical metadata-stripped graph, yielding 12 graph groups overall. Face blendshapes and the gesture embedder lack embedded metadata and are recorded as abstentions. The main extension therefore contains 11 metadata-bearing binary components, representing 10 graph groups. These are neither independent model families nor a representative sample.
+
+\subsection{Interventions and controls}
+For every eligible component we retain the original, create a same-length one-character description change, and reduce the output-metadata vector count by one. The description edit is a negative control for binding and label-count checks, not a claim that all description edits are harmless. The count reduction is a positive control for S. For each multi-output component with differing output shapes, we exchange the first lexicographic pair of such metadata entries by adjusting their vector offsets. Eight components meet this condition. This exchange is a seeded perturbation, not necessarily a repair of an already incorrect baseline.
+
+For every generated category output with at least two associated labels, we delete the final label line, retaining the graph and embedded metadata tables. Five components qualify. These mutants test a specific decoder precondition; they are not newly discovered natural defects. The total is 46 original/control/mutant variants. A design record and its digest are preserved. This is a same-session protocol, informed by the already known Hand case, rather than third-party preregistration.
+
+\subsection{Generation, execution, and preserved evidence}
+We use the official support 0.4.4 generator in isolated subprocesses and record diagnostics. Raw generated Java is compiled using Temurin OpenJDK 17.0.12+7 with \code{--release 8}, Android API stubs, TFLite 2.13.0 API jars, and support 0.4.4 jars. No syntax repair is applied in the extension. The separate focal Hand experiment discloses its repair explicitly.
+
+For original and structurally accepted variants, TFLite Runtime 2.14.0 executes three float32 inputs: zeros, constant 0.5, and uniform pseudorandom values from seed 20261003. Every component here has float32 inputs. We use one CPU thread with the default runtime configuration, which reports the XNNPACK delegate. Corresponding inputs are identical within each component. These synthetic inputs test preservation, not recognition accuracy or validity of task predictions.
+
+For generated category paths, a host-JVM probe loads the actual associated labels through \code{FileUtil} and passes the saved zero-input CPU output buffer to the official \code{TensorLabel} expression. This isolates a shape/label precondition and does not instantiate an Android wrapper, run a Java model interpreter, or test an application. Inputs, outputs, generator diagnostics, javac logs, source, classes where compilation succeeds, and hashes are preserved. Historical agent-review labels are not used as evaluation data in this revised study.
+
+\section{Results}
+\subsection{Structural acceptance and numerical preservation}
+Table~\ref{tab:interventions} separates the outcomes by intervention class. S accepts all 11 originals and description controls. It rejects all 11 count reductions, but accepts all eight index exchanges and all five label deletions. This demonstrates a boundary of the tested path: it checks tensor-metadata cardinality but does not establish the selected semantic and decoder contracts.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\input{interventions.tex}
+\caption{Extension counts, including duplicate graph representations. S: structurally accepted variants; CPU: interpreter invocations; J: raw javac successes; D: successful/exceptional isolated category probes. Structurally rejected variants are not compiled or executed. Missing D counts indicate no applicable generated category path.}
+\label{tab:interventions}
+\end{table}
+
+All 35 accepted variants execute on all three inputs: 105 interpreter invocations. Every output array of an intervention matches its component's original byte for byte, with maximum absolute difference zero. P also holds for every variant, including count controls. The runtime result is restricted to these inputs, runtime, and CPU configuration. It neither establishes semantic equivalence of generated interfaces nor substitutes for task-accuracy testing.
+
+All 11 description controls preserve generated Java byte for byte. All five label deletions also preserve generated Java, since the code continues to load the same named file. Of the 35 generated wrappers, nine compile unchanged; the other 26 fail javac. At the original-component level, the gesture classifier, EfficientNet classifier, and DeepLab segmenter compile; the eight multi-output wrappers fail. These failures are retained as outcomes and are not repaired to enlarge the successful denominator.
+
+\subsection{The Hand index witness}
+The focal model is \code{hand\_landmarks\_detector.tflite}, with SHA-256 beginning \code{6acda74af3fb}; the full digest is in the artifact manifest. Both the fixed version-1 task bundle and the retrieved latest bundle contain the exact component identified in the original case. Its graph output 0 is \code{[1,63]} and output 2 is \code{[1,1]}, while their metadata names are \code{handedness} and \code{landmarks}. Official Hand graph source routes output 0 to landmark decoding and output 2 to handedness decoding~\cite{hand-graph}. This reference, not shape alone, establishes the role mismatch.
+
+In a separate focused intervention, exchanging entries 0 and 2 changes four bytes inside metadata buffer 172. All 172 other buffers and all bytes outside the metadata buffer remain identical. Original and exchanged generated Java both fail javac. The same four separator-only edits affect the same two source lines; getter, metadata-constructor, and output-map bodies remain unchanged. After that disclosed repair, both wrappers and the same consumer compile. Bytecode inspection retains \code{handedness}$\to0$, \code{landmarks}$\to2$ in the original and the reverse associations in the exchanged version. Twelve synthetic inputs across the original, exchanged, description, and swap-back variants produce 48 invocations with equal corresponding outputs. A fresh generated workspace reproduces the normalized results using the same operator and toolchain; it is not independent researcher replication.
+
+The association exchange is not a complete repair. The scalar handedness score still cannot be decoded by a two-label \code{TensorLabel} category path. The official graph instead configures a task-specific binary-classification conversion. Likewise, the metadata's ``normalized coordinates'' description must not be adopted as a fact about the raw 63-value output: official landmark postprocessing performs normalization. These are representation and decoder concerns in addition to index association.
+
+For the reference-backed Pose landmark component, I accepts the original and description control and rejects its seeded index exchange. For other components, the study abstains on semantic index correctness. It does not relabel all detected consumer incompatibilities as erroneous model semantics.
+
+\subsection{Decoder boundaries and compilation-preserving mutations}
+Table~\ref{tab:decoders} presents the original category paths grouped to show the duplicated palm computation. Seven byte-distinct originals expose the probed path: two succeed and five throw \code{IllegalArgumentException}, corresponding to four failing graph groups. In palm detection, the first nonunit axis has size 2016, while the label file contains one label. In EfficientDet, the first nonunit axis is the 19,206 detection positions rather than the 90-class axis. These are incompatibilities with the selected generic category decoder, not demonstrations that task-specific detection pipelines are incorrect.
+
+\begin{table*}[t]
+\centering\small
+\input{baselines.tex}
+\caption{Original decoder outcomes. The palm row covers two byte-distinct binaries with an identical canonical graph. The four other metadata-bearing components have no generated category getter and are outside D. $^*$DeepLab emits an existing non-RGB-image warning and falls back to a plain numeric tensor; its outcome must not be presented as absence of all tool diagnostics.}
+\label{tab:decoders}
+\end{table*}
+
+The DeepLab output has shape \code{[1,257,257,21]} and 21 labels. The generator explicitly warns that its non-RGB image type is unsupported and uses a plain numeric tensor. It nevertheless emits a category getter, and its wrapper compiles unchanged; the isolated expression fails because the selected first nonunit axis has size 257. We preserve the warning and describe this as an incompatible generated fallback, not a silently accepted supported segmentation interface.
+
+The two compatible originals are a gesture classifier with eight labels and EfficientNet with 1,000 labels. Deleting one label changes their counts to seven and 999. S still accepts each model; numerical outputs, generated source, and compiled classes remain identical to the originals. The isolated decoder now throws a label-cardinality exception. These two controlled transitions demonstrate a consumer failure mechanism without the focal Hand syntax repair. They remain injected errors rather than natural-defect discoveries.
+
+Across the 23 applicable original/control/mutant probes, all four observed successes and 19 exceptions match D's predictions. This checks that the implementation captures this API's preconditions; it is not an independent accuracy estimate for a general defect detector. In particular, three of the five label deletions start from already incompatible originals, so five failing mutants must not be reported as five newly induced failures.
+
+\section{Relationship to Existing Work}
+Executable preconditions are a standard design-by-contract idea~\cite{meyer}. Our rules specialize that idea to a metadata-to-generated-interface boundary; they are intentionally simple and do not constitute a new inference algorithm. The official schema already documents metadata's code-generation role~\cite{schema}. Our contribution concerns observed failures of particular associations and consumers, with preserving controls and explicit abstention.
+
+Stalnaker et al. examine ML model and dataset documentation, supply chains, and licensing, motivating automated inconsistency checking~\cite{stalnaker}. DARA uses model-derived architecture features to assess supplied model naming and architectural information~\cite{dara}. These works preclude a broad novelty claim for comparing model artifacts with descriptive information. The AIBOM completeness preprint studies structural and field coverage and explicitly motivates richer validation~\cite{aibom}. We do not treat completeness checking as a claim of semantic correctness or assume that preprint is peer reviewed.
+
+Our narrower experimental object is the exact output position, embedded role, generated binding, and selected decoder precondition while graph computation is preserved. We compare against one exercised official structural path, actual generation, javac, and isolated library execution. We do not reproduce the prior tools or claim exhaustive prior-art coverage. DARA and AIBOM full texts were inspected; access to the Stalnaker full text was unavailable, so its positioning is limited to the verified publication abstract. Broader executable-interface and tensor-contract comparisons remain necessary before making a strong novelty claim.
+
+\section{Threats, Implications, and Reproduction}
+\paragraph{Validity and scope.}
+The purposive corpus is small, shares a publisher/tool ecosystem, and includes repeated computation under different metadata. The known Hand case informed the checks. Reference-role annotations were not independently reviewed, and D is derived from the same library whose behavior it predicts. Mutation success therefore does not estimate population defect prevalence, precision, or recall. Description controls preserve only the properties measured here.
+
+The generator is version 0.4.4. Its emitted Gradle configuration references historical experimental/nightly dependencies; we compile against explicitly pinned jars instead of asserting that its unmodified Gradle project builds. We do not evaluate Android Studio model binding, every current LiteRT implementation, or all metadata validators. The focal Hand evidence depends on an audited syntax repair; the extension reports unmodified compilation separately. Host-JVM probes validate a library expression and cannot establish Android application reachability, crashes, latency, security, privacy, or user harm. Official task-specific graphs may bypass the problematic generated paths.
+
+\paragraph{Engineering implication.}
+A useful validation boundary should report what it knows: structural acceptance, reference-backed role agreement when a reference exists, and precondition checks for the decoder actually emitted. An unsupported fallback should carry explicit compatibility diagnostics. A shape/label guard can reject the observed category incompatibilities before consumers reach the library exception; it cannot supply missing task semantics or normalize coordinates automatically.
+
+\balance
+\paragraph{Artifacts and remaining work.}
+The local evidence package contains pinned component bytes, download provenance, protocol and contract records, scripts, generated source, compiler/probe logs, numerical arrays, and SHA-256 manifests. A reusable command checks one model without running inference and abstains when no semantic reference is available. The focal-case replay reuses dependencies and is not independent reproduction. A durable public release, fully archived toolchain, independent human audit, additional consumer/version comparisons, and venue-specific artifact preparation remain open. The unavailable historical 41-instance agent reviews are not used to support this paper's results.
+
+\paragraph{AI assistance and authorship.}
+An AI assistant performed coding, experiment execution, source inspection, analysis, and drafting in this workflow. No independent human validation has yet occurred. Human authors must verify the evidence and interpretations, take responsibility for the manuscript, and prepare the target venue's required disclosure. No AI system is proposed as an author.
+
+\begin{thebibliography}{10}\small
+\bibitem{schema} TensorFlow Lite Support. \emph{Metadata schema}, version 0.4.4. \url{https://github.com/tensorflow/tflite-support/blob/v0.4.4/tensorflow_lite_support/metadata/metadata_schema.fbs}.
+\bibitem{codegen-doc} Google AI Edge. \emph{Generate model interfaces with metadata}. Retrieved October 2026. \url{https://developers.google.com/edge/litert/android/metadata/codegen}.
+\bibitem{hand-graph} MediaPipe. \emph{Hand landmarks detector graph}, v0.10.14. \url{https://github.com/google-ai-edge/mediapipe/blob/v0.10.14/mediapipe/tasks/cc/vision/hand_landmarker/hand_landmarks_detector_graph.cc}.
+\bibitem{pose-graph} MediaPipe. \emph{Pose landmarks detector graph}, v0.10.14. \url{https://github.com/google-ai-edge/mediapipe/blob/v0.10.14/mediapipe/tasks/cc/vision/pose_landmarker/pose_landmarks_detector_graph.cc}.
+\bibitem{tensorlabel} TensorFlow Lite Support. \emph{TensorLabel.java}, version 0.4.4. Source and binary archived in the evidence package.
+\bibitem{meyer} B. Meyer. Applying ``design by contract.'' \emph{Computer}, 25(10):40--51, 1992. \href{https://doi.org/10.1109/2.161279}{doi:10.1109/2.161279}.
+\bibitem{stalnaker} T. Stalnaker et al. An empirical analysis of machine learning model and dataset documentation, supply chain, and licensing challenges on Hugging Face. 2026. \href{https://doi.org/10.1145/3776739}{doi:10.1145/3776739}.
+\bibitem{dara} W. Jiang et al. ``I see models being a whole other thing'': an empirical study of pre-trained model naming conventions and a tool for enhancing naming consistency. \emph{Empirical Software Engineering}, 30:155, 2025. \href{https://doi.org/10.1007/s10664-025-10711-4}{doi:10.1007/s10664-025-10711-4}.
+\bibitem{aibom} M. Erfan, A. Ryan, and M. R. Rahman. A large-scale measurement of AI Bill of Materials completeness in Hugging Face models. arXiv:2607.17242v1, 2026. Preprint.
+\end{thebibliography}
+\end{document}

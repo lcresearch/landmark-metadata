@@ -1,0 +1,10 @@
+{
+  "scope": "Fresh host CPU reproduction of one identified Hand Landmarker component; not a replay of unavailable historical review records.",
+  "model_sha256": "6acda74af3fbf40e68265c20c7394b2bad81a16a481dcd79ad7a081887c3d6b9",
+  "contract_evidence": "Official metadata schema output ordering and MediaPipe v0.10.14 hand_landmarks_detector_graph.cc index 0 landmarks, index 2 handedness. Coordinates are normalized in postprocessing.",
+  "variants": ["original", "swap metadata entries 0 and 2 in place", "description-only same-length edit negative control", "swap-back exact recovery control"],
+  "checks": ["All changes confined to metadata buffer 172; all other buffers and all other file bytes preserved", "Metadata-stripped graph identity", "Official MetadataPopulator public validation path", "Official tflite-support 0.4.4 code generation", "Record raw javac failures before any identical separator-only repairs", "Compile repaired wrappers and same consumer; inspect javap bindings", "CPU interpreter inference on 12 predeclared synthetic float32 inputs and every output of every variant"],
+  "synthetic_inputs": ["zeros", "ones", "constant 0.5", "0-to-1 spatial ramp", "eight uniform [0,1) inputs from numpy default_rng seed 20261003"],
+  "runtime": "tflite-runtime 2.14.0, one thread, default CPU interpreter. Exact equality is reported empirically, not generalized to every input/device.",
+  "limits": ["Synthetic input tests do not validate handedness accuracy or real image behavior", "No Android deployment or generated wrapper inference is assumed", "No new 41-instance agreement study", "A successful metadata swap need not correct every semantic metadata issue"]
+}

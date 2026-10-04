@@ -1,0 +1,35 @@
+Proposed replacement for Relationship to Existing Work
+=====================================================
+
+Executable preconditions are established design-by-contract practice~\cite{meyer}, and official tooling documents metadata-driven interface generation~\cite{codegen-doc}. MLGuard proposes developer-specified ML contracts, probabilistic validation models, and generated wrappers that check conditions and respond to violations~\cite{mlguard}. Its reviewed paper presents a vision and future implementation/evaluation plan. These ideas precede our study; our contribution concerns observed behavior of existing generated interfaces under controlled artifact interventions.
+
+DocTer learns rules from annotated API documentation to extract parameter constraints and generate conforming and violating test inputs~\cite{docter}. ACETest instead analyzes operator validation code, propagates user-controllable properties, and solves extracted constraints to generate tests~\cite{acetest}. Its implementation combines LLVM/SVF analysis with library-specific handling and Z3. Thus, extracting shape constraints, consulting actual implementation, and using constraints for testing are established techniques. Our supporting checker does not establish a new general constraint-extraction algorithm.
+
+DARA compares model-derived architecture features with supplied naming and architectural metadata~\cite{dara}; it is not limited to documentation inspection. Stalnaker et al. examine model/dataset documentation and supply-chain challenges~\cite{stalnaker}, while the AIBOM preprint studies field completeness~\cite{aibom}. These works motivate consistency checking without equating structural completeness, independently supported association, and consumer compatibility.
+
+Our empirical distinction is the preserved connection between a concrete model package, its selected associated resource, an actual generated getter, and observed behavior under a pinned consumer configuration. E1/E2 hold graph computation and generated code fixed while testing failure, changed association, and reversal; E3 records enforcement stages in two configurations. The reviewed methods and evaluations do not demonstrate this particular complete connection, but that bounded comparison does not establish an exhaustive novelty claim. The pre-flight procedure supports the evidence and diagnosis; its additional capability must be assessed against comparable official checks and simple baselines.
+
+New bibliography entries
+========================
+
+\bibitem{mlguard} Sheng Wong et al. MLGuard: Defend Your Machine Learning Model! In \emph{Proceedings of the 1st International Workshop on Dependability and Trustworthiness of Safety-Critical Systems with Machine Learned Components (SE4SafeML)}, 2023. \href{https://doi.org/10.1145/3617574.3617859}{doi:10.1145/3617574.3617859}.
+
+\bibitem{docter} Danning Xie et al. DocTer: Documentation-Guided Fuzzing for Testing Deep Learning API Functions. In \emph{Proceedings of the 31st ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)}, 2022. \href{https://doi.org/10.1145/3533767.3534220}{doi:10.1145/3533767.3534220}.
+
+\bibitem{acetest} Jingyi Shi et al. ACETest: Automated Constraint Extraction for Testing Deep Learning Operators. In \emph{Proceedings of the 32nd ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)}, 2023. \href{https://doi.org/10.1145/3597926.3598088}{doi:10.1145/3597926.3598088}.
+
+Optional compact artifact/validity note
+======================================
+
+The literature audit preserves MLGuard, DocTer, and ACETest full texts as arXiv versions 2309.01379v1, 2109.01002v4, and 2305.17914v2, respectively, with publication identities cross-checked through Crossref. DARA uses its preserved journal version of record. These texts were inspected, but their tools were not rerun; Stalnaker positioning remains limited to its verified publication abstract.
+
+Reviewer notes, not manuscript prose
+====================================
+
+- Bibliographic names, years, venues and DOI identifiers above were checked against the four preserved Crossref responses. DocTer's reviewed v4 is a 2024 arXiv upload of the ISSTA 2022 paper; do not change the publication year to 2024.
+- MLGuard: sections 3.1--3.3, PDF pages 3--4; prototype/evaluation future plans are explicit in section 5, page 4.
+- DocTer: sections 2.1--2.5, PDF pages 3--8; implementation/evaluation in sections 3--4, pages 8--11; limits in section 5, pages 11--12.
+- ACETest: sections 3--4, PDF pages 3--7; LLVM/SVF, manual library handlers, loop restrictions and Z3 described on page 7; constraint coverage limits on page 9.
+- DARA: sections 7.2--7.4, PDF pages 31--46; explicit assessment rather than enforcement positioning in section 9.2, pages 50--51.
+- Current E5 performs template/regex-based selected associations. Do not replace the final paragraph with a claim of complete interprocedural dataflow analysis or generated residual runtime checks.
+- Sources: /workspace/metadata-contract-audit-20261004T062010Z/literature/AUDIT_REPORT.md and sources/*-crossref.json. No new network retrieval or experiment was performed for this proposal.

@@ -1,0 +1,13 @@
+# Clarifications without rewriting sealed evidence
+
+1. **E1 failed decoding has no decoded value.** The generic summary field `replay_decoded_equal: true` is vacuously true for deletion because there are no decoded JSON files to compare. It must be read as NOT_APPLICABLE for that condition. Both observed runs explicitly record decoder FAIL, the same generated-getter exception and equal raw outputs. It must never be described as successful or equal decoded deletion outputs. The sealed original summary remains untouched.
+
+2. **Android image revision has two recorded identifiers.** The official repository XML and archived filename specify revision 11, `x86_64-30_r11.zip`, SHA-256 `8d591034a4244a920d7a3ec274bb1734dd6474a3d8c11d0fce902010db3a13aa`. The extracted archive's `source.properties` says `Pkg.Revision=10`. Both are preserved in `prerequisites/system-images-selected.json` and `prerequisites/toolchain-versions.json`. Report the archive identity and runtime fingerprint rather than silently normalizing this publisher packaging discrepancy. The actual fingerprint is `Android/sdk_phone_x86_64/generic_x86_64:11/RSR1.210722.013.A2/10067904:userdebug/test-keys`; the same image served every Android condition.
+
+3. **Replay interruption is infrastructure evidence.** E2's last original replay unit has no complete recovered outcome after transport loss. Its separate recovery uses the same restoration APK and parameters. `E2/deviations.json` identifies both directories. The incomplete attempt is neither a consumer failure nor a success.
+
+4. **Task native runtime versions are not inferred.** Task Library 0.4.4 and MediaPipe 0.10.14 wheels/native binaries are archived and hashed. Their separate embedded TFLite version strings were not established. The explicitly pinned Android runtime is 2.13.0; it must not be assigned to the Task binaries by assumption.
+
+5. **Phase names do not imply independent samples.** E7 names execution phase 7 (Hand). There is no missing E6 experiment. E1/E2 shared conditions and replays are repeated observations. E5 deduplicates artifact bytes, not computational graphs. E4 is the separate purposive external graph set.
+
+6. **Artifact completeness is scoped.** Model bytes, primary inputs/outputs, generated code, classes/DEX, logs, downloaded SDK/dependency archives and exact commands are locally preserved. Scripts still depend on the two existing workspace roots and installed Python/JDK environments. This is not a standalone offline distribution, durable public release, or independent reproduction. The global manifest excludes installed SDK/AVD state and installed virtual environments, while retaining their archived inputs and version records.

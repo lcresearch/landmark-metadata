@@ -1,0 +1,1701 @@
+{
+  "scope": "Source code and necessary text documentation only; NOT the complete experimental evidence package.",
+  "workspace_roots": [
+    "hand-contract-repro",
+    "hand-contract-fresh-qrh65aao",
+    "metadata-contract-paper",
+    "metadata-contract-e2e-20261004T030536Z",
+    "metadata-contract-audit-20261004T062010Z",
+    "metadata-contract-paper-rewrite-20261004T052625Z",
+    "metadata-contract-paper-revision-20261004T065132Z"
+  ],
+  "files": [
+    {
+      "repository_path": "sources/hand-contract-fresh-qrh65aao/scripts/BindingConsumer.java",
+      "original_path": "/workspace/hand-contract-fresh-qrh65aao/scripts/BindingConsumer.java",
+      "sha256": "1eaebb40db38f2c70b899c3e750106d85f4d3c7c167fba049fdf37ac1c6f31a4",
+      "bytes": 250
+    },
+    {
+      "repository_path": "sources/hand-contract-fresh-qrh65aao/scripts/DecoderProbe.java",
+      "original_path": "/workspace/hand-contract-fresh-qrh65aao/scripts/DecoderProbe.java",
+      "sha256": "88a7b5503e148087dd27781d0970b91d0d2732bf3e80d346219b7285594308da",
+      "bytes": 1863
+    },
+    {
+      "repository_path": "sources/hand-contract-fresh-qrh65aao/scripts/compile_experiment.py",
+      "original_path": "/workspace/hand-contract-fresh-qrh65aao/scripts/compile_experiment.py",
+      "sha256": "7375ea6ef5f1c5b41fb554c06b5186b708e3b45e158aad8941c09384a77c0b64",
+      "bytes": 6258
+    },
+    {
+      "repository_path": "sources/hand-contract-fresh-qrh65aao/scripts/decoder_experiment.py",
+      "original_path": "/workspace/hand-contract-fresh-qrh65aao/scripts/decoder_experiment.py",
+      "sha256": "e1e1292a3a859a67960efa3223f7f38e7c74e395d99d9f2f261cf812600ba0a5",
+      "bytes": 2628
+    },
+    {
+      "repository_path": "sources/hand-contract-fresh-qrh65aao/scripts/fetch_inputs.py",
+      "original_path": "/workspace/hand-contract-fresh-qrh65aao/scripts/fetch_inputs.py",
+      "sha256": "3c86ae6ba1381c11afa7cd21f699609c0e13dd9a5e90d9fd9eb5e1460a5812e5",
+      "bytes": 2807
+    },
+    {
+      "repository_path": "sources/hand-contract-fresh-qrh65aao/scripts/fresh_replay.py",
+      "original_path": "/workspace/hand-contract-fresh-qrh65aao/scripts/fresh_replay.py",
+      "sha256": "5e10e31ff97ba4dcc14cbc574d7da7561aaf9750bdc65807cd33660ffcd26e89",
+      "bytes": 2517
+    },
+    {
+      "repository_path": "sources/hand-contract-fresh-qrh65aao/scripts/inference_experiment.py",
+      "original_path": "/workspace/hand-contract-fresh-qrh65aao/scripts/inference_experiment.py",
+      "sha256": "6e78e4fa98b190a1037aa00ad4596b1be4a90db5a5612e57f184750a5e29470c",
+      "bytes": 3342
+    },
+    {
+      "repository_path": "sources/hand-contract-fresh-qrh65aao/scripts/run_all.py",
+      "original_path": "/workspace/hand-contract-fresh-qrh65aao/scripts/run_all.py",
+      "sha256": "c4899cabe346a2a62a0550a4ff425f3e21dd96e7eade40f39bdbb691fd979eb7",
+      "bytes": 1175
+    },
+    {
+      "repository_path": "sources/hand-contract-fresh-qrh65aao/scripts/static_experiment.py",
+      "original_path": "/workspace/hand-contract-fresh-qrh65aao/scripts/static_experiment.py",
+      "sha256": "b6d1f368078d251fcd8f21a5c2c2f57b1cb8835209c23bbfa7966b7b0344705a",
+      "bytes": 6199
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/REPRODUCE.txt",
+      "original_path": "/workspace/hand-contract-repro/REPRODUCE.txt",
+      "sha256": "d34ab280995d4d91f58e7f5c7969f7c5c01a3618e89f93df140f4f5446dc10e2",
+      "bytes": 3706
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/experiment-plan.json",
+      "original_path": "/workspace/hand-contract-repro/experiment-plan.json",
+      "sha256": "c7cabc71a28baaf33e5268a1c67a22d6e19a14c4136599c7bdf7ff086d5d705f",
+      "bytes": 1684
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/requirements.lock",
+      "original_path": "/workspace/hand-contract-repro/requirements.lock",
+      "sha256": "f68fd4a56930ebe66cb592751cf88e13bd5cbf1278c8ffd358b66caa7685355b",
+      "bytes": 190
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/scripts/BindingConsumer.java",
+      "original_path": "/workspace/hand-contract-repro/scripts/BindingConsumer.java",
+      "sha256": "1eaebb40db38f2c70b899c3e750106d85f4d3c7c167fba049fdf37ac1c6f31a4",
+      "bytes": 250
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/scripts/DecoderProbe.java",
+      "original_path": "/workspace/hand-contract-repro/scripts/DecoderProbe.java",
+      "sha256": "88a7b5503e148087dd27781d0970b91d0d2732bf3e80d346219b7285594308da",
+      "bytes": 1863
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/scripts/build_report.py",
+      "original_path": "/workspace/hand-contract-repro/scripts/build_report.py",
+      "sha256": "8f8acb5b97d021c7d608f99ec4d39855a4e01cc3325a4ccbeb9b31971058783e",
+      "bytes": 15536
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/scripts/compile_experiment.py",
+      "original_path": "/workspace/hand-contract-repro/scripts/compile_experiment.py",
+      "sha256": "7375ea6ef5f1c5b41fb554c06b5186b708e3b45e158aad8941c09384a77c0b64",
+      "bytes": 6258
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/scripts/decoder_experiment.py",
+      "original_path": "/workspace/hand-contract-repro/scripts/decoder_experiment.py",
+      "sha256": "e1e1292a3a859a67960efa3223f7f38e7c74e395d99d9f2f261cf812600ba0a5",
+      "bytes": 2628
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/scripts/fetch_inputs.py",
+      "original_path": "/workspace/hand-contract-repro/scripts/fetch_inputs.py",
+      "sha256": "3c86ae6ba1381c11afa7cd21f699609c0e13dd9a5e90d9fd9eb5e1460a5812e5",
+      "bytes": 2807
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/scripts/fresh_replay.py",
+      "original_path": "/workspace/hand-contract-repro/scripts/fresh_replay.py",
+      "sha256": "bc7f7d302037bb7f1d4391531e02170dec1dd257b26a8614f848fe6a66e2fce4",
+      "bytes": 2785
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/scripts/inference_experiment.py",
+      "original_path": "/workspace/hand-contract-repro/scripts/inference_experiment.py",
+      "sha256": "6e78e4fa98b190a1037aa00ad4596b1be4a90db5a5612e57f184750a5e29470c",
+      "bytes": 3342
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/scripts/restore_toolchain.py",
+      "original_path": "/workspace/hand-contract-repro/scripts/restore_toolchain.py",
+      "sha256": "e88d3dd1d5c5d6a76b7606cbec1043a1a26ade751745630b92d37a3400368513",
+      "bytes": 1278
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/scripts/run_all.py",
+      "original_path": "/workspace/hand-contract-repro/scripts/run_all.py",
+      "sha256": "c4899cabe346a2a62a0550a4ff425f3e21dd96e7eade40f39bdbb691fd979eb7",
+      "bytes": 1175
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/scripts/static_experiment.py",
+      "original_path": "/workspace/hand-contract-repro/scripts/static_experiment.py",
+      "sha256": "b6d1f368078d251fcd8f21a5c2c2f57b1cb8835209c23bbfa7966b7b0344705a",
+      "bytes": 6199
+    },
+    {
+      "repository_path": "sources/hand-contract-repro/scripts/verify_manifest.py",
+      "original_path": "/workspace/hand-contract-repro/scripts/verify_manifest.py",
+      "sha256": "2690be067419d3e6555fbd4b39e9a47259286afb0e2cdd3b28650293d512e58d",
+      "bytes": 428
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/AUDIT_PLAN.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/AUDIT_PLAN.md",
+      "sha256": "61514b2000f34d5a24fabee3f96dd7ba19d22ad9f6919dbf5704f54e770589ad",
+      "bytes": 3539
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/AUDIT_REPORT.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/AUDIT_REPORT.md",
+      "sha256": "aff5b68e2afda71c97671ff6012675844bac05a2ff76be88ceacd5a32c792f75",
+      "bytes": 8199
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/MANUSCRIPT_IMPACT.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/MANUSCRIPT_IMPACT.md",
+      "sha256": "06a323a86ee4d1f86a468276bf07a18360f8f7de9914888f3b60dba0b7e0e63e",
+      "bytes": 6357
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/README.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/README.md",
+      "sha256": "4c31cc20010ec32fd5355d84066d1347fdd4a3bdc30d54c229e41e50f2950f18",
+      "bytes": 2531
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/TODO.after.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/TODO.after.md",
+      "sha256": "c6031283fb17c82122c68aeb25d6acdb16f7121c1f09deb9a7a1952dfb1d74de",
+      "bytes": 11587
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/TODO.before.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/TODO.before.md",
+      "sha256": "d2c275a0e1ed414ceffe4273c82316536f6febf2ca1a4fb1acc81aba491c475d",
+      "bytes": 9428
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/baseline/PLAN.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/baseline/PLAN.md",
+      "sha256": "b22e3efc957c4c1879eed1c6326c4ca70dee25b294dbd497a51dd565e2c0e715",
+      "bytes": 3653
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/baseline/RESULTS.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/baseline/RESULTS.md",
+      "sha256": "f2f44048d1c1082ced617141faf62d17bf0601044b36e71c441fdeabe916922d",
+      "bytes": 11277
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/baseline/audit_one.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/baseline/audit_one.py",
+      "sha256": "02dd110bebb55fe646b0a206e0ec9b488508c6f7ca740f5a5571cfd0907bf021",
+      "bytes": 7915
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/baseline/finalize_audit.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/baseline/finalize_audit.py",
+      "sha256": "5f77b4f551f37b90b481548a37d38460587ae8638b571db95497a58451135f81",
+      "bytes": 8651
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/baseline/launch_e5.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/baseline/launch_e5.py",
+      "sha256": "ebaf896d2e1ab3eec368d3ea5ac48b895b1a9a8011be7f68c3ad6f75027e9b3b",
+      "bytes": 2053
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/baseline/run_audit.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/baseline/run_audit.py",
+      "sha256": "aaacfd27bc66918a0dd60ac8455a2adbaee82d98a93f91874df54e79486b0715",
+      "bytes": 6969
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/baseline/version_probe.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/baseline/version_probe.py",
+      "sha256": "db88d7c415ea102b7348544fca0824b5b95595b06a1fbd82fd6e23190eb46323",
+      "bytes": 1577
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/claims/AUDIT_REPORT.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/claims/AUDIT_REPORT.md",
+      "sha256": "251522cd4adc35d2d5abc5f6f181927a789a3e6a853afa7b80b1c99d9d474294",
+      "bytes": 9006
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/claims/commands.sh",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/claims/commands.sh",
+      "sha256": "74889c22569db15451b32c4ae7661061746e3230f95cbd4558abc025d1417e08",
+      "bytes": 1215
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/claims/recompute-attempt1.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/claims/recompute-attempt1.py",
+      "sha256": "0bc7df41881f2834c37208fc08fb7e2b2ebb8294118df0e0d1e4c1344739bf19",
+      "bytes": 11335
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/claims/recompute.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/claims/recompute.py",
+      "sha256": "7f376f462471d43384c994e41c7d31132dcd7797926a94b90e60436ef0645009",
+      "bytes": 11341
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/claims/supplement.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/claims/supplement.py",
+      "sha256": "63d9a9d02e9ca0540981db932ea6478bf26eef45310f6b17599c2f11dedf9d45",
+      "bytes": 3457
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/claims/write_report.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/claims/write_report.py",
+      "sha256": "3d92b39d7ad213cd0fd4e1892cb3d2eaaed0741c7ffd7339cda6c11f081c5d87",
+      "bytes": 18088
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/commands.sh",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/commands.sh",
+      "sha256": "d17789ca731a5147f277175d4335e08c7f31021431302ef3391a31701013f80a",
+      "bytes": 866
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/finalize_index.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/finalize_index.py",
+      "sha256": "208567b115856853cf7a183a5a7edd7e72156e9fca3889f432c88fe3beb9eadc",
+      "bytes": 6364
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/literature/AUDIT_REPORT.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/literature/AUDIT_REPORT.md",
+      "sha256": "be6dccc418a955d30274bee10ca1d4eb0c911fcc1cd671174ee95585c3e4aedc",
+      "bytes": 14502
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/literature/commands.sh",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/literature/commands.sh",
+      "sha256": "6c6de9f8da626ef8834616fd80e1f45616958bf15f718bdd0b73f9357cd7877f",
+      "bytes": 817
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/literature/scripts/fetch.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/literature/scripts/fetch.py",
+      "sha256": "d820ade276eba2b153e027e47ada2882922f960a84e76d3113bab102aeef72d5",
+      "bytes": 2422
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/literature/scripts/finalize.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/literature/scripts/finalize.py",
+      "sha256": "218c1f197d7e699ab533fd8780dde228d06d31204b8467e8033a6e8fa25d6cf9",
+      "bytes": 5846
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/literature/scripts/pin_versions.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/literature/scripts/pin_versions.py",
+      "sha256": "7e9489a36e982753c2caa5f73d66ff9d6acd427555b042c9684aa1cd619dc169",
+      "bytes": 1142
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/preservation/AUDIT_REPORT.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/preservation/AUDIT_REPORT.md",
+      "sha256": "8e968893b84f2a7bf2b0d7af2ecc73d42e881ef73600245e3d83d660926ed170",
+      "bytes": 10282
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/preservation/audit_preservation.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/preservation/audit_preservation.py",
+      "sha256": "3f4dbc11d2b1e5b8b871322dc4539ad3a4e5592e05d69ab0fe5cc4af3ff8e224",
+      "bytes": 22345
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/preservation/bytecode/audit.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/preservation/bytecode/audit.py",
+      "sha256": "e1ed21e97b8fe0e645846e5a6408dc4afe53a1550e73bdeac6a8a28bb3aa5e19",
+      "bytes": 9931
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/preservation/bytecode/report.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/preservation/bytecode/report.md",
+      "sha256": "9bb8b7cfa8283765ad05ffa1e9d55f19b770dfdbb9541d6dbc9c64fd95005180",
+      "bytes": 13350
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/AUDIT_REPORT.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/AUDIT_REPORT.md",
+      "sha256": "4504639ff2c16fa3d66e0e888f92c7b87ebf32bd061f020b82235df4f2ab29bd",
+      "bytes": 17747
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/CURRENT_STATE.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/CURRENT_STATE.md",
+      "sha256": "b2557a126eed464afd939a8d7069f8eb324dee101cd6dafd9727c5202c82f0c9",
+      "bytes": 2064
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/ContractInstrumentation.java.patch",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/ContractInstrumentation.java.patch",
+      "sha256": "d4d183d8c3558d7ce2b28b03d1921ca4c9421d3576713494b504a68e4e7ced27",
+      "bytes": 1553
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/EXPERIMENT_E1_PLAN.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/EXPERIMENT_E1_PLAN.md",
+      "sha256": "6c0dd49921ea5459f17cfd99a2fad40a89c32063dd5c399f0a9f6be8897cdbc6",
+      "bytes": 5740
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/EXPERIMENT_E2_PLAN.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/EXPERIMENT_E2_PLAN.md",
+      "sha256": "4a9693fd929173d4c1efcb4204e0ced32148e159e8713c79d0922a38d196bae0",
+      "bytes": 2700
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/MANUSCRIPT_IMPACT.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/MANUSCRIPT_IMPACT.md",
+      "sha256": "d1c45f0c64b18215ea42a53e2cea48a6615126b35add9b34199b7457de0a8832",
+      "bytes": 1939
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/PLAN.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/PLAN.md",
+      "sha256": "9223f7758838f7ea86b371a8bb6f0124ef3a2d81e13a67fd36c94e1978ab0c2b",
+      "bytes": 2740
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/REBUILD_SCOPE.md",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/REBUILD_SCOPE.md",
+      "sha256": "afadf2f88e3d99f624142bbcced578949f3472dd85c51b37a7aa89a93779adbf",
+      "bytes": 2200
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/REBUILD_SCOPE.md.denominator-label.patch",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/REBUILD_SCOPE.md.denominator-label.patch",
+      "sha256": "0e43f4c8b27602511fa0714b4aebe0bbd3036068133be650686a81c2c5414f7e",
+      "bytes": 2005
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/audit_results.py.denominator-label.patch",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/audit_results.py.denominator-label.patch",
+      "sha256": "2f323233069eb16a5519322b190346f769e04d35e0dd4c503a1fc31a3a55d7fb",
+      "bytes": 5553
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/commands.sh",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/commands.sh",
+      "sha256": "2e61ed317b4f0794e3024e2f15c7f74cc0ce36848b30eda05f4fec15434ffe4e",
+      "bytes": 1993
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/prepare_e2.py.patch",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/prepare_e2.py.patch",
+      "sha256": "c940ad9e52f2bd154311c5f226b8dd58c3d502230d6e0e40a4c2ebc93a4a8ed0",
+      "bytes": 599
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/scripts/ContractInstrumentation.java",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/scripts/ContractInstrumentation.java",
+      "sha256": "d07b2b22e0bee022a380b834291b0013bd8c900b34949191945c4b0b417998f8",
+      "bytes": 6635
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/scripts/audit_results.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/scripts/audit_results.py",
+      "sha256": "a842681704ebb0f6ef93132fdc090ad7c564fc3593d5a66c2cc386b82e20f16f",
+      "bytes": 13719
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/scripts/build_android.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/scripts/build_android.py",
+      "sha256": "3f86680cdb9cfbc3a42268ef02a49ad3901edb9c464ccd7bad727b4a8155c4ac",
+      "bytes": 5432
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/scripts/capture_build_evidence.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/scripts/capture_build_evidence.py",
+      "sha256": "3b5878f78ced67e8270e3e72d883ebc4d9b44c637ad8e04ec85b12941fc2f56f",
+      "bytes": 670
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/scripts/capture_versions.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/scripts/capture_versions.py",
+      "sha256": "962c7fa72be63c0ca61f8f25f88679f9c7bc960795babb1cf6257e05ffec7e57",
+      "bytes": 938
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/scripts/codegen_one.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/scripts/codegen_one.py",
+      "sha256": "e4a2ef490591691ec6518c2d957fe7511cc3b89562574497cdd8fa82c6c7252e",
+      "bytes": 679
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/scripts/common.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/scripts/common.py",
+      "sha256": "b2e7bdd6bcf94beb94584df24dcd3d8634a4b4ec1f1865e1c163d44d77f0d5d7",
+      "bytes": 1711
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/scripts/prepare_e1.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/scripts/prepare_e1.py",
+      "sha256": "6a7f7eb6a9cb15ae61609f59c1a4c8fce5a09d1b155311ab7ab46c9b47ffb44d",
+      "bytes": 5722
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/scripts/prepare_e2.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/scripts/prepare_e2.py",
+      "sha256": "7ba76d6fdd841f1df46572403b9fc65e0adc2a8537cca42c1ff3b31ee69b0bea",
+      "bytes": 1602
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/scripts/run_android.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/scripts/run_android.py",
+      "sha256": "64add6c3dd8e60e58c0d56faf64fe8e71f44d0acd0c5cc24705c481e43ca73a5",
+      "bytes": 4184
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/scripts/seal_audit.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/scripts/seal_audit.py",
+      "sha256": "0ce8a0c746f600a4b6b88edde8dd3514331a440b17ebf4c3eeef7ac3fc49bdb3",
+      "bytes": 957
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/scripts/start_emulator.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/scripts/start_emulator.py",
+      "sha256": "f6c4cc7aa53ee7adfb386f2ad61d9785379f7b3ecbb2a026dc1686dfaa331525",
+      "bytes": 2534
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/setup.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/setup.py",
+      "sha256": "8ed479c9ae03a2c94901b76e64b65d9b35352f76f9ac0abd56db671804b8069c",
+      "bytes": 2678
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/source-snapshots/ContractInstrumentation.java",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/source-snapshots/ContractInstrumentation.java",
+      "sha256": "83391d8446e7a3efedecf460e4379239c4ce3297ba96c47e8d5e78d6b47ed0eb",
+      "bytes": 6020
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/source-snapshots/build_android.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/source-snapshots/build_android.py",
+      "sha256": "3f86680cdb9cfbc3a42268ef02a49ad3901edb9c464ccd7bad727b4a8155c4ac",
+      "bytes": 5432
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/source-snapshots/common.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/source-snapshots/common.py",
+      "sha256": "b2e7bdd6bcf94beb94584df24dcd3d8634a4b4ec1f1865e1c163d44d77f0d5d7",
+      "bytes": 1711
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/source-snapshots/prepare_e1.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/source-snapshots/prepare_e1.py",
+      "sha256": "6a7f7eb6a9cb15ae61609f59c1a4c8fce5a09d1b155311ab7ab46c9b47ffb44d",
+      "bytes": 5722
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/source-snapshots/prepare_e2.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/source-snapshots/prepare_e2.py",
+      "sha256": "01a5b1d08d80f324896ae10aa526b69c111787f81a2f7b24ab889ff61c38bb73",
+      "bytes": 1598
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/source-snapshots/run_android.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/source-snapshots/run_android.py",
+      "sha256": "64add6c3dd8e60e58c0d56faf64fe8e71f44d0acd0c5cc24705c481e43ca73a5",
+      "bytes": 4184
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/rebuild/source-snapshots/start_emulator.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/rebuild/source-snapshots/start_emulator.py",
+      "sha256": "f6c4cc7aa53ee7adfb386f2ad61d9785379f7b3ecbb2a026dc1686dfaa331525",
+      "bytes": 2534
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/run_logged.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/run_logged.py",
+      "sha256": "135f80af05d66486e898fee5fbf085381138032dff2486b22e3676283e4853e2",
+      "bytes": 970
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/seal_audit.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/seal_audit.py",
+      "sha256": "3fb10091bde1371d9c24964933e3ab0b4b661c4a1feadeba51bd0743a24301e2",
+      "bytes": 1446
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/update_todo.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/update_todo.py",
+      "sha256": "0601dd87e7d5898ea40ea3c0f1cc26eb882ad6caa0560fb05d6eb38a7299e33a",
+      "bytes": 5735
+    },
+    {
+      "repository_path": "sources/metadata-contract-audit-20261004T062010Z/verify_completed_audit.py",
+      "original_path": "/workspace/metadata-contract-audit-20261004T062010Z/verify_completed_audit.py",
+      "sha256": "631c7c40aaca45b6ace68dd4af4389dcf76ef2f291408c9a2310512c96cf94c7",
+      "bytes": 6151
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/CONTEXT_HANDOFF.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/CONTEXT_HANDOFF.md",
+      "sha256": "4b9c4a90cc96bc14387d6e0b2a507b9dd8a3708880c31d83de8d1f1d3687b841",
+      "bytes": 3993
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/CURRENT_STATE.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/CURRENT_STATE.md",
+      "sha256": "2ffd4db70f76fbba207cf542667b0da016cb44d78f7b50a3f6a518b541682da0",
+      "bytes": 5670
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E1/EXPERIMENT_E1_PLAN.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/EXPERIMENT_E1_PLAN.md",
+      "sha256": "6c0dd49921ea5459f17cfd99a2fad40a89c32063dd5c399f0a9f6be8897cdbc6",
+      "bytes": 5740
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E1/EXPERIMENT_E1_RESULTS.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/EXPERIMENT_E1_RESULTS.md",
+      "sha256": "3e0a585c6d9d3f72662fa39dd38e0609e8a35cd894c9f7266ea09aeeebd81ccb",
+      "bytes": 4013
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E1/MANUSCRIPT_IMPACT.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/MANUSCRIPT_IMPACT.md",
+      "sha256": "594678f59fec5435680a022adeb05534050af89158c03282ef436fc6f7a1623e",
+      "bytes": 2669
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/ContractInstrumentation.java",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/ContractInstrumentation.java",
+      "sha256": "83391d8446e7a3efedecf460e4379239c4ce3297ba96c47e8d5e78d6b47ed0eb",
+      "bytes": 6020
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/build_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/build_android.py",
+      "sha256": "3f86680cdb9cfbc3a42268ef02a49ad3901edb9c464ccd7bad727b4a8155c4ac",
+      "bytes": 5432
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/codegen_one.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/codegen_one.py",
+      "sha256": "e4a2ef490591691ec6518c2d957fe7511cc3b89562574497cdd8fa82c6c7252e",
+      "bytes": 679
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/common.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/common.py",
+      "sha256": "b2e7bdd6bcf94beb94584df24dcd3d8634a4b4ec1f1865e1c163d44d77f0d5d7",
+      "bytes": 1711
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/prepare_e1.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/prepare_e1.py",
+      "sha256": "6a7f7eb6a9cb15ae61609f59c1a4c8fce5a09d1b155311ab7ab46c9b47ffb44d",
+      "bytes": 5722
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/prepare_e2.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/prepare_e2.py",
+      "sha256": "01a5b1d08d80f324896ae10aa526b69c111787f81a2f7b24ab889ff61c38bb73",
+      "bytes": 1598
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/run_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/run_android.py",
+      "sha256": "70325ae97b4fa01e3984226da04b495358fc989c07de4a9de1b7d6483cd36c2d",
+      "bytes": 4071
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/summarize_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E1/implementation-snapshot/summarize_android.py",
+      "sha256": "70bed0dc938ff490f34f29e481d897804deef0a9d2db465dbb805a752c24f317",
+      "bytes": 6460
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E2/EXPERIMENT_E2_PLAN.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/EXPERIMENT_E2_PLAN.md",
+      "sha256": "4a9693fd929173d4c1efcb4204e0ced32148e159e8713c79d0922a38d196bae0",
+      "bytes": 2700
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E2/EXPERIMENT_E2_RESULTS.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/EXPERIMENT_E2_RESULTS.md",
+      "sha256": "255d6b4e47beef65db021bc5d8281db95be5b7dc9acfff1832d73b9b97ab6c07",
+      "bytes": 4240
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E2/MANUSCRIPT_IMPACT.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/MANUSCRIPT_IMPACT.md",
+      "sha256": "71bc27b1fe4e220ae9e2a9aba36b1052b03de0fa175b9e7541f9e4c22209c566",
+      "bytes": 2186
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E2/implementation-history/run_android-before-recovery.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/implementation-history/run_android-before-recovery.py",
+      "sha256": "70325ae97b4fa01e3984226da04b495358fc989c07de4a9de1b7d6483cd36c2d",
+      "bytes": 4071
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/ContractInstrumentation.java",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/ContractInstrumentation.java",
+      "sha256": "83391d8446e7a3efedecf460e4379239c4ce3297ba96c47e8d5e78d6b47ed0eb",
+      "bytes": 6020
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/build_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/build_android.py",
+      "sha256": "3f86680cdb9cfbc3a42268ef02a49ad3901edb9c464ccd7bad727b4a8155c4ac",
+      "bytes": 5432
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/codegen_one.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/codegen_one.py",
+      "sha256": "e4a2ef490591691ec6518c2d957fe7511cc3b89562574497cdd8fa82c6c7252e",
+      "bytes": 679
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/common.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/common.py",
+      "sha256": "b2e7bdd6bcf94beb94584df24dcd3d8634a4b4ec1f1865e1c163d44d77f0d5d7",
+      "bytes": 1711
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/prepare_e1.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/prepare_e1.py",
+      "sha256": "6a7f7eb6a9cb15ae61609f59c1a4c8fce5a09d1b155311ab7ab46c9b47ffb44d",
+      "bytes": 5722
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/prepare_e2.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/prepare_e2.py",
+      "sha256": "01a5b1d08d80f324896ae10aa526b69c111787f81a2f7b24ab889ff61c38bb73",
+      "bytes": 1598
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/run_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/run_android.py",
+      "sha256": "64add6c3dd8e60e58c0d56faf64fe8e71f44d0acd0c5cc24705c481e43ca73a5",
+      "bytes": 4184
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/summarize_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E2/implementation-snapshot/summarize_android.py",
+      "sha256": "8e868ea14cc58112ba4a03ee91c10ca5fac6e703e73480056e7222fd53244542",
+      "bytes": 6759
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E3/EXPERIMENT_E3_PLAN.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E3/EXPERIMENT_E3_PLAN.md",
+      "sha256": "005a0596a13fab2267d7f1d5e62f4b24fda8127d0aef3f65867851b5dcaf2525",
+      "bytes": 3507
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E3/EXPERIMENT_E3_RESULTS.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E3/EXPERIMENT_E3_RESULTS.md",
+      "sha256": "53de603e4815cec183ff66a45756e1096e80c1afdebd6f95501f3baf990009f3",
+      "bytes": 4120
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E3/MANUSCRIPT_IMPACT.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E3/MANUSCRIPT_IMPACT.md",
+      "sha256": "7944782edfd71634fc3e82123ac03d0532504a9e831ba81322fc801fc5b52957",
+      "bytes": 1274
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/ContractInstrumentation.java",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/ContractInstrumentation.java",
+      "sha256": "83391d8446e7a3efedecf460e4379239c4ce3297ba96c47e8d5e78d6b47ed0eb",
+      "bytes": 6020
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/build_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/build_android.py",
+      "sha256": "3f86680cdb9cfbc3a42268ef02a49ad3901edb9c464ccd7bad727b4a8155c4ac",
+      "bytes": 5432
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/codegen_one.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/codegen_one.py",
+      "sha256": "e4a2ef490591691ec6518c2d957fe7511cc3b89562574497cdd8fa82c6c7252e",
+      "bytes": 679
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/common.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/common.py",
+      "sha256": "b2e7bdd6bcf94beb94584df24dcd3d8634a4b4ec1f1865e1c163d44d77f0d5d7",
+      "bytes": 1711
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/prepare_e1.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/prepare_e1.py",
+      "sha256": "6a7f7eb6a9cb15ae61609f59c1a4c8fce5a09d1b155311ab7ab46c9b47ffb44d",
+      "bytes": 5722
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/prepare_e2.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/prepare_e2.py",
+      "sha256": "01a5b1d08d80f324896ae10aa526b69c111787f81a2f7b24ab889ff61c38bb73",
+      "bytes": 1598
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/run_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/run_android.py",
+      "sha256": "64add6c3dd8e60e58c0d56faf64fe8e71f44d0acd0c5cc24705c481e43ca73a5",
+      "bytes": 4184
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/summarize_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E3/implementation-snapshot/summarize_android.py",
+      "sha256": "8e868ea14cc58112ba4a03ee91c10ca5fac6e703e73480056e7222fd53244542",
+      "bytes": 6759
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E3/summarize_e3.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E3/summarize_e3.py",
+      "sha256": "251bb0a19c3cc145b97752b3102809617dd87bd4218db6ede852b70bd2ab9d35",
+      "bytes": 6444
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E3/task_consumer.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E3/task_consumer.py",
+      "sha256": "67886b4d0ce2c3239622878e548d43dccdce81663b366066bf335e1824b45cc6",
+      "bytes": 3094
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E3/task_one.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E3/task_one.py",
+      "sha256": "994549a126035a937d41cd1cce8cbf195396540ced06807992c68bf279b6d97d",
+      "bytes": 2495
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/EXPERIMENT_E4_PLAN.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/EXPERIMENT_E4_PLAN.md",
+      "sha256": "2de33f7d20aaa1897f95d05d680d0a5460a2d6453bb2cef9826b65d90c44c2a6",
+      "bytes": 858
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/EXPERIMENT_E4_RESULTS.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/EXPERIMENT_E4_RESULTS.md",
+      "sha256": "c485fc8864d539ea1b03a7243c8b45b23c1506fcf1b5781173f65c0a62f919be",
+      "bytes": 3914
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/MANUSCRIPT_IMPACT.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/MANUSCRIPT_IMPACT.md",
+      "sha256": "6c8f8cf9a395605207156cbaac2bc99cef0835d6241dcc80a31c8a453f109bd4",
+      "bytes": 1311
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/external_validation.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/external_validation.py",
+      "sha256": "d9c50f54ff8e19c499db7e5835b95b164504072b6ae674961d7382a430d40ef2",
+      "bytes": 8086
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/freeze_e4.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/freeze_e4.py",
+      "sha256": "2efea42996173461965f91d878318811b3b68f1bfead81ead13fbc6ac93d264b",
+      "bytes": 4899
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/ContractInstrumentation.java",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/ContractInstrumentation.java",
+      "sha256": "83391d8446e7a3efedecf460e4379239c4ce3297ba96c47e8d5e78d6b47ed0eb",
+      "bytes": 6020
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/build_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/build_android.py",
+      "sha256": "3f86680cdb9cfbc3a42268ef02a49ad3901edb9c464ccd7bad727b4a8155c4ac",
+      "bytes": 5432
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/codegen_one.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/codegen_one.py",
+      "sha256": "e4a2ef490591691ec6518c2d957fe7511cc3b89562574497cdd8fa82c6c7252e",
+      "bytes": 679
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/common.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/common.py",
+      "sha256": "b2e7bdd6bcf94beb94584df24dcd3d8634a4b4ec1f1865e1c163d44d77f0d5d7",
+      "bytes": 1711
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/prepare_e1.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/prepare_e1.py",
+      "sha256": "6a7f7eb6a9cb15ae61609f59c1a4c8fce5a09d1b155311ab7ab46c9b47ffb44d",
+      "bytes": 5722
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/prepare_e2.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/prepare_e2.py",
+      "sha256": "01a5b1d08d80f324896ae10aa526b69c111787f81a2f7b24ab889ff61c38bb73",
+      "bytes": 1598
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/run_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/run_android.py",
+      "sha256": "64add6c3dd8e60e58c0d56faf64fe8e71f44d0acd0c5cc24705c481e43ca73a5",
+      "bytes": 4184
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/summarize_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/implementation-snapshot/summarize_android.py",
+      "sha256": "8e868ea14cc58112ba4a03ee91c10ca5fac6e703e73480056e7222fd53244542",
+      "bytes": 6759
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/protocol/EXPERIMENT_E4_PLAN.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/protocol/EXPERIMENT_E4_PLAN.md",
+      "sha256": "2de33f7d20aaa1897f95d05d680d0a5460a2d6453bb2cef9826b65d90c44c2a6",
+      "bytes": 858
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/protocol/PREVALIDATION_PROTOCOL.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/protocol/PREVALIDATION_PROTOCOL.md",
+      "sha256": "9d16e1346e31ceeb938bb5ca90fd336a596b5e371706bb35eba31327adf0101c",
+      "bytes": 5768
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/protocol/candidates.json",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/protocol/candidates.json",
+      "sha256": "6620c836e564efae06856494982bbfd37fe36d7a9e786497f20109a94c1912b2",
+      "bytes": 5608
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/protocol/contracts.json",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/protocol/contracts.json",
+      "sha256": "7fe9e522a124a82ad666d6c0251c554c81676c9930c066cea2945f7f10540a73",
+      "bytes": 1537
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/protocol/existing-associated-file-procedure.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/protocol/existing-associated-file-procedure.py",
+      "sha256": "6a7f7eb6a9cb15ae61609f59c1a4c8fce5a09d1b155311ab7ab46c9b47ffb44d",
+      "bytes": 5722
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/protocol/existing-permutation-procedure.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/protocol/existing-permutation-procedure.py",
+      "sha256": "01a5b1d08d80f324896ae10aa526b69c111787f81a2f7b24ab889ff61c38bb73",
+      "bytes": 1598
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/protocol/mutation-rules.json",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/protocol/mutation-rules.json",
+      "sha256": "4801703fb78208e4e967ff26aa6c2beaac3df60083abcb6b227697756026c13e",
+      "bytes": 815
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/protocol/prior-exclusions.json",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/protocol/prior-exclusions.json",
+      "sha256": "9777b30adf7245d9a5c7190d61751709de0ca4445e8227a6ae154af852b25bf6",
+      "bytes": 2576
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/protocol/requirements.lock",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/protocol/requirements.lock",
+      "sha256": "f68fd4a56930ebe66cb592751cf88e13bd5cbf1278c8ffd358b66caa7685355b",
+      "bytes": 190
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/protocol/scripts/check_model.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/protocol/scripts/check_model.py",
+      "sha256": "1b039d8ac05e9095284c1aba983a56adec747c2fd15d2c2ef21c5b4d3d910e4d",
+      "bytes": 2292
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/protocol/scripts/codegen_one.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/protocol/scripts/codegen_one.py",
+      "sha256": "e4a2ef490591691ec6518c2d957fe7511cc3b89562574497cdd8fa82c6c7252e",
+      "bytes": 679
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/protocol/scripts/inspect_suite.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/protocol/scripts/inspect_suite.py",
+      "sha256": "90f6850e9a894a511baa0dd0347df2888088f95506c768b7d80b712ac9ac9508",
+      "bytes": 2096
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/protocol/scripts/suite_static.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/protocol/scripts/suite_static.py",
+      "sha256": "e0e3e023bdf01e1294626c85f61ae2ed340be67421670118b5bccb46d2648970",
+      "bytes": 9762
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E4/summarize_e4.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E4/summarize_e4.py",
+      "sha256": "dd7be5f1911cc1b75acf7dcc272bb0ac242e290afe43420b143fe3af7b8426d1",
+      "bytes": 5392
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E5/EXPERIMENT_E5_PLAN.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/EXPERIMENT_E5_PLAN.md",
+      "sha256": "d479194cc04be42d2be84dfa5ecb8238a57712e78a81b1c6dc576f26e79c20e2",
+      "bytes": 2955
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E5/EXPERIMENT_E5_RESULTS.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/EXPERIMENT_E5_RESULTS.md",
+      "sha256": "945e9509017ebee02aa8c8571efcb18df32bd6fab4662604abdbca9aafbca50e",
+      "bytes": 4664
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E5/MANUSCRIPT_IMPACT.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/MANUSCRIPT_IMPACT.md",
+      "sha256": "e07d1d714561ce007b0962fb40f79f9b712435de309ea784f342cc4dcaeaceab",
+      "bytes": 1343
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E5/evaluate_preflight.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/evaluate_preflight.py",
+      "sha256": "0ddf38e4a88a99a56f02074f5aa57ad1e477ab1fe99b55ab63905c92466d1549",
+      "bytes": 2828
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/ContractInstrumentation.java",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/ContractInstrumentation.java",
+      "sha256": "83391d8446e7a3efedecf460e4379239c4ce3297ba96c47e8d5e78d6b47ed0eb",
+      "bytes": 6020
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/build_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/build_android.py",
+      "sha256": "3f86680cdb9cfbc3a42268ef02a49ad3901edb9c464ccd7bad727b4a8155c4ac",
+      "bytes": 5432
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/codegen_one.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/codegen_one.py",
+      "sha256": "e4a2ef490591691ec6518c2d957fe7511cc3b89562574497cdd8fa82c6c7252e",
+      "bytes": 679
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/common.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/common.py",
+      "sha256": "b2e7bdd6bcf94beb94584df24dcd3d8634a4b4ec1f1865e1c163d44d77f0d5d7",
+      "bytes": 1711
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/prepare_e1.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/prepare_e1.py",
+      "sha256": "6a7f7eb6a9cb15ae61609f59c1a4c8fce5a09d1b155311ab7ab46c9b47ffb44d",
+      "bytes": 5722
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/prepare_e2.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/prepare_e2.py",
+      "sha256": "01a5b1d08d80f324896ae10aa526b69c111787f81a2f7b24ab889ff61c38bb73",
+      "bytes": 1598
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/run_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/run_android.py",
+      "sha256": "64add6c3dd8e60e58c0d56faf64fe8e71f44d0acd0c5cc24705c481e43ca73a5",
+      "bytes": 4184
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/summarize_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/implementation-snapshot/summarize_android.py",
+      "sha256": "8e868ea14cc58112ba4a03ee91c10ca5fac6e703e73480056e7222fd53244542",
+      "bytes": 6759
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E5/preflight.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/preflight.py",
+      "sha256": "8a149290196809e7cc0ed2ac642e212223f71ca4d46fb15dbd1976ce5c976166",
+      "bytes": 11659
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E5/summarize_e5.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/summarize_e5.py",
+      "sha256": "72f602c0463a12676e3e6036d4ec9c99cf915bbca193472b9374c54fb3d08e30",
+      "bytes": 6290
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/EXPERIMENT_HAND_PLAN.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/EXPERIMENT_HAND_PLAN.md",
+      "sha256": "40b65b073345988b1b11417a4b8bd9d79133572a52e58a8ccbfbb81fac1573cd",
+      "bytes": 3807
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/EXPERIMENT_HAND_RESULTS.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/EXPERIMENT_HAND_RESULTS.md",
+      "sha256": "3802f4afd1a04780d0fda9c5d93ef1aecfb9ffbeea7360e27a2a6aea3be37674",
+      "bytes": 4137
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/MANUSCRIPT_IMPACT.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/MANUSCRIPT_IMPACT.md",
+      "sha256": "94df6e1a7f5274dc965ba5ba5afb0e52d715d99a4e824d107dc15cb5af8865cb",
+      "bytes": 1292
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/REFERENCE_CHAIN.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/REFERENCE_CHAIN.md",
+      "sha256": "bd9c2a024b9267d9ed974773c533c30bf89dcecb4d779b6e6a6bb43a33f4e4a2",
+      "bytes": 1878
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/hand_task_one.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/hand_task_one.py",
+      "sha256": "7150d490cf7e0ee73233bf83fed5bbfac551146e743b62184a69aa7b3c80631a",
+      "bytes": 2541
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/ContractInstrumentation.java",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/ContractInstrumentation.java",
+      "sha256": "83391d8446e7a3efedecf460e4379239c4ce3297ba96c47e8d5e78d6b47ed0eb",
+      "bytes": 6020
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/build_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/build_android.py",
+      "sha256": "3f86680cdb9cfbc3a42268ef02a49ad3901edb9c464ccd7bad727b4a8155c4ac",
+      "bytes": 5432
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/codegen_one.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/codegen_one.py",
+      "sha256": "e4a2ef490591691ec6518c2d957fe7511cc3b89562574497cdd8fa82c6c7252e",
+      "bytes": 679
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/common.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/common.py",
+      "sha256": "b2e7bdd6bcf94beb94584df24dcd3d8634a4b4ec1f1865e1c163d44d77f0d5d7",
+      "bytes": 1711
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/prepare_e1.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/prepare_e1.py",
+      "sha256": "6a7f7eb6a9cb15ae61609f59c1a4c8fce5a09d1b155311ab7ab46c9b47ffb44d",
+      "bytes": 5722
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/prepare_e2.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/prepare_e2.py",
+      "sha256": "01a5b1d08d80f324896ae10aa526b69c111787f81a2f7b24ab889ff61c38bb73",
+      "bytes": 1598
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/run_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/run_android.py",
+      "sha256": "64add6c3dd8e60e58c0d56faf64fe8e71f44d0acd0c5cc24705c481e43ca73a5",
+      "bytes": 4184
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/summarize_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/implementation-snapshot/summarize_android.py",
+      "sha256": "8e868ea14cc58112ba4a03ee91c10ca5fac6e703e73480056e7222fd53244542",
+      "bytes": 6759
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/prepare_hand.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/prepare_hand.py",
+      "sha256": "9d29fb1154a1a229c807036975d3e24aa936b7727c39ee2ed70757d21fa54b02",
+      "bytes": 5121
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/requirements.lock",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/requirements.lock",
+      "sha256": "64e8f76a06dd1398a5aaaabe6bf25718c50a3e555adacc1332cace2d2d89f278",
+      "bytes": 431
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/run_hand_task.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/run_hand_task.py",
+      "sha256": "1674c3e42b05ef607fd119630b04e5b0440dd1e89509a7683e8ae293c6cab8fb",
+      "bytes": 1142
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/setup_hand_task.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/setup_hand_task.py",
+      "sha256": "d08f16c4b766ecabcef6a956007ccdbb31e767e015fce667b9a4bf65e0bcbef8",
+      "bytes": 1794
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/E7/summarize_hand.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/E7/summarize_hand.py",
+      "sha256": "361d932fa3fb0a4199c69de5874bb6617ad8f43e0db427c11f55d844be538b27",
+      "bytes": 5861
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E1_PLAN.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E1_PLAN.md",
+      "sha256": "6c0dd49921ea5459f17cfd99a2fad40a89c32063dd5c399f0a9f6be8897cdbc6",
+      "bytes": 5740
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E1_RESULTS.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E1_RESULTS.md",
+      "sha256": "3e0a585c6d9d3f72662fa39dd38e0609e8a35cd894c9f7266ea09aeeebd81ccb",
+      "bytes": 4013
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E2_PLAN.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E2_PLAN.md",
+      "sha256": "4a9693fd929173d4c1efcb4204e0ced32148e159e8713c79d0922a38d196bae0",
+      "bytes": 2700
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E2_RESULTS.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E2_RESULTS.md",
+      "sha256": "255d6b4e47beef65db021bc5d8281db95be5b7dc9acfff1832d73b9b97ab6c07",
+      "bytes": 4240
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E3_PLAN.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E3_PLAN.md",
+      "sha256": "005a0596a13fab2267d7f1d5e62f4b24fda8127d0aef3f65867851b5dcaf2525",
+      "bytes": 3507
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E3_RESULTS.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E3_RESULTS.md",
+      "sha256": "53de603e4815cec183ff66a45756e1096e80c1afdebd6f95501f3baf990009f3",
+      "bytes": 4120
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E4_PLAN.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E4_PLAN.md",
+      "sha256": "2de33f7d20aaa1897f95d05d680d0a5460a2d6453bb2cef9826b65d90c44c2a6",
+      "bytes": 858
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E4_RESULTS.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E4_RESULTS.md",
+      "sha256": "c485fc8864d539ea1b03a7243c8b45b23c1506fcf1b5781173f65c0a62f919be",
+      "bytes": 3914
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E5_PLAN.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E5_PLAN.md",
+      "sha256": "d479194cc04be42d2be84dfa5ecb8238a57712e78a81b1c6dc576f26e79c20e2",
+      "bytes": 2955
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E5_RESULTS.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_E5_RESULTS.md",
+      "sha256": "945e9509017ebee02aa8c8571efcb18df32bd6fab4662604abdbca9aafbca50e",
+      "bytes": 4664
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_HAND_PLAN.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_HAND_PLAN.md",
+      "sha256": "40b65b073345988b1b11417a4b8bd9d79133572a52e58a8ccbfbb81fac1573cd",
+      "bytes": 3807
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_HAND_RESULTS.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/EXPERIMENT_HAND_RESULTS.md",
+      "sha256": "3802f4afd1a04780d0fda9c5d93ef1aecfb9ffbeea7360e27a2a6aea3be37674",
+      "bytes": 4137
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/HUMAN_AUDIT.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/HUMAN_AUDIT.md",
+      "sha256": "0a9ac16e02f0e530e8c9922a9193b4a8a2846c5bf8bc8c39ba91b4556bf819c9",
+      "bytes": 4894
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/MANUSCRIPT_IMPACT.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/MANUSCRIPT_IMPACT.md",
+      "sha256": "373181030a695f5a7f146f41392918616d2b44d93d511b83d71c5149d89184cd",
+      "bytes": 5002
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/PHASE_DECISIONS.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/PHASE_DECISIONS.md",
+      "sha256": "6bc2fa3d298670c84fe82e3d19d096cd9eaa35674cdbb45a8c5508a46731142e",
+      "bytes": 2373
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/PREVALIDATION_PROTOCOL.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/PREVALIDATION_PROTOCOL.md",
+      "sha256": "9d16e1346e31ceeb938bb5ca90fd336a596b5e371706bb35eba31327adf0101c",
+      "bytes": 5768
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/REPORTING_CLARIFICATIONS.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/REPORTING_CLARIFICATIONS.md",
+      "sha256": "bc95f7c71e38b89bc45effbfc9e0480715da8f1bdc791c8b5a6b04a97798bb13",
+      "bytes": 2702
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/REPRODUCE.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/REPRODUCE.md",
+      "sha256": "d75ba8ba54463d62978ab188ea747d9ed5cda8c5c6f1d31831a109605754f804",
+      "bytes": 9042
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/RESULTS_OVERVIEW.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/RESULTS_OVERVIEW.md",
+      "sha256": "296de7a6cdb1f857f415fbf1ad1b7dced2a3e6d9da145355801686f14d9821ca",
+      "bytes": 6943
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/commands.sh",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/commands.sh",
+      "sha256": "ecbc524008ada18a94346e3b98b4ef1fe1e879095c43a983cfa3c4f0a8f60ff4",
+      "bytes": 627
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/phase0/AUDIT_ADDENDUM.md",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/phase0/AUDIT_ADDENDUM.md",
+      "sha256": "08c24c8a0cd2f6ad0c9352c04657f923dd8eb186747d0fca2d5581fe3e74a156",
+      "bytes": 724
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/ContractInstrumentation.java",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/ContractInstrumentation.java",
+      "sha256": "83391d8446e7a3efedecf460e4379239c4ce3297ba96c47e8d5e78d6b47ed0eb",
+      "bytes": 6020
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/build_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/build_android.py",
+      "sha256": "3f86680cdb9cfbc3a42268ef02a49ad3901edb9c464ccd7bad727b4a8155c4ac",
+      "bytes": 5432
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/codegen_one.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/codegen_one.py",
+      "sha256": "e4a2ef490591691ec6518c2d957fe7511cc3b89562574497cdd8fa82c6c7252e",
+      "bytes": 679
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/common.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/common.py",
+      "sha256": "b2e7bdd6bcf94beb94584df24dcd3d8634a4b4ec1f1865e1c163d44d77f0d5d7",
+      "bytes": 1711
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/evaluate_preflight.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/evaluate_preflight.py",
+      "sha256": "0ddf38e4a88a99a56f02074f5aa57ad1e477ab1fe99b55ab63905c92466d1549",
+      "bytes": 2828
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/external_validation.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/external_validation.py",
+      "sha256": "d9c50f54ff8e19c499db7e5835b95b164504072b6ae674961d7382a430d40ef2",
+      "bytes": 8086
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/freeze_e4.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/freeze_e4.py",
+      "sha256": "2efea42996173461965f91d878318811b3b68f1bfead81ead13fbc6ac93d264b",
+      "bytes": 4899
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/hand_task_one.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/hand_task_one.py",
+      "sha256": "7150d490cf7e0ee73233bf83fed5bbfac551146e743b62184a69aa7b3c80631a",
+      "bytes": 2541
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/preflight.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/preflight.py",
+      "sha256": "8a149290196809e7cc0ed2ac642e212223f71ca4d46fb15dbd1976ce5c976166",
+      "bytes": 11659
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/prepare_e1.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/prepare_e1.py",
+      "sha256": "6a7f7eb6a9cb15ae61609f59c1a4c8fce5a09d1b155311ab7ab46c9b47ffb44d",
+      "bytes": 5722
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/prepare_e2.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/prepare_e2.py",
+      "sha256": "01a5b1d08d80f324896ae10aa526b69c111787f81a2f7b24ab889ff61c38bb73",
+      "bytes": 1598
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/prepare_hand.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/prepare_hand.py",
+      "sha256": "9d29fb1154a1a229c807036975d3e24aa936b7727c39ee2ed70757d21fa54b02",
+      "bytes": 5121
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/run_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/run_android.py",
+      "sha256": "64add6c3dd8e60e58c0d56faf64fe8e71f44d0acd0c5cc24705c481e43ca73a5",
+      "bytes": 4184
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/run_hand_task.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/run_hand_task.py",
+      "sha256": "1674c3e42b05ef607fd119630b04e5b0440dd1e89509a7683e8ae293c6cab8fb",
+      "bytes": 1142
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/seal_delivery.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/seal_delivery.py",
+      "sha256": "370ed406eae07b9caf2db85df2ee3658787d9037ff8de414b4cdcf6b0c061100",
+      "bytes": 2133
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/seal_experiment.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/seal_experiment.py",
+      "sha256": "9e5ce58896c8e4bd8d97ddb1e2a8adf26279da7af8f4ebe4def909039d717f09",
+      "bytes": 1277
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/setup_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/setup_android.py",
+      "sha256": "e8c364b01777ce16a759899efa1bab3cba9179b32194d6a83e56b1f718ab35f5",
+      "bytes": 4170
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/setup_hand_task.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/setup_hand_task.py",
+      "sha256": "d08f16c4b766ecabcef6a956007ccdbb31e767e015fce667b9a4bf65e0bcbef8",
+      "bytes": 1794
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/start_emulator.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/start_emulator.py",
+      "sha256": "f6c4cc7aa53ee7adfb386f2ad61d9785379f7b3ecbb2a026dc1686dfaa331525",
+      "bytes": 2534
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/summarize_android.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/summarize_android.py",
+      "sha256": "8e868ea14cc58112ba4a03ee91c10ca5fac6e703e73480056e7222fd53244542",
+      "bytes": 6759
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/summarize_e3.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/summarize_e3.py",
+      "sha256": "251bb0a19c3cc145b97752b3102809617dd87bd4218db6ede852b70bd2ab9d35",
+      "bytes": 6444
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/summarize_e4.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/summarize_e4.py",
+      "sha256": "dd7be5f1911cc1b75acf7dcc272bb0ac242e290afe43420b143fe3af7b8426d1",
+      "bytes": 5392
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/summarize_e5.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/summarize_e5.py",
+      "sha256": "72f602c0463a12676e3e6036d4ec9c99cf915bbca193472b9374c54fb3d08e30",
+      "bytes": 6290
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/summarize_hand.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/summarize_hand.py",
+      "sha256": "361d932fa3fb0a4199c69de5874bb6617ad8f43e0db427c11f55d844be538b27",
+      "bytes": 5861
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/task_consumer.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/task_consumer.py",
+      "sha256": "67886b4d0ce2c3239622878e548d43dccdce81663b366066bf335e1824b45cc6",
+      "bytes": 3094
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/task_one.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/task_one.py",
+      "sha256": "994549a126035a937d41cd1cce8cbf195396540ced06807992c68bf279b6d97d",
+      "bytes": 2495
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/verify_delivery.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/verify_delivery.py",
+      "sha256": "7173849cb205b4a1e0508d2ac4328323b91752c55e26bf8df76384b157f809c2",
+      "bytes": 10372
+    },
+    {
+      "repository_path": "sources/metadata-contract-e2e-20261004T030536Z/scripts/verify_existing.py",
+      "original_path": "/workspace/metadata-contract-e2e-20261004T030536Z/scripts/verify_existing.py",
+      "sha256": "440b106938e226af463db340852da8e3e7d8d669014d051297c9e554ee20974d",
+      "bytes": 6755
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/README.md",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/README.md",
+      "sha256": "48c76d14f1d3b048f3c937ae42393854cebcbd521bad2857efba474763a491ef",
+      "bytes": 1433
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/REVISION_NOTES.md",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/REVISION_NOTES.md",
+      "sha256": "c7eeccce23d96061e6ce44536c839ab553a995b234891bac48b9159505d53f10",
+      "bytes": 2374
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/TODO.after.md",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/TODO.after.md",
+      "sha256": "4a027aaadee0dd2f1b2962e0aa109eae12d064d6f0bb7323d079c3f2b4ff2cdc",
+      "bytes": 12060
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/TODO.before.md",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/TODO.before.md",
+      "sha256": "c6031283fb17c82122c68aeb25d6acdb16f7121c1f09deb9a7a1952dfb1d74de",
+      "bytes": 11587
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/build.sh",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/build.sh",
+      "sha256": "7fe838c51bbbeeff188d0d1c564b4ffd2fd7e26147b66f843dd1fccc8c5da4ec",
+      "bytes": 706
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/commands.sh",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/commands.sh",
+      "sha256": "5085fcd75f7d9daaf8bedb5a3fff8379d7e7ac97c03a4647956df58ba0bce1a3",
+      "bytes": 879
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/manuscript-changes.patch",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/manuscript-changes.patch",
+      "sha256": "b503310d1c597ad2fb75e0bd500bd75dda36f6d786e907c02d0d66c4adadc013",
+      "bytes": 35208
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/manuscript/paper.tex",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/manuscript/paper.tex",
+      "sha256": "390445a494c24cf9e9069ca3d5ab62e4d0174587f631856b764846d54908782d",
+      "bytes": 43613
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/review/RESOLUTION.md",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/review/RESOLUTION.md",
+      "sha256": "6d6eecfbd0f6cc01f5ac962cc66e6cf72ef6f47fd125482117ce4a00aa96b0c6",
+      "bytes": 831
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/review/rebuild-evidence-proposal.txt",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/review/rebuild-evidence-proposal.txt",
+      "sha256": "c1b867685ad579389b22b07d4afd5b6e6cf8e14b9febe0992352b409353a8bde",
+      "bytes": 2967
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/review/related-work-proposal.txt",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/review/related-work-proposal.txt",
+      "sha256": "bddb4267d3bf4d94ee7c76c204b87d6fec01ea5eeb21c33687c5e145c643cf1d",
+      "bytes": 5202
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/scripts/finalize_revision.py",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/scripts/finalize_revision.py",
+      "sha256": "37034528fe5a6ba9d8ad036abe6d84aee8a65cc6d31d67b9b1261d974a5f3533",
+      "bytes": 13668
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/scripts/revise_manuscript.py",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/scripts/revise_manuscript.py",
+      "sha256": "dcae063f36010ada23703d2469afe84a5c8e75bfd5ef0a271ec5ac7a0f4671d6",
+      "bytes": 15970
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/scripts/seal_revision.py",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/scripts/seal_revision.py",
+      "sha256": "4c6622433e59f9f6bae71b630800f301b3ae6d4466356daae48a7fc91e79bae0",
+      "bytes": 764
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/scripts/verify_revision.py",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/scripts/verify_revision.py",
+      "sha256": "bc2b6f834960687896649e1fa02bf99674174eb3f6c6d06f196da65226e4f90c",
+      "bytes": 16629
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-revision-20261004T065132Z/verification/CHECK_NOTES.md",
+      "original_path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/verification/CHECK_NOTES.md",
+      "sha256": "478bf8e890e687ed8bbc1b645a84b89a61397a7a5ac54a639eb0e20c9637969f",
+      "bytes": 661
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-rewrite-20261004T052625Z/README.txt",
+      "original_path": "/workspace/metadata-contract-paper-rewrite-20261004T052625Z/README.txt",
+      "sha256": "77eebe06cdecbc8991943834ff8206287bc69fc061d528310cd41ff04dc07c6d",
+      "bytes": 1677
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-rewrite-20261004T052625Z/REVISION_NOTES.txt",
+      "original_path": "/workspace/metadata-contract-paper-rewrite-20261004T052625Z/REVISION_NOTES.txt",
+      "sha256": "de64a38692b24fceb06550fb64184447fdf0eacf9e0564e7bc605aacd3c55fe3",
+      "bytes": 3112
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-rewrite-20261004T052625Z/build.sh",
+      "original_path": "/workspace/metadata-contract-paper-rewrite-20261004T052625Z/build.sh",
+      "sha256": "7fe838c51bbbeeff188d0d1c564b4ffd2fd7e26147b66f843dd1fccc8c5da4ec",
+      "bytes": 706
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-rewrite-20261004T052625Z/manuscript/paper.tex",
+      "original_path": "/workspace/metadata-contract-paper-rewrite-20261004T052625Z/manuscript/paper.tex",
+      "sha256": "35c8dfe8173b84e7410e6d8ae348791a503351ce74d537368cededd2a62897bd",
+      "bytes": 35996
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-rewrite-20261004T052625Z/scripts/seal_rewrite.py",
+      "original_path": "/workspace/metadata-contract-paper-rewrite-20261004T052625Z/scripts/seal_rewrite.py",
+      "sha256": "d5ac7de868866813b7db80df9623ac30905b230ebef7bc41d794cdbc37889c9c",
+      "bytes": 1563
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper-rewrite-20261004T052625Z/scripts/verify_rewrite.py",
+      "original_path": "/workspace/metadata-contract-paper-rewrite-20261004T052625Z/scripts/verify_rewrite.py",
+      "sha256": "906f93e45493fd54c2255fcfc824654d0b6069c94c5f8f9a35d9cb29187ddc60",
+      "bytes": 11811
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/REPRODUCE.txt",
+      "original_path": "/workspace/metadata-contract-paper/REPRODUCE.txt",
+      "sha256": "8cee7eddbefbf8c5ac4150a948b205e4e6dcdd4f68e5c7b5b5af3cbb42d40e0a",
+      "bytes": 4508
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/contracts.json",
+      "original_path": "/workspace/metadata-contract-paper/contracts.json",
+      "sha256": "7fe9e522a124a82ad666d6c0251c554c81676c9930c066cea2945f7f10540a73",
+      "bytes": 1537
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/manuscript/baselines.tex",
+      "original_path": "/workspace/metadata-contract-paper/manuscript/baselines.tex",
+      "sha256": "82dfbdfcb3c47f88f59c9c2b5c966579621f1b49119a3a1bb8fb3aca654eff1c",
+      "bytes": 557
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/manuscript/interventions.tex",
+      "original_path": "/workspace/metadata-contract-paper/manuscript/interventions.tex",
+      "sha256": "279d04b931aca2489f87097a697e8c01b113c4923e6c120911519a3bee9d59dc",
+      "bytes": 323
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/manuscript/paper.tex",
+      "original_path": "/workspace/metadata-contract-paper/manuscript/paper.tex",
+      "sha256": "16385b61700ff2b89a9f1dfe40bd6a44b19e8b30db48b777f6c361d787b6b06c",
+      "bytes": 25132
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/protocol.json",
+      "original_path": "/workspace/metadata-contract-paper/protocol.json",
+      "sha256": "8e6da85c8800dc4c46ff329f4317e20fcd81fb73f803d857dffd61e9c4d7de10",
+      "bytes": 4777
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/requirements.lock",
+      "original_path": "/workspace/metadata-contract-paper/requirements.lock",
+      "sha256": "f68fd4a56930ebe66cb592751cf88e13bd5cbf1278c8ffd358b66caa7685355b",
+      "bytes": 190
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/scripts/DecoderProbe.java",
+      "original_path": "/workspace/metadata-contract-paper/scripts/DecoderProbe.java",
+      "sha256": "97337d45c866a22461bc6857a48661147d5dba013488e84f4d09490a73f14604",
+      "bytes": 1831
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/scripts/build_artifacts.py",
+      "original_path": "/workspace/metadata-contract-paper/scripts/build_artifacts.py",
+      "sha256": "11eed6b54d2abec140f493ae6f0ab610f185b643075c18e419cadb8998058668",
+      "bytes": 2779
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/scripts/check_model.py",
+      "original_path": "/workspace/metadata-contract-paper/scripts/check_model.py",
+      "sha256": "1b039d8ac05e9095284c1aba983a56adec747c2fd15d2c2ef21c5b4d3d910e4d",
+      "bytes": 2292
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/scripts/codegen_one.py",
+      "original_path": "/workspace/metadata-contract-paper/scripts/codegen_one.py",
+      "sha256": "e4a2ef490591691ec6518c2d957fe7511cc3b89562574497cdd8fa82c6c7252e",
+      "bytes": 679
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/scripts/fetch_suite.py",
+      "original_path": "/workspace/metadata-contract-paper/scripts/fetch_suite.py",
+      "sha256": "367126982a77feb19072e1971a6e9739245d82f7d139c744d232a7699a717285",
+      "bytes": 2665
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/scripts/inspect_suite.py",
+      "original_path": "/workspace/metadata-contract-paper/scripts/inspect_suite.py",
+      "sha256": "90f6850e9a894a511baa0dd0347df2888088f95506c768b7d80b712ac9ac9508",
+      "bytes": 2096
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/scripts/paper_tables.py",
+      "original_path": "/workspace/metadata-contract-paper/scripts/paper_tables.py",
+      "sha256": "124cc1b9a4b46c511881d76d18a1dd4c5f7700563495c30fd3a1be0eb16a93b6",
+      "bytes": 1973
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/scripts/runtime_one.py",
+      "original_path": "/workspace/metadata-contract-paper/scripts/runtime_one.py",
+      "sha256": "dffde7cdd08a47eea94506eaabe475a2758464363faff91aa28f9ad7cfffecd7",
+      "bytes": 1378
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/scripts/suite_compile.py",
+      "original_path": "/workspace/metadata-contract-paper/scripts/suite_compile.py",
+      "sha256": "4f55e37cda7f512cece13d98edc0f80b97883d08d3ad305eafebc106d4bcc286",
+      "bytes": 1843
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/scripts/suite_decoder.py",
+      "original_path": "/workspace/metadata-contract-paper/scripts/suite_decoder.py",
+      "sha256": "f030c9a9840093e80797eea7a688d075c15148d0fc1d8373ae1efa8bb4545edc",
+      "bytes": 2518
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/scripts/suite_index.py",
+      "original_path": "/workspace/metadata-contract-paper/scripts/suite_index.py",
+      "sha256": "8844e3c070a3b4ee9797d26dbbaaa8299ca44387f151e2949e5505a99da368f2",
+      "bytes": 1833
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/scripts/suite_runtime.py",
+      "original_path": "/workspace/metadata-contract-paper/scripts/suite_runtime.py",
+      "sha256": "c78d9771cac4564378a3910e606fa37cb1f18ead6d94c945f82a1404f4f46b2a",
+      "bytes": 3171
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/scripts/suite_static.py",
+      "original_path": "/workspace/metadata-contract-paper/scripts/suite_static.py",
+      "sha256": "e0e3e023bdf01e1294626c85f61ae2ed340be67421670118b5bccb46d2648970",
+      "bytes": 9762
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/scripts/summarize.py",
+      "original_path": "/workspace/metadata-contract-paper/scripts/summarize.py",
+      "sha256": "458582f1057c688a2ce1db9a936a5040b5478eab0e28d199aecfbd6da73eaed4",
+      "bytes": 4666
+    },
+    {
+      "repository_path": "sources/metadata-contract-paper/研究说明.txt",
+      "original_path": "/workspace/metadata-contract-paper/研究说明.txt",
+      "sha256": "bd762a9fa81a59d9fc5be8f956acf512321045a1a79092b775514613baf92e86",
+      "bytes": 4111
+    }
+  ],
+  "excluded": "SDKs, installed dependencies, emulator images/state, third-party source copies, generated wrappers, model assets, raw results, execution logs, build outputs, archives, keys and credentials."
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "C01",
+    "url": "https://storage.googleapis.com/mediapipe-models/image_classifier/efficientnet_lite0/int8/1/efficientnet_lite0.tflite",
+    "task_family": "image_classifier",
+    "model_name": "efficientnet_lite0",
+    "declared_precision_in_url": "int8"
+  },
+  {
+    "id": "C02",
+    "url": "https://storage.googleapis.com/mediapipe-models/image_classifier/efficientnet_lite0/float16/1/efficientnet_lite0.tflite",
+    "task_family": "image_classifier",
+    "model_name": "efficientnet_lite0",
+    "declared_precision_in_url": "float16"
+  },
+  {
+    "id": "C03",
+    "url": "https://storage.googleapis.com/mediapipe-models/image_classifier/efficientnet_lite2/float32/1/efficientnet_lite2.tflite",
+    "task_family": "image_classifier",
+    "model_name": "efficientnet_lite2",
+    "declared_precision_in_url": "float32"
+  },
+  {
+    "id": "C04",
+    "url": "https://storage.googleapis.com/mediapipe-models/image_classifier/efficientnet_lite2/int8/1/efficientnet_lite2.tflite",
+    "task_family": "image_classifier",
+    "model_name": "efficientnet_lite2",
+    "declared_precision_in_url": "int8"
+  },
+  {
+    "id": "C05",
+    "url": "https://storage.googleapis.com/mediapipe-models/image_classifier/efficientnet_lite2/float16/1/efficientnet_lite2.tflite",
+    "task_family": "image_classifier",
+    "model_name": "efficientnet_lite2",
+    "declared_precision_in_url": "float16"
+  },
+  {
+    "id": "C06",
+    "url": "https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite0/int8/1/efficientdet_lite0.tflite",
+    "task_family": "object_detector",
+    "model_name": "efficientdet_lite0",
+    "declared_precision_in_url": "int8"
+  },
+  {
+    "id": "C07",
+    "url": "https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite2/float32/1/efficientdet_lite2.tflite",
+    "task_family": "object_detector",
+    "model_name": "efficientdet_lite2",
+    "declared_precision_in_url": "float32"
+  },
+  {
+    "id": "C08",
+    "url": "https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite2/int8/1/efficientdet_lite2.tflite",
+    "task_family": "object_detector",
+    "model_name": "efficientdet_lite2",
+    "declared_precision_in_url": "int8"
+  },
+  {
+    "id": "C09",
+    "url": "https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite2/float16/1/efficientdet_lite2.tflite",
+    "task_family": "object_detector",
+    "model_name": "efficientdet_lite2",
+    "declared_precision_in_url": "float16"
+  },
+  {
+    "id": "C10",
+    "url": "https://storage.googleapis.com/mediapipe-models/object_detector/ssd_mobilenet_v2/float32/1/ssd_mobilenet_v2.tflite",
+    "task_family": "object_detector",
+    "model_name": "ssd_mobilenet_v2",
+    "declared_precision_in_url": "float32"
+  },
+  {
+    "id": "C11",
+    "url": "https://storage.googleapis.com/mediapipe-models/object_detector/ssd_mobilenet_v2/int8/1/ssd_mobilenet_v2.tflite",
+    "task_family": "object_detector",
+    "model_name": "ssd_mobilenet_v2",
+    "declared_precision_in_url": "int8"
+  },
+  {
+    "id": "C12",
+    "url": "https://storage.googleapis.com/mediapipe-models/face_detector/blaze_face_short_range/float16/1/blaze_face_short_range.tflite",
+    "task_family": "face_detector",
+    "model_name": "blaze_face_short_range",
+    "declared_precision_in_url": "float16"
+  },
+  {
+    "id": "C13",
+    "url": "https://storage.googleapis.com/mediapipe-models/face_detector/blaze_face_full_range_sparse/float16/1/blaze_face_full_range_sparse.tflite",
+    "task_family": "face_detector",
+    "model_name": "blaze_face_full_range_sparse",
+    "declared_precision_in_url": "float16"
+  },
+  {
+    "id": "C14",
+    "url": "https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter/float16/1/selfie_segmenter.tflite",
+    "task_family": "image_segmenter",
+    "model_name": "selfie_segmenter",
+    "declared_precision_in_url": "float16"
+  },
+  {
+    "id": "C15",
+    "url": "https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter_landscape/float16/1/selfie_segmenter_landscape.tflite",
+    "task_family": "image_segmenter",
+    "model_name": "selfie_segmenter_landscape",
+    "declared_precision_in_url": "float16"
+  },
+  {
+    "id": "C16",
+    "url": "https://storage.googleapis.com/mediapipe-models/image_segmenter/hair_segmenter/float32/1/hair_segmenter.tflite",
+    "task_family": "image_segmenter",
+    "model_name": "hair_segmenter",
+    "declared_precision_in_url": "float32"
+  },
+  {
+    "id": "C17",
+    "url": "https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/1/selfie_multiclass_256x256.tflite",
+    "task_family": "image_segmenter",
+    "model_name": "selfie_multiclass_256x256",
+    "declared_precision_in_url": "float32"
+  },
+  {
+    "id": "C18",
+    "url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_full/float16/1/pose_landmarker_full.task",
+    "task_family": "pose_landmarker",
+    "model_name": "pose_landmarker_full",
+    "declared_precision_in_url": "float16"
+  },
+  {
+    "id": "C19",
+    "url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_heavy/float16/1/pose_landmarker_heavy.task",
+    "task_family": "pose_landmarker",
+    "model_name": "pose_landmarker_heavy",
+    "declared_precision_in_url": "float16"
+  },
+  {
+    "id": "C20",
+    "url": "https://storage.googleapis.com/mediapipe-models/audio_classifier/yamnet/float32/1/yamnet.tflite",
+    "task_family": "audio_classifier",
+    "model_name": "yamnet",
+    "declared_precision_in_url": "float32"
+  }
+]

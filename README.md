@@ -1,33 +1,58 @@
-# Hand Landmark Metadata Research Artifacts
+# landmark-metadata
 
-Partial snapshot uploaded on 2026-10-04 at the author's request.
+Source repository for **From Model Metadata to Executable Interfaces:
+A Controlled Study of Tensor Binding and Decoder Contracts**.
 
-## Included
+The user requested **source only**: no SDK, emulator, model, raw execution data,
+or build products are uploaded. This repository holds research code, manuscript
+source and continuation documents, **not the complete evidence archive**.
 
-- [Research TODO](artifacts/research_todo_metadata_contract.html): complete HTML source recovered from `research_todo_metadata_contract.html` (22,013 UTF-8 bytes).
-- [paper.pdf text extract](artifacts/paper.pdf.extracted.txt): complete text returned for all 5 pages of `paper.pdf`.
-- [paper1.pdf text extract](artifacts/paper1.pdf.extracted.txt): complete text returned for all 7 pages of `paper1.pdf`.
+## Start here
 
-The two `.pdf.extracted.txt` files are text extractions, **not original PDFs**, regenerated PDFs, or manuscript source. Page markers and extraction artifacts are preserved. PDF layout, embedded images, and exact PDF bytes are not preserved. The original PDF downloads failed, so no PDF binaries are claimed to be included.
+- [Current manuscript source](sources/metadata-contract-paper-revision-20261004T065132Z/manuscript/paper.tex)
+- [Project memory and current evidence boundaries](MEMORY.md)
+- [Current TODO](TODO.md)
+- [Decisions and scope](docs/DECISIONS.md)
+- [Future agent instructions](AGENTS.md)
+- [Exact source import paths and SHA-256 hashes](docs/SOURCE_IMPORT.json)
 
-The HTML source was recovered through a full text read; its UTF-8 byte count matches the source file metadata. Byte-for-byte comparison against a downloaded original was not possible.
+## Code map
 
-## Completeness and research status
+| Source area | Purpose |
+|---|---|
+| [Initial Hand scripts](sources/hand-contract-repro/scripts) | Graph-preserving mutations, static binding, isolated decoder and replay work |
+| [Earlier corpus/checker scripts](sources/metadata-contract-paper/scripts) | Metadata inspection, mutation, generation, CPU and decoder experiments |
+| [E1–E7 scripts](sources/metadata-contract-e2e-20261004T030536Z/scripts) | Actual Android harness, classifier interventions, Task comparison, frozen external checks and Hand boundary experiment |
+| [Frozen E4 protocol](sources/metadata-contract-e2e-20261004T030536Z/E4/protocol) | Predeclared candidates, scope, mutation rules and source snapshots |
+| [Agent audit](sources/metadata-contract-audit-20261004T062010Z) | Preservation checks, fresh build scripts, baseline comparison and claim/literature audit scripts |
+| [Current manuscript revision](sources/metadata-contract-paper-revision-20261004T065132Z) | LaTeX, editorial scripts and revision notes |
 
-This repository is **not yet the complete reproducibility package**. The full experiment/source/log trees, manuscript source, models and fixtures, generated Java/classes/DEX, APKs, raw inputs/outputs, dependency archives, source-reference snapshots, and evidence/checksum bundles were not accessible for this upload. The latest in-progress manuscript revision is also not included.
+`sources/` retains original timestamped names and source bytes. Per-experiment
+implementation snapshots are intentional historical versions, not extra models.
+Text reports explain the history; the raw evidence they reference stays outside
+this repository. Older HTML TODO and PDF text extracts have been removed from
+the current tree; Git history retains them. `TODO.md` is the single active plan.
+Old TODO copies inside timestamped source snapshots are historical records,
+not current instructions. See [cleanup notes](docs/REPOSITORY_CLEANUP.md).
 
-Statements in the preserved drafts about artifacts being archived describe their original research workspace; they do not establish that those artifacts are present here. These working drafts retain their original limitations and pending human-review status. No new experiments, scientific validation, or reproduction were performed for this upload.
+## Use and limits
 
-The three source filenames were `research_todo_metadata_contract.html`, `paper.pdf`, and `paper1.pdf`. No filenames or contents have been invented to stand in for unavailable original artifacts.
+Imported scripts may reference original `/workspace/...` paths and missing local
+artifacts. They are preserved for inspection and continuation, not presented as
+a turnkey clean-machine reproduction. Install/recover prerequisites separately
+and review paths before running. Do not execute historical sealing/finalization
+scripts against immutable evidence.
 
-## Integrity
+The current paper source can be compiled in a **separate work directory** with
+a suitable TeX installation. It is a generic reading draft; human review and
+venue-specific formatting remain pending.
 
-`SHA256SUMS` records SHA-256 hashes of the three uploaded artifact files. For the PDF extracts these hashes identify the text files only, not their source PDFs. Run from the repository root:
+Run `python scripts/check_source_tree.py` for source integrity, syntax and
+source-only scope checks. No model experiment is executed by that command.
+`scripts/import_workspace_sources.py` records how this source snapshot was
+selected; it requires the original local workspace and refuses to overwrite
+changed imported files.
 
-```sh
-sha256sum -c SHA256SUMS
-```
-
-## Remaining import
-
-Import the original PDFs and complete project/evidence archives when available, preserving historical revisions separately from the current manuscript revision. Until that happens, use this repository as a partial document snapshot, not an independently runnable reproduction.
+Future work should save source, TODO updates, concise decisions and continuation
+notes here under the same source-only rule. Large evidence and build outputs
+remain excluded unless the user explicitly changes that scope.

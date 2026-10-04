@@ -1,0 +1,13 @@
+--- sealed/prepare_e2.py
++++ audit/prepare_e2.py
+@@ -3,8 +3,8 @@
+ from prepare_e1 import prepare, rewrite_associated, associated
+ 
+ def main():
+-    # Gate execution on complete E1 primary and replay, including all four variants.
+-    for run in ['primary','replay']:
++    # Audit scope: gate on complete fresh E1 primary; historical same-APK replay is not required.
++    for run in ['primary']:
+         rows=json.loads((ROOT/'E1/executions'/run/'results.json').read_text());assert len(rows)==4
+         for r in rows:
+             assert r['load_status']=='PASS' and r['inference_status']=='PASS'

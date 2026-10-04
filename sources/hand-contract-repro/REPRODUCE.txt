@@ -1,0 +1,64 @@
+Hand output-index contract: fresh experiments, 2026-10-03
+
+Read report.html and results/*.json for the results and evidence boundaries.
+The primary script suite ran once, and then ran again in an empty generated-output
+workspace with the same operator and dependency environment. The fresh replay is
+not independent researcher validation. The supplied historical R15-R17 review files
+were unavailable and their agreement/adjudication records were not reconstructed.
+
+Run in this prepared workspace:
+  cd /workspace/hand-contract-repro
+  .venv/bin/python scripts/run_all.py
+
+The script checks the original component digest, regenerates all four variants,
+runs the public MetadataPopulator path, generates Java, records unmodified javac
+failures, applies the same four separator edits, compiles wrappers and consumer,
+inspects bytecode, runs 48 CPU invocations, and runs the isolated JVM decoder probe.
+Existing generated outputs and per-stage results will be replaced. Preserve a copy
+of the evidence archive before rerunning if you need to retain this run's records.
+
+To restore after unpacking the evidence archive on Linux x86_64:
+  uv python install 3.11.16
+  uv venv --python 3.11.16 .venv
+  uv pip install --python .venv/bin/python -r requirements.lock
+  .venv/bin/python scripts/restore_toolchain.py
+  .venv/bin/python scripts/run_all.py
+
+The archive includes the exact original model, swapped model, versioned official
+task bundle, downloaded contract sources, generated and repaired Java, real Java
+dependency jars, class files, logs, numerical input/output arrays, and per-file
+SHA-256 hashes. Description and swap-back fixtures can be rebuilt from original.
+Python distributions, Python wheels, and the JDK tarball are not in the compact
+archive. Python dependency versions are fixed but their wheels are not hash-locked
+or durably archived here; restoration needs package hosts. The exact JDK download
+URL and digest are recorded. This is not a fully offline or permanently archived
+toolchain, and it does not by itself close the draft's historical G2 gate.
+
+REPRO_JDK can point to another JDK directory, but that is a different toolchain.
+The tested JDK is Temurin OpenJDK 17.0.12+7, with javac --release 8.
+The tested runtime is tflite-runtime 2.14.0, NumPy 1.26.4, one CPU thread, default
+runtime configuration (XNNPACK delegate creation reported). Java TFLite API 2.13.0
+is used only for compile/probe dependencies; Java/Android model inference is not run.
+
+Core boundaries:
+* 12 synthetic inputs are mechanism/equivalence checks, not hand-recognition data.
+* A metadata-only index exchange is a counterfactual, not a complete model repair.
+* The JVM probe executes TensorLabel and DequantizeOp directly using actual CPU
+  output arrays. It does not instantiate the generated Android model wrapper.
+* The [1,2] decoder positive control is synthetic and is not a semantic adapter.
+* Reference metadata was checked for three cited works; no exhaustive novelty
+  search or full prior-art review was performed.
+
+The archived scripts/fetch_inputs.py can fetch current official inputs. Do not
+replace preserved artifacts casually: latest is mutable. static_experiment.py
+refuses an original model with a digest different from the targeted case.
+
+Archive integrity:
+  python scripts/verify_manifest.py
+
+Fresh generated-workspace replay on this host:
+  .venv/bin/python scripts/fresh_replay.py
+This reuses the installed Python environment, JDK, and dependency jars, and compares
+normalized results (excluding differing command paths). Its default fresh directory
+is under /workspace. No generated Java, patched Java, compiled class, or inference
+output is copied into that directory before the run.

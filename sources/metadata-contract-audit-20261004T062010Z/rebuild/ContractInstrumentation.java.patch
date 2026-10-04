@@ -1,0 +1,29 @@
+--- sealed/ContractInstrumentation.java
++++ audit/ContractInstrumentation.java
+@@ -6,6 +6,8 @@
+ import android.os.Bundle;
+ import android.util.Log;
+ import java.io.File;
++import java.io.InputStream;
++import java.io.ByteArrayOutputStream;
+ import java.io.FileOutputStream;
+ import java.io.PrintWriter;
+ import java.io.StringWriter;
+@@ -49,7 +51,16 @@
+         .put("runtime","TensorFlow Lite 2.13.0; Support 0.4.4; CPU one thread")
+         .put("platform",android.os.Build.FINGERPRINT).put("api",android.os.Build.VERSION.SDK_INT);
+       flush();
+-      model=ContractModel.newInstance(context,"model.tflite",
++      stage="asset_identity";
++      final String modelAsset="model.tflite";
++      try(InputStream stream=context.getAssets().open(modelAsset);ByteArrayOutputStream copy=new ByteArrayOutputStream()) {
++        byte[] chunk=new byte[8192];int count;
++        while((count=stream.read(chunk))!=-1)copy.write(chunk,0,count);
++        report.put("loaded_asset_name",modelAsset).put("loaded_asset_sha256",hash(copy.toByteArray()))
++          .put("loaded_asset_bytes",copy.size()).put("asset_identity_status","PASS");
++      }
++      flush();stage="model_loading";
++      model=ContractModel.newInstance(context,modelAsset,
+           new Model.Options.Builder().setDevice(Model.Device.CPU).setNumThreads(1).build());
+       report.put("model_loading_status","PASS");report.put("loaded_label_count",model.getMetadata().getProbabilityLabels().size());
+       JSONArray observations=new JSONArray();report.put("observations",observations);flush();

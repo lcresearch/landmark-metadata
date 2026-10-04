@@ -1,0 +1,12 @@
+\begin{tabular}{@{}llrll@{}}
+\toprule
+Original generated category path & Output shape & Labels & JVM probe & Raw Java compiles\\
+\midrule
+Palm detector (2 binaries) & \texttt{[1,2016,1]} & 1 & fail & no \\
+Hand landmarks & \texttt{[1,63]} & 2 & fail & no \\
+Gesture classifier & \texttt{[1,8]} & 8 & pass & yes \\
+EfficientNet classifier & \texttt{[1,1000]} & 1000 & pass & yes \\
+EfficientDet detector & \texttt{[1,19206,90]} & 90 & fail & no \\
+DeepLab segmenter\textsuperscript{*} & \texttt{[1,257,257,21]} & 21 & fail & yes \\
+\bottomrule
+\end{tabular}

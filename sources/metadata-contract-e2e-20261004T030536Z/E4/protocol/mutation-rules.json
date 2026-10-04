@@ -1,0 +1,9 @@
+{
+  "description": "One same-size ASCII letter case change in first available output/model description.",
+  "metadata_count": "Reduce populated output tensor metadata vector count by one in-place.",
+  "index_exchange": "First lexicographic populated output pair with differing graph shapes; exchange only metadata vector relative offsets.",
+  "label_deletion": "Remove final label line using preserved suite_static.mutate_label; deterministic ZIP timestamps.",
+  "label_permutation": "Cyclic left one label line, preserve count/multiset/filename/line-ending convention; preserve TFLite prefix and metadata.",
+  "restoration": "Inverse operation, require original associated payloads.",
+  "external_observations": "Originals only. Mutations evaluated later on preserved controls, never counted as natural defects."
+}

@@ -1,0 +1,39 @@
+{
+  "scope": "Reference-backed manual role annotations for two components. Authored after inspecting official source and component metadata. These are not independent blinded semantic labels. Other components abstain on semantic index correctness.",
+  "contracts": {
+    "6acda74af3fbf40e68265c20c7394b2bad81a16a481dcd79ad7a081887c3d6b9": {
+      "source": "hand-evidence/sources/hand_landmarks_detector_graph.cc",
+      "evidence": "v0.10.14 lines 275-283 assign consecutive outputs to landmark_tensors, hand_flag_tensors, handedness_tensors, and world_landmark_tensors",
+      "expected_roles": [
+        "landmarks",
+        "presence",
+        "handedness",
+        "world_landmarks"
+      ],
+      "name_to_role": {
+        "landmarks": "landmarks",
+        "presense score": "presence",
+        "handedness": "handedness",
+        "world landmarks": "world_landmarks"
+      }
+    },
+    "ad6cfd3c903eb31a4ee788b809e45ecf9fa69923b69b9f3f2d9ae616ff433e58": {
+      "source": "sources/pose_landmarks_detector_graph.cc",
+      "evidence": "v0.10.14 lines 367-376 assign consecutive outputs to landmarks, pose flag, segmentation, heatmap, and world landmarks",
+      "expected_roles": [
+        "landmarks",
+        "presence",
+        "segmentation",
+        "heatmap",
+        "world_landmarks"
+      ],
+      "name_to_role": {
+        "landmarks": "landmarks",
+        "presence": "presence",
+        "segmentation_mask": "segmentation",
+        "heat_map": "heatmap",
+        "world_landmarks": "world_landmarks"
+      }
+    }
+  }
+}

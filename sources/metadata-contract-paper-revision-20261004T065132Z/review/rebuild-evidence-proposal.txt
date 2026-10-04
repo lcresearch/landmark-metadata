@@ -1,0 +1,16 @@
+Proposed manuscript paragraph (163 whitespace-delimited words)
+
+An additional agent-run construction check regenerated Java and rebuilt APKs in new output directories, with a new signing key and AVD, while reusing the installed SDK/JDK/Python toolchain. Eight phase/run/variant records covered five byte-distinct artifact–consumer configurations, one computational graph, and 16 input observations. All generated sources and generated model classes matched the earlier artifacts; full DEX equality was checked only across fresh variants because the harness gained an asset-hashing step. Immediately before newInstance, that step hashed the AssetManager resource using the same Context and asset name. These hashes matched the working models and APK assets. This checks resource identity before loading, not the native interpreter buffer; the unchanged generated loader and inspected library load path remain part of the evidence chain. The getter failure, changed label associations, reversals, and all raw output bytes matched the earlier observations. This fresh construction used the same toolchain and prescribed inputs; it is neither an independent human reproduction nor a reconstruction from archived dependencies. Human audit remains pending.
+
+Evidence review scope: AI agent document/source consistency review; no new inference or manuscript modification.
+
+Checked records:
+- /workspace/metadata-contract-audit-20261004T062010Z/rebuild/results.json
+- /workspace/metadata-contract-audit-20261004T062010Z/rebuild/AUDIT_REPORT.md
+- /workspace/metadata-contract-audit-20261004T062010Z/verification/fresh-runtime-crosscheck.json
+- /workspace/metadata-contract-audit-20261004T062010Z/rebuild/scripts/ContractInstrumentation.java (asset read at lines 54–61; generated newInstance at 63–64)
+- /workspace/metadata-contract-audit-20261004T062010Z/rebuild/prerequisites/emulator-command.json (new AVD directory; no-snapshot)
+- /workspace/metadata-contract-audit-20261004T062010Z/preservation/bytecode/javap-ContractModel.stdout
+- /workspace/metadata-contract-audit-20261004T062010Z/preservation/bytecode/dexdump-selected.txt (Model.createModel -> FileUtil.loadMappedFile -> AssetManager.openFd -> FileChannel.map)
+
+Exact delimiters verified: 8 records; 5 distinct artifact/configurations; 1 graph; 16 inputs; 14 successful lists and 2 caught getter exceptions. Old/fresh generated Java and 3 generated model classes coincide; fresh DEX b5ce8404d0d7b197c1532003e934d7cb32d381aed47c7af2201044e89a50c821 differs from old DEX 82ae7e4dafaeba6a1dcc4be479693cd1eb9cfc02ff04f661e801ac0466c5ee99 because instrumentation changed. Do not broaden equality to all historical/fresh class files, full DEX, or APKs. AssetManager preload hashing does not directly intercept the interpreter buffer. The source/bytecode load-chain trace is separately retained evidence. No new independent model, class-order oracle, SDK installation from archives, or human verification is implied.

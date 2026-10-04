@@ -1,0 +1,39 @@
+论文主线重写说明
+
+核心主张：在图计算和生成代码保持不变时，关联标签资源的改变仍能改变
+实际生成接口的行为；不同配置的消费者在不同阶段检查相关约束。
+
+新叙事顺序
+1. Introduction：从“相同计算、不同接口结果”提出问题，主贡献定位于受控执行证据。
+2. Contracts and Preservation：S=指定结构检查的接受；I=有来源的关联参考一致性；
+   D=实际选定解码路径的前置条件。P 独立检查干预是否保持图/权重，四者不组成正确性阶梯。
+3. E1：原始、描述、删除、恢复；实际 generated getter 到达异常，所有先前阶段成功。
+4. E2：预声明置换保持数量与分数，但暴露关联改变；恢复逆转，缺少类序参考时 I 弃权。
+5. E3：同一文件在 Android getter 和 Linux Task 初始化时被拒绝；保持配置差异限定。
+6. Hand：保留官方角色参考支持的 I 见证，补明确源码 pin 与 focal 文件间的图等价桥；
+   实际 Task 的无变化结果限定行为影响，通用 repaired binding 仍属单独的历史证据。
+7. Supporting Scope：旧探索压缩为背景，外部 15 个新图与 65 个文件条件明确分开；
+   保留失败、unsupported warnings、语义弃权及动态 Gesture 覆盖损失。
+8. Related Work：保持既有来源范围，不新增未经核验的“first”或新算法主张。
+9. Validity/Reproduction：区分本轮实际执行、历史记录和文稿编译；人审仍未完成。
+10. Conclusion：只概括实际 getter 后果、关联变化和消费者边界。
+
+明确保留的边界
+- E1/E2 改变关联标签文件，嵌入元数据表和生成源码保持不变；描述控制例外地改变元数据。
+- 标签恢复是 payload/行为恢复，不是 publisher ZIP 的整文件字节恢复。
+- E2 的 904 是原始输出/返回列表位置，不是未设置的 Category.getIndex()。
+- 999/1000 字符串变化来自预声明置换；没有独立类序 oracle，不能称语义损坏或准确率下降。
+- Task 返回分数不冒充原始 TFLite 张量；不声称 Android 与 Linux 跨平台逐位相等。
+- E3 是配置级比较；消费者与平台/工具链同时变化。
+- Hand role exchange 后 I 可与所给参考一致，但 D 仍不兼容，不能称完整修复。
+- 15 个外部图没有建立新的支持路径上的自然端到端失败；65 是文件条件，不是模型数。
+- 官方消费者已有相关检查，检查器只把选定条件前移并保留弃权。
+
+交叉审读修订
+- 将“consumer determines ...”收紧为“these configured consumer paths expose ...”。
+- 将“classifier experiments deliberately lack”改为“not established by ...”。
+- 将“preservation established independently”改为“checked separately”，避免暗示独立验证。
+- Hand 源码引用改用已保存并核验的完整 commit URL。
+
+保留旧稿和封存证据；新稿不取代源记录。当前是正式组织论证的工作稿，
+不构成投稿准备度评估，不添加新实验或新文献检索结果。

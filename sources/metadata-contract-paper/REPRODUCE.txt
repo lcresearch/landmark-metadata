@@ -1,0 +1,72 @@
+Metadata consumer contracts: short-paper experiment extension
+Evidence collected October 3-4, 2026. This is a working paper and local artifact.
+
+Prepared workspace
+  cd /workspace/metadata-contract-paper
+  /workspace/hand-contract-repro/.venv/bin/python scripts/check_model.py runs/6c7ab0a6e5dc/original/model.tflite
+
+The checker runs structural validation and code generation, then checks the exact
+generated TensorLabel category path. It returns abstention for absent semantic
+references. A passing check is not a promise of general metadata correctness.
+
+Rebuild the extension (saved generated files/results will be overwritten):
+  python scripts/fetch_suite.py
+  /workspace/hand-contract-repro/.venv/bin/python scripts/inspect_suite.py
+  /workspace/hand-contract-repro/.venv/bin/python scripts/suite_static.py
+  /workspace/hand-contract-repro/.venv/bin/python scripts/suite_runtime.py
+  /workspace/hand-contract-repro/.venv/bin/python scripts/suite_compile.py
+  /workspace/hand-contract-repro/.venv/bin/python scripts/suite_decoder.py
+  /workspace/hand-contract-repro/.venv/bin/python scripts/suite_index.py
+  /workspace/hand-contract-repro/.venv/bin/python scripts/summarize.py
+  /workspace/hand-contract-repro/.venv/bin/python scripts/paper_tables.py
+
+Do not refetch when verifying the preserved run: the original component bytes are
+already in models/components. The protocol URLs are fixed version-1 paths, but
+remote content can still change. Compare downloaded hashes with the preserved
+results/downloads.json and results/components.json before claiming the same study.
+The specified MobileNet V2 target returned 404 and is deliberately not substituted.
+
+Build the manuscript:
+  cd manuscript
+  latexmk -pdf -interaction=nonstopmode -halt-on-error paper.tex
+
+Toolchain
+Python 3.11.16; tflite-support 0.4.4; tflite-runtime 2.14.0; NumPy 1.26.4; the complete
+Python lock is copied as requirements.lock. The extension reuses the first Hand
+experiment's installed environment and Java dependencies. suite_compile.py and
+suite_decoder.py accept HAND_REPRO_ROOT to locate that prepared project. Its JDK is
+toolchains/jdk-17.0.12+7 and dependency jars are in deps/. The prior experiment's
+REPRODUCE.txt explains restoration. This is not a fully self-contained offline SDK.
+
+Design and status distinctions
+* protocol.json was written before extension component inspection; its digest was
+  recorded after download launch. This is not third-party preregistration.
+* The Hand case was already known and informed the rules.
+* contracts.json was authored after source and component inspection. Only the
+  Hand and Pose landmark components have reference-backed semantic role checks.
+* Static suite has 46 variants, 35 accepted by the structural baseline, 105 primary
+  CPU invocations, and 23 isolated decoder probes. Repeated verification runs are
+  not added to these design counts or treated as additional independent samples.
+* There are 13 byte-distinct components but only 12 metadata-stripped graph groups;
+  11 and 10, respectively, have embedded metadata. Two palm binaries share a graph.
+* Label-file rewrites use a fixed ZIP timestamp so seeded artifact bytes are
+  deterministic; they preserve graph buffers but are not embedded-buffer-only edits.
+* JVM labels are read with the same official FileUtil API used by generated Java.
+* Runtime inputs are synthetic and do not establish recognition accuracy or a
+  successful Android wrapper/application execution.
+
+Paper/source archive
+The lightweight paper archive includes manuscript files, scripts, versioned source
+excerpts, JSON records, compiler/decoder logs, generated Java and compiled classes,
+but excludes model binaries, .npz/.f32 numerical arrays, external paper PDFs and their full-text extractions, installed
+environments and downloaded SDKs. Those model/array bytes remain preserved in the
+workspace and have a separate full-workspace evidence manifest. Fetching/restoring
+is required to rerun after unpacking only the lightweight archive. Do not describe
+the lightweight archive as a complete offline reproduction package.
+
+The initial Hand evidence archive remains /workspace/hand-contract-evidence.zip.
+Selected focal-case sources/results are copied under hand-evidence/ for manuscript
+review. Their original absolute paths identify the actual first-run workspace.
+
+Original supplied historical R15-R17 records and companion JSON were not recovered.
+The revised paper deliberately does not use the historical 41 agent labels as data.

@@ -1,0 +1,11 @@
+--- pre-denominator-clarification/REBUILD_SCOPE.md
++++ clarified/REBUILD_SCOPE.md
+@@ -2,7 +2,7 @@
+ 
+ This audit uses a new output directory and new AVD, regenerates Java from recovered model inputs, recompiles generated source with a minimally extended harness, repackages each APK and executes fresh primary runs. It reuses the same installed pinned Python, JDK and SDK toolchain. It is an automated construction reproduction, not an independent human verification and not a newly installed archived-toolchain reconstruction.
+ 
+-The eight experiment/variant/configuration units represent five byte-distinct model artifacts and one canonical EfficientNet graph. Two fixed input observations are repeated within each configuration. Source and generated-class byte equality against prior evidence can be tested despite a changed harness; full DEX equality against prior evidence is not claimed. DEX equality is checked within the new variants. APK equality is never a criterion.
++The eight phase/variant execution records represent five unique artifact-by-consumer configurations, five byte-distinct model artifacts and one canonical EfficientNet graph. E1/E2 original, description and restoration bytes share the same consumer configuration; the phase identifier does not make them independent units. Sixteen fixed input observations are recorded across these phase/variant runs. Source and generated-class byte equality against prior evidence can be tested despite a changed harness; full DEX equality against prior evidence is not claimed. DEX equality is checked within the new variants. APK equality is never a criterion.
+ 
+ The AssetManager hash addition reads from an independent stream before the actual generated newInstance, using the same Context and asset filename. It does not hash or replace the interpreter's native buffer. The model-identity chain combines workspace bytes, bytes stored in the APK, this runtime asset read, and inspection of the unmodified generated/library loading path.
+ 

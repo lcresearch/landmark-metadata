@@ -1,0 +1,34 @@
+{
+  "phase": "prospective extension after the already observed Hand case",
+  "created_utc": "2026-10-03",
+  "target": "Short empirical software-engineering paper; no venue or acceptance claim",
+  "sampling": "Purposive fixed list of eight official MediaPipe download targets chosen for task and interface diversity; not a prevalence sample. Recursively enumerate .tflite task members and deduplicate by component SHA-256. Retain failed downloads, absent metadata, unsupported generation, and native-tool failures as outcomes.",
+  "targets": [
+    {"id":"hand", "url":"https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task"},
+    {"id":"pose_lite", "url":"https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task"},
+    {"id":"face", "url":"https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task"},
+    {"id":"gesture", "url":"https://storage.googleapis.com/mediapipe-models/gesture_recognizer/gesture_recognizer/float16/1/gesture_recognizer.task"},
+    {"id":"efficientnet", "url":"https://storage.googleapis.com/mediapipe-models/image_classifier/efficientnet_lite0/float32/1/efficientnet_lite0.tflite"},
+    {"id":"mobilenet", "url":"https://storage.googleapis.com/mediapipe-models/image_classifier/mobilenet_v2/float32/1/mobilenet_v2.tflite"},
+    {"id":"detector", "url":"https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite0/float32/1/efficientdet_lite0.tflite"},
+    {"id":"segmenter", "url":"https://storage.googleapis.com/mediapipe-models/image_segmenter/deeplab_v3/float32/1/deeplab_v3.tflite"}
+  ],
+  "contract_rules": {
+    "S_count": "Use official MetadataPopulator's public load/populate path as structural baseline. MetadataDisplayer parsing alone does not establish acceptance.",
+    "I_index": "Only claim semantic output-index mismatch when a component-specific official execution contract supplies intended index/role. Otherwise abstain; tensor shape alone is not a semantic classifier.",
+    "D_decoder": "For a generated get*AsCategoryList expression that actually uses new TensorLabel(List<String>, TensorBuffer), require a positive axis greater than 1, equality of its length to label count, and compatibility with getCategoryList's effective-last-axis requirement. Scope to this consumer API, not universal metadata validity.",
+    "P_preservation": "Verify all non-metadata buffers unchanged and canonical graph identity after each intervention. Associated-label mutations are separately classified from embedded-metadata-only changes."
+  },
+  "variants": [
+    "original",
+    "description-only one-character same-length metadata edit when an existing description is available, as a binding/cardinality negative control",
+    "reduce populated output metadata vector count by one without changing graph outputs, as a structural rejection positive control",
+    "swap first lexicographic pair of populated output metadata entries whose actual output shapes differ, when applicable",
+    "for each TensorLabel category output with at least two labels, remove the last line of its associated label file, preserving graph and metadata tables; not a newly discovered natural defect"
+  ],
+  "generation": "Isolate native code generation in subprocesses and retain diagnostics. Record generated field/index associations. Raw compilation for eligible representative category consumers; do not automatically transplant Hand's syntax repair to new models.",
+  "runtime": "For original and structurally accepted applicable variants, attempt CPU interpreter inference with zero, constant 0.5, and seeded uniform float32 inputs, or quantized equivalents. Use one thread and preserve raw inputs/outputs. Failures and unsupported operators are retained; no silent omission. Computational equality is empirical and not an accuracy test.",
+  "decoder_probe": "Run official TensorLabel on preserved raw output buffers for applicable generated category outputs. Compare rule predictions with isolated host-JVM success/exception; this validates an API precondition check, not a general model-quality detector.",
+  "outcome_reporting": "Separate natural baseline failures, seeded mutations, negative controls, structural controls, absent evidence, and unsupported tool paths. Do not combine duplicate components, label mutants, or inference invocations into a model prevalence denominator.",
+  "limits": ["Known Hand case informed the rules; extension is not an independent discovery study", "Public literature and tool comparison remains scoped rather than exhaustive", "No Android or real-user impact claim", "No independent human annotation or validation claim"]
+}
