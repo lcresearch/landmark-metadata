@@ -20,6 +20,28 @@ source-only repository policy.
   disclose limited E5 parsing, audit scope and cross-platform E3 limitations.
 - [x] Prepare source-only repository: code, manuscript source, protocols and
   concise project notes; remove stale HTML TODO and PDF text-extract entry points.
+- [x] Reconstruct official inputs and pinned prerequisites in the new cloud
+  machine; rerun base corpus, E1/E2 primary/replay, Linux Task, Hand and E4/E5.
+  Independently check complete raw records, artifact hashes and preservation.
+- [x] Demonstrate Java/Python label-reader disagreement with real decoder-library
+  counterexamples; add maintained parser/checker/baseline corrections and verify
+  all 65 original fixture decisions remain unchanged.
+- [x] Exercise missing-evidence and misleading-report branches separately;
+  preserve negative results and add strict checks for fresh reconstruction.
+
+## Corrections from the fresh audit
+
+- [ ] Revise the manuscript's library-equivalent label-count wording (line 58),
+  disclose VT/U+2028 counterexamples and distinguish the corrected checker from
+  the historical 65-fixture evaluation. Preserve that original draft.
+- [ ] Replace remaining historical report templates if they are promoted to
+  reusable tools: required evidence must gate prose, status and exit code;
+  empty evidence and companion failures must fail explicitly.
+- [ ] Repeat bounded literature full-text checks once the required endpoints
+  are available; the fresh attempts received proxy CONNECT 403.
+- [ ] Review/save the cloud configuration draft and publish the retained
+  environment; independently test restoration in a future fresh task before
+  calling it verified snapshot restoration.
 
 ## Next: P2 — same-Android consumer comparison
 

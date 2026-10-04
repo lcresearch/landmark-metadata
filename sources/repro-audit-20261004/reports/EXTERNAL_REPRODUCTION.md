@@ -74,12 +74,15 @@ The E4-to-E5 comparison agrees on all 15 included external groups.
 The two additional core conditions use actual reconstructed model files from
 `/workspace/repro-task/models`, generated with the original mutation rules and
 already executed through Linux Task. Aliases explicitly identify this source.
-All four formally prepared E1 model files match these corresponding model
+All formally prepared E1/E2 model files match the corresponding core model
 hashes. The five core conditions reproduce zero additional E5 rejections over
 the simple baseline and Task initialization: all three reject only label
-deletion. See `E5/core-baseline-comparison.json`. These static checks do not
-substitute for Android execution; matching to the new Android getter outcomes
-is pending while that separate slow run completes.
+deletion. See `E5/core-baseline-comparison.json`. The separately completed Android E1/E2 primary and replay summaries now link
+five exact artifact conditions: four successful getters and one failing getter.
+E5 flags the actual failing condition and incorrectly rejects none of the four
+successful conditions. `E5/android-linkage-validation.json` verifies that all
+65 existing static reports and all 481 static evidence files were preserved
+byte-for-byte during this association refresh.
 
 Four separate real-fixture CLI invocations confirmed exit 2 for structural or
 decoder rejection, and exit 0 for compatible-with-semantic-abstention and
@@ -97,10 +100,11 @@ summary incorrectly calls this a disagreement. The retained evidence is
 `failure-injection-dynamic/audit-result.json`. This branch was not encountered
 in the current 15 external groups and does not alter their observed agreement.
 
-## Refresh after Android completes
+## Reuse the Android association refresh
 
-To add only actual E1/E2 observations and formal aliases without rerunning the
-65 completed static checks, run:
+The completed association refresh added actual E1/E2 observations and formal
+aliases without rerunning the 65 static checks. For another unsealed working
+replay with finalized Android results, the command is:
 
 ```bash
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 \

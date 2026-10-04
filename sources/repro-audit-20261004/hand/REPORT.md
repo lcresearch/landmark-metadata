@@ -75,7 +75,7 @@ Evidence for the reporting tests is separate from experiment evidence under `aud
 
 ## Runtime and limits
 
-Generic work used the reconstructed shared Python 3.11.16 / TFLite Support 0.4.4 / TFLite runtime 2.14.0 environment and the restored JDK 17.0.12+7 / Java dependency set. Task work used a separate Python 3.11.16 virtualenv and all 26 exact lines from archived E7 `requirements.lock`, including MediaPipe 0.10.14 and NumPy 1.26.4. `pip check` passed and observed freeze exactly matched the lock. Wheels were freshly downloaded and hashed; all three installed MediaPipe native libraries equal the freshly downloaded wheel's members. Original archived wheels were unavailable, so byte equality to that archive is not established.
+Generic work used the reconstructed shared Python 3.11.16 / TFLite Support 0.4.4 / TFLite runtime 2.14.0 environment and the restored JDK 17.0.12+7 / Java dependency set. Task work used a separate Python 3.11.16 virtualenv and all 25 exactly pinned packages from archived E7 `requirements.lock`, including MediaPipe 0.10.14 and NumPy 1.26.4. The lock contains 25 package lines, with no comments or blank lines. `pip check` passed and observed freeze exactly matched the lock. Wheels were freshly downloaded and hashed; all three installed MediaPipe native libraries equal the freshly downloaded wheel's members. Original archived wheels were unavailable, so byte equality to that archive is not established.
 
 Official asset access initially failed through the proxy (403 for `storage.googleapis.com`), then succeeded following a reported network configuration change. TLS/proxy verification remained enabled.
 

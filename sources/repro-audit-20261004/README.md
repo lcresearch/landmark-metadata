@@ -6,6 +6,7 @@ Historical source snapshots remain byte-preserved. Models, SDKs, installed
 dependencies, generated Java, APKs, raw arrays, logs and result records stay in
 the external workspaces described by the reports.
 
+Read [the completed report](REPORT.md) and [the 41-claim ledger](claims/REPORT.md).
 Read `reports/CHECKER_AUDIT.md` for the executable label-parser counterexamples
 and missing-evidence probes. `hand/REPORT.md` covers the fresh generic Hand and
 MediaPipe Task reconstruction. The final overall report and claim map describe
@@ -74,6 +75,12 @@ The runner depends on the recovered base corpus and the pinned environment.
 `reproduction/verify_corpus.py` independently reads the 105 CPU observations and
 243 arrays from that corpus, verifies file digests and all nonmetadata buffers,
 and requires the complete 23 decoder probes.
+
+`base/`, `android/`, and `external/` document the tested restoration and execution
+entry points. `environment/install.sh` refreshes the retained cloud dependencies;
+it and `environment/START.md` were saved in the cloud configuration draft after
+execution checks. Review/save/publish that draft separately. This does not claim
+that a future snapshot restore has already been tested.
 
 `probes/` contains the deliberately synthetic audit-failure tests and the new
 label-only counterexamples. They are not natural model defects, historical
