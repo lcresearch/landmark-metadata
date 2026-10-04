@@ -1,0 +1,11 @@
+[
+ {"id":"I01-publisher-model","url":"https://storage.googleapis.com/mediapipe-models/image_classifier/efficientnet_lite0/float32/1/efficientnet_lite0.tflite","family":"MediaPipe","role":"exact artifact re-retrieval"},
+ {"id":"I02-publisher-doc","url":"https://ai.google.dev/edge/mediapipe/solutions/vision/image_classifier","family":"MediaPipe","role":"publisher documentation"},
+ {"id":"I03-tfhub-classification-card","url":"https://raw.githubusercontent.com/tensorflow/tfhub.dev/master/assets/docs/tensorflow/efficientnet/lite0/classification/2.md","family":"TensorFlow Hub","role":"training model card"},
+ {"id":"I04-tfhub-lite2-card","url":"https://raw.githubusercontent.com/tensorflow/tfhub.dev/master/assets/docs/tensorflow/lite-model/efficientnet/lite0/fp32/2.md","family":"TensorFlow Hub","role":"conversion model card"},
+ {"id":"I05-tfhub-lite1-card","url":"https://raw.githubusercontent.com/tensorflow/tfhub.dev/master/assets/docs/tensorflow/lite-model/efficientnet/lite0/fp32/1.md","family":"TensorFlow Hub","role":"earlier conversion model card"},
+ {"id":"I06-tfhub-lite-model","url":"https://tfhub.dev/tensorflow/lite-model/efficientnet/lite0/fp32/2?lite-format=tflite","family":"TensorFlow Hub","role":"candidate artifact identity bridge"},
+ {"id":"I07-tfhub-training-card","url":"https://tfhub.dev/tensorflow/efficientnet/lite0/classification/2","family":"TensorFlow Hub","role":"publisher training card"},
+ {"id":"I08-automl-lite-readme","url":"https://raw.githubusercontent.com/google/automl/master/efficientnet/lite/README.md","family":"Google AutoML source","role":"official training/export documentation"},
+ {"id":"I09-automl-readme","url":"https://raw.githubusercontent.com/google/automl/master/efficientnet/README.md","family":"Google AutoML source","role":"official parent training/export documentation"}
+]

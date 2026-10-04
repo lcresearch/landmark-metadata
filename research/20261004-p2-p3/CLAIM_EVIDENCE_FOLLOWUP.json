@@ -1,0 +1,77 @@
+{
+  "scope": "New or strengthened P2/P3 claims; prior claims retain their historical source map.",
+  "prior_claim_map": {
+    "path": "/workspace/metadata-contract-paper-revision-20261004T065132Z/CLAIM_EVIDENCE.json",
+    "sha256": "fb8731674400be4915201cd9af1f0dc15cde21192275373367fa5d2ba8d05e4d"
+  },
+  "claims": [
+    {
+      "id": "P2-stage",
+      "claim": "Same-Android Task construction rejects deletion; wrapper process returns and actual getter rejects.",
+      "sources": [
+        {
+          "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/results.json",
+          "sha256": "8828d53f32d0eb6a8a5276092e5f2834f548389d780fde1d3726cde0b263d45d"
+        },
+        {
+          "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/p2-final-review.md",
+          "sha256": "627f4c32898b1063bd85fd4bc463c9875fe24a77675e19357bb068effb5d5ce8"
+        },
+        {
+          "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/mechanism/MECHANISM_REVIEW.md",
+          "sha256": "3955bc3bb1a32c8b582e468d8361819de4f75e35bf3221a10aff55594a6601e8"
+        }
+      ],
+      "boundary": "Different native integrations remain; classify internals not separately observed; exceptions caught."
+    },
+    {
+      "id": "P2-preservation",
+      "claim": "Five variants preserve graph; generated source/classes/DEX equal within consumer; raw wrapper bytes equal per input.",
+      "sources": [
+        {
+          "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/static-results.json",
+          "sha256": "25d01e90deb77ea8412e3e6c28963ca51c1f52f959aa26d81cfbc0978f0ba546"
+        },
+        {
+          "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P2/build-results.json",
+          "sha256": "568f59347e8d356571940e096bbecb755f8224d74013e7c596211200358dc59e"
+        },
+        {
+          "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/verification/runtime-record-review.json",
+          "sha256": "5d307a205ce17df113e235a6a8650f39d7c68d80721c91f7bde5bc65c9d8bfd6"
+        }
+      ],
+      "boundary": "Task raw tensors not directly captured; returned scores align by category index, not list rank."
+    },
+    {
+      "id": "P3-display",
+      "claim": "External publisher-prescribed display order is linked to the exact computation; original/restoration1000matches, permutation999disagreements.",
+      "sources": [
+        {
+          "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/results.json",
+          "sha256": "da54d486f461450d89bf77a777108f8e88b31bc6fcbf9b08fcd042cc8db88f17"
+        },
+        {
+          "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/P3/analysis/reference-chain.json",
+          "sha256": "572c527fba92701e3fda12ea932de38fbec02ddc37b9ca8c3e012faeda2694ef"
+        },
+        {
+          "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/review/reference-audit/AUDIT_REPORT.md",
+          "sha256": "6442b929488f7934dc6cca2d7afa280666c7719023da0887c69ecaca400520b5"
+        }
+      ],
+      "boundary": "Stable-ID lineage remains ABSTAIN; no prediction correctness or natural defect claim; old E5 outputs unchanged."
+    },
+    {
+      "id": "integrity",
+      "claim": "All3207 prior manifest entries and five pinned inputs remain unchanged.",
+      "sources": [
+        {
+          "path": "/workspace/metadata-contract-p2p3-20261004T073824Z/verification/protected-evidence-review.json",
+          "sha256": "92ecf5e7be8b2a263956272ff0ebc3656765bcaff9812ca4cbe60de50ef38400"
+        }
+      ],
+      "boundary": "Byte integrity does not replace human validation or a portable reproduction deposit."
+    }
+  ]
+}

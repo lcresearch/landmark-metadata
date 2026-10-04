@@ -31,6 +31,9 @@ E3 still compares generated Java on Android with Task on Linux. E4 adds no
 external runtime executions and establishes no supported natural end-to-end
 failure. Hand remains a reference-backed binding witness plus unchanged Task
 output on one fixed image, rather than a second established Android failure.
-Independent semantic references, human audit and a standalone evidence deposit
-remain pending. Automated consistency and construction checks do not establish
+At that historical audit, independent semantic references, human audit and a
+standalone evidence deposit remained pending. The subsequent completed
+[P2/P3 follow-up](../research/20261004-p2-p3/RESULTS_OVERVIEW.md) supplies the
+same-Android comparison and a qualified display-order reference; stable-ID
+lineage and human audit remain unresolved. Automated consistency and construction checks do not establish
 method novelty or independent human replication.

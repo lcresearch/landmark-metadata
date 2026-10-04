@@ -26,6 +26,7 @@ class SourceTreeChecks(unittest.TestCase):
                     'original_path':'/workspace/snapshot/manuscript/paper.tex',
                     'sha256':self.old_hash, 'bytes':17}
         self.write('docs/SOURCE_IMPORT.json', json.dumps({'files':[self.row]}))
+        self.write('docs/SOURCE_P2P3.json', json.dumps({'files':[]}))
         self.write('MEMORY.md', '| `/workspace/snapshot` | Revised `manuscript/paper.tex` '
                    'SHA-256: `'+self.old_hash+'` |\n')
 
@@ -53,6 +54,11 @@ class SourceTreeChecks(unittest.TestCase):
         report = self.report()
         self.assertEqual(report['status'], 'FAIL')
         self.assertIn('missing.md', [f.get('target') for f in report['failures']])
+
+    def test_protocol_relative_external_links_are_ignored(self):
+        self.write('docs/guide.md', '[CDN](//cdn.example.org/guide.md)\n'
+                   '![Image](//cdn.example.org/image.png)\n[Home](../README.md)\n')
+        self.assertEqual(self.report()['status'], 'PASS')
 
     def test_historical_links_and_backtick_evidence_warn_without_failing(self):
         self.write('sources/snapshot/README.md', 'Read `manuscript/paper.pdf`, '
@@ -83,6 +89,7 @@ class SourceTreeChecks(unittest.TestCase):
     def test_current_manuscript_digest_detects_changed_working_copy(self):
         name = 'work/revision/manuscript/paper.tex'
         self.write(name, 'Current source\n')
+        self.write('README.md', '[Current manuscript source]('+name+')\n')
         self.write('docs/CURRENT_MANUSCRIPT.json', json.dumps({
             'repository_path':name, 'sha256':self.digest(name),
             'derived_from_repository_path':self.row['repository_path'],
@@ -92,6 +99,28 @@ class SourceTreeChecks(unittest.TestCase):
         report = self.report()
         self.assertEqual(report['status'], 'FAIL')
         self.assertIn('manuscript digest mismatch', [f['issue'] for f in report['failures']])
+
+    def test_p2p3_parent_and_current_navigation_are_both_checked(self):
+        parent = 'research/p2p3/manuscript/paper.tex'
+        name = 'work/revision/manuscript/paper.tex'
+        self.write(parent, 'Completed P2/P3\n')
+        self.write(name, 'Editorial follow-up\n')
+        self.write('docs/SOURCE_P2P3.json', json.dumps({'files':[{
+            'source_path':'/workspace/p2p3/manuscript/paper.tex',
+            'repository_path':parent, 'sha256':self.digest(parent),
+            'bytes':len((self.root/parent).read_bytes())}]}))
+        self.write('docs/CURRENT_MANUSCRIPT.json', json.dumps({
+            'repository_path':name, 'sha256':self.digest(name),
+            'derived_from_repository_path':parent,
+            'derived_from_sha256':self.digest(parent)}))
+        self.write('README.md', '[Current manuscript source]('+name+')\n')
+        self.assertEqual(self.report()['status'], 'PASS')
+        self.write('README.md', '[Current manuscript source]('+parent+')\n')
+        self.assertIn('current manuscript navigation/index mismatch',
+                      [f['issue'] for f in self.report()['failures']])
+        self.write('README.md', '[Current manuscript source]('+name+')\n')
+        self.write(parent, 'Corrupted P2/P3\n')
+        self.assertIn('imported bytes differ', [f['issue'] for f in self.report()['failures']])
 
     def test_binary_artifact_is_rejected(self):
         self.write('model.tflite', 'Excluded artifact\n')

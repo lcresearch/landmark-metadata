@@ -23,41 +23,43 @@ source-only repository policy.
 - [x] Follow up on repository review: add historical README availability notes
   and an English audit summary; preserve imported snapshots byte-for-byte.
 - [x] Extend the source check to current Markdown and historical source READMEs,
-  cross-check the MEMORY/import/source digest and add seven regression tests.
+  cross-check the MEMORY/import/source digest and add nine regression tests.
 - [x] Create a separate editorial manuscript working copy: consistent E5 name,
   explicit E4 component flow, label-payload restoration boundaries and disclosed
-  abstract-only background citations. Verify all 14 bibliography keys are cited.
+  abstract-only background citations, applied to the completed P2/P3 manuscript.
+  Preserve all 17 bibliography entries and the qualified reference findings.
 
-## Next: P2 — same-Android consumer comparison
+## Completed follow-up: P2 — same-Android consumer comparison
 
-- [ ] Recover the exact historical model conditions, prescribed RGB inputs and
-  pinned Android dependencies/tools. These were absent from the repository-review
-  environment; source checks and manuscript compilation do not complete P2.
-- [ ] Declare the comparison plan and dependency versions before execution.
-- [ ] Run generated wrapper and Android Task ImageClassifier on the same
+- [x] Declare the comparison plan and dependency versions before execution.
+- [x] Run generated wrapper and Android Task ImageClassifier on the same
   emulator/API/ABI with identical model bytes and inputs. Reuse original,
   description control, deletion, permutation and restoration conditions.
-- [ ] Record load, initialization, input preparation, inference and public
+- [x] Record load, initialization, input preparation, inference and public
   output/decoding stages, exact diagnostics and stages not reached.
-- [ ] Explain checks using the actual implementations; retain remaining runtime
+- [x] Explain checks using the actual implementations; retain remaining runtime
   and integration differences. Do not change versions to obtain an expected result.
-- [ ] Use Kotlin for new harness orchestration while calling the byte-preserved
-  generated Java directly. A graphical UI is not required for this stage comparison.
-- [ ] Update manuscript claims according to the observed result, including if
-  the previously observed difference disappears.
+- [x] Update manuscript: on the same Android API-30 x86_64 AVD, Task rejects
+  deletion during construction; the generated wrapper rejects at its getter
+  after successful process. Task classify is atomic; different native
+  integrations remain. Separate scripts verified all ten configurations.
 
-## Bounded follow-ups: P3
+## Completed follow-up: P3 — qualified display-order reference
 
-- [ ] Independent class-order reference: declare publisher/export/training
+- [x] Independent class-order reference: declare publisher/export/training
   source scope, connect the reference to the exact artifact, compare the full
   mapping and handle index offsets, background classes and duplicate names.
-- [ ] If that connection cannot be established, stop and keep E2 as an exposed
-  association change relative to the original; do not claim prediction error.
-- [ ] Natural cases: predefine mechanisms, sources and stopping conditions.
-  Count only recovered and verified artifacts; issue reports alone are motivation,
-  and injected failures are never natural defects. Zero findings is acceptable.
+- [x] Establish the narrower publisher-prescribed display-order chain: the
+  graph/weight/output-equivalent TFHub fp32/2 artifact links to classification/1,
+  whose card prescribes the external labels and background offset. Original and
+  restoration match 1000 positions; permutation disagrees at 999.
+- [x] Record the uncompleted part: stable class-ID lineage remains ABSTAIN.
+  Duplicate display names are not unique IDs. End the bounded search; do not
+  describe display-order disagreement as image prediction error or accuracy loss.
+- [x] Preserve historical E5 abstentions and complete separate automated
+  reference-chain and raw-runtime-record audits. Human audit remains pending.
 
-## Submission work
+## Next: human audit and paper convergence
 
 - [ ] Complete actual human audit with reviewer, date, method and conclusions.
   Distinguish author checking from independent reproduction.
@@ -67,11 +69,18 @@ source-only repository policy.
   appearing at different API stages. Consistent claims and same-Android results
   alone do not establish a strong publication contribution.
 - [ ] Choose venue, apply its template, review disclosure and page budget;
-  current eight-page generic layout does not establish venue fit.
+  the current generic reading draft does not establish venue fit.
 - [ ] Plan an independently usable evidence/reproduction deposit separately.
   This code-only repository does not contain the raw evidence or build artifacts.
 - [ ] Shorten Hand provenance in the main text if needed, retaining detailed
   provenance in supporting documentation and the one-image result boundary.
+
+## Optional, bounded follow-up — not required to finish this draft
+
+- [ ] Natural cases only if needed for the selected venue: predefine mechanisms,
+  sources and stopping conditions before looking. Count recovered and verified
+  artifacts separately from issue reports; injected failures are never natural
+  defects. Zero findings is acceptable. This round did not search for natural cases.
 
 ## Conditional method work — not the current default
 
@@ -86,8 +95,10 @@ source-only repository policy.
 
 - Save project source changes, necessary manuscript/protocol documents, TODO
   updates and concise decision/handoff notes here after meaningful work.
-- Commit, push and verify the remote when access is available; explicitly report
-  synchronization failures. Do not promise background synchronization.
+- Commit on a feature branch, push that branch and open a PR for user review.
+  Verify the remote branch and PR. Never update `main`/the default branch directly
+  or merge/enable auto-merge without an explicit user instruction. Report access
+  blockers; do not promise background synchronization.
 - Keep SDKs, emulators, dependencies, models, generated wrapper outputs, raw
   results, logs, rendered documents, archives and compiled products outside Git.
 - Preserve sealed evidence and historical source snapshots. Do not rerun P0/P1

@@ -1,0 +1,6 @@
+[
+ {"id":"F01-publisher-labels","url":"https://storage.googleapis.com/mediapipe-tasks/image_classifier/labels.txt","family":"MediaPipe","parent":"I02-publisher-doc","reason":"Direct full list of supported labels linked in EfficientNet-Lite0 model section"},
+ {"id":"F02-publisher-latest-model","url":"https://storage.googleapis.com/mediapipe-models/image_classifier/efficientnet_lite0/float32/latest/efficientnet_lite0.tflite","family":"MediaPipe","parent":"I02-publisher-doc","reason":"Direct current model link; test byte identity to exact focal version"},
+ {"id":"F03-tfhub-repo-head","url":"https://api.github.com/repos/tensorflow/tfhub.dev/commits?per_page=1","family":"TensorFlow Hub","parent":"I03-tfhub-classification-card","reason":"Resolve exact revision and default branch after archived catalog raw master URLs returned 404"},
+ {"id":"F04-automl-repo-head","url":"https://api.github.com/repos/google/automl/commits?per_page=1","family":"Google AutoML source","parent":"I08-automl-lite-readme","reason":"Resolve exact official source revision/default branch after raw master README 404"}
+]

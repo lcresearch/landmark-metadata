@@ -31,8 +31,9 @@ def local_targets(source):
     pattern = r'\]\((?:<([^>]+)>|([^\s)]+))(?:\s+["\'][^\n]*?["\'])?\)'
     for match in re.finditer(pattern, source):
         target = match[1] or match[2]
-        if not urlsplit(target).scheme and not target.startswith('#'):
-            yield unquote(target.split('#', 1)[0].split('?', 1)[0])
+        parsed = urlsplit(target)
+        if not parsed.scheme and not parsed.netloc and not target.startswith('#'):
+            yield unquote(parsed.path)
 
 
 def check_navigation(root, counts, failures, warnings):
@@ -73,7 +74,7 @@ def check_navigation(root, counts, failures, warnings):
 
 def check_memory_hashes(root, rows, counts, failures, warnings):
     """Cross-check import-backed MEMORY digests without trusting external paths."""
-    original_rows = {row['original_path']:row for row in rows}
+    original_rows = {row.get('original_path', row.get('source_path')):row for row in rows}
     source = (root/'MEMORY.md').read_text(encoding='utf-8')
     pattern = r'^\| `([^`]+)` \| [^\n]*?`([^`]+)` SHA-256: `([0-9a-f]{64})`'
     for package, name, expected in re.findall(pattern, source, flags=re.M):
@@ -102,6 +103,10 @@ def check_current_manuscript(root, rows, counts, failures):
         return
     try:
         current = json.loads(index.read_text())
+        entry = re.search(r'\[Current manuscript source\]\(([^)]+)\)',
+                          (root/'README.md').read_text())
+        if entry is None or entry[1] != current['repository_path']:
+            failures.append({'path':'README.md', 'issue':'current manuscript navigation/index mismatch'})
         by_path = {row['repository_path']:row for row in rows}
         parent = current['derived_from_repository_path']
         if (parent not in by_path
@@ -120,7 +125,9 @@ def check_current_manuscript(root, rows, counts, failures):
 
 
 def check_tree(root):
-    rows = json.loads((root/'docs/SOURCE_IMPORT.json').read_text())['files']
+    rows = []
+    for name in ['SOURCE_IMPORT.json', 'SOURCE_P2P3.json']:
+        rows.extend(json.loads((root/'docs'/name).read_text())['files'])
     failures = []
     warnings = []
     for row in rows:
