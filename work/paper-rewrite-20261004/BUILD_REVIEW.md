@@ -67,16 +67,35 @@ The final external directory holds `source-check.stdout`, `source-check.stderr`
 and `editorial-checks.json`. These outputs are retained outside Git; this note
 records only the bounded verification summary.
 
+## PR #9 merge review
+
+The user requested review and Squash and merge. Separate read-only agent reviews
+of the manuscript claims and repository/provenance found no blocking issue in
+the submitted source. E1/E2/P2 input denominators, P3 display-reference limits,
+Hand's single-image boundary, E4/E5 counts and #770 attribution were checked
+against the preserved reports. All 48 repository-source hashes and 13 inherited
+external-digest provenance entries match their respective sources; excluded
+external bytes were not rehashed.
+
+The repository review passed all 40 existing regression tests, source/import
+checks and manuscript identities. The root agent also verified the existing
+successful TeX build/PDF against the unchanged current manuscript; this review
+did not rerun TeX or model experiments. The submitted head had no GitHub check
+runs or commit statuses, so no CI success is claimed. Final policy/status edits
+record the user's squash preference and the completed review, with a final
+source check before merging the verified head.
+
 ## Remaining delivery and research gates
 
 GitHub authentication initially returned HTTP 401, and the user requested local
 completion first. On resumed delivery, API access recovered and PR #8's merge
 was verified at remote main `ccf1a98eca39d49f06e54f4c3def675a90c10540`. That
 revision was merged into the feature branch without manuscript changes.
-[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9) is open for review.
-Direct Git push still returned 401; authenticated API publication preserved
-matching local/remote Git trees and commit identities. No main push or PR merge
-occurred. The source/import check passed again; no model experiment was run.
+[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9) records delivery,
+review and the live merge state. Direct Git push returned 401 during delivery;
+authenticated API publication preserved matching Git trees and commits. The
+user subsequently authorized Squash and merge after review. No direct main push
+or new model experiment is part of this handoff.
 
 Human audit, recovery/delivery of the external evidence package, fresh-workspace
 reproduction and venue-specific formatting remain open. See the active

@@ -10,6 +10,11 @@ through Git or an API. Do not merge or enable auto-merge without an explicit use
 instruction. This applies to source, manuscript, TODO, memory and policy edits,
 and supersedes the earlier direct-push synchronization preference.
 
+The user's merge preference is **Squash and merge**. Treat future requests to
+"merge" as squash merges unless explicitly told otherwise. This preference
+does not authorize unsolicited merges: review the requested PR, merge its
+verified head and check the resulting single-parent commit on the default branch.
+
 The user requested that future project work be kept in this GitHub repository, then narrowed the upload to code. Keep project source code, necessary manuscript/source documentation, TODO updates, and concise decisions/continuation notes here. Exclude SDKs, emulators/AVDs, installed environments, dependency binaries, model binaries, APKs, classes/DEX, rendered PDFs, logs, and other build/runtime products. Keep new research evidence outside this source-only repository unless the user later changes that scope. Update these notes when findings or next steps change; do not promise unattended background synchronization.
 
 ## Historical verified state recorded by the original workspace
@@ -170,8 +175,13 @@ GitHub API access recovered and PR #8's merged state was verified at main
 That main revision was merged into the feature branch without manuscript edits.
 Direct Git push still returned 401, but the authenticated GitHub API published
 the feature branch while preserving exact local tree and commit identities.
-[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9) is now open for
-review. No default-branch write, PR merge or new model experiment occurred.
+[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9) records delivery
+and review. The user subsequently authorized review and Squash and merge,
+specifying squash as the default for future authorized merges. Separate content
+and repository reviews found no blocking issue; all 40 regression tests, source
+checks and the 48 ledger source identities pass. The existing successful TeX
+build matches the unchanged manuscript. The PR records the live merge state;
+no new model experiment, archive authentication or human audit was performed.
 
 Any new natural-artifact reproduction needs a separately declared scope and
 stopping condition; the completed public-report review is not such a reproduction.

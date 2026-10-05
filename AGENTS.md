@@ -21,6 +21,10 @@ At the start of project work, read `MEMORY.md`, `TODO.md`, and
   API ref updates. Do not merge or enable auto-merge without an explicit user
   instruction. This PR-only rule supersedes the earlier direct-sync workflow
   and applies to code, manuscript, TODO, memory and policy changes alike.
+- When the user authorizes a merge, use **Squash and merge** by default
+  (`merge_method: squash`). Do not substitute a merge commit or rebase merge
+  unless the user explicitly requests it. Merge the reviewed head SHA and verify
+  the resulting single-parent commit on the default branch.
 - Do not promise unattended background synchronization or cross-session recall
   without reading the repository. Do not overwrite unrelated remote changes or
   force-push.

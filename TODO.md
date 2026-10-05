@@ -4,7 +4,7 @@ This is the single active checklist. Timestamped TODOs under `sources/` describe
 earlier states. Read `MEMORY.md` for evidence boundaries and `AGENTS.md` for the
 source-only repository policy.
 
-## Active priorities: review the rewritten paper and complete the handoff
+## Active priorities: human audit, evidence handoff and venue selection
 
 The checkboxes below distinguish completed deliverables from planned work.
 Completion of a bounded comparison does not certify novelty or publication readiness.
@@ -17,9 +17,10 @@ Both bounded P0 assessments and the local manuscript rewrite are complete.
 The selected framing is a controlled empirical study, with E5 supporting the
 analysis rather than supplying a new detection method. The documented
 reproduction handoff is complete; external evidence delivery and human-audit
-preparation remain open. The rewrite is delivered in
-[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9) for review;
-it has not been merged. Venue/category selection still determines the submission form.
+preparation remain open. The rewrite and completed agent review are tracked in
+[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9); the user authorized
+Squash and merge after review. The PR records the live merge state.
+Venue/category selection still determines the submission form.
 
 - [x] **P0 — Contribution and closest-work comparison (agent).** Completed the
   [bounded comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md):
@@ -59,9 +60,11 @@ it has not been merged. Venue/category selection still determines the submission
   `ccf1a98eca39d49f06e54f4c3def675a90c10540`, then incorporated without changing
   manuscript bytes. Git direct push still returned HTTP 401; the authenticated
   GitHub API published the feature branch with matching tree/commit hashes.
-- [ ] **P1 — Review the rewritten draft in PR #9.** Review contribution wording,
-  claim traceability and the remaining evidence limits. Merge only after an
-  explicit user instruction; PR review does not complete human research audit.
+- [x] **P1 — Review the rewritten draft in PR #9.** Separate content and
+  repository/provenance reviews found no blocking issue. All 48 ledger source
+  hashes, 354 imported files and manuscript identities match; all 40 repository
+  regression tests pass. The user authorized Squash and merge; merge only the
+  final verified head. PR review does not complete human research audit.
 - [x] **P1 — Reproduction handoff (agent).** Added the
   [reproduction entry](docs/reproduction/README.md), input/toolchain inventories,
   exact source and historical execution commands, expected outcomes and missing
@@ -187,7 +190,8 @@ that can change the core claim or contribution decision.
   updates and concise decision/handoff notes here after meaningful work.
 - Commit on a feature branch, push that branch and open a PR for user review.
   Verify the remote branch and PR. Never update `main`/the default branch directly
-  or merge/enable auto-merge without an explicit user instruction. Report access
+  or merge/enable auto-merge without an explicit user instruction. An authorized
+  "merge" means **Squash and merge** unless the user explicitly says otherwise. Report access
   blockers; do not promise background synchronization.
 - Keep SDKs, emulators, dependencies, models, generated wrapper outputs, raw
   results, logs, rendered documents, archives and compiled products outside Git.

@@ -68,8 +68,10 @@ failure led to local completion first. After API access recovered, PR #8's merge
 was verified at main `ccf1a98eca39d49f06e54f4c3def675a90c10540` and incorporated
 into the feature branch; the merge changed no manuscript bytes.
 
-[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9) now contains the
-rewrite for review. Direct Git push still returned HTTP 401; authenticated
-GitHub API publication preserved the exact local Git trees and commits. No
-default-branch write or PR merge occurred. Human audit, external evidence
-delivery and venue formatting remain on the active [TODO](../../TODO.md).
+[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9) records delivery,
+completed agent review and live merge state. Direct Git push returned HTTP 401
+during delivery; authenticated API publication preserved the exact local Git
+trees and commits. The user subsequently authorized Squash and merge after
+review, and this is the default for future authorized merges. Human audit,
+external evidence delivery and venue formatting remain on the active
+[TODO](../../TODO.md).
