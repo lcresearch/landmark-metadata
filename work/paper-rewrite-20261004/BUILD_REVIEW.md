@@ -69,10 +69,14 @@ records only the bounded verification summary.
 
 ## Remaining delivery and research gates
 
-GitHub authentication returned HTTP 401, and the user requested local completion
-first. The saved PR #8 head is the local base; its merge is user-confirmed but
-current remote state is unverified. The new feature branch still needs a PR
-after remote-base reconciliation. No direct main push or merge is authorized.
+GitHub authentication initially returned HTTP 401, and the user requested local
+completion first. On resumed delivery, API access recovered and PR #8's merge
+was verified at remote main `ccf1a98eca39d49f06e54f4c3def675a90c10540`. That
+revision was merged into the feature branch without manuscript changes.
+[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9) is open for review.
+Direct Git push still returned 401; authenticated API publication preserved
+matching local/remote Git trees and commit identities. No main push or PR merge
+occurred. The source/import check passed again; no model experiment was run.
 
 Human audit, recovery/delivery of the external evidence package, fresh-workspace
 reproduction and venue-specific formatting remain open. See the active

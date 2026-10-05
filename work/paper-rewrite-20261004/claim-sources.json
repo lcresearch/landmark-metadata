@@ -750,5 +750,11 @@
     "External result digests are inherited provenance and were not recomputed for this ledger.",
     "Previously read-back 59 files are a finite old-record subset, not full APK/code/preservation/reference revalidation.",
     "Source-only repository is not a complete portable evidence deposit."
-  ]
+  ],
+  "publication": {
+    "base_commit": "ccf1a98eca39d49f06e54f4c3def675a90c10540",
+    "pr_8_merge_verified": true,
+    "pull_request": "https://github.com/lcresearch/landmark-metadata/pull/9",
+    "scope": "Publication/provenance update only; no new model run or excluded raw-evidence verification."
+  }
 }

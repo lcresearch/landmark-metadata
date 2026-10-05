@@ -17,9 +17,9 @@ Both bounded P0 assessments and the local manuscript rewrite are complete.
 The selected framing is a controlled empirical study, with E5 supporting the
 analysis rather than supplying a new detection method. The documented
 reproduction handoff is complete; external evidence delivery and human-audit
-preparation remain open. The local rewrite is not yet delivered as a PR because
-GitHub authentication returned HTTP 401; the user requested local completion
-first. Venue/category selection still determines the submission form.
+preparation remain open. The rewrite is delivered in
+[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9) for review;
+it has not been merged. Venue/category selection still determines the submission form.
 
 - [x] **P0 — Contribution and closest-work comparison (agent).** Completed the
   [bounded comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md):
@@ -53,13 +53,15 @@ first. Venue/category selection still determines the submission form.
   one-image boundary. Old drafts are unchanged. Agent review and an eight-page
   generic reading build are complete; no model experiment or human audit was
   rerun, and venue-length compliance is not established.
-- [ ] **P1 — Deliver the rewrite through a new PR.** Local branch:
-  `paper/executable-contract-rewrite`, based on the saved PR #8 head
-  `87290c2f7571d1fdf5cc2e56286a0ecff5b984ac`. After GitHub authentication is
-  available, fetch/review the current default branch, reconcile changes without
-  overwriting unrelated work, push only the feature branch and open a PR.
-  PR #8's merge is user-confirmed; remote state was not reverified in this turn.
-  Do not merge the new PR without a further explicit instruction.
+- [x] **P1 — Deliver the rewrite through a new PR.**
+  [PR #9](https://github.com/lcresearch/landmark-metadata/pull/9) publishes
+  `paper/executable-contract-rewrite`. PR #8's merge was verified at remote main
+  `ccf1a98eca39d49f06e54f4c3def675a90c10540`, then incorporated without changing
+  manuscript bytes. Git direct push still returned HTTP 401; the authenticated
+  GitHub API published the feature branch with matching tree/commit hashes.
+- [ ] **P1 — Review the rewritten draft in PR #9.** Review contribution wording,
+  claim traceability and the remaining evidence limits. Merge only after an
+  explicit user instruction; PR review does not complete human research audit.
 - [x] **P1 — Reproduction handoff (agent).** Added the
   [reproduction entry](docs/reproduction/README.md), input/toolchain inventories,
   exact source and historical execution commands, expected outcomes and missing

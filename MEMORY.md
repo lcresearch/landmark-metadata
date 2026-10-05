@@ -162,12 +162,16 @@ were visually checked. PDF and build logs stay outside Git. Prior working and
 imported manuscripts remain unchanged. Human verification, portable evidence
 delivery and venue formatting are still open.
 
-The branch is `paper/executable-contract-rewrite`, based on saved PR #8 head
-`87290c2f7571d1fdf5cc2e56286a0ecff5b984ac`. The user confirmed #8 was merged,
-but current `gh` authentication returned HTTP 401. The user then requested local
-completion first. No new PR is claimed. Once access works, check the remote base
-before publishing this feature branch; never push directly to main or merge
-without explicit instruction.
+The branch is `paper/executable-contract-rewrite`, originally based on saved PR #8
+head `87290c2f7571d1fdf5cc2e56286a0ecff5b984ac`. The initial HTTP 401 blocked
+publication, so the user requested local completion first. On resumed delivery,
+GitHub API access recovered and PR #8's merged state was verified at main
+`ccf1a98eca39d49f06e54f4c3def675a90c10540`; its tree matches the saved #8 head.
+That main revision was merged into the feature branch without manuscript edits.
+Direct Git push still returned 401, but the authenticated GitHub API published
+the feature branch while preserving exact local tree and commit identities.
+[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9) is now open for
+review. No default-branch write, PR merge or new model experiment occurred.
 
 Any new natural-artifact reproduction needs a separately declared scope and
 stopping condition; the completed public-report review is not such a reproduction.

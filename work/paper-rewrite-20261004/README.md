@@ -60,15 +60,16 @@ source checker covers imports, navigation, syntax and indexed manuscript hashes;
 it does not verify the excluded experiment archive. Inspect its failure and
 warning lists as well as the exit code.
 
-## Local delivery state
+## PR delivery state
 
 The feature branch is `paper/executable-contract-rewrite`, based on saved PR #8
-head `87290c2f7571d1fdf5cc2e56286a0ecff5b984ac`. The user reported #8 merged;
-remote state could not be checked while GitHub authentication returned HTTP 401.
-The user then requested local completion first. A new PR remains pending.
+head `87290c2f7571d1fdf5cc2e56286a0ecff5b984ac`. The initial authentication
+failure led to local completion first. After API access recovered, PR #8's merge
+was verified at main `ccf1a98eca39d49f06e54f4c3def675a90c10540` and incorporated
+into the feature branch; the merge changed no manuscript bytes.
 
-Before publishing, fetch the current default branch, review/reconcile any newer
-changes and verify the branch diff. Push the feature branch and create a PR;
-never update main directly. No merge is authorized for this new PR. Human audit,
-external evidence delivery and venue formatting remain on the active
-[TODO](../../TODO.md).
+[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9) now contains the
+rewrite for review. Direct Git push still returned HTTP 401; authenticated
+GitHub API publication preserved the exact local Git trees and commits. No
+default-branch write or PR merge occurred. Human audit, external evidence
+delivery and venue formatting remain on the active [TODO](../../TODO.md).

@@ -7,5 +7,7 @@
   "scope": "Editorial rewrite centered on actual getter failure, changed display association, same-Android stages and bounded supporting checks; integrates completed contribution/significance assessments and Support #770 antecedent. No new model experiment or human audit. Prior manuscript snapshots are unchanged.",
   "editorial_predecessor_repository_path": "work/review-followup-20261004/manuscript/paper.tex",
   "editorial_predecessor_sha256": "6e77175d25ff0834978463bdb2359ab82e6cf62bc8e2d611960c23dcf8b48537",
-  "remote_base_status": "User reported PR #8 merged; saved PR head used locally. GitHub authentication returned HTTP 401, so current remote base has not been reverified."
+  "remote_base_status": "Verified PR #8 merged at main ccf1a98eca39d49f06e54f4c3def675a90c10540 after API authentication recovered. Incorporated into the feature branch without manuscript edits; PR #9 is open. Direct Git push still returned HTTP 401; GitHub API publication preserved local Git identities.",
+  "publication_base_commit": "ccf1a98eca39d49f06e54f4c3def675a90c10540",
+  "pull_request": "https://github.com/lcresearch/landmark-metadata/pull/9"
 }

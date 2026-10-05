@@ -7,6 +7,11 @@ compiler, emulator or inference experiment.** It does not upgrade a reported obs
 into a fresh execution. The local starting revision is
 `87290c2f7571d1fdf5cc2e56286a0ecff5b984ac`; PR #8's merge was reported by the user,
 not independently verified against GitHub during the blocked connection.
+At subsequent publication, the API verified #8 as merged at main
+`ccf1a98eca39d49f06e54f4c3def675a90c10540`; its tree matches the saved #8 head.
+The feature branch incorporated that revision and is now submitted as
+[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9). This publication
+check does not change the recorded experiment or raw-evidence verification scope.
 
 The accompanying [source index](claim-sources.json) records exact repository
 source/report digests computed for this ledger, claim-to-source mappings, and
