@@ -16,10 +16,10 @@ or practical significance.
 Both bounded P0 assessments and the local manuscript rewrite are complete.
 The selected framing is a controlled empirical study, with E5 supporting the
 analysis rather than supplying a new detection method. The documented
-reproduction handoff is complete; external evidence delivery and human-audit
-preparation remain open. The rewrite and completed agent review are tracked in
-[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9); the user authorized
-Squash and merge after review. The PR records the live merge state.
+reproduction handoff and human-audit entry preparation are complete; external
+evidence delivery and actual human verification remain open. The rewrite and
+completed agent review were squash-merged in
+[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9), commit `ba1b5c5`.
 Venue/category selection still determines the submission form.
 
 - [x] **P0 — Contribution and closest-work comparison (agent).** Completed the
@@ -80,12 +80,20 @@ Venue/category selection still determines the submission form.
   manifests, and verify the selected build/run in a fresh workspace. Keep binary
   evidence outside Git. Current local availability and source-copy smoke checks
   do not complete this item.
-- [ ] **P1 — Actual human audit (agent preparation; human verification).**
-  Prepare a checklist and evidence index for the generated getter call, packaged
-  model identity, preservation comparisons, exact exceptions and P3 reference
-  chain. Completion requires an actual human's reviewer identity, date, scope,
-  method and conclusions; checklist preparation or an agent rerun does not close
-  this item. Distinguish author verification from independent reproduction.
+- [x] **P1 — Prepare the human audit entry (agent).** The
+  [entry](docs/human-audit/README.md), [inspection checklist](docs/human-audit/CHECKLIST.md),
+  [machine-readable map](docs/human-audit/audit-map.json) and
+  [unsigned review template](docs/human-audit/REVIEW_RECORD_TEMPLATE.md) bind ten
+  audit items to all 16 current ledger claims/subclaims. They identify exact
+  source/provenance routes, required external evidence and earlier agent scope.
+  Historical checklists remain unchanged; no external evidence or model run was
+  newly checked, and every human status remains PENDING.
+- [ ] **P1 — Complete the actual human audit (human).** Use the prepared entry;
+  record reviewer identity/role, date, exact artifact identities, scope, method,
+  observations and per-item conclusions. Missing raw prerequisites stay blocked
+  rather than inheriting an agent PASS. Checklist preparation and agent reviews
+  do not close this item. Distinguish author verification, independent human
+  audit and independent human reproduction.
 - [ ] **P2 — Venue selection and formatting (author decision; agent support).**
   Choose a venue and paper category consistent with the P0 assessment and revised
   contribution. Completion means the selected template has been rendered and

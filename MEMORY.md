@@ -218,6 +218,33 @@ configuration and absolute paths; follow the gated command guide, not a blind
 replay of `commands.sh`. The separate external-deposit plan remains to be executed;
 source-only documentation is not a portable evidence archive or human audit.
 
+## Human audit entry preparation
+
+The [current entry](docs/human-audit/README.md) targets the manuscript merged by
+PR #9 (`ba1b5c5`, source SHA-256 `43b92dbb0230fc1232093be6a33fca435188dc2f43ae499ac6bfa8e362f37bb2`).
+Ten inspection items map all 16 ledger claims/subclaims to repository sources,
+required raw-material routes, earlier agent coverage and human observation
+requirements. HA01–HA07 cover the core getter, asset identity, preservation,
+E1/E2 observations, P2 boundary and qualified P3 reference. HA08–HA10 retain
+Hand, external/preflight/parser and novelty/significance limits.
+
+This task prepares documentation only: source/index hashes and navigation are
+checked, while external raw evidence availability, model execution and reference
+recomputation are not. Earlier availability observations stay explicitly dated.
+The original E1/E2, installed-toolchain construction audit and later reconstruction
+must not be substituted for one another. Original E1 has no preload hash;
+AssetManager observations belong to the later construction audit and P2, and
+are not intercepted native interpreter buffers.
+
+The historical HUMAN_AUDIT snapshots remain unchanged. Follow the current
+reproduction command guide rather than blindly running their old command
+histories. The unsigned template requires an actual person's role, identity,
+scope, inspected artifacts, methods, observations, discrepancies and attestation.
+Every human item remains PENDING; no signature or successful human conclusion
+is supplied by this preparation. The TODO separates preparation from actual
+human verification and external evidence delivery. Future authorized merges
+still use Squash and merge; this new documentation is submitted through a PR.
+
 ## Evidence availability
 
 The historical handoff recorded sealed evidence in the original workspace; it is

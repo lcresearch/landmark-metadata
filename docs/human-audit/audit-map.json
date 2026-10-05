@@ -1,0 +1,503 @@
+{
+  "schema_version": 1,
+  "purpose": "Human-audit preparation index, not a validator or a human verdict",
+  "repository_base_commit": "ba1b5c5a0e5df44c28e7232b044bc6741d29bb47",
+  "target_manuscript": {
+    "path": "work/paper-rewrite-20261004/manuscript/paper.tex",
+    "sha256": "43b92dbb0230fc1232093be6a33fca435188dc2f43ae499ac6bfa8e362f37bb2",
+    "bytes": 45003
+  },
+  "preparation_scope": {
+    "repository_sources_read": true,
+    "model_experiments_run": false,
+    "external_evidence_read_or_rehashed": false,
+    "current_external_availability_checked": false,
+    "human_verification": "PENDING"
+  },
+  "status_values": [
+    "PENDING",
+    "SUPPORTED_WITHIN_SCOPE",
+    "DISCREPANCY_FOUND",
+    "BLOCKED_MISSING_EVIDENCE",
+    "INCONCLUSIVE"
+  ],
+  "upstream_records": [
+    {
+      "path": "docs/CURRENT_MANUSCRIPT.json",
+      "sha256": "09dbeb7075f62de4af2c010b61da75365df55386ebd53403505905af4021079d",
+      "bytes": 1507,
+      "verification": "REPOSITORY_BYTES_HASHED_FOR_PREPARATION"
+    },
+    {
+      "path": "work/paper-rewrite-20261004/claim-sources.json",
+      "sha256": "4a5875437bea046d85dc297b6dd15b81b85e26392b5c0397e2659e006a3d6db4",
+      "bytes": 32600,
+      "verification": "REPOSITORY_BYTES_HASHED_FOR_PREPARATION"
+    },
+    {
+      "path": "work/paper-rewrite-20261004/CLAIM_EVIDENCE.md",
+      "sha256": "2acc7933b8dfac1fcdcc2004f6769a47c65c4a3007abbcebf6cce88d6fd1f92d",
+      "bytes": 21252,
+      "verification": "REPOSITORY_BYTES_HASHED_FOR_PREPARATION"
+    },
+    {
+      "path": "docs/reproduction/inputs.json",
+      "sha256": "b297d7b0756a8f10f8488f2b2bbe8b15a51239e9de354983ca17d264127069cf",
+      "bytes": 37756,
+      "verification": "REPOSITORY_BYTES_HASHED_FOR_PREPARATION"
+    },
+    {
+      "path": "docs/reproduction/toolchain.json",
+      "sha256": "cdc31330a5368dd9520076af3f8c8cd6e0dfb8f2e95287627a530b37b861da02",
+      "bytes": 57652,
+      "verification": "REPOSITORY_BYTES_HASHED_FOR_PREPARATION"
+    },
+    {
+      "path": "docs/reproduction/validation.json",
+      "sha256": "0a94da3624ba31b00ab99258d4b7bf6c0d0c69e5e554e60867ea32b1b8865a5d",
+      "bytes": 11709,
+      "verification": "REPOSITORY_BYTES_HASHED_FOR_PREPARATION"
+    },
+    {
+      "path": "docs/reproduction/COMMANDS.md",
+      "sha256": "f066ef492cf30a049f3e5545c2db25137dabaa6b9a2ce11608dc8fd54bc7f92e",
+      "bytes": 19297,
+      "verification": "REPOSITORY_BYTES_HASHED_FOR_PREPARATION"
+    },
+    {
+      "path": "sources/metadata-contract-e2e-20261004T030536Z/HUMAN_AUDIT.md",
+      "sha256": "0a9ac16e02f0e530e8c9922a9193b4a8a2846c5bf8bc8c39ba91b4556bf819c9",
+      "bytes": 4894,
+      "verification": "REPOSITORY_BYTES_HASHED_FOR_PREPARATION"
+    },
+    {
+      "path": "research/20261004-p2-p3/HUMAN_AUDIT.md",
+      "sha256": "201107062bbcce3fde5edbd178000e383870ac964548dfb0253ab97c440b2e82",
+      "bytes": 2338,
+      "verification": "REPOSITORY_BYTES_HASHED_FOR_PREPARATION"
+    },
+    {
+      "path": "research/20261004-p2-p3/P3/HUMAN_AUDIT.md",
+      "sha256": "159c82670ae6dee26543aaa6118ae6ad14af47db330d7d54bfa2ec23a960c8dc",
+      "bytes": 1330,
+      "verification": "REPOSITORY_BYTES_HASHED_FOR_PREPARATION"
+    }
+  ],
+  "source_id_resolution": {
+    "index_path": "work/paper-rewrite-20261004/claim-sources.json",
+    "array": "source_records",
+    "key": "id"
+  },
+  "external_identity_resolution": {
+    "inventory_path": "docs/reproduction/inputs.json",
+    "availability_observation_utc": "2026-10-04T20:09:25.061862+00:00",
+    "caution": "Availability fields describe the earlier handoff, not a current check; expected digests are not new observations."
+  },
+  "evidence_families": [
+    {
+      "id": "ORIGINAL",
+      "historical_root": "/workspace/metadata-contract-e2e-20261004T030536Z",
+      "role": "Original E1/E2 and E4/E5/Hand evidence",
+      "availability_this_preparation": "NOT_CHECKED"
+    },
+    {
+      "id": "BUILD_AUDIT",
+      "historical_root": "/workspace/metadata-contract-audit-20261004T062010Z",
+      "role": "Original saved-record preservation audit and separate installed-toolchain construction audit",
+      "availability_this_preparation": "NOT_CHECKED"
+    },
+    {
+      "id": "P2P3",
+      "historical_root": "/workspace/metadata-contract-p2p3-20261004T073824Z",
+      "role": "Same-Android P2 and qualified P3 reference inquiry",
+      "availability_this_preparation": "NOT_CHECKED"
+    },
+    {
+      "id": "RECONSTRUCTION",
+      "historical_roots": [
+        "/workspace/repro-android",
+        "/workspace/repro-task",
+        "/workspace/repro-hand",
+        "/workspace/repro-external",
+        "/workspace/repro-claims",
+        "/workspace/repro-audit",
+        "/workspace/repro-control"
+      ],
+      "role": "Later separate reconstruction and parser-probe evidence",
+      "availability_this_preparation": "NOT_CHECKED",
+      "prior_availability": "Missing at paths checked by the reproduction handoff; see inputs.json"
+    },
+    {
+      "id": "LITERATURE_REPORTS",
+      "repository_indexes": [
+        "research/20261004-contribution-review/README.md",
+        "research/20261004-significance-review/public-report-sources.json"
+      ],
+      "role": "Preserved contribution/significance comparisons and external source locators",
+      "availability_this_preparation": "External source bodies not checked"
+    }
+  ],
+  "items": [
+    {
+      "id": "HA01",
+      "title": "Actual generated public call",
+      "claim_ids": [
+        "C3",
+        "C2R"
+      ],
+      "section_labels": [
+        "sec:e1",
+        "sec:e2"
+      ],
+      "source_ids": [
+        "S04",
+        "S06",
+        "S07",
+        "S15",
+        "S16",
+        "S17",
+        "S43"
+      ],
+      "evidence_family_ids": [
+        "ORIGINAL",
+        "BUILD_AUDIT"
+      ],
+      "inspection_guide": "docs/human-audit/CHECKLIST.md#ha01",
+      "prior_agent_coverage": "Prior source/bytecode and saved-run audits plus installed-toolchain reconstruction; the finite readback did not repeat disassembly.",
+      "human_status": "PENDING",
+      "human_reviewer": null,
+      "human_conclusion": null
+    },
+    {
+      "id": "HA02",
+      "title": "Model, APK asset and preload identities",
+      "claim_ids": [
+        "C2",
+        "C2R",
+        "C3",
+        "C6"
+      ],
+      "section_labels": [
+        "sec:consumers",
+        "sec:e1",
+        "sec:e2"
+      ],
+      "source_ids": [
+        "S02",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S09",
+        "S10",
+        "S13",
+        "S14",
+        "S15",
+        "S16",
+        "S17",
+        "S43"
+      ],
+      "evidence_family_ids": [
+        "ORIGINAL",
+        "BUILD_AUDIT",
+        "P2P3"
+      ],
+      "inspection_guide": "docs/human-audit/CHECKLIST.md#ha02",
+      "prior_agent_coverage": "Handoff rehashed five selected original model/resources; P2 copies and E2 restoration alias were existence-only. Original E1 has no preload hash.",
+      "human_status": "PENDING",
+      "human_reviewer": null,
+      "human_conclusion": null
+    },
+    {
+      "id": "HA03",
+      "title": "Separate preservation comparisons",
+      "claim_ids": [
+        "C2",
+        "C2R"
+      ],
+      "section_labels": [
+        "sec:e1",
+        "sec:e2"
+      ],
+      "source_ids": [
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S10",
+        "S15",
+        "S16",
+        "S17",
+        "S43"
+      ],
+      "evidence_family_ids": [
+        "ORIGINAL",
+        "BUILD_AUDIT"
+      ],
+      "inspection_guide": "docs/human-audit/CHECKLIST.md#ha03",
+      "prior_agent_coverage": "Reports record independent graph/buffer/resource and code comparisons. The handoff did not redo canonicalization or full preservation.",
+      "human_status": "PENDING",
+      "human_reviewer": null,
+      "human_conclusion": null
+    },
+    {
+      "id": "HA04",
+      "title": "E1 stages, numerical preservation and exception",
+      "claim_ids": [
+        "C3",
+        "C2",
+        "C2R"
+      ],
+      "section_labels": [
+        "sec:e1",
+        "sec:e2"
+      ],
+      "source_ids": [
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S10",
+        "S15",
+        "S16",
+        "S17",
+        "S43"
+      ],
+      "evidence_family_ids": [
+        "ORIGINAL",
+        "BUILD_AUDIT"
+      ],
+      "inspection_guide": "docs/human-audit/CHECKLIST.md#ha04",
+      "prior_agent_coverage": "Recorded primary/replay/rebuild stage outcomes; later finite readback inspected primary observations only.",
+      "human_status": "PENDING",
+      "human_reviewer": null,
+      "human_conclusion": null
+    },
+    {
+      "id": "HA05",
+      "title": "E2 numerical, association and reversal observations",
+      "claim_ids": [
+        "C4"
+      ],
+      "section_labels": [
+        "sec:e2"
+      ],
+      "source_ids": [
+        "S05",
+        "S06",
+        "S08",
+        "S15",
+        "S16",
+        "S17"
+      ],
+      "evidence_family_ids": [
+        "ORIGINAL"
+      ],
+      "inspection_guide": "docs/human-audit/CHECKLIST.md#ha05",
+      "prior_agent_coverage": "Reported full comparisons and interrupted replay/recovery. Later finite readback checked saved primary bytes, not new execution or chronology authentication.",
+      "human_status": "PENDING",
+      "human_reviewer": null,
+      "human_conclusion": null
+    },
+    {
+      "id": "HA06",
+      "title": "Same-Android consumer boundaries",
+      "claim_ids": [
+        "C6"
+      ],
+      "section_labels": [
+        "sec:consumers"
+      ],
+      "source_ids": [
+        "S02",
+        "S09",
+        "S10",
+        "S13",
+        "S14",
+        "S15",
+        "S16",
+        "S17"
+      ],
+      "evidence_family_ids": [
+        "P2P3"
+      ],
+      "inspection_guide": "docs/human-audit/CHECKLIST.md#ha06",
+      "prior_agent_coverage": "Prior complete P2 audit is distinct from later finite readback of only the two deletion records.",
+      "human_status": "PENDING",
+      "human_reviewer": null,
+      "human_conclusion": null
+    },
+    {
+      "id": "HA07",
+      "title": "Qualified independent display-order reference",
+      "claim_ids": [
+        "C5"
+      ],
+      "section_labels": [
+        "sec:e2"
+      ],
+      "source_ids": [
+        "S11",
+        "S12",
+        "S13",
+        "S15",
+        "S16",
+        "S17",
+        "S18"
+      ],
+      "evidence_family_ids": [
+        "ORIGINAL",
+        "P2P3"
+      ],
+      "inspection_guide": "docs/human-audit/CHECKLIST.md#ha07",
+      "prior_agent_coverage": "Prior bridge/reference audit; later input rehash and stored-row recount do not independently recompute the bridge or establish authority.",
+      "human_status": "PENDING",
+      "human_reviewer": null,
+      "human_conclusion": null
+    },
+    {
+      "id": "HA08",
+      "title": "Hand role, binding and Task boundary",
+      "claim_ids": [
+        "C7"
+      ],
+      "section_labels": [
+        "sec:hand"
+      ],
+      "source_ids": [
+        "S20",
+        "S21",
+        "S22"
+      ],
+      "evidence_family_ids": [
+        "ORIGINAL"
+      ],
+      "inspection_guide": "docs/human-audit/CHECKLIST.md#ha08",
+      "prior_agent_coverage": "Recorded source/reference bridge, repaired generic binding and one-image Task comparison; no new raw inspection in this preparation.",
+      "human_status": "PENDING",
+      "human_reviewer": null,
+      "human_conclusion": null
+    },
+    {
+      "id": "HA09",
+      "title": "Structural, external and supporting-check scope",
+      "claim_ids": [
+        "C1",
+        "C8",
+        "C8D",
+        "C9",
+        "C9E",
+        "C10"
+      ],
+      "section_labels": [
+        "sec:contracts",
+        "sec:preflight"
+      ],
+      "source_ids": [
+        "S01",
+        "S02",
+        "S03",
+        "S19",
+        "S23",
+        "S24",
+        "S25",
+        "S26",
+        "S27",
+        "S28",
+        "S29",
+        "S44",
+        "S45",
+        "S46",
+        "S47",
+        "S48"
+      ],
+      "evidence_family_ids": [
+        "ORIGINAL",
+        "BUILD_AUDIT",
+        "RECONSTRUCTION"
+      ],
+      "inspection_guide": "docs/human-audit/CHECKLIST.md#ha09",
+      "prior_agent_coverage": "Development/E4/E5 and reconstruction parser reports have distinct provenance; later reconstruction prerequisites were missing at the earlier handoff paths.",
+      "human_status": "PENDING",
+      "human_reviewer": null,
+      "human_conclusion": null,
+      "subitems": [
+        {
+          "id": "HA09a",
+          "scope": "Development and external counts",
+          "claim_ids": [
+            "C8",
+            "C8D"
+          ],
+          "human_status": "PENDING"
+        },
+        {
+          "id": "HA09b",
+          "scope": "Structural/decoder assumptions, matched baseline and frozen E5 counts",
+          "claim_ids": [
+            "C1",
+            "C9",
+            "C9E"
+          ],
+          "human_status": "PENDING"
+        },
+        {
+          "id": "HA09c",
+          "scope": "Historical parser approximation and maintained correction",
+          "claim_ids": [
+            "C10"
+          ],
+          "human_status": "PENDING"
+        }
+      ]
+    },
+    {
+      "id": "HA10",
+      "title": "Antecedents, contribution and significance",
+      "claim_ids": [
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "section_labels": [
+        "sec:discussion",
+        "sec:related",
+        "sec:validity"
+      ],
+      "source_ids": [
+        "S01",
+        "S02",
+        "S15",
+        "S30",
+        "S31",
+        "S32",
+        "S33",
+        "S34",
+        "S35",
+        "S36",
+        "S37",
+        "S38",
+        "S39",
+        "S40"
+      ],
+      "evidence_family_ids": [
+        "LITERATURE_REPORTS"
+      ],
+      "inspection_guide": "docs/human-audit/CHECKLIST.md#ha10",
+      "prior_agent_coverage": "Bounded contribution/significance source review and public-report inquiry; seven full texts, stated access limits, zero reproduced issue artifacts.",
+      "human_status": "PENDING",
+      "human_reviewer": null,
+      "human_conclusion": null
+    }
+  ],
+  "human_record_template": "docs/human-audit/REVIEW_RECORD_TEMPLATE.md",
+  "limits": [
+    "Every human status is pending; no person has supplied a signed review in this task.",
+    "Repository/source/report agreement does not authenticate excluded runtime or reference-authority evidence.",
+    "Original, installed-toolchain rebuild and later reconstruction evidence are not interchangeable.",
+    "Update the scope binding if the manuscript or relevant source identities change; no automatic carry-forward of verdicts."
+  ]
+}
