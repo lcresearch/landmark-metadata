@@ -1,8 +1,14 @@
 {
-  "repository_path": "work/review-followup-20261004/manuscript/paper.tex",
-  "sha256": "6e77175d25ff0834978463bdb2359ab82e6cf62bc8e2d611960c23dcf8b48537",
+  "repository_path": "work/paper-rewrite-20261004/manuscript/paper.tex",
+  "sha256": "43b92dbb0230fc1232093be6a33fca435188dc2f43ae499ac6bfa8e362f37bb2",
   "derived_from_repository_path": "research/20261004-p2-p3/manuscript/paper.tex",
   "derived_from_sha256": "118ccc9820454f8ac1d3b0416ba456401e5ef3f9e9d0199ba1c59991103ec5a9",
-  "base_commit": "da974504f932aac70049e737d59cb67a8715fbca",
-  "scope": "Editorial follow-up on the completed P2/P3 manuscript, including the audited label-parser correction and its bounded counterexamples; no new model execution or human audit by this manuscript update."
+  "base_commit": "87290c2f7571d1fdf5cc2e56286a0ecff5b984ac",
+  "scope": "Editorial rewrite centered on actual getter failure, changed display association, same-Android stages and bounded supporting checks; integrates completed contribution/significance assessments and Support #770 antecedent. No new model experiment or human audit. Prior manuscript snapshots are unchanged.",
+  "editorial_predecessor_repository_path": "work/review-followup-20261004/manuscript/paper.tex",
+  "editorial_predecessor_sha256": "6e77175d25ff0834978463bdb2359ab82e6cf62bc8e2d611960c23dcf8b48537",
+  "remote_base_status": "Verified PR #8 merged at main ccf1a98eca39d49f06e54f4c3def675a90c10540 after API access recovered. Incorporated without manuscript edits; PR #9 records delivery, completed review and live merge state. Direct Git push returned HTTP 401 during delivery; API publication preserved local Git identities.",
+  "publication_base_commit": "ccf1a98eca39d49f06e54f4c3def675a90c10540",
+  "pull_request": "https://github.com/lcresearch/landmark-metadata/pull/9",
+  "merge_policy": "User-authorized merges use Squash and merge by default; PR #9 was explicitly authorized after review."
 }

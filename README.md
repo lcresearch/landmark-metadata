@@ -9,7 +9,9 @@ source and continuation documents, **not the complete evidence archive**.
 
 ## Start here
 
-- [Current manuscript source](work/review-followup-20261004/manuscript/paper.tex)
+- [Current manuscript source](work/paper-rewrite-20261004/manuscript/paper.tex)
+- [Manuscript claim–evidence table](work/paper-rewrite-20261004/CLAIM_EVIDENCE.md)
+- [Rewrite scope, review and build instructions](work/paper-rewrite-20261004/README.md)
 - [Current manuscript and preserved-parent digests](docs/CURRENT_MANUSCRIPT.json)
 - [Completed same-Android comparison and display-reference findings](research/20261004-p2-p3/RESULTS_OVERVIEW.md)
 - [Fresh reproduction and repository audit (2026-10-04)](sources/repro-audit-20261004/REPORT.md)
@@ -40,7 +42,8 @@ source and continuation documents, **not the complete evidence archive**.
 | [Agent audit](sources/metadata-contract-audit-20261004T062010Z) | Preservation checks, fresh build scripts, baseline comparison and claim/literature audit scripts |
 | [Preserved audit-informed revision](sources/metadata-contract-paper-revision-20261004T065132Z) | Historical LaTeX, editorial scripts and revision notes |
 | [Preserved P2/P3 follow-up](research/20261004-p2-p3) | Same-Android harnesses, reference inquiry, separate audits and manuscript parent |
-| [Current editorial follow-up](work/review-followup-20261004) | Current LaTeX; no new model execution or human audit |
+| [Preserved editorial follow-up](work/review-followup-20261004) | Earlier LaTeX with parser-scope corrections; unchanged by the new rewrite |
+| [Current paper rewrite](work/paper-rewrite-20261004) | Controlled execution narrative, claim–evidence ledger, contribution/significance integration and build/review notes |
 | [Maintained observation reader](work/observation-review-20261004) | Exact Hand, Task and Android evidence identities; preserves the exported audit snapshot |
 
 `sources/` retains original timestamped names and source bytes. Per-experiment

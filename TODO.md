@@ -4,7 +4,7 @@ This is the single active checklist. Timestamped TODOs under `sources/` describe
 earlier states. Read `MEMORY.md` for evidence boundaries and `AGENTS.md` for the
 source-only repository policy.
 
-## Active priorities: assess the contribution before the full rewrite
+## Active priorities: human audit, evidence handoff and venue selection
 
 The checkboxes below distinguish completed deliverables from planned work.
 Completion of a bounded comparison does not certify novelty or publication readiness.
@@ -13,12 +13,14 @@ follow-up names. The same-Android P2 comparison and bounded P3 reference inquiry
 remain complete. Stronger execution evidence does not by itself establish novelty
 or practical significance.
 
-Both bounded P0 assessments are complete; use their conclusions to choose the
-contribution and do the full manuscript rewrite. The documented reproduction
-handoff is complete; external evidence delivery and human-audit preparation can
-proceed in parallel. Record whether the evidence supports a bounded empirical
-study, a method contribution, or a shorter case/experience report; do not assume
-the strongest framing in advance.
+Both bounded P0 assessments and the local manuscript rewrite are complete.
+The selected framing is a controlled empirical study, with E5 supporting the
+analysis rather than supplying a new detection method. The documented
+reproduction handoff is complete; external evidence delivery and human-audit
+preparation remain open. The rewrite and completed agent review are tracked in
+[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9); the user authorized
+Squash and merge after review. The PR records the live merge state.
+Venue/category selection still determines the submission form.
 
 - [x] **P0 — Contribution and closest-work comparison (agent).** Completed the
   [bounded comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md):
@@ -40,18 +42,29 @@ the strongest framing in advance.
   reference-map comparisons remain strong defenses. Parser counterexamples concern
   our historical checker/baseline. This closes the assessment, not an importance
   or publication-readiness certification; no new model experiment or human audit.
-- [ ] **P1 — Determine the framing and rewrite the main argument (agent;
-  depends on P0).** Organize the current working manuscript as: contract
+- [x] **P1 — Determine the framing and rewrite the main argument (agent).**
+  The [new working draft](work/paper-rewrite-20261004/manuscript/paper.tex) follows: contract
   definitions → E1 actual getter failure → E2 successful but changed association
   → same-Android enforcement-stage comparison → Hand reference semantics and
-  consumer boundary → external checks and preflight limits. Include the parser
-  counterexamples at their demonstrated scope; keep S/I/D separate and P as
-  intervention-preservation evidence. Completion means a coherent revised draft
-  with claims traceable to evidence and the P0 positioning decision. Compress
-  internal research history and Hand provenance into supporting material while
-  retaining the one-image boundary. Preserve historical manuscript snapshots.
-  Cite Support #770 as both motivation and prior engineering evidence; explain
-  test-property coverage without implying that existing protections are absent.
+  consumer boundary → external checks and preflight limits. The
+  [claim–evidence table](work/paper-rewrite-20261004/CLAIM_EVIDENCE.md) records
+  source identities and verification limits. The draft incorporates both P0
+  assessments, #770 as motivation and antecedent, parser counterexamples, S/I/D
+  separation and P as preservation. E5 stays auxiliary and Hand retains its
+  one-image boundary. Old drafts are unchanged. Agent review and an eight-page
+  generic reading build are complete; no model experiment or human audit was
+  rerun, and venue-length compliance is not established.
+- [x] **P1 — Deliver the rewrite through a new PR.**
+  [PR #9](https://github.com/lcresearch/landmark-metadata/pull/9) publishes
+  `paper/executable-contract-rewrite`. PR #8's merge was verified at remote main
+  `ccf1a98eca39d49f06e54f4c3def675a90c10540`, then incorporated without changing
+  manuscript bytes. Git direct push still returned HTTP 401; the authenticated
+  GitHub API published the feature branch with matching tree/commit hashes.
+- [x] **P1 — Review the rewritten draft in PR #9.** Separate content and
+  repository/provenance reviews found no blocking issue. All 48 ledger source
+  hashes, 354 imported files and manuscript identities match; all 40 repository
+  regression tests pass. The user authorized Squash and merge; merge only the
+  final verified head. PR review does not complete human research audit.
 - [x] **P1 — Reproduction handoff (agent).** Added the
   [reproduction entry](docs/reproduction/README.md), input/toolchain inventories,
   exact source and historical execution commands, expected outcomes and missing
@@ -177,7 +190,8 @@ that can change the core claim or contribution decision.
   updates and concise decision/handoff notes here after meaningful work.
 - Commit on a feature branch, push that branch and open a PR for user review.
   Verify the remote branch and PR. Never update `main`/the default branch directly
-  or merge/enable auto-merge without an explicit user instruction. Report access
+  or merge/enable auto-merge without an explicit user instruction. An authorized
+  "merge" means **Squash and merge** unless the user explicitly says otherwise. Report access
   blockers; do not promise background synchronization.
 - Keep SDKs, emulators, dependencies, models, generated wrapper outputs, raw
   results, logs, rendered documents, archives and compiled products outside Git.

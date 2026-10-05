@@ -10,6 +10,11 @@ through Git or an API. Do not merge or enable auto-merge without an explicit use
 instruction. This applies to source, manuscript, TODO, memory and policy edits,
 and supersedes the earlier direct-push synchronization preference.
 
+The user's merge preference is **Squash and merge**. Treat future requests to
+"merge" as squash merges unless explicitly told otherwise. This preference
+does not authorize unsolicited merges: review the requested PR, merge its
+verified head and check the resulting single-parent commit on the default branch.
+
 The user requested that future project work be kept in this GitHub repository, then narrowed the upload to code. Keep project source code, necessary manuscript/source documentation, TODO updates, and concise decisions/continuation notes here. Exclude SDKs, emulators/AVDs, installed environments, dependency binaries, model binaries, APKs, classes/DEX, rendered PDFs, logs, and other build/runtime products. Keep new research evidence outside this source-only repository unless the user later changes that scope. Update these notes when findings or next steps change; do not promise unattended background synchronization.
 
 ## Historical verified state recorded by the original workspace
@@ -30,9 +35,9 @@ raw files, binary identities or chronology.
 
 ## Repository review follow-up
 
-The [current editorial source](work/review-followup-20261004/manuscript/paper.tex)
-is a new working copy; imported snapshots remain unchanged. Its
-[source/parent digest index](docs/CURRENT_MANUSCRIPT.json) distinguishes it from
+The [earlier editorial source](work/review-followup-20261004/manuscript/paper.tex)
+is preserved unchanged. The new [current manuscript](work/paper-rewrite-20261004/manuscript/paper.tex)
+has a [source/parent digest index](docs/CURRENT_MANUSCRIPT.json) that distinguishes it from
 the preserved P2/P3 revision identified below. The follow-up clarifies E5 naming,
 the E4 denominator flow, payload/behavior restoration and abstract-only
 background citations. It changes no experimental outcome. The
@@ -48,8 +53,8 @@ including protocol-relative external links and the P2/P3 parent import.
 This does not verify external `SHA256SUMS` bytes or recover the evidence archive.
 This editorial follow-up performs no new model execution. P2 and the bounded P3
 reference inquiry are already complete on main; their results are retained in
-the current working manuscript. Human audit and contribution/novelty assessment
-remain open.
+the current working manuscript. Human audit remains open; the subsequent bounded
+contribution/significance assessments and local rewrite are recorded below.
 
 ## Analysis and next action
 
@@ -90,8 +95,8 @@ display-order reference; those results and their limits are retained above. A cl
 Keep **S** (structural acceptance), **I** (reference-backed association agreement), and **D** (compatibility with the actual decoder path) distinct. **P** is intervention-preservation evidence, not a fourth correctness category. Never count mutated fixtures or repeated inputs as independent models.
 
 P2 and the bounded P3 reference inquiry are complete. The active priorities in
-`TODO.md` put novelty and research significance assessment before the full
-rewrite. The [bounded contribution comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md)
+`TODO.md` now follow the completed bounded assessments and local rewrite.
+The [bounded contribution comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md)
 is now complete: official checks already enforce the focal predicates; prior
 methods cover contracts, constraint extraction, mutation and differential testing.
 The supported current framing is controlled empirical characterization, with E5
@@ -99,8 +104,8 @@ as a supporting diagnostic. This does not certify field-wide novelty or venue fi
 The separate [practical-significance assessment](research/20261004-significance-review/SIGNIFICANCE_ASSESSMENT.md)
 is also complete within its declared scope. It supports integration-test coverage
 and consumer-specific diagnosis, not prevalence, demonstrated operational benefit
-or a superior method. Use both assessments to finalize the framing; no method
-novelty or venue readiness is presumed.
+or a superior method. Both assessments inform the new controlled empirical
+framing; no method novelty or venue readiness is presumed.
 The [documented reproduction handoff](docs/reproduction/README.md) is now complete
 as an inventory and command guide; delivery of a portable external package and
 fresh-machine validation remain open. Actual human verification remains pending;
@@ -139,8 +144,44 @@ Full-package hash pinning would detect both associated-resource interventions;
 Task initialization and exact-path simple checks already reject deletion. Getter
 tests and qualified reference-map comparisons address the demonstrated remaining
 properties. Do not claim these ordinary protections are absent, or that earlier
-rejection saved time, energy or incidents. The manuscript is unchanged by these
-two P0 assessments; incorporate their conclusions in the next working revision.
+rejection saved time, energy or incidents. The two P0 assessments themselves did
+not edit the manuscript; the subsequent rewrite incorporates their conclusions.
+
+## Local manuscript rewrite, 2026-10-04
+
+The [new source area](work/paper-rewrite-20261004/README.md) contains the rewritten
+paper and [claim–evidence ledger](work/paper-rewrite-20261004/CLAIM_EVIDENCE.md).
+The argument follows contracts → E1 actual getter failure → E2 successful but
+changed association and qualified P3 reference → same-Android enforcement stages
+→ Hand boundary → external checks and preflight limits. Controlled execution and
+configured stage comparison carry the contribution; E5 remains supporting, with
+zero incremental rejection over the matched baseline in the core set. Support
+#770 supplies context and prior engineering evidence. Existing package hashes,
+Task initialization, getter tests and reference-map checks remain explicit.
+
+The editorial round checked repository sources, not new model executions. Agent
+review corrected the description-control preservation wording, the scope of P2
+Java-source equality, exact exception quotation and direct reconstruction/corpus
+provenance. The paper compiled as an eight-page generic reading draft; all pages
+were visually checked. PDF and build logs stay outside Git. Prior working and
+imported manuscripts remain unchanged. Human verification, portable evidence
+delivery and venue formatting are still open.
+
+The branch is `paper/executable-contract-rewrite`, originally based on saved PR #8
+head `87290c2f7571d1fdf5cc2e56286a0ecff5b984ac`. The initial HTTP 401 blocked
+publication, so the user requested local completion first. On resumed delivery,
+GitHub API access recovered and PR #8's merged state was verified at main
+`ccf1a98eca39d49f06e54f4c3def675a90c10540`; its tree matches the saved #8 head.
+That main revision was merged into the feature branch without manuscript edits.
+Direct Git push still returned 401, but the authenticated GitHub API published
+the feature branch while preserving exact local tree and commit identities.
+[PR #9](https://github.com/lcresearch/landmark-metadata/pull/9) records delivery
+and review. The user subsequently authorized review and Squash and merge,
+specifying squash as the default for future authorized merges. Separate content
+and repository reviews found no blocking issue; all 40 regression tests, source
+checks and the 48 ledger source identities pass. The existing successful TeX
+build matches the unchanged manuscript. The PR records the live merge state;
+no new model experiment, archive authentication or human audit was performed.
 
 Any new natural-artifact reproduction needs a separately declared scope and
 stopping condition; the completed public-report review is not such a reproduction.
