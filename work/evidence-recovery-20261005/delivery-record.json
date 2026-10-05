@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "task": "Local recovery of selected historical evidence; user selected local package and missing list.",
+  "source_base_commit": "72ff55041be97ba04e377fa9c4a18b948b8dc106",
+  "local_root": "/workspace/evidence-recovery-20261005T170453Z",
+  "delivery_status": "LOCAL_SELECTED_PACKAGE_VERIFIED",
+  "durable_external_deposit": false,
+  "archive": {
+    "archive_integrity": "PASS",
+    "archive_path": "/workspace/evidence-recovery-20261005T170453Z/delivery/focal-saved-evidence.tar.gz",
+    "archive_bytes": 1924911456,
+    "archive_sha256": "1e6f9737ecdaf426b8e4a30391fd1298b6f503e39d8c17423c521376b86c746e",
+    "checksum_file_sha256": "a689674abb65452d8eb02a17d6af3f097884bd8c2ad4cb4a8353e33914197a3c",
+    "verified_files": 2753,
+    "payload_files": 2749,
+    "uncompressed_file_bytes": 2288407406,
+    "extracted": false,
+    "model_experiments_run": false
+  },
+  "selected_payload": {
+    "files": 2749,
+    "bytes": 2285772379,
+    "historical_identity_issues": [],
+    "reference_pinned_supplementary_sources": 3
+  },
+  "saved_evidence_checks": {
+    "status": "PASS_BOUNDED_SAVED_EVIDENCE_CHECKS",
+    "denominators": {
+      "original": {
+        "records": 16,
+        "observations": 32,
+        "raw_tensors": 32,
+        "decoded_lists": 28,
+        "caught_getter_failures": 4
+      },
+      "audit": {
+        "records": 8,
+        "observations": 16,
+        "raw_tensors": 16,
+        "decoded_lists": 14,
+        "caught_getter_failures": 2
+      },
+      "p2": {
+        "records": 10,
+        "observations": 18,
+        "raw_tensors": 10,
+        "decoded_lists": 16,
+        "caught_getter_failures": 2,
+        "constructor_failures": 1
+      }
+    },
+    "apk_counts": {
+      "original_executed": 8,
+      "original_initial_unexecuted": 4,
+      "audit_executed": 8,
+      "p2_executed": 10,
+      "p2_initial_unexecuted": 10
+    },
+    "p2_shared_successful_score_label_pairs": 8,
+    "interrupted_attempts_preserved": 1,
+    "finite_readback_files": 59,
+    "p3_stored_comparison_counts": {
+      "original": 1000,
+      "permutation": 1,
+      "restoration": 1000
+    }
+  },
+  "missing_exact_locators": [
+    {
+      "path": "/workspace/repro-android",
+      "expected_sha256": null,
+      "present": false,
+      "is_symlink": false,
+      "status": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/repro-task",
+      "expected_sha256": null,
+      "present": false,
+      "is_symlink": false,
+      "status": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/repro-hand",
+      "expected_sha256": null,
+      "present": false,
+      "is_symlink": false,
+      "status": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/repro-external",
+      "expected_sha256": null,
+      "present": false,
+      "is_symlink": false,
+      "status": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/repro-claims",
+      "expected_sha256": null,
+      "present": false,
+      "is_symlink": false,
+      "status": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/repro-audit",
+      "expected_sha256": null,
+      "present": false,
+      "is_symlink": false,
+      "status": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/repro-control",
+      "expected_sha256": null,
+      "present": false,
+      "is_symlink": false,
+      "status": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/reproduction-evidence-index-20261004.json",
+      "expected_sha256": null,
+      "present": false,
+      "is_symlink": false,
+      "status": "MISSING_AT_CHECKED_PATH"
+    },
+    {
+      "path": "/workspace/repro-external/E5/results.json",
+      "expected_sha256": "bf49a475696eec4b38fb17587f6541a8393da14297e5dca1d433a051ba166e79",
+      "present": false,
+      "is_symlink": false,
+      "status": "MISSING_AT_CHECKED_PATH"
+    }
+  ],
+  "search_scope": {
+    "enumerated_files": 9229,
+    "hashed_candidates": 1873,
+    "text_candidates": 5373,
+    "recorded_reconstruction_pins": 38,
+    "shared_historical_byte_matches": 8,
+    "later_run_provenance_recovered": false,
+    "excluded_scopes": [
+      "toolchains/dependency trees, credential paths, other machines, remote storage, nested/over-limit archives, unsearched file classes"
+    ]
+  },
+  "external_record_identities": [
+    {
+      "path": "/workspace/evidence-recovery-20261005T170453Z/package-v2/MANIFEST.json",
+      "sha256": "ba9592c8f49735c5f8e2f53ba3af1c560e51b674050cdf7b6c64dc6d8b87f0ba",
+      "bytes": 1679763
+    },
+    {
+      "path": "/workspace/evidence-recovery-20261005T170453Z/package-v2/SHA256SUMS",
+      "sha256": "a689674abb65452d8eb02a17d6af3f097884bd8c2ad4cb4a8353e33914197a3c",
+      "bytes": 473966
+    },
+    {
+      "path": "/workspace/evidence-recovery-20261005T170453Z/package-v2/EXCLUSIONS.json",
+      "sha256": "bb97c115bf744087db09bdc6dacf5d0e161dd55215cee80482ff2685973572cd",
+      "bytes": 474048
+    },
+    {
+      "path": "/workspace/evidence-recovery-20261005T170453Z/logs/package-v2-verify.stdout",
+      "sha256": "cd8066437584c60abd716ec81d27e324b5bad0289cb7fc48a6cf41ac0a5163ec",
+      "bytes": 304
+    },
+    {
+      "path": "/workspace/evidence-recovery-20261005T170453Z/logs/archive-verify.json",
+      "sha256": "a7e771a3b6aedf4ce3c5bbeecacc835efd520166df994af95f7fdd9a07ef2bbd",
+      "bytes": 499
+    },
+    {
+      "path": "/workspace/evidence-recovery-20261005T170453Z/coverage/coverage-v1.json",
+      "sha256": "38edf28b69111e2ba5955d0c868bb489ed8f09e3396b0b8c15d157942ecb7860",
+      "bytes": 113182
+    },
+    {
+      "path": "/workspace/evidence-recovery-20261005T170453Z/coverage/validation.json",
+      "sha256": "34ee13ac7cab05bb335ee9418509f2b6caad9acc58fbf3b170fd50c9bec34cd3",
+      "bytes": 744
+    },
+    {
+      "path": "/workspace/evidence-recovery-20261005T170453Z/coverage/scope-comparison.json",
+      "sha256": "95d04a7c7f552c976522f60275d5764b2baee7ccedb195684f85fe098c480b3f",
+      "bytes": 1187
+    },
+    {
+      "path": "/workspace/evidence-recovery-20261005T170453Z/readback-v2/readback.json",
+      "sha256": "77d1e9eb76b81a6595f46cdf714482f40949f8933d42e5d12b8c6c355f032fb7",
+      "bytes": 40766
+    },
+    {
+      "path": "/workspace/evidence-recovery-20261005T170453Z/search/search-results.json",
+      "sha256": "0528597e0096a43babc3958625b1eb58f33565f7830e1f83fdf37e086ffe6653",
+      "bytes": 56700
+    },
+    {
+      "path": "/workspace/evidence-recovery-20261005T170453Z/search/search-summary.json",
+      "sha256": "c17f7c224e7e3c58591f25cd9ac429d9ce2719174c52f58d5d00ca56791849f1",
+      "bytes": 5522
+    },
+    {
+      "path": "/workspace/evidence-recovery-20261005T170453Z/search/FINDINGS.md",
+      "sha256": "b1dc84abe5849778087ed8968735b648cd89bcc2338d9d0f4e64067e8d7be3a7",
+      "bytes": 5917
+    },
+    {
+      "path": "/workspace/evidence-recovery-20261005T170453Z/scope/focal-scope-inventory.json",
+      "sha256": "aef8b2efc80937c73ff2b3b0e3c009f79e5b3c69ba9efe07b115c56313f89168",
+      "bytes": 1046340
+    },
+    {
+      "path": "/workspace/evidence-recovery-20261005T170453Z/scope/focal-secret-candidate-scan.json",
+      "sha256": "7039f3fcbadabae7622b7bd91a10b39057ebcfdb3fe76e6b5d560a0c09c119f5",
+      "bytes": 378
+    }
+  ],
+  "preparation_deviation": "Initial package/ omitted 29 dependency text records; package-v2/ adds them after independent scope comparison. Initial package retained as preparation history, not the delivery target.",
+  "limitations": [
+    "No generation/build/emulator/inference or human verification performed.",
+    "Does not rederive graph preservation, all compiled bindings or P3 source authority.",
+    "Secondary Hand/E4/E5 payloads are outside this selected package.",
+    "Later repro-* evidence and independently pinned E5 catalog remain unrecovered; shared bytes are not relabeled.",
+    "SDK/dependency binaries/signing keys excluded; not a self-contained offline build environment."
+  ]
+}
