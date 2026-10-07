@@ -103,3 +103,9 @@ unresolved citation/table references. `git diff --check` passed. Exact check
 outputs remain alongside the external build under `final/`; no model tests were
 run for this text-only change. Repository regression tests were not rerun because
 no executable source changed.
+
+A final independent agent source/index review confirmed the new target and
+intentionally preserved old audit target, all 16 claim dispositions/PENDING
+statuses, CFP/template retrieval pins, and absence of historical edits or binary
+payloads. Its C2R audit-route refinement was applied: rebuilt actual calls and
+outcomes also point to HA01/HA04, alongside identity/preservation HA02/HA03.

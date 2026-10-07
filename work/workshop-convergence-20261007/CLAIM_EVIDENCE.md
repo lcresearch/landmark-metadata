@@ -19,7 +19,7 @@ This revision runs no model experiment and newly hashes no model/APK.
 |---|---|---|---|
 | C1 | `sec:contracts`; retained | Analytical definitions and pinned implementation review. S/I/D are different questions; P is experimental preservation, not correctness. | HA03/HA09/HA10 |
 | C2 | `sec:e1`, `sec:e2`; retained | Focal recovered; graph/buffer, resource, generated-code and tested-output comparisons remain separate. Recovery did not independently rederive all graph/binding assertions. No whole-APK identity. | HA02/HA03 |
-| C2R | `sec:e2`; shortened | Focal recovered historical construction audit; installed tools reused. New AVD/build outputs, no independent human reproduction or old/new DEX equality. | HA02/HA03 |
+| C2R | `sec:e2`; shortened | Focal recovered historical construction audit; installed tools reused. New AVD/build outputs, no independent human reproduction or old/new DEX equality. | HA01/HA02/HA03/HA04 |
 | C3 | `sec:e1`; primary claim | Focal recovered actual getter failure after successful `process`, for both fixed inputs. Caught exception, injected deletion, no natural original defect or application-crash claim. | HA01/HA04 |
 | C4 | `sec:e2`; primary claim | Focal recovered permutation/reversal; full returned lists and scores. 999/1,000 strings change. Output/list positions are not the unset wrapper category-index field. | HA05 |
 | C5 | `sec:p3`; retained | Focal P3 references and saved comparison rows recovered. Qualified graph-equivalence bridge and publisher display order; stable class IDs and release-time/training lineage unresolved. Recovery did not re-establish reference authority. | HA07 |
