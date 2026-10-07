@@ -12,6 +12,7 @@ source and continuation documents, **not the complete evidence archive**.
 - [Current manuscript source](work/workshop-convergence-20261007/manuscript/paper.tex)
 - [Manuscript claim–evidence table](work/workshop-convergence-20261007/CLAIM_EVIDENCE.md)
 - [Workshop candidates and submission checklist](work/workshop-convergence-20261007/README.md)
+- [Completed agent pre-audit and human continuation sheet](work/agent-preaudit-20261007/README.md)
 - [Human audit entry and unsigned review template](docs/human-audit/README.md)
 - [Local evidence package and unresolved missing material](work/evidence-recovery-20261005/README.md)
 - [Current build and review instructions](work/workshop-convergence-20261007/BUILD_REVIEW.md)

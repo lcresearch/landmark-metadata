@@ -1,0 +1,8 @@
+AGENT PRE-AUDIT COMMAND RECORD; no inference/build/rewrite of inputs.
+Read-only discovery: rg --files and find on selected package and repository; cat/sed of AGENTS.md, MEMORY.md, TODO.md, docs/DECISIONS.md, README.md, work/agent-preaudit-20261007/PROTOCOL.md, docs/human-audit/CHECKLIST.md, current CLAIM_EVIDENCE.md and manuscript/paper.tex.
+Read-only exploratory Python: pathlib/json reads of original/rebuild/P2 result.json and decoded schema; zipfile.namelist of E2 original model; parsed full Task and wrapper deletion stack; rg of attributed logcat lines. No preserved helpers imported.
+Main reproducible command (actual executed; output check.stdout, detailed output findings.json):
+PYTHONDONTWRITEBYTECODE=1 python /workspace/agent-preaudit-20261007T0749Z/observations/firstpartycheckscript.py > /workspace/agent-preaudit-20261007T0749Z/observations/check.stdout
+Initial helper had labels.txt expectation; initial stdout preserved before correction as check-initial-helper-assumption.stdout. Initial detailed JSON was overwritten; it is not represented as preserved. Original helper version reconstructed by reverting exact local edits and rerun separately (expected exit 1), output below is reexecution:
+PYTHONDONTWRITEBYTECODE=1 python /workspace/agent-preaudit-20261007T0749Z/observations/initial-helper-reexecution/firstpartycheckscript.py > /workspace/agent-preaudit-20261007T0749Z/observations/initial-helper-reexecution/check.stdout
+Chronology subagent methods/commands are described in chronology.md. Its secondary-original-root filesystem mtime is not an attested timestamp.

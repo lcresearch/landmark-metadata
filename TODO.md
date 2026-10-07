@@ -32,6 +32,24 @@ separates author verification, anonymous persistent evidence access and retained
 secondary-claim decisions. The old human-audit entry stays pinned to its old
 source; use the new claim crosswalk and manuscript digest.
 
+- [x] **P1 — Independent-agent pre-audit before human review (agent).**
+  [Completed pre-audit](work/agent-preaudit-20261007/README.md) used five fresh
+  review contexts plus a chronology subreview. New saved-byte comparisons and
+  disassembly support core E1/E2/P2 and qualified P3; no new inference was run.
+  All 13 human item/subitem statuses remain PENDING. Reports identify partial
+  secondary coverage, missing later parser raw records and limited E2 timing
+  evidence; the frozen manuscript and old audit map are unchanged.
+- [ ] **P1 — Resolve pre-audit findings and perform human author verification.**
+  Use the [six-part handoff](work/agent-preaudit-20261007/HUMAN_HANDOFF.md).
+  Confirm or narrow E2's predeclaration wording; decide the retained parser and
+  other secondary claims from their actual evidence level. Check key raw records
+  and authority links, then record human conclusions against the four-page
+  manuscript hash. Agent agreement and source/hash checks are not a signature.
+- [ ] **P1 — Review the pre-audit PR after #12 and its prerequisites.**
+  Feature branch `audit/agent-preaudit` is stacked on `paper/workshop-convergence`.
+  It carries source/review records and TODO updates only; raw audit outputs remain
+  outside Git. No merge is authorized by the audit request.
+
 - [x] **P1 — Prepare a short workshop draft and candidate comparison (agent).**
   Added a four-page IEEE short draft including references, a seven-page companion,
   all-16-claim disposition map, official CFP candidates and submission checklist.

@@ -2,6 +2,29 @@
 
 This repository is the source-code handoff for **From Model Metadata to Executable Interfaces: A Controlled Study of Tensor Binding and Decoder Contracts**. Read `TODO.md` before planning new work. This note records conclusions and working preferences, not a substitute for raw evidence.
 
+## Latest agent pre-audit (7 October 2026 UTC)
+
+The user requested agents to walk the human checklist before doing real human
+verification. `work/agent-preaudit-20261007/` records five fresh-context reviewers
+and a chronology subreview, all on shared infrastructure/inputs. This is agent
+pre-audit, not simulated human authorship, blinding or forensic independence.
+Frozen target: current four-page draft c79ba7f6… at repository head 24f660c.
+
+Fresh model/buffer/resource/code comparisons, class/DEX inspection and complete
+primary observation readback support E1/E2/P2; P3 actual cards/reference and
+computational bridge were independently rechecked within qualified display scope.
+Twenty-six final APK paths, 42 saved wrapper tensors and 44,000 returned categories
+were checked; these remain one graph's repeated observations, not new executions.
+
+E2 timing remains PARTIAL: freeze asserts prior declaration but has no timestamp;
+local mtime and command records do not independently prove historical order.
+Original Hand/E4/E5/baseline evidence is present outside the focal package and was
+partly inspected; later parser/reconstruction raw records remain unrecovered.
+The human handoff lists unperformed secondary subchecks and suggested chronology
+wording, without editing the frozen manuscript. All human statuses remain PENDING.
+Audit helper errors/refinements are disclosed; original experiment inputs are
+unchanged. Source/docs are submitted through a new PR; no merge/deposit/submission.
+
 ## Current submission convergence (7 October 2026 UTC)
 
 The user prefers a short workshop paper. Current source is
