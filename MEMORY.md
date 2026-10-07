@@ -2,6 +2,25 @@
 
 This repository is the source-code handoff for **From Model Metadata to Executable Interfaces: A Controlled Study of Tensor Binding and Decoder Contracts**. Read `TODO.md` before planning new work. This note records conclusions and working preferences, not a substitute for raw evidence.
 
+## Current submission convergence (7 October 2026 UTC)
+
+The user prefers a short workshop paper. Current source is
+`work/workshop-convergence-20261007/manuscript/paper.tex`, with a longer companion
+`paper-full.tex`. Provisional IEEEtran output is four pages including references;
+the full companion is seven. SQA4AI 2027 is the recommended candidate, not an
+accepted author decision: short research/experience, abstract 19 October and paper
+23 October 2026 AoE. VST has a 2–4-page position/tool category; PeRConAI is a later,
+weaker-fit fallback. No verified acceptance-rate evidence or easy-acceptance claim.
+
+The main contributions remain controlled public-interface evidence and configured
+same-Android enforcement stages. The new crosswalk preserves all 16 historical
+claim IDs and identifies shortened/companion-only details. Prior manuscript,
+ledgers, audit target and raw evidence are unchanged. Existing human statuses
+stay PENDING; audit the new digest using the explicit crosswalk. No new model run
+or persistent deposit was made. Retained secondary claims need an evidence/scope
+decision; the recovered focal package is distinct from missing later reconstructions.
+See the current submission checklist and TODO before expanding experiments.
+
 ## Repository preference
 
 All future changes use **feature branch → pull request → user review**. Push

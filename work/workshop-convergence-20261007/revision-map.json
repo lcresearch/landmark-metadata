@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "repository_base_commit": "e23d62e3af56376eb0f1946dd30eb7cba870fa04",
+  "scope": "Editorial/TeX/CFP and repository checks only; no model experiment or fresh external execution evidence hash",
+  "manuscript": {
+    "path": "work/workshop-convergence-20261007/manuscript/paper.tex",
+    "sha256": "c79ba7f62a194abd487ec4b8ccedb60428ec4edd1f43e6ee155518ffd8bb416e",
+    "bytes": 20931
+  },
+  "full_companion": {
+    "path": "work/workshop-convergence-20261007/manuscript/paper-full.tex",
+    "sha256": "facd0688073d66353e2b0ab2c3f5d08e64d292e1f7efdfd7bac7a69f80e8a39b",
+    "bytes": 39765
+  },
+  "predecessor": {
+    "path": "work/paper-rewrite-20261004/manuscript/paper.tex",
+    "sha256": "43b92dbb0230fc1232093be6a33fca435188dc2f43ae499ac6bfa8e362f37bb2",
+    "bytes": 45003
+  },
+  "claim_crosswalk": {
+    "path": "work/workshop-convergence-20261007/CLAIM_EVIDENCE.md",
+    "sha256": "080b4a0ccd1b2b6c46554f99f9c42185dd29089b11b5c38a8b82c0a4dda2b147",
+    "bytes": 6709
+  },
+  "preserved_indexes": [
+    {
+      "path": "work/paper-rewrite-20261004/CLAIM_EVIDENCE.md",
+      "sha256": "2acc7933b8dfac1fcdcc2004f6769a47c65c4a3007abbcebf6cce88d6fd1f92d",
+      "bytes": 21252
+    },
+    {
+      "path": "work/paper-rewrite-20261004/claim-sources.json",
+      "sha256": "4a5875437bea046d85dc297b6dd15b81b85e26392b5c0397e2659e006a3d6db4",
+      "bytes": 32600
+    },
+    {
+      "path": "work/evidence-recovery-20261005/delivery-record.json",
+      "sha256": "24054db03decddde1925c705a8d868fe3e47bdd430f880f51a1e00c4410ebc63",
+      "bytes": 7936
+    },
+    {
+      "path": "work/evidence-recovery-20261005/MISSING.md",
+      "sha256": "7eca577417de13fd2b83663cd43468b068abcb1ef931b6eae614dc9bcb8f9c82",
+      "bytes": 3628
+    },
+    {
+      "path": "docs/human-audit/audit-map.json",
+      "sha256": "15a67d522426ae54dac7e15da935a8cd3aa3911188ee08235f12f2d6eeaff526",
+      "bytes": 14624
+    },
+    {
+      "path": "docs/human-audit/CHECKLIST.md",
+      "sha256": "ddb2a2fd8207b44fea1166a23f332bb1df7b9b39788e86abefb72777619a7ed6",
+      "bytes": 18712
+    }
+  ],
+  "old_source_records_rehashed": 48,
+  "old_source_mismatches": [],
+  "human_audit": {
+    "status": "PENDING",
+    "prior_target_unchanged": true,
+    "crosswalk_required_for_new_target": true
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "disposition": "retained",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C2",
+      "disposition": "retained",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C2R",
+      "disposition": "shortened",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C3",
+      "disposition": "primary",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C4",
+      "disposition": "primary",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C5",
+      "disposition": "retained_qualified",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C6",
+      "disposition": "primary",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C7",
+      "disposition": "shortened_boundary",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C8",
+      "disposition": "shortened_static",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C8D",
+      "disposition": "companion_only",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C9",
+      "disposition": "retained_supporting",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C9E",
+      "disposition": "shortened_scope_only",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C10",
+      "disposition": "report_only_limit",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C11",
+      "disposition": "retained_antecedent",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C12",
+      "disposition": "bounded_positioning",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C13",
+      "disposition": "coverage_implication",
+      "human_status": "PENDING"
+    }
+  ],
+  "working_venue": "SQA4AI 2027 short research/experience candidate",
+  "venue_selected_by_user": false,
+  "submission_performed": false,
+  "durable_deposit_performed": false,
+  "cfp_retrievals": [
+    {
+      "path": "/workspace/workshop-convergence-build-20261007/venue/sqa4ai-2027.html",
+      "sha256": "e2dbcd5afcfeba7f6e55d89b977ee70f344d6e47f2cb084774e1de0954233d24",
+      "bytes": 26894,
+      "url": "https://sqa4ai-ws.github.io/2027/index.html",
+      "retrieved_date_utc": "2026-10-07"
+    },
+    {
+      "path": "/workspace/workshop-convergence-build-20261007/venue/vst-2027.html",
+      "sha256": "53dd5b5729415ac9eda0bfaaeddc401b93d6a5c195cf35ce5d7e7f4d796f0b51",
+      "bytes": 23432,
+      "url": "https://vstworkshop.github.io/vst2027/",
+      "retrieved_date_utc": "2026-10-07"
+    },
+    {
+      "path": "/workspace/workshop-convergence-build-20261007/venue/perconai.html",
+      "sha256": "6e1fdd80670453689cf3179ce70f408346c14c53133112fcc8d46628353eec77",
+      "bytes": 73824,
+      "url": "https://perconai.iit.cnr.it/call-for-papers/",
+      "retrieved_date_utc": "2026-10-07"
+    },
+    {
+      "path": "/workspace/workshop-convergence-build-20261007/venue/saner-workshops.html",
+      "sha256": "4a4ab1a3a1f9ff60a9e7e4725b4626093163ef11e1651d7a966cda856611ce6f",
+      "bytes": 43095,
+      "url": "https://conf.researchr.org/track/saner-2027/saner-2027-workshops-tutorials-track",
+      "retrieved_date_utc": "2026-10-07"
+    }
+  ],
+  "external_template": {
+    "path": "/workspace/workshop-convergence-build-20261007/tex/IEEEtran.cls",
+    "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7",
+    "bytes": 281957,
+    "url": "https://mirrors.ctan.org/macros/latex/contrib/IEEEtran/IEEEtran.cls",
+    "version": "2015/08/26 V1.8b"
+  }
+}

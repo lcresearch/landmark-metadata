@@ -32,3 +32,24 @@ These are concise working decisions and their reasons. They are not raw reasonin
 | Stop indiscriminate expansion. | Additional similar mutants/models do not resolve the current evidence and novelty questions. Pursue bounded references/natural cases and a conditional method extension only when their outcome can change the contribution. |
 
 For the active checklist use `TODO.md`. For continuation context and local sealed-evidence identities use `MEMORY.md`. Update both after substantive completed work, distinguishing proposed methods and planned experiments from observed results.
+
+
+## 2026-10-07 UTC — Converge on a bounded workshop short paper
+
+The user requested continued submission convergence, then preferred a short paper.
+Prepare SQA4AI 2027's four-page research/experience format as a working candidate,
+with the detailed seven-page source retained separately. Do not claim the user
+selected a venue, that a workshop is easy to enter, or that short-paper status
+waives novelty and soundness. Official candidate sources and their limits are in
+`work/workshop-convergence-20261007/VENUES.md`.
+
+Keep controlled E1/E2 public-interface evidence and same-Android stages primary.
+Compress history and static counts, retain #770, keep E5 auxiliary and P separate
+from S/I/D. Distinguish local focal recovery, omitted secondary payloads and
+unrecovered later records. The old audit target is preserved; the new claim map
+explicitly identifies the new manuscript and leaves human statuses pending.
+Submission needs author verification, appropriate anonymous evidence access,
+claim-scope decisions and final venue compliance. No broad model search, new
+method, evidence publication or submission is authorized by this editorial task.
+Deliver source/docs through a new PR stacked on the still-open evidence-recovery
+branch; do not merge without the user's explicit instruction.
