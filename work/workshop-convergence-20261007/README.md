@@ -49,7 +49,8 @@ as the required persistent anonymous evidence handoff.
 
 This branch starts at `e23d62e3af56376eb0f1946dd30eb7cba870fa04`, PR #11's
 verified head. PR #10 (human-audit preparation) and #11 (local recovery) were still
-open when work began. The new PR targets `evidence/local-recovery`, so its diff
+open when work began. [PR #12](https://github.com/lcresearch/landmark-metadata/pull/12) targets
+`evidence/local-recovery`, so its diff
 contains only this convergence work. Do not merge it ahead of its prerequisites
 without rebasing/retargeting and review. User-authorized merges use squash.
 

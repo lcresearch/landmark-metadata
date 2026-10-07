@@ -13,5 +13,6 @@
   "feature_branch": "paper/workshop-convergence",
   "pr_base": "evidence/local-recovery",
   "revision_map": "work/workshop-convergence-20261007/revision-map.json",
-  "claim_ledger": "work/workshop-convergence-20261007/CLAIM_EVIDENCE.md"
+  "claim_ledger": "work/workshop-convergence-20261007/CLAIM_EVIDENCE.md",
+  "pull_request": "https://github.com/lcresearch/landmark-metadata/pull/12"
 }

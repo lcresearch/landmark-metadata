@@ -39,7 +39,7 @@ source; use the new claim crosswalk and manuscript digest.
   E5 as supporting evidence. Explicitly distinguishes focal recovered evidence,
   secondary families outside the package and unrecovered later raw records.
   No new model experiment, author verification, deposit or submission.
-- [ ] **P1 — Review the convergence PR after its #10/#11 prerequisites.**
+- [ ] **P1 — Review [PR #12](https://github.com/lcresearch/landmark-metadata/pull/12) after its #10/#11 prerequisites.**
   Feature branch `paper/workshop-convergence` is stacked on `evidence/local-recovery`.
   Keep PR-only delivery and user-authorized squash merges.
 - [ ] **P1 — Make the retained-claim evidence decision before submission.**
