@@ -50,6 +50,7 @@ and retained initial stdout/re-execution are disclosed in its report. The
 reference helper likewise records its commit-serialization refinement. These are
 audit-helper issues, not hidden changes to experimental inputs or natural defects.
 
-This work is delivered through a new PR based on `paper/workshop-convergence`
+This work is delivered through [PR #13](https://github.com/lcresearch/landmark-metadata/pull/13),
+based on `paper/workshop-convergence`
 (PR #12), whose earlier #10/#11 prerequisites are still open. No merge, submission
 or human signature is authorized by this pre-audit.

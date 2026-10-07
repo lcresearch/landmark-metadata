@@ -45,7 +45,7 @@ source; use the new claim crosswalk and manuscript digest.
   other secondary claims from their actual evidence level. Check key raw records
   and authority links, then record human conclusions against the four-page
   manuscript hash. Agent agreement and source/hash checks are not a signature.
-- [ ] **P1 — Review the pre-audit PR after #12 and its prerequisites.**
+- [ ] **P1 — Review [PR #13](https://github.com/lcresearch/landmark-metadata/pull/13) after #12 and its prerequisites.**
   Feature branch `audit/agent-preaudit` is stacked on `paper/workshop-convergence`.
   It carries source/review records and TODO updates only; raw audit outputs remain
   outside Git. No merge is authorized by the audit request.
