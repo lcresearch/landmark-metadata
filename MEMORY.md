@@ -2,6 +2,21 @@
 
 This repository is the source-code handoff for **From Model Metadata to Executable Interfaces: A Controlled Study of Tensor Binding and Decoder Contracts**. Read `TODO.md` before planning new work. This note records conclusions and working preferences, not a substitute for raw evidence.
 
+## PR stack review (8 October 2026 UTC)
+
+`work/pr10-14-review-20261008/` records the scoped review of #10–#14 and a local
+integration simulation. No final-stack content blocker; all 83 repository tests
+and source checks pass. The existing scientific payload/targets remain unchanged.
+The executed parser verifier has a nonblocking generic-reuse hardening limit;
+current exact cases/payloads/pins were separately checked.
+
+After squash, simply retargeting #11 produces README/TODO conflicts. The tested
+plan checks main equals the exact predecessor tree, appends content-preserving
+base-sync commits to #11–#14 as needed, retargets, and uses squash for each PR.
+No branch/remote refs were changed by simulation. The selected-text request
+did not explicitly authorize merging; all five PRs remain open pending that
+final authorization. No human research status or old evidence gap is closed.
+
 ## Post-audit revision and isolated parser check (8 October 2026 UTC)
 
 Current short/full manuscript and claim crosswalk are in

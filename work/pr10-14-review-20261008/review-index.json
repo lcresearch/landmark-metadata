@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "scope": "Source/document and saved-record review plus local-only squash simulation; no human verification or remote merge",
+  "main": "ba1b5c5a0e5df44c28e7232b044bc6741d29bb47",
+  "reviewed_pr_heads": [
+    {
+      "number": 10,
+      "headRefOid": "72ff55041be97ba04e377fa9c4a18b948b8dc106",
+      "baseRefName": "main",
+      "headRefName": "docs/human-audit-entry"
+    },
+    {
+      "number": 11,
+      "headRefOid": "e23d62e3af56376eb0f1946dd30eb7cba870fa04",
+      "baseRefName": "docs/human-audit-entry",
+      "headRefName": "evidence/local-recovery"
+    },
+    {
+      "number": 12,
+      "headRefOid": "24f660cf093c3e52efc0cde0c39e7aea1df48053",
+      "baseRefName": "evidence/local-recovery",
+      "headRefName": "paper/workshop-convergence"
+    },
+    {
+      "number": 13,
+      "headRefOid": "57ff5585039e7f63de54a67981d5d98cb9ba84e8",
+      "baseRefName": "paper/workshop-convergence",
+      "headRefName": "audit/agent-preaudit"
+    },
+    {
+      "number": 14,
+      "headRefOid": "4ac89999402b97d404e68a72d72348f73705ce06",
+      "baseRefName": "audit/agent-preaudit",
+      "headRefName": "paper/preaudit-followup"
+    }
+  ],
+  "source_records": [
+    {
+      "path": "work/pr10-14-review-20261008/README.md",
+      "bytes": 6702,
+      "sha256": "76a68b609ffaa2d82c977de6f12e669e1589deeaa8704f3b30e0b3331988314a"
+    },
+    {
+      "path": "work/pr10-14-review-20261008/simulate_stack.py",
+      "bytes": 4371,
+      "sha256": "9a11990b34ab268d8eb9bac571de420ec1b37742a8ba502cd03e6477496d76c7"
+    }
+  ],
+  "external_records": [
+    {
+      "path": "/workspace/pr10-14-review-20261008T061937Z/freeze.json",
+      "bytes": 1842,
+      "sha256": "fb7393f4d4e2956cbfc9d0b51cea9c55660b88445cb8e2f7ead0df16f35186c8"
+    },
+    {
+      "path": "/workspace/pr10-14-review-20261008T061937Z/source-check.stdout",
+      "bytes": 2473,
+      "sha256": "a01dd21ae2fce0247302ed5bf1292935b6a19a8a51a8bc180f9ab123fb33ee33"
+    },
+    {
+      "path": "/workspace/pr10-14-review-20261008T061937Z/source-check.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/workspace/pr10-14-review-20261008T061937Z/regressions.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/workspace/pr10-14-review-20261008T061937Z/regressions.stderr",
+      "bytes": 13941,
+      "sha256": "9d247481bd90fec7bc6d87ccde0f7fe79a175f111fc5d53b266af1ddaab9b586"
+    },
+    {
+      "path": "/workspace/pr10-14-review-20261008T061937Z/squash-simulation.json",
+      "bytes": 981,
+      "sha256": "a9d666d113d29f5cccf5c45e82a1cef8d3f7270499bfb1faa841ee67d3e7b64a"
+    },
+    {
+      "path": "/workspace/pr10-14-review-20261008T061937Z/resolved-simulation/result.json",
+      "bytes": 2812,
+      "sha256": "6cbeddd986cc5c333394b65e635ea7d3452e3d962d1a16314757279f0df302be"
+    },
+    {
+      "path": "/workspace/pr10-14-review-20261008T061937Z/resolved-simulation/commands.json",
+      "bytes": 15454,
+      "sha256": "e70c93bfd3d2603112668ea9d21260bac1804b23979e529278464d9905c5d89c"
+    },
+    {
+      "path": "/workspace/pr10-14-review-20261008T061937Z/source-check-final.stdout",
+      "bytes": 2473,
+      "sha256": "0368bb04768114496d22419294208e5950d1d1755f8cdddab4140c2f6e180814"
+    }
+  ],
+  "tool_versions": {
+    "git": "git version 2.52.0",
+    "python": "Python 3.12.14"
+  },
+  "regressions": {
+    "count": 83,
+    "command": [
+      "python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit_code": 0
+  },
+  "review_status": "SCOPED_PASS",
+  "human_status": "PENDING",
+  "merge_authorized": false,
+  "main_changed": false,
+  "scope_limits": [
+    "Older parser/Task/catalog unrecovered",
+    "Secondary partial coverage retained",
+    "83 repository tests are not model inference",
+    "Local Git objects are simulation only"
+  ]
+}

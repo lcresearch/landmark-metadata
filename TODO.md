@@ -32,6 +32,17 @@ separates author verification, anonymous persistent evidence access and retained
 secondary-claim decisions. The old human-audit entry stays pinned to its old
 source; use the new claim crosswalk and manuscript digest.
 
+- [x] **P1 — Review the full PR #10–#14 stack (agent).**
+  [Scoped review and integration plan](work/pr10-14-review-20261008/README.md)
+  found no unresolved final-stack content blocker. Source checks and all 83
+  repository tests pass; local content-preserving squash simulation passes.
+  A naive retarget after squash conflicts; #11–#14 need guarded branch/base sync.
+- [ ] **P1 — Authorize and perform sequential Squash and merge of #10–#14.**
+  User selected review/integration text but supplied no explicit merge message.
+  All PRs remain open. Recheck actual main/predecessor trees and each reviewed
+  head, synchronize feature branches without changing their content, retarget
+  and verify each single-parent squash. Stop if unrelated main changes appear.
+
 - [x] **P1 — Narrow audit-sensitive manuscript claims (agent).** New short/full
   sources remove categorical E2 predeclaration timing, retain the deterministic
   transform and observed results, and distinguish saved-byte pre-audit from
@@ -45,7 +56,7 @@ source; use the new claim crosswalk and manuscript digest.
   Android/model inference, whole-checker or all-65 regression was rerun.
 - [x] **P1 — Deliver the post-audit revision and parser source through [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14).**
   The feature branch and PR are published; raw evidence/build outputs remain outside Git.
-- [ ] **P1 — Review [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14) after #13.** Branch
+- [x] **P1 — Review [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14) after #13.** Branch
   `paper/preaudit-followup` targets `audit/agent-preaudit`. Review the revised
   chronology and split new parser evidence from missing historical records.
   No merge is authorized by this work request.
@@ -64,7 +75,7 @@ source; use the new claim crosswalk and manuscript digest.
   these edits and retained secondary limits. Check key raw records and authority
   links, then record human conclusions against the new manuscript hash. Agent
   agreement and source/hash checks are not a signature.
-- [ ] **P1 — Review [PR #13](https://github.com/lcresearch/landmark-metadata/pull/13) after #12 and its prerequisites.**
+- [x] **P1 — Review [PR #13](https://github.com/lcresearch/landmark-metadata/pull/13) after #12 and its prerequisites.**
   Feature branch `audit/agent-preaudit` is stacked on `paper/workshop-convergence`.
   It carries source/review records and TODO updates only; raw audit outputs remain
   outside Git. No merge is authorized by the audit request.
@@ -76,7 +87,7 @@ source; use the new claim crosswalk and manuscript digest.
   E5 as supporting evidence. Explicitly distinguishes focal recovered evidence,
   secondary families outside the package and unrecovered later raw records.
   No new model experiment, author verification, deposit or submission.
-- [ ] **P1 — Review [PR #12](https://github.com/lcresearch/landmark-metadata/pull/12) after its #10/#11 prerequisites.**
+- [x] **P1 — Review [PR #12](https://github.com/lcresearch/landmark-metadata/pull/12) after its #10/#11 prerequisites.**
   Feature branch `paper/workshop-convergence` is stacked on `evidence/local-recovery`.
   Keep PR-only delivery and user-authorized squash merges.
 - [ ] **P1 — Make the retained-claim evidence decision before submission.**
