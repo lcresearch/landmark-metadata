@@ -247,6 +247,30 @@ still use Squash and merge; this new documentation is submitted through a PR.
 
 ## Evidence availability
 
+The [2026-10-05 local recovery](work/evidence-recovery-20261005/README.md) adds a
+verified selected package at `/workspace/evidence-recovery-20261005T170453Z/package-v2`
+and `delivery/focal-saved-evidence.tar.gz` (1,924,911,456 bytes; SHA-256
+`1e6f9737ecdaf426b8e4a30391fd1298b6f503e39d8c17423c521376b86c746e`).
+Its 2,749 payload files match previously recorded manifest/reference digests;
+all archive member hashes were checked. The local scope includes original
+E1/E2, installed-toolchain audit and P2/P3, with 26 final executed APK identities,
+14 initial-build APKs and 34 complete saved records checked. One interrupted
+replay remains incomplete. SDKs, dependency binaries, AVD state and keys stay
+excluded; dependency text records and three pinned schema/canonicalizer sources
+are retained. The first preparation package omitted 29 text records and is not
+the final delivery target.
+
+The user chose local packaging only. No public/private remote deposit, fresh
+build/inference or human verification was performed. A bounded `/workspace`
+search still found all nine later-reconstruction locators absent, including the
+independently pinned E5 catalog. Both older named ZIPs match their pins, but
+contain historical packages. Eight of 38 later-file pins match shared historical
+bytes without establishing later-run provenance; do not relabel them. The
+[missing list](work/evidence-recovery-20261005/MISSING.md) records search limits.
+Do not replace frozen handoff inventories with these new observations; the
+new delivery record separately indexes all checks and hashes. Durable delivery,
+secondary payload coverage, missing-record recovery and human review remain open.
+
 The historical handoff recorded sealed evidence in the original workspace; it is
 **not uploaded in this code-only repository and was unavailable in the fresh cloud
 machine**. The paths below are historical provenance locators, not verified

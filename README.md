@@ -12,6 +12,7 @@ source and continuation documents, **not the complete evidence archive**.
 - [Current manuscript source](work/paper-rewrite-20261004/manuscript/paper.tex)
 - [Manuscript claim–evidence table](work/paper-rewrite-20261004/CLAIM_EVIDENCE.md)
 - [Human audit entry and unsigned review template](docs/human-audit/README.md)
+- [Local evidence package and unresolved missing material](work/evidence-recovery-20261005/README.md)
 - [Rewrite scope, review and build instructions](work/paper-rewrite-20261004/README.md)
 - [Current manuscript and preserved-parent digests](docs/CURRENT_MANUSCRIPT.json)
 - [Completed same-Android comparison and display-reference findings](research/20261004-p2-p3/RESULTS_OVERVIEW.md)

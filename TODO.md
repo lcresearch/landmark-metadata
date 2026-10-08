@@ -74,12 +74,21 @@ Venue/category selection still determines the submission form.
   `/workspace/repro-*` inputs. No installation, build, emulator or inference was
   rerun. This completes the documented handoff and separate deposit plan, not a
   portable archived or fresh-machine reproduction.
-- [ ] **P1 — Deliver and validate an external evidence package.** Follow the
+- [x] **P1 — Recover and verify a selected local evidence package (agent).**
+  [Local recovery](work/evidence-recovery-20261005/README.md) preserves 2,749
+  original E1/E2, build-audit and P2/P3 files outside Git with matching historical
+  identities. The archive's complete inventory was checked; saved-record checks
+  cover 26 executed APKs, 14 separate initial builds and 34 complete run records.
+  Later reconstruction material remains [unrecovered](work/evidence-recovery-20261005/MISSING.md).
+  This completes the user's selected local-package scope, not durable delivery,
+  a new model run or human verification.
+- [ ] **P1 — Deliver and validate a durable external evidence package.** Follow the
   [deposit plan](docs/reproduction/DEPOSIT_PLAN.md): choose destination/access,
   recover missing inputs and configuration, preserve independently pinned
   manifests, and verify the selected build/run in a fresh workspace. Keep binary
-  evidence outside Git. Current local availability and source-copy smoke checks
-  do not complete this item.
+  evidence outside Git. The selected local package is ready, but later `repro-*`
+  records and the pinned E5 catalog remain unrecovered. Local saved-byte checks
+  do not complete persistent delivery or a fresh-workspace build/run.
 - [x] **P1 — Prepare the human audit entry (agent).** The
   [entry](docs/human-audit/README.md), [inspection checklist](docs/human-audit/CHECKLIST.md),
   [machine-readable map](docs/human-audit/audit-map.json) and
