@@ -43,7 +43,9 @@ source; use the new claim crosswalk and manuscript digest.
   mismatch and U+2028 success; the unchanged helper matches 22 valid cases and
   abstains on three malformed cases. New raw evidence is outside Git. No Task,
   Android/model inference, whole-checker or all-65 regression was rerun.
-- [ ] **P1 — Review and deliver the post-audit follow-up PR after #13.** Branch
+- [x] **P1 — Deliver the post-audit revision and parser source through [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14).**
+  The feature branch and PR are published; raw evidence/build outputs remain outside Git.
+- [ ] **P1 — Review [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14) after #13.** Branch
   `paper/preaudit-followup` targets `audit/agent-preaudit`. Review the revised
   chronology and split new parser evidence from missing historical records.
   No merge is authorized by this work request.

@@ -21,6 +21,10 @@ The previously audited manuscripts, claim maps, audit records and imported
 sources stay byte-identical. This branch is stacked on `audit/agent-preaudit`;
 it does not merge PR #13 or its prerequisites.
 
+Delivered as [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14),
+unmerged. Review after its still-open #10–#13 prerequisites; user-authorized
+merges use squash.
+
 The retained deterministic permutation result does not depend on certifying its
 historical predeclaration. Its saved freeze lacks a timestamp. Mutable local
 times are consistent with the declared order but cannot independently prove it.

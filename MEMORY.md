@@ -21,7 +21,7 @@ Raw results and the 151-file manifest remain outside Git under
 command records, not the provisional directory label. Human statuses stay PENDING.
 
 Rebuilt short/full papers remain four/seven pages including 18 references.
-Deliver via `paper/preaudit-followup`, stacked on still-open PR #13; no merge,
+Delivered as PR #14 via `paper/preaudit-followup`, stacked on still-open PR #13; no merge,
 deposit or submission authorized. Current target identities and human handoff
 explicitly supersede the old target for new review without rewriting its record.
 
