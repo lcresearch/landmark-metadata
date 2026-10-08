@@ -9,6 +9,7 @@ source and continuation documents, **not the complete evidence archive**.
 
 ## Start here
 
+- [PR #10–#14 integration status and verification](work/pr10-14-integration-20261008/README.md)
 - [Current manuscript source](work/preaudit-followup-20261008/manuscript/paper.tex)
 - [Manuscript claim–evidence table](work/preaudit-followup-20261008/CLAIM_EVIDENCE.md)
 - [Post-audit revisions and new isolated parser evidence](work/preaudit-followup-20261008/README.md)

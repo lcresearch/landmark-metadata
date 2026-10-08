@@ -19,5 +19,17 @@
     "sha256": "a2b2ffe54cae5b62286c94729b725e4117ecff34f6b1cf81b61a8b8205463d19",
     "bytes": 40883
   },
-  "pull_request": "https://github.com/lcresearch/landmark-metadata/pull/14"
+  "pull_request": "https://github.com/lcresearch/landmark-metadata/pull/14",
+  "integration": {
+    "user_authorized": true,
+    "predecessor_prs_squash_merged": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "terminal_pr": 14,
+    "completion_rule": "Terminal PR MERGED state completes stack; this does not complete human audit",
+    "record": "work/pr10-14-integration-20261008/integration-index.json"
+  }
 }

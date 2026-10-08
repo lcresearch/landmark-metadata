@@ -2,6 +2,22 @@
 
 This repository is the source-code handoff for **From Model Metadata to Executable Interfaces: A Controlled Study of Tensor Binding and Decoder Contracts**. Read `TODO.md` before planning new work. This note records conclusions and working preferences, not a substitute for raw evidence.
 
+## Authorized PR integration (8 October 2026 UTC)
+
+The user explicitly authorized “ok. squash and merge” for #10–#14. #10–#13
+are now merged in order as `dec99fac`, `6e318506`, `10450f91`, `52e6eafc`.
+Each was verified as a single-parent squash with the reviewed full tree.
+Feature-only base synchronization preserved content without force pushes.
+
+PR #14 is the final integration gate and carries these continuation updates.
+Its GitHub MERGED state completes the stack; consult that state rather than
+older frozen “not authorized/open” review notes. The final operation verifies
+its exact reviewed tree and single-parent commit. The source/document review
+and 83 passing tests do not complete human research verification or evidence
+delivery. Scientific sources and evidence indexes are unchanged by integration.
+See `work/pr10-14-integration-20261008/` for exact predecessor merge identities
+and the terminal verification rule. Historical review records stay unchanged.
+
 ## PR stack review (8 October 2026 UTC)
 
 `work/pr10-14-review-20261008/` records the scoped review of #10–#14 and a local

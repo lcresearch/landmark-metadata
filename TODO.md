@@ -37,11 +37,19 @@ source; use the new claim crosswalk and manuscript digest.
   found no unresolved final-stack content blocker. Source checks and all 83
   repository tests pass; local content-preserving squash simulation passes.
   A naive retarget after squash conflicts; #11–#14 need guarded branch/base sync.
-- [ ] **P1 — Authorize and perform sequential Squash and merge of #10–#14.**
-  User selected review/integration text but supplied no explicit merge message.
-  All PRs remain open. Recheck actual main/predecessor trees and each reviewed
-  head, synchronize feature branches without changing their content, retarget
-  and verify each single-parent squash. Stop if unrelated main changes appear.
+- [x] **P1 — Authorize sequential Squash and merge of #10–#14.**
+  The user explicitly authorized “ok. squash and merge”.
+- [x] **P1 — Squash and verify prerequisites #10–#13.**
+  Merged commits are `dec99fac`, `6e318506`, `10450f91`, and `52e6eafc`.
+  Each has exactly one parent and the reviewed PR's complete tree. See the
+  [integration record](work/pr10-14-integration-20261008/README.md).
+
+**Final integration gate: [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14).**
+This terminal PR carries the revised draft, parser follow-up and these status
+updates. Its GitHub **MERGED** state completes the five-PR integration; OPEN
+means that final step remains in progress. The operation verifies its reviewed
+head, single-parent squash and exact tree. Human research verification and
+evidence delivery remain separate open tasks below.
 
 - [x] **P1 — Narrow audit-sensitive manuscript claims (agent).** New short/full
   sources remove categorical E2 predeclaration timing, retain the deterministic
@@ -57,9 +65,9 @@ source; use the new claim crosswalk and manuscript digest.
 - [x] **P1 — Deliver the post-audit revision and parser source through [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14).**
   The feature branch and PR are published; raw evidence/build outputs remain outside Git.
 - [x] **P1 — Review [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14) after #13.** Branch
-  `paper/preaudit-followup` targets `audit/agent-preaudit`. Review the revised
-  chronology and split new parser evidence from missing historical records.
-  No merge is authorized by this work request.
+  `paper/preaudit-followup` was reviewed on `audit/agent-preaudit`; authorized
+  integration synchronizes it with main before squash. The narrowed chronology
+  and separation of new parser evidence from missing history remain intact.
 
 - [x] **P1 — Independent-agent pre-audit before human review (agent).**
   [Completed pre-audit](work/agent-preaudit-20261007/README.md) used five fresh
@@ -76,9 +84,8 @@ source; use the new claim crosswalk and manuscript digest.
   links, then record human conclusions against the new manuscript hash. Agent
   agreement and source/hash checks are not a signature.
 - [x] **P1 — Review [PR #13](https://github.com/lcresearch/landmark-metadata/pull/13) after #12 and its prerequisites.**
-  Feature branch `audit/agent-preaudit` is stacked on `paper/workshop-convergence`.
-  It carries source/review records and TODO updates only; raw audit outputs remain
-  outside Git. No merge is authorized by the audit request.
+  Previously stacked on `paper/workshop-convergence`, now squash-merged as
+  `52e6eafc`. Raw audit outputs remain outside Git; human verification stays pending.
 
 - [x] **P1 — Prepare a short workshop draft and candidate comparison (agent).**
   Added a four-page IEEE short draft including references, a seven-page companion,
@@ -88,8 +95,8 @@ source; use the new claim crosswalk and manuscript digest.
   secondary families outside the package and unrecovered later raw records.
   No new model experiment, author verification, deposit or submission.
 - [x] **P1 — Review [PR #12](https://github.com/lcresearch/landmark-metadata/pull/12) after its #10/#11 prerequisites.**
-  Feature branch `paper/workshop-convergence` is stacked on `evidence/local-recovery`.
-  Keep PR-only delivery and user-authorized squash merges.
+  Previously stacked on `evidence/local-recovery`, now squash-merged as
+  `10450f91`. Its chronology wording is superseded by the current #14 revision.
 - [ ] **P1 — Make the retained-claim evidence decision before submission.**
   Complete HA01–HA07 for core claims; for Hand, external/static checks and parser
   observations, identify inspectable support or narrow the retained wording.
