@@ -75,3 +75,33 @@ Store new first-party audit source, concise reports, identity index and TODO in
 Git via a PR stacked on #12. Keep raw inventories, disassembly, binaries and logs
 outside the source repository. Do not merge, sign as human, archive publicly or
 submit a paper without the corresponding user authorization.
+
+## 2026-10-08 UTC — Narrow chronology and separate new parser evidence
+
+The user authorized the two prioritized tasks: revise the manuscript from the
+pre-audit, then recover or freshly check the missing parser evidence. Preserve
+the old manuscripts and audit records; publish new short/full sources, claim map
+and target identities. Drop categorical E2 before-prediction timing while keeping
+the verified deterministic transformation and saved outcomes.
+
+Bounded recovery found no old parser/Task records or separately pinned E5 catalog.
+The new fixed-library JVM experiment confirms the parsing/decoder mechanism and
+22+3 existing helper cases; it does not authenticate missing historical execution,
+run Android inference, Task initialization or all 65 reconstructed fixtures.
+Keep both the new evidence and old gap visible. S/I/D/P and E5's auxiliary scope
+are unchanged. Human statuses remain PENDING. Deliver through a new PR stacked
+on #13; keep raw evidence/builds outside Git and do not merge or submit.
+
+## 2026-10-08 UTC — Execute the authorized squash integration
+
+The user's “ok. squash and merge” authorizes the reviewed #10–#14 sequence and
+necessary base synchronization. Verify actual main equals the exact reviewed
+predecessor tree before retaining a child tree; stop on unrelated main changes.
+Append feature-branch synchronization commits without force pushes, retarget
+each PR to main, pin the approved head in each squash request, and verify the
+single-parent result and complete tree. No direct default-branch push is used.
+
+Keep review snapshots and scientific payloads unchanged. Update current TODO
+and continuation notes in the final #14 PR; its merged state is the terminal
+completion record, avoiding an unapproved extra bookkeeping PR. Research human
+signatures, evidence gaps and submission decisions remain pending after merge.

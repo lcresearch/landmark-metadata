@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "user_authorization": "ok. squash and merge",
+  "merge_method": "squash",
+  "initial_main": "ba1b5c5a0e5df44c28e7232b044bc6741d29bb47",
+  "verified_predecessors": [
+    {
+      "pr": 10,
+      "original_head": "72ff55041be97ba04e377fa9c4a18b948b8dc106",
+      "synchronized_head": "72ff55041be97ba04e377fa9c4a18b948b8dc106",
+      "reviewed_tree": "e5e6c992fbc7fc47a4a102e7ca62ac5320a715c2",
+      "previous_main": "ba1b5c5a0e5df44c28e7232b044bc6741d29bb47",
+      "merge_commit": "dec99facec2122350bc4022aac70fab4f872467b",
+      "parents": [
+        "ba1b5c5a0e5df44c28e7232b044bc6741d29bb47"
+      ],
+      "merged_tree": "e5e6c992fbc7fc47a4a102e7ca62ac5320a715c2",
+      "content_preserved": true,
+      "method": "squash",
+      "verified_utc": "2026-10-08T07:03:07.722127+00:00"
+    },
+    {
+      "pr": 11,
+      "original_head": "e23d62e3af56376eb0f1946dd30eb7cba870fa04",
+      "synchronized_head": "16feaf4c3172e2fc0813d4bb3295e4a4a34f150b",
+      "reviewed_tree": "3bd3b103ef2402e0de1c00a2544d6949a6b5095b",
+      "previous_main": "dec99facec2122350bc4022aac70fab4f872467b",
+      "merge_commit": "6e3185068eb8c0b43ae3402f229f09f1bfc69404",
+      "parents": [
+        "dec99facec2122350bc4022aac70fab4f872467b"
+      ],
+      "merged_tree": "3bd3b103ef2402e0de1c00a2544d6949a6b5095b",
+      "content_preserved": true,
+      "method": "squash",
+      "verified_utc": "2026-10-08T07:03:27.340495+00:00"
+    },
+    {
+      "pr": 12,
+      "original_head": "24f660cf093c3e52efc0cde0c39e7aea1df48053",
+      "synchronized_head": "59210e194d06497731f1ce71b57e29d83a116b4d",
+      "reviewed_tree": "7c5067468102dd95ac469c03a95c4ddec81c4653",
+      "previous_main": "6e3185068eb8c0b43ae3402f229f09f1bfc69404",
+      "merge_commit": "10450f9102d29586f8fd4315ddb283867dc2d233",
+      "parents": [
+        "6e3185068eb8c0b43ae3402f229f09f1bfc69404"
+      ],
+      "merged_tree": "7c5067468102dd95ac469c03a95c4ddec81c4653",
+      "content_preserved": true,
+      "method": "squash",
+      "verified_utc": "2026-10-08T07:04:26.099861+00:00"
+    },
+    {
+      "pr": 13,
+      "original_head": "57ff5585039e7f63de54a67981d5d98cb9ba84e8",
+      "synchronized_head": "e92c1158c96dcda4f5262c444b4c8ef86d343799",
+      "reviewed_tree": "24b57f13fbf94bbe3a25863a56e047aa2183d622",
+      "previous_main": "10450f9102d29586f8fd4315ddb283867dc2d233",
+      "merge_commit": "52e6eafcf239ff608605bcd8db3032a68c655a1f",
+      "parents": [
+        "10450f9102d29586f8fd4315ddb283867dc2d233"
+      ],
+      "merged_tree": "24b57f13fbf94bbe3a25863a56e047aa2183d622",
+      "content_preserved": true,
+      "method": "squash",
+      "verified_utc": "2026-10-08T07:05:01.401655+00:00"
+    }
+  ],
+  "records": [
+    {
+      "path": "/workspace/pr10-14-merge-20261008T070219Z/pr-10/result.json",
+      "bytes": 566,
+      "sha256": "38c9588734ba99dbbdbb45d05196cede6c0b16e97d161b4d599db2462dbb904b"
+    },
+    {
+      "path": "/workspace/pr10-14-merge-20261008T070219Z/pr-11/result.json",
+      "bytes": 566,
+      "sha256": "aafb7c15488983b6c91e77195dd43f3f4c5440a8833f1351a889d40b88207703"
+    },
+    {
+      "path": "/workspace/pr10-14-merge-20261008T070219Z/pr-12/result.json",
+      "bytes": 566,
+      "sha256": "ac494a788cd43e00c958190961ea424d63ab8ccdfe81e8b1db4d159795d4ad28"
+    },
+    {
+      "path": "/workspace/pr10-14-merge-20261008T070219Z/pr-13/result.json",
+      "bytes": 566,
+      "sha256": "d1e6e17c4cb45f730e3088f8371fb2c981c29c5f3216a4c481cc1b8c47a0af89"
+    }
+  ],
+  "external_guarded_driver": {
+    "path": "/workspace/pr10-14-merge-20261008T070219Z/merge_one.py",
+    "bytes": 4099,
+    "sha256": "89231b69d4386d984c95b41082f5990e087777c8787e6230b8be126c1f0221fd"
+  },
+  "readme": {
+    "path": "work/pr10-14-integration-20261008/README.md",
+    "bytes": 3231,
+    "sha256": "c3593c3b432fd58a65ac6734bf97e6cf0adadf4d9e6e1db5c276cee0e7ab0d96"
+  },
+  "final_gate": {
+    "pr": 14,
+    "url": "https://github.com/lcresearch/landmark-metadata/pull/14",
+    "completion_rule": "GitHub merged=true; merge_commit_sha must have sole parent equal to final predecessor and exact reviewed candidate tree",
+    "expected_parent": "52e6eafcf239ff608605bcd8db3032a68c655a1f",
+    "reviewed_scientific_delivery_head": "caa00fc1550f7c6c64d8d851ff207e7129aeb0e6",
+    "allowed_content_delta": "Integration TODO/memory/decisions/navigation/pointer records only",
+    "postmerge_record": "/workspace/pr10-14-merge-20261008T070219Z/pr-14/result.json"
+  },
+  "human_verification": "PENDING",
+  "durable_deposit_performed": false,
+  "submission_performed": false
+}

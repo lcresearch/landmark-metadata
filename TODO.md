@@ -23,7 +23,7 @@ completed agent review were squash-merged in
 Venue/category selection still determines the submission form.
 
 The user now prefers a short workshop paper. The current
-[convergence draft](work/workshop-convergence-20261007/README.md) uses four-page
+[post-audit draft](work/preaudit-followup-20261008/README.md) uses four-page
 IEEE conference formatting provisionally for SQA4AI 2027; a seven-page companion
 retains detail. The candidate deadlines are abstract 19 October and paper
 23 October 2026, AoE. This is not a selected venue or submission approval.
@@ -31,6 +31,43 @@ retains detail. The candidate deadlines are abstract 19 October and paper
 separates author verification, anonymous persistent evidence access and retained
 secondary-claim decisions. The old human-audit entry stays pinned to its old
 source; use the new claim crosswalk and manuscript digest.
+
+- [x] **P1 — Review the full PR #10–#14 stack (agent).**
+  [Scoped review and integration plan](work/pr10-14-review-20261008/README.md)
+  found no unresolved final-stack content blocker. Source checks and all 83
+  repository tests pass; local content-preserving squash simulation passes.
+  A naive retarget after squash conflicts; #11–#14 need guarded branch/base sync.
+- [x] **P1 — Authorize sequential Squash and merge of #10–#14.**
+  The user explicitly authorized “ok. squash and merge”.
+- [x] **P1 — Squash and verify prerequisites #10–#13.**
+  Merged commits are `dec99fac`, `6e318506`, `10450f91`, and `52e6eafc`.
+  Each has exactly one parent and the reviewed PR's complete tree. See the
+  [integration record](work/pr10-14-integration-20261008/README.md).
+
+**Final integration gate: [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14).**
+This terminal PR carries the revised draft, parser follow-up and these status
+updates. Its GitHub **MERGED** state completes the five-PR integration; OPEN
+means that final step remains in progress. The operation verifies its reviewed
+head, single-parent squash and exact tree. Human research verification and
+evidence delivery remain separate open tasks below.
+
+- [x] **P1 — Narrow audit-sensitive manuscript claims (agent).** New short/full
+  sources remove categorical E2 predeclaration timing, retain the deterministic
+  transform and observed results, and distinguish saved-byte pre-audit from
+  execution. The new claim map preserves all 16 IDs and PENDING human statuses;
+  prior manuscripts and audit targets remain unchanged.
+- [x] **P1 — Bounded parser recovery and fresh isolated check (agent).** The
+  [follow-up](work/preaudit-followup-20261008/parser/REPORT.md) did not recover the
+  old records. Actual Support 0.4.4 JVM probes confirm LF success, VT count
+  mismatch and U+2028 success; the unchanged helper matches 22 valid cases and
+  abstains on three malformed cases. New raw evidence is outside Git. No Task,
+  Android/model inference, whole-checker or all-65 regression was rerun.
+- [x] **P1 — Deliver the post-audit revision and parser source through [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14).**
+  The feature branch and PR are published; raw evidence/build outputs remain outside Git.
+- [x] **P1 — Review [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14) after #13.** Branch
+  `paper/preaudit-followup` was reviewed on `audit/agent-preaudit`; authorized
+  integration synchronizes it with main before squash. The narrowed chronology
+  and separation of new parser evidence from missing history remain intact.
 
 - [x] **P1 — Independent-agent pre-audit before human review (agent).**
   [Completed pre-audit](work/agent-preaudit-20261007/README.md) used five fresh
@@ -41,14 +78,14 @@ source; use the new claim crosswalk and manuscript digest.
   evidence; the frozen manuscript and old audit map are unchanged.
 - [ ] **P1 — Resolve pre-audit findings and perform human author verification.**
   Use the [six-part handoff](work/agent-preaudit-20261007/HUMAN_HANDOFF.md).
-  Confirm or narrow E2's predeclaration wording; decide the retained parser and
-  other secondary claims from their actual evidence level. Check key raw records
-  and authority links, then record human conclusions against the four-page
-  manuscript hash. Agent agreement and source/hash checks are not a signature.
-- [ ] **P1 — Review [PR #13](https://github.com/lcresearch/landmark-metadata/pull/13) after #12 and its prerequisites.**
-  Feature branch `audit/agent-preaudit` is stacked on `paper/workshop-convergence`.
-  It carries source/review records and TODO updates only; raw audit outputs remain
-  outside Git. No merge is authorized by the audit request.
+  E2 wording is now narrowed and parser evidence supplemented separately. Use the
+  [new target handoff](work/preaudit-followup-20261008/HUMAN_HANDOFF.md) to assess
+  these edits and retained secondary limits. Check key raw records and authority
+  links, then record human conclusions against the new manuscript hash. Agent
+  agreement and source/hash checks are not a signature.
+- [x] **P1 — Review [PR #13](https://github.com/lcresearch/landmark-metadata/pull/13) after #12 and its prerequisites.**
+  Previously stacked on `paper/workshop-convergence`, now squash-merged as
+  `52e6eafc`. Raw audit outputs remain outside Git; human verification stays pending.
 
 - [x] **P1 — Prepare a short workshop draft and candidate comparison (agent).**
   Added a four-page IEEE short draft including references, a seven-page companion,
@@ -57,9 +94,9 @@ source; use the new claim crosswalk and manuscript digest.
   E5 as supporting evidence. Explicitly distinguishes focal recovered evidence,
   secondary families outside the package and unrecovered later raw records.
   No new model experiment, author verification, deposit or submission.
-- [ ] **P1 — Review [PR #12](https://github.com/lcresearch/landmark-metadata/pull/12) after its #10/#11 prerequisites.**
-  Feature branch `paper/workshop-convergence` is stacked on `evidence/local-recovery`.
-  Keep PR-only delivery and user-authorized squash merges.
+- [x] **P1 — Review [PR #12](https://github.com/lcresearch/landmark-metadata/pull/12) after its #10/#11 prerequisites.**
+  Previously stacked on `evidence/local-recovery`, now squash-merged as
+  `10450f91`. Its chronology wording is superseded by the current #14 revision.
 - [ ] **P1 — Make the retained-claim evidence decision before submission.**
   Complete HA01–HA07 for core claims; for Hand, external/static checks and parser
   observations, identify inspectable support or narrow the retained wording.
@@ -174,8 +211,9 @@ that can change the core claim or contribution decision.
 
 - [x] E1: execute the actual generated EfficientNet Android getter; reach the
   label-deletion exception after successful loading and inference.
-- [x] E2: predeclare label permutation; verify tested raw/score equality, changed
-  exposed association, and restoration.
+- [x] E2: execute the deterministic label permutation; verify tested raw/score
+  equality, changed exposed association, and restoration. Independent support
+  for historical predeclaration timing remains limited; current wording is narrowed.
 - [x] Audit core preservation and source/bytecode relationships using separate
   checking scripts; rebuild in new output directories and a new AVD with the
   existing pinned toolchain. This is not independent human reproduction.

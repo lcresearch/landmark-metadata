@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-08T03:26:53.787430+00:00",
+  "scope": "Fresh isolated JVM parser evidence; source-only locators/hashes, not raw results or historical recovery",
+  "raw_root": "/workspace/parser-followup-20261008T032600Z",
+  "actual_started_utc": "2026-10-08T03:23:56.053118+00:00",
+  "directory_suffix_is_execution_timestamp": false,
+  "controller_command": [
+    "python",
+    "-B",
+    "work/preaudit-followup-20261008/parser/run_probe.py",
+    "--output-dir",
+    "/workspace/parser-followup-20261008T032600Z"
+  ],
+  "controller_cwd": "/workspace/landmark-preaudit-followup",
+  "controller_exit_code": 0,
+  "source_files": [
+    {
+      "path": "/workspace/landmark-preaudit-followup/work/preaudit-followup-20261008/parser/PROTOCOL.md",
+      "bytes": 4677,
+      "sha256": "b96f09bf4c80c956245a1c126dffbf7e67f4afd35c50df91b2d0a58fd7400e27"
+    },
+    {
+      "path": "/workspace/landmark-preaudit-followup/work/preaudit-followup-20261008/parser/REPORT.md",
+      "bytes": 5175,
+      "sha256": "67f8332b3f820c49c1a39398cbfb8f41bddc117f1a077130948db5a523846be2"
+    },
+    {
+      "path": "/workspace/landmark-preaudit-followup/work/preaudit-followup-20261008/parser/run_probe.py",
+      "bytes": 14949,
+      "sha256": "6a556f23c45dbb427c3b82fc2661119fafb323b578756eec422616792e02a1e8"
+    },
+    {
+      "path": "/workspace/landmark-preaudit-followup/work/preaudit-followup-20261008/parser/verify_probe.py",
+      "bytes": 5659,
+      "sha256": "50d4d62dd4b149cceadb12341cf990c3647d9a7624e0ab46446d540ac34522de"
+    }
+  ],
+  "executed_source_inputs": [
+    {
+      "path": "/workspace/landmark-preaudit-followup/work/preaudit-followup-20261008/parser/PROTOCOL.md",
+      "bytes": 4677,
+      "sha256": "b96f09bf4c80c956245a1c126dffbf7e67f4afd35c50df91b2d0a58fd7400e27"
+    },
+    {
+      "path": "/workspace/landmark-preaudit-followup/work/preaudit-followup-20261008/parser/run_probe.py",
+      "bytes": 14949,
+      "sha256": "6a556f23c45dbb427c3b82fc2661119fafb323b578756eec422616792e02a1e8"
+    },
+    {
+      "path": "/workspace/landmark-preaudit-followup/sources/metadata-contract-paper/scripts/DecoderProbe.java",
+      "bytes": 1831,
+      "sha256": "97337d45c866a22461bc6857a48661147d5dba013488e84f4d09490a73f14604"
+    },
+    {
+      "path": "/workspace/landmark-preaudit-followup/sources/repro-audit-20261004/maintained/LabelOracle.java",
+      "bytes": 716,
+      "sha256": "3e630666a8426b85d9e483a4c9df1b13bf0040c5ec9fab8716c76bb79fb4331c"
+    },
+    {
+      "path": "/workspace/landmark-preaudit-followup/sources/repro-audit-20261004/maintained/java_labels.py",
+      "bytes": 1496,
+      "sha256": "1f6fb25e5992c63708a514d8658ee0be982bee9e428e6a5db12f47e9a6e7e771"
+    },
+    {
+      "path": "/workspace/landmark-preaudit-followup/sources/repro-audit-20261004/maintained/test_java_labels.py",
+      "bytes": 5511,
+      "sha256": "57b7ff9213b175e645e30289ea3a6a35de10ba7cc3912b05ec207c16d140693f"
+    },
+    {
+      "path": "/workspace/landmark-preaudit-followup/sources/repro-audit-20261004/maintained/runtime.py",
+      "bytes": 1687,
+      "sha256": "fa47196251d682148d6c6ca3f22ed77981f28e9b907503a79e2c8ec888ec60f6"
+    },
+    {
+      "path": "/workspace/landmark-preaudit-followup/sources/repro-audit-20261004/probes/probe_label_parser.py",
+      "bytes": 6949,
+      "sha256": "78be35f2d7afc3551b5fa8d3e6ab844cc7ef0cdf61cafd9c8275fdd00d008a71"
+    },
+    {
+      "path": "/workspace/landmark-preaudit-followup/docs/reproduction/toolchain.json",
+      "bytes": 57652,
+      "sha256": "cdc31330a5368dd9520076af3f8c8cd6e0dfb8f2e95287627a530b37b861da02"
+    }
+  ],
+  "dependency_identities": [
+    {
+      "path": "/workspace/hand-contract-repro/deps/android-4.1.1.4.jar",
+      "bytes": 12947757,
+      "sha256": "84072541cbb711eff89f7277100ff854929a446dba7ceb1b195c340e0b4fd3cb",
+      "expected_sha256": "84072541cbb711eff89f7277100ff854929a446dba7ceb1b195c340e0b4fd3cb",
+      "matches_pin": true
+    },
+    {
+      "path": "/workspace/hand-contract-repro/deps/annotation-1.3.0.jar",
+      "bytes": 31705,
+      "sha256": "97dc45afefe3a1e421da42b8b6e9f90491477c45fc6178203e3a5e8a05ee8553",
+      "expected_sha256": "97dc45afefe3a1e421da42b8b6e9f90491477c45fc6178203e3a5e8a05ee8553",
+      "matches_pin": true
+    },
+    {
+      "path": "/workspace/hand-contract-repro/deps/flatbuffers-java-2.0.0.jar",
+      "bytes": 67067,
+      "sha256": "89f94a63d5619d0915dcb8bf2b5ff17606038c685f635c3d062157b082b641ca",
+      "expected_sha256": "89f94a63d5619d0915dcb8bf2b5ff17606038c685f635c3d062157b082b641ca",
+      "matches_pin": true
+    },
+    {
+      "path": "/workspace/hand-contract-repro/deps/tensorflow-lite-2.13.0.jar",
+      "bytes": 27946,
+      "sha256": "1dd7e612b8e4a0bc91db0534e070253d4a99a4598a102c0b18196786a679c328",
+      "expected_sha256": "1dd7e612b8e4a0bc91db0534e070253d4a99a4598a102c0b18196786a679c328",
+      "matches_pin": true
+    },
+    {
+      "path": "/workspace/hand-contract-repro/deps/tensorflow-lite-api-2.13.0.jar",
+      "bytes": 21805,
+      "sha256": "2609bfc6adcb0551866411dabde4b47cd767e72cbd391654b717826aadcf5783",
+      "expected_sha256": "2609bfc6adcb0551866411dabde4b47cd767e72cbd391654b717826aadcf5783",
+      "matches_pin": true
+    },
+    {
+      "path": "/workspace/hand-contract-repro/deps/tensorflow-lite-metadata-0.4.4.jar",
+      "bytes": 596689,
+      "sha256": "8c4b6baee166517bcf46228f4410640ff6ccfd8001b40647038c9a903cf15e7d",
+      "expected_sha256": "8c4b6baee166517bcf46228f4410640ff6ccfd8001b40647038c9a903cf15e7d",
+      "matches_pin": true
+    },
+    {
+      "path": "/workspace/hand-contract-repro/deps/tensorflow-lite-support-0.4.4.jar",
+      "bytes": 353,
+      "sha256": "5e15853661523fdbc0701486b0e1e6ff52ecefd76275c585de721e917a43a61f",
+      "expected_sha256": "5e15853661523fdbc0701486b0e1e6ff52ecefd76275c585de721e917a43a61f",
+      "matches_pin": true
+    },
+    {
+      "path": "/workspace/hand-contract-repro/deps/tensorflow-lite-support-api-0.4.4.jar",
+      "bytes": 98825,
+      "sha256": "15d59ab34528d75908306432715e522a278f781ba6f4802d6b41917a5838a59d",
+      "expected_sha256": "15d59ab34528d75908306432715e522a278f781ba6f4802d6b41917a5838a59d",
+      "matches_pin": true
+    }
+  ],
+  "source_model": {
+    "path": "/workspace/metadata-contract-paper/models/components/6c7ab0a6e5dcbf38a8c33b960996a55a3b4300b36a018c4545801de3a3c8bde0.tflite",
+    "bytes": 18582189,
+    "sha256": "6c7ab0a6e5dcbf38a8c33b960996a55a3b4300b36a018c4545801de3a3c8bde0"
+  },
+  "key_raw_identities": [
+    {
+      "path": "/workspace/parser-followup-20261008T032600Z/invocation.json",
+      "bytes": 785,
+      "sha256": "a373da3e9c28257966e2042a69de00d4c49b85246e1f1d53e8f1f08b2a0fe7e9"
+    },
+    {
+      "path": "/workspace/parser-followup-20261008T032600Z/environment.json",
+      "bytes": 6163,
+      "sha256": "35c310fc048790e90edbe11aa5ed332e4e81862eda07aa09471bd49f6358bdce"
+    },
+    {
+      "path": "/workspace/parser-followup-20261008T032600Z/recovery.json",
+      "bytes": 3942,
+      "sha256": "b370c634d0682eef7f398cfdb68cc51da35fe112a9f8216654b235659d17ce27"
+    },
+    {
+      "path": "/workspace/parser-followup-20261008T032600Z/results.json",
+      "bytes": 81165,
+      "sha256": "0860ad556dc9e32e0f7bd4f7caadfff3bb93275672c233eeede90f44cfb76305"
+    },
+    {
+      "path": "/workspace/parser-followup-20261008T032600Z/completion.json",
+      "bytes": 75,
+      "sha256": "11db73a5b6110abd53147d0380c30ea8a3ba253e30fd73915bd3e861aac9f21a"
+    },
+    {
+      "path": "/workspace/parser-followup-20261008T032600Z/evidence-files.json",
+      "bytes": 31083,
+      "sha256": "e07df98ac0db9aa5dee7febcd7221949a59a2a60081165b498796a4b7ab944cd"
+    }
+  ],
+  "readback_report": {
+    "path": "/workspace/parser-followup-readback-20261008T032714Z/report.json",
+    "bytes": 42483,
+    "sha256": "66a9a611d00b166818d7d8b2dba5918864c66be4ac27ce1e3a3942083d95be9d"
+  },
+  "readback_command": [
+    "python",
+    "-B",
+    "work/preaudit-followup-20261008/parser/verify_probe.py",
+    "--evidence",
+    "/workspace/parser-followup-20261008T032600Z",
+    "--report",
+    "/workspace/parser-followup-readback-20261008T032714Z/report.json"
+  ],
+  "old_exact_paths": [
+    {
+      "path": "/workspace/repro-audit/independent-audit/label-parser/results.json",
+      "exists": false
+    },
+    {
+      "path": "/workspace/repro-audit/independent-audit/label-parser/baseline-task-comparison.json",
+      "exists": false
+    },
+    {
+      "path": "/workspace/repro-external/E5/results.json",
+      "exists": false
+    },
+    {
+      "path": "/workspace/repro-external/E5/evaluation-fixtures-before-run.json",
+      "exists": false
+    }
+  ],
+  "required_unrecovered_catalog_sha256": "bf49a475696eec4b38fb17587f6541a8393da14297e5dca1d433a051ba166e79",
+  "historical_candidates_not_substituted": [
+    {
+      "path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/results.json",
+      "bytes": 226579,
+      "sha256": "46f27b8245216c37537f9a995fb87dbb0d44eca300c582fdb5fbe2f5807f4872",
+      "matches_required_later_catalog": false
+    },
+    {
+      "path": "/workspace/metadata-contract-e2e-20261004T030536Z/E5/evaluation-fixtures-before-run.json",
+      "bytes": 33734,
+      "sha256": "fe0a26332963e7c1b11279f41e985dc96a99f2c3c6da68839d7e37873a69bdb9",
+      "matches_required_later_catalog": false
+    }
+  ],
+  "limits": [
+    "No historical parser or later catalog recovered",
+    "No Task initialization or full E5/baseline execution",
+    "No 65-fixture regression",
+    "No model inference or Android build",
+    "No human verification"
+  ]
+}

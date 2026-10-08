@@ -2,6 +2,60 @@
 
 This repository is the source-code handoff for **From Model Metadata to Executable Interfaces: A Controlled Study of Tensor Binding and Decoder Contracts**. Read `TODO.md` before planning new work. This note records conclusions and working preferences, not a substitute for raw evidence.
 
+## Authorized PR integration (8 October 2026 UTC)
+
+The user explicitly authorized “ok. squash and merge” for #10–#14. #10–#13
+are now merged in order as `dec99fac`, `6e318506`, `10450f91`, `52e6eafc`.
+Each was verified as a single-parent squash with the reviewed full tree.
+Feature-only base synchronization preserved content without force pushes.
+
+PR #14 is the final integration gate and carries these continuation updates.
+Its GitHub MERGED state completes the stack; consult that state rather than
+older frozen “not authorized/open” review notes. The final operation verifies
+its exact reviewed tree and single-parent commit. The source/document review
+and 83 passing tests do not complete human research verification or evidence
+delivery. Scientific sources and evidence indexes are unchanged by integration.
+See `work/pr10-14-integration-20261008/` for exact predecessor merge identities
+and the terminal verification rule. Historical review records stay unchanged.
+
+## PR stack review (8 October 2026 UTC)
+
+`work/pr10-14-review-20261008/` records the scoped review of #10–#14 and a local
+integration simulation. No final-stack content blocker; all 83 repository tests
+and source checks pass. The existing scientific payload/targets remain unchanged.
+The executed parser verifier has a nonblocking generic-reuse hardening limit;
+current exact cases/payloads/pins were separately checked.
+
+After squash, simply retargeting #11 produces README/TODO conflicts. The tested
+plan checks main equals the exact predecessor tree, appends content-preserving
+base-sync commits to #11–#14 as needed, retargets, and uses squash for each PR.
+No branch/remote refs were changed by simulation. The selected-text request
+did not explicitly authorize merging; all five PRs remain open pending that
+final authorization. No human research status or old evidence gap is closed.
+
+## Post-audit revision and isolated parser check (8 October 2026 UTC)
+
+Current short/full manuscript and claim crosswalk are in
+`work/preaudit-followup-20261008/`. Prior convergence/pre-audit sources remain
+unchanged. E2 now states a deterministic shift; its before-predictions timing
+is not independently established. The saved-record pre-audit supports the core
+within its bounded scope and is not a new Android run or human verification.
+
+A targeted search did not recover historical parser/Task records or the pinned
+`bf49…` reconstructed E5 catalog. A new actual Support 0.4.4 JVM run confirms
+original LF 1000/1000 success, VT Python/Java 1000/999 and TensorLabel exception,
+and U+2028 1001/1000 with successful conversion. The unchanged helper matches
+22 existing valid cases and abstains on three malformed ones. No Task, model
+inference, whole-checker or all-65 regression was executed in this follow-up.
+Raw results and the 151-file manifest remain outside Git under
+`/workspace/parser-followup-20261008T032600Z`; actual execution times come from
+command records, not the provisional directory label. Human statuses stay PENDING.
+
+Rebuilt short/full papers remain four/seven pages including 18 references.
+Delivered as PR #14 via `paper/preaudit-followup`, stacked on still-open PR #13; no merge,
+deposit or submission authorized. Current target identities and human handoff
+explicitly supersede the old target for new review without rewriting its record.
+
 ## Latest agent pre-audit (7 October 2026 UTC)
 
 The user requested agents to walk the human checklist before doing real human
