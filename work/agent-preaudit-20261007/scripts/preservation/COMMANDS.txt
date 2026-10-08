@@ -1,0 +1,30 @@
+HA03 command record, 2026-10-07 UTC. All input reads were read-only; no inference/build/generator invocation. First-party output creation and inspection below /workspace/agent-preaudit-20261007T0749Z/preservation only.
+
+Primary reproducible inspection command (final run exit 0):
+PYTHONDONTWRITEBYTECODE=1 /workspace/hand-contract-repro/.venv/bin/python -B /workspace/agent-preaudit-20261007T0749Z/preservation/audit_ha03.py > /workspace/agent-preaudit-20261007T0749Z/preservation/audit.stdout 2> /workspace/agent-preaudit-20261007T0749Z/preservation/audit.stderr
+
+The script ran twice. Initial run also had zero failed comparisons; the final script excludes five inapplicable Task generated-source None==None comparisons. No evidence inputs changed between runs. Final results have 340 checks, not a statistical sample.
+
+Dependency discovery:
+python -c 'import sys; print(sys.executable); import flatbuffers, numpy; print(flatbuffers.__file__); print(numpy.__file__)'
+# Default Python lacked flatbuffers, so no dependencies were installed.
+find /workspace -path '*/site-packages/flatbuffers/__init__.py' -o -name 'schema_py_generated.py' 2>/dev/null | head -20
+/workspace/hand-contract-repro/.venv/bin/python -B -c 'import flatbuffers,numpy,sys;print(sys.executable);print(flatbuffers.__version__,numpy.__version__)'
+
+Principal context/source reads:
+cat /workspace/landmark-agent-preaudit/AGENTS.md
+cat /workspace/landmark-agent-preaudit/work/agent-preaudit-20261007/PROTOCOL.md
+cat /workspace/landmark-agent-preaudit/MEMORY.md /workspace/landmark-agent-preaudit/TODO.md /workspace/landmark-agent-preaudit/docs/DECISIONS.md
+cat /workspace/landmark-agent-preaudit/work/workshop-convergence-20261007/CLAIM_EVIDENCE.md
+sed -n '1,210p' /workspace/landmark-agent-preaudit/docs/human-audit/CHECKLIST.md
+rg -n 'HA03|preserv|DEX|Java|class|metadata|165' /workspace/landmark-agent-preaudit/work/workshop-convergence-20261007/manuscript/paper.tex
+sed -n '1,230p' /workspace/evidence-recovery-20261005T170453Z/package-v2/payload/metadata-contract-audit-20261004T062010Z/preservation/audit_preservation.py
+cat /workspace/evidence-recovery-20261005T170453Z/package-v2/payload/metadata-contract-audit-20261004T062010Z/preservation/AUDIT_REPORT.md
+sed -n '1,160p' /workspace/evidence-recovery-20261005T170453Z/package-v2/payload/metadata-contract-audit-20261004T062010Z/rebuild/AUDIT_REPORT.md
+sed -n '20,100p' /workspace/evidence-recovery-20261005T170453Z/package-v2/payload/SUPPLEMENTARY_SOURCE/suite_static.py
+rg -n 'Java|source|class|DEX|dex|description' /workspace/evidence-recovery-20261005T170453Z/package-v2/payload/metadata-contract-p2p3-20261004T073824Z/P2/EXPERIMENT_P2_RESULTS.md
+
+Additional rg --files, find and ls discovery reads located the above artifacts. Inline Python readback printed selected fields from final findings and old static records; no prior PASS assertion was imported into the fresh comparisons. This log preserves substantive commands rather than claiming a complete terminal transcript. Exact binary paths/sizes/hashes actually consumed are in findings.json/input_inventory; methods and all operations are in audit_ha03.py.
+
+Coordinator-requested fail-closed refinement: audit_ha03.py now exits 1 if any comparison is false, raises on missing inputs, accepts an output-directory argument and refuses to overwrite an existing findings.json. Comparison logic unchanged. Original outputs preserved; final strict run command:
+PYTHONDONTWRITEBYTECODE=1 /workspace/hand-contract-repro/.venv/bin/python -B /workspace/agent-preaudit-20261007T0749Z/preservation/audit_ha03.py /workspace/agent-preaudit-20261007T0749Z/preservation/strict-rerun > /workspace/agent-preaudit-20261007T0749Z/preservation/strict-rerun/audit.stdout 2> /workspace/agent-preaudit-20261007T0749Z/preservation/strict-rerun/audit.stderr

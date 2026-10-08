@@ -1,0 +1,548 @@
+{
+  "schema_version": 1,
+  "kind": "AGENT_PREAUDIT_NOT_HUMAN",
+  "frozen_repository_commit": "24f660cf093c3e52efc0cde0c39e7aea1df48053",
+  "target_manuscript": {
+    "path": "work/workshop-convergence-20261007/manuscript/paper.tex",
+    "sha256": "c79ba7f62a194abd487ec4b8ccedb60428ec4edd1f43e6ee155518ffd8bb416e",
+    "bytes": 20931
+  },
+  "protocol": {
+    "path": "work/agent-preaudit-20261007/PROTOCOL.md",
+    "sha256": "24ab3f671a50f5dd2bce923d555f73ffee2c4a44e548d30abf9b304d62476395",
+    "bytes": 3889
+  },
+  "protocol_frozen_before_review": true,
+  "source_only_delivery": true,
+  "model_experiments_run": false,
+  "new_saved_byte_computation": true,
+  "fresh_disassembly": true,
+  "human_status": "PENDING",
+  "human_reviewer": null,
+  "human_signed_at": null,
+  "independence": {
+    "area_reviewers": 5,
+    "chronology_subreviewers": 1,
+    "fresh_task_contexts": true,
+    "shared_infrastructure_and_evidence": true,
+    "blind_to_manuscript_outcomes": false,
+    "forensic_independence": false
+  },
+  "items": [
+    {
+      "id": "HA01",
+      "agent_disposition": "SUPPORTED_WITHIN_INSPECTED_SCOPE",
+      "human_status": "PENDING",
+      "reports": [
+        "work/agent-preaudit-20261007/reviews/executable.md"
+      ]
+    },
+    {
+      "id": "HA02",
+      "agent_disposition": "SUPPORTED_WITHIN_INSPECTED_SCOPE",
+      "human_status": "PENDING",
+      "reports": [
+        "work/agent-preaudit-20261007/reviews/executable.md"
+      ]
+    },
+    {
+      "id": "HA03",
+      "agent_disposition": "SUPPORTED_WITHIN_INSPECTED_SCOPE",
+      "human_status": "PENDING",
+      "reports": [
+        "work/agent-preaudit-20261007/reviews/preservation.md"
+      ]
+    },
+    {
+      "id": "HA04",
+      "agent_disposition": "SUPPORTED_WITHIN_INSPECTED_SCOPE",
+      "human_status": "PENDING",
+      "reports": [
+        "work/agent-preaudit-20261007/reviews/observations.md"
+      ]
+    },
+    {
+      "id": "HA05",
+      "agent_disposition": "PARTIAL",
+      "human_status": "PENDING",
+      "reports": [
+        "work/agent-preaudit-20261007/reviews/observations.md",
+        "work/agent-preaudit-20261007/reviews/chronology.md"
+      ]
+    },
+    {
+      "id": "HA06",
+      "agent_disposition": "SUPPORTED_WITHIN_INSPECTED_SCOPE",
+      "human_status": "PENDING",
+      "reports": [
+        "work/agent-preaudit-20261007/reviews/observations.md"
+      ]
+    },
+    {
+      "id": "HA07",
+      "agent_disposition": "SUPPORTED_WITHIN_INSPECTED_SCOPE",
+      "human_status": "PENDING",
+      "reports": [
+        "work/agent-preaudit-20261007/reviews/reference.md"
+      ]
+    },
+    {
+      "id": "HA08",
+      "agent_disposition": "PARTIAL",
+      "human_status": "PENDING",
+      "reports": [
+        "work/agent-preaudit-20261007/reviews/secondary.md"
+      ]
+    },
+    {
+      "id": "HA09",
+      "agent_disposition": "PARTIAL",
+      "human_status": "PENDING",
+      "reports": [
+        "work/agent-preaudit-20261007/reviews/secondary.md"
+      ]
+    },
+    {
+      "id": "HA09a",
+      "agent_disposition": "PARTIAL",
+      "human_status": "PENDING",
+      "reports": [
+        "work/agent-preaudit-20261007/reviews/secondary.md"
+      ]
+    },
+    {
+      "id": "HA09b",
+      "agent_disposition": "PARTIAL",
+      "human_status": "PENDING",
+      "reports": [
+        "work/agent-preaudit-20261007/reviews/secondary.md"
+      ]
+    },
+    {
+      "id": "HA09c",
+      "agent_disposition": "BLOCKED_MISSING_EVIDENCE",
+      "human_status": "PENDING",
+      "reports": [
+        "work/agent-preaudit-20261007/reviews/secondary.md"
+      ]
+    },
+    {
+      "id": "HA10",
+      "agent_disposition": "PARTIAL",
+      "human_status": "PENDING",
+      "reports": [
+        "work/agent-preaudit-20261007/reviews/secondary.md"
+      ]
+    }
+  ],
+  "claim_routes": [
+    {
+      "id": "C1",
+      "items": [
+        "HA03",
+        "HA09b",
+        "HA10"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C2",
+      "items": [
+        "HA02",
+        "HA03",
+        "HA04",
+        "HA05"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C2R",
+      "items": [
+        "HA01",
+        "HA02",
+        "HA03",
+        "HA04"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C3",
+      "items": [
+        "HA01",
+        "HA04"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C4",
+      "items": [
+        "HA05"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C5",
+      "items": [
+        "HA07"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C6",
+      "items": [
+        "HA02",
+        "HA06"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C7",
+      "items": [
+        "HA08"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C8",
+      "items": [
+        "HA09a"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C8D",
+      "items": [
+        "HA09a"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C9",
+      "items": [
+        "HA09b"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C9E",
+      "items": [
+        "HA09b"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C10",
+      "items": [
+        "HA09c"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C11",
+      "items": [
+        "HA10"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C12",
+      "items": [
+        "HA10"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    },
+    {
+      "id": "C13",
+      "items": [
+        "HA10"
+      ],
+      "human_status": "PENDING",
+      "detail_scope": "C8D detailed development counts not checked; HA05 chronology partial; see reports"
+    }
+  ],
+  "fresh_observation_denominators": {
+    "original_primary": {
+      "units": 8,
+      "inputs": 16,
+      "raw_tensors": 16,
+      "decoded_lists": 14
+    },
+    "construction_audit_primary": {
+      "units": 8,
+      "inputs": 16,
+      "raw_tensors": 16,
+      "decoded_lists": 14
+    },
+    "P2_primary": {
+      "units": 10,
+      "inputs": 18,
+      "raw_tensors": 10,
+      "decoded_lists": 16
+    },
+    "unique_focal_model_byte_conditions": 5,
+    "raw_tensors_total": 42,
+    "decoded_category_rows": 44000,
+    "APK_paths": 26,
+    "distinct_APK_hashes": 20,
+    "all_P2_successful_pairs": 8,
+    "focal_replay_numerics_checked": false
+  },
+  "new_review_report_and_source_records": [
+    {
+      "path": "work/agent-preaudit-20261007/reviews/chronology.md",
+      "sha256": "fe63337e73857e0bb58e4dde57d2ed0a59a44a50308a937d3bd1a4982b6cfbfb",
+      "bytes": 6606
+    },
+    {
+      "path": "work/agent-preaudit-20261007/reviews/executable.md",
+      "sha256": "84eb3b488fda2f205d9ca826fd88c3f71897d1bd6cfe9622b8c5de8d258c191d",
+      "bytes": 10217
+    },
+    {
+      "path": "work/agent-preaudit-20261007/reviews/observations.md",
+      "sha256": "b1f46a4e49d9da67f93519cd53e6dd856f59b96ef7409c23ef5716400d5aa42c",
+      "bytes": 10863
+    },
+    {
+      "path": "work/agent-preaudit-20261007/reviews/preservation.md",
+      "sha256": "278347dc0077aa634ad37cb97e53bc94a46f7f959dc62931204497cac55c886c",
+      "bytes": 8822
+    },
+    {
+      "path": "work/agent-preaudit-20261007/reviews/reference.md",
+      "sha256": "136b08e33127e7f81ec7edde1b5a255238fe0b4c9fb4a9ddb569977d5b8c843c",
+      "bytes": 9930
+    },
+    {
+      "path": "work/agent-preaudit-20261007/reviews/secondary.md",
+      "sha256": "6f17d109dcf9765091d6f9ec956ded12938dc15c03b229b5e867cb9dd75fff83",
+      "bytes": 12050
+    },
+    {
+      "path": "work/agent-preaudit-20261007/scripts/executable/audit_executable.py",
+      "sha256": "c59d75fb3acbcdc39c7548c73842787c781e1a7b60a4d12efa83a31f17ef1154",
+      "bytes": 7530
+    },
+    {
+      "path": "work/agent-preaudit-20261007/scripts/executable/commands-reproduce.sh",
+      "sha256": "048b3536b3d8bbaef4422d84fc0872cd3d79f474c60a407a3326bab0b4b6dfdd",
+      "bytes": 211
+    },
+    {
+      "path": "work/agent-preaudit-20261007/scripts/executable/compare_records.py",
+      "sha256": "0527a7e683c1fca52a5d3ed793aed7dd5b3e08c2bc777328abb75038c23f5c57",
+      "bytes": 5657
+    },
+    {
+      "path": "work/agent-preaudit-20261007/scripts/observations/commands",
+      "sha256": "9bd3f6cd9541d32397a696c95eba9b916a5c7fe76b457a51aedb6b3c614206b2",
+      "bytes": 1593
+    },
+    {
+      "path": "work/agent-preaudit-20261007/scripts/observations/firstpartycheckscript.py",
+      "sha256": "fc9d5f9d943b4a643e74cfea12e5c46ee25c6980d9f231dceb9d2a3868aed367",
+      "bytes": 14442
+    },
+    {
+      "path": "work/agent-preaudit-20261007/scripts/preservation/COMMANDS.txt",
+      "sha256": "a36ba8e78a434afee32cd7df4d33b01f7827b586170bd25f1fe961c15e052888",
+      "bytes": 3820
+    },
+    {
+      "path": "work/agent-preaudit-20261007/scripts/preservation/audit_ha03.py",
+      "sha256": "536d9e0e44bdcd3a4143e4cc5fc05ca563132e3c05b5525f0cbfcc3be8b6d415",
+      "bytes": 12710
+    },
+    {
+      "path": "work/agent-preaudit-20261007/scripts/reference/audit_reference.py",
+      "sha256": "6ebb5a9e775e7689cdf9bad04445e83f416679ec8f66f20d2a74791c6a898fa3",
+      "bytes": 17918
+    },
+    {
+      "path": "work/agent-preaudit-20261007/scripts/reference/commands.sh",
+      "sha256": "9c6d60422b9e0cdecbdde382d4e51185479d3b73a8e84ebf76185e8037ee90de",
+      "bytes": 465
+    },
+    {
+      "path": "work/agent-preaudit-20261007/scripts/secondary/commands.sh",
+      "sha256": "9e7b222b463f30c2489b08ac8a40b354697bdfa7c25319d01e12709492b3bd11",
+      "bytes": 697
+    },
+    {
+      "path": "work/agent-preaudit-20261007/scripts/secondary/finalize.py",
+      "sha256": "0919c2bdd5f16307b7cc2e990b64643430d10c4797b1d7e5b53f294b6602fa15",
+      "bytes": 12450
+    },
+    {
+      "path": "work/agent-preaudit-20261007/scripts/secondary/readback.py",
+      "sha256": "48c154951843c20844a01ebc05ad0bb28b7fc465de34e5fd3984d9f49c896cc6",
+      "bytes": 11841
+    },
+    {
+      "path": "work/agent-preaudit-20261007/scripts/secondary/supplement.py",
+      "sha256": "0d4d7529ac3b99d21150d83f0a1a1bf7222c840a740175fa6e1c1a27060e30be",
+      "bytes": 3090
+    }
+  ],
+  "external_audit_records": [
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/coordinator/freeze.json",
+      "sha256": "f03ba09cb957d92fd8c5e7805f25c305f4e9714bf4dc75fec7e72f00dea0ef17",
+      "bytes": 1584
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/coordinator/package-verify.stdout",
+      "sha256": "cd8066437584c60abd716ec81d27e324b5bad0289cb7fc48a6cf41ac0a5163ec",
+      "bytes": 304
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/coordinator/commands.json",
+      "sha256": "007560a3161f80b68e47a4439d4517a9d88cfd564756135933bc5e4bbbde829b",
+      "bytes": 522
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/executable/findings.json",
+      "sha256": "2e8b276f3d0766810b88dd7f67659016557098e42e95237d362930ef3a414735",
+      "bytes": 5580
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/executable/raw-checks.json",
+      "sha256": "e254d21008e72c15d8de8a89c3e3504452bd15704cad37b86df5805bc3461d99",
+      "bytes": 220246
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/executable/inspected-inputs.json",
+      "sha256": "6fe5f29e369091d41c994844a8c85f4968db14c721578c1ccc6ee483d95d32ce",
+      "bytes": 142347
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/executable/record-comparisons.json",
+      "sha256": "09c190b475237e6e75c286d88cdde8c77793de828abfbb5063a41c45eccee78a",
+      "bytes": 28622
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/executable/commands.json",
+      "sha256": "420a38d5e06a00a2c7ff5396af823c8ada67dcd4afce39da926ea6a15ca42896",
+      "bytes": 6736
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/executable/commands-manifest.json",
+      "sha256": "f6b553e79dfee476123d022429cc072ce6d48725929f1beecd7fbbfbdb9a138f",
+      "bytes": 16212
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/preservation/findings.json",
+      "sha256": "4cc554246da3b9f6d476509d1ee7f8b16fb82530343150f9a899fd0d0ac4169a",
+      "bytes": 1241142
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/preservation/strict-rerun/findings.json",
+      "sha256": "838c27e64c6f9cdd861d0c7e579164ece229770ea686ffbcbf418edcf557a166",
+      "bytes": 1241142
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/observations/findings.json",
+      "sha256": "bb28e4f857abaadc0a9f1a3472dc6028930ae8e0cbe2446267ea2514afb9d0cb",
+      "bytes": 314229
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/observations/check-initial-helper-assumption.stdout",
+      "sha256": "f6c75fcb58b3985f98d5a878ef0f8934a4cf72c00ad0f94185e1b51b99bc36a9",
+      "bytes": 917
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/observations/initial-helper-reexecution/findings.json",
+      "sha256": "d20f4269eb0ea803e54630f041c8f3c682079a5e9c29b76b951ba4f9fd042c3a",
+      "bytes": 313126
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/reference/findings.json",
+      "sha256": "fe4ca94ec48e980a0e131636df3889b011b5713546c5b86be9f9e2e5b18f382d",
+      "bytes": 5355
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/reference/input-identities.json",
+      "sha256": "52ef00a49f397bb8f1a4eb70e480404f4a734260f32d570f4722275a03043973",
+      "bytes": 35637
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/reference/fresh-model-bridge.json",
+      "sha256": "bc1285132e79315aa8c9a430193957c42a97bb562fa79c5aaea13c5f310f40a9",
+      "bytes": 352844
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/reference/fresh-label-rows.json",
+      "sha256": "e010520ff9ce7a3041edcd8218ae7178b3016887e5ab7b33b22fbf1eb7a379f9",
+      "bytes": 310100
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/reference/package-vs-originals.json",
+      "sha256": "35db475c6fcd50e5f870a26a926536256002d8eef860498ece39ee6e1245891e",
+      "bytes": 29775
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/secondary/findings.json",
+      "sha256": "b9c38dc21d3c99bd53077236057014c4611bcaf0643c556ccdab36940f66ce9e",
+      "bytes": 113608
+    },
+    {
+      "path": "/workspace/agent-preaudit-20261007T0749Z/secondary/observations.json",
+      "sha256": "3fb49c8a8dbb18b939d46e305360e4d0ac3789d05a750d1665fe1a62646dc476",
+      "bytes": 137429
+    }
+  ],
+  "preserved_prior_indexes": [
+    {
+      "path": "docs/human-audit/audit-map.json",
+      "sha256": "15a67d522426ae54dac7e15da935a8cd3aa3911188ee08235f12f2d6eeaff526",
+      "bytes": 14624
+    },
+    {
+      "path": "docs/CURRENT_MANUSCRIPT.json",
+      "sha256": "10bfa6b9a5466bbcef71f6d3859b2efec51184eb9f445087622700661a06b713",
+      "bytes": 1403
+    },
+    {
+      "path": "work/workshop-convergence-20261007/revision-map.json",
+      "sha256": "5b4695812c031cbb8475d0f9234a490aef68f85752c0bc58fc8b886ae8bb1092",
+      "bytes": 5739
+    },
+    {
+      "path": "work/paper-rewrite-20261004/claim-sources.json",
+      "sha256": "4a5875437bea046d85dc297b6dd15b81b85e26392b5c0397e2659e006a3d6db4",
+      "bytes": 32600
+    },
+    {
+      "path": "work/evidence-recovery-20261005/delivery-record.json",
+      "sha256": "24054db03decddde1925c705a8d868fe3e47bdd430f880f51a1e00c4410ebc63",
+      "bytes": 7936
+    }
+  ],
+  "known_gaps": [
+    "E2 chronology supported by untimestamped assertion and mutable local filesystem time, not independently proven",
+    "Later parser actual-library probe records and pinned reconstruction E5 catalog unrecovered",
+    "Hand fresh disassembly, E4 independent graph/exclusion recomputation, dynamic Gesture raw probe and repeat full-text review not completed",
+    "No new inference, pulled installed APK, native model-buffer attestation or human sign-off"
+  ],
+  "suggested_manuscript_change": {
+    "applied": false,
+    "scope": "Qualify or remove E2 predeclaration timing claim if author cannot support it; preserve report-only parser disclosure"
+  },
+  "raw_directory": "/workspace/agent-preaudit-20261007T0749Z",
+  "durable_deposit": false
+}

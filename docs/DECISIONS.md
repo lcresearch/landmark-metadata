@@ -53,3 +53,25 @@ claim-scope decisions and final venue compliance. No broad model search, new
 method, evidence publication or submission is authorized by this editorial task.
 Deliver source/docs through a new PR stacked on the still-open evidence-recovery
 branch; do not merge without the user's explicit instruction.
+
+
+## 2026-10-07 UTC — Agent pre-audit before the user's human verification
+
+Honor the request to use independent agents as checklist reviewers, while marking
+all findings as agent work and keeping human statuses PENDING. Five fresh-context
+reviewers plus a chronology subreview inspected shared saved inputs; no blinding,
+forensic independence or human signature is asserted. New computations and static
+disassembly are distinct from the historical executions; no model rerun occurred.
+
+Preserve the audited manuscript and original evidence. List proposed chronology
+wording changes separately: existing E2 freeze bytes support the declared fixed
+transform, but timing lacks an independently attested timestamp. Partial Hand/
+external/baseline scope and missing later parser raw evidence remain visible.
+Present original secondary files are not labeled missing merely because they
+were omitted from the focal package. The final report and human continuation
+sheet guide author verification; agent consensus is not a reliability measure.
+
+Store new first-party audit source, concise reports, identity index and TODO in
+Git via a PR stacked on #12. Keep raw inventories, disassembly, binaries and logs
+outside the source repository. Do not merge, sign as human, archive publicly or
+submit a paper without the corresponding user authorization.
