@@ -9,11 +9,12 @@ source and continuation documents, **not the complete evidence archive**.
 
 ## Start here
 
-- [Current manuscript source](work/paper-rewrite-20261004/manuscript/paper.tex)
-- [Manuscript claim–evidence table](work/paper-rewrite-20261004/CLAIM_EVIDENCE.md)
+- [Current manuscript source](work/workshop-convergence-20261007/manuscript/paper.tex)
+- [Manuscript claim–evidence table](work/workshop-convergence-20261007/CLAIM_EVIDENCE.md)
+- [Workshop candidates and submission checklist](work/workshop-convergence-20261007/README.md)
 - [Human audit entry and unsigned review template](docs/human-audit/README.md)
 - [Local evidence package and unresolved missing material](work/evidence-recovery-20261005/README.md)
-- [Rewrite scope, review and build instructions](work/paper-rewrite-20261004/README.md)
+- [Current build and review instructions](work/workshop-convergence-20261007/BUILD_REVIEW.md)
 - [Current manuscript and preserved-parent digests](docs/CURRENT_MANUSCRIPT.json)
 - [Completed same-Android comparison and display-reference findings](research/20261004-p2-p3/RESULTS_OVERVIEW.md)
 - [Fresh reproduction and repository audit (2026-10-04)](sources/repro-audit-20261004/REPORT.md)
@@ -45,7 +46,8 @@ source and continuation documents, **not the complete evidence archive**.
 | [Preserved audit-informed revision](sources/metadata-contract-paper-revision-20261004T065132Z) | Historical LaTeX, editorial scripts and revision notes |
 | [Preserved P2/P3 follow-up](research/20261004-p2-p3) | Same-Android harnesses, reference inquiry, separate audits and manuscript parent |
 | [Preserved editorial follow-up](work/review-followup-20261004) | Earlier LaTeX with parser-scope corrections; unchanged by the new rewrite |
-| [Current paper rewrite](work/paper-rewrite-20261004) | Controlled execution narrative, claim–evidence ledger, contribution/significance integration and build/review notes |
+| [Preserved full paper rewrite](work/paper-rewrite-20261004) | Controlled execution narrative, claim–evidence ledger, contribution/significance integration and build/review notes |
+| [Current workshop draft](work/workshop-convergence-20261007) | Four-page short source, longer companion, venue comparison, claim crosswalk and remaining submission work |
 | [Maintained observation reader](work/observation-review-20261004) | Exact Hand, Task and Android evidence identities; preserves the exported audit snapshot |
 
 `sources/` retains original timestamped names and source bytes. Per-experiment
@@ -65,8 +67,11 @@ and review paths before running. Do not execute historical sealing/finalization
 scripts against immutable evidence.
 
 The current paper source can be compiled in a **separate work directory** with
-a suitable TeX installation. It is a generic reading draft; human review and
-venue-specific formatting remain pending.
+a suitable TeX installation and IEEEtran. The current short draft renders to
+four pages including references under the provisional SQA4AI format. Venue
+choice, author verification, anonymous artifact delivery and final compliance
+remain pending. The prior human-audit entry is pinned to an older manuscript;
+use the current claim crosswalk when auditing this revision.
 
 The fresh audit reproduced the main controlled results and found a label-reader
 mismatch in the evaluated checker plus weaknesses in historical report scripts.

@@ -4,7 +4,7 @@ This is the single active checklist. Timestamped TODOs under `sources/` describe
 earlier states. Read `MEMORY.md` for evidence boundaries and `AGENTS.md` for the
 source-only repository policy.
 
-## Active priorities: human audit, evidence handoff and venue selection
+## Active priorities: short-paper submission convergence
 
 The checkboxes below distinguish completed deliverables from planned work.
 Completion of a bounded comparison does not certify novelty or publication readiness.
@@ -21,6 +21,32 @@ evidence delivery and actual human verification remain open. The rewrite and
 completed agent review were squash-merged in
 [PR #9](https://github.com/lcresearch/landmark-metadata/pull/9), commit `ba1b5c5`.
 Venue/category selection still determines the submission form.
+
+The user now prefers a short workshop paper. The current
+[convergence draft](work/workshop-convergence-20261007/README.md) uses four-page
+IEEE conference formatting provisionally for SQA4AI 2027; a seven-page companion
+retains detail. The candidate deadlines are abstract 19 October and paper
+23 October 2026, AoE. This is not a selected venue or submission approval.
+[Remaining submission work](work/workshop-convergence-20261007/SUBMISSION_READINESS.md)
+separates author verification, anonymous persistent evidence access and retained
+secondary-claim decisions. The old human-audit entry stays pinned to its old
+source; use the new claim crosswalk and manuscript digest.
+
+- [x] **P1 — Prepare a short workshop draft and candidate comparison (agent).**
+  Added a four-page IEEE short draft including references, a seven-page companion,
+  all-16-claim disposition map, official CFP candidates and submission checklist.
+  Retained E1/E2/P2 as the core, #770 as antecedent, S/I/D with P separate, and
+  E5 as supporting evidence. Explicitly distinguishes focal recovered evidence,
+  secondary families outside the package and unrecovered later raw records.
+  No new model experiment, author verification, deposit or submission.
+- [ ] **P1 — Review [PR #12](https://github.com/lcresearch/landmark-metadata/pull/12) after its #10/#11 prerequisites.**
+  Feature branch `paper/workshop-convergence` is stacked on `evidence/local-recovery`.
+  Keep PR-only delivery and user-authorized squash merges.
+- [ ] **P1 — Make the retained-claim evidence decision before submission.**
+  Complete HA01–HA07 for core claims; for Hand, external/static checks and parser
+  observations, identify inspectable support or narrow the retained wording.
+  Missing later records do not invalidate distinct recovered original evidence;
+  old evidence must not be relabeled as the missing run.
 
 - [x] **P0 — Contribution and closest-work comparison (agent).** Completed the
   [bounded comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md):
@@ -107,7 +133,8 @@ Venue/category selection still determines the submission form.
   Choose a venue and paper category consistent with the P0 assessment and revised
   contribution. Completion means the selected template has been rendered and
   checked for length, anonymization, AI-assistance disclosure and reproduction
-  requirements. The existing generic reading draft does not establish venue fit.
+  requirements. The new four-page IEEE draft establishes a provisional rendered
+  length, not final venue selection or complete submission compliance.
 
 Do not expand the model collection, add similar mutants or build a general
 checker by default. Additional experiments need a specific unresolved question
