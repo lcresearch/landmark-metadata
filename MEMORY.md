@@ -2,6 +2,29 @@
 
 This repository is the source-code handoff for **From Model Metadata to Executable Interfaces: A Controlled Study of Tensor Binding and Decoder Contracts**. Read `TODO.md` before planning new work. This note records conclusions and working preferences, not a substitute for raw evidence.
 
+## Post-audit revision and isolated parser check (8 October 2026 UTC)
+
+Current short/full manuscript and claim crosswalk are in
+`work/preaudit-followup-20261008/`. Prior convergence/pre-audit sources remain
+unchanged. E2 now states a deterministic shift; its before-predictions timing
+is not independently established. The saved-record pre-audit supports the core
+within its bounded scope and is not a new Android run or human verification.
+
+A targeted search did not recover historical parser/Task records or the pinned
+`bf49…` reconstructed E5 catalog. A new actual Support 0.4.4 JVM run confirms
+original LF 1000/1000 success, VT Python/Java 1000/999 and TensorLabel exception,
+and U+2028 1001/1000 with successful conversion. The unchanged helper matches
+22 existing valid cases and abstains on three malformed ones. No Task, model
+inference, whole-checker or all-65 regression was executed in this follow-up.
+Raw results and the 151-file manifest remain outside Git under
+`/workspace/parser-followup-20261008T032600Z`; actual execution times come from
+command records, not the provisional directory label. Human statuses stay PENDING.
+
+Rebuilt short/full papers remain four/seven pages including 18 references.
+Deliver via `paper/preaudit-followup`, stacked on still-open PR #13; no merge,
+deposit or submission authorized. Current target identities and human handoff
+explicitly supersede the old target for new review without rewriting its record.
+
 ## Latest agent pre-audit (7 October 2026 UTC)
 
 The user requested agents to walk the human checklist before doing real human

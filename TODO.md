@@ -23,7 +23,7 @@ completed agent review were squash-merged in
 Venue/category selection still determines the submission form.
 
 The user now prefers a short workshop paper. The current
-[convergence draft](work/workshop-convergence-20261007/README.md) uses four-page
+[post-audit draft](work/preaudit-followup-20261008/README.md) uses four-page
 IEEE conference formatting provisionally for SQA4AI 2027; a seven-page companion
 retains detail. The candidate deadlines are abstract 19 October and paper
 23 October 2026, AoE. This is not a selected venue or submission approval.
@@ -31,6 +31,22 @@ retains detail. The candidate deadlines are abstract 19 October and paper
 separates author verification, anonymous persistent evidence access and retained
 secondary-claim decisions. The old human-audit entry stays pinned to its old
 source; use the new claim crosswalk and manuscript digest.
+
+- [x] **P1 — Narrow audit-sensitive manuscript claims (agent).** New short/full
+  sources remove categorical E2 predeclaration timing, retain the deterministic
+  transform and observed results, and distinguish saved-byte pre-audit from
+  execution. The new claim map preserves all 16 IDs and PENDING human statuses;
+  prior manuscripts and audit targets remain unchanged.
+- [x] **P1 — Bounded parser recovery and fresh isolated check (agent).** The
+  [follow-up](work/preaudit-followup-20261008/parser/REPORT.md) did not recover the
+  old records. Actual Support 0.4.4 JVM probes confirm LF success, VT count
+  mismatch and U+2028 success; the unchanged helper matches 22 valid cases and
+  abstains on three malformed cases. New raw evidence is outside Git. No Task,
+  Android/model inference, whole-checker or all-65 regression was rerun.
+- [ ] **P1 — Review and deliver the post-audit follow-up PR after #13.** Branch
+  `paper/preaudit-followup` targets `audit/agent-preaudit`. Review the revised
+  chronology and split new parser evidence from missing historical records.
+  No merge is authorized by this work request.
 
 - [x] **P1 — Independent-agent pre-audit before human review (agent).**
   [Completed pre-audit](work/agent-preaudit-20261007/README.md) used five fresh
@@ -41,10 +57,11 @@ source; use the new claim crosswalk and manuscript digest.
   evidence; the frozen manuscript and old audit map are unchanged.
 - [ ] **P1 — Resolve pre-audit findings and perform human author verification.**
   Use the [six-part handoff](work/agent-preaudit-20261007/HUMAN_HANDOFF.md).
-  Confirm or narrow E2's predeclaration wording; decide the retained parser and
-  other secondary claims from their actual evidence level. Check key raw records
-  and authority links, then record human conclusions against the four-page
-  manuscript hash. Agent agreement and source/hash checks are not a signature.
+  E2 wording is now narrowed and parser evidence supplemented separately. Use the
+  [new target handoff](work/preaudit-followup-20261008/HUMAN_HANDOFF.md) to assess
+  these edits and retained secondary limits. Check key raw records and authority
+  links, then record human conclusions against the new manuscript hash. Agent
+  agreement and source/hash checks are not a signature.
 - [ ] **P1 — Review [PR #13](https://github.com/lcresearch/landmark-metadata/pull/13) after #12 and its prerequisites.**
   Feature branch `audit/agent-preaudit` is stacked on `paper/workshop-convergence`.
   It carries source/review records and TODO updates only; raw audit outputs remain
@@ -174,8 +191,9 @@ that can change the core claim or contribution decision.
 
 - [x] E1: execute the actual generated EfficientNet Android getter; reach the
   label-deletion exception after successful loading and inference.
-- [x] E2: predeclare label permutation; verify tested raw/score equality, changed
-  exposed association, and restoration.
+- [x] E2: execute the deterministic label permutation; verify tested raw/score
+  equality, changed exposed association, and restoration. Independent support
+  for historical predeclaration timing remains limited; current wording is narrowed.
 - [x] Audit core preservation and source/bytecode relationships using separate
   checking scripts; rebuild in new output directories and a new AVD with the
   existing pinned toolchain. This is not independent human reproduction.

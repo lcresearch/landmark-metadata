@@ -1,18 +1,22 @@
 {
-  "repository_path": "work/workshop-convergence-20261007/manuscript/paper.tex",
-  "sha256": "c79ba7f62a194abd487ec4b8ccedb60428ec4edd1f43e6ee155518ffd8bb416e",
+  "repository_path": "work/preaudit-followup-20261008/manuscript/paper.tex",
+  "sha256": "aac0903bc50d41dc1066232f6be13f9596b3241bff8168eac625c0da58ab67b4",
   "derived_from_repository_path": "research/20261004-p2-p3/manuscript/paper.tex",
   "derived_from_sha256": "118ccc9820454f8ac1d3b0416ba456401e5ef3f9e9d0199ba1c59991103ec5a9",
-  "base_commit": "e23d62e3af56376eb0f1946dd30eb7cba870fa04",
-  "scope": "Four-page workshop short draft with seven-page companion; controlled empirical claims; no new model run or human audit; provisional SQA4AI format, not venue selection or submission.",
-  "editorial_predecessor_repository_path": "work/paper-rewrite-20261004/manuscript/paper.tex",
-  "editorial_predecessor_sha256": "43b92dbb0230fc1232093be6a33fca435188dc2f43ae499ac6bfa8e362f37bb2",
-  "remote_base_status": "PR #10 and #11 verified open at task start; this work is stacked on verified #11 head. No merge authorized.",
-  "publication_base_commit": "e23d62e3af56376eb0f1946dd30eb7cba870fa04",
+  "base_commit": "57ff5585039e7f63de54a67981d5d98cb9ba84e8",
+  "scope": "New manuscript revision and isolated JVM FileUtil/TensorLabel/helper checks; no Android/model inference or historical reconstruction recovery",
+  "editorial_predecessor_repository_path": "work/workshop-convergence-20261007/manuscript/paper.tex",
+  "editorial_predecessor_sha256": "c79ba7f62a194abd487ec4b8ccedb60428ec4edd1f43e6ee155518ffd8bb416e",
+  "remote_base_status": "PR #10 through #13 verified open; this branch is stacked on #13 verified head; no merge authorized.",
+  "publication_base_commit": "57ff5585039e7f63de54a67981d5d98cb9ba84e8",
   "merge_policy": "User-authorized merges use Squash and merge; no unsolicited merge.",
-  "feature_branch": "paper/workshop-convergence",
-  "pr_base": "evidence/local-recovery",
-  "revision_map": "work/workshop-convergence-20261007/revision-map.json",
-  "claim_ledger": "work/workshop-convergence-20261007/CLAIM_EVIDENCE.md",
-  "pull_request": "https://github.com/lcresearch/landmark-metadata/pull/12"
+  "feature_branch": "paper/preaudit-followup",
+  "pr_base": "audit/agent-preaudit",
+  "revision_map": "work/preaudit-followup-20261008/revision-map.json",
+  "claim_ledger": "work/preaudit-followup-20261008/CLAIM_EVIDENCE.md",
+  "full_companion": {
+    "path": "work/preaudit-followup-20261008/manuscript/paper-full.tex",
+    "sha256": "a2b2ffe54cae5b62286c94729b725e4117ecff34f6b1cf81b61a8b8205463d19",
+    "bytes": 40883
+  }
 }

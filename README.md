@@ -9,13 +9,15 @@ source and continuation documents, **not the complete evidence archive**.
 
 ## Start here
 
-- [Current manuscript source](work/workshop-convergence-20261007/manuscript/paper.tex)
-- [Manuscript claim–evidence table](work/workshop-convergence-20261007/CLAIM_EVIDENCE.md)
+- [Current manuscript source](work/preaudit-followup-20261008/manuscript/paper.tex)
+- [Manuscript claim–evidence table](work/preaudit-followup-20261008/CLAIM_EVIDENCE.md)
+- [Post-audit revisions and new isolated parser evidence](work/preaudit-followup-20261008/README.md)
+- [Current human audit target and follow-up](work/preaudit-followup-20261008/HUMAN_HANDOFF.md)
 - [Workshop candidates and submission checklist](work/workshop-convergence-20261007/README.md)
 - [Completed agent pre-audit and human continuation sheet](work/agent-preaudit-20261007/README.md)
 - [Human audit entry and unsigned review template](docs/human-audit/README.md)
 - [Local evidence package and unresolved missing material](work/evidence-recovery-20261005/README.md)
-- [Current build and review instructions](work/workshop-convergence-20261007/BUILD_REVIEW.md)
+- [Current build and review instructions](work/preaudit-followup-20261008/BUILD_REVIEW.md)
 - [Current manuscript and preserved-parent digests](docs/CURRENT_MANUSCRIPT.json)
 - [Completed same-Android comparison and display-reference findings](research/20261004-p2-p3/RESULTS_OVERVIEW.md)
 - [Fresh reproduction and repository audit (2026-10-04)](sources/repro-audit-20261004/REPORT.md)
@@ -48,7 +50,8 @@ source and continuation documents, **not the complete evidence archive**.
 | [Preserved P2/P3 follow-up](research/20261004-p2-p3) | Same-Android harnesses, reference inquiry, separate audits and manuscript parent |
 | [Preserved editorial follow-up](work/review-followup-20261004) | Earlier LaTeX with parser-scope corrections; unchanged by the new rewrite |
 | [Preserved full paper rewrite](work/paper-rewrite-20261004) | Controlled execution narrative, claim–evidence ledger, contribution/significance integration and build/review notes |
-| [Current workshop draft](work/workshop-convergence-20261007) | Four-page short source, longer companion, venue comparison, claim crosswalk and remaining submission work |
+| [Preserved workshop convergence](work/workshop-convergence-20261007) | Previously audited four-page source, longer companion, venue comparison and submission work |
+| [Current post-audit draft](work/preaudit-followup-20261008) | Narrowed E2 chronology, new isolated JVM parser evidence, revised short/full manuscripts and current claim/audit targets |
 | [Maintained observation reader](work/observation-review-20261004) | Exact Hand, Task and Android evidence identities; preserves the exported audit snapshot |
 
 `sources/` retains original timestamped names and source bytes. Per-experiment
@@ -74,11 +77,12 @@ choice, author verification, anonymous artifact delivery and final compliance
 remain pending. The prior human-audit entry is pinned to an older manuscript;
 use the current claim crosswalk when auditing this revision.
 
-The fresh audit reproduced the main controlled results and found a label-reader
-mismatch in the evaluated checker plus weaknesses in historical report scripts.
-The maintained checker corrects the parser; the current manuscript distinguishes
-that correction and its isolated counterexamples from the historical 65-fixture
-evaluation. The maintained observation reader also requires the frozen E5
+The historical fresh-reconstruction report records the main controlled results
+and a label-reader mismatch. Its later raw records remain missing. The new
+bounded parser follow-up independently executes actual Support 0.4.4 JVM probes
+and compares the unchanged helper on 22 valid and three malformed cases; it does
+not rerun the whole checker or the missing 65-fixture reconstruction. The current
+manuscript separates these histories. The maintained observation reader also requires the frozen E5
 artifact set and validates Task inputs before counting successful observations.
 Read the [repair scope](docs/OBSERVATION_REPAIR.md) and fresh audit before relying
 on historical summary prose or interpreting a zero exit code as verified evidence.

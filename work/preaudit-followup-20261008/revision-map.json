@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "repository_base_commit": "57ff5585039e7f63de54a67981d5d98cb9ba84e8",
+  "scope": "New manuscript revision and isolated JVM FileUtil/TensorLabel/helper checks; no Android/model inference or historical reconstruction recovery",
+  "manuscript": {
+    "path": "work/preaudit-followup-20261008/manuscript/paper.tex",
+    "sha256": "aac0903bc50d41dc1066232f6be13f9596b3241bff8168eac625c0da58ab67b4",
+    "bytes": 20981
+  },
+  "full_companion": {
+    "path": "work/preaudit-followup-20261008/manuscript/paper-full.tex",
+    "sha256": "a2b2ffe54cae5b62286c94729b725e4117ecff34f6b1cf81b61a8b8205463d19",
+    "bytes": 40883
+  },
+  "claim_crosswalk": {
+    "path": "work/preaudit-followup-20261008/CLAIM_EVIDENCE.md",
+    "sha256": "14e7834cb649e46069f16164ff23d263d5cee36ef260e55cff39e9a6f03cc1a3",
+    "bytes": 8130
+  },
+  "human_handoff": {
+    "path": "work/preaudit-followup-20261008/HUMAN_HANDOFF.md",
+    "sha256": "a2945dfc7d5554ec9e4093a4d05852f4ae8497a954a9f3fda5a9d5a8d44b6460",
+    "bytes": 2165
+  },
+  "predecessor": {
+    "path": "work/workshop-convergence-20261007/manuscript/paper.tex",
+    "sha256": "c79ba7f62a194abd487ec4b8ccedb60428ec4edd1f43e6ee155518ffd8bb416e",
+    "bytes": 20931
+  },
+  "predecessor_companion": {
+    "path": "work/workshop-convergence-20261007/manuscript/paper-full.tex",
+    "sha256": "facd0688073d66353e2b0ab2c3f5d08e64d292e1f7efdfd7bac7a69f80e8a39b",
+    "bytes": 39765
+  },
+  "parser_evidence_index": {
+    "path": "work/preaudit-followup-20261008/parser/evidence-index.json",
+    "sha256": "cdf175baaa25a9a25eb8b9356cf18045b7e0661eb63017290f2dbc7b2c1ceaf9",
+    "bytes": 9569
+  },
+  "build_driver": {
+    "path": "work/preaudit-followup-20261008/build_documents.py",
+    "sha256": "c1eb561b6f40ce21f75bd1c38cb278b444831c12fe9b7b3938cc727832d2d937",
+    "bytes": 3218
+  },
+  "preserved_prior_indexes": [
+    {
+      "path": "work/workshop-convergence-20261007/manuscript/paper.tex",
+      "sha256": "c79ba7f62a194abd487ec4b8ccedb60428ec4edd1f43e6ee155518ffd8bb416e",
+      "bytes": 20931
+    },
+    {
+      "path": "work/workshop-convergence-20261007/manuscript/paper-full.tex",
+      "sha256": "facd0688073d66353e2b0ab2c3f5d08e64d292e1f7efdfd7bac7a69f80e8a39b",
+      "bytes": 39765
+    },
+    {
+      "path": "work/workshop-convergence-20261007/CLAIM_EVIDENCE.md",
+      "sha256": "6a455e48efdb00e9dacc6499a9fde74b086648a16762545a87a0b85bd9c27024",
+      "bytes": 6719
+    },
+    {
+      "path": "work/workshop-convergence-20261007/revision-map.json",
+      "sha256": "5b4695812c031cbb8475d0f9234a490aef68f85752c0bc58fc8b886ae8bb1092",
+      "bytes": 5739
+    },
+    {
+      "path": "work/agent-preaudit-20261007/audit-index.json",
+      "sha256": "31bfb6fc75f14025808bc0d27659393d6f1e9c83e7fdcd70868ec6777e286954",
+      "bytes": 17815
+    },
+    {
+      "path": "work/agent-preaudit-20261007/AUDIT_REPORT.md",
+      "sha256": "4efa53852877153088d80a6f6003ba983092ec5c2de5e93236534b736ef3ea01",
+      "bytes": 9587
+    },
+    {
+      "path": "docs/human-audit/audit-map.json",
+      "sha256": "15a67d522426ae54dac7e15da935a8cd3aa3911188ee08235f12f2d6eeaff526",
+      "bytes": 14624
+    },
+    {
+      "path": "work/paper-rewrite-20261004/claim-sources.json",
+      "sha256": "4a5875437bea046d85dc297b6dd15b81b85e26392b5c0397e2659e006a3d6db4",
+      "bytes": 32600
+    },
+    {
+      "path": "work/evidence-recovery-20261005/delivery-record.json",
+      "sha256": "24054db03decddde1925c705a8d868fe3e47bdd430f880f51a1e00c4410ebc63",
+      "bytes": 7936
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "disposition": "retained",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C2",
+      "disposition": "retained",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C2R",
+      "disposition": "shortened",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C3",
+      "disposition": "primary",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C4",
+      "disposition": "primary_deterministic_transform_chronology_narrowed",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C5",
+      "disposition": "retained_qualified",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C6",
+      "disposition": "primary",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C7",
+      "disposition": "shortened_boundary",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C8",
+      "disposition": "shortened_static",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C8D",
+      "disposition": "companion_only",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C9",
+      "disposition": "retained_supporting",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C9E",
+      "disposition": "shortened_scope_only",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C10",
+      "disposition": "fresh_isolated_jvm_evidence_historical_gaps_preserved",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C11",
+      "disposition": "retained_antecedent",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C12",
+      "disposition": "bounded_positioning",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "C13",
+      "disposition": "coverage_implication",
+      "human_status": "PENDING"
+    }
+  ],
+  "human_items": [
+    {
+      "id": "HA01",
+      "prior_agent_disposition": "SUPPORTED_WITHIN_INSPECTED_SCOPE",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "HA02",
+      "prior_agent_disposition": "SUPPORTED_WITHIN_INSPECTED_SCOPE",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "HA03",
+      "prior_agent_disposition": "SUPPORTED_WITHIN_INSPECTED_SCOPE",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "HA04",
+      "prior_agent_disposition": "SUPPORTED_WITHIN_INSPECTED_SCOPE",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "HA05",
+      "prior_agent_disposition": "PARTIAL",
+      "human_status": "PENDING",
+      "followup": "Deterministic transformation supported; current manuscript narrows chronology, not historically certified."
+    },
+    {
+      "id": "HA06",
+      "prior_agent_disposition": "SUPPORTED_WITHIN_INSPECTED_SCOPE",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "HA07",
+      "prior_agent_disposition": "SUPPORTED_WITHIN_INSPECTED_SCOPE",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "HA08",
+      "prior_agent_disposition": "PARTIAL",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "HA09",
+      "prior_agent_disposition": "PARTIAL",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "HA09a",
+      "prior_agent_disposition": "PARTIAL",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "HA09b",
+      "prior_agent_disposition": "PARTIAL",
+      "human_status": "PENDING"
+    },
+    {
+      "id": "HA09c",
+      "prior_agent_disposition": "BLOCKED_MISSING_EVIDENCE",
+      "human_status": "PENDING",
+      "followup": "Fresh isolated JVM/parser-helper scope supported; old parser/Task/catalog gap remains blocked."
+    },
+    {
+      "id": "HA10",
+      "prior_agent_disposition": "PARTIAL",
+      "human_status": "PENDING"
+    }
+  ],
+  "human_audit": {
+    "status": "PENDING",
+    "reviewer": null,
+    "signed_at": null,
+    "prior_targets_unchanged": true,
+    "crosswalk_required": true
+  },
+  "document_build": {
+    "raw_root": "/workspace/preaudit-followup-build-20261008T0330Z",
+    "pages": {
+      "short": 4,
+      "full": 7
+    },
+    "bibliography_entries_per_source": 18,
+    "identities": [
+      {
+        "path": "/workspace/preaudit-followup-build-20261008T0330Z/commands.json",
+        "sha256": "9470555a76874cb24af772b665fafb187d70274c7e8e6fea6347c17ce32b3830",
+        "bytes": 6011
+      },
+      {
+        "path": "/workspace/preaudit-followup-build-20261008T0330Z/SHA256SUMS",
+        "sha256": "22e2154f9b6698d8f5994252266919da84d3426a3aa3915b116406963daea93d",
+        "bytes": 4379
+      },
+      {
+        "path": "/workspace/preaudit-followup-build-20261008T0330Z/tex/IEEEtran.cls",
+        "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7",
+        "bytes": 281957
+      },
+      {
+        "path": "/workspace/preaudit-followup-build-20261008T0330Z/paper/paper.pdf",
+        "sha256": "437d1abb78d8d5ca3f02bc1a7ac5e2fcde62d02a84aafd1435641e53329f840b",
+        "bytes": 163967
+      },
+      {
+        "path": "/workspace/preaudit-followup-build-20261008T0330Z/paper-full/paper-full.pdf",
+        "sha256": "54859796fd029ad3bc453c5d8de832704672d96a3473691e2f4eb6dc18707821",
+        "bytes": 192024
+      }
+    ],
+    "visual_review": "All four short pages inspected; full rendered but no separate all-page visual audit"
+  },
+  "historical_reconstruction_recovered": false,
+  "android_or_model_inference_run": false,
+  "fresh_jvm_probe_run": true,
+  "venue_selected_by_user": false,
+  "submission_performed": false,
+  "durable_deposit_performed": false,
+  "parser_supplementary_sha256_manifest": {
+    "path": "/workspace/preaudit-followup-validation-20261008T033116Z/PARSER_SHA256SUMS",
+    "sha256": "fee20f503e6fb99c9c3077d49261e4e927e152c772a4d7ae36b5f4ec0531fcd5",
+    "bytes": 22697,
+    "scope": "151 frozen payload files plus their manifest; stored separately to preserve the exact original file set"
+  }
+}
