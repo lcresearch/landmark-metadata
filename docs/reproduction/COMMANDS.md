@@ -15,6 +15,11 @@ A command returning zero is not sufficient evidence of successful model behavior
 Read the stage records and the independent checks. Historical Python assertions
 must remain enabled (`PYTHONOPTIMIZE=0`; never `python -O`).
 
+TODAY below is the original handoff's recorded activity label, not a claim that
+its excluded evidence is available in the current environment. The
+[21 October repair record](../../work/review-fixes-20261021/README.md) identifies
+the current maintained tools and their source-only regression validation.
+
 ## 1. TODAY: source checks, without experiment dependencies
 
 ```sh
@@ -28,7 +33,8 @@ manuscript provenance and verifier regressions. They do not authenticate exclude
 model/evidence archives or reproduce an experiment. Warnings about historical
 locators or unchecked external archive hashes must remain visible.
 
-The following source-copy smoke checks also ran during this handoff:
+The following source-copy smoke checks ran during the original handoff and are
+retained as a historical command record:
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python \
@@ -48,9 +54,11 @@ The first copied and hash-checked 37 source files and returned
 harness sources. Neither installs dependencies, downloads a model, compiles Java,
 starts an emulator or executes inference. These temporary parent-copy roots are
 not the hardcoded `/workspace` parent layout required by the full workflow.
-Choose new absent outputs and the actual checkout path when repeating the smoke
-checks; do not reuse these completed directories. Exact execution records are in
-the handoff's external `copy-command-records.json`.
+For new Android source copies use the maintained initializer in section 4; the
+historical initializer above contains an unconditional publisher-retrieval claim.
+Choose new absent outputs and the actual checkout path; do not reuse completed
+directories. The old execution records remain in the handoff's external
+`copy-command-records.json`.
 
 ## 2. TODAY: finite readback of available historical records
 
@@ -168,9 +176,9 @@ This creates and installs the locked environment but does not download models or
 run static checks. After recovering and checking the three corpus model inputs:
 
 ```sh
-# PLANNED: HANDOFF_RUN must not exist before initialize_run.py.
+# PLANNED: HANDOFF_RUN must not exist before initialize_android_run.py.
 HANDOFF_RUN=/workspace/android-rebuild-new
-python3 "$HANDOFF_REPO/sources/repro-audit-20261004/android/initialize_run.py" \
+python3 "$HANDOFF_REPO/scripts/initialize_android_run.py" \
   --repo "$HANDOFF_REPO" --root "$HANDOFF_RUN"
 python3 "$HANDOFF_REPO/sources/repro-audit-20261004/android/select_official_android_xml.py" \
   --root "$HANDOFF_RUN"
@@ -183,9 +191,13 @@ python3 "$HANDOFF_REPO/sources/repro-audit-20261004/android/restore_prerequisite
 
 `restore_prerequisites.py` installs into its supplied hand root; it is not a
 read-only inspector. Even `--verify-cache` writes an integrity report. Both must
-operate on the newly prepared run, not a sealed package. `initialize_run.py`
-copies preserved code and records adaptations, including the audit harness and
-functional readiness check; generated model Java is not repaired.
+operate on the newly prepared run, not a sealed package. The maintained
+[`initialize_android_run.py`](../../scripts/initialize_android_run.py) copies
+preserved code and records adaptations, including the audit harness and functional
+readiness check; generated model Java is not repaired. It records local input
+bytes without claiming to have observed publisher retrieval. Keep actual
+acquisition records separately. The preserved historical initializer rewrites
+this text to “fresh HTTPS publisher download”; it is not the current setup entry.
 
 Then use the existing documented sequence, one stage at a time, retaining logs
 and checking actual outputs before advancing:
@@ -232,9 +244,10 @@ emulator started for this run. This sequence does not establish a new P2 run.
 stages, but do not bootstrap their prerequisites. Before a future run, prepare
 a new external round containing a source copy of `P2/` and its review scripts:
 
-- Recover or newly create `INPUTS.json` in the round parent with the five exact
-  model paths/digests and the P2 variant names (including `restoration`). Record
-  any path adaptation as new provenance; the source checkout omits this file.
+- Copy the preserved [`INPUTS.json`](../../research/20261004-p2-p3/INPUTS.json)
+  into the round parent. It already records the five exact model digests and P2
+  variant names (including `restoration`). Adapt paths only to independently
+  recovered matching model bytes, and record each path adaptation as new provenance.
 - Provide fresh `P2/prerequisites`, SDK links and writable AVD state. The pinned
   reusable tool bytes may be shared read-only; old AVD state may not.
 - Resolve `/workspace/hand-contract-repro` in `common.py` and the corpus import in
@@ -271,12 +284,26 @@ python3 scripts/normalize_results.py
 ```
 
 Check the frozen inputs and raw records independently before generating prose.
-The preserved `review/verify_runtime_records.py` operates relative to its copied
-round and writes `verification/runtime-record-review.json`; the parent
-`verification/` must exist and the output must not. Running it from a new copy is
-an additional readback, not a second device execution. It needs APKs, device
-records, input models and `EXECUTION_INPUT_FREEZE.json`, not only the normalized
-report.
+Use the [maintained P2 reader](../../work/review-fixes-20261021/verify_p2_records.py)
+against the recovered or newly created round:
+
+```sh
+# PLANNED: requires actual APKs, device records, models and frozen inputs.
+PYTHONDONTWRITEBYTECODE=1 python3 \
+  work/review-fixes-20261021/verify_p2_records.py \
+  --round-root /path/to/p2-round \
+  --output /path/outside/round-and-repository/new-p2-readback.json
+```
+
+The round contains `INPUTS.json`, `P2/EXECUTION_INPUT_FREEZE.json`, build results,
+APKs and device files. The output must be new and outside both the evidence round
+and checkout. The report separates evidence validity, observation coverage and
+historical-outcome comparisons; overall PASS/exit 0 requires all three to pass.
+Differences remain failures to inspect, not reasons to alter evidence.
+The preserved `review/verify_runtime_records.py` remains a historical source:
+its old total PASS omitted score/raw invariance and required coverage. It is not
+the maintained acceptance gate. Neither reader executes a model or independently
+authenticates historical execution.
 
 Historical targets: ten configurations, 18 actual input observations, 16 decoded
 lists and ten wrapper raw tensors. Wrapper deletion rejects at the getter after

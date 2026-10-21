@@ -8,7 +8,7 @@ import argparse
 import hashlib
 import json
 import os
-import shutil
+import tempfile
 
 REPO = Path(__file__).resolve().parents[1]
 ROOT_NAMES = [
@@ -61,33 +61,65 @@ def select(workspace):
                         or relative.as_posix() in CONFIG_PATHS):
                     yield source, relative
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--workspace', type=Path, default=Path('/workspace'))
-    args = parser.parse_args()
+def import_sources(workspace, repository=REPO):
+    """Preflight the whole immutable snapshot before creating files or an index."""
     rows = []
-    for source, relative in select(args.workspace):
+    pending = []
+    for source, relative in select(workspace):
         content = source.read_bytes()
         content.decode('utf-8')  # Reject binary data despite an allowed suffix.
         if len(content) > 1_000_000 or b'\x00' in content:
             raise ValueError(f'Unexpected binary or large source: {source}')
-        target = REPO/'sources'/relative
-        target.parent.mkdir(parents=True, exist_ok=True)
+        target = repository/'sources'/relative
+        if (not target.resolve().is_relative_to(repository.resolve())
+                or any(p.is_symlink() for p in [target, *target.parents]
+                       if p.is_relative_to(repository))):
+            raise ValueError(f'Refusing linked import destination: {target}')
         if target.exists():
-            if target.read_bytes() != content:
+            if not target.is_file() or target.read_bytes() != content:
                 raise ValueError(f'Refusing to overwrite imported source: {target}')
         else:
-            shutil.copy2(source, target)
-        rows.append({'repository_path':target.relative_to(REPO).as_posix(),
-                     'original_path':str(source), 'sha256':digest(source), 'bytes':len(content)})
+            pending.append((target, content))
+        rows.append({'repository_path':target.relative_to(repository).as_posix(),
+                     'original_path':str(source), 'sha256':hashlib.sha256(content).hexdigest(),
+                     'bytes':len(content)})
     rows.sort(key=lambda row:row['repository_path'])
     manifest = {'scope':'Source code and necessary text documentation only; NOT the complete experimental evidence package.',
                 'workspace_roots':ROOT_NAMES, 'files':rows,
                 'excluded':'SDKs, installed dependencies, emulator images/state, third-party source copies, generated wrappers, model assets, raw results, execution logs, build outputs, archives, keys and credentials.'}
-    destination = REPO/'docs/SOURCE_IMPORT.json'
+    destination = repository/'docs/SOURCE_IMPORT.json'
+    if destination.exists() and json.loads(destination.read_text()) != manifest:
+        raise ValueError('Refusing changed existing source manifest')
+    indexed = {row['repository_path'] for row in rows}
+    for name in ROOT_NAMES:
+        for path in (repository/'sources'/name).rglob('*'):
+            if (path.is_file() or path.is_symlink()) and path.relative_to(repository).as_posix() not in indexed:
+                raise ValueError(f'Refusing unindexed imported source: {path}')
+    for target, content in pending:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        with target.open('xb') as output:
+            output.write(content)
     destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(json.dumps(manifest, indent=2, ensure_ascii=False)+'\n')
-    print(json.dumps({'imported_files':len(rows),'source_bytes':sum(r['bytes'] for r in rows),'manifest':str(destination)}))
+    if not destination.exists():
+        temporary = None
+        try:
+            with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=destination.parent,
+                                             prefix='.source-import-', delete=False) as output:
+                temporary = Path(output.name)
+                output.write(json.dumps(manifest, indent=2, ensure_ascii=False)+'\n')
+            temporary.replace(destination)
+        finally:
+            if temporary is not None:
+                temporary.unlink(missing_ok=True)
+    return {'imported_files':len(rows), 'source_bytes':sum(r['bytes'] for r in rows),
+            'manifest':str(destination)}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--workspace', type=Path, default=Path('/workspace'))
+    args = parser.parse_args()
+    print(json.dumps(import_sources(args.workspace, REPO)))
 
 if __name__ == '__main__':
     main()

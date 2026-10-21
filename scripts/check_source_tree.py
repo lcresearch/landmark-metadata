@@ -113,29 +113,86 @@ def check_current_manuscript(root, rows, counts, failures):
                 or current['derived_from_sha256'] != by_path[parent]['sha256']):
             failures.append({'path':str(index.relative_to(root)),
                              'issue':'current manuscript/import parent mismatch'})
-        for path_key, hash_key in [('repository_path', 'sha256'),
-                                  ('derived_from_repository_path', 'derived_from_sha256')]:
-            p = root/current[path_key]
-            if (not p.resolve().is_relative_to(root.resolve()) or not p.is_file()
-                    or hashlib.sha256(p.read_bytes()).hexdigest() != current[hash_key]):
-                failures.append({'path':current[path_key], 'issue':'manuscript digest mismatch'})
-        counts['manuscript_hashes'] = 2
-    except (KeyError, ValueError, OSError) as exc:
+        required_pins = ['full_companion', 'claim_crosswalk', 'artifact_handoff']
+        if 'editorial_predecessor_companion' in current:
+            required_pins.append('editorial_predecessor_companion')
+        for required in required_pins:
+            pin = current.get(required)
+            if not isinstance(pin, dict) or not {'path', 'sha256', 'bytes'} <= pin.keys():
+                failures.append({'path':str(index.relative_to(root)),
+                                 'issue':'missing current artifact pin', 'target':required})
+
+        def verify_pin(path, expected, size):
+            if (not isinstance(path, str) or not isinstance(expected, str)
+                    or not re.fullmatch(r'[0-9a-f]{64}', expected)
+                    or not isinstance(size, int) or isinstance(size, bool) or size < 0):
+                raise ValueError('Invalid current artifact pin')
+            p = root/path
+            counts['manuscript_hashes'] += 1
+            if (Path(path).is_absolute() or not p.resolve().is_relative_to(root.resolve())
+                    or not p.is_file() or p.is_symlink()
+                    or hashlib.sha256(p.read_bytes()).hexdigest() != expected
+                    or p.stat().st_size != size):
+                failures.append({'path':path, 'issue':'manuscript digest mismatch'})
+
+        verify_pin(current['repository_path'], current['sha256'], current['bytes'])
+        verify_pin(parent, current['derived_from_sha256'], by_path[parent]['bytes'])
+        for key, path in current.items():
+            if key.endswith('_repository_path') and key != 'derived_from_repository_path':
+                prefix = key[:-len('_repository_path')]
+                # Older predecessor pins omit size; the digest still pins all bytes.
+                p = root/path
+                size = current.get(prefix+'_bytes', p.stat().st_size if p.is_file() else 0)
+                verify_pin(path, current[prefix+'_sha256'], size)
+
+        def nested_pins(value):
+            if isinstance(value, dict):
+                if 'path' in value or 'sha256' in value:
+                    verify_pin(value['path'], value['sha256'], value['bytes'])
+                for child in value.values():
+                    nested_pins(child)
+            elif isinstance(value, list):
+                for child in value:
+                    nested_pins(child)
+        for value in current.values():
+            nested_pins(value)
+    except (KeyError, TypeError, ValueError, OSError) as exc:
         failures.append({'path':str(index.relative_to(root)), 'issue':type(exc).__name__})
 
 
 def check_tree(root):
     rows = []
+    snapshot_roots = set()
     for name in ['SOURCE_IMPORT.json', 'SOURCE_P2P3.json']:
-        rows.extend(json.loads((root/'docs'/name).read_text())['files'])
+        manifest = json.loads((root/'docs'/name).read_text())
+        rows.extend(manifest['files'])
+        snapshot_roots.update(Path(*Path(row['repository_path']).parts[:2])
+                              for row in manifest['files'])
+        if name == 'SOURCE_IMPORT.json':
+            snapshot_roots.update(Path('sources')/name for name in manifest.get('workspace_roots', []))
+        else:
+            # This import has a fixed destination in import_p2p3_sources.py.
+            snapshot_roots.add(Path('research/20261004-p2-p3'))
     failures = []
     warnings = []
+    indexed = set()
     for row in rows:
+        if row['repository_path'] in indexed:
+            failures.append({'path':row['repository_path'], 'issue':'duplicate imported path'})
+        indexed.add(row['repository_path'])
         p = root/row['repository_path']
         if (not p.resolve().is_relative_to(root.resolve()) or not p.is_file()
                 or p.is_symlink() or hashlib.sha256(p.read_bytes()).hexdigest()!=row['sha256']
                 or p.stat().st_size != row['bytes']):
             failures.append({'path':row['repository_path'],'issue':'imported bytes differ'})
+    for snapshot in sorted(snapshot_roots):
+        if not (root/snapshot).resolve().is_relative_to(root.resolve()):
+            failures.append({'path':str(snapshot), 'issue':'invalid imported snapshot root'})
+            continue
+        for p in sorted((root/snapshot).rglob('*')):
+            if (p.is_file() or p.is_symlink()) and p.relative_to(root).as_posix() not in indexed:
+                failures.append({'path':p.relative_to(root).as_posix(),
+                                 'issue':'unindexed imported snapshot file'})
     counts = {'files':0,'python_syntax':0,'shell_syntax':0,'json_parse':0,
               'navigation_targets':0, 'memory_import_hashes':0, 'manuscript_hashes':0}
     for p in sorted(root.rglob('*')):
@@ -170,7 +227,9 @@ def check_tree(root):
     check_current_manuscript(root, rows, counts, failures)
     return {'status':'FAIL' if failures else 'PASS', 'checks':counts,
             'imported_files_verified':len(rows) if not any(
-                f['issue']=='imported bytes differ' for f in failures) else 0,
+                f['issue'] in {'imported bytes differ', 'duplicate imported path',
+                              'invalid imported snapshot root', 'unindexed imported snapshot file'}
+                for f in failures) else 0,
             'failures':failures, 'warnings':warnings, 'model_experiments_run':False}
 
 

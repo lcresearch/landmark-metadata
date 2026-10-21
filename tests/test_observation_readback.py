@@ -44,13 +44,14 @@ class ReadbackTests(unittest.TestCase):
                    'hand_world_landmarks': [[0] * 21]}
         for phase in ('primary', 'replay'):
             self.write(f'repro-hand/executions/{phase}/results.json',
-                       [{'variant': variant, 'exit_code': 0}
+                       [{'variant': variant, 'exit_code': 0, 'completed': True}
                         for variant in reversed(self.module.HAND_VARIANTS)])
             for variant in self.module.HAND_VARIANTS:
                 folder = f'repro-hand/executions/{phase}/{variant}/outputs'
                 self.write(folder + '/decoded.json', decoded)
                 self.write(folder + '/result.json', {
-                    'initialization_status': 'PASS', 'detect_status': 'PASS',
+                    'initialization_status': 'PASS', 'input_preparation_status': 'PASS',
+                    'detect_status': 'PASS',
                     'decoded_float_bits_sha256': hashlib.sha256(bits).hexdigest()})
                 (self.root / folder / 'decoded-float-bits.bin').write_bytes(bits)
 
@@ -90,20 +91,51 @@ class ReadbackTests(unittest.TestCase):
                 self.assertFalse(self.module.hand()['complete'])
                 self.assertEqual(sum(not r['passed'] for r in self.module.checks), 2)
 
-    def test_hand_still_checks_execution_status_shape_and_bits(self):
+    def test_hand_rejects_failed_or_missing_preparation_and_controller_completion(self):
+        for phase in ('primary', 'replay'):
+            for field, value in [('input_preparation_status', 'FAIL'),
+                                 ('input_preparation_status', None),
+                                 ('detect_status', 'FAIL'),
+                                 ('completed', False), ('completed', None)]:
+                with self.subTest(phase=phase, field=field, value=value):
+                    self.seed_hand()
+                    self.module.checks.clear()
+                    if field == 'completed':
+                        path = self.root / f'repro-hand/executions/{phase}/results.json'
+                        rows = json.loads(path.read_text())
+                        row = next(row for row in rows if row['variant'] == 'metadata_exchange')
+                    else:
+                        path = self.root / f'repro-hand/executions/{phase}/metadata_exchange/outputs/result.json'
+                        rows = row = json.loads(path.read_text())
+                    if value is None:
+                        row.pop(field)
+                    else:
+                        row[field] = value
+                    path.write_text(json.dumps(rows))
+                    result = self.module.hand()
+                    self.assertFalse(result['complete'])
+                    self.assertEqual(result['execution_records_read'], 7)
+                    self.assertNotIn({'phase': phase, 'variant': 'metadata_exchange'}, result['records'])
+                    self.assertEqual([r['check'] for r in self.module.checks if not r['passed']],
+                                     [f'hand/{phase}/metadata_exchange/actual_completed'])
+        self.assert_main_status(1)
+        report = json.loads((self.root / 'report/observation-readback.json').read_text())
+        self.assertFalse(report['hand']['complete'])
+        self.assertEqual(report['hand']['execution_records_read'], 7)
+
+    def test_hand_still_checks_output_shape_and_bits_before_counting_completion(self):
         self.seed_hand()
         folder = self.root / 'repro-hand/executions/replay/restoration/outputs'
-        result = json.loads((folder / 'result.json').read_text())
-        result['detect_status'] = 'FAIL'
-        (folder / 'result.json').write_text(json.dumps(result))
         decoded = json.loads((folder / 'decoded.json').read_text())
         decoded['hand_landmarks'][0].pop()
         (folder / 'decoded.json').write_text(json.dumps(decoded))
         (folder / 'decoded-float-bits.bin').write_bytes(b'changed')
-        self.module.hand()
+        result = self.module.hand()
+        self.assertFalse(result['complete'])
+        self.assertEqual(result['execution_records_read'], 7)
         failures = {r['check'] for r in self.module.checks if not r['passed']}
         self.assertEqual(failures, {'hand/replay/restoration/' + name for name in
-                                   ('actual_completed', 'one_hand_21_landmarks',
+                                   ('one_hand_21_landmarks',
                                     'decoded_equal', 'exact_float_bits_equal')})
 
     def test_main_rejects_empty_hand_and_writes_failed_report(self):
@@ -136,11 +168,18 @@ class ReadbackTests(unittest.TestCase):
     def baseline_rows(self):
         rows = []
         for variant in self.module.CORE_VARIANTS:
+            experiment = 'E2' if variant == 'label_permutation' else 'E1'
+            path = self.root / f'repro-android/{experiment}/variants/{variant}/model.tflite'
+            path.parent.mkdir(parents=True, exist_ok=True)
+            if not path.exists():
+                path.write_bytes(f'synthetic core {variant}'.encode())
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()
             for mode, status in zip(self.module.BASELINE_MODES,
                                     ('READABLE', 'ACCEPTED', 'COMPATIBLE_PRECONDITIONS', 'PASS')):
                 if variant == 'label_deletion':
                     status = {'simple_baseline': 'INCOMPATIBLE', 'task_init': 'FAIL'}.get(mode, status)
-                rows.append({'variant': variant, 'mode': mode, 'result': {'status': status}})
+                rows.append({'variant': variant, 'mode': mode,
+                             'result': {'status': status, 'model_sha256': digest}})
         return rows
 
     def test_task_baseline_accepts_reordering_and_rejects_replaced_identity(self):
@@ -389,6 +428,49 @@ class ReadbackTests(unittest.TestCase):
         self.assertTrue(result['complete'])
         self.assertEqual(result['fixtures'], 65)
         self.assert_checks_pass()
+
+    def test_baseline_and_e5_reject_same_status_substitutions_for_every_mode(self):
+        fixtures, manifest, digest = self.seed_e5()
+        path = self.root / 'repro-task/baseline-results.json'
+        original = path.read_text()
+        for mode in self.module.BASELINE_MODES:
+            with self.subTest(mode=mode):
+                rows = json.loads(original)
+                for i, variant in enumerate(self.module.CORE_VARIANTS):
+                    expected = fixtures[i]
+                    replacement = next(f for f in fixtures
+                                       if f['model_sha256'] != expected['model_sha256'] and
+                                       f['report']['DECODER_COMPATIBILITY']['status'] ==
+                                       expected['report']['DECODER_COMPATIBILITY']['status'])
+                    row = next(row for row in rows if row['variant'] == variant and row['mode'] == mode)
+                    row['result']['model_sha256'] = replacement['model_sha256']
+                path.write_text(json.dumps(rows))
+                self.module.checks.clear()
+                self.assertIsNone(self.module.task_baseline())
+                failed = [r['check'] for r in self.module.checks if not r['passed']]
+                self.assertEqual(len(failed), 5)
+                self.assertTrue(all(name.endswith('/exact_core_artifact') for name in failed))
+                self.module.checks.clear()
+                result = self.module.preflight(manifest, digest)
+                self.assertFalse(result['complete'])
+                self.assertIsNone(result['core_extra_rejections_over_simple_and_Task_init'])
+                self.assertEqual(sum(not r['passed'] for r in self.module.checks), 5)
+        self.assert_section_main('preflight', 1, required_manifest=manifest,
+                                 required_manifest_sha256=digest)
+
+    def test_baseline_rejects_missing_digest_and_missing_expected_model(self):
+        rows = self.baseline_rows()
+        rows[0]['result'].pop('model_sha256')
+        self.write('repro-task/baseline-results.json', rows)
+        self.assertIsNone(self.module.task_baseline())
+        self.assertEqual([r['check'] for r in self.module.checks if not r['passed']],
+                         ['baseline/original/displayer/exact_core_artifact'])
+        rows = self.baseline_rows()
+        self.write('repro-task/baseline-results.json', rows)
+        (self.root / 'repro-android/E1/variants/original/model.tflite').unlink()
+        self.module.checks.clear()
+        self.assertIsNone(self.module.task_baseline())
+        self.assertEqual(sum(not r['passed'] for r in self.module.checks), 5)
 
     def test_e5_rejects_missing_wrong_or_malformed_manifest_before_catalog_read(self):
         for kind in ('missing', 'wrong_digest', 'malformed', 'wrong_count'):

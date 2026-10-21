@@ -16,6 +16,7 @@ source and continuation documents, **not the complete evidence archive**.
 - [Minimal evidence handoff and six unsigned author questions](work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md)
 - [Current build and validation results](work/label-resource-revision-20261020/VALIDATION.md)
 - [Current manuscript and preserved-parent digests](docs/CURRENT_MANUSCRIPT.json)
+- [Evidence-checking repairs and maintained entry points](work/review-fixes-20261021/README.md)
 - [Project memory](MEMORY.md), [active TODO](TODO.md), [decisions](docs/DECISIONS.md), and [agent instructions](AGENTS.md)
 - [Completed same-Android comparison and display-reference findings](research/20261004-p2-p3/RESULTS_OVERVIEW.md)
 - [Contribution comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md) and [significance assessment](research/20261004-significance-review/SIGNIFICANCE_ASSESSMENT.md)
@@ -26,11 +27,12 @@ source and continuation documents, **not the complete evidence archive**.
 - [PR #10–#14 integration record](work/pr10-14-integration-20261008/README.md)
 - [Original source identities](docs/SOURCE_IMPORT.json) and [P2/P3 source identities](docs/SOURCE_P2P3.json)
 
-The new revision starts from main `65004d4ac573118d58eb8c6f3125d67c0b330d62`.
-PR #14's public page was checked as **Merged**; older conditional/open-stack
-statements are historical. This revision is delivered in [PR #15](https://github.com/lcresearch/landmark-metadata/pull/15),
-open and unmerged for user review. No author verification, deposit or submission follows
-from the earlier merge.
+The paper revision started from `65004d4ac573118d58eb8c6f3125d67c0b330d62`
+and was squash-merged, as authorized by the user, in
+[PR #15](https://github.com/lcresearch/landmark-metadata/pull/15) at
+`c0cd67307d89a74394c7d0deb1f425e608906aef`. GitHub confirmed the merged state on
+21 October 2026. Earlier open-PR statements in dated records are historical.
+This integration does not complete author verification, evidence deposit or submission.
 
 ## Code map
 
@@ -50,6 +52,7 @@ from the earlier merge.
 | [Preserved post-audit draft](work/preaudit-followup-20261008) | Narrowed E2 chronology and separately identified October 8 JVM parser evidence |
 | [Current label-resource revision](work/label-resource-revision-20261020/REVISION_NOTES.md) | Focused classifier case, seven-row coverage matrix, claim crosswalk and minimal evidence/author handoff |
 | [Maintained observation reader](work/observation-review-20261004) | Exact Hand, Task and Android evidence identities; preserves the exported audit snapshot |
+| [Review repairs](work/review-fixes-20261021/README.md) | Maintained P2/parser readback, truthful Android setup provenance, archive and repository integrity checks |
 
 `sources/` retains original timestamped names and source bytes. Per-experiment
 implementation snapshots are intentional historical versions, not extra models.
@@ -86,7 +89,8 @@ reconstruction records and the unverified reconstructed 65-fixture catalog.
 Run `python scripts/check_source_tree.py` for source integrity, syntax and
 source-only scope checks. No model experiment is executed by that command.
 Current Markdown file targets, imported source digests/sizes, the import-backed
-`MEMORY.md` source hash and both manuscript digests are checked. Historical
+`MEMORY.md` source hash, current manuscript/companion/claim/handoff pins and
+their indexed predecessor identities are checked. Historical
 README evidence locators produce warnings; excluded evidence hashes are reported
 as unchecked. Run `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v`
 for checker regression tests without creating caches in the source tree.
