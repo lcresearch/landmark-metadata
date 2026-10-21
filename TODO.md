@@ -36,9 +36,19 @@ this revision does not select a venue or authorize submission.
 - [x] **P1 — Validate the source/test/TeX workflow in the current cloud machine.**
   See [actual validation](work/label-resource-revision-20261020/VALIDATION.md).
   No Android/model inference or excluded raw-evidence verification was performed.
-- [x] **P1 — Deliver the new feature branch as an unmerged PR.**
-  [PR #15](https://github.com/lcresearch/landmark-metadata/pull/15) is OPEN, unmerged, with auto-merge disabled.
-  Branch `paper/label-resource-boundaries-20261020`; base `65004d4…`.
+- [x] **P1 — Deliver and integrate the paper revision with user authorization.**
+  [PR #15](https://github.com/lcresearch/landmark-metadata/pull/15) was squash-merged
+  as `c0cd67307d89a74394c7d0deb1f425e608906aef`; GitHub verified merged on
+  21 October 2026. Its sole parent is `65004d4…`, and its tree matches the
+  reviewed head `b0f1e497…`.
+- [x] **P2 — Repair the comprehensive review's verifier and provenance findings.**
+  The [repair record](work/review-fixes-20261021/README.md) covers the ten findings
+  and the disclosed parser-verifier reuse gap. All 144 tests and source checks
+  pass. Imported sources, manuscripts and historical evidence remain unchanged;
+  source-only checks do not revalidate missing raw records.
+  Delivered for review in [PR #16](https://github.com/lcresearch/landmark-metadata/pull/16).
+  The user subsequently authorized review and squash merge; the PR's verified
+  GitHub merged state is the terminal integration record.
 - [ ] **P1 — Answer the six current author questions against the new source digest.**
   All identities, observations and signatures remain PENDING.
 - [ ] **P1 — Provide persistent anonymous access to retained core evidence.**
@@ -59,8 +69,8 @@ this revision does not select a venue or authorize submission.
   [integration record](work/pr10-14-integration-20261008/README.md).
 
 **Completed integration:** [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14)
-was checked as **Merged** on its public page in this revision; remote main is its
-`65004d4…` squash, with sole parent `52e6eafc…`. The #10–#14 stack is complete.
+was checked as **Merged** on its public page; its integration commit is
+`65004d4…`, with sole parent `52e6eafc…`. The #10–#14 stack is complete.
 The following dated accomplishments and remaining research tasks retain their
 historical scope; use the new entries above for the current manuscript target.
 

@@ -4,13 +4,34 @@ Current paper: **Validation Boundaries for Model Label Resources: A Controlled
 Classifier Case Study**, in `work/label-resource-revision-20261020/`.
 Read the current pointer, revision notes and TODO before using dated entries below.
 
+## Comprehensive review repairs — 21 October 2026 UTC
+
+The user requested fixes after the review of merged main `c0cd673…`.
+The [repair record](work/review-fixes-20261021/README.md) tracks archive integrity,
+baseline/Hand identities and completion, maintained P2/parser acceptance gates,
+current delivery pins, immutable import coverage and truthful Android preparation
+provenance. New maintained adapters preserve all imported sources and old audit
+reports. Source-only synthetic regressions do not revalidate missing historical
+raw evidence or complete human audit.
+
+All 144 regression tests passed; the source checker validates 354 imports and
+seven current/predecessor artifact pins. Both manuscript sources remain unchanged.
+This repair is delivered in [PR #16](https://github.com/lcresearch/landmark-metadata/pull/16)
+from `fix/review-integrity-20261021`; consult GitHub for its subsequent state.
+The user subsequently requested “review and merge” for PR #16. After review,
+squash its exact reviewed head and verify the single-parent result and complete
+tree on main. The PR's GitHub merged state is the integration completion record.
+Evidence publication, submission and author signatures remain unauthorized.
+
 ## Current editorial revision — 20 October 2026 (America/Los_Angeles)
 
-Remote main equals review anchor `65004d4ac573118d58eb8c6f3125d67c0b330d62`.
-PR #14's public page now verifies Merged, completing #10–#14; older open/gate
-statements below are historical. Work proceeds on the new feature branch
-`paper/label-resource-boundaries-20261020`, delivered in [PR #15](https://github.com/lcresearch/landmark-metadata/pull/15)
-(OPEN, unmerged, auto-merge disabled); do not merge without user approval.
+The revision base/review anchor was `65004d4ac573118d58eb8c6f3125d67c0b330d62`,
+the merged PR #14 commit completing #10–#14. The user then authorized squash
+merging [PR #15](https://github.com/lcresearch/landmark-metadata/pull/15).
+GitHub confirmed it merged on 21 October 2026 as
+`c0cd67307d89a74394c7d0deb1f425e608906aef`, with the sole parent `65004d4…`
+and the complete reviewed head's tree (`b0f1e497…`). Older open/gate statements
+below are historical. This authorization applied to #15, not future repair PRs.
 
 The new short paper centers one classifier, two RQs/contributions and a seven-row
 coverage matrix with recorded/source/analytical evidence labels. E1/E2/P2 and

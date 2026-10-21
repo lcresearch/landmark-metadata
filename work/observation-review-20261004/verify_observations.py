@@ -141,20 +141,47 @@ def task():
             'categories_read': len(observations) * 1000, 'observations': observations}
 
 
-def task_baseline():
+def core_model_digests(prefix):
+    """Bind the five named conditions to the actual Android model bytes."""
+    digests = {}
+    for variant in CORE_VARIANTS:
+        experiment = 'E2' if variant == 'label_permutation' else 'E1'
+        path = Path('/workspace/repro-android') / experiment / 'variants' / variant / 'model.tflite'
+        try:
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        except OSError as exc:
+            check(prefix+'/core_model/'+variant, False, {'error': str(exc)})
+            continue
+        files[str(path)] = digest
+        digests[variant] = digest
+    return digests
+
+
+def task_baseline(core_digests=None, prefix='baseline'):
+    first_check = len(checks)
+    if core_digests is None:
+        core_digests = core_model_digests(prefix)
     baseline = read('/workspace/repro-task/baseline-results.json')
-    if not exact_records('baseline/exact_20_conditions', baseline, ('variant', 'mode'),
+    if not exact_records(prefix+'/exact_20_conditions', baseline, ('variant', 'mode'),
                          [(variant, mode) for variant in CORE_VARIANTS for mode in BASELINE_MODES]):
-        return
+        return None
     for record in baseline:
-        actual = record['result']['status']
+        key = prefix+'/' + record['variant'] + '/' + record['mode']
+        result = record.get('result')
+        result = result if isinstance(result, dict) else {}
+        expected_digest = core_digests.get(record['variant'])
+        check(key+'/exact_core_artifact', expected_digest is not None and
+              result.get('model_sha256') == expected_digest,
+              {'observed': result.get('model_sha256'), 'expected': expected_digest})
+        actual = result.get('status')
         expected = {'displayer': 'READABLE', 'populator': 'ACCEPTED',
                     'simple_baseline': 'COMPATIBLE_PRECONDITIONS', 'task_init': 'PASS'}[record['mode']]
         if record['variant'] == 'label_deletion':
             if record['mode'] == 'simple_baseline': expected = 'INCOMPATIBLE'
             if record['mode'] == 'task_init': expected = 'FAIL'
-        check('baseline/' + record['variant'] + '/' + record['mode'], actual == expected,
+        check(key, actual == expected,
               {'observed': actual, 'expected': expected})
+    return baseline if all(row['passed'] for row in checks[first_check:]) else None
 
 
 def hand():
@@ -175,10 +202,15 @@ def hand():
     for phase in ('primary', 'replay'):
         for record in manifests[phase]:
             variant = record['variant']
+            first_check = len(checks)
             result = read(base / phase / variant / 'outputs/result.json')
+            completed = (record.get('exit_code') == 0 and record.get('completed') is True and
+                         all(result.get(key) == 'PASS' for key in
+                             ('initialization_status', 'input_preparation_status', 'detect_status')))
+            check(f'hand/{phase}/{variant}/actual_completed', completed)
+            if not completed:
+                continue
             decoded = read(base / phase / variant / 'outputs/decoded.json')
-            check(f'hand/{phase}/{variant}/actual_completed', record['exit_code'] == 0 and
-                  result['initialization_status'] == 'PASS' and result['detect_status'] == 'PASS')
             check(f'hand/{phase}/{variant}/one_hand_21_landmarks',
                   len(decoded['handedness']) == 1 and
                   len(decoded['hand_landmarks']) == 1 and len(decoded['hand_landmarks'][0]) == 21 and
@@ -189,9 +221,10 @@ def hand():
             files[str(bits_path)] = hashlib.sha256(bits).hexdigest()
             check(f'hand/{phase}/{variant}/exact_float_bits_equal',
                   len(bits) > 0 and bits == reference_bits and files[str(bits_path)] == result['decoded_float_bits_sha256'])
-            records.append({'phase': phase, 'variant': variant})
+            if all(row['passed'] for row in checks[first_check:]):
+                records.append({'phase': phase, 'variant': variant})
     return {'expected_execution_records': 8, 'execution_records_read': len(records),
-            'complete': True, 'records': records}
+            'complete': len(records) == 8, 'records': records}
 
 
 def external():
@@ -335,6 +368,7 @@ def android_code():
 
 
 def preflight(required_manifest=None, required_manifest_sha256=E5_MANIFEST_SHA256):
+    first_check = len(checks)
     root = Path('/workspace/repro-external/E5')
     manifest = Path(required_manifest) if required_manifest is not None else root / 'results.json'
     try:
@@ -369,22 +403,22 @@ def preflight(required_manifest=None, required_manifest_sha256=E5_MANIFEST_SHA25
         report = read(root / 'checks' / actual / 'result.json')
         check('E5/individual_result/'+actual, report == fixture['report'])
         by_hash[actual] = report
-    baseline = read('/workspace/repro-task/baseline-results.json')
-    for record in baseline:
+    core_digests = core_model_digests('E5')
+    baseline = task_baseline(core_digests, 'E5/baseline')
+    for record in baseline or []:
         if record['mode'] not in ('simple_baseline', 'task_init'): continue
-        report = by_hash[record['result']['model_sha256']]
+        report = by_hash.get(record['result']['model_sha256'])
         expected_reject = record['variant'] == 'label_deletion'
         check('E5/core_rejection/'+record['mode']+'/'+record['variant'],
+              report is not None and
               (report['DECODER_COMPATIBILITY']['status'] == 'INCOMPATIBLE') == expected_reject)
-    for experiment, variant in (('E1', 'original'), ('E1', 'description_control'),
-                                ('E1', 'label_deletion'), ('E1', 'label_restoration'),
-                                ('E2', 'label_permutation')):
-        model = Path('/workspace/repro-android') / experiment / 'variants' / variant / 'model.tflite'
-        digest = hashlib.sha256(model.read_bytes()).hexdigest()
+    for variant in CORE_VARIANTS:
+        digest = core_digests.get(variant)
         check('E5/exact_Android_artifact/'+variant, digest in by_hash and
               (by_hash[digest]['DECODER_COMPATIBILITY']['status'] == 'INCOMPATIBLE') == (variant == 'label_deletion'))
-    return {'fixtures': len(fixtures), 'complete': True, 'counts': counts,
-            'core_extra_rejections_over_simple_and_Task_init': 0,
+    complete = all(row['passed'] for row in checks[first_check:])
+    return {'fixtures': len(fixtures), 'complete': complete, 'counts': counts,
+            'core_extra_rejections_over_simple_and_Task_init': 0 if complete else None,
             'scope': 'Static on actual recovered files; no Android success/failure is inferred.'}
 
 

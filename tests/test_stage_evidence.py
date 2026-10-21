@@ -511,13 +511,16 @@ class ArchiveIntegrityTests(unittest.TestCase):
             for name, value in self.members.items()).encode()
         self.pin = hashlib.sha256(self.checksums).hexdigest()
 
-    def write_archive(self, members=None, extra_members=(), checksums=None):
+    def write_archive(self, members=None, extra_members=(), checksums=None,
+                      initial_members=()):
         members = dict(self.members if members is None else members)
         members['SHA256SUMS'] = self.checksums if checksums is None else checksums
         with tarfile.open(self.archive, 'w:gz') as stream:
             directory = tarfile.TarInfo('focal-saved-evidence')
             directory.type = tarfile.DIRTYPE
             stream.addfile(directory)
+            for member in initial_members:
+                stream.addfile(member)
             for name, value in members.items():
                 member = tarfile.TarInfo('focal-saved-evidence/' + name)
                 member.size = len(value)
@@ -593,6 +596,77 @@ class ArchiveIntegrityTests(unittest.TestCase):
         self.write_archive(checksums=repeated)
         with self.assertRaisesRegex(ValueError, 'Duplicate checksum row'):
             ARCHIVE.verify(self.archive, hashlib.sha256(repeated).hexdigest())
+
+    def test_directory_cannot_replace_or_precede_a_verified_file(self):
+        directory = tarfile.TarInfo('focal-saved-evidence/payload/synthetic/record.txt')
+        directory.type = tarfile.DIRTYPE
+        for order in ('before', 'after'):
+            with self.subTest(order=order):
+                self.write_archive(initial_members=[directory] if order == 'before' else [],
+                                   extra_members=[directory] if order == 'after' else [])
+                with self.assertRaisesRegex(ValueError, 'conflicting archive member'):
+                    ARCHIVE.verify(self.archive, self.pin)
+
+    def test_file_cannot_be_an_explicit_or_implicit_parent_directory(self):
+        parent_name = 'payload/synthetic'
+        for order in ('before', 'after'):
+            with self.subTest(order=order):
+                members = ({parent_name: b'', **self.members} if order == 'before'
+                           else {**self.members, parent_name: b''})
+                checksums = ''.join(f'{hashlib.sha256(value).hexdigest()}  {name}\n'
+                                    for name, value in members.items()).encode()
+                self.write_archive(members, checksums=checksums)
+                with self.assertRaisesRegex(ValueError, 'directory'):
+                    ARCHIVE.verify(self.archive, hashlib.sha256(checksums).hexdigest())
+
+        parent_file = tarfile.TarInfo('focal-saved-evidence/payload/synthetic/record.txt/child')
+        parent_file.type = tarfile.DIRTYPE
+        self.write_archive(extra_members=[parent_file])
+        with self.assertRaisesRegex(ValueError, 'parent directory'):
+            ARCHIVE.verify(self.archive, self.pin)
+
+    def test_duplicate_directory_members_are_refused(self):
+        directory = tarfile.TarInfo('focal-saved-evidence')
+        directory.type = tarfile.DIRTYPE
+        self.write_archive(extra_members=[directory])
+        with self.assertRaisesRegex(ValueError, 'Duplicate or conflicting archive member'):
+            ARCHIVE.verify(self.archive, self.pin)
+
+    def test_explicit_parent_directories_may_precede_or_follow_their_files(self):
+        directory = tarfile.TarInfo('focal-saved-evidence/payload/synthetic')
+        directory.type = tarfile.DIRTYPE
+        for order in ('before', 'after'):
+            with self.subTest(order=order):
+                self.write_archive(initial_members=[directory] if order == 'before' else [],
+                                   extra_members=[directory] if order == 'after' else [])
+                self.assertEqual(ARCHIVE.verify(self.archive, self.pin)['archive_integrity'],
+                                 'PASS')
+
+    def test_corrupt_crc_length_and_truncated_gzip_footer_are_refused(self):
+        for fault in ('crc', 'length', 'truncated'):
+            with self.subTest(fault=fault):
+                self.write_archive()
+                data = bytearray(self.archive.read_bytes())
+                if fault == 'truncated':
+                    del data[-8:]
+                else:
+                    data[-8 if fault == 'crc' else -4] ^= 1
+                self.archive.write_bytes(data)
+                with self.assertRaises((OSError, EOFError)):
+                    ARCHIVE.verify(self.archive, self.pin)
+
+    def test_truncated_gzip_cli_exits_failure_without_pass_result(self):
+        self.write_archive()
+        self.archive.write_bytes(self.archive.read_bytes()[:-8])
+        output, errors = io.StringIO(), io.StringIO()
+        with patch.object(sys, 'argv', ['verify_archive.py', '--archive', str(self.archive),
+                                      '--checksums-sha256', self.pin]), \
+                contextlib.redirect_stdout(output), contextlib.redirect_stderr(errors):
+            with self.assertRaises(SystemExit) as raised:
+                ARCHIVE.main()
+        self.assertEqual(raised.exception.code, 1)
+        self.assertEqual(output.getvalue(), '')
+        self.assertIn('EOFError', errors.getvalue())
 
 
 if __name__ == '__main__':

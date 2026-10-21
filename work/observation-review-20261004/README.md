@@ -18,6 +18,12 @@ rule covers all 20 Task variant/mode pairs, each Android execution's two named
 inputs, and each experiment's four build variants. Complete manifests may be
 reordered. Actual output/status/hash comparisons remain in place.
 
+Each Hand record must also have the controller's `completed: true`, a zero
+exit status and successful initialization, input preparation and detection in
+the worker result. A failed or missing status cannot be rescued by stale decoded
+files. Only records passing both completion and output checks enter the reported
+record count; fewer than eight validated records makes Hand incomplete.
+
 Successful Linux Task executions also require exactly the two named input
 records. Each must report successful input preparation and classification and
 1,000 returned categories. The reader checks the prescribed RGB bytes in
@@ -33,6 +39,14 @@ model payloads or checking aggregate result counts. The default manifest is
 `bf49a475696eec4b38fb17587f6541a8393da14297e5dca1d433a051ba166e79`
 recorded by claim C32 in the preserved claim map. Local file/report agreement
 alone cannot establish that a later catalog contains the original fixtures.
+
+Every baseline record is bound to its named core Android model's actual digest,
+for all five variants and all four modes. The permutation condition uses E2;
+the other four use E1. Both the Task baseline and E5 readers check this binding
+independently, so a different E5 fixture with the same acceptance status cannot
+stand in for the named model. The E5 zero-extra-rejections conclusion is emitted
+only when all of that section's checks pass; a failed section reports `null`
+and `complete: false` instead of a numerical conclusion.
 
 Recover the excluded `/workspace/repro-task`, `/workspace/repro-hand`,
 `/workspace/repro-android` and `/workspace/repro-external` evidence first. From
@@ -58,12 +72,13 @@ to pass and Android records to be complete. Missing or unreadable prerequisite
 files also cause a nonzero exit. This source checkout is not a complete evidence
 deposit, and the command does not execute models.
 
-The original nine synthetic regression tests exercise empty, missing, duplicate,
-unexpected and malformed manifests, successful reordered records, retained
-status/shape/byte checks, aggregate exit status and report preservation. All
-eleven additional regressions cover Task input records and bytes, both observed
-false-pass cases, frozen E5 identities, valid reordered catalogs, aggregate
-failure and explicit manifest overrides. Run them without model dependencies:
+The synthetic regression tests exercise empty, missing, duplicate, unexpected
+and malformed manifests, successful reordered records, retained status/shape/
+byte checks, aggregate exit status and report preservation. They cover Task
+input records and bytes, frozen E5 identities, same-status substitutions for
+each baseline mode, missing core digests/files, failed Hand input preparation
+and controller completion, and explicit manifest overrides. Run them without
+model dependencies:
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -p test_observation_readback.py -v

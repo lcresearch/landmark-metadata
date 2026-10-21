@@ -14,10 +14,10 @@
     "sha256": "a2b2ffe54cae5b62286c94729b725e4117ecff34f6b1cf81b61a8b8205463d19",
     "bytes": 40883
   },
-  "remote_base_status": "Remote main equals review anchor; PR #14 public page checked Merged; new feature branch is based on main.",
+  "remote_base_status": "The paper revision was based on merged PR #14 at the review anchor. PR #15 was subsequently squash-merged at c0cd67307d89a74394c7d0deb1f425e608906aef; GitHub merged state checked 2026-10-21.",
   "feature_branch": "paper/label-resource-boundaries-20261020",
   "pr_base": "main",
-  "merge_policy": "No merge or auto-merge authorized for this revision.",
+  "merge_policy": "The user authorized and completed squash merge of PR #15. Future PRs require their own merge authorization.",
   "claim_ledger": "work/label-resource-revision-20261020/CLAIM_EVIDENCE.md",
   "claim_crosswalk": {
     "path": "work/label-resource-revision-20261020/CLAIM_EVIDENCE.md",
@@ -37,7 +37,8 @@
   "revision_notes": "work/label-resource-revision-20261020/REVISION_NOTES.md",
   "validation": "work/label-resource-revision-20261020/VALIDATION.md",
   "pull_request": "https://github.com/lcresearch/landmark-metadata/pull/15",
-  "delivery_status": "Feature branch pushed; PR #15 verified OPEN, unmerged, auto-merge disabled; awaiting user review.",
+  "delivery_status": "PR #15 verified MERGED on 2026-10-21, by user-authorized squash; the merged tree matches reviewed head b0f1e497463a0af0bebff465b2809edd758e74e6.",
+  "merge_commit": "c0cd67307d89a74394c7d0deb1f425e608906aef",
   "human_audit": {
     "status": "PENDING",
     "reviewer": null,

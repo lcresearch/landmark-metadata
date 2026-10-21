@@ -122,3 +122,28 @@ audit targets and evidence pins. This revision inspects source and builds docume
 not raw external evidence or new inference. Keep six author questions unsigned and
 persistent anonymous delivery open. Use the existing checkout, a feature branch and
 an unmerged PR; do not publish evidence, select a venue, submit or sign for authors.
+
+## 2026-10-21 UTC — Repair evidence verification without rewriting history
+
+The user requested implementation of the comprehensive review's findings.
+Gate PASS on actual checked identities, completion and relevant comparisons,
+not self-reported record counts or independent checks of unmatched artifacts.
+Validate the full compressed archive and extraction-path consistency, and
+preserve import inventory coverage when original workspace files disappear.
+
+Historical P2/parser readers and the old Android initializer remain byte-preserved.
+New maintained entry points supply stricter readback and truthful local-input
+provenance; current commands select those entry points. Preserve evidence failures
+and distinguish failed historical-outcome comparisons from unreadable evidence.
+Synthetic verifier tests are not new scientific execution or authentication of
+unavailable raw records. Manuscripts and human PENDING statuses remain unchanged.
+
+Record the already authorized and verified PR #15 squash in current navigation,
+without rewriting dated provenance or the manuscript's original review anchor.
+Publish the repair as a new feature-branch PR; merge authorization is separate.
+
+The user's subsequent “review and merge” authorizes PR #16 after final review.
+Use squash with the exact reviewed head, then verify the merged tree and sole
+parent on main. Keep the live PR's merged state as the terminal completion
+record, without rewriting historical scientific evidence or creating a separate
+bookkeeping PR. Publication, submission and human-signature permissions are unchanged.

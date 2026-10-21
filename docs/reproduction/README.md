@@ -5,10 +5,12 @@ gaps. **The Git repository contains source and documentation, not a complete
 experiment deposit.** Start with the route that matches the materials available
 to you; reading saved results and running a new experiment are different tasks.
 
-The inspected starting revision is
+The original handoff's inspected starting revision was
 `052a839cdc64ec43ce362dde0cd3e410926e107d` (after PRs #6 and #7).
-This handoff does not change the manuscript, historical sources or experiment
-outcomes. All paths below are relative to the repository unless explicitly
+The [21 October verifier repairs](../../work/review-fixes-20261021/README.md)
+update maintained readback and setup entry points without changing the manuscript,
+historical sources or experiment outcomes. Dated validation records below retain
+their original scope. All paths below are relative to the repository unless explicitly
 absolute. Run command examples from the repository root.
 
 | Route | What you need | Status in this handoff | What it establishes |
@@ -33,6 +35,8 @@ absolute. Run command examples from the repository root.
   usable handoff, plus the parts that have not been deposited or verified.
 - [Verification record](validation.json): exact commands checked in this task,
   script/log digests and the limits of the checks.
+- [Maintained P2/parser readers and setup repairs](../../work/review-fixes-20261021/README.md):
+  separate coverage, identity and outcome checks, with synthetic negative regressions.
 
 ## Minimal checks requiring no model or SDK
 
