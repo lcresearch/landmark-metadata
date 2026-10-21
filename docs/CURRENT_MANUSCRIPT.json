@@ -1,35 +1,49 @@
 {
-  "repository_path": "work/preaudit-followup-20261008/manuscript/paper.tex",
-  "sha256": "aac0903bc50d41dc1066232f6be13f9596b3241bff8168eac625c0da58ab67b4",
+  "repository_path": "work/label-resource-revision-20261020/manuscript/paper.tex",
+  "sha256": "be3367013898a7fe61594b9ad0c8705b6b9d0a10030e3adccd89f6952c71ce2c",
+  "bytes": 21894,
   "derived_from_repository_path": "research/20261004-p2-p3/manuscript/paper.tex",
   "derived_from_sha256": "118ccc9820454f8ac1d3b0416ba456401e5ef3f9e9d0199ba1c59991103ec5a9",
-  "base_commit": "57ff5585039e7f63de54a67981d5d98cb9ba84e8",
-  "scope": "New manuscript revision and isolated JVM FileUtil/TensorLabel/helper checks; no Android/model inference or historical reconstruction recovery",
-  "editorial_predecessor_repository_path": "work/workshop-convergence-20261007/manuscript/paper.tex",
-  "editorial_predecessor_sha256": "c79ba7f62a194abd487ec4b8ccedb60428ec4edd1f43e6ee155518ffd8bb416e",
-  "remote_base_status": "PR #10 through #13 verified open; this branch is stacked on #13 verified head; no merge authorized.",
-  "publication_base_commit": "57ff5585039e7f63de54a67981d5d98cb9ba84e8",
-  "merge_policy": "User-authorized merges use Squash and merge; no unsolicited merge.",
-  "feature_branch": "paper/preaudit-followup",
-  "pr_base": "audit/agent-preaudit",
-  "revision_map": "work/preaudit-followup-20261008/revision-map.json",
-  "claim_ledger": "work/preaudit-followup-20261008/CLAIM_EVIDENCE.md",
-  "full_companion": {
+  "base_commit": "65004d4ac573118d58eb8c6f3125d67c0b330d62",
+  "review_anchor": "65004d4ac573118d58eb8c6f3125d67c0b330d62",
+  "scope": "Focused label-resource case-study revision; repository source/test/document validation only; no Android/model/JVM execution or external raw-evidence revalidation",
+  "editorial_predecessor_repository_path": "work/preaudit-followup-20261008/manuscript/paper.tex",
+  "editorial_predecessor_sha256": "aac0903bc50d41dc1066232f6be13f9596b3241bff8168eac625c0da58ab67b4",
+  "editorial_predecessor_companion": {
     "path": "work/preaudit-followup-20261008/manuscript/paper-full.tex",
     "sha256": "a2b2ffe54cae5b62286c94729b725e4117ecff34f6b1cf81b61a8b8205463d19",
     "bytes": 40883
   },
-  "pull_request": "https://github.com/lcresearch/landmark-metadata/pull/14",
-  "integration": {
-    "user_authorized": true,
-    "predecessor_prs_squash_merged": [
-      10,
-      11,
-      12,
-      13
-    ],
-    "terminal_pr": 14,
-    "completion_rule": "Terminal PR MERGED state completes stack; this does not complete human audit",
-    "record": "work/pr10-14-integration-20261008/integration-index.json"
-  }
+  "remote_base_status": "Remote main equals review anchor; PR #14 public page checked Merged; new feature branch is based on main.",
+  "feature_branch": "paper/label-resource-boundaries-20261020",
+  "pr_base": "main",
+  "merge_policy": "No merge or auto-merge authorized for this revision.",
+  "claim_ledger": "work/label-resource-revision-20261020/CLAIM_EVIDENCE.md",
+  "claim_crosswalk": {
+    "path": "work/label-resource-revision-20261020/CLAIM_EVIDENCE.md",
+    "sha256": "c6719644bf4561f478b67205e5ca45f67192974861641a2e7f8522835d283614",
+    "bytes": 10820
+  },
+  "full_companion": {
+    "path": "work/label-resource-revision-20261020/manuscript/paper-full.tex",
+    "sha256": "3ad2458ff34619d7a34a79bc2e439563f960dad0ed03cdef1d62cdcfdadd0adb",
+    "bytes": 45270
+  },
+  "artifact_handoff": {
+    "path": "work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md",
+    "sha256": "303d63b624a54dc772a6938d0e08d0eb90f3efde1e3865ae581f9252deaf1108",
+    "bytes": 12783
+  },
+  "revision_notes": "work/label-resource-revision-20261020/REVISION_NOTES.md",
+  "validation": "work/label-resource-revision-20261020/VALIDATION.md",
+  "pull_request": null,
+  "delivery_status": "Local revision complete; remote branch and PR pending verification.",
+  "human_audit": {
+    "status": "PENDING",
+    "reviewer": null,
+    "signed_at": null
+  },
+  "durable_anonymous_deposit": false,
+  "new_android_or_model_inference": false,
+  "new_jvm_probe": false
 }
