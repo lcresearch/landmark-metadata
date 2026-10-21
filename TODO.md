@@ -47,6 +47,8 @@ this revision does not select a venue or authorize submission.
   pass. Imported sources, manuscripts and historical evidence remain unchanged;
   source-only checks do not revalidate missing raw records.
   Delivered for review in [PR #16](https://github.com/lcresearch/landmark-metadata/pull/16).
+  The user subsequently authorized review and squash merge; the PR's verified
+  GitHub merged state is the terminal integration record.
 - [ ] **P1 — Answer the six current author questions against the new source digest.**
   All identities, observations and signatures remain PENDING.
 - [ ] **P1 — Provide persistent anonymous access to retained core evidence.**

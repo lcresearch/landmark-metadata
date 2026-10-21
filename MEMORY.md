@@ -18,8 +18,10 @@ All 144 regression tests passed; the source checker validates 354 imports and
 seven current/predecessor artifact pins. Both manuscript sources remain unchanged.
 This repair is delivered in [PR #16](https://github.com/lcresearch/landmark-metadata/pull/16)
 from `fix/review-integrity-20261021`; consult GitHub for its subsequent state.
-The earlier merge authorization covered PR #15; this repair has no merge,
-evidence publication, submission or author-signature authorization.
+The user subsequently requested “review and merge” for PR #16. After review,
+squash its exact reviewed head and verify the single-parent result and complete
+tree on main. The PR's GitHub merged state is the integration completion record.
+Evidence publication, submission and author signatures remain unauthorized.
 
 ## Current editorial revision — 20 October 2026 (America/Los_Angeles)
 

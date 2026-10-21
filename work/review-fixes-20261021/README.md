@@ -94,4 +94,7 @@ or either source import manifest. Paper builds were not repeated because
 manuscript bytes are unchanged. Delivered for review in
 [PR #16](https://github.com/lcresearch/landmark-metadata/pull/16), from feature
 branch `fix/review-integrity-20261021`. Consult the live PR for its subsequent
-state; delivery does not authorize a merge.
+state. The user subsequently requested “review and merge”, authorizing squash
+of the final reviewed head. Verify its complete tree and sole parent on main;
+GitHub's merged state is the terminal integration record. This authorization
+does not extend to evidence publication, submission or human verification.

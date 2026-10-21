@@ -141,3 +141,9 @@ unavailable raw records. Manuscripts and human PENDING statuses remain unchanged
 Record the already authorized and verified PR #15 squash in current navigation,
 without rewriting dated provenance or the manuscript's original review anchor.
 Publish the repair as a new feature-branch PR; merge authorization is separate.
+
+The user's subsequent “review and merge” authorizes PR #16 after final review.
+Use squash with the exact reviewed head, then verify the merged tree and sole
+parent on main. Keep the live PR's merged state as the terminal completion
+record, without rewriting historical scientific evidence or creating a separate
+bookkeeping PR. Publication, submission and human-signature permissions are unchanged.
