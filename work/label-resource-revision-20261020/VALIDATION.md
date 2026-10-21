@@ -125,6 +125,8 @@ closed/merged with merge commit `65004d4…`; the original failure was therefore
 not treated as missing credentials. The draft update itself does not apply
 runtime policy or publish a snapshot.
 
-The final branch/PR delivery status is recorded in the current manuscript pointer
-and active TODO after remote operations are checked. This task does not authorize
+The feature branch was pushed and [PR #15](https://github.com/lcresearch/landmark-metadata/pull/15)
+created and checked OPEN/unmerged with auto-merge disabled. Remote main remains
+`65004d4ac573118d58eb8c6f3125d67c0b330d62`. The current pointer and TODO link
+that PR; its live head identifies the final delivery commit. This task does not authorize
 merging, auto-merge, evidence upload or submission.

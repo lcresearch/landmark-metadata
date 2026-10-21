@@ -36,9 +36,9 @@ this revision does not select a venue or authorize submission.
 - [x] **P1 — Validate the source/test/TeX workflow in the current cloud machine.**
   See [actual validation](work/label-resource-revision-20261020/VALIDATION.md).
   No Android/model inference or excluded raw-evidence verification was performed.
-- [ ] **P1 — Deliver the new feature branch as an unmerged PR.**
+- [x] **P1 — Deliver the new feature branch as an unmerged PR.**
+  [PR #15](https://github.com/lcresearch/landmark-metadata/pull/15) is OPEN, unmerged, with auto-merge disabled.
   Branch `paper/label-resource-boundaries-20261020`; base `65004d4…`.
-  Publication status will be recorded after the remote operation is verified.
 - [ ] **P1 — Answer the six current author questions against the new source digest.**
   All identities, observations and signatures remain PENDING.
 - [ ] **P1 — Provide persistent anonymous access to retained core evidence.**

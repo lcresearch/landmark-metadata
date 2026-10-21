@@ -9,7 +9,8 @@ Read the current pointer, revision notes and TODO before using dated entries bel
 Remote main equals review anchor `65004d4ac573118d58eb8c6f3125d67c0b330d62`.
 PR #14's public page now verifies Merged, completing #10–#14; older open/gate
 statements below are historical. Work proceeds on the new feature branch
-`paper/label-resource-boundaries-20261020`; do not merge without user approval.
+`paper/label-resource-boundaries-20261020`, delivered in [PR #15](https://github.com/lcresearch/landmark-metadata/pull/15)
+(OPEN, unmerged, auto-merge disabled); do not merge without user approval.
 
 The new short paper centers one classifier, two RQs/contributions and a seven-row
 coverage matrix with recorded/source/analytical evidence labels. E1/E2/P2 and

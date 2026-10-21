@@ -36,8 +36,8 @@
   },
   "revision_notes": "work/label-resource-revision-20261020/REVISION_NOTES.md",
   "validation": "work/label-resource-revision-20261020/VALIDATION.md",
-  "pull_request": null,
-  "delivery_status": "Local revision complete; remote branch and PR pending verification.",
+  "pull_request": "https://github.com/lcresearch/landmark-metadata/pull/15",
+  "delivery_status": "Feature branch pushed; PR #15 verified OPEN, unmerged, auto-merge disabled; awaiting user review.",
   "human_audit": {
     "status": "PENDING",
     "reviewer": null,

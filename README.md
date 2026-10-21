@@ -28,8 +28,8 @@ source and continuation documents, **not the complete evidence archive**.
 
 The new revision starts from main `65004d4ac573118d58eb8c6f3125d67c0b330d62`.
 PR #14's public page was checked as **Merged**; older conditional/open-stack
-statements are historical. This revision uses a new feature branch and requires
-its own unmerged PR review. No author verification, deposit or submission follows
+statements are historical. This revision is delivered in [PR #15](https://github.com/lcresearch/landmark-metadata/pull/15),
+open and unmerged for user review. No author verification, deposit or submission follows
 from the earlier merge.
 
 ## Code map

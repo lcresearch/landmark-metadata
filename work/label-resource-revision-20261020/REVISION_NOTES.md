@@ -18,7 +18,8 @@ The public GitHub page for PR #14 was read this round and displays **Merged**;
 remote main contains its `65004d4…` squash with sole parent `52e6eafc…`.
 The stale conditional integration gate in active navigation is superseded.
 Historical records of the then-open stack remain intact. No merge or auto-merge
-is authorized for this new revision.
+is authorized for this new revision. [PR #15](https://github.com/lcresearch/landmark-metadata/pull/15)
+is open and unmerged for review.
 
 Use [the short source](manuscript/paper.tex), [full companion](manuscript/paper-full.tex),
 [claim crosswalk](CLAIM_EVIDENCE.md), [minimal evidence/author handoff](ARTIFACT_HANDOFF.md)
