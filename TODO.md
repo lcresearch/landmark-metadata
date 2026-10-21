@@ -22,15 +22,29 @@ completed agent review were squash-merged in
 [PR #9](https://github.com/lcresearch/landmark-metadata/pull/9), commit `ba1b5c5`.
 Venue/category selection still determines the submission form.
 
-The user now prefers a short workshop paper. The current
-[post-audit draft](work/preaudit-followup-20261008/README.md) uses four-page
-IEEE conference formatting provisionally for SQA4AI 2027; a seven-page companion
-retains detail. The candidate deadlines are abstract 19 October and paper
-23 October 2026, AoE. This is not a selected venue or submission approval.
-[Remaining submission work](work/workshop-convergence-20261007/SUBMISSION_READINESS.md)
-separates author verification, anonymous persistent evidence access and retained
-secondary-claim decisions. The old human-audit entry stays pinned to its old
-source; use the new claim crosswalk and manuscript digest.
+The current [label-resource revision](work/label-resource-revision-20261020/REVISION_NOTES.md)
+focuses on one classifier, two questions and the E1/E2/P2/P3 chain. Its short
+source builds to four pages including references; the full companion is eight
+pages. The [claim map](work/label-resource-revision-20261020/CLAIM_EVIDENCE.md)
+and [minimal evidence/author handoff](work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md)
+are the current entry points. Earlier venue suggestions/deadlines are historical;
+this revision does not select a venue or authorize submission.
+
+- [x] **P1 — Revise the paper for external review.** New title, two empirical
+  contributions, explicit M/F/H controls and seven-row coverage matrix;
+  Hand/E4/parser detail moved to companion, E5 negative result retained.
+- [x] **P1 — Validate the source/test/TeX workflow in the current cloud machine.**
+  See [actual validation](work/label-resource-revision-20261020/VALIDATION.md).
+  No Android/model inference or excluded raw-evidence verification was performed.
+- [x] **P1 — Deliver the new feature branch as an unmerged PR.**
+  [PR #15](https://github.com/lcresearch/landmark-metadata/pull/15) is OPEN, unmerged, with auto-merge disabled.
+  Branch `paper/label-resource-boundaries-20261020`; base `65004d4…`.
+- [ ] **P1 — Answer the six current author questions against the new source digest.**
+  All identities, observations and signatures remain PENDING.
+- [ ] **P1 — Provide persistent anonymous access to retained core evidence.**
+  Recover the focal package and bounded population/baseline records for inspection;
+  author approval is required before selecting/uploading an external deposit.
+  Do not wait for unrelated auxiliary history merely to complete editorial work.
 
 - [x] **P1 — Review the full PR #10–#14 stack (agent).**
   [Scoped review and integration plan](work/pr10-14-review-20261008/README.md)
@@ -44,12 +58,11 @@ source; use the new claim crosswalk and manuscript digest.
   Each has exactly one parent and the reviewed PR's complete tree. See the
   [integration record](work/pr10-14-integration-20261008/README.md).
 
-**Final integration gate: [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14).**
-This terminal PR carries the revised draft, parser follow-up and these status
-updates. Its GitHub **MERGED** state completes the five-PR integration; OPEN
-means that final step remains in progress. The operation verifies its reviewed
-head, single-parent squash and exact tree. Human research verification and
-evidence delivery remain separate open tasks below.
+**Completed integration:** [PR #14](https://github.com/lcresearch/landmark-metadata/pull/14)
+was checked as **Merged** on its public page in this revision; remote main is its
+`65004d4…` squash, with sole parent `52e6eafc…`. The #10–#14 stack is complete.
+The following dated accomplishments and remaining research tasks retain their
+historical scope; use the new entries above for the current manuscript target.
 
 - [x] **P1 — Narrow audit-sensitive manuscript claims (agent).** New short/full
   sources remove categorical E2 predeclaration timing, retain the deterministic
@@ -77,10 +90,9 @@ evidence delivery remain separate open tasks below.
   secondary coverage, missing later parser raw records and limited E2 timing
   evidence; the frozen manuscript and old audit map are unchanged.
 - [ ] **P1 — Resolve pre-audit findings and perform human author verification.**
-  Use the [six-part handoff](work/agent-preaudit-20261007/HUMAN_HANDOFF.md).
-  E2 wording is now narrowed and parser evidence supplemented separately. Use the
-  [new target handoff](work/preaudit-followup-20261008/HUMAN_HANDOFF.md) to assess
-  these edits and retained secondary limits. Check key raw records and authority
+  Use the [current six-question handoff](work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md).
+  Historical audit targets remain unchanged; the current crosswalk identifies
+  the retained core and companion-only material. Check key raw records and authority
   links, then record human conclusions against the new manuscript hash. Agent
   agreement and source/hash checks are not a signature.
 - [x] **P1 — Review [PR #13](https://github.com/lcresearch/landmark-metadata/pull/13) after #12 and its prerequisites.**
@@ -167,8 +179,9 @@ evidence delivery remain separate open tasks below.
   [deposit plan](docs/reproduction/DEPOSIT_PLAN.md): choose destination/access,
   recover missing inputs and configuration, preserve independently pinned
   manifests, and verify the selected build/run in a fresh workspace. Keep binary
-  evidence outside Git. The selected local package is ready, but later `repro-*`
-  records and the pinned E5 catalog remain unrecovered. Local saved-byte checks
+  evidence outside Git. The earlier report records a selected local package; it
+  is unavailable at its recorded path in this session. Later `repro-*` records and the pinned E5 catalog
+  remain separately unrecovered. Local saved-byte checks
   do not complete persistent delivery or a fresh-workspace build/run.
 - [x] **P1 — Prepare the human audit entry (agent).** The
   [entry](docs/human-audit/README.md), [inspection checklist](docs/human-audit/CHECKLIST.md),
@@ -325,6 +338,8 @@ that can change the core claim or contribution decision.
   and differential testing. The [new source indexes](research/20261004-contribution-review/README.md)
   distinguish five recovered PDFs, two new PDFs, and unresolved Stalnaker/Meyer
   full-text access. The earlier blocked retrieval attempts remain historical.
-- [ ] Review/save the cloud configuration draft and publish the retained
-  environment; independently test restoration in a future fresh task before
-  calling it verified snapshot restoration.
+- [x] Save tested cloud `install_script` and `start_skill` for source/test/TeX
+  work, plus the GitHub API domain addition; draft persistence confirmed.
+- [ ] Review/save the environment settings and publish the retained snapshot;
+  independently test restoration in a future task before calling it verified.
+  Current source/TeX readiness does not include excluded Android/model evidence.

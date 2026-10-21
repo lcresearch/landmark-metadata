@@ -1,6 +1,34 @@
 # Project continuation
 
-This repository is the source-code handoff for **From Model Metadata to Executable Interfaces: A Controlled Study of Tensor Binding and Decoder Contracts**. Read `TODO.md` before planning new work. This note records conclusions and working preferences, not a substitute for raw evidence.
+Current paper: **Validation Boundaries for Model Label Resources: A Controlled
+Classifier Case Study**, in `work/label-resource-revision-20261020/`.
+Read the current pointer, revision notes and TODO before using dated entries below.
+
+## Current editorial revision — 20 October 2026 (America/Los_Angeles)
+
+Remote main equals review anchor `65004d4ac573118d58eb8c6f3125d67c0b330d62`.
+PR #14's public page now verifies Merged, completing #10–#14; older open/gate
+statements below are historical. Work proceeds on the new feature branch
+`paper/label-resource-boundaries-20261020`, delivered in [PR #15](https://github.com/lcresearch/landmark-metadata/pull/15)
+(OPEN, unmerged, auto-merge disabled); do not merge without user approval.
+
+The new short paper centers one classifier, two RQs/contributions and a seven-row
+coverage matrix with recorded/source/analytical evidence labels. E1/E2/P2 and
+qualified P3 stay primary. Hand/E4/parser detail moves to the eight-page companion;
+E5's zero incremental core rejection remains in the short. All 16 claims retain
+source identities and PENDING human statuses. Earlier manuscripts are unchanged.
+
+Current source/TeX validation is documented in
+`work/label-resource-revision-20261020/VALIDATION.md`. The historical raw roots and
+focal package are unavailable at their checked paths on this machine; no raw
+execution/reference bytes were rechecked and no new Android/model/JVM run occurred.
+A 48-file source-index rehash does not authenticate those missing external bytes.
+The minimal handoff distinguishes saved-record inspection, new execution and
+persistent anonymous delivery; author verification and delivery remain open.
+No venue search, submission, public upload or author signature is authorized.
+
+The dated records below preserve prior scope, locations and outcomes rather than
+asserting that old raw evidence is currently available or old PRs remain open.
 
 ## Authorized PR integration (8 October 2026 UTC)
 

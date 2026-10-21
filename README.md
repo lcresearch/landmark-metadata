@@ -1,7 +1,7 @@
 # landmark-metadata
 
-Source repository for **From Model Metadata to Executable Interfaces:
-A Controlled Study of Tensor Binding and Decoder Contracts**.
+Source repository for **Validation Boundaries for Model Label Resources:
+A Controlled Classifier Case Study**.
 
 The user requested **source only**: no SDK, emulator, model, raw execution data,
 or build products are uploaded. This repository holds research code, manuscript
@@ -9,33 +9,28 @@ source and continuation documents, **not the complete evidence archive**.
 
 ## Start here
 
-- [PR #10–#14 integration status and verification](work/pr10-14-integration-20261008/README.md)
-- [Current manuscript source](work/preaudit-followup-20261008/manuscript/paper.tex)
-- [Manuscript claim–evidence table](work/preaudit-followup-20261008/CLAIM_EVIDENCE.md)
-- [Post-audit revisions and new isolated parser evidence](work/preaudit-followup-20261008/README.md)
-- [Current human audit target and follow-up](work/preaudit-followup-20261008/HUMAN_HANDOFF.md)
-- [Workshop candidates and submission checklist](work/workshop-convergence-20261007/README.md)
-- [Completed agent pre-audit and human continuation sheet](work/agent-preaudit-20261007/README.md)
-- [Human audit entry and unsigned review template](docs/human-audit/README.md)
-- [Local evidence package and unresolved missing material](work/evidence-recovery-20261005/README.md)
-- [Current build and review instructions](work/preaudit-followup-20261008/BUILD_REVIEW.md)
+- [Current manuscript source](work/label-resource-revision-20261020/manuscript/paper.tex)
+- [Full companion](work/label-resource-revision-20261020/manuscript/paper-full.tex)
+- [Manuscript claim–evidence table](work/label-resource-revision-20261020/CLAIM_EVIDENCE.md)
+- [Revision scope and section-by-section changes](work/label-resource-revision-20261020/REVISION_NOTES.md)
+- [Minimal evidence handoff and six unsigned author questions](work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md)
+- [Current build and validation results](work/label-resource-revision-20261020/VALIDATION.md)
 - [Current manuscript and preserved-parent digests](docs/CURRENT_MANUSCRIPT.json)
+- [Project memory](MEMORY.md), [active TODO](TODO.md), [decisions](docs/DECISIONS.md), and [agent instructions](AGENTS.md)
 - [Completed same-Android comparison and display-reference findings](research/20261004-p2-p3/RESULTS_OVERVIEW.md)
-- [Fresh reproduction and repository audit (2026-10-04)](sources/repro-audit-20261004/REPORT.md)
-- [Maintained checker fix and reproduction entry points](sources/repro-audit-20261004/README.md)
-- [Maintained observation reader and completeness fixes](work/observation-review-20261004/README.md)
-- [Project memory and current evidence boundaries](MEMORY.md)
-- [Current TODO](TODO.md)
-- [Reproduction entry: inputs, versions, commands and missing material](docs/reproduction/README.md)
-- [Contribution and related-work comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md)
-- [Research significance assessment and public antecedents](research/20261004-significance-review/README.md)
-- [Decisions and scope](docs/DECISIONS.md)
-- [Future agent instructions](AGENTS.md)
-- [Exact source import paths and SHA-256 hashes](docs/SOURCE_IMPORT.json)
-- [P2/P3 source import and local evidence identity](docs/SOURCE_P2P3.json)
-- [Repository review disposition](docs/REVIEW_FOLLOWUP.md)
-- [Historical README availability notes](docs/HISTORICAL_README_NOTES.md)
-- [English summary of the historical audit](docs/AUDIT_SUMMARY_EN.md)
+- [Contribution comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md) and [significance assessment](research/20261004-significance-review/SIGNIFICANCE_ASSESSMENT.md)
+- [Documented reproduction commands and missing prerequisites](docs/reproduction/README.md)
+- [Historical local evidence recovery and unresolved material](work/evidence-recovery-20261005/README.md)
+- [Preserved October 8 manuscript/parser revision](work/preaudit-followup-20261008/README.md)
+- [Preserved agent pre-audit](work/agent-preaudit-20261007/README.md) and [old unsigned human-audit target](docs/human-audit/README.md)
+- [PR #10–#14 integration record](work/pr10-14-integration-20261008/README.md)
+- [Original source identities](docs/SOURCE_IMPORT.json) and [P2/P3 source identities](docs/SOURCE_P2P3.json)
+
+The new revision starts from main `65004d4ac573118d58eb8c6f3125d67c0b330d62`.
+PR #14's public page was checked as **Merged**; older conditional/open-stack
+statements are historical. This revision is delivered in [PR #15](https://github.com/lcresearch/landmark-metadata/pull/15),
+open and unmerged for user review. No author verification, deposit or submission follows
+from the earlier merge.
 
 ## Code map
 
@@ -52,7 +47,8 @@ source and continuation documents, **not the complete evidence archive**.
 | [Preserved editorial follow-up](work/review-followup-20261004) | Earlier LaTeX with parser-scope corrections; unchanged by the new rewrite |
 | [Preserved full paper rewrite](work/paper-rewrite-20261004) | Controlled execution narrative, claim–evidence ledger, contribution/significance integration and build/review notes |
 | [Preserved workshop convergence](work/workshop-convergence-20261007) | Previously audited four-page source, longer companion, venue comparison and submission work |
-| [Current post-audit draft](work/preaudit-followup-20261008) | Narrowed E2 chronology, new isolated JVM parser evidence, revised short/full manuscripts and current claim/audit targets |
+| [Preserved post-audit draft](work/preaudit-followup-20261008) | Narrowed E2 chronology and separately identified October 8 JVM parser evidence |
+| [Current label-resource revision](work/label-resource-revision-20261020/REVISION_NOTES.md) | Focused classifier case, seven-row coverage matrix, claim crosswalk and minimal evidence/author handoff |
 | [Maintained observation reader](work/observation-review-20261004) | Exact Hand, Task and Android evidence identities; preserves the exported audit snapshot |
 
 `sources/` retains original timestamped names and source bytes. Per-experiment
@@ -71,22 +67,21 @@ a turnkey clean-machine reproduction. Install/recover prerequisites separately
 and review paths before running. Do not execute historical sealing/finalization
 scripts against immutable evidence.
 
-The current paper source can be compiled in a **separate work directory** with
-a suitable TeX installation and IEEEtran. The current short draft renders to
-four pages including references under the provisional SQA4AI format. Venue
-choice, author verification, anonymous artifact delivery and final compliance
-remain pending. The prior human-audit entry is pinned to an older manuscript;
-use the current claim crosswalk when auditing this revision.
+The current short source builds to **four pages including 16 references** in
+provisional 10pt IEEEtran conference format; its detailed companion builds to
+eight pages with 18 references. Build in a new directory outside the checkout.
+The [validation record](work/label-resource-revision-20261020/VALIDATION.md)
+gives commands, actual checks and the retained IEEEtran activation. No venue
+has been selected or freshly assessed for compliance in this revision.
 
-The historical fresh-reconstruction report records the main controlled results
-and a label-reader mismatch. Its later raw records remain missing. The new
-bounded parser follow-up independently executes actual Support 0.4.4 JVM probes
-and compares the unchanged helper on 22 valid and three malformed cases; it does
-not rerun the whole checker or the missing 65-fixture reconstruction. The current
-manuscript separates these histories. The maintained observation reader also requires the frozen E5
-artifact set and validates Task inputs before counting successful observations.
-Read the [repair scope](docs/OBSERVATION_REPAIR.md) and fresh audit before relying
-on historical summary prose or interpreting a zero exit code as verified evidence.
+This round checked sources, regression tests and document builds. The original
+external evidence roots are unavailable at their recorded paths in this cloud
+session; historical recovery/readback reports are not fresh verification here.
+The [handoff](work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md) distinguishes
+saved-record inspection, new execution and persistent anonymous delivery. The
+latter and human author verification remain open. The prior parser supplement
+is a bounded October 8 JVM experiment, separate from unrecovered later
+reconstruction records and the unverified reconstructed 65-fixture catalog.
 
 Run `python scripts/check_source_tree.py` for source integrity, syntax and
 source-only scope checks. No model experiment is executed by that command.

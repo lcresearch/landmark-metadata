@@ -105,3 +105,20 @@ Keep review snapshots and scientific payloads unchanged. Update current TODO
 and continuation notes in the final #14 PR; its merged state is the terminal
 completion record, avoiding an unapproved extra bookkeeping PR. Research human
 signatures, evidence gaps and submission decisions remain pending after merge.
+
+
+## 2026-10-20 America/Los_Angeles — Focus the label-resource case study
+
+Use one core classifier and two empirical contributions: controlled actual-getter
+outcomes under computation/code preservation, and two configured public enforcement
+stages on the same Android environment. Label interventions change F; the description
+control changes M. P3 qualifies display order, not stable identity or accuracy.
+Promote the existing companion coverage analysis into the short paper, explicitly
+separating observations, source mechanisms and analytical integrity implications.
+Keep E5's negative result; move auxiliary Hand/static/parser details to the companion.
+
+New source belongs in `work/label-resource-revision-20261020/`; preserve old sources,
+audit targets and evidence pins. This revision inspects source and builds documents,
+not raw external evidence or new inference. Keep six author questions unsigned and
+persistent anonymous delivery open. Use the existing checkout, a feature branch and
+an unmerged PR; do not publish evidence, select a venue, submit or sign for authors.
