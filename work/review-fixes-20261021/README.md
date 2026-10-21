@@ -91,5 +91,7 @@ and synthetic positive controls.
 `git diff` against the review base confirms no changes to `sources/`, the
 imported P2/P3 tree, the current paper revision, the original parser supplement
 or either source import manifest. Paper builds were not repeated because
-manuscript bytes are unchanged. The repair uses feature branch
-`fix/review-integrity-20261021`; it does not authorize a merge.
+manuscript bytes are unchanged. Delivered for review in
+[PR #16](https://github.com/lcresearch/landmark-metadata/pull/16), from feature
+branch `fix/review-integrity-20261021`. Consult the live PR for its subsequent
+state; delivery does not authorize a merge.

@@ -46,6 +46,7 @@ this revision does not select a venue or authorize submission.
   and the disclosed parser-verifier reuse gap. All 144 tests and source checks
   pass. Imported sources, manuscripts and historical evidence remain unchanged;
   source-only checks do not revalidate missing raw records.
+  Delivered for review in [PR #16](https://github.com/lcresearch/landmark-metadata/pull/16).
 - [ ] **P1 — Answer the six current author questions against the new source digest.**
   All identities, observations and signatures remain PENDING.
 - [ ] **P1 — Provide persistent anonymous access to retained core evidence.**

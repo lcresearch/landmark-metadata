@@ -16,7 +16,8 @@ raw evidence or complete human audit.
 
 All 144 regression tests passed; the source checker validates 354 imports and
 seven current/predecessor artifact pins. Both manuscript sources remain unchanged.
-This repair uses `fix/review-integrity-20261021` and a new PR.
+This repair is delivered in [PR #16](https://github.com/lcresearch/landmark-metadata/pull/16)
+from `fix/review-integrity-20261021`; consult GitHub for its subsequent state.
 The earlier merge authorization covered PR #15; this repair has no merge,
 evidence publication, submission or author-signature authorization.
 
