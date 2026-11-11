@@ -55,9 +55,19 @@ this revision does not select a venue or authorize submission.
   bind results to model/input bytes; Hand reconstructs float output bytes; the
   P2/P3 importer validates the whole selection before writing. All 165 tests pass.
   These are synthetic/source checks, not revalidation of excluded experiments.
-- [ ] **P1 — Recheck the recovered raw records with the maintained readers.**
-  Supply the newly documented model, controller and command records unchanged;
-  retain failures or missing files. Do not manufacture them from old summaries.
+- [x] **P1 — Recover verifiable public/deterministic core input bytes.**
+  The user reported losing the former cloud evidence. Fresh acquisition and
+  reconstruction now match all five model conditions, two RGB inputs and six P3
+  input-body pins. See [current recovery status](work/input-recovery-20261110/README.md).
+  This does not recover APKs, execution logs or model outputs.
+- [ ] **P1 — Recover and recheck original raw records, if an old workspace/backup survives.**
+  All 39 checked external paths are absent here; no archive candidate was found
+  in the bounded local search. Supply original controller, command and observation
+  records unchanged. Do not manufacture them from summaries or fresh reruns.
+- [ ] **P1 — Establish a new focal execution history if old evidence cannot be recovered.**
+  Inputs are available; pinned dependencies, reviewed path adaptation, a fresh
+  E1/E2/P2 run, P3 bridge analysis and durable retention still need completion.
+  No new model/Android execution has been started or claimed by input recovery.
 - [ ] **P1 — Answer the six current author questions against the new source digest.**
   All identities, observations and signatures remain PENDING.
 - [ ] **P1 — Provide persistent anonymous access to retained core evidence.**
