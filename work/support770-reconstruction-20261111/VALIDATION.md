@@ -27,8 +27,8 @@ The initial complete suite passed **201 tests**. Source/import/manuscript and di
 checks passed; the 18 historical-locator warnings remain visible.
 
 The subsequent [review fixes](REVIEW_FIXES.md) close three gaps in required-output,
-invocation-binding and build-deadline enforcement. The current reader passes 111
-checks on unchanged evidence and the expanded suite passes 222 tests. Original
+invocation-binding and build-deadline enforcement. The current reader passes 117
+checks on unchanged evidence and the expanded suite passes 223 tests. Original
 readbacks/snapshots are preserved; this follow-up performs no model execution.
 
 ## Executed sources and post-run robustness review

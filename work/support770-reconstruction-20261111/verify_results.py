@@ -104,6 +104,20 @@ def check_invocation(root, consumer, build, observed, check):
             intervals.append((start, finish))
     check(consumer + ' invocation chronology', len(intervals) == 3 and
           all(left[1] <= right[0] for left, right in zip(intervals, intervals[1:])))
+    verification = json.loads((root / 'build/stages' / (consumer + '-verify') / 'command.json').read_text())
+    check(consumer + ' APK verification command', verification.get('command') == [
+        str(root / 'sdk/build-tools/35.0.0/apksigner'), 'verify', '--verbose',
+        str(root / 'build' / consumer / 'consumer.apk')] and verification.get('cwd') == str(root))
+    check(consumer + ' APK verification completed', verification.get('status') == 'PASS' and
+          type(verification.get('exit_code')) is int and verification['exit_code'] == 0 and not verification.get('timeout'))
+    try:
+        frozen = datetime.fromisoformat(json.loads((root / 'freeze.json').read_text())['started_utc'])
+        start, finish = (datetime.fromisoformat(verification[key]) for key in ('started_utc', 'finished_utc'))
+        valid = all(t.tzinfo is not None for t in (frozen, start, finish)) and len(intervals) == 3 and (
+            frozen <= start <= finish <= intervals[0][0])
+    except (KeyError, TypeError, ValueError):
+        valid = False
+    check(consumer + ' install follows frozen build', valid)
     check(consumer + ' install confirmed', b'Success' in (folder / 'install/stdout').read_bytes())
     # Bind device records to the collected stream, not only a duplicate summary JSON.
     members = {}

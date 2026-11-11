@@ -41,6 +41,7 @@ class VerifierTest(unittest.TestCase):
         self.write('project/app/build/generated/ml_source_out/debug/org/example/support770/ml/LiteModelDeeplabv31Metadata2.java', b'generated source')
         self.write('runtime-source/Harness.java', b'harness')
         self.save('boot/launch.json', {'serial': 'emulator-5556'})
+        self.save('freeze.json', {'started_utc': '2026-11-11T00:00:00+00:00'})
         freeze = {'generated_source_sha256': digest(b'generated source'), 'source_files': {'Harness.java': digest(b'harness')}, 'consumers': {}}
         self.builds, self.results = [], []
         for consumer in ('wrapper', 'task'):
@@ -63,6 +64,10 @@ class VerifierTest(unittest.TestCase):
                 'apk_sha256': digest(apk.read_bytes()), 'packaged_model_sha256': digest(self.model),
                 'class_hashes': {'Harness.class': digest(b'class')}}
             self.builds.append(build)
+            self.save(f'build/stages/{consumer}-verify/command.json', {
+                'command': [str(self.root / 'sdk/build-tools/35.0.0/apksigner'), 'verify', '--verbose', str(apk)],
+                'cwd': str(self.root), 'status': 'PASS', 'exit_code': 0,
+                'started_utc': '2026-11-11T00:00:01+00:00', 'finished_utc': '2026-11-11T00:00:02+00:00'})
             observed = {'completed': True, 'instrumentation': class_name, 'model_sha256': digest(self.model),
                 'model_bytes': len(self.model), 'input_sha256': digest(RGB), 'asset_identity_status': 'PASS',
                 'input_status': 'PASS', 'construction_status': 'PASS'}
@@ -86,8 +91,8 @@ class VerifierTest(unittest.TestCase):
             }
             for i, (stage, command) in enumerate(commands.items()):
                 self.save(f'executions/{consumer}/{stage}/command.json', {'command': command, 'cwd': str(self.root),
-                    'status': 'PASS', 'exit_code': 0, 'started_utc': f'2026-11-11T00:0{i}:00+00:00',
-                    'finished_utc': f'2026-11-11T00:0{i}:01+00:00'})
+                    'status': 'PASS', 'exit_code': 0, 'started_utc': f'2026-11-11T00:0{i + 1}:00+00:00',
+                    'finished_utc': f'2026-11-11T00:0{i + 1}:01+00:00'})
             self.write(f'executions/{consumer}/install/stdout', b'Success\n')
             self.results.append({'consumer': consumer, 'build': build, 'collection_status': 'PASS',
                                  'scientific_status': observed['scientific_status'], 'observed': observed})
@@ -212,6 +217,14 @@ class VerifierTest(unittest.TestCase):
         path = 'executions/task/instrumentation/command.json'
         record = json.loads((self.root / path).read_text()); record['started_utc'] = '2026-11-10T00:00:00+00:00'; self.save(path, record)
         self.rejected('task invocation chronology')
+
+    def test_internally_ordered_old_chain_cannot_precede_this_build(self):
+        for stage in ('install', 'instrumentation', 'collect'):
+            path = f'executions/task/{stage}/command.json'
+            record = json.loads((self.root / path).read_text())
+            for key in ('started_utc', 'finished_utc'): record[key] = record[key].replace('2026-11-11', '2026-11-10')
+            self.save(path, record)
+        self.rejected('task install follows frozen build')
 
     def test_matching_wrong_build_and_summary_do_not_change_consumer_identity(self):
         self.builds[1]['package'] = 'wrong.package'
