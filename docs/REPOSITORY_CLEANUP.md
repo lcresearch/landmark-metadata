@@ -81,7 +81,15 @@ manuscript/predecessor pins remain valid. All 176 regression tests pass, and
 `git diff --check` passes. The 12 warnings still identify unavailable historical
 locators and unchecked external manifest hashes. Only five current Markdown
 documents change; no experiment, paper build or external archive readback was
-performed for this cleanup. README/MEMORY/TODO shrink from 1,052 to 259 lines.
+performed for this cleanup. The initial navigation cleanup reduced
+README/MEMORY/TODO from 1,052 to 259 lines, before the final integration notes.
+
+The subsequent authorized merge review also checked the #18/#19 prerequisite
+source changes, passed 170 tests at #18 and 176 for the final code, and matched
+ten selected external-record digests to the committed receipt. It did not rerun
+model experiments or read back the complete archive. Both prerequisite squash
+commits have one parent and exactly their reviewed trees; [MEMORY](../MEMORY.md)
+records their identities and the final #20 integration entry point.
 
 ## Earlier source-only cleanup
 

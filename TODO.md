@@ -36,9 +36,10 @@ and follow the [repository policy](AGENTS.md).
   length, anonymity, disclosure and artifact requirements before submission.
   Old venue suggestions/deadlines are historical; no venue or submission is approved.
 
-PR #18 and PR #19 remain open as checked on 11 November. This cleanup is a separate
-PR based on #19. Review and integration are distinct from research completion;
-no merge is authorized by the cleanup request.
+PR #18 and PR #19 were reviewed and squash-integrated on 11 November. The user's
+follow-up authorizes review and squash merge of [PR #20](https://github.com/lcresearch/landmark-metadata/pull/20);
+its verified GitHub merged state is the integration completion record. Research
+and human-verification tasks above remain open after repository integration.
 
 ## Completed foundations
 

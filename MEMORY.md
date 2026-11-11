@@ -101,14 +101,22 @@ be verified from this source-only checkout:
 
 ## Repository delivery and next work
 
-PR #17 was squash-merged at `fa8a318eabff681ee061e55a7908a20a7fda2113`.
-On 11 November, [PR #18](https://github.com/lcresearch/landmark-metadata/pull/18)
-(input recovery, `05e6b22…`) and
-[PR #19](https://github.com/lcresearch/landmark-metadata/pull/19)
-(new focal run, `a94b98f…`) were still open; #19 targets #18's branch.
-The cleanup branch `codex/repository-cleanup-20261111` starts from #19's exact
-head `a94b98ffdce5814b9db717ae8d4db4fd8a80f3f2` and targets that branch for review.
-Check live PR state before integration; this request does not authorize merging.
+The user subsequently authorized review and squash integration of the cleanup
+and its prerequisites. On 11 November, both prerequisite PRs were squash-merged
+into `main` and their sole parents and complete reviewed trees were verified:
+
+- [PR #18](https://github.com/lcresearch/landmark-metadata/pull/18), input recovery:
+  `f4a6d8f4db7e7a04ce49dd28e1e4298398208f6f`, matching reviewed head `05e6b22…`.
+- [PR #19](https://github.com/lcresearch/landmark-metadata/pull/19), new focal run:
+  `df56b9f6920a2478ff6c8c4fbd9d1e1f04aabc9b`, matching original reviewed head `a94b98f…`.
+
+[PR #20](https://github.com/lcresearch/landmark-metadata/pull/20) contains the cleanup
+and these integration notes; its verified GitHub merged state is the terminal
+completion record. Dependent feature branches received content-preserving ancestry
+sync commits before retargeting to main; no force push or direct main push was used.
+Review passed 170 tests at #18 and 176 for the final code, source/import/manuscript
+checks, and ten selected external-record digests. No new model execution or full
+archive readback was performed during this review. Human verification remains pending.
 
 Next: retain a second verified evidence copy, reconcile paper/claims with the new
 run, resolve auxiliary evidence scope, complete human review, provide reviewer

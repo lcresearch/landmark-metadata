@@ -223,3 +223,11 @@ navigation cleanup. The November run remains separate from the October manuscrip
 Prioritize a second verified evidence copy, provenance reconciliation and human
 review over new experiment expansion. Deliver this cleanup on its own feature
 branch/PR based on the still-open #19; no merge is authorized by this request.
+
+The subsequent user instruction, “OK 审查并合并”, authorizes reviewing and squash
+integrating #20 and its necessary #18/#19 prerequisites into main. Verify each
+reviewed head, sole squash parent and resulting file tree. Synchronize dependent
+feature-branch ancestry only after proving main equals the reviewed predecessor
+tree, without force pushes. Keep final integration notes in #20; its verified
+GitHub merged state closes delivery. Research evidence and human-review limits
+remain unchanged by repository integration.
