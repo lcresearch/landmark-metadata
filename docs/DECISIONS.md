@@ -165,3 +165,21 @@ formats and use synthetic positive/adversarial tests while original raw inputs a
 unavailable. Preserve imported code, manuscripts, historical reports and their pins.
 Report real-record compatibility as untested until the excluded prerequisites are
 recovered. See the [follow-up record](../work/review-fixes-20261110/README.md).
+
+## 2026-11-10 America/Los_Angeles — Preserve evidence loss and new input provenance
+
+The user reported losing the original materials in the former cloud `/workspace`.
+Treat those execution records as unavailable unless independently recovered; do
+not claim that hashes, old reports or newly matching results reconstruct their
+provenance. The current task permits reading available material and recovering
+public/deterministic inputs. The exact focal model, its four interventions, two
+RGB inputs and six P3 input bodies now match the historical input pins.
+
+Record these as fresh acquisition/reconstruction in new local directories outside
+Git. Retain the current scripts, byte identities, unsuccessful location checks and
+limitations in the [recovery note](../work/input-recovery-20261110/README.md).
+An input hash match is not graph-bridge recomputation, inference, recovered old
+execution evidence or human verification. Keep manuscripts and historical records
+unchanged; any future experiment receives a new protocol/run identity and must
+preserve deviations. Local storage alone does not complete durable external backup
+or anonymous reviewer access. Deliver this source/doc work as a new unmerged PR.

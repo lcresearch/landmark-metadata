@@ -4,6 +4,28 @@ Current paper: **Validation Boundaries for Model Label Resources: A Controlled
 Classifier Case Study**, in `work/label-resource-revision-20261020/`.
 Read the current pointer, revision notes and TODO before using dated entries below.
 
+## Lost cloud evidence and recovered inputs — 10 November 2026 (America/Los_Angeles)
+
+After PR #17 was reviewed and squash-merged as `fa8a318eabff681ee061e55a7908a20a7fda2113`,
+the user asked for raw-material review and reported losing the materials from the
+former cloud `/workspace`. Current checks found all 39 inventoried external paths
+absent; a bounded local filename search found no candidate archive. This does not
+establish permanent loss from every backup. No persistent archive URL is recorded.
+
+The [input recovery record](work/input-recovery-20261110/README.md) documents fresh
+official-model acquisition, deterministic reconstruction of all five focal model
+conditions and two RGB inputs, and reacquisition/reuse of all six P3 input bodies.
+All whole-file and model-label payload digests match the pre-existing input index;
+an independent disk readback also matches. These are recovered input bytes, not
+old execution records, a new inference run or human verification.
+
+Retained local data is outside Git under `/home/hsz/landmark-evidence/` in
+`input-recovery-20261110` and `reference-recovery-20261110`. These are local copies,
+not a remote backup or reviewer deposit. Old APKs, logs, raw/decoded observations,
+retrieval records and complete evidence archives remain unavailable. No original
+manuscript claims or PENDING human statuses were changed. A future fresh execution
+must have its own protocol, dependencies, provenance and persistent retention.
+
 ## Evidence-binding follow-up — 10 November 2026 (America/Los_Angeles)
 
 The user requested a careful repository audit and then implementation of what
