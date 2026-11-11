@@ -9,12 +9,13 @@ outside Git. It is not a complete evidence archive or an offline reproduction ki
 
 ## Current state — 11 November 2026
 
-The current manuscript is the **20 October revision**. A **new 10 November focal
-rerun** completed E1/E2, the paired Android P2 comparison and the six-input P3 core.
-The manuscript has not yet been reconciled with that new execution history.
-The old cloud execution evidence is unavailable; matching inputs and new results
-do not recover its provenance. Human verification and durable external evidence
-delivery remain pending.
+The current **11 November short-paper revision** incorporates the known-outcome
+10 November rerun: E1/E2, paired Android P2 and the six-input P3 core. It discloses
+the unavailable old cloud execution evidence, two interrupted collections and
+selected continuations. The evidence map binds claims to concrete archived files
+and newly checked bytes; matching results do not recover the lost provenance.
+The October full companion remains explicitly historical context. Human
+verification and durable external evidence delivery remain pending.
 
 The study concerns one classifier graph, five byte conditions and two synthetic
 inputs. Keep structural acceptance S, reference-backed association I and selected
@@ -26,11 +27,11 @@ baseline. These data do not establish natural defects, prevalence or task accura
 
 | Task | Entry point |
 |---|---|
-| Read the current paper | [Current manuscript source](work/label-resource-revision-20261020/manuscript/paper.tex), [full companion](work/label-resource-revision-20261020/manuscript/paper-full.tex), [claim–evidence map](work/label-resource-revision-20261020/CLAIM_EVIDENCE.md) |
+| Read the current paper | [Current manuscript source](work/rerun-paper-revision-20261111/manuscript/paper.tex), [claim–evidence map](work/rerun-paper-revision-20261111/CLAIM_EVIDENCE.md), [historical October companion](work/label-resource-revision-20261020/manuscript/paper-full.tex) |
 | Inspect the new execution | [Observed results](work/focal-rerun-20261110/RESULTS.md), [runbook and prerequisites](work/focal-rerun-20261110/README.md), [local archive receipt](work/focal-rerun-20261110/delivery-record.json) |
 | Continue the project | [Active TODO](TODO.md), [current memory](MEMORY.md), [decisions](docs/DECISIONS.md), [repository policy](AGENTS.md) |
 | Locate code or decide what to retain | [Repository map and cleanup decisions](docs/REPOSITORY_CLEANUP.md) |
-| Check provenance and author questions | [Current manuscript pins](docs/CURRENT_MANUSCRIPT.json), [unsigned author handoff](work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md), [input recovery](work/input-recovery-20261110/README.md) |
+| Check provenance and author questions | [Current manuscript pins](docs/CURRENT_MANUSCRIPT.json), [unsigned author handoff](work/rerun-paper-revision-20261111/ARTIFACT_HANDOFF.md), [exact evidence identities](work/rerun-paper-revision-20261111/evidence-index.json), [input recovery](work/input-recovery-20261110/README.md) |
 | Trace historical sources | [Original import index](docs/SOURCE_IMPORT.json), [P2/P3 import index](docs/SOURCE_P2P3.json), [historical reading notes](docs/HISTORICAL_README_NOTES.md) |
 
 ## Source checks
@@ -43,8 +44,8 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
 ```
 
 These commands check source scope, navigation, syntax, 354 preserved imports,
-the import-backed memory hash, seven manuscript/predecessor pins and verifier
-regressions. They do not run model experiments or revalidate excluded raw evidence.
+the import-backed memory hash, current/historical manuscript and evidence-index
+pins, and verifier regressions. They do not run model experiments or revalidate excluded raw evidence.
 Historical missing-evidence locators produce warnings; changed imported bytes fail.
 
 ## Reproduction and manuscript builds
@@ -56,10 +57,11 @@ references. Imported absolute `/workspace` paths are intentional historical fact
 new runs require separate directories and recorded path adaptations. Never run
 historical sealing/finalization tools over retained evidence.
 
-The manuscript's [October validation record](work/label-resource-revision-20261020/VALIDATION.md)
-records four short-paper pages and eight companion pages in provisional IEEEtran
-format. Build outside the checkout. No venue has been selected, and this cleanup
-does not rebuild the paper or update its scientific claims.
+The [current validation record](work/rerun-paper-revision-20261111/VALIDATION.md)
+documents the four-page short-paper build, actual saved-byte readbacks and their
+limits. Build outside the checkout. The October companion is unchanged and its
+old eight-page build is historical. No venue has been selected; the manuscript
+revision adds no Android/model execution or human signoff.
 
 Publish source changes on a feature branch through a PR. Merging requires an
 explicit instruction; use squash by default. Keep excluded evidence outside the

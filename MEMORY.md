@@ -9,13 +9,19 @@ belongs in its work record and Git history.
 ## Current manuscript and research boundary
 
 **Validation Boundaries for Model Label Resources: A Controlled Classifier Case
-Study** lives in [the October 20 revision](work/label-resource-revision-20261020/REVISION_NOTES.md).
-The [current pointer](docs/CURRENT_MANUSCRIPT.json) pins short/full sources,
-claim ledger, handoff and predecessors. Its October validation recorded four
-short-paper pages and eight companion pages. No venue is selected.
-The November rerun has **not** been incorporated into that manuscript.
-The [six author questions](work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md)
-and all historical human-audit entries remain **PENDING**.
+Study** now uses the [11 November short-paper revision](work/rerun-paper-revision-20261111/REVISION_NOTES.md).
+It incorporates the November E1/E2/P2 rerun and P3 six-input core, and explicitly
+discloses old evidence loss, known outcomes, two interrupted collections, selected
+continuations and the P2 reader correction. The four-page source retains the
+narrow case-study framing; the October full companion stays historical/unchanged.
+The [current pointer](docs/CURRENT_MANUSCRIPT.json) binds the new source, claim map,
+handoff and 1,036-member evidence index while retaining old manuscript identities.
+Saved-byte Android/P2/P3 rechecks and full 2,120-member archive verification pass;
+these are new editorial readbacks, not new model execution or human verification.
+The old 48-source index resolves 47 files in the checkout plus S40's exact old
+Git version; the maintained reproduction README has since changed. No pin was
+silently refreshed. The [six current author questions](work/rerun-paper-revision-20261111/ARTIFACT_HANDOFF.md)
+and all historical human-audit entries remain **PENDING**. No venue is selected.
 
 The contribution is a bounded empirical study: one classifier graph, five model
 byte conditions, two synthetic inputs and selected consumer configurations.
@@ -75,7 +81,9 @@ The [delivery receipt](work/focal-rerun-20261110/delivery-record.json) records
 It is local retention, not remote backup, reviewer access or a complete offline
 environment. The receipt/final docs postdate archive sealing; the archive is not
 a snapshot of the final PR tree. Executed source identities are retained inside.
-This cleanup does not re-read the raw archive or delete external files.
+The later manuscript revision re-read the whole archive and selected live files;
+its reports are retained under `/home/hsz/landmark-evidence/paper-revision-20261111/`.
+Original experiment records remain unchanged; the new review outputs postdate the archive.
 
 The old cloud `/workspace` material is unavailable here: all 39 inventoried paths
 were absent and a bounded local filename search found no archive candidate.
@@ -118,9 +126,10 @@ Review passed 170 tests at #18 and 176 for the final code, source/import/manuscr
 checks, and ten selected external-record digests. No new model execution or full
 archive readback was performed during this review. Human verification remains pending.
 
-Next: retain a second verified evidence copy, reconcile paper/claims with the new
-run, resolve auxiliary evidence scope, complete human review, provide reviewer
-access and select a venue. See [TODO](TODO.md) for completion criteria.
+The manuscript revision is delivered separately on
+`codex/paper-rerun-evidence-20261111`; the editorial request does not authorize its merge.
+Next: retain a second verified evidence copy, complete human review, resolve any
+auxiliary claims retained for submission, provide reviewer access and select a venue. See [TODO](TODO.md) for completion criteria.
 Do not start another broad model/mutant campaign by default.
 
 The former 561-line continuation history remains available

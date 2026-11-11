@@ -1,0 +1,119 @@
+{
+  "scope": "Locally extracted Debian packages used to render this revision; no packages or generated formats are committed.",
+  "system": "Debian 13 amd64",
+  "engine": "pdfTeX 1.40.26 (TeX Live 2025/dev/Debian)",
+  "class": {
+    "name": "IEEEtran V1.8b",
+    "bytes": 281957,
+    "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7"
+  },
+  "packages": [
+    {
+      "sha256": "9a822bb255d32362b28287d0eb1c3cbabe9b5c3d4889d64e461cb53041ba9996",
+      "bytes": 5814876,
+      "filename": "cm-super-minimal_0.3.4-17_all.deb"
+    },
+    {
+      "sha256": "027cd4ddc91b9254bd7fd9b9ce55d58c095319f691d4d7cbd09d2e4a99c58398",
+      "bytes": 4540004,
+      "filename": "fonts-lmodern_2.005-1_all.deb"
+    },
+    {
+      "sha256": "b94ee0f3669cce866843372ca9920648641d34836058cd51639d2318aeead26b",
+      "bytes": 157012,
+      "filename": "libkpathsea6_2024.20240313.70630+ds-6_amd64.deb"
+    },
+    {
+      "sha256": "53937c2bfad6fff237d18ec11f872d90140bc6b1552af0d4651576c61754d378",
+      "bytes": 35456,
+      "filename": "libmpfi0_1.5.4+ds-4_amd64.deb"
+    },
+    {
+      "sha256": "59a0dfce63ebc91dad24a5237d7f8c22b93d990b00c7fdc2f4edc9fa4ebb07e1",
+      "bytes": 16652,
+      "filename": "libpaper2_2.2.5-0.3+b2_amd64.deb"
+    },
+    {
+      "sha256": "f94d5ad7f408fdc7fe25d56a52150ecf01169e0892d4242293ba99e8cb6c2dc5",
+      "bytes": 25560,
+      "filename": "libpotrace0_1.16-2+b2_amd64.deb"
+    },
+    {
+      "sha256": "1f9514cc31b9469e1daffbb3d597890e900d977059568bf61e08b57d39f899e5",
+      "bytes": 49260,
+      "filename": "libptexenc1_2024.20240313.70630+ds-6_amd64.deb"
+    },
+    {
+      "sha256": "90e0340c997027dd4c3ec7cbe4f67155e1bd97316d3e1d1e9a5909fa5e3e641b",
+      "bytes": 62868,
+      "filename": "libsynctex2_2024.20240313.70630+ds-6_amd64.deb"
+    },
+    {
+      "sha256": "375223ce6f06f273d4411dc84fb1e3c378e5074d06b82372df7965586f706367",
+      "bytes": 341408,
+      "filename": "libteckit0_2.5.12+ds1-1+b1_amd64.deb"
+    },
+    {
+      "sha256": "b7c220fe1d7661bc1a36d09993486b9facc157041aee3e7ade67b67b0531f74a",
+      "bytes": 114156,
+      "filename": "libtexlua53-5_2024.20240313.70630+ds-6_amd64.deb"
+    },
+    {
+      "sha256": "1e307e634126a69d468f71c71c50c295764945c1da6b7c12cc622f042d69639a",
+      "bytes": 58972,
+      "filename": "libzzip-0-13t64_0.13.78+dfsg.1-0.1_amd64.deb"
+    },
+    {
+      "sha256": "a87ada29e88cc85d0b51fa20c7c02101538caec81fcf3ef43aaeee54557795dd",
+      "bytes": 9480156,
+      "filename": "lmodern_2.005-1_all.deb"
+    },
+    {
+      "sha256": "1c48879c28dbf1e8b92bf6a5baae07b691ef617f5368d54b200878941bde51a2",
+      "bytes": 29432,
+      "filename": "tex-common_6.19_all.deb"
+    },
+    {
+      "sha256": "358b85d97da96193f217613bbf49909114e6dec5b0a728b5c81fdcfd9f8dad62",
+      "bytes": 23054552,
+      "filename": "texlive-base_2024.20250309-1_all.deb"
+    },
+    {
+      "sha256": "11e32b06e18c07645f0cf80cc5e1779129753c7d4f225ea5ad972e348257107b",
+      "bytes": 8445956,
+      "filename": "texlive-binaries_2024.20240313.70630+ds-6_amd64.deb"
+    },
+    {
+      "sha256": "f96805afa6f936b18c24fcaaf9de63b4b02f43de71b9195647ba01c11336b601",
+      "bytes": 4989440,
+      "filename": "texlive-fonts-recommended_2024.20250309-1_all.deb"
+    },
+    {
+      "sha256": "bd7a20049753ad6090aa0cf5b52d2b1f90b2bbd6aaff70db9b037c4ff93ae27d",
+      "bytes": 1293776,
+      "filename": "texlive-latex-base_2024.20250309-1_all.deb"
+    },
+    {
+      "sha256": "6eb7e1f3cfbe4993817757bc68132a4d7171bdd500084eea9b4d0040c7477d96",
+      "bytes": 8745148,
+      "filename": "texlive-latex-recommended_2024.20250309-1_all.deb"
+    },
+    {
+      "sha256": "213656c0c3e6014f99bc3c5da07196501fb9b9bc748d32c92a30c2b8050c1b34",
+      "bytes": 22760788,
+      "filename": "texlive-publishers_2024.20250309-2_all.deb"
+    }
+  ],
+  "map_sources": [
+    "ps2pk35.map",
+    "cm.map",
+    "cmextra.map",
+    "latxfont.map",
+    "symbols.map",
+    "cm-super-minimal-t1.map",
+    "cm-super-minimal-ts1.map",
+    "lm.map"
+  ],
+  "texmf_map_sha256": "c8ffa451c274b7bc9b9ac81e34149c7c9b041bf1f4ad3b821173a959ff5b109d",
+  "note": "Runtime paths and format/font-map setup are retained outside Git; build in a fresh directory. No universal PDF byte reproducibility or clean-machine installation claim."
+}

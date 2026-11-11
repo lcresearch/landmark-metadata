@@ -231,3 +231,24 @@ feature-branch ancestry only after proving main equals the reviewed predecessor
 tree, without force pushes. Keep final integration notes in #20; its verified
 GitHub merged state closes delivery. Research evidence and human-review limits
 remain unchanged by repository integration.
+
+
+## 2026-11-11 America/Los_Angeles — Bind the short paper to the November evidence
+
+The user requested the short-paper/claim-map update. Create a new editorial area
+and preserve the October sources and all old audit targets. Bind core claims to
+actual November artifact identities; disclose known outcomes, missing old raw
+records, two interrupted collectors, selected continuations and the retained
+P2 reader FAIL/correction. P3 supports only the six-input core, not a repeated
+30-request search or synset inquiry. Keep stable IDs ABSTAIN and E5's zero extra
+rejection explicitly historical; preserve the narrow single-classifier case.
+
+The October full companion remains historical context, not a second updated
+manuscript. The current pointer labels that role and keeps its old identities
+while pinning the new short source, ledger, handoff and evidence index. A stale
+historical document pin must resolve to its exact old Git object (S40 here), not
+be silently refreshed. Saved-byte audits/complete archive readback are distinct
+from new inference, authenticated provenance, human verification and reviewer
+access. Keep author questions PENDING and all raw/build outputs outside Git.
+Deliver via a new source-only PR; this request does not authorize merging,
+external evidence publication, venue selection or submission.

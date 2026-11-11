@@ -3,6 +3,7 @@
 Reviewed 11 November 2026 from commit
 `a94b98ffdce5814b9db717ae8d4db4fd8a80f3f2` (PR #19's head).
 This is the retention/navigation guide; [TODO](../TODO.md) is the active plan.
+The map now includes the subsequent November short-paper revision.
 
 ## What this cleanup changes
 
@@ -37,7 +38,7 @@ the new run still uses maintained readers and preserved producers from older are
 
 | Area | Why it is needed / current entry |
 |---|---|
-| [Current manuscript](../work/label-resource-revision-20261020) | Short/full TeX, claim map, handoff, revision and validation notes; current target until a new editorial revision is explicitly indexed |
+| [Current short-paper revision](../work/rerun-paper-revision-20261111) | November short TeX, claim map, exact evidence index, readback helpers, handoff and build validation; old full companion remains historical |
 | [New focal run](../work/focal-rerun-20261110) | Actual runbook/protocol, setup, collection continuation, P3 core, packaging code, results and archive receipt; start here for a new focal run |
 | [Input recovery](../work/input-recovery-20261110) | Pinned model/input reconstruction and reference retrieval; supplies prerequisites for the new run |
 | [Repository scripts](../scripts) and [tests](../tests) | Source/import/manuscript integrity, preserved import selection, maintained Android initialization and regression coverage |
@@ -45,7 +46,7 @@ the new run still uses maintained readers and preserved producers from older are
 | [Maintained P2/parser readers](../work/review-fixes-20261021) and [November repair record](../work/review-fixes-20261110) | Actual-file attribution, completeness and format checks; use these maintained tools instead of assuming old readers enforce current checks |
 | [Evidence recovery tools](../work/evidence-recovery-20261005) | Archive verification, safe staging and focal coverage checks remain useful; the October package/results and missing list are historical, and are not the new run's receipt |
 | [Reproduction guide and inventories](reproduction/README.md) | Input/toolchain/command pins and historical prerequisites; use the new runbook for the November sequence |
-| [Source import index](SOURCE_IMPORT.json), [P2/P3 index](SOURCE_P2P3.json), [manuscript index](CURRENT_MANUSCRIPT.json) | Guard 354 imported files and seven manuscript/predecessor identities; never delete or refresh pins merely to make a cleanup pass |
+| [Source import index](SOURCE_IMPORT.json), [P2/P3 index](SOURCE_P2P3.json), [manuscript index](CURRENT_MANUSCRIPT.json) | Guard 354 imported files and current/historical manuscript and evidence-index identities; never delete or refresh pins merely to make a cleanup pass |
 | [Policy](../AGENTS.md), [decisions](DECISIONS.md), [memory](../MEMORY.md), [TODO](../TODO.md) | Authoritative continuation entry points; keep current summaries short and dated detail in its work record |
 
 ## Keep for history, provenance or qualified secondary use
@@ -56,6 +57,7 @@ over retained evidence or rewrite historical outcomes.
 
 | Area | Retention decision |
 |---|---|
+| [October manuscript and companion](../work/label-resource-revision-20261020) | Preserved predecessor sources, ledger and handoff; the full companion has not been rewritten or newly verified for November |
 | [All imported sources](../sources) | Byte-preserved snapshots. Includes initial Hand, corpus/checker, E1–E7 harnesses/protocols, audits and old papers. [Fresh reconstruction snapshot](../sources/repro-audit-20261004) also supplies pinned prerequisite and experiment code used by the new run |
 | [P2/P3 import](../research/20261004-p2-p3) | Protected same-Android/reference source and manuscript parent; the new run reuses these producers through recorded external working copies |
 | [Contribution review](../research/20261004-contribution-review) and [significance review](../research/20261004-significance-review) | Bounded prior-work and public-report assessments explain the narrow framing and negative findings; they are not a current venue/deadline survey |
