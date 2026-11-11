@@ -19,6 +19,8 @@ TODAY below is the original handoff's recorded activity label, not a claim that
 its excluded evidence is available in the current environment. The
 [21 October repair record](../../work/review-fixes-20261021/README.md) identifies
 the current maintained tools and their source-only regression validation.
+The [November follow-up](../../work/review-fixes-20261110/README.md) adds artifact,
+controller and float-payload binding checks to those readers.
 
 ## 1. TODAY: source checks, without experiment dependencies
 
@@ -104,6 +106,13 @@ targets `/workspace/repro-task`, `/workspace/repro-hand`,
 older roots in section 2. It requires the actual model, build and execution
 files, plus the separately pinned 65-artifact E5 identity manifest. Merely
 redirecting its output does not redirect those inputs.
+
+Task now requires all five `repro-task/models/<variant>.tflite` files and the
+corresponding Android variant model bytes. Hand requires `results/variants.json`,
+all four `variants/<variant>/hand_landmarker.task` bundles, `assets/thumb_up.jpg`,
+and both controller manifests with commands and observed worker snapshots, in
+addition to decoded JSON/float bytes and worker reports. Preserve original records;
+do not synthesize missing identities or controller records from a summary.
 
 Its help path is safe after inspection; invoking the full command is **PLANNED**
 until the excluded reconstruction inputs are recovered:
@@ -296,7 +305,14 @@ PYTHONDONTWRITEBYTECODE=1 python3 \
 ```
 
 The round contains `INPUTS.json`, `P2/EXECUTION_INPUT_FREEZE.json`, build results,
-APKs and device files. The output must be new and outside both the evidence round
+`P2/execution-results.json`, APKs and device files. Each
+`P2/executions/primary/<consumer>/<variant>/logs/` must also contain the original
+`install.command.json` and `instrumentation.command.json`. The reader binds
+successful build stages and APK hashes to the controller's build/device snapshots,
+stage outcomes and successful commands for the selected application and emulator.
+Recorded absolute command paths are checked against their original recorded cwd,
+so relocating a preserved round does not require rewriting those records.
+The output must be new and outside both the evidence round
 and checkout. The report separates evidence validity, observation coverage and
 historical-outcome comparisons; overall PASS/exit 0 requires all three to pass.
 Differences remain failures to inspect, not reasons to alter evidence.

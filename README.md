@@ -17,6 +17,7 @@ source and continuation documents, **not the complete evidence archive**.
 - [Current build and validation results](work/label-resource-revision-20261020/VALIDATION.md)
 - [Current manuscript and preserved-parent digests](docs/CURRENT_MANUSCRIPT.json)
 - [Evidence-checking repairs and maintained entry points](work/review-fixes-20261021/README.md)
+- [November evidence-binding and immutable-import follow-up](work/review-fixes-20261110/README.md)
 - [Project memory](MEMORY.md), [active TODO](TODO.md), [decisions](docs/DECISIONS.md), and [agent instructions](AGENTS.md)
 - [Completed same-Android comparison and display-reference findings](research/20261004-p2-p3/RESULTS_OVERVIEW.md)
 - [Contribution comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md) and [significance assessment](research/20261004-significance-review/SIGNIFICANCE_ASSESSMENT.md)

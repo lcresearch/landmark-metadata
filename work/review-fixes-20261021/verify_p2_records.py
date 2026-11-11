@@ -10,7 +10,8 @@ from collections import Counter
 import hashlib
 import json
 import math
-from pathlib import Path
+from pathlib import Path, PurePosixPath
+import re
 import struct
 import zipfile
 
@@ -20,6 +21,11 @@ VARIANTS = ('original', 'description_control', 'label_deletion',
             'label_permutation', 'restoration')
 CONSUMERS = ('wrapper', 'task')
 CASES = ('gray127', 'rgb_pattern')
+BUILD_STAGES = ('compile', 'dex', 'package_resources', 'zipalign', 'sign', 'verify_apk')
+CONSUMER_APPS = {
+    'wrapper': ('org.example.contract.consumer', 'ContractInstrumentation'),
+    'task': ('org.example.task.consumer', 'TaskInstrumentation'),
+}
 AREAS = ('evidence_validity', 'coverage', 'historical_outcomes')
 REQUIRED_INPUTS = ('EXPERIMENT_P2_PLAN.md', 'PLAN_FREEZE.json',
                    'dependencies/resolved-lock.json', 'static-results.json', 'build-results.json')
@@ -67,6 +73,8 @@ class Reader:
         self.decoded = {}
         self.raw = {}
         self.platforms = set()
+        self.builds = {}
+        self.executions = {}
 
     def check(self, area, name, passed, **detail):
         self.checks.append({'area': area, 'name': name,
@@ -133,9 +141,92 @@ class Reader:
         self.check('coverage', 'freeze covers required plan, dependency, source and build inputs',
                    required <= seen, missing=sorted(required - seen))
         builds = self.load(self.p2 / 'build-results.json')
-        self.check('coverage', 'exact ten build identities', identities(
-            builds, ('consumer', 'variant'), [(c, v) for c in CONSUMERS for v in VARIANTS]))
+        expected_units = [(c, v) for c in CONSUMERS for v in VARIANTS]
+        if not self.check('coverage', 'exact ten build identities', identities(
+                builds, ('consumer', 'variant'), expected_units)):
+            raise ValueError('Incomplete or duplicate build identities')
+        self.builds = {(row['consumer'], row['variant']): row for row in builds}
+        executions = self.load(self.p2 / 'execution-results.json')
+        if not self.check('coverage', 'exact ten controller identities', identities(
+                executions, ('consumer', 'variant'), expected_units)):
+            raise ValueError('Incomplete or duplicate execution identities')
+        self.executions = {(row['consumer'], row['variant']): row for row in executions}
         return inputs, labels
+
+    def execution_link(self, consumer, variant, report, apk, asset):
+        """Bind saved device output to its completed build and recorded invocation.
+
+        Recorded absolute command paths refer to the original P2 cwd; relocated
+        evidence is read under self.p2 without changing those historical strings.
+        This is consistency checking, not authentication of a device execution.
+        """
+        prefix = consumer + '/' + variant
+        build = self.builds[(consumer, variant)]
+        execution = self.executions[(consumer, variant)]
+        stages = build.get('stages')
+        self.check('evidence_validity', prefix + ': completed build stages',
+                   build.get('package_status') == 'PASS' and
+                   not build.get('earliest_failing_stage') and not build.get('error') and
+                   isinstance(stages, dict) and set(stages) == set(BUILD_STAGES) and
+                   all(isinstance(stage, dict) and stage.get('status') == 'PASS' and
+                       type(stage.get('exit_code')) is int and stage['exit_code'] == 0
+                       for stage in stages.values()))
+        self.check('evidence_validity', prefix + ': build APK and asset digests',
+                   sha(self.read_bytes(apk)) == build.get('apk_sha256') and
+                   sha(asset) == build.get('apk_model_sha256'))
+        package, instrument = CONSUMER_APPS[consumer]
+        self.check('evidence_validity', prefix + ': selected consumer application',
+                   build.get('package') == package and build.get('instrument') == instrument)
+        relative = f'executions/primary/{consumer}/{variant}'
+        self.check('evidence_validity', prefix + ': controller build and device binding',
+                   execution.get('experiment_id') == 'P2' and
+                   execution.get('build') == build and execution.get('observed') == report and
+                   execution.get('artifact_directory') == relative and
+                   not execution.get('harness_exception') and
+                   type(execution.get('instrumentation_exit_code')) is int and
+                   execution['instrumentation_exit_code'] == 0)
+
+        logs = self.p2 / relative / 'logs'
+        install = self.load(logs / 'install.command.json')
+        instrumentation = self.load(logs / 'instrumentation.command.json')
+        cwd = PurePosixPath(install['cwd'])
+        command = install['command']
+        if (not cwd.is_absolute() or '..' in cwd.parts or str(cwd) != install['cwd'] or
+                not isinstance(command, list) or len(command) != 6 or
+                not isinstance(command[2], str) or not re.fullmatch(r'emulator-[0-9]+', command[2])):
+            raise ValueError('Invalid recorded install cwd or command')
+        adb, serial = str(cwd / 'sdk/platform-tools/adb'), command[2]
+        self.check('evidence_validity', prefix + ': successful install of selected APK',
+                   type(install.get('exit_code')) is int and install['exit_code'] == 0 and
+                   command == [adb, '-s', serial, 'install', '-r',
+                               str(cwd / 'build' / consumer / variant / 'consumer.apk')])
+        self.check('evidence_validity', prefix + ': successful selected instrumentation',
+                   instrumentation.get('cwd') == str(cwd) and
+                   type(instrumentation.get('exit_code')) is int and instrumentation['exit_code'] == 0 and
+                   instrumentation.get('command') == [adb, '-s', serial, 'shell', 'am', 'instrument',
+                       '-w', '-e', 'variant', variant, package + '/org.example.contract.' + instrument])
+        observations = report.get('observations', [])
+        if not isinstance(observations, list) or any(not isinstance(row, dict) for row in observations):
+            raise ValueError('Invalid controller observation schema')
+        expected_stages = {
+            'installation': 'PASS', 'asset_identity': report.get('asset_identity_status', 'NOT_REACHED'),
+            'public_constructor': report.get('model_loading_status' if consumer == 'wrapper'
+                                             else 'model_initialization_status', 'NOT_REACHED'),
+            'inference': 'NOT_REACHED' if consumer == 'wrapper' else 'ATOMIC_WITH_DECODING',
+            'generated_getter': 'NOT_REACHED' if consumer == 'wrapper' else 'INAPPLICABLE',
+            'classify_inference_and_decoding': 'NOT_REACHED' if consumer == 'task' else 'INAPPLICABLE',
+        }
+        fields = ('input_preparation', 'inference', 'generated_getter') if consumer == 'wrapper' else (
+            'input_preparation', 'classify_inference_and_decoding')
+        for field in fields:
+            values = [row.get(field + '_status', 'NOT_REACHED') for row in observations]
+            expected_stages[field] = ('FAIL' if 'FAIL' in values else 'PASS'
+                                     if values and all(value == 'PASS' for value in values) else 'NOT_REACHED')
+        failures = [row for row in [report, *observations] if 'earliest_failing_stage' in row]
+        self.check('evidence_validity', prefix + ': controller stage and failure consistency',
+                   execution.get('stages') == expected_stages and execution.get('failures') == failures and
+                   execution.get('earliest_failing_stage') == (
+                       failures[0]['earliest_failing_stage'] if failures else None))
 
     def categories(self, path, consumer):
         values = self.load(path)
@@ -174,6 +265,7 @@ class Reader:
             if archive.namelist().count('assets/model.tflite') != 1:
                 raise ValueError('Expected one APK model asset')
             asset = archive.read('assets/model.tflite')
+        self.execution_link(consumer, variant, report, apk, asset)
         self.check('evidence_validity', prefix + ': APK/device/source asset identity',
                    report['asset_identity_status'] == 'PASS' and
                    sha(asset) == report['loaded_asset_sha256'] == inputs[variant]['sha256'])
