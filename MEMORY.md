@@ -16,11 +16,12 @@ from fixed ancestor `e9da459f6043684cdecba913c9c711433371909d`; imported bytes a
 historical manuscript pins are unchanged. Auxiliary reader inputs live under
 [support](support/README.md). A fresh source-only initialization validated the
 recovered model/reference pins; no Android/model execution was performed.
-The original checkout's paper branch was left untouched. PR #21 now stacks on
-[paper PR #22](https://github.com/lcresearch/landmark-metadata/pull/22); its current
-paper and evidence pins are carried forward unchanged. The [follow-up review](docs/PR21_REVIEW.md)
-fixes the ordinary source-check command and the paper readback/index paths, and
-records fresh saved-byte checks without new inference. Both PRs remain unmerged.
+[Paper PR #22](https://github.com/lcresearch/landmark-metadata/pull/22) and
+[cleanup PR #21](https://github.com/lcresearch/landmark-metadata/pull/21) are now
+squash-merged, in that order. Main reached `8005274e9eccbea30fb3189779f03e8d693b3720`.
+Both resulting commits have one parent and exactly match their reviewed trees.
+The [follow-up review](docs/PR21_REVIEW.md) describes the checks before integration;
+its then-open PR statuses are historical. Paper and evidence pins are unchanged.
 
 ## Current manuscript and research boundary
 
@@ -34,9 +35,10 @@ The [current pointer](docs/CURRENT_MANUSCRIPT.json) binds the new source, claim 
 handoff and 1,036-member evidence index while retaining old manuscript identities.
 Saved-byte Android/P2/P3 rechecks and full 2,120-member archive verification pass;
 these are new editorial readbacks, not new model execution or human verification.
-The old 48-source index resolves 47 files in the checkout plus S40's exact old
-Git version; the maintained reproduction README has since changed. No pin was
-silently refreshed. The [six current author questions](work/rerun-paper-revision-20261111/ARTIFACT_HANDOFF.md)
+After cleanup, the old 48-source index resolves 36 working-tree files, eight
+archived blobs and four exact earlier Git versions. The paper revision's original
+47-plus-S40 resolution describes its pre-cleanup checkout. No pin was silently
+refreshed. The [six current author questions](work/rerun-paper-revision-20261111/ARTIFACT_HANDOFF.md)
 and all historical human-audit entries remain **PENDING**. No venue is selected.
 
 The contribution is a bounded empirical study: one classifier graph, five model
@@ -142,9 +144,26 @@ Review passed 170 tests at #18 and 176 for the final code, source/import/manuscr
 checks, and ten selected external-record digests. No new model execution or full
 archive readback was performed during this review. Human verification remains pending.
 
-The manuscript revision is delivered in [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22)
-on `codex/paper-rerun-evidence-20261111`, open for review. The editorial request
-does not authorize its merge.
+The user subsequently authorized both remaining merges:
+
+- [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22):
+  `ed3e32a4ff84cb77dc728743b2e022455a9fa1f6`, reviewed head `481f62d…`.
+- [PR #21](https://github.com/lcresearch/landmark-metadata/pull/21):
+  `8005274e9eccbea30fb3189779f03e8d693b3720`, reviewed head `559d21a…`.
+
+The maintenance refactor separates initialization and evidence indexing into
+named validation, preparation and recording steps. Command-line interfaces and
+evidence-selection rules remain fixed; historical producers are not rewritten.
+It also reconciles these current status documents. This new change requires its
+own PR review and merge instruction.
+
+Validation passes all 199 tests and source/import/archive checks. Before/after
+initialization matches all 49 output files and the complete directory/link layout;
+indexing matches all 1,036 selected records and 48 historical-source resolutions.
+Only external roots, generated times and the two changed drivers' verified source
+identities differ. Comparison outputs are retained under `/tmp/landmark-refactor-*`.
+No new Android/model execution or human verification was performed.
+
 Next: retain a second verified evidence copy, complete human review, resolve any
 auxiliary claims retained for submission, provide reviewer access and select a venue. See [TODO](TODO.md) for completion criteria.
 Do not start another broad model/mutant campaign by default.

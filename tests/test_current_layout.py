@@ -135,5 +135,54 @@ class HistoricalArchive(unittest.TestCase):
                 catalog.preserved_bytes(root, 'old.py', {'old.py': b'old bytes'})
 
 
+class InitializationFailures(unittest.TestCase):
+    def test_bad_input_pin_fails_before_creating_a_run(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            repo, root = base / 'repo', base / 'run'
+            inputs, refs = base / 'inputs', base / 'refs'
+            model, reference = inputs / 'models/original.tflite', refs / 'reference/body'
+            for path in (model, reference):
+                path.parent.mkdir(parents=True)
+                path.write_bytes(b'expected')
+            pin = hashlib.sha256(b'expected').hexdigest()
+            inventory = repo / 'docs/reproduction/inputs.json'
+            inventory.parent.mkdir(parents=True)
+            inventory.write_text(json.dumps({
+                'model_conditions': [{'id': 'original', 'primary_model': {'expected_sha256': pin}}],
+                'p3_reference_prerequisites': [{'id': 'reference', 'body': {'expected_sha256': pin}}]}))
+            for path, message in [(model, 'Model identity differs'), (reference, 'Reference identity differs')]:
+                with self.subTest(path=path), patch.object(INIT, 'REPO', repo):
+                    path.write_bytes(b'changed')
+                    with self.assertRaisesRegex(ValueError, message):
+                        INIT.initialize(root, inputs, refs)
+                    self.assertFalse(root.exists())
+                    path.write_bytes(b'expected')
+
+    def test_existing_run_is_preserved_before_reading_inputs(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            marker = root / 'observation'
+            marker.write_bytes(b'keep')
+            with self.assertRaisesRegex(ValueError, 'new external run root'):
+                INIT.initialize(root, root / 'missing-inputs', root / 'missing-references')
+            self.assertEqual(marker.read_bytes(), b'keep')
+
+    def test_failed_adapter_keeps_logs_and_command_record(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            provenance = root / 'provenance'
+            provenance.mkdir()
+            failure = subprocess.CompletedProcess(['adapter'], 2, b'partial stdout', b'failure detail')
+            with patch.object(INIT.subprocess, 'run', return_value=failure), \
+                    self.assertRaises(subprocess.CalledProcessError):
+                INIT.initialize_android(root)
+            self.assertEqual((provenance / 'initialize-android.stdout').read_bytes(), b'partial stdout')
+            self.assertEqual((provenance / 'initialize-android.stderr').read_bytes(), b'failure detail')
+            record = json.loads((provenance / 'initialization-commands.json').read_text())[0]
+            self.assertEqual(record['exit_code'], 2)
+            self.assertEqual(record['command'][-1], str(root / 'android'))
+
+
 if __name__ == '__main__':
     unittest.main()

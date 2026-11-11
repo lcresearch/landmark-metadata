@@ -37,17 +37,11 @@ and follow the [repository policy](AGENTS.md).
   length, anonymity, disclosure and artifact requirements before submission.
   Old venue suggestions/deadlines are historical; no venue or submission is approved.
 
-PR #18–#20 are squash-merged; main reached `e9da459…`. The November manuscript
-revision is in [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22),
-open for review, and requires its own merge instruction.
+PR #18–#22 are squash-merged. The final sequence was
+[paper #22](https://github.com/lcresearch/landmark-metadata/pull/22) at `ed3e32a…`,
+then [cleanup #21](https://github.com/lcresearch/landmark-metadata/pull/21) at
+`8005274…`. Both single-parent commits match the reviewed file trees.
 Repository integration does not complete the remaining research/human tasks.
-
-## Code-layout integration
-
-[Cleanup PR #21](https://github.com/lcresearch/landmark-metadata/pull/21) is stacked
-on paper PR #22. The [compatibility review](docs/PR21_REVIEW.md) fixes moved source
-paths and preserves the paper/index pins. Both still require merge authorization;
-review and integrate #22 before #21, rechecking actual heads and default-branch state.
 
 ## Code-layout maintenance
 
@@ -56,6 +50,11 @@ The current entry is [experiment](experiment/README.md); the old source tree is
 adding runtime dependencies. Before the next authorized inference run, use an
 absent external root and record the new source identities; this cleanup only
 validates source staging and regressions, not new scientific execution.
+
+The initialization and paper-index maintenance refactor is on
+`codex/refactor-maintained-workflows`, based on `8005274…`. Review it separately;
+the earlier merge instructions do not authorize merging new changes. Historical
+producer bytes, scientific results and human-review statuses remain unchanged.
 
 ## Completed foundations
 
