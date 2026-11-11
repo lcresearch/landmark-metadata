@@ -41,6 +41,9 @@ See the [delivery receipt](work/focal-rerun-20261110/delivery-record.json) and
 preserved imports and manuscript pins remain unchanged. Human audit, manuscript
 provenance reconciliation and remote evidence deposit remain pending. No new run
 payload belongs in Git, and no unattended cross-session completion is promised.
+Source/docs are delivered for review in
+[PR #19](https://github.com/lcresearch/landmark-metadata/pull/19), stacked on the
+still-open input-recovery PR #18. Neither PR is merged by this execution request.
 
 ## Lost cloud evidence and recovered inputs — 10 November 2026 (America/Los_Angeles)
 

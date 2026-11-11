@@ -10,6 +10,8 @@ separate from the protocol's comparison targets.
 The [delivery receipt](delivery-record.json) pins the new 3.32 GB local archive;
 all 2,120 members passed full readback. E1/E2 and P2 automated audits pass, P3 core
 is complete within its stated scope, and all 176 source/regression tests pass.
+Delivered as [PR #19](https://github.com/lcresearch/landmark-metadata/pull/19),
+stacked on PR #18 for review; neither PR is merged by this task.
 
 This is a known-outcome rerun of the focal E1/E2/P2 case plus the six-input P3
 core analysis. It does not recover or authenticate the lost October execution.
