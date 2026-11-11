@@ -204,5 +204,10 @@ Generator, build-time metadata, runtime Support and Task identities are separate
 The current paper/evidence pins and human PENDING statuses remain unchanged.
 The [delivery receipt](work/support770-reconstruction-20261111/delivery-record.json)
 binds locally retained evidence; a second durable copy/reviewer access remains open.
-Deliver this run through its own unmerged feature-branch PR. #319 and version
-comparisons remain outside the authorized execution scope.
+This run is delivered in [PR #25](https://github.com/lcresearch/landmark-metadata/pull/25),
+which remains unmerged. Its [review fixes](work/support770-reconstruction-20261111/REVIEW_FIXES.md)
+require reached outputs, bind install/instrument/collect records to the consumer,
+and enforce the 600-second build budget. The current reader passes 111 checks on
+unchanged evidence; 222 regressions pass. No generation/build/inference was rerun,
+and sealed files/receipt retain their original bytes and modification times.
+#319 and version comparisons remain outside the authorized execution scope.

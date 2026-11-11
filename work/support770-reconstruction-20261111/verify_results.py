@@ -1,8 +1,11 @@
 """Check saved identities/completion without requiring the reported failure to recur."""
 import argparse
+from datetime import datetime
 import hashlib
 import json
+import math
 from pathlib import Path
+import tarfile
 import zipfile
 
 
@@ -10,7 +13,116 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def check_outputs(folder, consumer, observed, output_shape, labels, check):
+    """Require artifacts implied by reached stages, without forcing a scientific PASS."""
+    stages = ['construction', 'process', 'raw_observation', 'category_getter'] if consumer == 'wrapper' else [
+        'construction', 'segment', 'mask_observation']
+    stages = ['asset_identity', 'input', *stages]
+    failure = observed.get('earliest_failing_stage')
+    states = [observed.get(stage + '_status') for stage in stages]
+    if observed.get('scientific_status') == 'PASS':
+        check(consumer + ' successful stage sequence', all(state == 'PASS' for state in states) and failure is None)
+    elif failure in stages:
+        index = stages.index(failure)
+        check(consumer + ' failed stage sequence', all(state == 'PASS' for state in states[:index]) and
+              states[index] == 'FAIL' and all(state in (None, 'NOT_REACHED') for state in states[index + 1:]))
+    else:
+        check(consumer + ' known failing stage', False)
+
+    def tensor(name, shape, element_bytes):
+        value = observed.get(name)
+        valid = isinstance(value, dict) and {'shape', 'bytes', 'sha256'} <= value.keys()
+        check(consumer + ' required output ' + name, valid)
+        if not valid:
+            return
+        check(consumer + ' output shape ' + name, value['shape'] == shape and
+              isinstance(value['shape'], list) and all(type(d) is int for d in value['shape']))
+        check(consumer + ' output size ' + name, type(value['bytes']) is int and
+              value['bytes'] == math.prod(shape) * element_bytes)
+        path = folder / 'device' / (name + '.bin')
+        check(consumer + ' output ' + name, path.is_file() and sha(path) == value['sha256'] and
+              path.stat().st_size == value['bytes'])
+
+    if consumer == 'wrapper':
+        if observed.get('raw_observation_status') == 'PASS':
+            tensor('raw_output', output_shape, 4)
+        if observed.get('category_getter_status') == 'PASS':
+            categories = observed.get('categories')
+            check('wrapper returned categories', isinstance(categories, list) and len(categories) == len(labels) and
+                  all(isinstance(c, dict) and isinstance(c.get('label'), str) and
+                      type(c.get('index')) is int and type(c.get('score')) in (int, float) and
+                      math.isfinite(c['score']) for c in categories))
+    else:
+        if observed.get('segment_status') == 'PASS':
+            check('task returned segmentation count', type(observed.get('segmentations')) is int and
+                  observed['segmentations'] == 1)
+        if observed.get('mask_observation_status') == 'PASS':
+            check('task requested output kind', observed.get('requested_output_type') == 'CATEGORY_MASK')
+            outputs = observed.get('outputs')
+            valid = isinstance(outputs, list) and len(outputs) == 1 and isinstance(outputs[0], dict)
+            check('task required output descriptions', valid)
+            if valid:
+                output = outputs[0]
+                check('task mask kind and count', output.get('output_type') == 'CATEGORY_MASK' and
+                      type(output.get('mask_count')) is int and output['mask_count'] == 1)
+                returned = output.get('labels')
+                check('task associated labels', isinstance(returned, list) and len(returned) == len(labels) and
+                      all(isinstance(item, dict) and item.get('label') == label
+                          for item, label in zip(returned, labels)))
+            tensor('mask_0_0', output_shape[1:3], 1)
+
+
+def check_invocation(root, consumer, build, observed, check):
+    """Bind install, execution and collection to this fixed consumer and device."""
+    folder = root / 'executions' / consumer
+    instrument = {'wrapper': 'WrapperInstrumentation', 'task': 'TaskInstrumentation'}[consumer]
+    package = 'org.example.support770.' + consumer
+    class_name = 'org.example.support770.' + instrument
+    check(consumer + ' frozen consumer identity', build.get('package') == package and build.get('instrument') == instrument)
+    check(consumer + ' observed instrumentation', observed.get('instrumentation') == class_name)
+    boot = json.loads((root / 'boot/launch.json').read_text())
+    check(consumer + ' owned device', boot.get('serial') == 'emulator-5556')
+    prefix = [str(root / 'sdk/platform-tools/adb'), '-s', 'emulator-5556']
+    expected = {
+        'install': [*prefix, 'install', str(root / 'build' / consumer / 'consumer.apk')],
+        'instrumentation': [*prefix, 'shell', 'am', 'instrument', '-w', package + '/' + class_name],
+        'collect': [*prefix, 'exec-out', 'run-as', package, 'tar', '-C', 'files/evidence', '-cf', '-', '.'],
+    }
+    intervals = []
+    for stage, arguments in expected.items():
+        record = json.loads((folder / stage / 'command.json').read_text())
+        check(consumer + ' ' + stage + ' command identity', record.get('command') == arguments and record.get('cwd') == str(root))
+        check(consumer + ' ' + stage + ' completed', record.get('status') == 'PASS' and
+              type(record.get('exit_code')) is int and record['exit_code'] == 0 and not record.get('timeout'))
+        try:
+            start, finish = (datetime.fromisoformat(record[key]) for key in ('started_utc', 'finished_utc'))
+            valid = start.tzinfo is not None and finish.tzinfo is not None and start <= finish
+        except (KeyError, TypeError, ValueError):
+            valid = False
+        check(consumer + ' ' + stage + ' timestamps', valid)
+        if valid:
+            intervals.append((start, finish))
+    check(consumer + ' invocation chronology', len(intervals) == 3 and
+          all(left[1] <= right[0] for left, right in zip(intervals, intervals[1:])))
+    check(consumer + ' install confirmed', b'Success' in (folder / 'install/stdout').read_bytes())
+    # Bind device records to the collected stream, not only a duplicate summary JSON.
+    members = {}
+    with tarfile.open(folder / 'collect/stdout') as archive:
+        for member in archive:
+            if member.isdir():
+                continue
+            name = Path(member.name.removeprefix('./'))
+            if not member.isfile() or name.is_absolute() or '..' in name.parts or name in members:
+                raise ValueError('Unexpected/duplicate collected member')
+            members[name] = archive.extractfile(member).read()
+    device = folder / 'device'
+    actual = {p.relative_to(device) for p in device.rglob('*') if p.is_file()}
+    check(consumer + ' collected member set', set(members) == actual)
+    check(consumer + ' collected bytes', all((device / name).read_bytes() == data for name, data in members.items()))
+
+
 def verify(root):
+    root = root.resolve()
     checks = []
     def check(name, condition):
         checks.append({'check': name, 'status': 'PASS' if condition else 'FAIL'})
@@ -19,6 +131,12 @@ def verify(root):
     inspection = json.loads((root / 'model-inspection/inspection.json').read_text())
     check('model inspection identity', inspection['sha256'] == model_sha and inspection['bytes'] == model.stat().st_size)
     check('model linkage', inspection['linkage_pass'] is True)
+    output_shape = [1, 257, 257, 21]
+    check('inspected float32 output', len(inspection['outputs']) == 1 and
+          inspection['outputs'][0]['shape'] == output_shape and inspection['outputs'][0]['type'] == 0)
+    with zipfile.ZipFile(model) as archive:
+        labels = archive.read('labelmap.txt').decode('utf-8').splitlines()
+    check('associated label count', len(labels) == output_shape[-1])
     generation = json.loads((root / 'stages/agp-generation/command.json').read_text())
     check('actual AGP command completed', generation['status'] == 'PASS' and generation['exit_code'] == 0 and
           generation['command'][-1] == ':app:generateDebugMlModelClass' and not generation.get('timeout'))
@@ -50,18 +168,14 @@ def verify(root):
         for entry in freeze['consumers'][consumer]['classpaths']:
             check(consumer + ' dependency ' + entry['path'], sha(Path(entry['path'])) == entry['sha256'])
         folder = root / 'executions' / consumer
-        command = json.loads((folder / 'instrumentation/command.json').read_text())
-        check(consumer + ' invocation completed', command['status'] == 'PASS' and command['exit_code'] == 0 and not command.get('timeout'))
         observed = json.loads((folder / 'device/result.json').read_text())
+        check_invocation(root, consumer, build, observed, check)
         check(consumer + ' observed record link', result['observed'] == observed and result['collection_status'] == 'PASS')
         check(consumer + ' scientific status link', result['scientific_status'] == observed['scientific_status'])
         check(consumer + ' completed', observed.get('completed') is True)
         check(consumer + ' device model', observed.get('model_sha256') == model_sha and observed.get('model_bytes') == model.stat().st_size)
         check(consumer + ' same input', observed.get('input_sha256') == expected_input == sha(folder / 'device/input.rgb'))
-        for key, value in observed.items():
-            if isinstance(value, dict) and {'sha256', 'bytes', 'shape'} <= value.keys():
-                path = folder / 'device' / (key + '.bin')
-                check(consumer + ' output ' + key, sha(path) == value['sha256'] and path.stat().st_size == value['bytes'])
+        check_outputs(folder, consumer, observed, output_shape, labels, check)
         if observed.get('scientific_status') == 'FAIL':
             stage = observed.get('earliest_failing_stage')
             check(consumer + ' retained failure detail', observed.get(str(stage) + '_status') == 'FAIL' and

@@ -5,7 +5,7 @@ The actual scientific outcomes are wrapper **FAIL at category_getter** and Task
 separate from saved-byte verification PASS; the failure is neither discarded nor
 converted into a scientific success because it matched a known report.
 
-`verify_results.py` passed 66 identity/completion checks over the complete model,
+At initial PR #25 delivery, `verify_results.py` passed 66 identity/completion checks over the complete model,
 actual AGP command, generated source, frozen build sources, classes, DEX, native
 payloads, dependencies, APKs, device model/input hashes and returned raw files.
 It checks complete failure details without requiring the reported exception to
@@ -23,8 +23,13 @@ All 199 existing repository regressions passed after integration. Two additional
 synthetic controller regressions verify that a host transport timeout stops the
 owned device package, preserves partial evidence without replay, and prevents
 the next consumer if stopping cannot be confirmed. They are not model experiments.
-The final complete suite passed **201 tests**. Source/import/manuscript and diff
+The initial complete suite passed **201 tests**. Source/import/manuscript and diff
 checks passed; the 18 historical-locator warnings remain visible.
+
+The subsequent [review fixes](REVIEW_FIXES.md) close three gaps in required-output,
+invocation-binding and build-deadline enforcement. The current reader passes 111
+checks on unchanged evidence and the expanded suite passes 222 tests. Original
+readbacks/snapshots are preserved; this follow-up performs no model execution.
 
 ## Executed sources and post-run robustness review
 

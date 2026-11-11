@@ -3,6 +3,7 @@ import argparse
 from datetime import datetime, timezone
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import signal
@@ -14,12 +15,15 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--cwd', type=Path, required=True)
-    parser.add_argument('--timeout', type=int, required=True)
+    parser.add_argument('--timeout', type=float, required=True)
+    parser.add_argument('--deadline-monotonic', type=float)
     parser.add_argument('command', nargs=argparse.REMAINDER)
     args = parser.parse_args()
     command = args.command[1:] if args.command[:1] == ['--'] else args.command
-    if not command or args.timeout <= 0:
+    if not command or not math.isfinite(args.timeout) or args.timeout <= 0:
         parser.error('command and positive timeout required')
+    if args.deadline_monotonic is not None and not math.isfinite(args.deadline_monotonic):
+        parser.error('deadline must be finite')
     args.output.mkdir(parents=True, exist_ok=False)
     record = {'command': command, 'cwd': str(args.cwd.resolve()),
               'timeout_seconds': args.timeout,
@@ -28,25 +32,35 @@ def main():
               'environment': {k: os.environ.get(k) for k in (
                   'JAVA_HOME', 'GRADLE_USER_HOME', 'ANDROID_SDK_ROOT',
                   'ANDROID_USER_HOME', 'ANDROID_AVD_HOME', 'PYTHONDONTWRITEBYTECODE')}}
+    if args.deadline_monotonic is not None:
+        record['deadline_monotonic'] = args.deadline_monotonic
     destination = args.output / 'command.json'
     destination.write_text(json.dumps(record, indent=2) + '\n')
     start = time.monotonic()
+    deadline = min(start + args.timeout, args.deadline_monotonic) if args.deadline_monotonic is not None else start + args.timeout
     with (args.output / 'stdout').open('wb') as out, (args.output / 'stderr').open('wb') as err:
         try:
+            if deadline <= time.monotonic():
+                raise subprocess.TimeoutExpired(command, 0)
             process = subprocess.Popen(command, cwd=args.cwd, stdout=out, stderr=err,
                                        start_new_session=True)
             try:
-                record['exit_code'] = process.wait(timeout=args.timeout)
+                record['exit_code'] = process.wait(timeout=max(0, deadline - time.monotonic()))
             except subprocess.TimeoutExpired:
-                os.killpg(process.pid, signal.SIGKILL)
+                try:
+                    os.killpg(process.pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
                 record['exit_code'] = process.wait()
                 record['timeout'] = True
+        except subprocess.TimeoutExpired:
+            record.update(exit_code=124, timeout=True, launch_error='Deadline elapsed before launch')
         except OSError as exc:
             record['launch_error'] = repr(exc)
             record['exit_code'] = 127
     record['elapsed_seconds'] = time.monotonic() - start
     record['finished_utc'] = datetime.now(timezone.utc).isoformat()
-    record['status'] = 'PASS' if record['exit_code'] == 0 else 'FAIL'
+    record['status'] = 'PASS' if record['exit_code'] == 0 and not record.get('timeout') else 'FAIL'
     destination.write_text(json.dumps(record, indent=2) + '\n')
     print(json.dumps(record), flush=True)
     raise SystemExit(0 if record['status'] == 'PASS' else 1)

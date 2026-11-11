@@ -12,6 +12,10 @@ inference. Both retain the unsupported-consumer and historical-identity limits.
 Results, validation and retention identities are recorded alongside this run's
 source after collection. This area does not expand the current manuscript sample.
 
+The [PR #25 review fixes](REVIEW_FIXES.md) strengthen output/call validation and
+enforce one shared 600-second build deadline per consumer. They preserve all
+sealed records and use saved-byte checks/synthetic regressions without new inference.
+
 ## Execution entry points
 
 All outputs must be outside Git in a **new, absent** root. The actual root is

@@ -345,3 +345,17 @@ claims. Keep generator/metadata/Support/Task/runtime identities distinct; this
 pair does not isolate a LiteRT version effect. Retain all raw material outside Git
 and deliver new source/protocol/results as a separate unmerged PR. Current paper
 pins, human verification and external backup requirements remain unchanged.
+
+## 2026-11-11 America/Los_Angeles — Repair PR #25 verification and stop rules
+
+The user requests fixing the three PR #25 review findings, adding regression
+tests, updating that PR and reviewing it again, explicitly preserving sealed
+evidence and prohibiting new inference. Require artifacts implied by reached
+stages, bind install/instrument/collect commands to fixed consumer/device/build
+identities, and use one monotonic 600-second build deadline per consumer. Preserve
+valid scientific failures; evidence validation must not require a desired outcome.
+Use synthetic fixtures and fake clocks/processes, then read unchanged actual
+records into a new validation directory. Do not rewrite the original receipt,
+archive, raw outputs or executed source snapshots. Keep the new tools distinct
+from what executed historically. Update the existing feature PR without merging;
+human verification and manuscript boundaries remain unchanged.

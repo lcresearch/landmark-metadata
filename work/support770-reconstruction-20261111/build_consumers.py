@@ -7,6 +7,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
+import time
 import zipfile
 
 SOURCE = Path(__file__).resolve().parent
@@ -14,6 +15,31 @@ SOURCE = Path(__file__).resolve().parent
 
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+class ConsumerBudget:
+    """One deadline covers all commands and local packaging work for a consumer."""
+    def __init__(self):
+        self.started = time.monotonic()
+        self.deadline = self.started + 600
+
+    def remaining(self):
+        seconds = self.deadline - time.monotonic()
+        if seconds <= 0:
+            raise TimeoutError('Consumer build exceeded its 600-second budget')
+        return seconds
+
+
+def run_stage(root, env, name, command, budget=None):
+    timeout = min(180, budget.remaining()) if budget else 180
+    deadline = ['--deadline-monotonic', str(budget.deadline)] if budget else []
+    result = subprocess.run([sys.executable, '-B', str(SOURCE / 'record_command.py'),
+        '--output', str(root / 'build/stages' / name), '--cwd', str(root),
+        '--timeout', str(timeout), *deadline, '--', *map(str, command)], env=env)
+    if result.returncode:
+        raise RuntimeError(f'Build stage failed: {name}')
+    if budget:
+        budget.remaining()
 
 
 def main():
@@ -52,25 +78,22 @@ def main():
             lock['consumers'][consumer][group] = items
     (root / 'runtime-freeze.json').write_text(json.dumps(lock, indent=2) + '\n')
 
-    def stage(name, command, timeout=180):
-        result = subprocess.run([sys.executable, '-B', str(SOURCE / 'record_command.py'),
-            '--output', str(build_root / 'stages' / name), '--cwd', str(root),
-            '--timeout', str(timeout), '--', *map(str, command)], env=env)
-        if result.returncode:
-            raise RuntimeError(f'Build stage failed: {name}')
-
     key = build_root / 'local-test.keystore'
-    stage('keytool', [jdk / 'bin/keytool', '-genkeypair', '-keystore', key, '-storepass', 'android',
+    run_stage(root, env, 'keytool', [jdk / 'bin/keytool', '-genkeypair', '-keystore', key, '-storepass', 'android',
         '-alias', 'research', '-keypass', 'android', '-keyalg', 'RSA', '-keysize', '2048',
         '-validity', '3650', '-dname', 'CN=Support770 local research'])
     records = []
     for consumer, config in lock['consumers'].items():
+        budget = ConsumerBudget()
+        def stage(name, command):
+            run_stage(root, env, name, command, budget)
         folder = build_root / consumer
         folder.mkdir()
         instrument = 'WrapperInstrumentation' if consumer == 'wrapper' else 'TaskInstrumentation'
         package = 'org.example.support770.' + consumer
         record = {'consumer': consumer, 'package': package, 'instrument': instrument,
-                  'generated_source_modified': False if consumer == 'wrapper' else None}
+                  'generated_source_modified': False if consumer == 'wrapper' else None,
+                  'build_budget_seconds': 600}
         try:
             classes = folder / 'classes'; classes.mkdir()
             deps = [Path(x['path']) for x in config['classpaths']]
@@ -101,13 +124,16 @@ def main():
             stage(consumer + '-sign', [bt / 'apksigner', 'sign', '--ks', key, '--ks-key-alias', 'research',
                 '--ks-pass', 'pass:android', '--key-pass', 'pass:android', '--out', folder / 'consumer.apk', folder / 'aligned.apk'])
             stage(consumer + '-verify', [bt / 'apksigner', 'verify', '--verbose', folder / 'consumer.apk'])
-            record.update(status='PASS', apk_sha256=sha(folder / 'consumer.apk'))
+            record['apk_sha256'] = sha(folder / 'consumer.apk')
             with zipfile.ZipFile(folder / 'consumer.apk') as archive:
                 record['packaged_model_sha256'] = hashlib.sha256(archive.read('assets/lite_model_deeplabv3_1_metadata_2.tflite')).hexdigest()
             if consumer == 'wrapper' and sha(generated) != lock['generated_source_sha256']:
                 raise ValueError('Generated source changed')
+            budget.remaining()
+            record['status'] = 'PASS'
         except Exception as exc:
             record.update(status='FAIL', error=repr(exc))
+        record['elapsed_seconds'] = time.monotonic() - budget.started
         records.append(record)
         (root / 'build-results.json').write_text(json.dumps(records, indent=2) + '\n')
     raise SystemExit(0 if all(r['status'] == 'PASS' for r in records) else 1)
