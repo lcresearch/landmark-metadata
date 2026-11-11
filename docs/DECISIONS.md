@@ -283,3 +283,22 @@ either PR. Keep frozen paper/claim/handoff/evidence pins unchanged, distinguish
 working-tree and archived-Git identity resolution, and verify saved records into
 fresh external outputs. Source tests and readback are not new Android inference
 or human review. See the follow-up review for findings and exact scope.
+
+
+## 2026-11-11 America/Los_Angeles — Focus acceptance decisions before case expansion
+
+The user requested revising the short paper around acceptance-check engineering
+implications, compressing recovery history, updating the PR, then screening 1–3
+existing public reports. PR #22 was already merged and #21's source cleanup is
+on main; start the follow-up from `8005274e9eccbea30fb3189779f03e8d693b3720` and
+retain both changes. Preserve prior manuscripts, evidence pins and audit status.
+
+Use the existing observations to explain category access, reference mapping,
+consumer-stage checks and complete-package identity. Keep strong ordinary checks
+and analytical/observed distinctions explicit. Retain loss, known outcomes,
+interruptions/selection, the P2 reader correction and P3 core-only scope in the
+body; detailed identities remain in the evidence map. Candidate screening must
+stay within the existing report pool, preserve negative/excluded cases and
+separate real reports from independently reproduced natural failures. No new
+model execution, maintainer contact, evidence upload or merge is authorized by
+this screening request.

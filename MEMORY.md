@@ -25,7 +25,7 @@ records fresh saved-byte checks without new inference. Both PRs remain unmerged.
 ## Current manuscript and research boundary
 
 **Validation Boundaries for Model Label Resources: A Controlled Classifier Case
-Study** now uses the [11 November short-paper revision](work/rerun-paper-revision-20261111/REVISION_NOTES.md).
+Study** now uses the [11 November short-paper revision](work/acceptance-paper-revision-20261111/REVISION_NOTES.md).
 It incorporates the November E1/E2/P2 rerun and P3 six-input core, and explicitly
 discloses old evidence loss, known outcomes, two interrupted collections, selected
 continuations and the P2 reader correction. The four-page source retains the
@@ -36,7 +36,7 @@ Saved-byte Android/P2/P3 rechecks and full 2,120-member archive verification pas
 these are new editorial readbacks, not new model execution or human verification.
 The old 48-source index resolves 47 files in the checkout plus S40's exact old
 Git version; the maintained reproduction README has since changed. No pin was
-silently refreshed. The [six current author questions](work/rerun-paper-revision-20261111/ARTIFACT_HANDOFF.md)
+silently refreshed. The [six current author questions](work/acceptance-paper-revision-20261111/ARTIFACT_HANDOFF.md)
 and all historical human-audit entries remain **PENDING**. No venue is selected.
 
 The contribution is a bounded empirical study: one classifier graph, five model
@@ -142,9 +142,12 @@ Review passed 170 tests at #18 and 176 for the final code, source/import/manuscr
 checks, and ten selected external-record digests. No new model execution or full
 archive readback was performed during this review. Human verification remains pending.
 
-The manuscript revision is delivered in [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22)
-on `codex/paper-rerun-evidence-20261111`, open for review. The editorial request
-does not authorize its merge.
+PR #22 and the subsequent code-cleanup PR #21 are merged; current main is
+`8005274e9eccbea30fb3189779f03e8d693b3720`. The acceptance-focused follow-up is on
+`codex/acceptance-checks-cases-20261111`. It retains the preceding evidence index
+and observations, with four explicit acceptance decisions and concise provenance.
+The current task authorizes a PR and bounded public-report screening, not a merge
+or a new natural-case execution.
 Next: retain a second verified evidence copy, complete human review, resolve any
 auxiliary claims retained for submission, provide reviewer access and select a venue. See [TODO](TODO.md) for completion criteria.
 Do not start another broad model/mutant campaign by default.

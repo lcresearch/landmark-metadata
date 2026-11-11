@@ -1,0 +1,179 @@
+% November 2026 evidence revision; October sources remain unchanged.
+\documentclass[10pt,conference]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,booktabs,array,tabularx}
+\usepackage[hyphens]{url}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\code}[1]{\texttt{#1}}
+\hypersetup{pdftitle={Validation Boundaries for Model Label Resources: A Controlled Classifier Case Study}}
+\title{Validation Boundaries for Model Label Resources:\\A Controlled Classifier Case Study}
+\author{\IEEEauthorblockN{Anonymous author(s)}}
+% Provisional workshop format; author verification and evidence delivery pending.
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Acceptance checks for a model package establish different properties of the interface an application consumes. We characterize these boundaries in a controlled case involving one EfficientNet classifier. With computation and generated code preserved, deleting one label lets inference complete but makes the actual generated Android category getter throw. A count-preserving permutation returns successfully while changing 999 of 1,000 displayed strings with unchanged score bits; restoration reverses the change. A six-input publisher-reference core check qualifies the display-order disagreement. On the same Android virtual device, the wrapper checks cardinality at getter access, while Task ImageClassifier rejects deletion at construction. These observations connect acceptance decisions to concrete assertions: exercise the consumed getter, compare associations to an artifact-linked reference, and test the selected consumer's public stages. Trusted complete-package identity remains a separate protection. This is a known-outcome November rerun after earlier execution material was lost. The contribution is a bounded empirical characterization of test scope and consumer-specific enforcement.
+\end{abstract}
+
+\section{Problem and Research Questions}
+\label{sec:contracts}
+Consider accepting a packaged classifier for an application that displays category names. Successful import, unchanged raw scores and a returned category list are different acceptance claims. A test must observe the property the application needs. Metadata-based interface generation and ordered label pairing are documented capabilities~\cite{schema,codegen-doc,tensorlabel}; the question is what evidence their individual entry points supply.
+
+\textbf{RQ1:} In the tested package, which acceptance claims are supported by structural checks, numerical regression, category access and an artifact-linked display reference? \textbf{RQ2:} How does consumer choice change the public operation at which the same cardinality condition is enforced?
+
+We answer with controlled resource interventions under computation/code preservation and a same-Android consumer comparison. Table~\ref{tab:coverage} connects each check to its observed scope; Section~\ref{sec:discussion} derives concrete acceptance assertions. Controls and restoration support attribution, while the publisher reference qualifies association judgments. These are test-design implications of one case, not evidence that developers routinely omit checks or that a new checker outperforms existing guards. Support \#770 already reported a generated segmentation getter failure in 2022~\cite{support770,support770reply}; the study does not claim discovery of that phenomenon.
+
+\section{Case and Acceptance Checks}
+\label{sec:setup}
+We distinguish graph $G$, weights $W$, ordered outputs $O$, embedded metadata $M$, label resources $F$, and generated interface code $H$. Deletion and permutation intervene on $F$, preserving $G/W/O$, $M$ and $H$. The description control changes $M$ while preserving the tested code and numerical behavior. Equality is conditional on the fixed consumers, preprocessing and inputs, not arbitrary metadata changes.
+
+The core is one version-1 float32 EfficientNet Lite0 graph~\cite{efficientnet}, input \code{[1,224,224,3]}, output \code{[1,1000]}. Five byte conditions comprise original, one-character description control, last-label deletion, cyclic permutation and restoration. The permutation maps $[L_0,\ldots,L_{999}]$ to $[L_1,\ldots,L_{999},L_0]$, preserving filename, count and multiset. Restoration recovers the label payload and behavior, not every byte of the original ZIP container.
+
+Support 0.4.4 generates Java compiled unchanged by the explicit APK harness, with JDK 17 targeting Java 8 and TFLite 2.13.0. An API-30 x86\_64 software AVD serves both consumers, CPU/one inference thread. Dependency identities and environment differences are recorded in evidence group \code{N1}. The actual call chain is
+\begin{quote}\small\ttfamily\raggedright
+ContractModel.newInstance(...)\\
+\(\rightarrow\) process(TensorImage)\\
+\(\rightarrow\) Outputs.\\
+\hspace*{1em}getProbabilityAsCategoryList()
+\end{quote}
+Construction loads labels; the getter later constructs the decoder. Immediately before it, the harness reads a duplicate output buffer without replacing the generated decoding expression. Constant RGB 127 and row-major bytes $(37j+17)\bmod256$ each supply $224\times224\times3$ bytes through UINT8 TensorImage and default generated preprocessing. They probe the interface, not recognition accuracy.
+
+E1/E2 comprise eight builds and sixteen condition/phase records: 32 input observations, 28 returned lists and four caught getter failures. They include primary/replay and overlapping conditions, not independent model samples. Preservation readback compares ordered computation, all 165 non-metadata buffers, $M/F$, source/classes/DEX/native payloads and corresponding raw/decoded outputs (\code{N2--N4}). Resource interventions preserve the pre-ZIP prefix; APK/package hashes may change.
+
+\paragraph{Evidence history}
+Results come from a new 10 November 2026 execution with historical outcomes already known; the October cloud material was reported lost and remains unavailable (\code{N0}). E1 primary collection was interrupted twice. The first attempt is retained but excluded; the second supplies original/description/deletion records, with restoration from a separate continuation. Later phases use per-condition invocations (\code{N7}). A P2 reader correction restored the full expected exception text without changing device records; its initial FAIL is retained (\code{N8}). P3 repeats only the six-input core. The claim--evidence map resolves \code{N0--N9} to exact paths/hashes and preserves source freezes, selection/copy records and failed attempts. The selected view is not one uninterrupted run and does not recover the lost history.
+
+\section{Results: What the Checks Establish}
+\label{sec:results}
+\subsection{Inference success does not establish category access}
+\label{sec:e1}
+In new E1 records, all four conditions pass the tested MetadataPopulator operation, generation, compilation, packaging, loading and process. Original, description control and restoration return 1,000 categories on both inputs in both phases. Deletion reaches the actual generated getter and throws \code{IllegalArgumentException}: ``Label number 999 mismatch the shape on axis 1''. All four deletion observations contain that generated-getter stack and preserved raw output (\code{N3}). The harness catches the exception; this is a failed public call, not an observed application crash.
+
+Generated code and raw bytes agree across conditions; successful returned score bits match their raw positions. Controls and restoration bound attribution to the resource change in this configuration (\code{N2--N3}, Table~\ref{tab:core}).
+
+\begin{table}[t]
+\caption{November conditions on both inputs. Computation/code/raw outputs agree; only the description control changes $M$. Phase aliases still represent one graph (N2--N4).}
+\label{tab:core}
+\centering\small
+\begin{tabular}{@{}l@{\hspace{0.8em}}r@{\hspace{0.8em}}l@{\hspace{0.8em}}l@{}}
+\toprule
+Condition & Labels & Getter & Display strings\\
+\midrule
+Original & 1,000 & returns & baseline\\
+Description & 1,000 & returns & same\\
+Deletion & 999 & throws & not returned\\
+Permutation & 1,000 & returns & 999 changed\\
+Restoration & 1,000 & returns & restored\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Successful access does not establish display agreement}
+\label{sec:e2}
+E2 returns successfully with identical raw bytes and score bits, hence unchanged argmax and top-five output indices. It changes 999 of 1,000 strings on each input in both phases; adjacent duplicate ``maillot'' labels explain the unchanged position. Inverse restoration recovers the original lists (\code{N4}). The wrapper overload leaves Category's index unset: comparisons use returned positions checked against raw tensors. E2 alone establishes association change, not semantic incorrectness.
+
+\paragraph{P3: six-input core only}
+\label{sec:p3}
+The new offline core check uses six pinned model/reference bodies (\code{N6}). A TFHub Lite0 fp32/2 artifact matches computation, ordered outputs, all 165 non-metadata buffers and associated labels. Its pinned card identifies classification/1 as parent~\cite{tfhub-lite-card}; the parent prescribes an external label file and removal of its background entry~\cite{tfhub-parent-card,imagenet-display}. Across 1,000 positions, original/restoration match all positions and permutation matches one. Deletion was not compared.
+
+The offset follows that instruction, not fitted alignment. The historical 30-request search and auxiliary synset inquiry were \emph{not rerun}. The catalog is a later snapshot and the label URL unversioned; pinned bytes identify the selected reference. Stable class-ID/training lineage remains \code{ABSTAIN}. Duplicate strings and these provenance limits constrain the result to qualified display-order disagreement, not prediction errors or accuracy.
+
+\subsection{Consumer choice changes the checked public stage}
+\label{sec:consumers}
+New P2 records cover ten configurations: five conditions each in wrapper and Task APKs on the same AVD (\code{N5}). Wrapper Support 0.4.4/TFLite 2.13.0 rejects deletion at its getter after process. Task Vision/Base 0.4.4 rejects it at \code{createFromFileAndOptions}, before either input reaches \code{classify}. The other four conditions succeed. Totals are 18 reached input observations, 16 lists and ten wrapper raw tensors; eight shared successful condition/input pairs agree in all returned score bits and labels after aligning class indices to wrapper positions.
+
+Task's outer IllegalStateException mentions a native-address failure; its IllegalArgumentException cause identifies 1,000 classes versus 999 labels. The complete cause chain localizes the observed cardinality rejection (\code{N5/N8}).
+
+Versioned source traces Task initialization through \code{CheckAndSetOutputs}~\cite{task-classifier}; the getter constructs TensorLabel, whose selected list path checks cardinality against the first nonunit axis and requires it to be final~\cite{tensorlabel}. Source explains mechanisms; observations locate executed stages. Task raw tensors were not observed, \code{classify} combines internal stages, native integrations differ and Task's embedded interpreter version is unknown. The comparison fixes device/OS/API/ABI without isolating an interpreter effect.
+
+\begin{table*}[t]
+\caption{Acceptance-check coverage in the focal case. O = November observation; S = versioned-source explanation; A = analytical implication; --- = unmeasured. Evidence keys resolve in the claim map. Rows establish different properties, not a ranking of detectors.}
+\label{tab:coverage}
+\centering\small
+\begin{tabularx}{\textwidth}{@{}p{0.23\textwidth}p{0.28\textwidth}XX@{}}
+\toprule
+Acceptance check & Property established & Label deletion & Label permutation\\
+\midrule
+V1 Metadata population & Specified structure/packing checks, not label-entry count (S) & Accepts (O, N3) & Accepts (O, N4)\\
+V2 Raw-output regression & Numerical equality on two inputs & Equal bytes (O, N3) & Equal bytes (O, N4)\\
+V3 Wrapper construction/process & Public creation and numerical execution & Both return (O, N3) & Both return (O, N4)\\
+V4 Actual generated getter & Selected decoding; count/axis guards (S) & Throws (O, N3/N5) & Returns; 999 strings change (O, N4)\\
+V5 Task construction & Output/label cardinality at initialization (S) & Rejects before classify (O, N5) & Accepts (O, N5)\\
+V6 Artifact-linked display map & Qualified publisher order & --- & 999 positions disagree (O, N6)\\
+V7 Trusted whole-package identity & Departure from approved complete bytes & Would detect change (A) & Would detect change (A)\\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\section{Engineering Implications for Acceptance}
+\label{sec:discussion}
+Table~\ref{tab:coverage} separates observed coverage, source explanation and analytical implications. The acceptance requirement determines the assertion; passing a row does not imply passing the others. The following decisions apply within the tested configuration and inputs.
+
+\paragraph{Accept category access}
+If an application consumes categories, its test should reach the actual generated getter after process and inspect the returned result. E1 passes population, construction and inference before this endpoint fails. Metadata population supplies structural acceptance at that named operation; raw-output regression supplies numerical equality. Neither observation exercises the application's final category access. The extra getter assertion tests a demonstrated gap without requiring a new analyzer.
+
+\paragraph{Accept a display association}
+A successful getter call is insufficient when the requirement includes a specified label--output mapping: E2 returns changed strings at 999 positions with equal scores. Compare the complete ordered mapping with a trustworthy reference linked to the selected artifact. P3 supplies such a qualified display reference for this case. A previous release's list alone detects change; approving a legitimate new mapping requires its own specification. Neither comparison establishes image-level prediction accuracy or stable class identity.
+
+\paragraph{Accept a consumer configuration}
+Exercise the public stages of the consumer the application will use. P2 rejects deletion at Task construction but at the wrapper getter after process. Record initialization and output-access outcomes separately, including nested causes. This guides where an integration test observes incompatibility; it does not measure debugging time, runtime savings or the benefit of earlier rejection. Passing one consumer's initialization does not certify another configuration's output path.
+
+\paragraph{Accept an unchanged package}
+Verify a trusted digest of the complete approved package, including associated resources. Both interventions change those bytes, so that integrity check would detect them; this is analytical coverage, not an executed defense experiment. It remains a strong ordinary protection. For a newly approved replacement, the digest binds the bytes being accepted while interface/reference checks assess the required properties. Graph/code identity alone covers a different object.
+
+The \emph{historical} five-condition E5 comparison reported zero extra rejections over the matched simple baseline or Task initialization: each rejected only deletion. That baseline family was not rerun or recovered here. E5 remains supporting diagnostics. The preserved October companion contains auxiliary Hand/static/parser history, not newly verified extensions of this sample; its raw-evidence limits remain open.
+
+\section{Related Work and Limitations}
+\label{sec:related}
+Support \#770 and its member reply describe an unsupported segmentation generation route and recommend Task~\cite{support770,support770reply}; that natural artifact was not reproduced here. MLGuard specifies ML contracts/wrappers~\cite{mlguard}; DocTer and ACETest derive constraints from documentation and validation code~\cite{docter,acetest}. DARA studies model naming consistency~\cite{dara}. DeepMutation's label errors concern training examples~\cite{deepmutation}, whereas ours change deployed display resources. NNSmith compares compiled numerical behavior~\cite{nnsmith}; our computation/numerics stay fixed while associations change. These position a controlled empirical object, not a new guard or field-wide firstness. The bounded literature review was not repeated.
+
+\label{sec:validity}
+Evidence covers one classifier, two synthetic inputs and fixed configurations, not natural-defect prevalence or accuracy loss. Known outcomes and selected continuations limit independence; agreement cannot establish the lost run's provenance or E2 predeclaration timing. Missing later reconstruction records remain a separate gap. No developer test suites, adoption rates, incident costs or acceptance-test effectiveness were measured.
+
+The preceding evidence revision rechecked saved November bytes and the core reference calculation; this follow-up adds no Android/model execution. The local archive contains 2,120 verified members (\code{N9}), not a complete offline runtime, remote backup or anonymous reviewer deposit. Human author verification and persistent reviewer access remain pending. The claim map retains historical/unchecked auxiliary claims separately. AI assisted code, analysis and writing; authorship and final venue-specific disclosure require author action.
+
+\section{Conclusion}
+This case links acceptance requirements to observable checks: numerical regression establishes the tested scores, the actual getter exercises category access, and an artifact-linked reference assesses the display mapping. Consumer choice changes where incompatibility becomes observable; complete-package identity remains a separate integrity protection. The controlled observations support these specific test-design decisions without establishing natural-defect prevalence, a superior detector or general model correctness.
+
+\IEEEtriggeratref{10}
+\begin{thebibliography}{16}\small\raggedright
+\bibitem{schema} TensorFlow Lite Support. \emph{Metadata schema}, v0.4.4. \url{https://github.com/tensorflow/tflite-support/blob/v0.4.4/tensorflow_lite_support/metadata/metadata_schema.fbs}.
+\bibitem{codegen-doc} Google AI Edge. \emph{Generate model interfaces with metadata}. Retrieved October 2026; snapshot preserved. \url{https://developers.google.com/edge/litert/android/metadata/codegen}.
+\bibitem{tensorlabel} TensorFlow Lite Support. \emph{TensorLabel.java}, v0.4.4. Selected source/binary identities are recorded in the evidence map. \url{https://github.com/tensorflow/tflite-support/blob/v0.4.4/tensorflow_lite_support/java/src/java/org/tensorflow/lite/support/label/TensorLabel.java}.
+\bibitem{efficientnet} MediaPipe Models. \emph{EfficientNet Lite0, float32, version 1}. \url{https://storage.googleapis.com/mediapipe-models/image_classifier/efficientnet_lite0/float32/1/efficientnet_lite0.tflite}.
+\bibitem{tfhub-lite-card} TensorFlow Hub. \emph{EfficientNet Lite0 fp32/2 model card}. Catalog commit \code{81fdea8ffa53b5acbd66a012d17fb8f9602c714b}. \url{https://github.com/tensorflow/tfhub.dev/blob/81fdea8ffa53b5acbd66a012d17fb8f9602c714b/assets/docs/tensorflow/models/efficientnet/lite0/fp32/lite/2.md}.
+\bibitem{tfhub-parent-card} TensorFlow Hub. \emph{EfficientNet Lite0 classification/1 model card}. Same catalog commit; explicit output-index mapping and background rule. \url{https://github.com/tensorflow/tfhub.dev/blob/81fdea8ffa53b5acbd66a012d17fb8f9602c714b/assets/docs/tensorflow/models/efficientnet/lite0/classification/1.md}.
+\bibitem{imagenet-display} TensorFlow. \emph{ImageNetLabels.txt}. Retrieved reference snapshot, SHA-256 prefix \code{536feacc519d}; full body and digest retained in N6. \url{https://storage.googleapis.com/download.tensorflow.org/data/ImageNetLabels.txt}.
+\bibitem{task-classifier} TensorFlow Lite Support. \emph{ImageClassifier Java/JNI/C++ implementation}, v0.4.4, commit \code{133228616ca14e1b64c03f6a0ea8610f41a60783}. The evidence map records selected source/dependency identities. \url{https://github.com/tensorflow/tflite-support/blob/133228616ca14e1b64c03f6a0ea8610f41a60783/tensorflow_lite_support/cc/task/vision/image_classifier.cc}.
+\bibitem{mlguard} Sheng Wong et al. MLGuard: Defend Your Machine Learning Model! In \emph{Proceedings of the 1st International Workshop on Dependability and Trustworthiness of Safety-Critical Systems with Machine Learned Components (SE4SafeML)}, 2023. \href{https://doi.org/10.1145/3617574.3617859}{doi:10.1145/3617574.3617859}.
+
+\bibitem{docter} Danning Xie et al. DocTer: Documentation-Guided Fuzzing for Testing Deep Learning API Functions. In \emph{Proceedings of the 31st ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)}, 2022. \href{https://doi.org/10.1145/3533767.3534220}{doi:10.1145/3533767.3534220}.
+
+\bibitem{acetest} Jingyi Shi et al. ACETest: Automated Constraint Extraction for Testing Deep Learning Operators. In \emph{Proceedings of the 32nd ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)}, 2023. \href{https://doi.org/10.1145/3597926.3598088}{doi:10.1145/3597926.3598088}.
+
+\bibitem{dara} W. Jiang et al. ``I see models being a whole other thing'': an empirical study of pre-trained model naming conventions and a tool for enhancing naming consistency. \emph{Empirical Software Engineering}, 30:155, 2025. \href{https://doi.org/10.1007/s10664-025-10711-4}{doi:10.1007/s10664-025-10711-4}.
+\bibitem{deepmutation} Lei Ma et al.
+DeepMutation: Mutation Testing of Deep Learning Systems.
+\href{https://arxiv.org/abs/1805.05206v2}{arXiv:1805.05206v2}, 2018.
+
+\bibitem{nnsmith} Jiawei Liu et al.
+NNSmith: Generating Diverse and Valid Test Cases for Deep Learning Compilers.
+In \emph{Proceedings of the 28th ACM International Conference on Architectural
+Support for Programming Languages and Operating Systems (ASPLOS)}, Volume 2,
+2023.
+\href{https://doi.org/10.1145/3575693.3575707}{doi:10.1145/3575693.3575707}.
+Inspected version: \href{https://arxiv.org/abs/2207.13066v2}{arXiv:2207.13066v2}.
+
+\bibitem{support770} TensorFlow Lite Support issue \#770.
+Semantic Segementation Example ``Label number 21 mismatch'' exception.
+Opened March 28, 2022; issue and comments retrieved October 4, 2026.
+\url{https://github.com/tensorflow/tflite-support/issues/770}.
+
+\bibitem{support770reply} lu-wang-g.
+Reply to TensorFlow Lite Support issue \#770, April 25, 2022.
+GitHub author association: MEMBER; retrieved October 4, 2026.
+\url{https://github.com/tensorflow/tflite-support/issues/770#issuecomment-1108777779}.
+\end{thebibliography}
+\end{document}

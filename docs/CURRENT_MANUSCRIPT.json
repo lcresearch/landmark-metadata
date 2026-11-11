@@ -1,15 +1,15 @@
 {
-  "repository_path": "work/rerun-paper-revision-20261111/manuscript/paper.tex",
-  "sha256": "30890778c7264174f9b1ef0e3ee6801d4bdf8b9d15416503d0f76f03880f3ed1",
-  "bytes": 21351,
+  "repository_path": "work/acceptance-paper-revision-20261111/manuscript/paper.tex",
+  "sha256": "d3876b7d9279528e479807a8ef2d655ac8061b86b28558e3dafea61a3e4a42aa",
+  "bytes": 22617,
   "derived_from_repository_path": "research/20261004-p2-p3/manuscript/paper.tex",
   "derived_from_sha256": "118ccc9820454f8ac1d3b0416ba456401e5ef3f9e9d0199ba1c59991103ec5a9",
-  "base_commit": "e9da459f6043684cdecba913c9c711433371909d",
-  "review_anchor": "e9da459f6043684cdecba913c9c711433371909d",
-  "scope": "November short-paper evidence reconciliation: new saved-byte and reference-core readbacks; no new Android/model/JVM execution. Known-outcome November run is distinct from lost October evidence.",
-  "editorial_predecessor_repository_path": "work/label-resource-revision-20261020/manuscript/paper.tex",
-  "editorial_predecessor_sha256": "be3367013898a7fe61594b9ad0c8705b6b9d0a10030e3adccd89f6952c71ce2c",
-  "editorial_predecessor_bytes": 21894,
+  "base_commit": "8005274e9eccbea30fb3189779f03e8d693b3720",
+  "review_anchor": "8005274e9eccbea30fb3189779f03e8d693b3720",
+  "scope": "Acceptance-check engineering implications with compressed evidence history; unchanged November observations and evidence index; no new execution, raw-evidence audit or human signoff.",
+  "editorial_predecessor_repository_path": "work/rerun-paper-revision-20261111/manuscript/paper.tex",
+  "editorial_predecessor_sha256": "30890778c7264174f9b1ef0e3ee6801d4bdf8b9d15416503d0f76f03880f3ed1",
+  "editorial_predecessor_bytes": 21351,
   "editorial_predecessor_companion": {
     "path": "work/label-resource-revision-20261020/manuscript/paper-full.tex",
     "sha256": "3ad2458ff34619d7a34a79bc2e439563f960dad0ed03cdef1d62cdcfdadd0adb",
@@ -35,6 +35,21 @@
       "path": "work/preaudit-followup-20261008/manuscript/paper-full.tex",
       "sha256": "a2b2ffe54cae5b62286c94729b725e4117ecff34f6b1cf81b61a8b8205463d19",
       "bytes": 40883
+    },
+    {
+      "path": "work/label-resource-revision-20261020/manuscript/paper.tex",
+      "sha256": "be3367013898a7fe61594b9ad0c8705b6b9d0a10030e3adccd89f6952c71ce2c",
+      "bytes": 21894
+    },
+    {
+      "path": "work/rerun-paper-revision-20261111/CLAIM_EVIDENCE.md",
+      "sha256": "ecf49cfbd5e771275d6bfc8b098564d59965976eb3cb536204ee89ac1d51d0bb",
+      "bytes": 16476
+    },
+    {
+      "path": "work/rerun-paper-revision-20261111/ARTIFACT_HANDOFF.md",
+      "sha256": "500f46ba30698df201ca1d11f42eb4f9b16b1530a963127d4b6af93477bbef8a",
+      "bytes": 5690
     }
   ],
   "full_companion": {
@@ -44,16 +59,16 @@
     "role": "Historical October companion; not updated or newly verified as a whole"
   },
   "full_companion_status": "HISTORICAL_CONTEXT_ONLY_NOT_UPDATED_FOR_NOVEMBER",
-  "claim_ledger": "work/rerun-paper-revision-20261111/CLAIM_EVIDENCE.md",
+  "claim_ledger": "work/acceptance-paper-revision-20261111/CLAIM_EVIDENCE.md",
   "claim_crosswalk": {
-    "path": "work/rerun-paper-revision-20261111/CLAIM_EVIDENCE.md",
-    "sha256": "ecf49cfbd5e771275d6bfc8b098564d59965976eb3cb536204ee89ac1d51d0bb",
-    "bytes": 16476
+    "path": "work/acceptance-paper-revision-20261111/CLAIM_EVIDENCE.md",
+    "sha256": "cbc13267b0f1dcd8a9f39ebc7e23389e4cbc51ccbc63a5dc7a7bb98bd27f62d9",
+    "bytes": 18565
   },
   "artifact_handoff": {
-    "path": "work/rerun-paper-revision-20261111/ARTIFACT_HANDOFF.md",
-    "sha256": "500f46ba30698df201ca1d11f42eb4f9b16b1530a963127d4b6af93477bbef8a",
-    "bytes": 5690
+    "path": "work/acceptance-paper-revision-20261111/ARTIFACT_HANDOFF.md",
+    "sha256": "1733f21cb16a0cae2e9eef2718af2140a20d3669c8f632edcdf62fec765c0031",
+    "bytes": 6244
   },
   "evidence_index": {
     "path": "work/rerun-paper-revision-20261111/evidence-index.json",
@@ -65,12 +80,12 @@
     "sha256": "4680384ebef75b5b462ce8e24522e08745fcf218a85ef1626ccae7b38fcf211a",
     "bytes": 4280
   },
-  "revision_notes": "work/rerun-paper-revision-20261111/REVISION_NOTES.md",
-  "validation": "work/rerun-paper-revision-20261111/VALIDATION.md",
-  "feature_branch": "codex/paper-rerun-evidence-20261111",
+  "revision_notes": "work/acceptance-paper-revision-20261111/REVISION_NOTES.md",
+  "validation": "work/acceptance-paper-revision-20261111/VALIDATION.md",
+  "feature_branch": "codex/acceptance-checks-cases-20261111",
   "pr_base": "main",
   "merge_policy": "This editorial task authorizes a source-only PR, not merging, publication of evidence, or paper submission.",
-  "delivery_status": "Open for review in PR #22; not merged.",
+  "delivery_status": "Preparing follow-up PR; predecessor PR #22 is merged.",
   "human_audit": {
     "status": "PENDING",
     "reviewer": null,
@@ -79,12 +94,13 @@
   "durable_anonymous_deposit": false,
   "new_android_or_model_inference": false,
   "new_jvm_probe": false,
-  "new_saved_byte_review": true,
+  "new_saved_byte_review": false,
   "historical_full_p3_search_rerun": false,
-  "pull_request": {
+  "predecessor_pull_request": {
     "number": 22,
     "url": "https://github.com/lcresearch/landmark-metadata/pull/22",
     "base": "main",
-    "head": "codex/paper-rerun-evidence-20261111"
+    "head": "codex/paper-rerun-evidence-20261111",
+    "merged": true
   }
 }

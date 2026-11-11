@@ -13,8 +13,8 @@ and follow the [repository policy](AGENTS.md).
   Keep evidence out of Git, Releases and LFS. Anonymous reviewer access is a
   separate delivery requirement; do not treat a private backup as its completion.
 - [x] **Reconcile the short manuscript with the new execution history.** The
-  [November revision](work/rerun-paper-revision-20261111/REVISION_NOTES.md) and
-  [claim map](work/rerun-paper-revision-20261111/CLAIM_EVIDENCE.md) disclose the lost
+  [November revision](work/acceptance-paper-revision-20261111/REVISION_NOTES.md) and
+  [claim map](work/acceptance-paper-revision-20261111/CLAIM_EVIDENCE.md) disclose the lost
   October material, known-outcome rerun, two interruptions/continuations, reader
   correction and P3 core-only scope. Current-pointer pins bind all new artifacts;
   historical manuscripts, old pins and PENDING audit targets remain preserved.
@@ -24,7 +24,7 @@ and follow the [repository policy](AGENTS.md).
   support or narrow/remove the submitted wording. The October companion remains
   unchanged and is not a newly verified November report.
 - [ ] **Complete human author verification against the revised artifacts.**
-  Carry the [six author questions](work/rerun-paper-revision-20261111/ARTIFACT_HANDOFF.md)
+  Carry the [six author questions](work/acceptance-paper-revision-20261111/ARTIFACT_HANDOFF.md)
   to the new source/evidence identities. Record reviewer, date, scope, observations
   and conclusions. Automated checks and agent reviews do not close this task;
   author verification, independent human audit and independent reproduction differ.
@@ -38,8 +38,9 @@ and follow the [repository policy](AGENTS.md).
   Old venue suggestions/deadlines are historical; no venue or submission is approved.
 
 PR #18–#20 are squash-merged; main reached `e9da459…`. The November manuscript
-revision is in [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22),
-open for review, and requires its own merge instruction.
+evidence revision was merged in [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22).
+The acceptance-focused editorial follow-up and bounded candidate screening use a
+new feature-branch PR; merging requires a separate instruction.
 Repository integration does not complete the remaining research/human tasks.
 
 ## Code-layout integration
@@ -65,7 +66,7 @@ validates source staging and regressions, not new scientific execution.
 | Maintained evidence readers and integrity guards | [October repairs](work/review-fixes-20261021/README.md) and [November binding repairs](work/review-fixes-20261110/README.md); synthetic regressions do not authenticate missing old executions |
 | Recovery of pinned focal inputs | [Recovery record](work/input-recovery-20261110/README.md); matching model/reference/input bytes, not recovered execution logs |
 | New focal execution and local packaging | [Results](work/focal-rerun-20261110/RESULTS.md) and [receipt](work/focal-rerun-20261110/delivery-record.json); E1/E2/P2 audited, P3 core complete, 2,120 archive members verified, human review and external delivery still open |
-| Current short paper and evidence map | [November revision](work/rerun-paper-revision-20261111/REVISION_NOTES.md); new focal results incorporated with exact evidence identities, historical companion preserved, author questions unsigned |
+| Current short paper and evidence map | [November revision](work/acceptance-paper-revision-20261111/REVISION_NOTES.md); new focal results incorporated with exact evidence identities, historical companion preserved, author questions unsigned |
 
 ## Deferred unless new evidence changes the decision
 
