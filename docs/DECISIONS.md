@@ -147,3 +147,21 @@ Use squash with the exact reviewed head, then verify the merged tree and sole
 parent on main. Keep the live PR's merged state as the terminal completion
 record, without rewriting historical scientific evidence or creating a separate
 bookkeeping PR. Publication, submission and human-signature permissions are unchanged.
+
+## 2026-11-10 America/Los_Angeles — Bind saved observations to their artifacts
+
+The user's request to implement the repository audit authorizes source repairs
+and their feature-branch PR. Require saved build/controller/worker records to
+agree with the artifacts and invocations they identify; a frozen failed build
+or a matching pair of stale output files is insufficient. Recompute the Hand
+worker's float serialization from decoded JSON. Validate the entire P2/P3 import
+selection and existing index before any destination writes, preserving unchanged
+snapshot/index bytes and timestamps on an identical import.
+
+Keep the P2 evidence-validity, coverage and historical-outcome dimensions distinct.
+These checks establish consistency within the supplied evidence, not authenticated
+execution, independent provenance or human verification. Inspect preserved producer
+formats and use synthetic positive/adversarial tests while original raw inputs are
+unavailable. Preserve imported code, manuscripts, historical reports and their pins.
+Report real-record compatibility as untested until the excluded prerequisites are
+recovered. See the [follow-up record](../work/review-fixes-20261110/README.md).

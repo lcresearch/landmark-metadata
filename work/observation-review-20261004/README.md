@@ -24,6 +24,16 @@ the worker result. A failed or missing status cannot be rescued by stale decoded
 files. Only records passing both completion and output checks enter the reported
 record count; fewer than eight validated records makes Hand incomplete.
 
+The [November follow-up](../review-fixes-20261110/README.md) also binds each Hand
+worker result to the actual variant bundle and fixed image, the variant manifest,
+and the controller's exact command and observed-result snapshot. Required files
+include `repro-hand/results/variants.json`, the four
+`repro-hand/variants/<variant>/hand_landmarker.task` bundles and
+`repro-hand/assets/thumb_up.jpg`. The reader checks the full one-hand/21-landmark
+coordinate shape, the canonical decoded JSON digest, and recomputes the worker's
+sorted-dictionary/list-order little-endian float32 serialization. Identical
+truncated byte files cannot pass by agreeing with each other and their hashes.
+
 Successful Linux Task executions also require exactly the two named input
 records. Each must report successful input preparation and classification and
 1,000 returned categories. The reader checks the prescribed RGB bytes in
@@ -32,6 +42,12 @@ its decoded categories. Empty, duplicate or contradictory records cannot be
 counted as successful observations merely because decoded files remain. Task's
 `classify` call combines inference and decoding; the per-input records do not
 claim separate observations of those internal stages.
+
+All ten Task worker results, including initialization rejection for deletion,
+must identify the actual `repro-task/models/<variant>.tflite` bytes. Those bytes
+must also match the corresponding named Android model (permutation uses E2;
+the other four conditions use E1). Invalid model attribution excludes successful
+decoded observations even if their retained output files look correct.
 
 E5 requires the frozen original catalog's 65 artifact identities before reading
 model payloads or checking aggregate result counts. The default manifest is

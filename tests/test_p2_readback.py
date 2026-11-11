@@ -61,10 +61,16 @@ class P2ReadbackTests(unittest.TestCase):
         for consumer in self.module.CONSUMERS:
             for variant in self.module.VARIANTS:
                 blob, variant_labels = models[variant]
-                builds.append({'consumer': consumer, 'variant': variant})
                 apk = self.p2 / 'build' / consumer / variant / 'consumer.apk'
                 apk.parent.mkdir(parents=True, exist_ok=True)
                 apk.write_bytes(zipped('assets/model.tflite', blob))
+                package = 'org.example.contract.consumer' if consumer == 'wrapper' else 'org.example.task.consumer'
+                instrument = 'ContractInstrumentation' if consumer == 'wrapper' else 'TaskInstrumentation'
+                builds.append({'consumer': consumer, 'variant': variant, 'package_status': 'PASS',
+                               'package': package, 'instrument': instrument,
+                               'apk_sha256': digest(apk.read_bytes()), 'apk_model_sha256': digest(blob),
+                               'stages': {name: {'status': 'PASS', 'exit_code': 0} for name in
+                                          ('compile', 'dex', 'package_resources', 'zipalign', 'sign', 'verify_apk')}})
                 folder = self.folder(consumer, variant)
                 folder.mkdir(parents=True)
                 rejected = consumer == 'task' and variant == 'label_deletion'
@@ -105,6 +111,37 @@ class P2ReadbackTests(unittest.TestCase):
                         report['observations'].append(case)
                 self.write(folder / 'result.json', report)
         self.write(self.p2 / 'build-results.json', builds)
+        executions = []
+        recorded = '/original/p2-round/P2'
+        adb = recorded + '/sdk/platform-tools/adb'
+        for build in builds:
+            consumer, variant = build['consumer'], build['variant']
+            relative = f'executions/primary/{consumer}/{variant}'
+            report = json.loads((self.folder(consumer, variant) / 'result.json').read_text())
+            rejected = consumer == 'task' and variant == 'label_deletion'
+            failures = [r for r in [report, *report.get('observations', [])] if 'earliest_failing_stage' in r]
+            record = {'experiment_id': 'P2', 'consumer': consumer, 'variant': variant,
+                      'build': build, 'observed': report, 'artifact_directory': relative,
+                      'instrumentation_exit_code': 0, 'failures': failures,
+                      'stages': {'installation': 'PASS', 'asset_identity': 'PASS',
+                                 'public_constructor': 'FAIL' if rejected else 'PASS',
+                                 'input_preparation': 'NOT_REACHED' if rejected else 'PASS',
+                                 'inference': 'PASS' if consumer == 'wrapper' else 'ATOMIC_WITH_DECODING',
+                                 'generated_getter': ('FAIL' if variant == 'label_deletion' else 'PASS')
+                                     if consumer == 'wrapper' else 'INAPPLICABLE',
+                                 'classify_inference_and_decoding': ('NOT_REACHED' if rejected else 'PASS')
+                                     if consumer == 'task' else 'INAPPLICABLE'}}
+            if failures:
+                record['earliest_failing_stage'] = failures[0]['earliest_failing_stage']
+            executions.append(record)
+            logs = self.p2 / relative / 'logs'
+            self.write(logs / 'install.command.json', {'cwd': recorded, 'exit_code': 0,
+                'command': [adb, '-s', 'emulator-5554', 'install', '-r',
+                            f'{recorded}/build/{consumer}/{variant}/consumer.apk']})
+            self.write(logs / 'instrumentation.command.json', {'cwd': recorded, 'exit_code': 0,
+                'command': [adb, '-s', 'emulator-5554', 'shell', 'am', 'instrument', '-w', '-e',
+                            'variant', variant, build['package'] + '/org.example.contract.' + build['instrument']]})
+        self.write(self.p2 / 'execution-results.json', executions)
         for name in self.module.REQUIRED_INPUTS:
             path = self.p2 / name
             if not path.exists():
@@ -132,6 +169,14 @@ class P2ReadbackTests(unittest.TestCase):
         data = json.loads(path.read_text())
         transform(data)
         self.write(path, data)
+        self.sync_observed(consumer, variant)
+
+    def sync_observed(self, consumer, variant):
+        path = self.p2 / 'execution-results.json'
+        rows = json.loads(path.read_text())
+        row = next(r for r in rows if (r['consumer'], r['variant']) == (consumer, variant))
+        row['observed'] = json.loads((self.folder(consumer, variant) / 'result.json').read_text())
+        self.write(path, rows)
 
     def test_complete_control_aligns_task_by_index_and_passes_all_sections(self):
         result = self.readback('PASS')
@@ -157,6 +202,7 @@ class P2ReadbackTests(unittest.TestCase):
                     (folder / (name + '-output-0.f32')).write_bytes(raw)
                     case['raw_output_sha256'] = digest(raw)
             self.write(folder / 'result.json', report)
+            self.sync_observed(consumer, 'description_control')
         result = self.readback()
         self.assertEqual(result['sections'], {'evidence_validity': 'PASS', 'coverage': 'PASS', 'historical_outcomes': 'FAIL'})
         self.assertTrue(any(not c['same_score_bits'] for c in result['within_consumer_comparisons']))
@@ -192,6 +238,75 @@ class P2ReadbackTests(unittest.TestCase):
         self.change_report(lambda r: r.update({'earliest_failing_stage': 'asset_identity'}), 'task', 'label_deletion')
         result = self.readback()
         self.assertEqual(result['sections']['historical_outcomes'], 'FAIL')
+
+    def test_failed_build_and_wrong_apk_digest_cannot_pass_with_retained_outputs(self):
+        path = self.p2 / 'build-results.json'
+        original = json.loads(path.read_text())
+        for field, value in [('package_status', 'FAIL'), ('apk_sha256', '0' * 64),
+                             ('apk_model_sha256', '0' * 64), ('stages', {})]:
+            with self.subTest(field=field):
+                rows = json.loads(json.dumps(original))
+                rows[0][field] = value
+                self.write(path, rows)
+                controllers = json.loads((self.p2 / 'execution-results.json').read_text())
+                controllers[0]['build'] = rows[0]
+                self.write(self.p2 / 'execution-results.json', controllers)
+                self.freeze()
+                result = self.module.Reader(self.root).run()
+                self.assertEqual(result['sections']['evidence_validity'], 'FAIL')
+                self.assertEqual(result['status'], 'FAIL')
+
+    def test_missing_or_failed_install_and_wrong_target_are_rejected(self):
+        path = self.folder().parent / 'logs/install.command.json'
+        original = json.loads(path.read_text())
+        for change in ('failed', 'wrong_target', 'missing'):
+            with self.subTest(change=change):
+                value = json.loads(json.dumps(original))
+                if change == 'failed':
+                    value['exit_code'] = 1
+                if change == 'wrong_target':
+                    value['command'][-1] = '/elsewhere/consumer.apk'
+                self.write(path, value)
+                if change == 'missing':
+                    path.unlink()
+                self.assertEqual(self.module.Reader(self.root).run()['status'], 'FAIL')
+
+    def test_controller_identity_build_observation_and_failure_are_required(self):
+        path = self.p2 / 'execution-results.json'
+        original = json.loads(path.read_text())
+        for change in ('duplicate', 'build', 'observed', 'stages', 'harness_exception', 'instrumentation_exit_code'):
+            with self.subTest(change=change):
+                rows = json.loads(json.dumps(original))
+                if change == 'duplicate':
+                    rows[-1] = rows[0]
+                else:
+                    rows[0][change] = 1 if change == 'instrumentation_exit_code' else 'inconsistent'
+                self.write(path, rows)
+                self.assertEqual(self.module.Reader(self.root).run()['status'], 'FAIL')
+        path.unlink()
+        self.assertEqual(self.module.Reader(self.root).run()['status'], 'FAIL')
+
+    def test_instrumentation_failure_or_wrong_consumer_is_rejected(self):
+        path = self.folder().parent / 'logs/instrumentation.command.json'
+        original = json.loads(path.read_text())
+        for change in ('exit_code', 'consumer', 'serial'):
+            with self.subTest(change=change):
+                value = json.loads(json.dumps(original))
+                if change == 'exit_code':
+                    value['exit_code'] = 1
+                elif change == 'consumer':
+                    value['command'][-1] = 'unrelated/Instrumentation'
+                else:
+                    value['command'][2] = 'emulator-5556'
+                self.write(path, value)
+                self.assertEqual(self.module.Reader(self.root).run()['status'], 'FAIL')
+
+    def test_reordered_controller_and_build_records_retain_relocated_path_support(self):
+        for name in ('execution-results.json', 'build-results.json'):
+            path = self.p2 / name
+            self.write(path, list(reversed(json.loads(path.read_text()))))
+        self.freeze()
+        self.readback('PASS')
 
     def test_task_deletion_cannot_claim_later_classify_success(self):
         self.change_report(lambda r: r.update({'classify_inference_and_decoding_status': 'PASS'}), 'task', 'label_deletion')

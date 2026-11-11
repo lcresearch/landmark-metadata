@@ -4,6 +4,23 @@ Current paper: **Validation Boundaries for Model Label Resources: A Controlled
 Classifier Case Study**, in `work/label-resource-revision-20261020/`.
 Read the current pointer, revision notes and TODO before using dated entries below.
 
+## Evidence-binding follow-up — 10 November 2026 (America/Los_Angeles)
+
+The user requested a careful repository audit and then implementation of what
+could be completed locally. Starting from merged PR #16, `2ba12520f3bbeec509bd0257b443bcbf6f6494d8`,
+the [follow-up record](work/review-fixes-20261110/README.md) documents five repairs:
+P2 build/APK/install/controller consistency, Task model attribution, Hand bundle/
+image/controller attribution, Hand float-byte recomputation, and preflight-only
+validation before immutable P2/P3 imports write files. Synthetic counterexamples
+exposed acceptance gaps in the readers; they do not establish false historical
+experimental outcomes.
+
+All 165 tests pass. Preserved imports, source indices, manuscripts and human
+PENDING statuses remain unchanged. Missing raw evidence still prevents real-record
+revalidation. No model, Android, JVM or manuscript build was run in this follow-up.
+Deliver these changes on `codex/evidence-attribution-fixes` as a new PR; this
+request does not authorize merging it or publishing excluded evidence.
+
 ## Comprehensive review repairs — 21 October 2026 UTC
 
 The user requested fixes after the review of merged main `c0cd673…`.

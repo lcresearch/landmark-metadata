@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import math
 from collections import Counter
 from pathlib import Path
 import struct
@@ -33,6 +34,18 @@ def read(path):
     return json.loads(data)
 
 
+def binary_digest(path, name):
+    path = Path(path)
+    try:
+        data = path.read_bytes()
+    except OSError as error:
+        check(name, False, {'error': str(error)})
+        return None
+    digest = hashlib.sha256(data).hexdigest()
+    files[str(path)] = digest
+    return digest
+
+
 def check(name, condition, detail=None):
     checks.append({'check': name, 'passed': bool(condition), 'detail': detail})
 
@@ -57,11 +70,25 @@ def exact_records(name, records, fields, expected):
 
 def task():
     observations = []
+    core_digests = core_model_digests('task')
+    model_digests = {}
+    for variant in CORE_VARIANTS:
+        path = Path('/workspace/repro-task/models') / (variant + '.tflite')
+        actual = binary_digest(path, 'task/'+variant+'/model_readable')
+        matched = actual is not None and actual == core_digests.get(variant)
+        check('task/'+variant+'/model_matches_Android', matched)
+        if matched:
+            model_digests[variant] = actual
     for phase in ('primary', 'replay'):
         original = {}
         for variant in CORE_VARIANTS:
             folder = Path('/workspace/repro-task') / phase / variant
             result = read(folder / 'result.json')
+            identity = (variant in model_digests and
+                        result.get('model_sha256') == model_digests[variant])
+            check(f'{phase}/{variant}/executed_model_identity', identity)
+            if not identity:
+                continue
             if variant == 'label_deletion':
                 check(f'{phase}/{variant}/early_rejection',
                       result['initialization_status'] == 'FAIL' and
@@ -136,7 +163,7 @@ def task():
                 if all(row['passed'] for row in checks[first_check:]):
                     observations.append({'phase': phase, 'variant': variant, 'input': input_name,
                                          'changed_labels': changed})
-    task_baseline()
+    task_baseline(core_digests)
     return {'execution_records': 10, 'successful_decoded_observations': len(observations),
             'categories_read': len(observations) * 1000, 'observations': observations}
 
@@ -184,7 +211,51 @@ def task_baseline(core_digests=None, prefix='baseline'):
     return baseline if all(row['passed'] for row in checks[first_check:]) else None
 
 
+def hand_shape(decoded):
+    """Check the one-hand dataclass shape before accepting its float payload."""
+    def finite(value):
+        return type(value) is float and math.isfinite(value)
+
+    try:
+        handedness = decoded['handedness']
+        if len(handedness) != 1 or len(handedness[0]) != 1 or not finite(handedness[0][0]['score']):
+            return False
+        for key in ('hand_landmarks', 'hand_world_landmarks'):
+            groups = decoded[key]
+            if len(groups) != 1 or len(groups[0]) != 21:
+                return False
+            for point in groups[0]:
+                if not all(finite(point[axis]) for axis in ('x', 'y', 'z')):
+                    return False
+                if any(point.get(key) is not None and not finite(point[key])
+                       for key in ('visibility', 'presence')):
+                    return False
+    except (KeyError, IndexError, TypeError, AttributeError):
+        return False
+    return True
+
+
+def hand_float_bytes(decoded):
+    """Recompute the producer's sorted-dict/list-order float32 serialization."""
+    parts = []
+
+    def visit(value):
+        if isinstance(value, float):
+            if not math.isfinite(value):
+                raise ValueError('Nonfinite Hand output')
+            parts.append(struct.pack('<f', value))
+        elif isinstance(value, list):
+            for child in value:
+                visit(child)
+        elif isinstance(value, dict):
+            for key in sorted(value):
+                visit(value[key])
+    visit(decoded)
+    return b''.join(parts)
+
+
 def hand():
+    root = Path('/workspace/repro-hand')
     base = Path('/workspace/repro-hand/executions')
     manifests = {}
     complete = True
@@ -196,6 +267,23 @@ def hand():
     if not complete:
         return {'expected_execution_records': 8, 'execution_records_read': 0,
                 'complete': False, 'records': []}
+    variants = read(root / 'results/variants.json')
+    if not exact_records('hand/exact_model_conditions', variants, ('variant',),
+                         [(variant,) for variant in HAND_VARIANTS]):
+        return {'expected_execution_records': 8, 'execution_records_read': 0,
+                'complete': False, 'records': []}
+    bundles = {}
+    for row in variants:
+        name = row['variant']
+        expected_path = root / 'variants' / name / 'hand_landmarker.task'
+        actual = binary_digest(expected_path, 'hand/'+name+'/bundle_readable')
+        identity = (actual is not None and row.get('bundle_sha256') == actual and
+                    isinstance(row.get('path'), str) and Path(row['path']).resolve() == expected_path.resolve())
+        check('hand/'+name+'/bundle_manifest_identity', identity)
+        if identity:
+            bundles[name] = actual
+    image_path = root / 'assets/thumb_up.jpg'
+    image_digest = binary_digest(image_path, 'hand/fixed_image_readable')
     reference = read(base / 'primary/original/outputs/decoded.json')
     reference_bits = (base / 'primary/original/outputs/decoded-float-bits.bin').read_bytes()
     records = []
@@ -204,23 +292,40 @@ def hand():
             variant = record['variant']
             first_check = len(checks)
             result = read(base / phase / variant / 'outputs/result.json')
-            completed = (record.get('exit_code') == 0 and record.get('completed') is True and
+            completed = (type(record.get('exit_code')) is int and record['exit_code'] == 0 and
+                         record.get('completed') is True and
                          all(result.get(key) == 'PASS' for key in
                              ('initialization_status', 'input_preparation_status', 'detect_status')))
             check(f'hand/{phase}/{variant}/actual_completed', completed)
             if not completed:
                 continue
+            check(f'hand/{phase}/{variant}/executed_artifact_identities',
+                  variant in bundles and result.get('bundle_sha256') == bundles[variant] and
+                  image_digest is not None and result.get('image_sha256') == image_digest)
+            expected_command = [str(root / '.venv/bin/python'), str(root / 'scripts/hand_task_one.py'),
+                                str(root / 'variants' / variant / 'hand_landmarker.task'),
+                                str(image_path), str(base / phase / variant / 'outputs')]
+            check(f'hand/{phase}/{variant}/controller_worker_binding',
+                  record.get('command') == expected_command and record.get('observed') == result)
             decoded = read(base / phase / variant / 'outputs/decoded.json')
             check(f'hand/{phase}/{variant}/one_hand_21_landmarks',
-                  len(decoded['handedness']) == 1 and
-                  len(decoded['hand_landmarks']) == 1 and len(decoded['hand_landmarks'][0]) == 21 and
-                  len(decoded['hand_world_landmarks']) == 1 and len(decoded['hand_world_landmarks'][0]) == 21)
+                  hand_shape(decoded) and result.get('detected_hands') == 1 and
+                  result.get('landmarks_per_hand') == result.get('world_landmarks_per_hand') == [21] and
+                  result.get('path_exercised') == 'HAND_LANDMARKS_RETURNED')
+            canonical = json.dumps(decoded, sort_keys=True, separators=(',', ':')).encode()
+            check(f'hand/{phase}/{variant}/decoded_digest',
+                  hashlib.sha256(canonical).hexdigest() == result.get('decoded_sha256'))
             check(f'hand/{phase}/{variant}/decoded_equal', decoded == reference)
             bits_path = base / phase / variant / 'outputs/decoded-float-bits.bin'
             bits = bits_path.read_bytes()
             files[str(bits_path)] = hashlib.sha256(bits).hexdigest()
+            try:
+                recomputed = hand_float_bytes(decoded)
+            except (ValueError, OverflowError, struct.error):
+                recomputed = None
             check(f'hand/{phase}/{variant}/exact_float_bits_equal',
-                  len(bits) > 0 and bits == reference_bits and files[str(bits_path)] == result['decoded_float_bits_sha256'])
+                  len(bits) > 0 and bits == recomputed == reference_bits and
+                  files[str(bits_path)] == result.get('decoded_float_bits_sha256'))
             if all(row['passed'] for row in checks[first_check:]):
                 records.append({'phase': phase, 'variant': variant})
     return {'expected_execution_records': 8, 'execution_records_read': len(records),

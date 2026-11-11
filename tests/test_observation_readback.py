@@ -39,21 +39,50 @@ class ReadbackTests(unittest.TestCase):
         self.assertEqual([row for row in self.module.checks if not row['passed']], [])
 
     def seed_hand(self):
-        bits = b'synthetic float bits'
-        decoded = {'handedness': [['synthetic']], 'hand_landmarks': [[0] * 21],
-                   'hand_world_landmarks': [[0] * 21]}
+        points = [{'x': i/100.0, 'y': i/200.0, 'z': -i/300.0,
+                   'visibility': None, 'presence': None} for i in range(21)]
+        decoded = {'handedness': [[{'index': 0, 'score': 0.75, 'display_name': '', 'category_name': 'Right'}]],
+                   'hand_landmarks': [points], 'hand_world_landmarks': [points]}
+        coordinates = [value for i in range(21) for value in (i/100.0, i/200.0, -i/300.0)]
+        bits = struct.pack('<127f', *(coordinates + coordinates + [0.75]))
+        image = self.root / 'repro-hand/assets/thumb_up.jpg'
+        image.parent.mkdir(parents=True, exist_ok=True)
+        image.write_bytes(b'synthetic fixed image')
+        models = {}
+        for variant in self.module.HAND_VARIANTS:
+            model = self.root / f'repro-hand/variants/{variant}/hand_landmarker.task'
+            model.parent.mkdir(parents=True, exist_ok=True)
+            model.write_bytes(('synthetic bundle ' + ('container_control' if variant == 'restoration' else variant)).encode())
+            models[variant] = {'variant': variant, 'path': str(model),
+                               'bundle_sha256': hashlib.sha256(model.read_bytes()).hexdigest()}
+        self.write('repro-hand/results/variants.json', list(models.values()))
         for phase in ('primary', 'replay'):
-            self.write(f'repro-hand/executions/{phase}/results.json',
-                       [{'variant': variant, 'exit_code': 0, 'completed': True}
-                        for variant in reversed(self.module.HAND_VARIANTS)])
-            for variant in self.module.HAND_VARIANTS:
+            records = []
+            for variant in reversed(self.module.HAND_VARIANTS):
                 folder = f'repro-hand/executions/{phase}/{variant}/outputs'
                 self.write(folder + '/decoded.json', decoded)
-                self.write(folder + '/result.json', {
+                result = {
                     'initialization_status': 'PASS', 'input_preparation_status': 'PASS',
-                    'detect_status': 'PASS',
-                    'decoded_float_bits_sha256': hashlib.sha256(bits).hexdigest()})
+                    'detect_status': 'PASS', 'detected_hands': 1, 'landmarks_per_hand': [21],
+                    'world_landmarks_per_hand': [21], 'path_exercised': 'HAND_LANDMARKS_RETURNED',
+                    'bundle_sha256': models[variant]['bundle_sha256'],
+                    'image_sha256': hashlib.sha256(image.read_bytes()).hexdigest(),
+                    'decoded_sha256': hashlib.sha256(json.dumps(decoded, sort_keys=True, separators=(',', ':')).encode()).hexdigest(),
+                    'decoded_float_bits_sha256': hashlib.sha256(bits).hexdigest()}
+                self.write(folder + '/result.json', result)
                 (self.root / folder / 'decoded-float-bits.bin').write_bytes(bits)
+                records.append({'variant': variant, 'exit_code': 0, 'completed': True, 'observed': result,
+                                'command': [str(self.root / 'repro-hand/.venv/bin/python'),
+                                            str(self.root / 'repro-hand/scripts/hand_task_one.py'),
+                                            models[variant]['path'], str(image), str(self.root / folder)]})
+            self.write(f'repro-hand/executions/{phase}/results.json', records)
+
+    def sync_hand_observed(self, phase, variant):
+        path = self.root / f'repro-hand/executions/{phase}/results.json'
+        rows = json.loads(path.read_text())
+        row = next(r for r in rows if r['variant'] == variant)
+        row['observed'] = json.loads((self.root / f'repro-hand/executions/{phase}/{variant}/outputs/result.json').read_text())
+        path.write_text(json.dumps(rows))
 
     def test_hand_accepts_all_eight_records_in_any_manifest_order(self):
         self.seed_hand()
@@ -136,7 +165,91 @@ class ReadbackTests(unittest.TestCase):
         failures = {r['check'] for r in self.module.checks if not r['passed']}
         self.assertEqual(failures, {'hand/replay/restoration/' + name for name in
                                    ('one_hand_21_landmarks',
-                                    'decoded_equal', 'exact_float_bits_equal')})
+                                    'decoded_equal', 'decoded_digest', 'exact_float_bits_equal')})
+
+    def test_hand_rejects_wrong_or_missing_bundle_and_image_identities(self):
+        for field in ('bundle_sha256', 'image_sha256'):
+            for value in (None, '0' * 64):
+                with self.subTest(field=field, value=value):
+                    self.seed_hand()
+                    self.module.checks.clear()
+                    path = self.root / 'repro-hand/executions/replay/metadata_exchange/outputs/result.json'
+                    result = json.loads(path.read_text())
+                    if value is None:
+                        result.pop(field)
+                    else:
+                        result[field] = value
+                    path.write_text(json.dumps(result))
+                    self.sync_hand_observed('replay', 'metadata_exchange')
+                    result = self.module.hand()
+                    self.assertEqual(result['execution_records_read'], 7)
+                    self.assertFalse(result['complete'])
+                    self.assertTrue(any(not r['passed'] and r['check'].endswith('executed_artifact_identities')
+                                        for r in self.module.checks))
+
+    def test_hand_rejects_changed_or_missing_actual_artifacts(self):
+        for relative in ('variants/metadata_exchange/hand_landmarker.task', 'assets/thumb_up.jpg'):
+            for missing in (False, True):
+                with self.subTest(relative=relative, missing=missing):
+                    self.seed_hand()
+                    self.module.checks.clear()
+                    path = self.root / 'repro-hand' / relative
+                    path.unlink() if missing else path.write_bytes(b'wrong artifact')
+                    self.assertFalse(self.module.hand()['complete'])
+                    self.assertTrue(any(not r['passed'] for r in self.module.checks))
+
+    def test_hand_requires_exact_variant_manifest_and_controller_binding(self):
+        for changed in ('manifest', 'command', 'observed'):
+            with self.subTest(changed=changed):
+                self.seed_hand()
+                self.module.checks.clear()
+                path = self.root / ('repro-hand/results/variants.json' if changed == 'manifest'
+                                    else 'repro-hand/executions/replay/results.json')
+                rows = json.loads(path.read_text())
+                if changed == 'manifest':
+                    rows[-1] = rows[0]
+                elif changed == 'command':
+                    rows[0]['command'][2] = '/different/model.task'
+                else:
+                    rows[0]['observed'] = {}
+                path.write_text(json.dumps(rows))
+                self.assertFalse(self.module.hand()['complete'])
+
+    def test_hand_recomputes_float_bytes_instead_of_accepting_shared_truncation(self):
+        self.seed_hand()
+        for phase in ('primary', 'replay'):
+            for variant in self.module.HAND_VARIANTS:
+                folder = self.root / f'repro-hand/executions/{phase}/{variant}/outputs'
+                (folder / 'decoded-float-bits.bin').write_bytes(b'x')
+                path = folder / 'result.json'
+                result = json.loads(path.read_text())
+                result['decoded_float_bits_sha256'] = hashlib.sha256(b'x').hexdigest()
+                path.write_text(json.dumps(result))
+                self.sync_hand_observed(phase, variant)
+        result = self.module.hand()
+        self.assertEqual(result['execution_records_read'], 0)
+        self.assertFalse(result['complete'])
+        failures = [r for r in self.module.checks if not r['passed']]
+        self.assertEqual(len(failures), 8)
+        self.assertTrue(all(r['check'].endswith('exact_float_bits_equal') for r in failures))
+
+    def test_hand_rejects_changed_decoded_digest_and_nonfinite_coordinates(self):
+        for change in ('digest', 'nonfinite'):
+            with self.subTest(change=change):
+                self.seed_hand()
+                self.module.checks.clear()
+                folder = self.root / 'repro-hand/executions/replay/metadata_exchange/outputs'
+                path = folder / 'result.json'
+                result = json.loads(path.read_text())
+                if change == 'digest':
+                    result['decoded_sha256'] = '0' * 64
+                else:
+                    decoded = json.loads((folder / 'decoded.json').read_text())
+                    decoded['hand_landmarks'][0][0]['x'] = float('nan')
+                    (folder / 'decoded.json').write_text(json.dumps(decoded))
+                path.write_text(json.dumps(result))
+                self.sync_hand_observed('replay', 'metadata_exchange')
+                self.assertFalse(self.module.hand()['complete'])
 
     def test_main_rejects_empty_hand_and_writes_failed_report(self):
         for phase in ('primary', 'replay'):
@@ -244,6 +357,15 @@ class ReadbackTests(unittest.TestCase):
                 self.assertFalse(check['passed'])
 
     def seed_task(self):
+        baseline = self.baseline_rows()
+        model_digests = {}
+        for variant in self.module.CORE_VARIANTS:
+            experiment = 'E2' if variant == 'label_permutation' else 'E1'
+            core = self.root / f'repro-android/{experiment}/variants/{variant}/model.tflite'
+            model = self.root / f'repro-task/models/{variant}.tflite'
+            model.parent.mkdir(parents=True, exist_ok=True)
+            model.write_bytes(core.read_bytes())
+            model_digests[variant] = hashlib.sha256(model.read_bytes()).hexdigest()
         labels = [f'label-{i}' for i in range(1000)]
         labels[1] = labels[0]  # One adjacent duplicate yields 999 changed strings.
         inputs = {'gray127': bytes([127]) * (224*224*3),
@@ -257,7 +379,7 @@ class ReadbackTests(unittest.TestCase):
                 folder = f'repro-task/{phase}/{variant}'
                 result = {'initialization_status': 'PASS', 'classify_status': 'PASS',
                           'inference_status': 'PASS', 'decoder_status': 'PASS',
-                          'observations': []}
+                          'observations': [], 'model_sha256': model_digests[variant]}
                 if variant == 'label_deletion':
                     result.update(initialization_status='FAIL', classify_status='NOT_REACHED',
                                   inference_status='NOT_REACHED', decoder_status='NOT_REACHED',
@@ -279,7 +401,37 @@ class ReadbackTests(unittest.TestCase):
                             'returned_categories': 1000})
                     result['observations'].reverse()
                 self.write(f'{folder}/result.json', result)
-        self.write('repro-task/baseline-results.json', self.baseline_rows())
+        self.write('repro-task/baseline-results.json', baseline)
+
+    def test_task_requires_model_identity_even_for_rejected_deletion(self):
+        self.seed_task()
+        for phase in ('primary', 'replay'):
+            for variant in self.module.CORE_VARIANTS:
+                path = self.root / f'repro-task/{phase}/{variant}/result.json'
+                result = json.loads(path.read_text())
+                result['model_sha256'] = '0' * 64
+                path.write_text(json.dumps(result))
+        result = self.module.task()
+        self.assertEqual(result['successful_decoded_observations'], 0)
+        failures = [r for r in self.module.checks if not r['passed']]
+        self.assertEqual(len(failures), 10)
+        self.assertTrue(all(r['check'].endswith('executed_model_identity') for r in failures))
+
+    def test_task_requires_actual_model_bytes_matching_android_condition(self):
+        for change in ('missing', 'different', 'self_consistent_substitution'):
+            with self.subTest(change=change):
+                self.seed_task()
+                self.module.checks.clear()
+                path = self.root / 'repro-task/models/description_control.tflite'
+                path.unlink() if change == 'missing' else path.write_bytes(b'another model')
+                if change == 'self_consistent_substitution':
+                    for phase in ('primary', 'replay'):
+                        record = self.root / f'repro-task/{phase}/description_control/result.json'
+                        result = json.loads(record.read_text())
+                        result['model_sha256'] = hashlib.sha256(path.read_bytes()).hexdigest()
+                        record.write_text(json.dumps(result))
+                self.assertEqual(self.module.task()['successful_decoded_observations'], 12)
+                self.assertTrue(any(not r['passed'] for r in self.module.checks))
 
     def change_task_result(self, observations, phase='replay', variant='description_control'):
         path = self.root / f'repro-task/{phase}/{variant}/result.json'

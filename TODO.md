@@ -49,6 +49,15 @@ this revision does not select a venue or authorize submission.
   Delivered for review in [PR #16](https://github.com/lcresearch/landmark-metadata/pull/16).
   The user subsequently authorized review and squash merge; the PR's verified
   GitHub merged state is the terminal integration record.
+- [x] **P1 — Close the November audit's five evidence-binding/import gaps.**
+  See the [follow-up record](work/review-fixes-20261110/README.md). P2 now binds
+  completed builds and command records to actual APK/device files; Task and Hand
+  bind results to model/input bytes; Hand reconstructs float output bytes; the
+  P2/P3 importer validates the whole selection before writing. All 165 tests pass.
+  These are synthetic/source checks, not revalidation of excluded experiments.
+- [ ] **P1 — Recheck the recovered raw records with the maintained readers.**
+  Supply the newly documented model, controller and command records unchanged;
+  retain failures or missing files. Do not manufacture them from old summaries.
 - [ ] **P1 — Answer the six current author questions against the new source digest.**
   All identities, observations and signatures remain PENDING.
 - [ ] **P1 — Provide persistent anonymous access to retained core evidence.**
