@@ -30,7 +30,7 @@ Current source is under [experiment](../experiment/README.md). Historical report
 input inventories, import indexes and manuscript lineage stay as text references
 at their existing paths to preserve their pinned identities. Read their original
 complete directory context in the archived tree. Three older source files linked
-directly by the current pinned manuscript handoff/crosswalk remain locally present;
+directly by the pinned October manuscript handoff/crosswalk remain locally present;
 they are reference dependencies, not additional current experiment entry points.
 
 This is a **source archive only**. No models, raw outputs, SDKs, emulator state or

@@ -250,3 +250,36 @@ auxiliary readback inputs separate and retain their regression coverage. This is
 a file-level selection; no new algorithm, inference, external evidence backup,
 human verification or merger is implied. New driver/source identities must be
 recorded for future runs. Publish on a feature branch through an unmerged PR.
+
+
+## 2026-11-11 America/Los_Angeles — Bind the short paper to the November evidence
+
+The user requested the short-paper/claim-map update. Create a new editorial area
+and preserve the October sources and all old audit targets. Bind core claims to
+actual November artifact identities; disclose known outcomes, missing old raw
+records, two interrupted collectors, selected continuations and the retained
+P2 reader FAIL/correction. P3 supports only the six-input core, not a repeated
+30-request search or synset inquiry. Keep stable IDs ABSTAIN and E5's zero extra
+rejection explicitly historical; preserve the narrow single-classifier case.
+
+The October full companion remains historical context, not a second updated
+manuscript. The current pointer labels that role and keeps its old identities
+while pinning the new short source, ledger, handoff and evidence index. A stale
+historical document pin must resolve to its exact old Git object (S40 here), not
+be silently refreshed. Saved-byte audits/complete archive readback are distinct
+from new inference, authenticated provenance, human verification and reviewer
+access. Keep author questions PENDING and all raw/build outputs outside Git.
+Deliver via a new source-only PR; this request does not authorize merging,
+external evidence publication, venue selection or submission.
+
+
+## 2026-11-11 America/Los_Angeles — Review cleanup against the new paper branch
+
+The user's follow-up asks whether cleanup PR #21 is sound. Reproduce and repair
+its ordinary-command bytecode regression, do not accept archived bytes as working
+local hyperlinks, and resolve the paper drivers' references to moved sources.
+Stack #21 on the verified #22 head without changing the paper branch or merging
+either PR. Keep frozen paper/claim/handoff/evidence pins unchanged, distinguish
+working-tree and archived-Git identity resolution, and verify saved records into
+fresh external outputs. Source tests and readback are not new Android inference
+or human review. See the follow-up review for findings and exact scope.

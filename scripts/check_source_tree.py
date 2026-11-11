@@ -6,8 +6,9 @@ import json
 import re
 import subprocess
 import sys
+sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from archive.catalog import read_archive, preserved_bytes
+from archive.catalog import ARCHIVE_COMMIT, read_archive, preserved_bytes
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -69,12 +70,18 @@ def check_navigation(root, counts, failures, warnings, archived=None):
             counts['navigation_targets'] += 1
             resolved = (p.parent / target).resolve()
             portable = resolved.is_relative_to(root.resolve())
-            if portable and resolved.relative_to(root.resolve()).as_posix() in archived:
-                continue  # Historical source is byte-verified in the fixed Git archive.
             if not portable or not resolved.exists():
                 item = {'path':str(rel), 'issue':'unavailable historical locator'
                         if historical else 'broken documentation navigation',
                         'target':target}
+                if historical and portable:
+                    relative = resolved.relative_to(root.resolve()).as_posix()
+                    archived_directory = any(name.startswith(relative + '/') for name in archived)
+                    if relative in archived or archived_directory:
+                        item['issue'] = 'archived historical source locator'
+                        kind = 'blob' if relative in archived else 'tree'
+                        item['archive_url'] = ('https://github.com/lcresearch/landmark-metadata/'
+                                               + kind + '/' + ARCHIVE_COMMIT + '/' + relative)
                 (warnings if historical else failures).append(item)
 
 
@@ -97,8 +104,12 @@ def check_memory_hashes(root, rows, counts, failures, warnings, archived=None):
                 failures.append(item)
             continue
         counts['memory_import_hashes'] += 1
-        if (row['sha256'] != expected
-                or hashlib.sha256(preserved_bytes(root, row['repository_path'], archived)).hexdigest() != expected):
+        try:
+            data = preserved_bytes(root, row['repository_path'], archived)
+        except (OSError, ValueError):
+            data = None
+        if (row['sha256'] != expected or data is None
+                or hashlib.sha256(data).hexdigest() != expected):
             failures.append({'path':'MEMORY.md', 'issue':'MEMORY/import/source hash mismatch',
                              'target':row['repository_path']})
 
