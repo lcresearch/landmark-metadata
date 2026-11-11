@@ -23,7 +23,7 @@ and follow the [repository policy](AGENTS.md).
   revised short paper and [two-candidate shortlist](work/case-screening-20261111/SHORTLIST.md).
   Seven reports/69 comments were re-read; linked material was checked without
   full model acquisition or execution. #770 and #319 remain conditional candidates.
-- [ ] **If pursuing a real-report reconstruction, start with the fixed shortlist.**
+- [ ] **Execute the authorized #770 reconstruction using the fixed shortlist.**
   Acquire full model identities and freeze one consumer configuration before
   execution. Apply the shortlist’s stop rules and preserve unsupported-path,
   asset-selection and historical-identity limits. Screening alone adds no
@@ -50,15 +50,15 @@ and follow the [repository policy](AGENTS.md).
 PR #18–#20 are squash-merged; main reached `e9da459…`. The November manuscript
 evidence revision was merged in [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22).
 The acceptance-focused editorial follow-up and bounded candidate screening use a
-new [PR #23](https://github.com/lcresearch/landmark-metadata/pull/23); merging requires a separate instruction.
+new [PR #23](https://github.com/lcresearch/landmark-metadata/pull/23); the user has now authorized review and squash merge, followed by bounded #770 execution.
 Repository integration does not complete the remaining research/human tasks.
 
 ## Code-layout integration
 
-[Cleanup PR #21](https://github.com/lcresearch/landmark-metadata/pull/21) is stacked
-on paper PR #22. The [compatibility review](docs/PR21_REVIEW.md) fixes moved source
-paths and preserves the paper/index pins. Both still require merge authorization;
-review and integrate #22 before #21, rechecking actual heads and default-branch state.
+[Cleanup PR #21](https://github.com/lcresearch/landmark-metadata/pull/21) and paper
+PR #22 are squash-merged. The [compatibility review](docs/PR21_REVIEW.md) fixed
+moved source paths and preserved paper/index pins. Their resulting main commit
+is `8005274e9eccbea30fb3189779f03e8d693b3720`.
 
 ## Code-layout maintenance
 

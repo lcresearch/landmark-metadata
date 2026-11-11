@@ -84,8 +84,8 @@
   "validation": "work/acceptance-paper-revision-20261111/VALIDATION.md",
   "feature_branch": "codex/acceptance-checks-cases-20261111",
   "pr_base": "main",
-  "merge_policy": "This editorial task authorizes a source-only PR, not merging, publication of evidence, or paper submission.",
-  "delivery_status": "Open for review in PR #23; predecessor PR #22 is merged.",
+  "merge_policy": "The user subsequently authorized review and squash merge of PR #23. Evidence publication and paper submission remain unauthorized.",
+  "delivery_status": "PR #23 is authorized for reviewed-head squash integration; its live GitHub merged state is the terminal integration record.",
   "human_audit": {
     "status": "PENDING",
     "reviewer": null,

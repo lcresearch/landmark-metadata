@@ -302,3 +302,17 @@ stay within the existing report pool, preserve negative/excluded cases and
 separate real reports from independently reproduced natural failures. No new
 model execution, maintainer contact, evidence upload or merge is authorized by
 this screening request.
+
+
+## 2026-11-11 America/Los_Angeles — Review #23 and bound the #770 reconstruction
+
+The user authorizes reviewing PR #23, squash-merging its final reviewed head if
+sound, then executing only #770 from the fixed shortlist. Repair stale current
+navigation before integration, verify the sole squash parent and tree, and create
+a new feature branch for experimental source and records. The new experiment PR
+requires its own merge instruction. Retain all failures and obey the one-frozen-setup
+stop rule; do not search versions until the expected exception appears. Record
+runtime, Support/Task and actual ML Model Binding generator identities separately.
+Unknown historical versions limit this to mechanism reconstruction; one setup
+cannot establish a LiteRT version effect. No #319 run, broader sweep, manuscript
+sample expansion, human signoff or external evidence upload is authorized.

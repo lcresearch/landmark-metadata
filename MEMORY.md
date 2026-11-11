@@ -16,11 +16,11 @@ from fixed ancestor `e9da459f6043684cdecba913c9c711433371909d`; imported bytes a
 historical manuscript pins are unchanged. Auxiliary reader inputs live under
 [support](support/README.md). A fresh source-only initialization validated the
 recovered model/reference pins; no Android/model execution was performed.
-The original checkout's paper branch was left untouched. PR #21 now stacks on
-[paper PR #22](https://github.com/lcresearch/landmark-metadata/pull/22); its current
-paper and evidence pins are carried forward unchanged. The [follow-up review](docs/PR21_REVIEW.md)
-fixes the ordinary source-check command and the paper readback/index paths, and
-records fresh saved-byte checks without new inference. Both PRs remain unmerged.
+[PR #22](https://github.com/lcresearch/landmark-metadata/pull/22) and cleanup PR #21
+were squash-merged; their reviewed trees and sole parents were verified. The
+[follow-up review](docs/PR21_REVIEW.md) fixed the ordinary source-check command
+and paper readback/index paths without changing the paper/evidence pins or
+performing new inference.
 
 ## Current manuscript and research boundary
 
@@ -34,8 +34,9 @@ The [current pointer](docs/CURRENT_MANUSCRIPT.json) binds the new source, claim 
 handoff and 1,036-member evidence index while retaining old manuscript identities.
 Saved-byte Android/P2/P3 rechecks and full 2,120-member archive verification pass;
 these are new editorial readbacks, not new model execution or human verification.
-The old 48-source index resolves 47 files in the checkout plus S40's exact old
-Git version; the maintained reproduction README has since changed. No pin was
+At the preceding paper readback, the old 48-source index resolved 47 files in
+the checkout plus S40's exact old Git version. Later cleanup archived some paths;
+use the archive manifest for their current resolution. No pin was
 silently refreshed. The [six current author questions](work/acceptance-paper-revision-20261111/ARTIFACT_HANDOFF.md)
 and all historical human-audit entries remain **PENDING**. No venue is selected.
 
@@ -147,8 +148,10 @@ PR #22 and the subsequent code-cleanup PR #21 are merged; current main is
 `codex/acceptance-checks-cases-20261111` in [PR #23](https://github.com/lcresearch/landmark-metadata/pull/23),
 open for review. It retains the preceding evidence index
 and observations, with four explicit acceptance decisions and concise provenance.
-The current task authorizes a PR and bounded public-report screening, not a merge
-or a new natural-case execution.
+The user subsequently authorized reviewing and squash-merging #23, then one
+bounded #770 reconstruction following the shortlist's stop rules. See the
+[PR review](docs/PR23_REVIEW.md). This does not authorize #319 execution or
+a version sweep; human verification and evidence publication remain separate.
 Next: retain a second verified evidence copy, complete human review, resolve any
 auxiliary claims retained for submission, provide reviewer access and select a venue. See [TODO](TODO.md) for completion criteria.
 Do not start another broad model/mutant campaign by default.
