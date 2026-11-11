@@ -6,6 +6,18 @@ Use the [repository map](docs/REPOSITORY_CLEANUP.md) to distinguish maintained
 code from preserved snapshots. This file summarizes current state; dated detail
 belongs in its work record and Git history.
 
+## Current code layout
+
+The 11 November code cleanup puts the focal dependency closure in
+[experiment](experiment/README.md), with an explicit 27-destination staging map.
+Initialization copies selected model/E1/E2/P2 sources instead of whole historical
+suites. [archive](archive/README.md) verifies and restores removed source paths
+from fixed ancestor `e9da459f6043684cdecba913c9c711433371909d`; imported bytes and
+historical manuscript pins are unchanged. Auxiliary reader inputs live under
+[support](support/README.md). A fresh source-only initialization validated the
+recovered model/reference pins; no Android/model execution was performed.
+The original checkout's in-progress paper revision was left untouched.
+
 ## Current manuscript and research boundary
 
 **Validation Boundaries for Model Label Resources: A Controlled Classifier Case

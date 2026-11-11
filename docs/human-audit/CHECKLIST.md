@@ -25,7 +25,7 @@ observations. Construction audits and replays do not add independent models.
 ## HA01 — The actual generated public call
 
 **Target:** C3 and C2R; manuscript `sec:e1` and the construction audit in `sec:e2`.
-Open [instrumentation source](../../sources/metadata-contract-e2e-20261004T030536Z/scripts/ContractInstrumentation.java),
+Open [instrumentation source](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/sources/metadata-contract-e2e-20261004T030536Z/scripts/ContractInstrumentation.java),
 [bytecode audit](../../sources/metadata-contract-audit-20261004T062010Z/preservation/bytecode/report.md)
 and [rebuild report](../../sources/metadata-contract-audit-20261004T062010Z/rebuild/AUDIT_REPORT.md)
 (S04, S06, S07, S43).
@@ -143,7 +143,7 @@ or vacuous decoded-equality summary must not count as successful decoding.
 
 **Target:** C4; `sec:e2`. Open
 [E2 report](../../sources/metadata-contract-e2e-20261004T030536Z/E2/EXPERIMENT_E2_RESULTS.md),
-[mutation source](../../sources/metadata-contract-e2e-20261004T030536Z/scripts/prepare_e2.py)
+[mutation source](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/sources/metadata-contract-e2e-20261004T030536Z/scripts/prepare_e2.py)
 and [saved-observation scope](../../research/20261004-significance-review/MEASURED_OUTCOMES.md)
 (S05–S08, S15–S17).
 
@@ -172,7 +172,7 @@ the reference-backed interpretation requires HA07.
 
 **Target:** C6; `sec:consumers`. Open
 [P2 results](../../research/20261004-p2-p3/P2/EXPERIMENT_P2_RESULTS.md),
-[Task instrumentation](../../research/20261004-p2-p3/P2/scripts/TaskInstrumentation.java)
+[Task instrumentation](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/research/20261004-p2-p3/P2/scripts/TaskInstrumentation.java)
 and [mechanism review](../../research/20261004-p2-p3/review/mechanism/MECHANISM_REVIEW.md)
 (S02, S09, S10, S13–S17).
 

@@ -41,6 +41,14 @@ follow-up authorizes review and squash merge of [PR #20](https://github.com/lcre
 its verified GitHub merged state is the integration completion record. Research
 and human-verification tasks above remain open after repository integration.
 
+## Code-layout maintenance
+
+The current entry is [experiment](experiment/README.md); the old source tree is
+[archived and restorable](archive/README.md). Use the explicit staging map when
+adding runtime dependencies. Before the next authorized inference run, use an
+absent external root and record the new source identities; this cleanup only
+validates source staging and regressions, not new scientific execution.
+
 ## Completed foundations
 
 | Completed scope | Record and limits |

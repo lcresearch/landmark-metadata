@@ -1,5 +1,9 @@
 # Reproduction entry point
 
+Current focal execution uses [experiment/RUNBOOK.md](../../experiment/RUNBOOK.md).
+The historical command paths below require the [restored old tree](../../archive/README.md)
+where their sources have been archived. They are not additional current run steps.
+
 This handoff identifies the study's inputs, toolchains, commands and remaining
 gaps. **The Git repository contains source and documentation, not a complete
 experiment deposit.** Start with the route that matches the materials available

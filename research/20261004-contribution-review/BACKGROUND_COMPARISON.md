@@ -64,7 +64,7 @@ in this round and must remain a limit of the novelty comparison.
 and requested sources, hashes and inspection levels. Raw PDFs, extracted text,
 Crossref/Atom payloads and retrieval logs remain outside Git at
 `/workspace/contribution-review-20261004/background/`. The first-party
-[inspection script](scripts/inspect_background.py) records failures as well as
+[inspection script](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/research/20261004-contribution-review/scripts/inspect_background.py) records failures as well as
 successes and refuses to overwrite an existing output directory.
 
 Documentation-quality problems motivate care in model reuse. They do not, by

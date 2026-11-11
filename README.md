@@ -22,6 +22,13 @@ decoder compatibility D separate; P checks intervention preservation. E5 remains
 a supporting tool with no additional rejection over the audited simple/Task
 baseline. These data do not establish natural defects, prevalence or task accuracy.
 
+## Current code
+
+Use [experiment/README.md](experiment/README.md) and its [runbook](experiment/RUNBOOK.md).
+The exact staging dependency list is [experiment/source-map.json](experiment/source-map.json).
+Historical source versions are [archived at a fixed Git commit](archive/README.md);
+auxiliary evidence readers are separated from the focal execution in [support](support/README.md).
+
 ## Start here
 
 | Task | Entry point |
@@ -29,7 +36,7 @@ baseline. These data do not establish natural defects, prevalence or task accura
 | Read the current paper | [Current manuscript source](work/label-resource-revision-20261020/manuscript/paper.tex), [full companion](work/label-resource-revision-20261020/manuscript/paper-full.tex), [claim–evidence map](work/label-resource-revision-20261020/CLAIM_EVIDENCE.md) |
 | Inspect the new execution | [Observed results](work/focal-rerun-20261110/RESULTS.md), [runbook and prerequisites](work/focal-rerun-20261110/README.md), [local archive receipt](work/focal-rerun-20261110/delivery-record.json) |
 | Continue the project | [Active TODO](TODO.md), [current memory](MEMORY.md), [decisions](docs/DECISIONS.md), [repository policy](AGENTS.md) |
-| Locate code or decide what to retain | [Repository map and cleanup decisions](docs/REPOSITORY_CLEANUP.md) |
+| Locate current code or historical versions | [Current experiment](experiment/README.md), [archive and restore](archive/README.md), [repository map](docs/REPOSITORY_CLEANUP.md) |
 | Check provenance and author questions | [Current manuscript pins](docs/CURRENT_MANUSCRIPT.json), [unsigned author handoff](work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md), [input recovery](work/input-recovery-20261110/README.md) |
 | Trace historical sources | [Original import index](docs/SOURCE_IMPORT.json), [P2/P3 import index](docs/SOURCE_P2P3.json), [historical reading notes](docs/HISTORICAL_README_NOTES.md) |
 
@@ -42,15 +49,19 @@ python3 scripts/check_source_tree.py
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
 ```
 
-These commands check source scope, navigation, syntax, 354 preserved imports,
+These commands check source scope, navigation, syntax, 354 preserved imports
+(in the working tree or verified Git archive),
 the import-backed memory hash, seven manuscript/predecessor pins and verifier
 regressions. They do not run model experiments or revalidate excluded raw evidence.
 Historical missing-evidence locators produce warnings; changed imported bytes fail.
+Archive verification requires local Git history containing the fixed pre-cleanup commit.
 
 ## Reproduction and manuscript builds
 
-Use the [new focal runbook](work/focal-rerun-20261110/README.md) for the executed
-November sequence and its external prerequisites. The [historical guide and
+Use the [current focal runbook](experiment/RUNBOOK.md) for a new source layout.
+The [November record](work/focal-rerun-20261110/README.md) preserves the executed
+sequence and its external prerequisites. The layout change was source-staged and
+regression-tested; no Android build or inference was repeated. The [historical guide and
 input/toolchain inventories](docs/reproduction/README.md) remain provenance
 references. Imported absolute `/workspace` paths are intentional historical facts;
 new runs require separate directories and recorded path adaptations. Never run

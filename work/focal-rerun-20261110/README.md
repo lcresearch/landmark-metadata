@@ -1,5 +1,8 @@
 # Fresh focal execution after cloud evidence loss
 
+Current executable entry: [maintained source](../../experiment/README.md). The commands below
+record the original layout; removed originals are available in the fixed Git archive.
+
 Date: 10 November 2026 (America/Los_Angeles). This work starts from
 `05e6b22ad6dc32c18e340309c40431609651e0a8`, the input-recovery branch in
 [PR #18](https://github.com/lcresearch/landmark-metadata/pull/18).
@@ -22,36 +25,36 @@ are separate. Manuscripts and historical snapshots remain unchanged.
 
 ## Source and environment handling
 
-- [initialize.py](initialize.py) checks recovered input pins, creates new external
+- [initialize.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/work/focal-rerun-20261110/initialize.py) checks recovered input pins, creates new external
   working copies using the maintained Android initializer, records absolute-path
   adaptations and freezes their hashes. It does not edit imported sources.
-- [bootstrap_python.py](bootstrap_python.py) installs an isolated uv-managed
+- [bootstrap_python.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/work/focal-rerun-20261110/bootstrap_python.py) installs an isolated uv-managed
   Python 3.11.16 and eleven historical wheel bytes verified against
   [toolchain.json](../../docs/reproduction/toolchain.json). uv 0.13.7 is separately
   pinned by wheel SHA-256. The new Python distribution is not claimed to equal an
   unrecorded historical interpreter binary.
-- [stage.py](stage.py) gives each invocation an exclusive directory with command,
+- [stage.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/work/focal-rerun-20261110/stage.py) gives each invocation an exclusive directory with command,
   time, exit status, stdout and stderr. Python assertions remain enabled. Completed
   means the process ended; scientific success requires actual evidence checks.
-- [verify_p2_dependencies.py](verify_p2_dependencies.py) compares the newly fetched
+- [verify_p2_dependencies.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/work/focal-rerun-20261110/verify_p2_dependencies.py) compares the newly fetched
   P2 archives and selected Java/native files with historical hashes and sizes.
-- [record_environment.py](record_environment.py) records the actual interpreter
+- [record_environment.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/work/focal-rerun-20261110/record_environment.py) records the actual interpreter
   binary/distribution hashes, host architecture and KVM availability, without
   collecting credentials or the host environment-variable dictionary.
-- [continue_android.py](continue_android.py) runs the remaining serial Android
+- [continue_android.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/work/focal-rerun-20261110/continue_android.py) runs the remaining serial Android
   sequence after a started E1 primary and prepared/frozen P2 builds. It waits for
   that primary, checks completion, and stops at failed stages. It is a foreground
   continuation tool, not a scheduler or cross-session synchronization service.
-- [resume_android_phase.py](resume_android_phase.py) invokes the unchanged
+- [resume_android_phase.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/work/focal-rerun-20261110/resume_android_phase.py) invokes the unchanged
   E1/E2 collector one condition at a time. Complete observations are kept even
   when their scientific outcome is FAIL. Only missing transport collections are
   retried. New invocation folders, prior partial folders, hash inventories and
   explicit selection records remain available alongside the audit's copied view.
-- [analyze_p3_core.py](analyze_p3_core.py) checks all six reference pins and five
+- [analyze_p3_core.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/work/focal-rerun-20261110/analyze_p3_core.py) checks all six reference pins and five
   model pins, recomputes the graph/buffer bridge and compares display order. Its
   normalization follows the preserved P3 method; this is not a new independent
   algorithm. No stable-class-ID or accuracy assertion is made.
-- [package_evidence.py](package_evidence.py) creates and fully reads back a local
+- [package_evidence.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/work/focal-rerun-20261110/package_evidence.py) creates and fully reads back a local
   evidence archive, with a manifest and explicit exclusions. Installed SDK/JDK/
   Python environments, caches, symlinks and disposable keys are excluded; downloaded
   archives, actual builds, raw observations and command records are retained.

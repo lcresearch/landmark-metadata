@@ -139,7 +139,7 @@ comments and stderr remain outside Git under
 `/workspace/significance-review-20261004/public-reports/`. No uploaded model or
 third-party full text is included in this repository.
 
-The [collector](scripts/search_public_reports.py) writes new files exclusively.
+The [collector](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/research/20261004-significance-review/scripts/search_public_reports.py) writes new files exclusively.
 For another inquiry, use a new external directory; rerunning live search is not
 guaranteed to reproduce this historical result order or content. The commands
 actually used were:

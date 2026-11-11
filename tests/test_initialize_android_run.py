@@ -49,7 +49,7 @@ class InitializeAndroidRunTests(unittest.TestCase):
         self.assertNotIn('fresh HTTPS publisher download', source)
         self.assertNotIn('recovered from frozen local evidence', source)
         for name in ('ContractInstrumentation.java', 'prepare_e2.py'):
-            expected = REPO / 'sources' / initializer.AUDIT / 'rebuild/scripts' / name
+            expected = REPO / 'experiment/android' / name
             self.assertEqual((self.output / 'scripts' / name).read_bytes(), expected.read_bytes())
         self.assertEqual(list((self.output / 'prerequisites').iterdir()), [])
         self.assertFalse(list(self.output.rglob('*.tflite')))
@@ -73,7 +73,7 @@ class InitializeAndroidRunTests(unittest.TestCase):
         self.assertIn('check_android_ready.py', ast.unparse(readiness_call))
         self.assertEqual(ast.unparse(gate.body[2].test), 'functional.returncode != 0')
         self.assertIsInstance(gate.body[2].body[0], ast.Continue)
-        helper = REPO / 'sources/repro-audit-20261004/android/check_android_ready.py'
+        helper = REPO / 'experiment/android/check_android_ready.py'
         self.assertEqual((self.output / 'scripts/check_android_ready.py').read_bytes(), helper.read_bytes())
 
     def test_refuses_existing_root_without_touching_it(self):
@@ -104,12 +104,10 @@ class InitializeAndroidRunTests(unittest.TestCase):
 
     def test_missing_adapter_anchor_refuses_before_output_creation(self):
         repository = self.base / 'source-copy'
-        source_dirs = [Path('sources') / initializer.E2E,
-                       Path('sources') / initializer.AUDIT / 'rebuild/scripts',
-                       Path('sources/repro-audit-20261004/android')]
+        source_dirs = [Path('sources') / initializer.E2E, Path('experiment')]
         for relative in source_dirs:
             shutil.copytree(REPO / relative, repository / relative)
-        prepare = repository / 'sources' / initializer.E2E / 'scripts/prepare_e1.py'
+        prepare = repository / 'experiment/android/prepare_e1.py'
         prepare.write_text(prepare.read_text().replace('exact bytes recovered from frozen local evidence',
                                                       'changed upstream provenance'))
         with self.assertRaisesRegex(ValueError, 'Expected adapter anchor missing'):

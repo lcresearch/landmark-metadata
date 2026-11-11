@@ -60,7 +60,7 @@ retarget-to-main sequence after squash is not clean. Local simulation of #10's
 squash followed by #11 produces README.md and TODO.md conflicts. Squashing
 changes ancestry, so the old base commits are not ancestors of the new main.
 
-The [local-only simulator](simulate_stack.py) verifies a safe sequential plan:
+The [local-only simulator](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/work/pr10-14-review-20261008/simulate_stack.py) verifies a safe sequential plan:
 
 1. Squash #10 into main after rechecking its exact reviewed head.
 2. Before each #11–#14, require the actual main tree to equal the reviewed

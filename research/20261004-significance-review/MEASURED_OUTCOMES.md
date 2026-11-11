@@ -39,7 +39,7 @@ files read, and inspected repository source/report digests. The readback is a
 fixed finite selection, not a complete replay or a reusable archive verifier.
 
 The first-party code is retained as
-[scripts/read_existing_outcomes.py](scripts/read_existing_outcomes.py). It adapts
+[scripts/read_existing_outcomes.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/research/20261004-significance-review/scripts/read_existing_outcomes.py). It adapts
 the executed script by requiring a new external `--output-dir`, refusing existing
 or in-repository output directories, writing its report exclusively, and allowing
 explicit historical input roots. The comparison selection/logic is retained.

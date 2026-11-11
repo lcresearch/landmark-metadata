@@ -38,7 +38,7 @@ not five independent models.
 For P2, `/workspace/metadata-contract-p2p3-20261004T073824Z/INPUTS.json` is
 **present locally but excluded from Git**. Its freshly measured SHA-256 is
 `61b1fa22db4562586d6294bd6919bf6d4591efab03dde20745ea5212da4a6ce7`.
-[P2 preparation](../../research/20261004-p2-p3/P2/scripts/prepare.py) reads
+[P2 preparation](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/research/20261004-p2-p3/P2/scripts/prepare.py) reads
 `ROOT.parent/INPUTS.json`: the necessary field is an `input_models` array of
 objects containing `variant`, absolute `path`, and expected `sha256`.
 Use exactly `original`, `description_control`, `label_deletion`,
@@ -49,9 +49,9 @@ Do not edit the old configuration or reuse its absolute paths without checking
 the corresponding bytes. The JSON inventory records this schema and availability.
 
 The exact historical mutation definitions are in
-[prepare_e1.py](../../sources/metadata-contract-e2e-20261004T030536Z/scripts/prepare_e1.py),
-[prepare_e2.py](../../sources/metadata-contract-e2e-20261004T030536Z/scripts/prepare_e2.py)
-and [suite_static.py](../../sources/metadata-contract-paper/scripts/suite_static.py).
+[prepare_e1.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/sources/metadata-contract-e2e-20261004T030536Z/scripts/prepare_e1.py),
+[prepare_e2.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/sources/metadata-contract-e2e-20261004T030536Z/scripts/prepare_e2.py)
+and [suite_static.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/sources/metadata-contract-paper/scripts/suite_static.py).
 These scripts require their documented sibling files and external workspace;
 copying one script alone is insufficient. The first description byte in
 `Probabilities of the 1000 labels respectively.` is XORed with 32. Restoration
@@ -92,9 +92,9 @@ no reached input execution in the historical P2 record; do not manufacture it
 from these definitions.
 
 Construction source:
-[E1/E2 instrumentation](../../sources/metadata-contract-e2e-20261004T030536Z/scripts/ContractInstrumentation.java),
-[P2 wrapper instrumentation](../../research/20261004-p2-p3/P2/scripts/ContractInstrumentation.java)
-and [P2 Task instrumentation](../../research/20261004-p2-p3/P2/scripts/TaskInstrumentation.java).
+[E1/E2 instrumentation](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/sources/metadata-contract-e2e-20261004T030536Z/scripts/ContractInstrumentation.java),
+[P2 wrapper instrumentation](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/research/20261004-p2-p3/P2/scripts/ContractInstrumentation.java)
+and [P2 Task instrumentation](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/research/20261004-p2-p3/P2/scripts/TaskInstrumentation.java).
 No image dataset or image-class ground truth is required for these observations.
 
 ## P3 reference prerequisites

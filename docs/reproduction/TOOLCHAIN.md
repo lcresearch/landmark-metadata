@@ -36,10 +36,10 @@ native runtime or an Android Studio build reproduction.
 
 ## Acquisition and byte identities
 
-The [Android prerequisite lock](../../sources/repro-audit-20261004/android/android-prerequisites.lock.json)
+The [Android prerequisite lock](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/sources/repro-audit-20261004/android/android-prerequisites.lock.json)
 contains official URLs and SHA-256 for **five SDK archives, one JDK archive and
 11 Java archives**, plus extracted Java-class digests. The
-[restorer](../../sources/repro-audit-20261004/android/restore_prerequisites.py)
+[restorer](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/sources/repro-audit-20261004/android/restore_prerequisites.py)
 checks these expected bytes; it does not recover models or Python. Do not run its
 restore or `--verify-cache` mode against preserved evidence: even verify mode
 writes an integrity report.
@@ -59,7 +59,7 @@ all dependency identities rather than truncating hashes in commands.
 | Task Base 0.4.4 AAR | `8b1599db15d3fa7a58f687cee38600f8cce175b86896dcbc0042d31eeb145e5f` |
 
 The Android reconstruction lock **does not include Task Vision/Base**. P2's
-[fetch source](../../research/20261004-p2-p3/P2/scripts/fetch_dependencies.py)
+[fetch source](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/research/20261004-p2-p3/P2/scripts/fetch_dependencies.py)
 and [explicit dependency selection](../../research/20261004-p2-p3/P2/dependencies/resolved-lock.json)
 identify these additions. `toolchain.json` adds their exact acquisition URLs,
 AAR/POM digests, extracted `classes.jar` and x86_64 native-library hashes from the
@@ -70,7 +70,7 @@ It is not a general Maven resolver. AndroidX annotation 1.3.0 was selected altho
 an upstream provided declaration names 1.1.0; the selected classpath is the tested
 configuration.
 
-The [Python lock](../../sources/hand-contract-repro/requirements.lock) has 11
+The [Python lock](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/sources/hand-contract-repro/requirements.lock) has 11
 exact version pins. The existing original wheel index supplies filenames and
 SHA-256 for all 11 wheels, now indexed in `toolchain.json`. Exact historical wheel
 download URLs and the CPython distribution archive digest are not established by

@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 SPEC = importlib.util.spec_from_file_location(
     'recover_focal_inputs', Path(__file__).resolve().parents[1] /
-    'work/input-recovery-20261110/recover_inputs.py')
+    'experiment/inputs/recover_inputs.py')
 RECOVERY = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(RECOVERY)
 

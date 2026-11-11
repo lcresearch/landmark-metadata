@@ -231,3 +231,22 @@ feature-branch ancestry only after proving main equals the reviewed predecessor
 tree, without force pushes. Keep final integration notes in #20; its verified
 GitHub merged state closes delivery. Research evidence and human-review limits
 remain unchanged by repository integration.
+
+
+## 2026-11-11 America/Los_Angeles — Separate current execution from historical code
+
+The user explicitly requested actual code reduction, separate archival of old
+versions, removal of redundant copies and a PR. This supersedes the earlier
+navigation-only cleanup's decision to keep every source copy in the active tree.
+Preserve the complete original tree in fixed Git ancestor
+`e9da459f6043684cdecba913c9c711433371909d`, with per-path SHA-256/size identities and
+verified offline restoration. Retain import manifests and manuscript pins; resolve
+archived imports against actual Git blobs instead of dropping their checks.
+
+Promote the selected focal producers to `experiment/` without changing their
+bytes. The maintained initializer stages an explicit dependency list, avoiding
+whole-suite copies, and shares one identical generator across consumers. Keep
+auxiliary readback inputs separate and retain their regression coverage. This is
+a file-level selection; no new algorithm, inference, external evidence backup,
+human verification or merger is implied. New driver/source identities must be
+recorded for future runs. Publish on a feature branch through an unmerged PR.

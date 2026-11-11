@@ -12,7 +12,7 @@ import unittest
 from unittest.mock import patch
 import zipfile
 
-AREA = Path(__file__).resolve().parents[1] / 'sources/repro-audit-20261004'
+AREA = Path(__file__).resolve().parents[1] / 'support/reproduction'
 
 
 def load(relative):

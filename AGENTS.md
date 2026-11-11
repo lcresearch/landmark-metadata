@@ -40,8 +40,12 @@ files to Releases or LFS as a workaround for the user's scope.
 
 ## Research integrity
 
-- `sources/` imports are byte-preserved historical snapshots. Add new work in a
-  new source area instead of rewriting those snapshots or sealed local evidence.
+- Historical imports remain byte-preserved in the working tree or the fixed Git
+  archive described by `archive/manifest.json`. The user authorized removing old
+  source copies from the active tree in the 11 November code cleanup. Do not
+  rewrite archived bytes or import hashes; verify the archived Git blobs. Current
+  focal code belongs in `experiment/`, auxiliary readers in their maintained
+  areas. Never rewrite sealed external evidence.
 - Keep structural acceptance S, reference-backed association I, and selected
   decoder compatibility D separate. P checks intervention preservation.
 - Recheck claims against actual artifacts before strengthening them. Textual

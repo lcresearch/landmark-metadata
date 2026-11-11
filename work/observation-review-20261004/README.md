@@ -2,7 +2,7 @@
 
 Use [verify_observations.py](verify_observations.py) for future readback of the
 fresh reconstruction evidence. It derives from the
-[original exported reader](../../sources/repro-audit-20261004/claims/verify_observations.py),
+[original exported reader](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/sources/repro-audit-20261004/claims/verify_observations.py),
 whose SHA-256 is
 `21fe5355b655c8bd41c5721f07699c92cda5b9b3133522409df559b257602cd2`.
 The original reader, export manifest, claim map and recorded 677-check result

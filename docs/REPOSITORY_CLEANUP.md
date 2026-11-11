@@ -1,4 +1,51 @@
-# Repository map and cleanup decisions
+# Current code layout and historical retention
+
+The user authorized actual source reduction after the earlier navigation cleanup.
+Start at [experiment](../experiment/README.md), not the dated snapshot directories.
+The [staging map](../experiment/source-map.json) lists every current copied runtime
+source. [Archive instructions](../archive/README.md) explain how to verify or
+restore old versions; [support](../support/README.md) identifies auxiliary readers.
+
+Current focal producers, build/collection tools and source-staging adapters are
+separate from historical source versions. The initializer no longer copies entire
+Hand/corpus/E1 suites, and an identical generator is stored once. The identical consumer helper is also stored once. Reports, import indexes and manuscript lineage stay in
+place as text references; their presence does not mean every historical workflow
+is supported in the active layout. Three sources directly linked by the pinned
+current manuscript remain local reference dependencies.
+
+The old tree is preserved byte-for-byte in Git commit
+`e9da459f6043684cdecba913c9c711433371909d`. The source checker validates archived
+blobs and detects omitted archive entries; it does not merely trust old PASS flags.
+Current source-copy validation reads the recovered model/reference pins and stages
+fresh external copies without installing dependencies or running inference.
+The in-progress paper draft in the original checkout is outside this PR.
+
+## Reduction and validation
+
+The same count used in the initial assessment includes nonblank `.py`, `.java`
+and `.sh` lines, including comments, and excludes documents/JSON. Working-tree
+code falls from **22,136 lines / 307 files** to **about 9,000 lines / 76 files**
+(about 59% fewer lines). `experiment/` contains about 2,200 lines; tests about
+2,800; the rest is auxiliary readers, repository/archival checks and retained
+manuscript source references. The 280 archived original paths include 47 promoted
+file destinations; counts of archived paths are not counts of discarded algorithms.
+No claim is made that Git history or external evidence storage becomes smaller.
+
+Validation: all 176 existing regressions remain and seven layout/archive tests
+pass (183 total). The source check verifies all 354 imports across the working
+tree and archived Git blobs, seven manuscript pins and 280 archived source paths.
+A full old-tree restoration checks every archived file's original bytes. A fresh
+source-only initialization using the recovered model/reference directories passes;
+all 12 selected Android outputs match the previous adapter after reversing only
+the recorded external-root substitutions. No model, JVM or Android experiment was
+run, no excluded evidence was modified, and no human status changed.
+
+## Earlier navigation-only assessment (historical)
+
+The remainder describes the earlier cleanup's scope and retention decisions.
+Its no-deletion decision is superseded by the user-authorized code reduction above.
+
+## Earlier repository map
 
 Reviewed 11 November 2026 from commit
 `a94b98ffdce5814b9db717ae8d4db4fd8a80f3f2` (PR #19's head).
