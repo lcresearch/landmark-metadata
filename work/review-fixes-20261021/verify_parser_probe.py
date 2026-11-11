@@ -26,12 +26,12 @@ EXPECTED = {'original': (1000, 1000, 'PASS'),
 SOURCE_PATHS = [
     'work/preaudit-followup-20261008/parser/PROTOCOL.md',
     'work/preaudit-followup-20261008/parser/run_probe.py',
-    'sources/metadata-contract-paper/scripts/DecoderProbe.java',
-    'sources/repro-audit-20261004/maintained/LabelOracle.java',
-    'sources/repro-audit-20261004/maintained/java_labels.py',
-    'sources/repro-audit-20261004/maintained/test_java_labels.py',
-    'sources/repro-audit-20261004/maintained/runtime.py',
-    'sources/repro-audit-20261004/probes/probe_label_parser.py',
+    'support/parser/DecoderProbe.java',
+    'support/reproduction/maintained/LabelOracle.java',
+    'support/reproduction/maintained/java_labels.py',
+    'support/reproduction/maintained/test_java_labels.py',
+    'support/reproduction/maintained/runtime.py',
+    'support/reproduction/probes/probe_label_parser.py',
     'docs/reproduction/toolchain.json',
 ]
 

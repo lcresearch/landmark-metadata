@@ -10,7 +10,6 @@ from pathlib import Path
 
 
 E2E = 'metadata-contract-e2e-20261004T030536Z'
-AUDIT = 'metadata-contract-audit-20261004T062010Z'
 LOCAL_INPUT_PROVENANCE = (
     'local model input bytes; acquisition method is not established by this initializer'
 )
@@ -33,9 +32,6 @@ def initialize(repo, root, port=5554):
         raise ValueError('Evidence root must stay outside source-only repository')
     if root.exists() or root.is_symlink():
         raise FileExistsError('Use a fresh evidence root: ' + str(root))
-    old = repo / 'sources' / E2E
-    audit = repo / 'sources' / AUDIT / 'rebuild/scripts'
-    helpers = repo / 'sources/repro-audit-20261004/android'
     inputs, scripts, plans = [], {}, {}
 
     def source(path):
@@ -43,17 +39,13 @@ def initialize(repo, root, port=5554):
         inputs.append({'source': str(path), 'sha256': digest(data), 'bytes': len(data)})
         return data
 
-    # Read and adapt every required source before creating the output directory.
-    for path in sorted((old / 'scripts').iterdir()):
-        if path.suffix in ('.py', '.java'):
-            scripts[path.name] = source(path)
+    # The checked-in allowlist is the complete focal dependency closure.
+    catalog = json.loads((repo / 'experiment/source-map.json').read_text())
+    for destination, relative in catalog.items():
+        if destination.startswith('android/scripts/'):
+            scripts[Path(destination).name] = source(repo / relative)
     for name in ('EXPERIMENT_E1_PLAN.md', 'EXPERIMENT_E2_PLAN.md'):
-        plans[name] = source(old / name)
-    for name in ('ContractInstrumentation.java', 'prepare_e2.py'):
-        scripts[name] = source(audit / name)
-    for name in ('audit_android_results.py', 'audit_model_preservation.py',
-                 'check_android_ready.py'):
-        scripts[name] = source(helpers / name)
+        plans[name] = source(repo / 'sources' / E2E / name)
 
     changes = [('prepare_e1.py', 'exact bytes recovered from frozen local evidence',
                 LOCAL_INPUT_PROVENANCE)]
@@ -81,7 +73,8 @@ def initialize(repo, root, port=5554):
         "            if functional.returncode!=0: continue\n", 'functional readiness')
     scripts['start_emulator.py'] = startup.encode('utf-8')
     provenance = {
-        'base_source': str(old / 'scripts'),
+        'base_source': str(repo / 'experiment/source-map.json'),
+        'source_map_sha256': digest((repo / 'experiment/source-map.json').read_bytes()),
         'source_files': inputs,
         'adapter': {'path': str(Path(__file__).resolve()),
                     'sha256': digest(Path(__file__).read_bytes())},

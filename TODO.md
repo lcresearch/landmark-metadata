@@ -42,6 +42,21 @@ revision is in [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22)
 open for review, and requires its own merge instruction.
 Repository integration does not complete the remaining research/human tasks.
 
+## Code-layout integration
+
+[Cleanup PR #21](https://github.com/lcresearch/landmark-metadata/pull/21) is stacked
+on paper PR #22. The [compatibility review](docs/PR21_REVIEW.md) fixes moved source
+paths and preserves the paper/index pins. Both still require merge authorization;
+review and integrate #22 before #21, rechecking actual heads and default-branch state.
+
+## Code-layout maintenance
+
+The current entry is [experiment](experiment/README.md); the old source tree is
+[archived and restorable](archive/README.md). Use the explicit staging map when
+adding runtime dependencies. Before the next authorized inference run, use an
+absent external root and record the new source identities; this cleanup only
+validates source staging and regressions, not new scientific execution.
+
 ## Completed foundations
 
 | Completed scope | Record and limits |

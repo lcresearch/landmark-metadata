@@ -11,7 +11,7 @@ import sys
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] /
-                       'sources/repro-audit-20261004/maintained'))
+                       'support/reproduction/maintained'))
 from evidence_validation import required_fixture_digests, require_exact_identities
 
 HAND_VARIANTS = ('original', 'container_control', 'metadata_exchange', 'restoration')

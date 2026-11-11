@@ -1,5 +1,8 @@
 # Lost cloud evidence: current input recovery
 
+Current executable entry: [maintained source](../../experiment/inputs/README.md). The commands below
+record the original layout; removed originals are available in the fixed Git archive.
+
 Date: 10 November 2026 (America/Los_Angeles). Source base:
 `fa8a318eabff681ee061e55a7908a20a7fda2113`, the verified PR #17 squash commit.
 The user requested original-material review, then reported losing the material
@@ -80,10 +83,10 @@ These copies avoid dependence on the old cloud `/workspace` and temporary output
 directories. They are still local copies, not a remote backup or reviewer deposit.
 No raw material is committed, uploaded, added to LFS or attached to a Release.
 
-[recover_inputs.py](recover_inputs.py) uses the standard library to verify the
+[recover_inputs.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/work/input-recovery-20261110/recover_inputs.py) uses the standard library to verify the
 historical index and original model, perform the recorded deterministic byte
 changes, and verify all seven outputs before creating a new external directory.
-[retrieve_references.py](retrieve_references.py) uses that pinned index and curl
+[retrieve_references.py](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/work/input-recovery-20261110/retrieve_references.py) uses that pinned index and curl
 for the bounded reference acquisition. Both refuse existing output directories
 and repository destinations. Failed requests/mismatches remain in the new
 acquisition directory and produce a nonzero exit; they are not replaced by other

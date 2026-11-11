@@ -5,6 +5,10 @@ import hashlib
 import json
 import re
 import subprocess
+import sys
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from archive.catalog import ARCHIVE_COMMIT, read_archive, preserved_bytes
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,8 +40,9 @@ def local_targets(source):
             yield unquote(parsed.path)
 
 
-def check_navigation(root, counts, failures, warnings):
+def check_navigation(root, counts, failures, warnings, archived=None):
     """Current documentation fails on missing targets; imports warn only."""
+    archived = archived or {}
     for p in sorted(root.rglob('*')):
         rel = p.relative_to(root)
         if '.git' in rel.parts or not p.is_file() or p.is_symlink():
@@ -69,11 +74,20 @@ def check_navigation(root, counts, failures, warnings):
                 item = {'path':str(rel), 'issue':'unavailable historical locator'
                         if historical else 'broken documentation navigation',
                         'target':target}
+                if historical and portable:
+                    relative = resolved.relative_to(root.resolve()).as_posix()
+                    archived_directory = any(name.startswith(relative + '/') for name in archived)
+                    if relative in archived or archived_directory:
+                        item['issue'] = 'archived historical source locator'
+                        kind = 'blob' if relative in archived else 'tree'
+                        item['archive_url'] = ('https://github.com/lcresearch/landmark-metadata/'
+                                               + kind + '/' + ARCHIVE_COMMIT + '/' + relative)
                 (warnings if historical else failures).append(item)
 
 
-def check_memory_hashes(root, rows, counts, failures, warnings):
+def check_memory_hashes(root, rows, counts, failures, warnings, archived=None):
     """Cross-check import-backed MEMORY digests without trusting external paths."""
+    archived = archived or {}
     original_rows = {row.get('original_path', row.get('source_path')):row for row in rows}
     source = (root/'MEMORY.md').read_text(encoding='utf-8')
     pattern = r'^\| `([^`]+)` \| [^\n]*?`([^`]+)` SHA-256: `([0-9a-f]{64})`'
@@ -90,9 +104,12 @@ def check_memory_hashes(root, rows, counts, failures, warnings):
                 failures.append(item)
             continue
         counts['memory_import_hashes'] += 1
-        imported = root/row['repository_path']
-        if (row['sha256'] != expected or not imported.is_file()
-                or hashlib.sha256(imported.read_bytes()).hexdigest() != expected):
+        try:
+            data = preserved_bytes(root, row['repository_path'], archived)
+        except (OSError, ValueError):
+            data = None
+        if (row['sha256'] != expected or data is None
+                or hashlib.sha256(data).hexdigest() != expected):
             failures.append({'path':'MEMORY.md', 'issue':'MEMORY/import/source hash mismatch',
                              'target':row['repository_path']})
 
@@ -175,15 +192,24 @@ def check_tree(root):
             snapshot_roots.add(Path('research/20261004-p2-p3'))
     failures = []
     warnings = []
+    try:
+        archived = read_archive(root)
+    except (OSError, ValueError, KeyError, subprocess.CalledProcessError) as exc:
+        archived = {}
+        failures.append({'path':'archive/manifest.json', 'issue':'archive verification failed', 'detail':str(exc)})
     indexed = set()
     for row in rows:
         if row['repository_path'] in indexed:
             failures.append({'path':row['repository_path'], 'issue':'duplicate imported path'})
         indexed.add(row['repository_path'])
         p = root/row['repository_path']
-        if (not p.resolve().is_relative_to(root.resolve()) or not p.is_file()
-                or p.is_symlink() or hashlib.sha256(p.read_bytes()).hexdigest()!=row['sha256']
-                or p.stat().st_size != row['bytes']):
+        try:
+            data = preserved_bytes(root, row['repository_path'], archived)
+        except (OSError, ValueError):
+            data = None
+        if (not p.resolve().is_relative_to(root.resolve()) or data is None
+                or p.is_symlink() or hashlib.sha256(data).hexdigest()!=row['sha256']
+                or len(data) != row['bytes']):
             failures.append({'path':row['repository_path'],'issue':'imported bytes differ'})
     for snapshot in sorted(snapshot_roots):
         if not (root/snapshot).resolve().is_relative_to(root.resolve()):
@@ -222,14 +248,15 @@ def check_tree(root):
                 json.loads(source);counts['json_parse']+=1
         except (UnicodeError,SyntaxError,ValueError) as exc:
             failures.append({'path':str(rel),'issue':type(exc).__name__})
-    check_navigation(root, counts, failures, warnings)
-    check_memory_hashes(root, rows, counts, failures, warnings)
+    check_navigation(root, counts, failures, warnings, archived)
+    check_memory_hashes(root, rows, counts, failures, warnings, archived)
     check_current_manuscript(root, rows, counts, failures)
     return {'status':'FAIL' if failures else 'PASS', 'checks':counts,
             'imported_files_verified':len(rows) if not any(
                 f['issue'] in {'imported bytes differ', 'duplicate imported path',
                               'invalid imported snapshot root', 'unindexed imported snapshot file'}
                 for f in failures) else 0,
+            'archived_files_verified':len(archived),
             'failures':failures, 'warnings':warnings, 'model_experiments_run':False}
 
 

@@ -2,6 +2,9 @@
 import hashlib
 import importlib.util
 import json
+import os
+import subprocess
+import sys
 from pathlib import Path
 import tempfile
 import unittest
@@ -204,6 +207,33 @@ class SourceTreeChecks(unittest.TestCase):
         report = self.report()
         self.assertEqual(report['status'], 'FAIL')
         self.assertIn('unindexed imported snapshot file', [f['issue'] for f in report['failures']])
+
+    def test_missing_memory_import_reports_failure_instead_of_crashing(self):
+        (self.root / self.row['repository_path']).unlink()
+        report = self.report()
+        self.assertEqual(report['status'], 'FAIL')
+        self.assertIn('MEMORY/import/source hash mismatch',
+                      [f['issue'] for f in report['failures']])
+
+    def test_documented_cli_does_not_create_self_rejecting_bytecode(self):
+        repo = Path(__file__).resolve().parents[1]
+        for relative in ('scripts/check_source_tree.py', 'archive/catalog.py'):
+            self.write(relative, (repo / relative).read_text())
+        env = dict(os.environ)
+        env.pop('PYTHONDONTWRITEBYTECODE', None)
+        for _ in range(2):
+            result = subprocess.run([sys.executable, 'scripts/check_source_tree.py'],
+                                    cwd=self.root, env=env, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertEqual(json.loads(result.stdout)['status'], 'PASS')
+            self.assertFalse(list(self.root.rglob('__pycache__')))
+
+    def test_archived_blob_does_not_make_a_dead_current_link_clickable(self):
+        self.write('docs/guide.md', '[Missing](../retired.py)\n')
+        counts, failures, warnings = {'navigation_targets': 0}, [], []
+        CHECKER.check_navigation(self.root, counts, failures, warnings,
+                                 {'retired.py': b'# preserved in Git, absent here\n'})
+        self.assertTrue(any(f.get('target') == '../retired.py' for f in failures))
 
     def test_binary_artifact_is_rejected(self):
         self.write('model.tflite', 'Excluded artifact\n')

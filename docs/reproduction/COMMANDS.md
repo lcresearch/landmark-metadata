@@ -1,5 +1,9 @@
 # Reproduction commands and execution boundaries
 
+Current focal execution uses [experiment/RUNBOOK.md](../../experiment/RUNBOOK.md).
+The historical command paths below require the [restored old tree](../../archive/README.md)
+where their sources have been archived. They are not additional current run steps.
+
 Use the repository root as the working directory unless a block says otherwise.
 Keep every new report, downloaded input and build outside this checkout. Existing
 evidence must remain untouched. These commands distinguish three activities:
@@ -253,7 +257,7 @@ emulator started for this run. This sequence does not establish a new P2 run.
 ## 5. P2 same-Android comparison: copied working tree required
 
 [P2's plan](../../research/20261004-p2-p3/P2/EXPERIMENT_P2_PLAN.md) and
-[command history](../../research/20261004-p2-p3/P2/commands.sh) identify the exact
+[command history](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/research/20261004-p2-p3/P2/commands.sh) identify the exact
 stages, but do not bootstrap their prerequisites. Before a future run, prepare
 a new external round containing a source copy of `P2/` and its review scripts:
 

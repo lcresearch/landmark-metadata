@@ -18,7 +18,7 @@ the evaluated E5 checker and simple baseline disagree with Java on VT and U+2028
 label payloads. It separates those injected, isolated decoder/Task-initialization
 probes from Android inference, preserves all historical 65-fixture decisions,
 and identifies the maintained valid-UTF-8 parser and malformed-input abstention.
-The [maintained implementation](../../sources/repro-audit-20261004/maintained/java_labels.py)
+The [maintained implementation](https://github.com/lcresearch/landmark-metadata/blob/e9da459f6043684cdecba913c9c711433371909d/sources/repro-audit-20261004/maintained/java_labels.py)
 and [fresh reconstruction report](../../sources/repro-audit-20261004/REPORT.md)
 remain distinct from the frozen historical evaluation and the P2/P3 parent.
 

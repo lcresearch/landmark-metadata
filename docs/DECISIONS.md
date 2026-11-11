@@ -233,6 +233,25 @@ GitHub merged state closes delivery. Research evidence and human-review limits
 remain unchanged by repository integration.
 
 
+## 2026-11-11 America/Los_Angeles — Separate current execution from historical code
+
+The user explicitly requested actual code reduction, separate archival of old
+versions, removal of redundant copies and a PR. This supersedes the earlier
+navigation-only cleanup's decision to keep every source copy in the active tree.
+Preserve the complete original tree in fixed Git ancestor
+`e9da459f6043684cdecba913c9c711433371909d`, with per-path SHA-256/size identities and
+verified offline restoration. Retain import manifests and manuscript pins; resolve
+archived imports against actual Git blobs instead of dropping their checks.
+
+Promote the selected focal producers to `experiment/` without changing their
+bytes. The maintained initializer stages an explicit dependency list, avoiding
+whole-suite copies, and shares one identical generator across consumers. Keep
+auxiliary readback inputs separate and retain their regression coverage. This is
+a file-level selection; no new algorithm, inference, external evidence backup,
+human verification or merger is implied. New driver/source identities must be
+recorded for future runs. Publish on a feature branch through an unmerged PR.
+
+
 ## 2026-11-11 America/Los_Angeles — Bind the short paper to the November evidence
 
 The user requested the short-paper/claim-map update. Create a new editorial area
@@ -252,3 +271,15 @@ from new inference, authenticated provenance, human verification and reviewer
 access. Keep author questions PENDING and all raw/build outputs outside Git.
 Deliver via a new source-only PR; this request does not authorize merging,
 external evidence publication, venue selection or submission.
+
+
+## 2026-11-11 America/Los_Angeles — Review cleanup against the new paper branch
+
+The user's follow-up asks whether cleanup PR #21 is sound. Reproduce and repair
+its ordinary-command bytecode regression, do not accept archived bytes as working
+local hyperlinks, and resolve the paper drivers' references to moved sources.
+Stack #21 on the verified #22 head without changing the paper branch or merging
+either PR. Keep frozen paper/claim/handoff/evidence pins unchanged, distinguish
+working-tree and archived-Git identity resolution, and verify saved records into
+fresh external outputs. Source tests and readback are not new Android inference
+or human review. See the follow-up review for findings and exact scope.

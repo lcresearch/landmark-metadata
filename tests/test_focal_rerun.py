@@ -10,7 +10,7 @@ import unittest
 from unittest.mock import patch
 
 
-SOURCE = Path(__file__).resolve().parents[1] / 'work/focal-rerun-20261110/package_evidence.py'
+SOURCE = Path(__file__).resolve().parents[1] / 'experiment/run/package_evidence.py'
 spec = importlib.util.spec_from_file_location('focal_package', SOURCE)
 package = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(package)

@@ -35,7 +35,7 @@ def main():
         raise ValueError('Choose a fresh output outside the checkout and all evidence inputs')
     sources = {}
     for name, pin in PINS.items():
-        source = (REPO / 'sources/repro-audit-20261004/android' / name).read_bytes()
+        source = (REPO / 'experiment/android' / name).read_bytes()
         if sha(source) != pin:
             raise ValueError('Preserved audit source differs: ' + name)
         sources[name] = source.decode()
@@ -72,7 +72,7 @@ def main():
         ('android', [str(args.python), str(output / 'audit_android_results.py')]),
         ('p2', [str(args.python), str(REPO / 'work/review-fixes-20261021/verify_p2_records.py'),
                 '--round-root', str(run / 'round'), '--output', str(output / 'p2.json')]),
-        ('p3', [str(args.python), str(REPO / 'work/focal-rerun-20261110/analyze_p3_core.py'),
+        ('p3', [str(args.python), str(REPO / 'experiment/run/analyze_p3_core.py'),
                 '--inputs', str(inputs), '--references', str(refs), '--output', str(output / 'p3')]),
     ]
     for label, command in commands:

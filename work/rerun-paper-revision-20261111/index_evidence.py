@@ -10,6 +10,12 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import sys
+from functools import lru_cache
+
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from archive.catalog import read_archive
 
 REPO = Path(__file__).resolve().parents[2]
 AREA = Path(__file__).resolve().parent
@@ -33,6 +39,23 @@ def identity(path):
         for block in iter(lambda: stream.read(1024 * 1024), b''):
             digest.update(block)
     return {'bytes': path.stat().st_size, 'sha256': digest.hexdigest()}
+
+
+@lru_cache(maxsize=None)
+def archived_sources(repo):
+    return read_archive(repo)
+
+
+def repository_identity(path):
+    """Resolve old source bytes without claiming a Git blob is a working-tree file."""
+    relative = path.relative_to(REPO).as_posix()
+    archived = archived_sources(REPO)
+    if relative in archived:
+        data = archived[relative]
+        return ({'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()},
+                {'verified_from': 'archived_git_object',
+                 'revision': json.loads((REPO / 'archive/manifest.json').read_text())['commit']})
+    return identity(path), {'verified_from': 'working_tree'}
 
 
 def main():
@@ -111,21 +134,25 @@ def main():
             groups.append('N9')
         if not groups:
             continue
-        actual = identity(path)
+        actual, source_location = (repository_identity(path) if prefix == 'rerun-source'
+                                   else (identity(path), {'verified_from': 'live_evidence'}))
         if actual != {k: row[k] for k in ['bytes', 'sha256']}:
             raise ValueError('Live file differs from archived member: ' + name)
         if str(path) in p2_paths and actual['sha256'] != p2['read_file_sha256'][str(path)]:
             raise ValueError('P2 read-file identity differs: ' + name)
         files.append({'archive_member': name, 'root': prefix, 'relative_path': relative,
-                      **actual, 'groups': sorted(set(groups))})
+                      **actual, **source_location, 'groups': sorted(set(groups))})
     legacy_path = REPO / 'work/paper-rewrite-20261004/claim-sources.json'
     legacy = json.loads(legacy_path.read_text())
     resolved_sources = []
     for row in legacy['source_records']:
         expected = {k: row[k] for k in ['bytes', 'sha256']}
-        actual = identity(REPO / row['path'])
+        try:
+            actual, source_location = repository_identity(REPO / row['path'])
+        except FileNotFoundError:
+            actual, source_location = None, {'verified_from': 'missing_working_tree'}
         resolved = {'id': row['id'], 'path': row['path'], 'expected': expected,
-                    'current': actual, 'verified_from': 'working_tree'}
+                    'current': actual, **source_location}
         if actual != expected:
             # A maintained document may have changed since the old ledger.
             # Recover its exact pinned Git version, never refresh the old pin.
@@ -154,7 +181,8 @@ def main():
             'selected_members': len(files), 'files': files,
             'historical_source_records_verified': len(legacy['source_records']),
             'historical_source_resolution': resolved_sources,
-            'repository_records': [{'path': str(p.relative_to(REPO)), **identity(p)} for p in sources],
+            'repository_records': [{'path': str(p.relative_to(REPO)), **repository_identity(p)[0],
+                                    **repository_identity(p)[1]} for p in sources],
             'editorial_readbacks': editorial}
     with args.output.open('x') as stream:
         json.dump(data, stream, indent=2)
