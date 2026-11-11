@@ -183,3 +183,23 @@ execution evidence or human verification. Keep manuscripts and historical record
 unchanged; any future experiment receives a new protocol/run identity and must
 preserve deviations. Local storage alone does not complete durable external backup
 or anonymous reviewer access. Deliver this source/doc work as a new unmerged PR.
+
+## 2026-11-10 America/Los_Angeles — Execute a fresh focal study after input recovery
+
+The user explicitly requested rerunning experiments using the repository guide.
+Use new external roots, matched model/reference pins, exact archived SDK/JDK/Java
+dependencies and the eleven pinned wheels. Record the fresh Python distribution
+separately; an unpinned old interpreter binary cannot be claimed identical.
+Keep all historical imports, manuscript sources, evidence claims and human
+PENDING statuses unchanged. The [new protocol and runbook](../work/focal-rerun-20261110/README.md)
+cover E1/E2 primary/replay, paired Android P2 and the six-input P3 core.
+
+This is a known-outcome rerun, not recovered old execution provenance or human
+verification. P3 does not recreate the original 30-request search or auxiliary
+synset inquiry. Preserve failed setup/analysis attempts and interrupted collectors.
+After two chat interruptions, keep completed per-condition records and continue
+only missing transport collections, with separate invocation folders and explicit
+selection/copy hashes. Do not retry a complete scientific FAIL to obtain a PASS.
+Use one software AVD serially; uninstall only this run's test package when changing
+to P2's distinct signing key. Keep raw files and locally verified archives outside
+Git; local packaging is not external backup or anonymous reviewer delivery.

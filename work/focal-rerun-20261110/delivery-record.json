@@ -1,0 +1,95 @@
+{
+  "scope": "New local focal execution and archive receipt; not old evidence recovery, human verification, remote backup or a complete offline runtime.",
+  "run_root": "/home/hsz/landmark-evidence/focal-rerun-20261110",
+  "source_base_revision": "05e6b22ad6dc32c18e340309c40431609651e0a8",
+  "archive": {
+    "status": "LOCAL_ARCHIVE_MEMBERS_VERIFIED",
+    "archive": "/home/hsz/landmark-evidence/focal-rerun-20261110-evidence.tar.gz",
+    "bytes": 3321366905,
+    "sha256": "57970b8ff5a4127caf11b13bdc9837ed2479c13dbb488cfc5262506a76535afd",
+    "manifest_sha256": "26e356cbf13854e2c2824625a61c4c0c269dc401271b6371a91fe9dbd587795f",
+    "verified_members": 2120,
+    "source_file_count": 2119,
+    "source_bytes": 3761591140,
+    "completed_utc": "2026-11-11T06:03:58.110164+00:00",
+    "remote_backup": false,
+    "historical_evidence_recovered": false
+  },
+  "selected_external_records": [
+    {
+      "path": "/home/hsz/landmark-evidence/focal-rerun-20261110/PROTOCOL.md",
+      "bytes": 3530,
+      "sha256": "9ea98c61ec2c9bf6cb6d0faaefdc2dab78fbdb5eff8c7f5c7145f49270661a8c"
+    },
+    {
+      "path": "/home/hsz/landmark-evidence/focal-rerun-20261110/provenance/pre-execution-source-freeze.json",
+      "bytes": 10543,
+      "sha256": "9d9ec140de9099d3db2341f42c936d43e6ed6f51eff4d9aa70579786d4484f46"
+    },
+    {
+      "path": "/home/hsz/landmark-evidence/focal-rerun-20261110/provenance/final-executed-source-identities.json",
+      "bytes": 1188,
+      "sha256": "dbdad7e508fb7c1ca8f8955bb72476662c9e6ef06a3333b4f10bd48a78669981"
+    },
+    {
+      "path": "/home/hsz/landmark-evidence/focal-rerun-20261110/android/audit-results.json",
+      "bytes": 16843,
+      "sha256": "3406fe86a6da56a1822c32540801c7f0d55aa84fe9275cc129c8168df4393943"
+    },
+    {
+      "path": "/home/hsz/landmark-evidence/focal-rerun-20261110/android/model-preservation-audit.json",
+      "bytes": 4942,
+      "sha256": "709716461330d9323375cd0081058648aab27986d9e2a789aa6ea955dffdc386"
+    },
+    {
+      "path": "/home/hsz/landmark-evidence/focal-rerun-20261110/round/P2/EXECUTION_INPUT_FREEZE.json",
+      "bytes": 4383,
+      "sha256": "f19786ca68090cb55d38104ae0c96c2f6e65b0cf03213a712518bb2acb7071f6"
+    },
+    {
+      "path": "/home/hsz/landmark-evidence/focal-rerun-20261110/readback/p2.json",
+      "bytes": 95787,
+      "sha256": "b35b23e56bb0d394b44970dbb19d3ea6b88e4cf534567a21a8bdf0bbfdf73d7b"
+    },
+    {
+      "path": "/home/hsz/landmark-evidence/focal-rerun-20261110/readback/p2-after-message-fix.json",
+      "bytes": 95787,
+      "sha256": "a9aca31e481ea9a3a971290299061f18b7f184abe9cdba627d406fe058cefe02"
+    },
+    {
+      "path": "/home/hsz/landmark-evidence/focal-rerun-20261110/p3-core-attempt2/results.json",
+      "bytes": 1117,
+      "sha256": "a05d4a6cf9e04266987b0ba717878f48716fdda564c005470858436fd1691b21"
+    },
+    {
+      "path": "/home/hsz/landmark-evidence/focal-rerun-20261110/validation/source-tests-after-reader-fix.log",
+      "bytes": 277,
+      "sha256": "e01ff7a8c085abd212f02d1d8d306a178e5d7b3f5faf21f1bd8753d7cee71250"
+    }
+  ],
+  "automated_results": {
+    "android_audit": "PASS",
+    "android_builds": 8,
+    "android_phase_records": 16,
+    "android_input_observations": 32,
+    "p2_initial_readback": "FAIL_TRUNCATED_EXPECTED_JAVA_CAUSE",
+    "p2_corrected_readback": "PASS",
+    "p2_checks": 348,
+    "p2_configurations": 10,
+    "p2_input_observations": 18,
+    "p2_decoded_lists": 16,
+    "p2_wrapper_raw_tensors": 10,
+    "p2_shared_successful_pairs": 8,
+    "p3_core": "PASS_WITHIN_CORE_SCOPE",
+    "source_tests": 176
+  },
+  "human_verification": false,
+  "historical_full_p3_search_rerun": false,
+  "broader_hand_e4_e5_history_recreated": false,
+  "notes": [
+    "Two E1 interruptions are explicitly retained with separate invocation and copied-view provenance.",
+    "The P2 message correction changes the maintained reader only; experiment output bytes were not changed.",
+    "Archive member hashes were verified by a full stream readback. Installed SDK/JDK/Python runtimes, caches, symlinks and disposable keys are excluded.",
+    "This receipt and final documentation edits were written after archive sealing; the archive is not a snapshot of the final PR tree. Executed Python source identities are retained inside it."
+  ]
+}

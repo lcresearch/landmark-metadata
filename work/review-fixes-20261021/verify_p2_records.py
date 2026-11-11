@@ -37,7 +37,10 @@ REQUIRED_SCRIPTS = ('ContractInstrumentation.java', 'TaskInstrumentation.java',
                     'common.py', 'fetch_dependencies.py', 'freeze_execution_inputs.py',
                     'prepare.py', 'run.py', 'start_emulator.py')
 POSTPROCESSING_SCRIPTS = ('analyze.py', 'normalize_results.py', 'write_report.py', 'seal_p2.py')
-TASK_MESSAGE = 'Got 1000 class(es) for output index 0, expected 999 according to the label map.'
+# Complete Java cause text documented in the preserved P2 record and observed in
+# the fresh November execution. The native cardinality suffix alone is truncated.
+TASK_MESSAGE = ('Error occurred when initializing ImageClassifier: '
+                'Got 1000 class(es) for output index 0, expected 999 according to the label map.')
 ERRORS = (OSError, ValueError, TypeError, KeyError, IndexError, OverflowError,
           struct.error, zipfile.BadZipFile)
 

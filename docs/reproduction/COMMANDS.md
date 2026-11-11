@@ -21,6 +21,10 @@ its excluded evidence is available in the current environment. The
 the current maintained tools and their source-only regression validation.
 The [November follow-up](../../work/review-fixes-20261110/README.md) adds artifact,
 controller and float-payload binding checks to those readers.
+The [new focal rerun](../../work/focal-rerun-20261110/README.md) supplies the
+separately identified November execution protocol, local setup and commands,
+including explicit continuation after interrupted collection. Its new evidence
+does not replace or authenticate the missing historical records below.
 
 ## 1. TODAY: source checks, without experiment dependencies
 
