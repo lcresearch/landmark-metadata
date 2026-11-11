@@ -22,12 +22,14 @@ and follow the [repository policy](AGENTS.md).
   [PR #23](https://github.com/lcresearch/landmark-metadata/pull/23) contains the
   revised short paper and [two-candidate shortlist](work/case-screening-20261111/SHORTLIST.md).
   Seven reports/69 comments were re-read; linked material was checked without
-  full model acquisition or execution. #770 and #319 remain conditional candidates.
-- [ ] **Execute the authorized #770 reconstruction using the fixed shortlist.**
-  Acquire full model identities and freeze one consumer configuration before
-  execution. Apply the shortlist’s stop rules and preserve unsupported-path,
-  asset-selection and historical-identity limits. Screening alone adds no
-  experimental result or natural-defect count.
+  full model acquisition or execution. The subsequent #770 run is recorded separately;
+  #319 remains a conditional candidate.
+- [x] **Execute the authorized #770 reconstruction using the fixed shortlist.**
+  [Results](work/support770-reconstruction-20261111/RESULTS.md): unchanged linked
+  model, actual AGP generation, wrapper process PASS/getter FAIL, Task segment PASS.
+  One fixed configuration/input, preserved failure, no retry/version sweep, all
+  bounds respected. Exact historical identity remains unknown; this does not add
+  a supported-path natural-defect count or establish a LiteRT version effect.
 - [ ] **Resolve auxiliary evidence before submitting it.** The new short paper
   labels E5's negative result and Hand/static/parser context as historical. If
   retaining their detailed claims in a submitted companion, supply inspectable
@@ -50,7 +52,9 @@ and follow the [repository policy](AGENTS.md).
 PR #18–#20 are squash-merged; main reached `e9da459…`. The November manuscript
 evidence revision was merged in [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22).
 The acceptance-focused editorial follow-up and bounded candidate screening use a
-new [PR #23](https://github.com/lcresearch/landmark-metadata/pull/23); the user has now authorized review and squash merge, followed by bounded #770 execution.
+[PR #23](https://github.com/lcresearch/landmark-metadata/pull/23), now squash-merged
+at `fd9ce5d…` after preserving #24. The separate #770 run requires its own PR review
+and merge instruction.
 Repository integration does not complete the remaining research/human tasks.
 
 ## Code-layout integration

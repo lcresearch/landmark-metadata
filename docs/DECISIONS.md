@@ -331,3 +331,17 @@ checks. Preserve imported/archived producers, frozen paper/evidence artifacts an
 external execution records. Validate with regressions and before/after output
 comparisons; do not run new Android/model experiments or add a framework. Deliver
 this maintenance work through a separate PR; it is not authorized to merge.
+
+
+## 2026-11-11 America/Los_Angeles — Retain the bounded #770 outcomes
+
+PR #23 was squash-merged at `fd9ce5d…` after preserving the newly merged #24;
+the sole parent and reviewed tree match. The separately authorized reconstruction
+used one unmodified linked model, actual AGP 7.4.2 generation and one call per
+consumer. Preserve the complete wrapper getter FAIL after successful process,
+and the Task category-mask return. Stop after this fixed pair; no version sweep
+or #319 execution. Unknown original versions/digest/input restrict historical
+claims. Keep generator/metadata/Support/Task/runtime identities distinct; this
+pair does not isolate a LiteRT version effect. Retain all raw material outside Git
+and deliver new source/protocol/results as a separate unmerged PR. Current paper
+pins, human verification and external backup requirements remain unchanged.

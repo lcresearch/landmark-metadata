@@ -143,9 +143,10 @@ checks, and ten selected external-record digests. No new model execution or full
 archive readback was performed during this review. Human verification remains pending.
 
 PR #22 and the subsequent code-cleanup PR #21 are merged; their integration
-reached `8005274e9eccbea30fb3189779f03e8d693b3720`. The acceptance-focused follow-up is on
-`codex/acceptance-checks-cases-20261111` in [PR #23](https://github.com/lcresearch/landmark-metadata/pull/23),
-open for review. It retains the preceding evidence index
+reached `8005274e9eccbea30fb3189779f03e8d693b3720`. The acceptance-focused follow-up is in
+[PR #23](https://github.com/lcresearch/landmark-metadata/pull/23), squash-merged at
+`fd9ce5d27b5add8c4fe2242450bfaa8db45ed16f` after preserving PR #24. Its sole parent
+is `c82253d…`, and its tree matches reviewed head `dc367576…`. It retains the preceding evidence index
 and observations, with four explicit acceptance decisions and concise provenance.
 The user subsequently authorized reviewing and squash-merging #23, then one
 bounded #770 reconstruction following the shortlist's stop rules. See the
@@ -162,7 +163,7 @@ initialization matches all 49 output files and the complete directory/link layou
 indexing matches all 1,036 selected records and 48 historical-source resolutions.
 Only external roots, generated times and the two changed drivers' verified source
 identities differ. Comparison outputs are retained under `/tmp/landmark-refactor-*`.
-No new Android/model execution or human verification was performed.
+That maintenance validation performed no Android/model execution or human verification.
 
 Next: retain a second verified evidence copy, complete human review, resolve any
 auxiliary claims retained for submission, provide reviewer access and select a venue. See [TODO](TODO.md) for completion criteria.
@@ -177,9 +178,31 @@ they do not override this file, TODO or repository policy.
 The [bounded public-report screen](work/case-screening-20261111/SHORTLIST.md)
 re-read the existing seven reports and 69 comments. It selects Support #770
 (unsupported segmentation/generated-interface combination) and #319 (default
-versus metadata asset selection) as conditional reproduction candidates. Exact
-linked model responses supplied TFL3 prefixes; full model hashes and historical
-environments are still missing. #870's linked Drive file returned 404. No new
-model execution or natural defect is established; the paper sample is unchanged.
+versus metadata asset selection) as conditional reproduction candidates. At screening time, exact
+linked responses supplied TFL3 prefixes but full model hashes were missing.
+#870's linked Drive file returned 404. Screening itself established no new
+model execution or natural defect; the paper sample is unchanged.
 Fresh public responses and availability prefixes are retained outside Git at
 `/home/hsz/landmark-evidence/case-screening-20261111/`.
+
+## Support #770 reconstruction — 11 November 2026
+
+The [separate bounded run](work/support770-reconstruction-20261111/RESULTS.md) acquired
+the full metadata/2 model (`9711334d…`, 2,780,051 bytes), with output
+`[1,257,257,21]` and 21 labels. AGP 7.4.2/Gradle 7.5.1 generated the actual wrapper;
+its source was compiled unchanged with Support 0.4.4/TFLite 2.13.0. On one gray-127
+input, construction/process passed and its category getter threw the reported
+21-versus-axis-1 error. Task Vision/Base 0.4.4 constructed and segmented the same
+bytes/input, returning one category mask and 21 labels. Preserve that complete
+wrapper FAIL; neither scientific call was retried. One fixed configuration and
+all declared bounds were respected, and the owned software AVD was stopped.
+
+Original versions/model digest/image remain unknown: this is a known-mechanism
+reconstruction of an unsupported consumer combination, not exact 2022 replication,
+a supported-path natural defect, accuracy measurement or LiteRT version effect.
+Generator, build-time metadata, runtime Support and Task identities are separate.
+The current paper/evidence pins and human PENDING statuses remain unchanged.
+The [delivery receipt](work/support770-reconstruction-20261111/delivery-record.json)
+binds locally retained evidence; a second durable copy/reviewer access remains open.
+Deliver this run through its own unmerged feature-branch PR. #319 and version
+comparisons remain outside the authorized execution scope.

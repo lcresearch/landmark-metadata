@@ -24,6 +24,13 @@ decoder compatibility D separate; P checks intervention preservation. E5 remains
 a supporting tool with no additional rejection over the audited simple/Task
 baseline. These data do not establish natural defects, prevalence or task accuracy.
 
+A separate [Support #770 reconstruction](work/support770-reconstruction-20261111/RESULTS.md)
+uses the unmodified reported segmentation asset and actual AGP generation. In one
+fixed configuration, process returns but the generated category getter fails;
+Task ImageSegmenter returns a category mask on the same synthetic input. This
+unsupported-consumer example has separate evidence and does not enlarge the
+current manuscript's classifier sample or establish a LiteRT version effect.
+
 ## Current code
 
 Use [experiment/README.md](experiment/README.md) and its [runbook](experiment/RUNBOOK.md).
@@ -36,7 +43,7 @@ auxiliary evidence readers are separated from the focal execution in [support](s
 | Task | Entry point |
 |---|---|
 | Read the current paper | [Current manuscript source](work/acceptance-paper-revision-20261111/manuscript/paper.tex), [claim–evidence map](work/acceptance-paper-revision-20261111/CLAIM_EVIDENCE.md), [historical October companion](work/label-resource-revision-20261020/manuscript/paper-full.tex) |
-| Assess real-report reproduction candidates | [Two-candidate shortlist](work/case-screening-20261111/SHORTLIST.md); current report/link checks only, no new natural-case execution |
+| Inspect reported-case work | [#770 reconstruction](work/support770-reconstruction-20261111/RESULTS.md), [original screening/stop rules](work/case-screening-20261111/SHORTLIST.md); #319 remains unexecuted |
 | Inspect the new execution | [Observed results](work/focal-rerun-20261110/RESULTS.md), [runbook and prerequisites](work/focal-rerun-20261110/README.md), [local archive receipt](work/focal-rerun-20261110/delivery-record.json) |
 | Continue the project | [Active TODO](TODO.md), [current memory](MEMORY.md), [decisions](docs/DECISIONS.md), [repository policy](AGENTS.md) |
 | Locate current code or historical versions | [Current experiment](experiment/README.md), [archive and restore](archive/README.md), [repository map](docs/REPOSITORY_CLEANUP.md) |
