@@ -12,18 +12,19 @@ and follow the [repository policy](AGENTS.md).
   destination/access policy before upload, then verify the destination bytes.
   Keep evidence out of Git, Releases and LFS. Anonymous reviewer access is a
   separate delivery requirement; do not treat a private backup as its completion.
-- [ ] **Reconcile the manuscript with the new execution history.** Make a new
-  editorial working copy and update its claim ledger, handoff and current-pointer
-  pins together. Disclose the unavailable October raw evidence, known-outcome
-  November rerun, interrupted/resumed collection, reader correction and bounded
-  P3 core. Preserve historical manuscripts, pins and PENDING audit records.
-- [ ] **Decide which auxiliary claims still have inspectable support.** For
-  Hand/E4/E5/parser claims retained in the companion, identify available evidence
-  or narrow/remove the new draft's wording. The focal rerun did not recreate
-  those histories or the full P3 search/synset inquiry. Keep E5's negative result
-  and missing-record limitations visible; do not inherit old PASS summaries.
+- [x] **Reconcile the short manuscript with the new execution history.** The
+  [November revision](work/rerun-paper-revision-20261111/REVISION_NOTES.md) and
+  [claim map](work/rerun-paper-revision-20261111/CLAIM_EVIDENCE.md) disclose the lost
+  October material, known-outcome rerun, two interruptions/continuations, reader
+  correction and P3 core-only scope. Current-pointer pins bind all new artifacts;
+  historical manuscripts, old pins and PENDING audit targets remain preserved.
+- [ ] **Resolve auxiliary evidence before submitting it.** The new short paper
+  labels E5's negative result and Hand/static/parser context as historical. If
+  retaining their detailed claims in a submitted companion, supply inspectable
+  support or narrow/remove the submitted wording. The October companion remains
+  unchanged and is not a newly verified November report.
 - [ ] **Complete human author verification against the revised artifacts.**
-  Carry the [six author questions](work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md)
+  Carry the [six author questions](work/rerun-paper-revision-20261111/ARTIFACT_HANDOFF.md)
   to the new source/evidence identities. Record reviewer, date, scope, observations
   and conclusions. Automated checks and agent reviews do not close this task;
   author verification, independent human audit and independent reproduction differ.
@@ -36,10 +37,10 @@ and follow the [repository policy](AGENTS.md).
   length, anonymity, disclosure and artifact requirements before submission.
   Old venue suggestions/deadlines are historical; no venue or submission is approved.
 
-PR #18 and PR #19 were reviewed and squash-integrated on 11 November. The user's
-follow-up authorizes review and squash merge of [PR #20](https://github.com/lcresearch/landmark-metadata/pull/20);
-its verified GitHub merged state is the integration completion record. Research
-and human-verification tasks above remain open after repository integration.
+PR #18–#20 are squash-merged; main reached `e9da459…`. The November manuscript
+revision is in [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22),
+open for review, and requires its own merge instruction.
+Repository integration does not complete the remaining research/human tasks.
 
 ## Completed foundations
 
@@ -49,7 +50,7 @@ and human-verification tasks above remain open after repository integration.
 | Maintained evidence readers and integrity guards | [October repairs](work/review-fixes-20261021/README.md) and [November binding repairs](work/review-fixes-20261110/README.md); synthetic regressions do not authenticate missing old executions |
 | Recovery of pinned focal inputs | [Recovery record](work/input-recovery-20261110/README.md); matching model/reference/input bytes, not recovered execution logs |
 | New focal execution and local packaging | [Results](work/focal-rerun-20261110/RESULTS.md) and [receipt](work/focal-rerun-20261110/delivery-record.json); E1/E2/P2 audited, P3 core complete, 2,120 archive members verified, human review and external delivery still open |
-| Current editorial source and audit preparation | [October revision](work/label-resource-revision-20261020/REVISION_NOTES.md); new evidence has not yet been incorporated and author questions remain unsigned |
+| Current short paper and evidence map | [November revision](work/rerun-paper-revision-20261111/REVISION_NOTES.md); new focal results incorporated with exact evidence identities, historical companion preserved, author questions unsigned |
 
 ## Deferred unless new evidence changes the decision
 

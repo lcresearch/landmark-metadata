@@ -1,44 +1,76 @@
 {
-  "repository_path": "work/label-resource-revision-20261020/manuscript/paper.tex",
-  "sha256": "be3367013898a7fe61594b9ad0c8705b6b9d0a10030e3adccd89f6952c71ce2c",
-  "bytes": 21894,
+  "repository_path": "work/rerun-paper-revision-20261111/manuscript/paper.tex",
+  "sha256": "30890778c7264174f9b1ef0e3ee6801d4bdf8b9d15416503d0f76f03880f3ed1",
+  "bytes": 21351,
   "derived_from_repository_path": "research/20261004-p2-p3/manuscript/paper.tex",
   "derived_from_sha256": "118ccc9820454f8ac1d3b0416ba456401e5ef3f9e9d0199ba1c59991103ec5a9",
-  "base_commit": "65004d4ac573118d58eb8c6f3125d67c0b330d62",
-  "review_anchor": "65004d4ac573118d58eb8c6f3125d67c0b330d62",
-  "scope": "Focused label-resource case-study revision; repository source/test/document validation only; no Android/model/JVM execution or external raw-evidence revalidation",
-  "editorial_predecessor_repository_path": "work/preaudit-followup-20261008/manuscript/paper.tex",
-  "editorial_predecessor_sha256": "aac0903bc50d41dc1066232f6be13f9596b3241bff8168eac625c0da58ab67b4",
+  "base_commit": "e9da459f6043684cdecba913c9c711433371909d",
+  "review_anchor": "e9da459f6043684cdecba913c9c711433371909d",
+  "scope": "November short-paper evidence reconciliation: new saved-byte and reference-core readbacks; no new Android/model/JVM execution. Known-outcome November run is distinct from lost October evidence.",
+  "editorial_predecessor_repository_path": "work/label-resource-revision-20261020/manuscript/paper.tex",
+  "editorial_predecessor_sha256": "be3367013898a7fe61594b9ad0c8705b6b9d0a10030e3adccd89f6952c71ce2c",
+  "editorial_predecessor_bytes": 21894,
   "editorial_predecessor_companion": {
-    "path": "work/preaudit-followup-20261008/manuscript/paper-full.tex",
-    "sha256": "a2b2ffe54cae5b62286c94729b725e4117ecff34f6b1cf81b61a8b8205463d19",
-    "bytes": 40883
-  },
-  "remote_base_status": "The paper revision was based on merged PR #14 at the review anchor. PR #15 was subsequently squash-merged at c0cd67307d89a74394c7d0deb1f425e608906aef; GitHub merged state checked 2026-10-21.",
-  "feature_branch": "paper/label-resource-boundaries-20261020",
-  "pr_base": "main",
-  "merge_policy": "The user authorized and completed squash merge of PR #15. Future PRs require their own merge authorization.",
-  "claim_ledger": "work/label-resource-revision-20261020/CLAIM_EVIDENCE.md",
-  "claim_crosswalk": {
-    "path": "work/label-resource-revision-20261020/CLAIM_EVIDENCE.md",
-    "sha256": "c6719644bf4561f478b67205e5ca45f67192974861641a2e7f8522835d283614",
-    "bytes": 10820
-  },
-  "full_companion": {
     "path": "work/label-resource-revision-20261020/manuscript/paper-full.tex",
     "sha256": "3ad2458ff34619d7a34a79bc2e439563f960dad0ed03cdef1d62cdcfdadd0adb",
     "bytes": 45270
   },
-  "artifact_handoff": {
-    "path": "work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md",
-    "sha256": "303d63b624a54dc772a6938d0e08d0eb90f3efde1e3865ae581f9252deaf1108",
-    "bytes": 12783
+  "historical_artifacts": [
+    {
+      "path": "work/label-resource-revision-20261020/CLAIM_EVIDENCE.md",
+      "sha256": "c6719644bf4561f478b67205e5ca45f67192974861641a2e7f8522835d283614",
+      "bytes": 10820
+    },
+    {
+      "path": "work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md",
+      "sha256": "303d63b624a54dc772a6938d0e08d0eb90f3efde1e3865ae581f9252deaf1108",
+      "bytes": 12783
+    },
+    {
+      "path": "work/preaudit-followup-20261008/manuscript/paper.tex",
+      "sha256": "aac0903bc50d41dc1066232f6be13f9596b3241bff8168eac625c0da58ab67b4",
+      "bytes": 20981
+    },
+    {
+      "path": "work/preaudit-followup-20261008/manuscript/paper-full.tex",
+      "sha256": "a2b2ffe54cae5b62286c94729b725e4117ecff34f6b1cf81b61a8b8205463d19",
+      "bytes": 40883
+    }
+  ],
+  "full_companion": {
+    "path": "work/label-resource-revision-20261020/manuscript/paper-full.tex",
+    "sha256": "3ad2458ff34619d7a34a79bc2e439563f960dad0ed03cdef1d62cdcfdadd0adb",
+    "bytes": 45270,
+    "role": "Historical October companion; not updated or newly verified as a whole"
   },
-  "revision_notes": "work/label-resource-revision-20261020/REVISION_NOTES.md",
-  "validation": "work/label-resource-revision-20261020/VALIDATION.md",
-  "pull_request": "https://github.com/lcresearch/landmark-metadata/pull/15",
-  "delivery_status": "PR #15 verified MERGED on 2026-10-21, by user-authorized squash; the merged tree matches reviewed head b0f1e497463a0af0bebff465b2809edd758e74e6.",
-  "merge_commit": "c0cd67307d89a74394c7d0deb1f425e608906aef",
+  "full_companion_status": "HISTORICAL_CONTEXT_ONLY_NOT_UPDATED_FOR_NOVEMBER",
+  "claim_ledger": "work/rerun-paper-revision-20261111/CLAIM_EVIDENCE.md",
+  "claim_crosswalk": {
+    "path": "work/rerun-paper-revision-20261111/CLAIM_EVIDENCE.md",
+    "sha256": "ecf49cfbd5e771275d6bfc8b098564d59965976eb3cb536204ee89ac1d51d0bb",
+    "bytes": 16476
+  },
+  "artifact_handoff": {
+    "path": "work/rerun-paper-revision-20261111/ARTIFACT_HANDOFF.md",
+    "sha256": "500f46ba30698df201ca1d11f42eb4f9b16b1530a963127d4b6af93477bbef8a",
+    "bytes": 5690
+  },
+  "evidence_index": {
+    "path": "work/rerun-paper-revision-20261111/evidence-index.json",
+    "sha256": "7e83eb567e9e6d35efec7f81ffdad37e573d289e15452b034a604555c639bd34",
+    "bytes": 438793
+  },
+  "execution_receipt": {
+    "path": "work/focal-rerun-20261110/delivery-record.json",
+    "sha256": "4680384ebef75b5b462ce8e24522e08745fcf218a85ef1626ccae7b38fcf211a",
+    "bytes": 4280
+  },
+  "revision_notes": "work/rerun-paper-revision-20261111/REVISION_NOTES.md",
+  "validation": "work/rerun-paper-revision-20261111/VALIDATION.md",
+  "feature_branch": "codex/paper-rerun-evidence-20261111",
+  "pr_base": "main",
+  "merge_policy": "This editorial task authorizes a source-only PR, not merging, publication of evidence, or paper submission.",
+  "delivery_status": "Open for review in PR #22; not merged.",
   "human_audit": {
     "status": "PENDING",
     "reviewer": null,
@@ -46,5 +78,13 @@
   },
   "durable_anonymous_deposit": false,
   "new_android_or_model_inference": false,
-  "new_jvm_probe": false
+  "new_jvm_probe": false,
+  "new_saved_byte_review": true,
+  "historical_full_p3_search_rerun": false,
+  "pull_request": {
+    "number": 22,
+    "url": "https://github.com/lcresearch/landmark-metadata/pull/22",
+    "base": "main",
+    "head": "codex/paper-rerun-evidence-20261111"
+  }
 }
