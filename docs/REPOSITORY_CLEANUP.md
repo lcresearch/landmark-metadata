@@ -95,7 +95,7 @@ the new run still uses maintained readers and preserved producers from older are
 
 | Area | Why it is needed / current entry |
 |---|---|
-| [Current short-paper revision](../work/rerun-paper-revision-20261111) | November short TeX, claim map, exact evidence index, readback helpers, handoff and build validation; old full companion remains historical |
+| [Current short-paper revision](../work/acceptance-paper-revision-20261111) | Acceptance-focused short TeX, claim map, handoff and build validation; reuses the preceding November evidence index/readbacks; old full companion remains historical |
 | [New focal run](../work/focal-rerun-20261110) | Actual runbook/protocol, setup, collection continuation, P3 core, packaging code, results and archive receipt; start here for a new focal run |
 | [Input recovery](../work/input-recovery-20261110) | Pinned model/input reconstruction and reference retrieval; supplies prerequisites for the new run |
 | [Repository scripts](../scripts) and [tests](../tests) | Source/import/manuscript integrity, preserved import selection, maintained Android initialization and regression coverage |

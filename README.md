@@ -10,7 +10,8 @@ outside Git. It is not a complete evidence archive or an offline reproduction ki
 ## Current state — 11 November 2026
 
 The current **11 November short-paper revision** incorporates the known-outcome
-10 November rerun: E1/E2, paired Android P2 and the six-input P3 core. It discloses
+10 November rerun: E1/E2, paired Android P2 and the six-input P3 core. The follow-up
+centers on four acceptance decisions and condenses evidence history. It discloses
 the unavailable old cloud execution evidence, two interrupted collections and
 selected continuations. The evidence map binds claims to concrete archived files
 and newly checked bytes; matching results do not recover the lost provenance.
@@ -34,11 +35,12 @@ auxiliary evidence readers are separated from the focal execution in [support](s
 
 | Task | Entry point |
 |---|---|
-| Read the current paper | [Current manuscript source](work/rerun-paper-revision-20261111/manuscript/paper.tex), [claim–evidence map](work/rerun-paper-revision-20261111/CLAIM_EVIDENCE.md), [historical October companion](work/label-resource-revision-20261020/manuscript/paper-full.tex) |
+| Read the current paper | [Current manuscript source](work/acceptance-paper-revision-20261111/manuscript/paper.tex), [claim–evidence map](work/acceptance-paper-revision-20261111/CLAIM_EVIDENCE.md), [historical October companion](work/label-resource-revision-20261020/manuscript/paper-full.tex) |
+| Assess real-report reproduction candidates | [Two-candidate shortlist](work/case-screening-20261111/SHORTLIST.md); current report/link checks only, no new natural-case execution |
 | Inspect the new execution | [Observed results](work/focal-rerun-20261110/RESULTS.md), [runbook and prerequisites](work/focal-rerun-20261110/README.md), [local archive receipt](work/focal-rerun-20261110/delivery-record.json) |
 | Continue the project | [Active TODO](TODO.md), [current memory](MEMORY.md), [decisions](docs/DECISIONS.md), [repository policy](AGENTS.md) |
 | Locate current code or historical versions | [Current experiment](experiment/README.md), [archive and restore](archive/README.md), [repository map](docs/REPOSITORY_CLEANUP.md) |
-| Check provenance and author questions | [Current manuscript pins](docs/CURRENT_MANUSCRIPT.json), [unsigned author handoff](work/rerun-paper-revision-20261111/ARTIFACT_HANDOFF.md), [exact evidence identities](work/rerun-paper-revision-20261111/evidence-index.json), [input recovery](work/input-recovery-20261110/README.md) |
+| Check provenance and author questions | [Current manuscript pins](docs/CURRENT_MANUSCRIPT.json), [unsigned author handoff](work/acceptance-paper-revision-20261111/ARTIFACT_HANDOFF.md), [exact evidence identities](work/rerun-paper-revision-20261111/evidence-index.json), [input recovery](work/input-recovery-20261110/README.md) |
 | Trace historical sources | [Original import index](docs/SOURCE_IMPORT.json), [P2/P3 import index](docs/SOURCE_P2P3.json), [historical reading notes](docs/HISTORICAL_README_NOTES.md) |
 
 ## Source checks
@@ -68,7 +70,7 @@ references. Imported absolute `/workspace` paths are intentional historical fact
 new runs require separate directories and recorded path adaptations. Never run
 historical sealing/finalization tools over retained evidence.
 
-The [current validation record](work/rerun-paper-revision-20261111/VALIDATION.md)
+The [current validation record](work/acceptance-paper-revision-20261111/VALIDATION.md)
 documents the four-page short-paper build, actual saved-byte readbacks and their
 limits. Build outside the checkout. The October companion is unchanged and its
 old eight-page build is historical. No venue has been selected; the manuscript

@@ -16,17 +16,16 @@ from fixed ancestor `e9da459f6043684cdecba913c9c711433371909d`; imported bytes a
 historical manuscript pins are unchanged. Auxiliary reader inputs live under
 [support](support/README.md). A fresh source-only initialization validated the
 recovered model/reference pins; no Android/model execution was performed.
-[Paper PR #22](https://github.com/lcresearch/landmark-metadata/pull/22) and
-[cleanup PR #21](https://github.com/lcresearch/landmark-metadata/pull/21) are now
-squash-merged, in that order. Main reached `8005274e9eccbea30fb3189779f03e8d693b3720`.
-Both resulting commits have one parent and exactly match their reviewed trees.
-The [follow-up review](docs/PR21_REVIEW.md) describes the checks before integration;
-its then-open PR statuses are historical. Paper and evidence pins are unchanged.
+[PR #22](https://github.com/lcresearch/landmark-metadata/pull/22) and cleanup PR #21
+were squash-merged; their reviewed trees and sole parents were verified. The
+[follow-up review](docs/PR21_REVIEW.md) fixed the ordinary source-check command
+and paper readback/index paths without changing the paper/evidence pins or
+performing new inference.
 
 ## Current manuscript and research boundary
 
 **Validation Boundaries for Model Label Resources: A Controlled Classifier Case
-Study** now uses the [11 November short-paper revision](work/rerun-paper-revision-20261111/REVISION_NOTES.md).
+Study** now uses the [11 November short-paper revision](work/acceptance-paper-revision-20261111/REVISION_NOTES.md).
 It incorporates the November E1/E2/P2 rerun and P3 six-input core, and explicitly
 discloses old evidence loss, known outcomes, two interrupted collections, selected
 continuations and the P2 reader correction. The four-page source retains the
@@ -36,9 +35,8 @@ handoff and 1,036-member evidence index while retaining old manuscript identitie
 Saved-byte Android/P2/P3 rechecks and full 2,120-member archive verification pass;
 these are new editorial readbacks, not new model execution or human verification.
 After cleanup, the old 48-source index resolves 36 working-tree files, eight
-archived blobs and four exact earlier Git versions. The paper revision's original
-47-plus-S40 resolution describes its pre-cleanup checkout. No pin was silently
-refreshed. The [six current author questions](work/rerun-paper-revision-20261111/ARTIFACT_HANDOFF.md)
+archived blobs and four exact earlier Git versions. The earlier 47-plus-S40
+resolution describes the pre-cleanup checkout. No pin was silently refreshed. The [six current author questions](work/acceptance-paper-revision-20261111/ARTIFACT_HANDOFF.md)
 and all historical human-audit entries remain **PENDING**. No venue is selected.
 
 The contribution is a bounded empirical study: one classifier graph, five model
@@ -144,18 +142,20 @@ Review passed 170 tests at #18 and 176 for the final code, source/import/manuscr
 checks, and ten selected external-record digests. No new model execution or full
 archive readback was performed during this review. Human verification remains pending.
 
-The user subsequently authorized both remaining merges:
-
-- [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22):
-  `ed3e32a4ff84cb77dc728743b2e022455a9fa1f6`, reviewed head `481f62d…`.
-- [PR #21](https://github.com/lcresearch/landmark-metadata/pull/21):
-  `8005274e9eccbea30fb3189779f03e8d693b3720`, reviewed head `559d21a…`.
-
+PR #22 and the subsequent code-cleanup PR #21 are merged; their integration
+reached `8005274e9eccbea30fb3189779f03e8d693b3720`. The acceptance-focused follow-up is on
+`codex/acceptance-checks-cases-20261111` in [PR #23](https://github.com/lcresearch/landmark-metadata/pull/23),
+open for review. It retains the preceding evidence index
+and observations, with four explicit acceptance decisions and concise provenance.
+The user subsequently authorized reviewing and squash-merging #23, then one
+bounded #770 reconstruction following the shortlist's stop rules. See the
+[PR review](docs/PR23_REVIEW.md). This does not authorize #319 execution or
+a version sweep; human verification and evidence publication remain separate.
 The maintenance refactor separates initialization and evidence indexing into
 named validation, preparation and recording steps. Command-line interfaces and
 evidence-selection rules remain fixed; historical producers are not rewritten.
-It also reconciles these current status documents. This new change requires its
-own PR review and merge instruction.
+It also reconciles current status documents and was merged in PR #24 at
+`c82253d`. PR #23 preserves this refactor and carries the new paper forward.
 
 Validation passes all 199 tests and source/import/archive checks. Before/after
 initialization matches all 49 output files and the complete directory/link layout;
@@ -173,3 +173,13 @@ The former 561-line continuation history remains available
 Dated work records and historical audit targets remain in the tree. Their old
 "current", open-PR and evidence-availability statements describe their own time;
 they do not override this file, TODO or repository policy.
+
+The [bounded public-report screen](work/case-screening-20261111/SHORTLIST.md)
+re-read the existing seven reports and 69 comments. It selects Support #770
+(unsupported segmentation/generated-interface combination) and #319 (default
+versus metadata asset selection) as conditional reproduction candidates. Exact
+linked model responses supplied TFL3 prefixes; full model hashes and historical
+environments are still missing. #870's linked Drive file returned 404. No new
+model execution or natural defect is established; the paper sample is unchanged.
+Fresh public responses and availability prefixes are retained outside Git at
+`/home/hsz/landmark-evidence/case-screening-20261111/`.
