@@ -68,6 +68,9 @@ adding runtime dependencies. Before the next authorized inference run, use an
 absent external root and record the new source identities; this cleanup only
 validates source staging and regressions, not new scientific execution.
 
+The maintained initialization/evidence-index refactor from PR #24 is merged at
+`c82253d`; its source changes and regression coverage are preserved.
+
 ## Completed foundations
 
 | Completed scope | Record and limits |

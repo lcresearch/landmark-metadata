@@ -34,10 +34,9 @@ The [current pointer](docs/CURRENT_MANUSCRIPT.json) binds the new source, claim 
 handoff and 1,036-member evidence index while retaining old manuscript identities.
 Saved-byte Android/P2/P3 rechecks and full 2,120-member archive verification pass;
 these are new editorial readbacks, not new model execution or human verification.
-At the preceding paper readback, the old 48-source index resolved 47 files in
-the checkout plus S40's exact old Git version. Later cleanup archived some paths;
-use the archive manifest for their current resolution. No pin was
-silently refreshed. The [six current author questions](work/acceptance-paper-revision-20261111/ARTIFACT_HANDOFF.md)
+After cleanup, the old 48-source index resolves 36 working-tree files, eight
+archived blobs and four exact earlier Git versions. The earlier 47-plus-S40
+resolution describes the pre-cleanup checkout. No pin was silently refreshed. The [six current author questions](work/acceptance-paper-revision-20261111/ARTIFACT_HANDOFF.md)
 and all historical human-audit entries remain **PENDING**. No venue is selected.
 
 The contribution is a bounded empirical study: one classifier graph, five model
@@ -143,8 +142,8 @@ Review passed 170 tests at #18 and 176 for the final code, source/import/manuscr
 checks, and ten selected external-record digests. No new model execution or full
 archive readback was performed during this review. Human verification remains pending.
 
-PR #22 and the subsequent code-cleanup PR #21 are merged; current main is
-`8005274e9eccbea30fb3189779f03e8d693b3720`. The acceptance-focused follow-up is on
+PR #22 and the subsequent code-cleanup PR #21 are merged; their integration
+reached `8005274e9eccbea30fb3189779f03e8d693b3720`. The acceptance-focused follow-up is on
 `codex/acceptance-checks-cases-20261111` in [PR #23](https://github.com/lcresearch/landmark-metadata/pull/23),
 open for review. It retains the preceding evidence index
 and observations, with four explicit acceptance decisions and concise provenance.
@@ -152,6 +151,19 @@ The user subsequently authorized reviewing and squash-merging #23, then one
 bounded #770 reconstruction following the shortlist's stop rules. See the
 [PR review](docs/PR23_REVIEW.md). This does not authorize #319 execution or
 a version sweep; human verification and evidence publication remain separate.
+The maintenance refactor separates initialization and evidence indexing into
+named validation, preparation and recording steps. Command-line interfaces and
+evidence-selection rules remain fixed; historical producers are not rewritten.
+It also reconciles current status documents and was merged in PR #24 at
+`c82253d`. PR #23 preserves this refactor and carries the new paper forward.
+
+Validation passes all 199 tests and source/import/archive checks. Before/after
+initialization matches all 49 output files and the complete directory/link layout;
+indexing matches all 1,036 selected records and 48 historical-source resolutions.
+Only external roots, generated times and the two changed drivers' verified source
+identities differ. Comparison outputs are retained under `/tmp/landmark-refactor-*`.
+No new Android/model execution or human verification was performed.
+
 Next: retain a second verified evidence copy, complete human review, resolve any
 auxiliary claims retained for submission, provide reviewer access and select a venue. See [TODO](TODO.md) for completion criteria.
 Do not start another broad model/mutant campaign by default.

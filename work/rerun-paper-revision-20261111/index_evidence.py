@@ -31,6 +31,20 @@ GROUPS = {
     'N8': 'Retained failed setup/analysis and exact-message reader correction',
     'N9': 'Local archive packaging and verified member inventory; no remote deposit',
 }
+SETUP_MEMBERS = {
+    'run/PROTOCOL.md', 'run/provenance/pre-execution-source-freeze.json',
+    'run/provenance/fresh-environment.json', 'run/provenance/final-executed-source-identities.json',
+    'run/python-setup/downloads.json', 'run/python-setup/requirements-hashed.txt',
+    'run/android/prerequisites/prerequisite-integrity-check.json',
+    'run/android/prerequisites/emulator-command.json',
+    'run/android/prerequisites/emulator-readiness.json',
+    'run/round/P2/prerequisites/dependency-pin-verification.json',
+    'run/round/P2/EXECUTION_INPUT_FREEZE.json',
+    'run/android/scripts/prepare_e1.py', 'run/android/scripts/prepare_e2.py',
+    'run/android/scripts/ContractInstrumentation.java',
+    'run/round/P2/scripts/ContractInstrumentation.java',
+    'run/round/P2/scripts/TaskInstrumentation.java',
+}
 
 
 def identity(path):
@@ -58,92 +72,75 @@ def repository_identity(path):
     return identity(path), {'verified_from': 'working_tree'}
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--readback', type=Path, required=True,
-                        help='Retained editorial readback directory, containing archive/ and core-readback/')
-    parser.add_argument('--output', type=Path, required=True, help='Fresh text index path')
-    args = parser.parse_args()
-    if args.output.exists():
-        raise ValueError('Preserve the prior index; choose a fresh output')
-    receipt_path = REPO / 'work/focal-rerun-20261110/delivery-record.json'
-    receipt = json.loads(receipt_path.read_text())
-    roots = {'run': Path(receipt['run_root']),
-             'recovered-inputs': Path('/home/hsz/landmark-evidence/input-recovery-20261110'),
-             'recovered-references': Path('/home/hsz/landmark-evidence/reference-recovery-20261110'),
-             'rerun-source': REPO / 'work/focal-rerun-20261110'}
-    manifest_path = args.readback / 'archive/archive-manifest.json'
-    if identity(manifest_path)['sha256'] != receipt['archive']['manifest_sha256']:
-        raise ValueError('Manifest does not match published receipt')
-    manifest = json.loads(manifest_path.read_text())
-    p2 = json.loads((roots['run'] / 'readback/p2-after-message-fix.json').read_text())
-    p2_paths = set(p2['read_file_sha256'])
-    fixed_setup = {
-        'run/PROTOCOL.md', 'run/provenance/pre-execution-source-freeze.json',
-        'run/provenance/fresh-environment.json', 'run/provenance/final-executed-source-identities.json',
-        'run/python-setup/downloads.json', 'run/python-setup/requirements-hashed.txt',
-        'run/android/prerequisites/prerequisite-integrity-check.json',
-        'run/android/prerequisites/emulator-command.json',
-        'run/android/prerequisites/emulator-readiness.json',
-        'run/round/P2/prerequisites/dependency-pin-verification.json',
-        'run/round/P2/EXECUTION_INPUT_FREEZE.json',
-    }
+def is_experiment_member(name, experiment):
+    """Select E1/E2 records, keeping interrupted attempts in their own group."""
+    base = 'run/android/' + experiment + '/'
+    summary = name in {base + f for f in ('static-results.json', 'build-results.json', 'results.json')}
+    execution = (name.startswith(base + 'executions/') and
+                 '-interrupted-' not in name and '-provenance/' not in name)
+    generation = (name.startswith(base + 'variants/') and
+                  (name.endswith('/codegen-status.json') or '/logs/codegen.' in name))
+    preparation = name.startswith('run/stages/' + experiment.lower() + '-prepare/')
+    return summary or execution or generation or preparation
+
+
+def member_groups(name, path, p2_paths):
+    """Classify an archive member without reading files or accepting their hashes."""
+    prefix, relative = name.split('/', 1)
+    groups = []
+    if prefix == 'recovered-inputs' and '/' not in relative:
+        groups.append('N0')
+    if name in SETUP_MEMBERS or name.startswith('recovered-inputs/inputs/'):
+        groups.append('N1')
+    if (name in ['run/android/model-preservation-audit.json', 'run/android/audit-results.json']
+            or name.startswith('recovered-inputs/models/')
+            or (name.startswith('run/android/') and '/variants/' in name and
+                name.endswith(('.tflite', '.apk', '.class', '.dex', '/ContractModel.java')))):
+        groups.append('N2')
+    for experiment, group in [('E1', 'N3'), ('E2', 'N4')]:
+        if is_experiment_member(name, experiment):
+            groups.append(group)
+    if str(path) in p2_paths or name in ['run/readback/p2-after-message-fix.json',
+                                        'run/round/P2/EXECUTION_INPUT_FREEZE.json']:
+        groups.append('N5')
+    if prefix == 'recovered-references' or name.startswith('run/p3-core-attempt2/'):
+        groups.append('N6')
+    if (name.startswith('run/android/E1/executions/') and
+            ('-interrupted-' in name or '-provenance/' in name)) or name.startswith((
+                'run/provenance/primary-attempt1-relocation.json',
+                'run/stages/e1-primary/', 'run/stages/e1-primary-attempt2/')):
+        groups.append('N7')
+    if name.startswith(('run/readback/', 'run/p3-core/', 'run/stages/p3-core/',
+                        'run/stages/android-metadata/', 'run/stages/p2-readback/')):
+        groups.append('N8')
+    if name == 'rerun-source/package_evidence.py':
+        groups.append('N9')
+    return sorted(set(groups))
+
+
+def verified_members(manifest, roots, p2_identities):
+    """Read selected bytes and enforce both archive and P2-reader identities."""
     files = []
     for row in manifest['files']:
         name = row['path']
         prefix, relative = name.split('/', 1)
         path = roots[prefix] / relative
-        groups = []
-        if prefix == 'recovered-inputs' and '/' not in relative:
-            groups.append('N0')
-        if (name in fixed_setup or name.startswith('recovered-inputs/inputs/') or
-                name in ['run/android/scripts/prepare_e1.py', 'run/android/scripts/prepare_e2.py',
-                         'run/android/scripts/ContractInstrumentation.java',
-                         'run/round/P2/scripts/ContractInstrumentation.java',
-                         'run/round/P2/scripts/TaskInstrumentation.java']):
-            groups.append('N1')
-        if (name in ['run/android/model-preservation-audit.json', 'run/android/audit-results.json']
-                or name.startswith('recovered-inputs/models/')
-                or (name.startswith('run/android/') and '/variants/' in name and
-                    (name.endswith(('.tflite', '.apk', '.class', '.dex', '/ContractModel.java'))))):
-            groups.append('N2')
-        for experiment, group in [('E1', 'N3'), ('E2', 'N4')]:
-            base = 'run/android/' + experiment + '/'
-            if ((name.startswith(base) and (name in
-                    [base + f for f in ['static-results.json', 'build-results.json', 'results.json']] or
-                    (name.startswith(base + 'executions/') and
-                     '-interrupted-' not in name and '-provenance/' not in name) or
-                    (name.startswith(base + 'variants/') and
-                     (name.endswith('/codegen-status.json') or '/logs/codegen.' in name)))) or
-                    name.startswith('run/stages/' + experiment.lower() + '-prepare/')):
-                groups.append(group)
-        if str(path) in p2_paths or name in ['run/readback/p2-after-message-fix.json',
-                                            'run/round/P2/EXECUTION_INPUT_FREEZE.json']:
-            groups.append('N5')
-        if prefix == 'recovered-references' or name.startswith('run/p3-core-attempt2/'):
-            groups.append('N6')
-        if (name.startswith('run/android/E1/executions/') and
-                ('-interrupted-' in name or '-provenance/' in name)) or name.startswith((
-                    'run/provenance/primary-attempt1-relocation.json',
-                    'run/stages/e1-primary/', 'run/stages/e1-primary-attempt2/')):
-            groups.append('N7')
-        if name.startswith(('run/readback/', 'run/p3-core/', 'run/stages/p3-core/',
-                            'run/stages/android-metadata/', 'run/stages/p2-readback/')):
-            groups.append('N8')
-        if name == 'rerun-source/package_evidence.py':
-            groups.append('N9')
+        groups = member_groups(name, path, p2_identities)
         if not groups:
             continue
         actual, source_location = (repository_identity(path) if prefix == 'rerun-source'
                                    else (identity(path), {'verified_from': 'live_evidence'}))
         if actual != {k: row[k] for k in ['bytes', 'sha256']}:
             raise ValueError('Live file differs from archived member: ' + name)
-        if str(path) in p2_paths and actual['sha256'] != p2['read_file_sha256'][str(path)]:
+        if str(path) in p2_identities and actual['sha256'] != p2_identities[str(path)]:
             raise ValueError('P2 read-file identity differs: ' + name)
         files.append({'archive_member': name, 'root': prefix, 'relative_path': relative,
-                      **actual, **source_location, 'groups': sorted(set(groups))})
-    legacy_path = REPO / 'work/paper-rewrite-20261004/claim-sources.json'
-    legacy = json.loads(legacy_path.read_text())
+                      **actual, **source_location, 'groups': groups})
+    return files
+
+
+def historical_sources(legacy):
+    """Resolve frozen source pins without refreshing them to current bytes."""
     resolved_sources = []
     for row in legacy['source_records']:
         expected = {k: row[k] for k in ['bytes', 'sha256']}
@@ -163,32 +160,75 @@ def main():
             resolved.update(verified_from='historical_git_object', revision=revision,
                             limitation='Current document differs; this identity supports only the historical source.')
         resolved_sources.append(resolved)
+    return resolved_sources
+
+
+def editorial_records(readback):
     editorial = []
-    for path in sorted(args.readback.rglob('*')):
+    for path in sorted(readback.rglob('*')):
         if path.is_file():
             editorial.append({'local_path': str(path.resolve()), **identity(path),
                               'scope': 'New saved-byte review output; not a member of the November run archive'})
+    return editorial
+
+
+def repository_records(paths):
+    records = []
+    for path in paths:
+        actual, location = repository_identity(path)
+        records.append({'path': str(path.relative_to(REPO)), **actual, **location})
+    return records
+
+
+def build_index(readback):
+    receipt_path = REPO / 'work/focal-rerun-20261110/delivery-record.json'
+    receipt = json.loads(receipt_path.read_text())
+    roots = {'run': Path(receipt['run_root']),
+             'recovered-inputs': Path('/home/hsz/landmark-evidence/input-recovery-20261110'),
+             'recovered-references': Path('/home/hsz/landmark-evidence/reference-recovery-20261110'),
+             'rerun-source': REPO / 'work/focal-rerun-20261110'}
+    manifest_path = readback / 'archive/archive-manifest.json'
+    if identity(manifest_path)['sha256'] != receipt['archive']['manifest_sha256']:
+        raise ValueError('Manifest does not match published receipt')
+    manifest = json.loads(manifest_path.read_text())
+    p2 = json.loads((roots['run'] / 'readback/p2-after-message-fix.json').read_text())
+    files = verified_members(manifest, roots, p2['read_file_sha256'])
+    legacy_path = REPO / 'work/paper-rewrite-20261004/claim-sources.json'
+    legacy = json.loads(legacy_path.read_text())
+    resolved_sources = historical_sources(legacy)
+    editorial = editorial_records(readback)
     sources = [receipt_path, legacy_path,
                REPO / 'work/review-fixes-20261021/verify_p2_records.py',
                REPO / 'work/focal-rerun-20261110/analyze_p3_core.py',
                REPO / 'sources/repro-audit-20261004/android/audit_android_results.py',
                REPO / 'sources/repro-audit-20261004/android/audit_model_preservation.py']
     sources += list(AREA.glob('*.py'))
-    data = {'schema_version': 1, 'created_utc': datetime.now(timezone.utc).isoformat(),
+    return {'schema_version': 1, 'created_utc': datetime.now(timezone.utc).isoformat(),
             'scope': 'Selected evidence identities for the November short-paper revision; no raw payloads.',
             'human_verification': 'PENDING', 'archive': receipt['archive'],
             'roots': {k: str(v) for k, v in roots.items()}, 'groups': GROUPS,
             'selected_members': len(files), 'files': files,
             'historical_source_records_verified': len(legacy['source_records']),
             'historical_source_resolution': resolved_sources,
-            'repository_records': [{'path': str(p.relative_to(REPO)), **repository_identity(p)[0],
-                                    **repository_identity(p)[1]} for p in sources],
+            'repository_records': repository_records(sources),
             'editorial_readbacks': editorial}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--readback', type=Path, required=True,
+                        help='Retained editorial readback directory, containing archive/ and core-readback/')
+    parser.add_argument('--output', type=Path, required=True, help='Fresh text index path')
+    args = parser.parse_args()
+    if args.output.exists():
+        raise ValueError('Preserve the prior index; choose a fresh output')
+    data = build_index(args.readback)
     with args.output.open('x') as stream:
         json.dump(data, stream, indent=2)
         stream.write('\n')
-    print(json.dumps({'selected_members': len(files), 'historical_sources': len(legacy['source_records']),
-                      'group_counts': {g: sum(g in r['groups'] for r in files) for g in GROUPS}}))
+    print(json.dumps({'selected_members': data['selected_members'],
+                      'historical_sources': data['historical_source_records_verified'],
+                      'group_counts': {g: sum(g in r['groups'] for r in data['files']) for g in GROUPS}}))
 
 
 if __name__ == '__main__':

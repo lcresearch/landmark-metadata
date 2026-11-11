@@ -316,3 +316,18 @@ runtime, Support/Task and actual ML Model Binding generator identities separatel
 Unknown historical versions limit this to mechanism reconstruction; one setup
 cannot establish a LiteRT version effect. No #319 run, broader sweep, manuscript
 sample expansion, human signoff or external evidence upload is authorized.
+
+## 2026-11-11 America/Los_Angeles — Merge completion and maintained-script readability
+
+The user explicitly authorized squash-merging #22, then #21. Verify the resulting
+single-parent commits `ed3e32a…` and `8005274…` against their reviewed trees;
+both checks passed. Earlier open/stacked statuses in dated reviews describe their
+delivery time. MEMORY and TODO now describe the integrated state.
+
+The user then requested script-internal readability improvements and status
+reconciliation. Refactor the maintained initialization and evidence-index drivers
+into named steps, keeping their CLI, output schema, selection rules and rejection
+checks. Preserve imported/archived producers, frozen paper/evidence artifacts and
+external execution records. Validate with regressions and before/after output
+comparisons; do not run new Android/model experiments or add a framework. Deliver
+this maintenance work through a separate PR; it is not authorized to merge.

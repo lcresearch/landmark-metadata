@@ -29,3 +29,9 @@ before commit. Merge must bind the final reviewed head, use squash, and verify i
 complete tree and sole main parent. The live PR merged state records completion.
 This review is automated/source review, not human research verification or a new
 raw focal-experiment audit.
+
+During integration main advanced to `c82253d` (PR #24). GitHub rejected the first
+merge request for conflicts; no merge occurred then. An ancestry merge preserves
+all #24 code/refactoring changes and reconciles MEMORY/TODO/DECISIONS without
+force-pushing. Final verification uses the updated base and 199-test suite; frozen
+scientific pins remain unchanged.
