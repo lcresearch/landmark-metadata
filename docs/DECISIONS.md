@@ -1,6 +1,9 @@
 # Research and repository decisions
 
-These are concise working decisions and their reasons. They are not raw reasoning traces or a record of completed human review.
+These are working decisions and their reasons, followed by dated decision history.
+They are not a record of completed human review. For current evidence availability
+and delivery state, read [MEMORY](../MEMORY.md); dated entries describe their own
+scope and do not renew old merge or publication authorizations.
 
 | Decision | Reason and operational consequence |
 |---|---|
@@ -8,7 +11,7 @@ These are concise working decisions and their reasons. They are not raw reasonin
 | Use Squash and merge for authorized PR merges. | The user explicitly defines "merge" as squash and merge. Preserve that default unless explicitly overridden, gate the operation on the reviewed head SHA, and verify a single-parent result. The preference does not authorize unrelated merges or direct main pushes. |
 | Keep this repository source-only. | The user's latest scope excludes SDKs, emulators, and build products. Preserve code, necessary source documentation, TODO, and concise handoff notes; keep full binary evidence elsewhere. Do not describe this repository as the complete evidence archive or a self-contained offline reproduction package. |
 | Separate a documented reproduction entry from a delivered evidence package. | `docs/reproduction/` inventories exact inputs, versions, hashes, command status and missing material. Selected local hash/readback checks and source-copy helpers do not establish a clean-machine install or new inference. Preserve the original and reconstructed result sets separately; an external deposit and fresh-workspace validation remain distinct tasks. |
-| Treat the selected local recovery as saved-byte preservation. | The user chose local packaging and a missing list. The original E1/E2, build-audit and P2/P3 package is verified outside Git; the later reconstruction remains unrecovered. Matching shared bytes cannot establish later-run provenance. Package integrity, recorded-observation checks, fresh execution and human verification remain distinct; durable publication is a separate task. |
+| Treat the selected local recovery as saved-byte preservation. | The user chose local packaging and a missing list. The October original E1/E2, build-audit and P2/P3 package was verified outside Git but is now unavailable; the later reconstruction remains unrecovered. The November rerun has a separate local package and provenance. Matching shared bytes cannot establish later-run provenance. Package integrity, recorded-observation checks, fresh execution and human verification remain distinct; durable publication is a separate task. |
 | Lead with controlled executable evidence. | E1 reaches the actual generated getter after successful inference; E2 returns successfully with changed label association. Together they establish observable interface changes under the tested computation-preserving interventions. |
 | Keep S/I/D distinct; place P in experimental validity. | Structural acceptance, supplied-reference agreement, and decoder compatibility answer different questions. Preservation supports causal attribution and is not general model correctness. |
 | Treat E5 as supporting diagnostics. | The audited five-condition comparison found no extra rejection beyond the reasonable simple baseline or official Task initialization. Limited template matching is not general consumer-code analysis. |
@@ -203,3 +206,28 @@ selection/copy hashes. Do not retry a complete scientific FAIL to obtain a PASS.
 Use one software AVD serially; uninstall only this run's test package when changing
 to P2's distinct signing key. Keep raw files and locally verified archives outside
 Git; local packaging is not external backup or anonymous reviewer delivery.
+
+
+## 2026-11-11 America/Los_Angeles — Separate current navigation from historical records
+
+The user requested repository cleanup and a PR. Keep README, MEMORY and TODO as
+concise current entry points; preserve their full former text at the fixed cleanup
+base in Git. The [repository map](REPOSITORY_CLEANUP.md) identifies maintained
+code, immutable snapshots, historical reviews and excluded material. Timestamped
+names and identical bytes alone are not deletion criteria: older producers and
+readers still support the new run, and duplicate imports preserve provenance.
+
+Do not move or deduplicate imported sources, rewrite manuscript/audit pins, change
+human PENDING statuses, delete external evidence or rerun experiments as part of
+navigation cleanup. The November run remains separate from the October manuscript.
+Prioritize a second verified evidence copy, provenance reconciliation and human
+review over new experiment expansion. Deliver this cleanup on its own feature
+branch/PR based on the still-open #19; no merge is authorized by this request.
+
+The subsequent user instruction, “OK 审查并合并”, authorizes reviewing and squash
+integrating #20 and its necessary #18/#19 prerequisites into main. Verify each
+reviewed head, sole squash parent and resulting file tree. Synchronize dependent
+feature-branch ancestry only after proving main equals the reviewed predecessor
+tree, without force pushes. Keep final integration notes in #20; its verified
+GitHub merged state closes delivery. Research evidence and human-review limits
+remain unchanged by repository integration.

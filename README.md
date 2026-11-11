@@ -3,107 +3,65 @@
 Source repository for **Validation Boundaries for Model Label Resources:
 A Controlled Classifier Case Study**.
 
-The user requested **source only**: no SDK, emulator, model, raw execution data,
-or build products are uploaded. This repository holds research code, manuscript
-source and continuation documents, **not the complete evidence archive**.
+This repository contains research code, manuscript source and necessary text.
+Models, SDKs, emulators, builds, raw observations and evidence archives stay
+outside Git. It is not a complete evidence archive or an offline reproduction kit.
+
+## Current state — 11 November 2026
+
+The current manuscript is the **20 October revision**. A **new 10 November focal
+rerun** completed E1/E2, the paired Android P2 comparison and the six-input P3 core.
+The manuscript has not yet been reconciled with that new execution history.
+The old cloud execution evidence is unavailable; matching inputs and new results
+do not recover its provenance. Human verification and durable external evidence
+delivery remain pending.
+
+The study concerns one classifier graph, five byte conditions and two synthetic
+inputs. Keep structural acceptance S, reference-backed association I and selected
+decoder compatibility D separate; P checks intervention preservation. E5 remains
+a supporting tool with no additional rejection over the audited simple/Task
+baseline. These data do not establish natural defects, prevalence or task accuracy.
 
 ## Start here
 
-- [Current manuscript source](work/label-resource-revision-20261020/manuscript/paper.tex)
-- [Full companion](work/label-resource-revision-20261020/manuscript/paper-full.tex)
-- [Manuscript claim–evidence table](work/label-resource-revision-20261020/CLAIM_EVIDENCE.md)
-- [Revision scope and section-by-section changes](work/label-resource-revision-20261020/REVISION_NOTES.md)
-- [Minimal evidence handoff and six unsigned author questions](work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md)
-- [Current build and validation results](work/label-resource-revision-20261020/VALIDATION.md)
-- [Current manuscript and preserved-parent digests](docs/CURRENT_MANUSCRIPT.json)
-- [Evidence-checking repairs and maintained entry points](work/review-fixes-20261021/README.md)
-- [November evidence-binding and immutable-import follow-up](work/review-fixes-20261110/README.md)
-- [Current evidence loss and verified input recovery](work/input-recovery-20261110/README.md)
-- [Fresh focal rerun, current protocol and commands](work/focal-rerun-20261110/README.md)
-- [Project memory](MEMORY.md), [active TODO](TODO.md), [decisions](docs/DECISIONS.md), and [agent instructions](AGENTS.md)
-- [Completed same-Android comparison and display-reference findings](research/20261004-p2-p3/RESULTS_OVERVIEW.md)
-- [Contribution comparison](research/20261004-contribution-review/CONTRIBUTION_COMPARISON.md) and [significance assessment](research/20261004-significance-review/SIGNIFICANCE_ASSESSMENT.md)
-- [Documented reproduction commands and missing prerequisites](docs/reproduction/README.md)
-- [Historical local evidence recovery and unresolved material](work/evidence-recovery-20261005/README.md)
-- [Preserved October 8 manuscript/parser revision](work/preaudit-followup-20261008/README.md)
-- [Preserved agent pre-audit](work/agent-preaudit-20261007/README.md) and [old unsigned human-audit target](docs/human-audit/README.md)
-- [PR #10–#14 integration record](work/pr10-14-integration-20261008/README.md)
-- [Original source identities](docs/SOURCE_IMPORT.json) and [P2/P3 source identities](docs/SOURCE_P2P3.json)
-
-The paper revision started from `65004d4ac573118d58eb8c6f3125d67c0b330d62`
-and was squash-merged, as authorized by the user, in
-[PR #15](https://github.com/lcresearch/landmark-metadata/pull/15) at
-`c0cd67307d89a74394c7d0deb1f425e608906aef`. GitHub confirmed the merged state on
-21 October 2026. Earlier open-PR statements in dated records are historical.
-This integration does not complete author verification, evidence deposit or submission.
-
-## Code map
-
-| Source area | Purpose |
+| Task | Entry point |
 |---|---|
-| [Fresh reconstruction and corrections](sources/repro-audit-20261004) | Official prerequisite restoration, experiment replay, strict evidence checks, Java label-parser fix and new audit findings |
-| [Initial Hand scripts](sources/hand-contract-repro/scripts) | Graph-preserving mutations, static binding, isolated decoder and replay work |
-| [Earlier corpus/checker scripts](sources/metadata-contract-paper/scripts) | Metadata inspection, mutation, generation, CPU and decoder experiments |
-| [E1–E7 scripts](sources/metadata-contract-e2e-20261004T030536Z/scripts) | Actual Android harness, classifier interventions, Task comparison, frozen external checks and Hand boundary experiment |
-| [Frozen E4 protocol](sources/metadata-contract-e2e-20261004T030536Z/E4/protocol) | Predeclared candidates, scope, mutation rules and source snapshots |
-| [Agent audit](sources/metadata-contract-audit-20261004T062010Z) | Preservation checks, fresh build scripts, baseline comparison and claim/literature audit scripts |
-| [Preserved audit-informed revision](sources/metadata-contract-paper-revision-20261004T065132Z) | Historical LaTeX, editorial scripts and revision notes |
-| [Preserved P2/P3 follow-up](research/20261004-p2-p3) | Same-Android harnesses, reference inquiry, separate audits and manuscript parent |
-| [Preserved editorial follow-up](work/review-followup-20261004) | Earlier LaTeX with parser-scope corrections; unchanged by the new rewrite |
-| [Preserved full paper rewrite](work/paper-rewrite-20261004) | Controlled execution narrative, claim–evidence ledger, contribution/significance integration and build/review notes |
-| [Preserved workshop convergence](work/workshop-convergence-20261007) | Previously audited four-page source, longer companion, venue comparison and submission work |
-| [Preserved post-audit draft](work/preaudit-followup-20261008) | Narrowed E2 chronology and separately identified October 8 JVM parser evidence |
-| [Current label-resource revision](work/label-resource-revision-20261020/REVISION_NOTES.md) | Focused classifier case, seven-row coverage matrix, claim crosswalk and minimal evidence/author handoff |
-| [Maintained observation reader](work/observation-review-20261004) | Exact Hand, Task and Android evidence identities; preserves the exported audit snapshot |
-| [Review repairs](work/review-fixes-20261021/README.md) | Maintained P2/parser readback, truthful Android setup provenance, archive and repository integrity checks |
+| Read the current paper | [Current manuscript source](work/label-resource-revision-20261020/manuscript/paper.tex), [full companion](work/label-resource-revision-20261020/manuscript/paper-full.tex), [claim–evidence map](work/label-resource-revision-20261020/CLAIM_EVIDENCE.md) |
+| Inspect the new execution | [Observed results](work/focal-rerun-20261110/RESULTS.md), [runbook and prerequisites](work/focal-rerun-20261110/README.md), [local archive receipt](work/focal-rerun-20261110/delivery-record.json) |
+| Continue the project | [Active TODO](TODO.md), [current memory](MEMORY.md), [decisions](docs/DECISIONS.md), [repository policy](AGENTS.md) |
+| Locate code or decide what to retain | [Repository map and cleanup decisions](docs/REPOSITORY_CLEANUP.md) |
+| Check provenance and author questions | [Current manuscript pins](docs/CURRENT_MANUSCRIPT.json), [unsigned author handoff](work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md), [input recovery](work/input-recovery-20261110/README.md) |
+| Trace historical sources | [Original import index](docs/SOURCE_IMPORT.json), [P2/P3 import index](docs/SOURCE_P2P3.json), [historical reading notes](docs/HISTORICAL_README_NOTES.md) |
 
-`sources/` retains original timestamped names and source bytes. Per-experiment
-implementation snapshots are intentional historical versions, not extra models.
-Text reports explain the history; the raw evidence they reference stays outside
-this repository. Older HTML TODO and PDF text extracts have been removed from
-the current tree; Git history retains them. `TODO.md` is the single active plan.
-Old TODO copies inside timestamped source snapshots are historical records,
-not current instructions. See [cleanup notes](docs/REPOSITORY_CLEANUP.md).
+## Source checks
 
-## Use and limits
+Run from the checkout with Python 3:
 
-Imported scripts may reference original `/workspace/...` paths and missing local
-artifacts. They are preserved for inspection and continuation, not presented as
-a turnkey clean-machine reproduction. Install/recover prerequisites separately
-and review paths before running. Do not execute historical sealing/finalization
-scripts against immutable evidence.
+```sh
+python3 scripts/check_source_tree.py
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
+```
 
-The current short source builds to **four pages including 16 references** in
-provisional 10pt IEEEtran conference format; its detailed companion builds to
-eight pages with 18 references. Build in a new directory outside the checkout.
-The [validation record](work/label-resource-revision-20261020/VALIDATION.md)
-gives commands, actual checks and the retained IEEEtran activation. No venue
-has been selected or freshly assessed for compliance in this revision.
+These commands check source scope, navigation, syntax, 354 preserved imports,
+the import-backed memory hash, seven manuscript/predecessor pins and verifier
+regressions. They do not run model experiments or revalidate excluded raw evidence.
+Historical missing-evidence locators produce warnings; changed imported bytes fail.
 
-This round checked sources, regression tests and document builds. The original
-external evidence roots are unavailable at their recorded paths in this cloud
-session; historical recovery/readback reports are not fresh verification here.
-The [handoff](work/label-resource-revision-20261020/ARTIFACT_HANDOFF.md) distinguishes
-saved-record inspection, new execution and persistent anonymous delivery. The
-latter and human author verification remain open. The prior parser supplement
-is a bounded October 8 JVM experiment, separate from unrecovered later
-reconstruction records and the unverified reconstructed 65-fixture catalog.
+## Reproduction and manuscript builds
 
-Run `python scripts/check_source_tree.py` for source integrity, syntax and
-source-only scope checks. No model experiment is executed by that command.
-Current Markdown file targets, imported source digests/sizes, the import-backed
-`MEMORY.md` source hash, current manuscript/companion/claim/handoff pins and
-their indexed predecessor identities are checked. Historical
-README evidence locators produce warnings; excluded evidence hashes are reported
-as unchecked. Run `PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v`
-for checker regression tests without creating caches in the source tree.
-`scripts/import_workspace_sources.py` records how this source snapshot was
-selected; it requires the original local workspace and refuses to overwrite
-changed imported files. `scripts/import_p2p3_sources.py` separately records the
-new follow-up selection; both source manifests are checked without running models.
+Use the [new focal runbook](work/focal-rerun-20261110/README.md) for the executed
+November sequence and its external prerequisites. The [historical guide and
+input/toolchain inventories](docs/reproduction/README.md) remain provenance
+references. Imported absolute `/workspace` paths are intentional historical facts;
+new runs require separate directories and recorded path adaptations. Never run
+historical sealing/finalization tools over retained evidence.
 
-Future work should save source, TODO updates, concise decisions and continuation
-notes here under the same source-only rule, using a feature branch and pull
-request for user review. Do not push directly to the default branch or merge
-without an explicit user instruction. Large evidence and build outputs
-remain excluded unless the user explicitly changes that scope.
+The manuscript's [October validation record](work/label-resource-revision-20261020/VALIDATION.md)
+records four short-paper pages and eight companion pages in provisional IEEEtran
+format. Build outside the checkout. No venue has been selected, and this cleanup
+does not rebuild the paper or update its scientific claims.
+
+Publish source changes on a feature branch through a PR. Merging requires an
+explicit instruction; use squash by default. Keep excluded evidence outside the
+repository, including Releases and LFS. `TODO.md` is the sole active checklist;
+timestamped plans and reports describe their original scope.
