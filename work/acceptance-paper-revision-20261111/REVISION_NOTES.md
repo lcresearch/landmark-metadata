@@ -28,3 +28,6 @@ result or an expansion of the paper’s experimental sample.
 
 See [VALIDATION.md](VALIDATION.md) for build and source checks. PDF/build outputs
 remain outside Git. Human verification and reviewer evidence delivery remain open.
+
+Delivered in [PR #23](https://github.com/lcresearch/landmark-metadata/pull/23),
+followed by the separately scoped [candidate screen](../case-screening-20261111/SHORTLIST.md).

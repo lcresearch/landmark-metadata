@@ -18,6 +18,16 @@ and follow the [repository policy](AGENTS.md).
   October material, known-outcome rerun, two interruptions/continuations, reader
   correction and P3 core-only scope. Current-pointer pins bind all new artifacts;
   historical manuscripts, old pins and PENDING audit targets remain preserved.
+- [x] **Focus the paper on acceptance decisions and screen existing reports.**
+  [PR #23](https://github.com/lcresearch/landmark-metadata/pull/23) contains the
+  revised short paper and [two-candidate shortlist](work/case-screening-20261111/SHORTLIST.md).
+  Seven reports/69 comments were re-read; linked material was checked without
+  full model acquisition or execution. #770 and #319 remain conditional candidates.
+- [ ] **If pursuing a real-report reconstruction, start with the fixed shortlist.**
+  Acquire full model identities and freeze one consumer configuration before
+  execution. Apply the shortlist’s stop rules and preserve unsupported-path,
+  asset-selection and historical-identity limits. Screening alone adds no
+  experimental result or natural-defect count.
 - [ ] **Resolve auxiliary evidence before submitting it.** The new short paper
   labels E5's negative result and Hand/static/parser context as historical. If
   retaining their detailed claims in a submitted companion, supply inspectable
@@ -40,7 +50,7 @@ and follow the [repository policy](AGENTS.md).
 PR #18–#20 are squash-merged; main reached `e9da459…`. The November manuscript
 evidence revision was merged in [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22).
 The acceptance-focused editorial follow-up and bounded candidate screening use a
-new feature-branch PR; merging requires a separate instruction.
+new [PR #23](https://github.com/lcresearch/landmark-metadata/pull/23); merging requires a separate instruction.
 Repository integration does not complete the remaining research/human tasks.
 
 ## Code-layout integration

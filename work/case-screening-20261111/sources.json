@@ -1,0 +1,485 @@
+{
+  "scope": "Bounded feasibility screen of existing real reports; zero new reproduced natural cases",
+  "external_root": "/home/hsz/landmark-evidence/case-screening-20261111",
+  "fixed_pool_count": 7,
+  "comments_read": 69,
+  "selected": [
+    {
+      "issue": 770,
+      "repository": "tensorflow/tflite-support",
+      "priority": 1,
+      "status": "CONDITIONAL_MECHANISM_RECONSTRUCTION",
+      "category": "reported unsupported consumer/model integration"
+    },
+    {
+      "issue": 319,
+      "repository": "tensorflow/tflite-support",
+      "priority": 2,
+      "status": "CONDITIONAL_ASSET_SELECTION_PAIR",
+      "category": "reporter-resolved selection error with existing rejection"
+    }
+  ],
+  "model_execution": false,
+  "complete_model_download": false,
+  "human_verification": false,
+  "reports": [
+    {
+      "url": "https://github.com/google-ai-edge/mediapipe/issues/195",
+      "title": "the options of TfliteTensorsToClassificationCalculator miss a field 'num_classes'",
+      "state_at_retrieval": "closed",
+      "created_at": "2019-10-24T01:20:30Z",
+      "updated_at": "2019-11-04T23:34:20Z",
+      "retrieval_started_utc": "2026-11-11 13:06:30 UTC",
+      "comments_returned_and_read": 1,
+      "issue_record": "records/google-ai-edge_mediapipe-195-issue.json",
+      "comments_record": "records/google-ai-edge_mediapipe-195-comments.json",
+      "comment_urls": [
+        "https://github.com/google-ai-edge/mediapipe/issues/195#issuecomment-545977684"
+      ]
+    },
+    {
+      "url": "https://github.com/google-ai-edge/mediapipe/issues/22",
+      "title": "Could not use custom model in object detection",
+      "state_at_retrieval": "closed",
+      "created_at": "2019-08-13T12:20:35Z",
+      "updated_at": "2019-08-28T00:26:01Z",
+      "retrieval_started_utc": "2026-11-11 13:06:30 UTC",
+      "comments_returned_and_read": 4,
+      "issue_record": "records/google-ai-edge_mediapipe-22-issue.json",
+      "comments_record": "records/google-ai-edge_mediapipe-22-comments.json",
+      "comment_urls": [
+        "https://github.com/google-ai-edge/mediapipe/issues/22#issuecomment-522351533",
+        "https://github.com/google-ai-edge/mediapipe/issues/22#issuecomment-523149861",
+        "https://github.com/google-ai-edge/mediapipe/issues/22#issuecomment-523150159",
+        "https://github.com/google-ai-edge/mediapipe/issues/22#issuecomment-523775018"
+      ]
+    },
+    {
+      "url": "https://github.com/tensorflow/tensorflow/issues/1269",
+      "title": "Loading the newer inception model in Android demo example and No OpKernel was registered to support Op error",
+      "state_at_retrieval": "closed",
+      "created_at": "2016-02-24T05:14:49Z",
+      "updated_at": "2017-02-04T06:00:03Z",
+      "retrieval_started_utc": "2026-11-11 13:06:30 UTC",
+      "comments_returned_and_read": 45,
+      "issue_record": "records/tensorflow_tensorflow-1269-issue.json",
+      "comments_record": "records/tensorflow_tensorflow-1269-comments.json",
+      "comment_urls": [
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-190964869",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-190967921",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-190970576",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-191582988",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-192455565",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-192457836",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-199257469",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-199274236",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-223859368",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-223863027",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-223926373",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-223994025",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-225155569",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-226181097",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-226182975",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-226184643",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-226286631",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-227183352",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-227259203",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-227284323",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-227338411",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-227400534",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-227550620",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-227586391",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-227786119",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-228027086",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-240020700",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-240212769",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-240353197",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-240380352",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-240426133",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-248074964",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-252416363",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-252418703",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-256069522",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-256155123",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-266247233",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-275178155",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-275196603",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-275202828",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-275319098",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-275848619",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-276219729",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-276230785",
+        "https://github.com/tensorflow/tensorflow/issues/1269#issuecomment-277206006"
+      ]
+    },
+    {
+      "url": "https://github.com/tensorflow/tflite-support/issues/319",
+      "title": "Error running Bert Question Answerer",
+      "state_at_retrieval": "closed",
+      "created_at": "2021-02-03T14:25:05Z",
+      "updated_at": "2021-02-03T14:39:42Z",
+      "retrieval_started_utc": "2026-11-11 13:06:30 UTC",
+      "comments_returned_and_read": 1,
+      "issue_record": "records/tensorflow_tflite-support-319-issue.json",
+      "comments_record": "records/tensorflow_tflite-support-319-comments.json",
+      "comment_urls": [
+        "https://github.com/tensorflow/tflite-support/issues/319#issuecomment-772558484"
+      ]
+    },
+    {
+      "url": "https://github.com/tensorflow/tflite-support/issues/703",
+      "title": "Add Metadata doesn't work with YoloV5 model",
+      "state_at_retrieval": "closed",
+      "created_at": "2021-09-29T16:22:56Z",
+      "updated_at": "2023-11-07T12:43:00Z",
+      "retrieval_started_utc": "2026-11-11 13:06:30 UTC",
+      "comments_returned_and_read": 4,
+      "issue_record": "records/tensorflow_tflite-support-703-issue.json",
+      "comments_record": "records/tensorflow_tflite-support-703-comments.json",
+      "comment_urls": [
+        "https://github.com/tensorflow/tflite-support/issues/703#issuecomment-930339523",
+        "https://github.com/tensorflow/tflite-support/issues/703#issuecomment-930411458",
+        "https://github.com/tensorflow/tflite-support/issues/703#issuecomment-930431072",
+        "https://github.com/tensorflow/tflite-support/issues/703#issuecomment-1798427099"
+      ]
+    },
+    {
+      "url": "https://github.com/tensorflow/tflite-support/issues/770",
+      "title": "Semantic Segementation Example \"Label number 21 mismatch\" exception",
+      "state_at_retrieval": "open",
+      "created_at": "2022-03-28T08:55:09Z",
+      "updated_at": "2022-04-25T16:17:20Z",
+      "retrieval_started_utc": "2026-11-11 13:06:30 UTC",
+      "comments_returned_and_read": 3,
+      "issue_record": "records/tensorflow_tflite-support-770-issue.json",
+      "comments_record": "records/tensorflow_tflite-support-770-comments.json",
+      "comment_urls": [
+        "https://github.com/tensorflow/tflite-support/issues/770#issuecomment-1094341854",
+        "https://github.com/tensorflow/tflite-support/issues/770#issuecomment-1102165626",
+        "https://github.com/tensorflow/tflite-support/issues/770#issuecomment-1108777779"
+      ]
+    },
+    {
+      "url": "https://github.com/tensorflow/tflite-support/issues/870",
+      "title": "Unknown image file format. One of JPEG, PNG, GIF, BMP required.",
+      "state_at_retrieval": "open",
+      "created_at": "2022-08-08T12:50:43Z",
+      "updated_at": "2022-08-29T09:10:44Z",
+      "retrieval_started_utc": "2026-11-11 13:06:30 UTC",
+      "comments_returned_and_read": 11,
+      "issue_record": "records/tensorflow_tflite-support-870-issue.json",
+      "comments_record": "records/tensorflow_tflite-support-870-comments.json",
+      "comment_urls": [
+        "https://github.com/tensorflow/tflite-support/issues/870#issuecomment-1208629590",
+        "https://github.com/tensorflow/tflite-support/issues/870#issuecomment-1208914165",
+        "https://github.com/tensorflow/tflite-support/issues/870#issuecomment-1209806070",
+        "https://github.com/tensorflow/tflite-support/issues/870#issuecomment-1216998373",
+        "https://github.com/tensorflow/tflite-support/issues/870#issuecomment-1220410140",
+        "https://github.com/tensorflow/tflite-support/issues/870#issuecomment-1224396842",
+        "https://github.com/tensorflow/tflite-support/issues/870#issuecomment-1225220758",
+        "https://github.com/tensorflow/tflite-support/issues/870#issuecomment-1225971973",
+        "https://github.com/tensorflow/tflite-support/issues/870#issuecomment-1226933824",
+        "https://github.com/tensorflow/tflite-support/issues/870#issuecomment-1229059493",
+        "https://github.com/tensorflow/tflite-support/issues/870#issuecomment-1229379105"
+      ]
+    }
+  ],
+  "availability": [
+    {
+      "id": "319-default",
+      "url": "https://tfhub.dev/tensorflow/lite-model/mobilebert/1/default/1?lite-format=tflite",
+      "status": 200,
+      "content_type": "application/octet-stream",
+      "content_length": "100456296",
+      "retained_bytes": 4096,
+      "truncated": true,
+      "sha256": "01d75e3a9cf773d671d0a6088c8c93647413efa84b0b2869f92e24290687c7ec",
+      "started_utc": "2026-11-11T13:08:24.061902+00:00",
+      "completed_utc": "2026-11-11T13:08:25.336737+00:00",
+      "final_url_without_temporary_signature": "https://storage.googleapis.com/kagglesdsdata/models/2330/3119/1.tflite",
+      "response_record": "availability/319-default.json",
+      "tflite_identifier_at_bytes_4_7": true,
+      "sha256_scope": "retained response prefix only, never the complete model identity"
+    },
+    {
+      "id": "319-metadata",
+      "url": "https://tfhub.dev/tensorflow/lite-model/mobilebert/1/metadata/1?lite-format=tflite",
+      "status": 200,
+      "content_type": "application/octet-stream",
+      "content_length": "100670436",
+      "retained_bytes": 4096,
+      "truncated": true,
+      "sha256": "68fb9a76f148d01a30400cd94664c791994733d1c36bee062819c208be48aa20",
+      "started_utc": "2026-11-11T13:08:25.336866+00:00",
+      "completed_utc": "2026-11-11T13:08:26.517301+00:00",
+      "final_url_without_temporary_signature": "https://storage.googleapis.com/kagglesdsdata/models/2331/3120/1.tflite",
+      "response_record": "availability/319-metadata.json",
+      "tflite_identifier_at_bytes_4_7": true,
+      "sha256_scope": "retained response prefix only, never the complete model identity"
+    },
+    {
+      "id": "770-overview",
+      "url": "https://www.tensorflow.org/lite/examples/segmentation/overview",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "retained_bytes": 167942,
+      "truncated": false,
+      "sha256": "c36c44c111a34c3ef179ff517f6cc3f5db7e5f8219384b647b3c85c34c716ff3",
+      "started_utc": "2026-11-11T13:08:24.061036+00:00",
+      "completed_utc": "2026-11-11T13:08:26.428489+00:00",
+      "final_url_without_temporary_signature": "https://github.com/tensorflow/examples/tree/master/lite/examples/image_segmentation",
+      "response_record": "availability/770-overview.json",
+      "tflite_identifier_at_bytes_4_7": false,
+      "sha256_scope": "retained response prefix only, never the complete model identity"
+    },
+    {
+      "id": "770-task-guide",
+      "url": "https://www.tensorflow.org/lite/inference_with_metadata/task_library/image_segmenter",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": "172132",
+      "retained_bytes": 172132,
+      "truncated": false,
+      "sha256": "d9ac6a0113b37286e7fd3843a0485550910ee619dca479dbbae2734c8dee377a",
+      "started_utc": "2026-11-11T13:08:24.061523+00:00",
+      "completed_utc": "2026-11-11T13:08:26.364695+00:00",
+      "final_url_without_temporary_signature": "https://developers.google.com/edge/litert/libraries/task_library/image_segmenter",
+      "response_record": "availability/770-task-guide.json",
+      "tflite_identifier_at_bytes_4_7": false,
+      "sha256_scope": "retained response prefix only, never the complete model identity"
+    },
+    {
+      "id": "870-drive",
+      "url": "https://drive.google.com/file/d/1Ke46il3g3xi70RPNa8KKUWhGfJj81ORX/view?usp=sharing",
+      "status": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "retained_bytes": 8074,
+      "truncated": false,
+      "sha256": "a345bebeb905e9c438caa5e249e8f30f0c6aa427cf1ca50fafda948a10a57436",
+      "started_utc": "2026-11-11T13:08:26.364905+00:00",
+      "completed_utc": "2026-11-11T13:08:27.467560+00:00",
+      "final_url_without_temporary_signature": "https://drive.google.com/file/d/1Ke46il3g3xi70RPNa8KKUWhGfJj81ORX/view?usp=sharing",
+      "response_record": "availability/870-drive.json",
+      "tflite_identifier_at_bytes_4_7": false,
+      "sha256_scope": "retained response prefix only, never the complete model identity"
+    },
+    {
+      "id": "770-deeplab",
+      "url": "https://storage.googleapis.com/download.tensorflow.org/models/tflite/task_library/image_segmentation/android/lite-model_deeplabv3_1_metadata_2.tflite",
+      "status": 200,
+      "content_type": "application/octet-stream",
+      "content_length": "2780051",
+      "retained_bytes": 4096,
+      "truncated": true,
+      "sha256": "1d3eb4c31c909abf708f42c639be6f4bac6d2bffa94129132767636a5593c048",
+      "started_utc": "2026-11-11T13:10:10.133191+00:00",
+      "completed_utc": "2026-11-11T13:10:10.757398+00:00",
+      "final_url_without_temporary_signature": "https://storage.googleapis.com/download.tensorflow.org/models/tflite/task_library/image_segmentation/android/lite-model_deeplabv3_1_metadata_2.tflite",
+      "response_record": "deeplab-link/770-deeplab.json",
+      "tflite_identifier_at_bytes_4_7": true,
+      "sha256_scope": "retained response prefix only, never the complete model identity"
+    }
+  ],
+  "external_records": [
+    {
+      "relative_path": "availability/319-default.json",
+      "bytes": 2738,
+      "sha256": "101c8851ac283125cd0a7d176640cfc56426cb9fbd7b945b44253d4e4aa3f041"
+    },
+    {
+      "relative_path": "availability/319-default.response-prefix",
+      "bytes": 4096,
+      "sha256": "01d75e3a9cf773d671d0a6088c8c93647413efa84b0b2869f92e24290687c7ec"
+    },
+    {
+      "relative_path": "availability/319-metadata.json",
+      "bytes": 2744,
+      "sha256": "a2a3f182a14860ba8ff08ef78defceafed09cf1d4f7d53bc38ac4ab03487f403"
+    },
+    {
+      "relative_path": "availability/319-metadata.response-prefix",
+      "bytes": 4096,
+      "sha256": "68fb9a76f148d01a30400cd94664c791994733d1c36bee062819c208be48aa20"
+    },
+    {
+      "relative_path": "availability/770-overview.json",
+      "bytes": 1335,
+      "sha256": "21ffac1e2e044437dbf2fbb319a371488a39534447eea08163180815d40b12cb"
+    },
+    {
+      "relative_path": "availability/770-overview.response-prefix",
+      "bytes": 167942,
+      "sha256": "c36c44c111a34c3ef179ff517f6cc3f5db7e5f8219384b647b3c85c34c716ff3"
+    },
+    {
+      "relative_path": "availability/770-task-guide.json",
+      "bytes": 1469,
+      "sha256": "3e51c71a200282814918d577e2200afca313db508493409eb9f58039bd8c78c5"
+    },
+    {
+      "relative_path": "availability/770-task-guide.response-prefix",
+      "bytes": 172132,
+      "sha256": "d9ac6a0113b37286e7fd3843a0485550910ee619dca479dbbae2734c8dee377a"
+    },
+    {
+      "relative_path": "availability/870-drive.json",
+      "bytes": 726,
+      "sha256": "d8d5de1c7c365f433ae96a24d10164b4b1fc7e2af5a54877456ea1f239554ae3"
+    },
+    {
+      "relative_path": "availability/870-drive.response-prefix",
+      "bytes": 8074,
+      "sha256": "a345bebeb905e9c438caa5e249e8f30f0c6aa427cf1ca50fafda948a10a57436"
+    },
+    {
+      "relative_path": "availability/availability.json",
+      "bytes": 9288,
+      "sha256": "d5140e9f620c2318e5b9c7f416fdf4391b62ade125686e8b68eabaf7fa6dc7e5"
+    },
+    {
+      "relative_path": "deeplab-link/770-deeplab.json",
+      "bytes": 868,
+      "sha256": "261ab1811c5351a44ced4aaab15fbcf4ca0da01e738cabe48d0f900ea15d5b58"
+    },
+    {
+      "relative_path": "deeplab-link/770-deeplab.response-prefix",
+      "bytes": 4096,
+      "sha256": "1d3eb4c31c909abf708f42c639be6f4bac6d2bffa94129132767636a5593c048"
+    },
+    {
+      "relative_path": "records/319-demo.json",
+      "bytes": 16422,
+      "sha256": "9a449fadd3cc370e9dcea0950f0c0a8f105f8209e9f61246af3c62b1bcde7a73"
+    },
+    {
+      "relative_path": "records/770-app-dir.json",
+      "bytes": 9432,
+      "sha256": "b523181ccc59492b1504a63de93965c52617674b47f7e24662eac09db1c7c704"
+    },
+    {
+      "relative_path": "records/770-downloads.json",
+      "bytes": 2247,
+      "sha256": "27bcbfae14700b6ac9f1c3cb90710fbd125c69dd4b826b4794f8af4e973c84e1"
+    },
+    {
+      "relative_path": "records/770-example.json",
+      "bytes": 21598,
+      "sha256": "71af4dd09569bf6043da45f9d1a74fb35694d42965366afebe9e4dd64d714548"
+    },
+    {
+      "relative_path": "records/770-readme.json",
+      "bytes": 4866,
+      "sha256": "04a533c56676dd01d7b72ebfe72b798b6c593bb73397105ff742ccba44eac4b8"
+    },
+    {
+      "relative_path": "records/google-ai-edge_mediapipe-195-comments.json",
+      "bytes": 1746,
+      "sha256": "42e9937ca798735a89beca3266c61dd172a7fbe4e4bf030b43c750c38d830123"
+    },
+    {
+      "relative_path": "records/google-ai-edge_mediapipe-195-issue.json",
+      "bytes": 3164,
+      "sha256": "3ddaad13f2f0d6256e8842a8268b707553e52c9fc36c5c1306d2382149913127"
+    },
+    {
+      "relative_path": "records/google-ai-edge_mediapipe-22-comments.json",
+      "bytes": 4889,
+      "sha256": "7023edbff1d122c3ae4494eb5a18a7a03d85528358dc2cb3fb36499d46bae6bb"
+    },
+    {
+      "relative_path": "records/google-ai-edge_mediapipe-22-issue.json",
+      "bytes": 2726,
+      "sha256": "8e34c068dda357160dae211c0547119e7353cb4fdcaaa6ae1340667b04fc7991"
+    },
+    {
+      "relative_path": "records/tensorflow_tensorflow-1269-comments.json",
+      "bytes": 115104,
+      "sha256": "971a86b58e56d75dd189fef2f10977bc40a08621a8be0b0e503fe06e7e5031ae"
+    },
+    {
+      "relative_path": "records/tensorflow_tensorflow-1269-issue.json",
+      "bytes": 5933,
+      "sha256": "0e44036942e99f66a26b9e963d0c410861985cfdbc0a33b497aaf8c8f0cdbabe"
+    },
+    {
+      "relative_path": "records/tensorflow_tflite-support-319-comments.json",
+      "bytes": 2333,
+      "sha256": "0f9f63461e3273badffda8205126a34a5f29e0e7bbfb6f5ca2ce208424b0b049"
+    },
+    {
+      "relative_path": "records/tensorflow_tflite-support-319-issue.json",
+      "bytes": 5629,
+      "sha256": "7c10d9760e3557d9da2af574bf14ad66323052f19ed6b4f32a9630cd966718f4"
+    },
+    {
+      "relative_path": "records/tensorflow_tflite-support-703-comments.json",
+      "bytes": 5776,
+      "sha256": "31c499e38c213ab7f36d743abf2d4d6c3b48540fca523ace2690ce239e990a9b"
+    },
+    {
+      "relative_path": "records/tensorflow_tflite-support-703-issue.json",
+      "bytes": 6973,
+      "sha256": "815cf47ce67129f7f34ef9e0735c5fdf7ba09a5766aadc75b55bb949d4f570e3"
+    },
+    {
+      "relative_path": "records/tensorflow_tflite-support-770-comments.json",
+      "bytes": 3668,
+      "sha256": "b9e52315849777004bf6ccc652fc96613c6f7d5ccde2ede2272f0e37384912f9"
+    },
+    {
+      "relative_path": "records/tensorflow_tflite-support-770-issue.json",
+      "bytes": 5679,
+      "sha256": "eb5d988786125b9e263429305af4eab30277da513817844ec96e9fc6eb1a1814"
+    },
+    {
+      "relative_path": "records/tensorflow_tflite-support-870-comments.json",
+      "bytes": 19427,
+      "sha256": "5b1919bbdd76c696e59173b5fc59754257c3e5eb7b549b2f646747b451650987"
+    },
+    {
+      "relative_path": "records/tensorflow_tflite-support-870-issue.json",
+      "bytes": 5201,
+      "sha256": "803916f47f3fdb155f9a5545d924039a359f6cf2a17d90017ef39a8fe17654ad"
+    },
+    {
+      "relative_path": "retention.json",
+      "bytes": 6296,
+      "sha256": "08f0b1bdf7675ea479a05411242b9658a96c33638ddaa2eeb214d8e5572d58d7"
+    },
+    {
+      "relative_path": "web-access-observations.json",
+      "bytes": 891,
+      "sha256": "04a66536acae2c5143f16d0c9fb717199d8452effa3ee558b2d3ab9fbde6b66d"
+    }
+  ],
+  "source_inputs": [
+    {
+      "repository_path": "work/case-screening-20261111/PROTOCOL.md",
+      "bytes": 2289,
+      "sha256": "ec94e91e63abd487f7c1da17d7d57736e18862377391832a4d91a9e29d254f0e"
+    },
+    {
+      "repository_path": "work/case-screening-20261111/check_link_availability.py",
+      "bytes": 3707,
+      "sha256": "957574655191747bfa13af106b1efc9ef0fce1f655869900ca54e9fd55e52d9e"
+    },
+    {
+      "repository_path": "research/20261004-significance-review/PUBLIC_REPORTS.md",
+      "bytes": 17293,
+      "sha256": "7603d98e759195d54c978ebcad664efb29b16fdd91520167ab3bd94999040688"
+    },
+    {
+      "repository_path": "research/20261004-significance-review/public-report-sources.json",
+      "bytes": 55538,
+      "sha256": "94a1194c8b20208b7ec951fc153214ea435dd337b06740f878f757ccbb3bb2c4"
+    }
+  ],
+  "limitations": [
+    "Current responses are not recovered October snapshots.",
+    "Binary prefixes establish limited availability, not complete model identities.",
+    "Source docs fetched from master are current retrieved text, not the reporters historical configurations.",
+    "Temporary signed download parameters are intentionally absent from this source-only index."
+  ]
+}

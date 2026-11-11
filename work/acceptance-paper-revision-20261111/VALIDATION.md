@@ -29,10 +29,12 @@ reduction or negative spacing was introduced.
 
 The source checker validates current and predecessor manuscript pins, preserved
 imports (working tree or Git archive), syntax, navigation and source-only scope.
-The source check passed: 354 preserved imports, 16 artifact pins and no failures.
+The source check passed: 354 preserved imports, 18 artifact pins and no failures.
 The 18 historical/archived-locator and external-digest warnings remain visible.
 All 193 regression tests passed. `git diff --check` also passed. No new tests were
-added for these document-only edits.
+added for the manuscript edits. The subsequent link-availability helper was
+syntax-checked and exercised against actual public responses (200 and 404);
+these calls are availability checks, not model tests.
 
 All earlier manuscript areas, the frozen November evidence index, `experiment/`,
 `support/`, archive manifests and source imports remain unchanged. Core counts,
@@ -45,3 +47,6 @@ Retained output: `/home/hsz/landmark-evidence/acceptance-paper-20261111/short-pa
 Adjacent `build/` records and `delivery.json` bind the copied PDF/source/logs/images
 and verification outputs. These files remain outside Git and outside the sealed
 November experiment archive.
+
+Delivery: [PR #23](https://github.com/lcresearch/landmark-metadata/pull/23), open
+for review. The final remote head is verified after the candidate-screen commit.

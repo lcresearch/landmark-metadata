@@ -144,7 +144,8 @@ archive readback was performed during this review. Human verification remains pe
 
 PR #22 and the subsequent code-cleanup PR #21 are merged; current main is
 `8005274e9eccbea30fb3189779f03e8d693b3720`. The acceptance-focused follow-up is on
-`codex/acceptance-checks-cases-20261111`. It retains the preceding evidence index
+`codex/acceptance-checks-cases-20261111` in [PR #23](https://github.com/lcresearch/landmark-metadata/pull/23),
+open for review. It retains the preceding evidence index
 and observations, with four explicit acceptance decisions and concise provenance.
 The current task authorizes a PR and bounded public-report screening, not a merge
 or a new natural-case execution.
@@ -157,3 +158,13 @@ The former 561-line continuation history remains available
 Dated work records and historical audit targets remain in the tree. Their old
 "current", open-PR and evidence-availability statements describe their own time;
 they do not override this file, TODO or repository policy.
+
+The [bounded public-report screen](work/case-screening-20261111/SHORTLIST.md)
+re-read the existing seven reports and 69 comments. It selects Support #770
+(unsupported segmentation/generated-interface combination) and #319 (default
+versus metadata asset selection) as conditional reproduction candidates. Exact
+linked model responses supplied TFL3 prefixes; full model hashes and historical
+environments are still missing. #870's linked Drive file returned 404. No new
+model execution or natural defect is established; the paper sample is unchanged.
+Fresh public responses and availability prefixes are retained outside Git at
+`/home/hsz/landmark-evidence/case-screening-20261111/`.

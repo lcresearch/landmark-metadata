@@ -85,7 +85,7 @@
   "feature_branch": "codex/acceptance-checks-cases-20261111",
   "pr_base": "main",
   "merge_policy": "This editorial task authorizes a source-only PR, not merging, publication of evidence, or paper submission.",
-  "delivery_status": "Preparing follow-up PR; predecessor PR #22 is merged.",
+  "delivery_status": "Open for review in PR #23; predecessor PR #22 is merged.",
   "human_audit": {
     "status": "PENDING",
     "reviewer": null,
@@ -102,5 +102,24 @@
     "base": "main",
     "head": "codex/paper-rerun-evidence-20261111",
     "merged": true
+  },
+  "pull_request": {
+    "number": 23,
+    "url": "https://github.com/lcresearch/landmark-metadata/pull/23",
+    "base": "main",
+    "head": "codex/acceptance-checks-cases-20261111"
+  },
+  "candidate_screening": {
+    "status": "FEASIBILITY_ONLY_NO_NEW_EXECUTION",
+    "shortlist": {
+      "path": "work/case-screening-20261111/SHORTLIST.md",
+      "bytes": 9460,
+      "sha256": "4cd299cee4825d0e2de5c3e0cfdd6b9e804807143d2edaa7c7c0c9d368ed4892"
+    },
+    "source_index": {
+      "path": "work/case-screening-20261111/sources.json",
+      "bytes": 23417,
+      "sha256": "ed1c212ed6d8dc27d5e18c8b9e76cb225992cf0017b0814a8bfbd3d1bc7e4c7a"
+    }
   }
 }
