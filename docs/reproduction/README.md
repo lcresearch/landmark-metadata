@@ -5,6 +5,13 @@ gaps. **The Git repository contains source and documentation, not a complete
 experiment deposit.** Start with the route that matches the materials available
 to you; reading saved results and running a new experiment are different tasks.
 
+For the new execution authorized after the reported cloud evidence loss, use the
+[November focal rerun record](../../work/focal-rerun-20261110/README.md). It adds
+verified public-input recovery, a tested isolated toolchain setup, reviewed path
+adaptation, explicit interruption handling and new external output locations.
+The table and dated handoff records below retain their original scope; they do
+not describe the status of the separately identified November execution.
+
 The original handoff's inspected starting revision was
 `052a839cdc64ec43ce362dde0cd3e410926e107d` (after PRs #6 and #7).
 The [21 October verifier repairs](../../work/review-fixes-20261021/README.md)

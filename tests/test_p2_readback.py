@@ -82,7 +82,7 @@ class P2ReadbackTests(unittest.TestCase):
                     report.update({'earliest_failing_stage': 'model_initialization',
                                    'exception_type': 'java.lang.IllegalStateException',
                                    'cause_chain': [{'type': 'java.lang.IllegalArgumentException',
-                                                    'message': self.module.TASK_MESSAGE}]})
+                                                    'message': 'Error occurred when initializing ImageClassifier: Got 1000 class(es) for output index 0, expected 999 according to the label map.'}]})
                 else:
                     report['observations'] = []
                     for name in self.module.CASES:
@@ -238,6 +238,28 @@ class P2ReadbackTests(unittest.TestCase):
         self.change_report(lambda r: r.update({'earliest_failing_stage': 'asset_identity'}), 'task', 'label_deletion')
         result = self.readback()
         self.assertEqual(result['sections']['historical_outcomes'], 'FAIL')
+
+    def test_task_cause_requires_complete_wording_and_exception_type(self):
+        full = 'Error occurred when initializing ImageClassifier: Got 1000 class(es) for output index 0, expected 999 according to the label map.'
+        cases = [('java.lang.IllegalArgumentException', full.split(': ', 1)[1]),
+                 ('java.lang.IllegalArgumentException', full.replace('1000 class', '1001 class')),
+                 ('java.lang.IllegalArgumentException', 'unrelated prefix: ' + full),
+                 ('java.lang.IllegalArgumentException', full + ' trailing text'),
+                 ('java.lang.RuntimeException', full)]
+        for exception, message in cases:
+            with self.subTest(exception=exception, message=message):
+                self.change_report(lambda r: r.update({'cause_chain': [{'type': exception, 'message': message}]}),
+                                   'task', 'label_deletion')
+                controllers = self.p2 / 'execution-results.json'
+                rows = json.loads(controllers.read_text())
+                row = next(r for r in rows if (r['consumer'], r['variant']) == ('task', 'label_deletion'))
+                row['failures'] = [row['observed']]
+                self.write(controllers, rows)
+                result = self.module.Reader(self.root).run()
+                check = next(c for c in result['checks'] if c['name'] == 'task/label_deletion: wrapped cardinality rejection')
+                self.assertEqual(check['status'], 'FAIL')
+                self.assertEqual(result['sections']['evidence_validity'], 'PASS')
+                self.assertEqual(result['sections']['coverage'], 'PASS')
 
     def test_failed_build_and_wrong_apk_digest_cannot_pass_with_retained_outputs(self):
         path = self.p2 / 'build-results.json'

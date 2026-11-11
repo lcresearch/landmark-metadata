@@ -64,10 +64,18 @@ this revision does not select a venue or authorize submission.
   All 39 checked external paths are absent here; no archive candidate was found
   in the bounded local search. Supply original controller, command and observation
   records unchanged. Do not manufacture them from summaries or fresh reruns.
-- [ ] **P1 — Establish a new focal execution history if old evidence cannot be recovered.**
-  Inputs are available; pinned dependencies, reviewed path adaptation, a fresh
-  E1/E2/P2 run, P3 bridge analysis and durable retention still need completion.
-  No new model/Android execution has been started or claimed by input recovery.
+- [x] **P1 — Establish and locally retain a new focal execution history.**
+  The user authorized execution. See the [new run](work/focal-rerun-20261110/README.md):
+  dependencies and path adaptation are verified; E1/E2 primary/replay pass the
+  strict independent audit, P2 passes 348 maintained readback checks, and P3 core
+  analysis is complete. The 3.32 GB local archive passed full readback of 2,120
+  members; see the [delivery receipt](work/focal-rerun-20261110/delivery-record.json).
+  All 176 tests pass. New records do not recover the old run or complete human
+  verification, remote backup or reviewer access.
+- [ ] **P1 — Reconcile manuscript provenance with the new focal execution.**
+  Cite the new run separately, disclose the unavailable old evidence and resumed
+  collection, and preserve the narrowed P3/reference and broader-history limits.
+  Current manuscript sources and human PENDING entries remain unchanged.
 - [ ] **P1 — Answer the six current author questions against the new source digest.**
   All identities, observations and signatures remain PENDING.
 - [ ] **P1 — Provide persistent anonymous access to retained core evidence.**

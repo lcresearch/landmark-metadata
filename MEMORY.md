@@ -4,6 +4,47 @@ Current paper: **Validation Boundaries for Model Label Resources: A Controlled
 Classifier Case Study**, in `work/label-resource-revision-20261020/`.
 Read the current pointer, revision notes and TODO before using dated entries below.
 
+## Fresh focal rerun — 10 November 2026 (America/Los_Angeles)
+
+The user explicitly authorized new experiments using the reproduction guide.
+The [new runbook and protocol](work/focal-rerun-20261110/README.md) identify
+`/home/hsz/landmark-evidence/focal-rerun-20261110` and the new source area.
+Exact historical model/reference, wheel, Android/JDK and Java dependency pins
+were reacquired and checked. Python 3.11.16 is a newly recorded uv distribution;
+the old interpreter binary was not pinned. A new API-30 software AVD passed
+functional readiness. Initial sandbox inspection did not expose `/dev/kvm`, but
+the actual execution-host record does see that device. This run deliberately uses
+the frozen `-accel off` software configuration; KVM usability was not established.
+
+E1/E2 primary and replay are complete. Independent audit passes eight builds,
+sixteen condition/phase records and 32 input observations: 28 decoded lists and
+four caught deletion-getter failures. Raw outputs are preserved; permutation
+changes 999 labels and restoration reverses the association. P2's ten configurations,
+18 observations, 16 decoded lists and ten wrapper tensors pass all 348 maintained
+readback checks; eight cross-consumer pairs match all returned score bits/labels.
+The first readback exposed a truncated expected Java cause in the reader; preserve
+that FAIL and the old reader, then use the corrected full-message check on unchanged
+data. P3's six-input core is complete:
+165 non-metadata buffers match, original/restoration agree at 1,000 positions and
+permutation at one position. The full 30-request search/synset inquiry was not rerun;
+stable IDs remain ABSTAIN. This does not recover the lost October evidence.
+
+Two chat interruptions stopped E1 host collection. All old attempts remain;
+per-condition continuation now preserves completed scientific outcomes and retries
+only missing transport collection. New invocation and analysis-view identities are
+explicit. All phases have finished and the owned emulator was stopped. The new
+local archive `/home/hsz/landmark-evidence/focal-rerun-20261110-evidence.tar.gz`
+is 3,321,366,905 bytes; all 2,120 members were read back and verified. Its SHA-256 is
+`57970b8ff5a4127caf11b13bdc9837ed2479c13dbb488cfc5262506a76535afd`.
+See the [delivery receipt](work/focal-rerun-20261110/delivery-record.json) and
+[actual results](work/focal-rerun-20261110/RESULTS.md). All 176 tests pass;
+preserved imports and manuscript pins remain unchanged. Human audit, manuscript
+provenance reconciliation and remote evidence deposit remain pending. No new run
+payload belongs in Git, and no unattended cross-session completion is promised.
+Source/docs are delivered for review in
+[PR #19](https://github.com/lcresearch/landmark-metadata/pull/19), stacked on the
+still-open input-recovery PR #18. Neither PR is merged by this execution request.
+
 ## Lost cloud evidence and recovered inputs — 10 November 2026 (America/Los_Angeles)
 
 After PR #17 was reviewed and squash-merged as `fa8a318eabff681ee061e55a7908a20a7fda2113`,
