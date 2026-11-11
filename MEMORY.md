@@ -126,8 +126,9 @@ Review passed 170 tests at #18 and 176 for the final code, source/import/manuscr
 checks, and ten selected external-record digests. No new model execution or full
 archive readback was performed during this review. Human verification remains pending.
 
-The manuscript revision is delivered separately on
-`codex/paper-rerun-evidence-20261111`; the editorial request does not authorize its merge.
+The manuscript revision is delivered in [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22)
+on `codex/paper-rerun-evidence-20261111`, open for review. The editorial request
+does not authorize its merge.
 Next: retain a second verified evidence copy, complete human review, resolve any
 auxiliary claims retained for submission, provide reviewer access and select a venue. See [TODO](TODO.md) for completion criteria.
 Do not start another broad model/mutant campaign by default.

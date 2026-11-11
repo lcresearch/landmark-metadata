@@ -70,7 +70,7 @@
   "feature_branch": "codex/paper-rerun-evidence-20261111",
   "pr_base": "main",
   "merge_policy": "This editorial task authorizes a source-only PR, not merging, publication of evidence, or paper submission.",
-  "delivery_status": "Prepared for feature-branch PR review; publication metadata will be finalized before delivery.",
+  "delivery_status": "Open for review in PR #22; not merged.",
   "human_audit": {
     "status": "PENDING",
     "reviewer": null,
@@ -80,5 +80,11 @@
   "new_android_or_model_inference": false,
   "new_jvm_probe": false,
   "new_saved_byte_review": true,
-  "historical_full_p3_search_rerun": false
+  "historical_full_p3_search_rerun": false,
+  "pull_request": {
+    "number": 22,
+    "url": "https://github.com/lcresearch/landmark-metadata/pull/22",
+    "base": "main",
+    "head": "codex/paper-rerun-evidence-20261111"
+  }
 }

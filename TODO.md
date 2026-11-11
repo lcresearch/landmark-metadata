@@ -38,7 +38,8 @@ and follow the [repository policy](AGENTS.md).
   Old venue suggestions/deadlines are historical; no venue or submission is approved.
 
 PR #18–#20 are squash-merged; main reached `e9da459…`. The November manuscript
-revision has its own feature-branch PR and requires its own merge instruction.
+revision is in [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22),
+open for review, and requires its own merge instruction.
 Repository integration does not complete the remaining research/human tasks.
 
 ## Completed foundations

@@ -137,3 +137,6 @@ targets are unchanged. Only first-party source, tests and necessary text are
 included in the feature-branch PR; rendered papers, raw evidence, packages and
 other generated products remain outside Git. Human author verification and
 durable reviewer access remain open.
+
+Delivery: [PR #22](https://github.com/lcresearch/landmark-metadata/pull/22),
+`codex/paper-rerun-evidence-20261111` into `main`, open for review and not merged.
