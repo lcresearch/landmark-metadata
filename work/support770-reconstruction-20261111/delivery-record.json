@@ -1,0 +1,138 @@
+{
+  "root": "/home/hsz/landmark-evidence/support770-reconstruction-20261111",
+  "archive": "/home/hsz/landmark-evidence/support770-reconstruction-20261111-selected-evidence.tar.gz",
+  "command": [
+    "/usr/bin/python3",
+    "work/support770-reconstruction-20261111/seal_evidence.py",
+    "--root",
+    "/home/hsz/landmark-evidence/support770-reconstruction-20261111",
+    "--archive",
+    "/home/hsz/landmark-evidence/support770-reconstruction-20261111-selected-evidence.tar.gz",
+    "--receipt",
+    "/home/hsz/landmark-metadata/work/support770-reconstruction-20261111/delivery-record.json"
+  ],
+  "archive_bytes": 65231419,
+  "archive_sha256": "cc0e3f43117099b8ba1c2a9327cfa5fca5cac6e09eca5aeb93d5bbc0e071d9f1",
+  "verified_members": 270,
+  "manifest": {
+    "path": "selected-evidence-manifest.json",
+    "bytes": 46470,
+    "sha256": "9364ac3c76e502f6ae19cc3207b7cb1098f733e98613b9de5d1c6a270de4edfb"
+  },
+  "selected_records": [
+    {
+      "path": "boot/readiness.json",
+      "bytes": 6483,
+      "sha256": "edf5881421b63fb6fd4ac2267d22add23afe4f6913f9a209d1e3a61683b74c33"
+    },
+    {
+      "path": "build-results.json",
+      "bytes": 1734,
+      "sha256": "fda17d032c93633ba85acf99dedc4a560edfd5bdaf116eadf51536cd8c9da3a6"
+    },
+    {
+      "path": "executions/task/device/mask_0_0.bin",
+      "bytes": 66049,
+      "sha256": "d7bccfd47ff005e33710bc793ad07fdc8ce61c1e9be1fcabec939de22352ee3d"
+    },
+    {
+      "path": "executions/task/device/result.json",
+      "bytes": 3250,
+      "sha256": "d73c31b6db908fecad7e19cde97529bcc699afb669a70471a180400d6e369dd4"
+    },
+    {
+      "path": "executions/wrapper/device/raw_output.bin",
+      "bytes": 5548116,
+      "sha256": "029b8cd2f0a4425f5300e76c6bac998948684f986e57af29eed08e27c11e650a"
+    },
+    {
+      "path": "executions/wrapper/device/result.json",
+      "bytes": 1995,
+      "sha256": "99247a868c2ea9d2fea1565498e267bef04ea46f35c1e4609f66d1a0b1745e80"
+    },
+    {
+      "path": "freeze.json",
+      "bytes": 494,
+      "sha256": "088a2af1825e77ff5f8004dba7ef607c0d13fa366d668c3125ed06f47e58fe2d"
+    },
+    {
+      "path": "generation-freeze.json",
+      "bytes": 1564398,
+      "sha256": "500e4148f006f5a2ab817fee6ddb6d9092763b4485b95102dbd91b4e218e3d70"
+    },
+    {
+      "path": "generator-inspection/command.json",
+      "bytes": 623,
+      "sha256": "acbb13b6bdbf8914119037a45f68d07cbb718e889795bcbe9da179c5d069fc14"
+    },
+    {
+      "path": "generator-inspection/resolved-artifacts.json",
+      "bytes": 83641,
+      "sha256": "dd8f309a3072da777fbf3d87f1cc8d3bf49440946a5df4da23b1a2c0dd952057"
+    },
+    {
+      "path": "model-graph-readback/graph.json",
+      "bytes": 190509,
+      "sha256": "7490e2b462ef85257cf6a7805ed351fa7c59fb20837b8b4ad8c8435c69799b4d"
+    },
+    {
+      "path": "model-inspection/inspection.json",
+      "bytes": 847,
+      "sha256": "917ceb641a70fb95f0019930e3e42a7e37c0eb7a1e302871c88dcf3d13f58236"
+    },
+    {
+      "path": "model-inspection/metadata.json",
+      "bytes": 1953,
+      "sha256": "5882844b184d556f0a0be5b43cb3a79b14f6685eb310fb2c67b60bd951b5b9f6"
+    },
+    {
+      "path": "project/app/build/generated/ml_source_out/debug/org/example/support770/ml/LiteModelDeeplabv31Metadata2.java",
+      "bytes": 4515,
+      "sha256": "26f5da346674948c16ccd3f6582322187b75f8095703dee6cea8741e9082c50b"
+    },
+    {
+      "path": "runtime-freeze.json",
+      "bytes": 9288,
+      "sha256": "3bd8cd0b66f793ab52539e49d8c57079dc122c512e283f79060e1f733b001d95"
+    },
+    {
+      "path": "runtime-results.json",
+      "bytes": 7984,
+      "sha256": "cb8cd4429ce69a1e47b63cae8736491b5d4a3f3521700483e91db29b67e08708"
+    },
+    {
+      "path": "stages/agp-generation/command.json",
+      "bytes": 1109,
+      "sha256": "e4596d8ec550af76e719113cce681c2e1ae98468d17e10c32d536cf61889968d"
+    },
+    {
+      "path": "stages/agp-generation/stdout",
+      "bytes": 98411,
+      "sha256": "c550a7413e1d20522d194f989fba45ffc71cc9fd8885b62800733d9610b13979"
+    },
+    {
+      "path": "stages/build-consumers/command.json",
+      "bytes": 814,
+      "sha256": "85ddc29594a76b92e0f0f14aba98477a530d9862765fca415223c94022ccc233"
+    },
+    {
+      "path": "stages/stop-device/command.json",
+      "bytes": 712,
+      "sha256": "e7e961894d4e0b3345a243e42a1dead0b18b2bb0682030ff3d04585dee66fddc"
+    },
+    {
+      "path": "validation/adversarial-readback.json",
+      "bytes": 600,
+      "sha256": "ed55de5947adc46e0477a32c21ae0a91bae1c486c9c60f796e973712bf86193e"
+    },
+    {
+      "path": "validation/readback.json",
+      "bytes": 8337,
+      "sha256": "4f98de708a5586e6a1e764253f30b01e4aba1743b7ea514a74074cf1f0269b83"
+    }
+  ],
+  "scope": "Verified selected local evidence, not a remote backup or complete offline environment.",
+  "human_verification": "PENDING",
+  "historical_identity": "UNKNOWN",
+  "created_utc": "2026-11-11T14:20:50.565155+00:00"
+}

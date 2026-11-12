@@ -85,7 +85,7 @@
   "feature_branch": "codex/acceptance-checks-cases-20261111",
   "pr_base": "main",
   "merge_policy": "The user subsequently authorized review and squash merge of PR #23. Evidence publication and paper submission remain unauthorized.",
-  "delivery_status": "PR #23 is authorized for reviewed-head squash integration; its live GitHub merged state is the terminal integration record.",
+  "delivery_status": "PR #23 squash-merged at fd9ce5d27b5add8c4fe2242450bfaa8db45ed16f; its sole parent and complete reviewed tree were verified.",
   "human_audit": {
     "status": "PENDING",
     "reviewer": null,
@@ -107,7 +107,9 @@
     "number": 23,
     "url": "https://github.com/lcresearch/landmark-metadata/pull/23",
     "base": "main",
-    "head": "codex/acceptance-checks-cases-20261111"
+    "head": "codex/acceptance-checks-cases-20261111",
+    "merged": true,
+    "merge_commit_sha": "fd9ce5d27b5add8c4fe2242450bfaa8db45ed16f"
   },
   "candidate_screening": {
     "status": "FEASIBILITY_ONLY_NO_NEW_EXECUTION",
@@ -121,5 +123,9 @@
       "bytes": 23417,
       "sha256": "ed1c212ed6d8dc27d5e18c8b9e76cb225992cf0017b0814a8bfbd3d1bc7e4c7a"
     }
+  },
+  "external_report_reconstruction": {
+    "record": "work/support770-reconstruction-20261111/RESULTS.md",
+    "scope": "Separate #770 fixed-configuration mechanism reconstruction; not incorporated into current manuscript observations or pins; no LiteRT version effect established."
   }
 }

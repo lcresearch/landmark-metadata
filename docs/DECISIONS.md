@@ -331,3 +331,43 @@ checks. Preserve imported/archived producers, frozen paper/evidence artifacts an
 external execution records. Validate with regressions and before/after output
 comparisons; do not run new Android/model experiments or add a framework. Deliver
 this maintenance work through a separate PR; it is not authorized to merge.
+
+
+## 2026-11-11 America/Los_Angeles — Retain the bounded #770 outcomes
+
+PR #23 was squash-merged at `fd9ce5d…` after preserving the newly merged #24;
+the sole parent and reviewed tree match. The separately authorized reconstruction
+used one unmodified linked model, actual AGP 7.4.2 generation and one call per
+consumer. Preserve the complete wrapper getter FAIL after successful process,
+and the Task category-mask return. Stop after this fixed pair; no version sweep
+or #319 execution. Unknown original versions/digest/input restrict historical
+claims. Keep generator/metadata/Support/Task/runtime identities distinct; this
+pair does not isolate a LiteRT version effect. Retain all raw material outside Git
+and deliver new source/protocol/results as a separate unmerged PR. Current paper
+pins, human verification and external backup requirements remain unchanged.
+
+## 2026-11-11 America/Los_Angeles — Repair PR #25 verification and stop rules
+
+The user requests fixing the three PR #25 review findings, adding regression
+tests, updating that PR and reviewing it again, explicitly preserving sealed
+evidence and prohibiting new inference. Require artifacts implied by reached
+stages, bind install/instrument/collect commands to fixed consumer/device/build
+identities, and use one monotonic 600-second build deadline per consumer. Preserve
+valid scientific failures; evidence validation must not require a desired outcome.
+Use synthetic fixtures and fake clocks/processes, then read unchanged actual
+records into a new validation directory. Do not rewrite the original receipt,
+archive, raw outputs or executed source snapshots. Keep the new tools distinct
+from what executed historically. Update the existing feature PR without merging;
+human verification and manuscript boundaries remain unchanged.
+
+## 2026-11-11 America/Los_Angeles — Clean up failed emulator startup
+
+The user authorizes repairing the further PR #25 review finding against
+`9db23ed`: post-ready property collection can throw without releasing the owned
+emulator. Guard the whole launch-to-handoff sequence, stop and reap only its
+process on failure, retain the original exception and any cleanup failure, and
+publish PASS only after property collection and final reporting succeed. Keep
+the successful device alive for its separately authorized consumer controller.
+Validate with mocked processes and fresh saved-byte readback; preserve the sealed
+run, archive, delivery receipt and original executed sources. No real emulator,
+build, inference, manuscript expansion or merge is authorized by this repair.
