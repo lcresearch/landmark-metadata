@@ -207,7 +207,9 @@ binds locally retained evidence; a second durable copy/reviewer access remains o
 This run is delivered in [PR #25](https://github.com/lcresearch/landmark-metadata/pull/25),
 which remains unmerged. Its [review fixes](work/support770-reconstruction-20261111/REVIEW_FIXES.md)
 require reached outputs, bind install/instrument/collect records to the consumer,
-and enforce the 600-second build budget. The current reader passes 117 checks on
-unchanged evidence; 223 regressions pass. No generation/build/inference was rerun,
+and enforce the 600-second build budget. A further boot-cleanup review repair
+stops/reaps the owned emulator on startup exceptions and delays PASS until handoff.
+The current reader passes 117 checks on unchanged evidence; 236 regressions pass.
+No generation/build/inference was rerun,
 and sealed files/receipt retain their original bytes and modification times.
 #319 and version comparisons remain outside the authorized execution scope.

@@ -32,8 +32,9 @@ and follow the [repository policy](AGENTS.md).
   a supported-path natural-defect count or establish a LiteRT version effect.
 - [x] **Repair and re-review PR #25 without new inference.** The
   [follow-up](work/support770-reconstruction-20261111/REVIEW_FIXES.md) covers required
-  outputs, consumer/invocation binding and a shared build deadline. New regressions
-  and saved-byte checks pass; sealed evidence is unchanged. PR #25 remains open.
+  outputs, consumer/invocation binding, a shared build deadline and startup-error
+  emulator cleanup. New regressions and saved-byte checks pass; sealed evidence
+  is unchanged. PR #25 remains open.
 - [ ] **Resolve auxiliary evidence before submitting it.** The new short paper
   labels E5's negative result and Hand/static/parser context as historical. If
   retaining their detailed claims in a submitted companion, supply inspectable

@@ -28,8 +28,11 @@ checks passed; the 18 historical-locator warnings remain visible.
 
 The subsequent [review fixes](REVIEW_FIXES.md) close three gaps in required-output,
 invocation-binding and build-deadline enforcement. The current reader passes 117
-checks on unchanged evidence and the expanded suite passes 223 tests. Original
-readbacks/snapshots are preserved; this follow-up performs no model execution.
+checks on unchanged evidence. The first repair suite passed 223 tests; thirteen
+further mock-only boot-cleanup regressions bring the current suite to 236 passing
+tests. They cover post-ready failure cleanup, bounded stop/kill/wait and successful
+handoff. Original readbacks/snapshots are preserved; these follow-ups perform no
+model execution or real emulator startup.
 
 ## Executed sources and post-run robustness review
 

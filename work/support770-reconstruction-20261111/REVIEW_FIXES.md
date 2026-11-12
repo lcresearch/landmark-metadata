@@ -11,7 +11,8 @@ execution is part of this follow-up. Merge authorization remains separate.
 | Invocation status did not identify the consumer | Match install/instrument/collect arguments and working directory to the APK, fixed consumer/class and owned serial; check successful transport, ordering from the frozen build, and collected bytes against device files. | `/bin/true`, wrong APK/serial/class/package, failed install, stale ordering, matching wrong build metadata and mismatched collection bytes |
 | Build steps could exceed the 600-second consumer limit | Give each consumer one monotonic deadline, pass its remaining budget and absolute deadline to every child, reject late completion and preserve FAIL. The recorder refuses expired launches and kills a timed-out process group. | Fake-clock cumulative slow steps, no launch after expiry, retained failure and independent consumer budgets, process-launch delay and timeout/exit-zero race |
 
-Twenty-two new regression tests plus the existing suite pass: **223 tests**.
+At the first repair follow-up, twenty-two new regressions plus the existing suite
+passed: **223 tests**.
 The tests use temporary synthetic records and mocked clocks/process boundaries;
 they do not execute model code or consume the sealed evidence as mutable fixtures.
 The four-step deadline example receives 180/180/180/63 seconds, with one shared
@@ -46,3 +47,29 @@ the new deadline handling is regression-tested, not retroactively claimed to hav
 executed in the recorded experiment. Current manuscript pins, model results and
 human PENDING statuses are unchanged. The final remote head is checked when the
 updated PR is delivered and remains open for user review.
+
+## Further review: emulator cleanup
+
+Review against `9db23ed` reproduced a separate startup failure: after readiness,
+an `adb getprop` timeout escaped with no process cleanup and a stale PASS record.
+The launch-to-handoff sequence now has one failure guard. It terminates and waits
+for the owned emulator, escalates to kill and waits again if needed, and records
+FAIL with the original exception plus the cleanup result. An unconfirmed cleanup
+stays FAIL. Reporting failures cannot skip cleanup; persistent filesystem errors
+are reported to stderr. PASS is written only after property collection succeeds
+and the emulator is still alive. Normal success leaves it for the controller.
+
+Thirteen additional mock-only regressions cover the reported timeout, stop/kill
+escalation, readiness deadline, launch/output/final-report write failures,
+interrupts, already-exited processes, failed property commands, cleanup failures
+and successful handoff. The original counterexample fails against the old code;
+all **236 tests** pass after the repair. The unchanged saved run still passes
+**117 checks**, retaining wrapper getter FAIL and Task PASS. All **272** inventoried
+evidence/manifest/archive/receipt files retain their bytes and modification times.
+
+New validation outputs are separate at
+`/home/hsz/landmark-evidence/support770-boot-cleanup-20261111/`, including the
+pre-fix failure log, final tests, readback and preservation check. Source/import/
+manuscript checks and the diff check pass. Re-review found no remaining blocker
+in this repair. No emulator, generation, build or inference was run; the sealed
+executed boot source remains unchanged and does not inherit this repair.
